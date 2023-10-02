@@ -25,4 +25,4 @@ Scalar multiplication satisfies the axioms:
 > Associativity ($III$):
 > $$\Large \lambda(\mu\,\underline x)=(\lambda\mu)\,\underline x,\,\forall\lambda,\mu\in\Re,\,\forall\underline x\in\Re^n$$
 > Distributivity ($IV$):
-> $$\Large (\lambda+\mu)\,\underline x=\lambda\underline x+\mu\underline x$$
+> $$\Large (\lambda+\mu)\,\underline x=\lambda\underline x+\mu\underline x$$$$\Large \lambda(\underline x+\underline y)=\lambda\underline x+\lambda\underline y,\,\forall\lambda,\mu\in\Re,\,\forall\underline x,\underline y\in\Re^n$$
