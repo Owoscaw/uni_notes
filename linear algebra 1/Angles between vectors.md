@@ -1,0 +1,2 @@
+For two vectors in the [[Vector space definitions|vector space]], $\Re^2$, the angle between them can be found through the use of the [[Scalar Product|scalar product]]. This angle is derived by consider the vectors using [[Polar coordinates in R2|polar coordinates]]:
+$$\Huge let\,\, \underline u,\underline v\in\Re^2,\,where\,\,\underline u,\underline v\neq\underline 0$$
