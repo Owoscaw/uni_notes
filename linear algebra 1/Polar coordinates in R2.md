@@ -4,4 +4,6 @@ Let $\begin{pmatrix}a\\b\end{pmatrix}$ be a vector in the cartesian plane, that 
 # Magnitude:
 
 For all vectors in the vector space, $\Re^n$, the length or magnitude of a vector is defined by its distance to the origin;
-$$\large |\underline v|=\sqrt{(v_1-0)^2+(v_2-0)^2+\dots+(v_n-0)^2}=\sqrt{v_1^2+\dots+v_n^2}=\sqrt{\sum_{i=1}^{n}(v_i)}$$
+$$\large |\underline v|=\sqrt{(v_1-0)^2+(v_2-0)^2+\dots+(v_n-0)^2}=\sqrt{v_1^2+\dots+v_n^2}=\sqrt{\sum_{i=1}^{n}(v_i)^2}$$
+This sum is defined to be the [[Scalar Product|scalar product]] of the vector $\underline v$ with itself. That is:
+$$\huge $$
