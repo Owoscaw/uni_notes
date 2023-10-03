@@ -4,4 +4,8 @@ $$\Large \underline u=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix}
 $$\Large |\underline u|=r_1,\,|\underline v|=r_2,\,where\,\,r_1,r_2\gt0$$
 $$\Large arg(\underline u)=\alpha,\,arg(\underline v)=\beta,\,where\,\,\alpha,\beta\in[0,2\pi)$$
 Using the scalar product:
-$$\large \underline u\cdot\underline v=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix}\cdot\begin{pmatrix}r_2cos\,\beta\\r_2sin\,\beta\end{pmatrix}$$
+$$\large \underline u\cdot\underline v=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix}\cdot\begin{pmatrix}r_2cos\,\beta\\r_2sin\,\beta\end{pmatrix}=r_1r_2cos\,\alpha\,cos\,\beta+r_1r_2sin\,\alpha\,sin\,\beta$$
+$$\large \underline u\cdot\underline v=r_1r_2\left(cos\,\alpha\,cos\,\beta+sin\,\alpha\,sin\,\beta\right)=r_1r_2(cos(\alpha-\beta))$$
+Here, $\alpha -\beta$ is the angle between $\underline u$ and $\underline v$, so:
+$$\Huge \underline u\cdot\underline v=|\underline u||\underline v|\,cos\,\theta$$
+$$\Huge \forall\underline u,\underline v\in\Re^2,\,and\,\,\theta\in[0,2\pi)$$
