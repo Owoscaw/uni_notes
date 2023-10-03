@@ -1,6 +1,6 @@
 A sample space is a set of outcomes from a scenario, of which we know all the possible outcomes that could occur. The sample space for a scenario is such that one and only one outcome will occur. This is denoted as $\Omega$, and a generic outcome as $\omega$:
 $$\Huge \omega\in\Omega$$
-The elements of a sample space can be enumerated in a list, finite or infinite:
+Here, $\omega$ is a sample point from the sample space $\Omega$. The elements of a sample space can be enumerated in a list, finite or infinite:
 $$\Huge \Omega:=\left\{\omega_1,\omega_2,\dots\right\}$$
 If this is possible, $\Omega$ is countable and discrete.
 
@@ -14,3 +14,4 @@ Here, $\mathcal{F}$ is the set of all possible events from the sample space $\Om
 $$\Huge A\subseteq\Omega,\,\,A\in\mathcal{F}$$
 $A$ is an event that happens when the outcome at the end of a scenario is in the set $A$. If $\Omega$ is discrete, then the statement:
 $$\Huge \mathcal{F}=2^{\Omega}$$
+is always true. Here, every subset of $\Omega$ is an event.
