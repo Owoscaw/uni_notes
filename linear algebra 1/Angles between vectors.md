@@ -1,2 +1,7 @@
 For two vectors in the [[Vector space definitions|vector space]], $\Re^2$, the angle between them can be found through the use of the [[Scalar Product|scalar product]]. This angle is derived by consider the vectors using [[Polar coordinates in R2|polar coordinates]]:
 $$\Huge let\,\, \underline u,\underline v\in\Re^2,\,where\,\,\underline u,\underline v\neq\underline 0$$
+$$\Large \underline u=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix},\,\underline v=\begin{pmatrix}r_2cos\,\beta\\r_2sin\,\beta\end{pmatrix}$$
+$$\Large |\underline u|=r_1,\,|\underline v|=r_2,\,where\,\,r_1,r_2\gt0$$
+$$\Large arg(\underline u)=\alpha,\,arg(\underline v)=\beta,\,where\,\,\alpha,\beta\in[0,2\pi)$$
+Using the scalar product:
+$$\large \underline u\cdot\underline v=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix}\cdot\begin{pmatrix}r_2cos\,\beta\\r_2sin\,\beta\end{pmatrix}$$
