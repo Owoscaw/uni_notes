@@ -6,4 +6,5 @@ For two sets, $A$ and $B$, if $A$ is a subset of $B$, the following is true:
 $$\Huge A\subseteq B,\,\,\forall x\in A,\,\,x\in B$$
 Every element in set $A$ is also in set $B$.
 
-The power set of $A$ is a set consisting of all subsets of $A$, denoted as $2^A$ 
+The power set of $A$ is a set consisting of all subsets of $A$, denoted as $2^A$:
+$$\Huge 2^A:=\left\{B:B\subseteq A\right\}$$
