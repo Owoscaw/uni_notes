@@ -11,4 +11,15 @@ This can be shown by considering two statements:
 $$\Huge A:\,\,a=b\,,\,\,\,B:a^2=b^2$$
 $B$ can be true when $A$ is false, i.e. $1^2=(-1)^2$, but the whole statement is true when $A$ is true. Whenever $A$ is true, $a$ will equal $b$, so $a^2=b^2$. In this case, $B$ is true whenever $A$ is true, so:
 $$\Huge A\implies B$$
-If $A$ and $B$ are statements
+If $A$ and $B$ are statements, $A$ is logically equivalent to $B$ when both $A$ implies $B$ and $B$ implies $A$:
+$$\Huge A\implies B,\,\,B\implies A,\,\,A\iff B$$
+
+# Conditional statements:
+
+Often, statements will depend on a variable, $x$. This is to say that a conditional statement's truth depends on $x$:
+$$\Huge A(x)$$
+$A(x)$ is true for some $x$ and false for other $x$. A conditional statement can become a statement by using the quantifiers "for all" and "there exists", $\forall$ and $\exists$.
+
+# Sets:
+
+Sets are a way to sort objects and incoporate them into mathematical statements. A set $X$ is a collection of objects. We write 
