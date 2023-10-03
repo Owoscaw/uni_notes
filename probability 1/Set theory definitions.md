@@ -15,10 +15,12 @@ $$\Huge 2^A:=\left\{B:B\subseteq A\right\}$$
 The union operator represents the collection of sample points from two sets, $A$ and $B$:
 $$\Huge A\cup B=\left\{\omega:\omega\in A\,\,or\,\,\omega\in B\right\}$$
 The union of multiple sets can be written as:
-$$\Large \bigcup^n_{i=1}A_i=A_1\cup A_2\cup\dots\cup A_n=\left\{\omega\in\Omega:\omega\in A_i\,\,for\,\,i\in\{1,\dots,n\}\right\}$$
+$$\Large \bigcup^n_{i=1}A_i:=A_1\cup A_2\cup\dots\cup A_n=\left\{\omega\in\Omega:\omega\in A_i\,\,for\,\,i\in\{1,\dots,n\}\right\}$$
 ## Intersect:
 The intersect operator represents the collection of sample points that are in both sets $A$ and $B$:
 $$\Huge A\cap B=\left\{\omega:\omega\in A\,\,and\,\,\omega\in B\right\}$$
+The intersection of multiple sets can be written as:
+$$\Huge \bigcap^n_{i=1}A_i:=A_1\cap A_2\cap\dots\cap A_n=\left\{\omega\in\Omega:\omega\in A_i\forall i\in\{1,\dots,n\}\right\}$$
 ## Complement:
 The complement of a set is the collection of sample points that are not in a given set:
 $$\Huge A^{'}=\left\{\omega:\omega\notin A\right\}$$
@@ -30,3 +32,6 @@ $$\Huge A\setminus B=\left\{\omega:\omega\in A\,\,and\,\,\omega\notin B\right\}=
 ## Subset:
 One set is a subset of another if every one of a set's elements are contained within another set:
 $$\Huge A\subseteq B=\left\{\omega:\omega\in A\in B\right\}$$
+
+# De Morgan's Law:
+$$\Huge \left(\bigcup^n_{i=1}A_i\right)^{'}=\bigcap^n_{i=1}A_i^{'}\,\,\,and\,\,\,\left(\bigcap^n_{i=1}A_i\right)^{'}=\bigcup^n_{i=1}A_i^{'}$$
