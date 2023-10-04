@@ -48,4 +48,20 @@ $$\Huge f:\Re\mapsto \Re:x\mapsto\frac{1}{x}$$
 Whereas the following is a valid function:
 $$\Huge f:\Re\setminus\{0\}\mapsto\Re:x\mapsto\frac{1}{x}$$
 
-# Images and Pre-images
+# Images and Pre-images:
+
+Let a function map set $X$ to $Y$:
+$$\Huge f:X\mapsto Y$$
+Given that $A\subset X$, the image of $A$ is defined as:
+$$\Huge f(A)=\left\{f(a)\in Y:a\in A\right\}\subset Y$$
+That is the image of $A$ is the set that represents every element in $A$, having undergone the function $f$. $A$ will always be a subset of $Y$. For $B\subset Y$, the pre-image of $B$ is defined as:
+$$\Huge f^{-1}(B)=\left\{x\in X:f(x)\in B\right\} \subset X$$
+That is the pre-image of $B$ would be the set used to map, under $f$, to the set $B$. $B$ will always be a subset of $X$.
+
+Using the same function $f$, and defining sets $A,B\subset X$, the following is true:
+>$$\Huge f(A\cap B)\subset f(A)\cap f(B)$$
+>$$\Huge f(A\cup B)=f(A)\cup f(B)$$
+>$$\Huge f(X\setminus A)\supset f(X)\setminus f(A)$$
+
+Assuming $C,D\subset Y$:
+>$$\Huge $$
