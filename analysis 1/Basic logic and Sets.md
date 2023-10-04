@@ -41,4 +41,11 @@ Where $(x,y)$ is the ordered pair between every element in $X$ and every element
 
 A function can therefore be described as the complete set of ordered pairs $(x,y)$. Let $X$ and $Y$ be sets. The function $f$ is a subset of the cartesian product of $X\times Y$:
 $$\Huge f\subset X\times Y$$
-This is defined such that for every $x\in X$, there is exactly one $y\in Y$ such that $(x,y)\in f$.
+This is defined such that for every $x\in X$, there is exactly one $y\in Y$ such that $(x,y)\in f$. $f:X\mapsto Y$ defines a function, while $f(x)$ defines the unique element of set $Y$ such that $(x,f(x))\in f$. $X$ is the [[Functions, Domain and Range|domain]] of $f$, while $Y$ is the [[Functions, Domain and Range|co-domain]]. Every $x\in X$ is assigned exactly one $f(x)\in Y$.
+
+In the case where a function is not naturally defined at a point, for example $\frac{1}{x}$, the problematic values must be removed in order for it to be a proper function. The following is not a valid function:
+$$\Huge f:\Re\mapsto \Re:x\mapsto\frac{1}{x}$$
+Whereas the following is a valid function:
+$$\Huge f:\Re\setminus\{0\}\mapsto\Re:x\mapsto\frac{1}{x}$$
+
+# Images and Pre-images
