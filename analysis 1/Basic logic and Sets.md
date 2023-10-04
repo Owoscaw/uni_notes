@@ -24,3 +24,4 @@ $A(x)$ is true for some $x$ and false for other $x$. A conditional statement can
 
 Sets are a way to sort objects and incorporate them into mathematical statements. A set $X$ is a collection of objects. We write $a\in X$ if $a$ is an object that is described in $X$. We write $a\notin X$ if the object $a$ is not included in the set $X$. A set consisting of objects $x$ for which $A(x)$ is true is described as:
 $$\Huge X=\left\{x:A(x)\right\}$$
+In a set, the order of elements and how many times a single element appears does not matter
