@@ -24,4 +24,21 @@ $A(x)$ is true for some $x$ and false for other $x$. A conditional statement can
 
 Sets are a way to sort objects and incorporate them into mathematical statements. A set $X$ is a collection of objects. We write $a\in X$ if $a$ is an object that is described in $X$. We write $a\notin X$ if the object $a$ is not included in the set $X$. A set consisting of objects $x$ for which $A(x)$ is true is described as:
 $$\Huge X=\left\{x:A(x)\right\}$$
-In a set, the order of elements and how many times a single element appears does not matter
+In a set, the order of elements and how many times a single element appears does not matter. There are 4 main [[Set theory definitions|set operations]] that can be used to describe the intersection, union, complement, or difference of sets.
+
+Given two objects, $a$ and $b$, there is another object $(a,b)$ that is an ordered pair of $a$ and $b$. The order of objects in this pair matters, any other order is a new ordered pair. This is to say:
+$$\Huge(a_1,b_1)=(a_2,b_2)$$
+if an only if
+$$\Huge a_1=a_2\,\,\,and\,\,\,b_1=b_2$$
+
+## Cartesian product:
+
+The cartesian product of two sets, $X$ and $Y$ is given by:
+$$\Huge X\times Y=\left\{(x,y):x\in X,\,y\in Y\right\}$$
+Where $(x,y)$ is the ordered pair between every element in $X$ and every element in $Y$.
+
+# Formal definition of a function
+
+A function can therefore be described as the complete set of ordered pairs $(x,y)$. Let $X$ and $Y$ be sets. The function $f$ is a subset of the cartesian product of $X\times Y$:
+$$\Huge f\subset X\times Y$$
+This is defined such that for every $x\in X$, there is exactly one $y\in Y$ such that $(x,y)\in f$.
