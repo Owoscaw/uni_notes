@@ -5,6 +5,7 @@ $$\Huge \times:\begin{pmatrix}u_1\\u_2\\u_3\end{pmatrix}\times\begin{pmatrix}v_1
 The vector product follows these axioms:
 >Anti-Symmetry ($I$):$$\Huge \underline u\times\underline v=-\underline v\times\underline u,\,\,\forall\underline u,\underline v\in\Re^3$$
 >Linearity in the first order ($II$):$$\large (\lambda\underline u)\times\underline w=\lambda(\underline u\times\underline v),\,\,\,(\underline u+\underline v)\times\underline w=\underline w\times\underline w+\underline v\times\underline w,\,\,\,\forall \lambda\in\Re,\,\,\,\forall\underline u,\underline v,\underline w \in \Re^3$$
->Linearity in the second order ($III$):$$$$
->
->
+>Linearity in the second order ($III$):$$\large \underline u\times(\lambda\underline v)=\lambda(\underline u\times\underline v),\,\,\,\underline u\times(\underline v+\underline w)=\underline u\times\underline v+\underline u\times\underline w,\,\,\,\forall \lambda\in\Re,\,\,\,\forall\underline u,\underline v,\underline w\in\Re^3$$
+>Orthogonality to the input ($IV$):$$\Huge \underline v\cdot(\underline v\times\underline w)=\underline w\cdot(\underline v\times\underline w)=0,\,\,\,\forall\underline v,\underline w\in\Re^3$$
+>Where $\cdot$ is the [[Scalar Product|scalar product]] of two vectors.
+

@@ -5,3 +5,7 @@ $$\Huge f:D\mapsto C:x\mapsto f(x)$$$$\Huge \forall x\in D,\,\,f(x)\in C$$
 The range of $f$ is the collection of all images produced by its mapping. That is to say:
 $$\Huge Ran\,\,f=\left\{f(x):x\in D\right\}$$
 $$\Huge Ran\,\,f\subseteq Codom\,\,f$$
+
+# Graphs:
+
+The graph of a function is the set of all ordered pairs, $(x,y)\in\Re^2:x\in\,Dom$
