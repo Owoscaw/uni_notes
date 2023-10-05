@@ -64,4 +64,8 @@ Using the same function $f$, and defining sets $A,B\subset X$, the following is 
 >$$\Huge f(X\setminus A)\supset f(X)\setminus f(A)$$
 
 Assuming $C,D\subset Y$:
->$$\Huge $$
+>$$\Huge f^{-1}(C\cap D)=f^{-1}(C)\cap f^{-1}(D)$$
+>$$\Huge f^{-1}(C\cup D)=f^{-1}(C)\cup f^{-1}(D)$$
+>$$\Huge f^{-1}(Y\setminus C)=X\setminus f^{-1}(C)$$
+
+All statements above can be proven by considering a general element in each set.
