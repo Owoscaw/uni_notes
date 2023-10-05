@@ -5,7 +5,8 @@ That is, $\mathcal{F}$ is the set of every possible subset in $\Omega$, where ea
 $$\Huge \mathbb{P}:\mathcal{F}\mapsto\Re,\,\,\mathbb{P}(A)\in\Re$$
 The probability function follows these rules, given that $A,B\in\mathcal{F}$ and $A\cap B=\emptyset$:
 >$$\Huge \mathbb{P}\geq0,\,\,\forall A\in\mathcal{F}$$
->$$\Huge \mathbb{P}(\Omega)=1$$
+>$$\Huge \mathbb{P}(\Omega)=1,\,\, \mathbb{P}(\emptyset)=0$$
+>$$\Huge \mathbb{P}(A^{'})=1-\mathbb{P}(A)$$
 >$$\Huge \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)$$
 
 This last rule can be generalised given that every event is disjoint from another. That is, any two events $A$, and $B$:
@@ -21,4 +22,9 @@ Given a sample space, $\Omega=\{\omega _1, \omega_2,\dots,\omega_n\}$, $\mathcal
 > $$\Huge P(i)\geq0,\,\,\sum_{i=1}^{n}P(i)=1$$
 > $$\Huge \forall A\in \mathcal{F}, \,\,\mathbb{P}(A)=\sum_{i=1}^{n}P(i),\,\,i:\omega_i\in A$$
 
-That is, for all outcomes $\omega _i$ in the event $A$, the probability of $i$ being an outcome is greater than or equal to $0$
+That is, for all outcomes $\omega _i$ in the event $A$, the probability of $i$ being an outcome is greater than or equal to $0$, and the sum of the probabilities of all outcomes is $1$. The second statement says that for ever event $A$ in $\mathcal{F}$, the probability of $A$ is equal to the sum of the probabilities of all outcomes that define $A$.
+
+Let all events, $A_i$ for $1\leq i\leq\infty$, be pairwise disjoint, that is:
+$$\Huge \bigcap_{i=1}^{\infty}A_i=\emptyset$$
+Then:
+$$\Huge \mathbb{P}\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}\mathbb{P}(A_i)$$
