@@ -16,3 +16,5 @@ The following is also true given the above assumption about $A,B$:
 $$\Huge |A\cup B|=|A|+|B|$$
 If $A\cap B\neq\emptyset$:
 $$\Huge |A\cup B|=|A|+|B|-|A\cap B|$$
+
+Given a sample space, $\Omega=\{\omega _1, \omega_2,\dots,\omega_n\}$, $\mathcal{F}$ is defined as $\mathcal{F}=2^{\Omega}$. Given also that $\mathbb{P}$
