@@ -17,4 +17,8 @@ $$\Huge |A\cup B|=|A|+|B|$$
 If $A\cap B\neq\emptyset$:
 $$\Huge |A\cup B|=|A|+|B|-|A\cap B|$$
 
-Given a sample space, $\Omega=\{\omega _1, \omega_2,\dots,\omega_n\}$, $\mathcal{F}$ is defined as $\mathcal{F}=2^{\Omega}$. Given also that $\mathbb{P}$
+Given a sample space, $\Omega=\{\omega _1, \omega_2,\dots,\omega_n\}$, $\mathcal{F}$ is defined as $\mathcal{F}=2^{\Omega}$. Given also that $\mathbb{P}(\{\omega _i\})=P(i)$, such that $1\leq i \leq n$, the following are true:
+> $$\Huge P(i)\geq0,\,\,\sum_{i=1}^{n}P(i)=1$$
+> $$\Huge \forall A\in \mathcal{F}, \,\,\mathbb{P}(A)=\sum_{i=1}^{n}P(i),\,\,i:\omega_i\in A$$
+
+That is, for all outcomes $\omega _i$ in the event $A$, the probability of $i$ being an outcome is greater than or equal to $0$
