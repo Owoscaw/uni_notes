@@ -9,3 +9,16 @@ $$\large \underline u\cdot\underline v=r_1r_2\left(cos\,\alpha\,cos\,\beta+sin\,
 Here, $\alpha -\beta$ is the angle between $\underline u$ and $\underline v$, so:
 $$\Huge \underline u\cdot\underline v=|\underline u||\underline v|\,cos\,\theta$$
 $$\Huge \forall\underline u,\underline v\in\Re^2,\,and\,\,\theta\in[0,2\pi)$$
+
+# Cauchy-Schwarz inequality:
+
+Given $\underline u, \underline v \in \Re^n$:
+$$\Huge |\underline u\cdot\underline v|\leq|\underline u||\underline v|$$
+This comes from the fact that $cos\,\theta$ has a range of $-1\leq cos\,\theta\leq1$, and $0\leq|cos\,\theta|\leq1$.
+
+# Generalisation to $\Re^n$:
+
+If $\underline u, \underline v \in\Re^n$, and that $\underline u, \underline v \neq \underline 0$, the angle that $\underline u$ makes with $\underline v$, $\theta \in[0,\pi]$ is defined to be:
+$$\Huge cos\,\theta=\frac{\underline u\cdot\underline v}{|\underline u||\underline v|}$$
+Vectors are perpendicular when they make an angle of $\frac{\pi}{2}$:
+$$\Huge \underline u\cdot\underline v=0$$
