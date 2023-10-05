@@ -18,3 +18,13 @@ A function is odd if:
 $$\Huge f(x)=-f(-x)\,\,\forall x\in Dom\,\,f$$
 Every function can be written of its odd and even parts, that is:
 $$\Huge f(x)=f_{even}(x)+f_{odd}(x)$$
+Where:
+$$\Huge f_{even}(x)=\frac{1}{2}(f(x)+f(-x))$$
+$$\Huge f_{odd}(x)=\frac{1}{2}(f(x)-f(-x))$$
+Note that $f(x)=0$ is both even and odd.
+
+# Piecewise Functions:
+
+Some functions are defined piecewise, having different expressions for different intervals over its domain:
+$$\Huge f(x)=\begin{cases}g(x)&a\leq x\leq b\\h(x)&b<x\leq c\end{cases}$$
+Where $Dom\,\,f=[a,c]$.
