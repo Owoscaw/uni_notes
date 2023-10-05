@@ -8,4 +8,13 @@ $$\Huge Ran\,\,f\subseteq Codom\,\,f$$
 
 # Graphs:
 
-The graph of a function is the set of all ordered pairs, $(x,y)\in\Re^2:x\in\,Dom$
+The graph of a function is the set of all ordered pairs, $(x,y)\in\Re^2:x\in\,Dom\,\,f$, $y=f(x)$. Domains are often restricted to an interval $[a,b]$, so that they can be sketched. When necessary, a shaded circle is used to represent a point included in the set, while an open circle is used to represent a point excluded from the set.
+
+# Even and Odd functions:
+
+A function is even if:
+$$\Huge f(x)=f(-x)\,\,\forall x\in Dom\,\,f$$
+A function is odd if:
+$$\Huge f(x)=-f(-x)\,\,\forall x\in Dom\,\,f$$
+Every function can be written of its odd and even parts, that is:
+$$\Huge f(x)=f_{even}(x)+f_{odd}(x)$$
