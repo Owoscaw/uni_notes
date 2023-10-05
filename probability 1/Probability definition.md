@@ -8,3 +8,11 @@ The probability function follows these rules, given that $A,B\in\mathcal{F}$ and
 >$$\Huge \mathbb{P}(\Omega)=1$$
 >$$\Huge \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)$$
 
+This last rule can be generalised given that every event is disjoint from another. That is, any two events $A$, and $B$:
+$$\Huge A\cap B=\emptyset$$
+Give for all $A_i$, $i\geq 1$, each event is pairwise disjoint:
+$$\Huge \mathbb{P}\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}\mathbb{P}(A_i)$$
+The following is also true given the above assumption about $A,B$:
+$$\Huge |A\cup B|=|A|+|B|$$
+If $A\cap B\neq\emptyset$:
+$$\Huge |A\cup B|=|A|+|B|-|A\cap B|$$
