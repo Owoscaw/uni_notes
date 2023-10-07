@@ -48,5 +48,10 @@ For two events, $A, B\in\Omega$.
 >If $A_1\subseteq A_2\subseteq \dots$, as in $A_i\subseteq A_{i+1}$, C9$$\Huge \mathbb{P}\left(\bigcup_{n=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
 >If $A_1\supseteq A_2\supseteq\dots$, as in $A_i\supseteq A_{i+1}$$$\Huge \mathbb{P}\left(\bigcap_{i=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
 >Given events $E_1,E_2,\dots,E_n$ form a partition, C10$$\Huge \sum_{i=1}^n\mathbb{P}(E_i)=1$$
+
+If $\Omega$ is not discrete, there exists subsets of $\Omega$ that cannot be properly assigned a probability that is consistent with all axioms. $\mathbb{P}$ is only defined to satisfy axioms for all events in a collection $\mathcal{F}$, of subsets from $\Omega$ for some $\mathcal{F}\subseteq 2^{\Omega}$.
 # Sigma algebra:
+
+$\mathcal{F}$ is a $\sigma$ algebra if the following are satisfied:
+$$\Huge \Omega\in\mathcal{F},\,\,\,A\in\mathcal{F}\implies A^{'}\in\mathcal{F},\,\,\,A_1,A_2,\dots\in\mathcal{F}\implies\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$$
 
