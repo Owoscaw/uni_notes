@@ -30,7 +30,7 @@ $$\Huge \bigcap_{i=1}^{\infty}A_i=\emptyset$$
 ## Partitions:
 
 A partition of the sample space $\Omega$ is a collection of events, $E_1,E_2,\dots E_n$, such that:$$\Huge \bigcup_{i=1}^nE_i=\Omega,\,\,\mathbb{P}(E_i)\gt0,\,\forall i$$
-Giv
+Given also that all events are pairwise disjoint
 
 # Consequences of probability axioms:
 
@@ -48,4 +48,5 @@ For two events, $A, B\in\Omega$.
 >If $A_1\subseteq A_2\subseteq \dots$, as in $A_i\subseteq A_{i+1}$, C9$$\Huge \mathbb{P}\left(\bigcup_{n=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
 >If $A_1\supseteq A_2\supseteq\dots$, as in $A_i\supseteq A_{i+1}$$$\Huge \mathbb{P}\left(\bigcap_{i=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
 >Given events $E_1,E_2,\dots,E_n$ form a partition, C10$$\Huge \sum_{i=1}^n\mathbb{P}(E_i)=1$$
- 
+# Sigma algebra:
+
