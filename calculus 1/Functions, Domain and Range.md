@@ -37,6 +37,9 @@ Here, $H(x)$ is undefined for $x=0$, that is $Dom\,H(x)=\Re\setminus \{0\}$.
 
 Given two function, $f,g$, and a constant $c\in\Re$ the following are function operations:
 > Sum $(f+g)$:$$\Huge (f+g)(x)=f(x)+g(x),\,\,Dom\,(f+g)=Dom\,f\cap Dom\,g$$
-> Difference $(f-g)$:$$\Huge (f-g)(x)=f(x)-g(x)$$
+> Difference $(f-g)$:$$\Huge (f-g)(x)=f(x)-g(x),\,\,Dom\,(f-g)=Dom\,f\cap Dom\,g$$
+> Product $(fg)$:$$\Huge (fg)(x)=f(x)g(x),\,\,Dom\,f\cap Dom\,g$$
+> Ratio $\left(\frac{f}{g}\right)$:$$\Huge \left(\frac{f}{g}\right)=\frac{f(x)}{g(x)},\,\,Dom\,\left(\frac{f}{g}\right)=\left(Dom\,f\cap Dom\,g\right)\setminus\{x:g(x)=0\}$$
+> Composition $(f\circ g)$:$$\Huge (f\circ g)=f(g(x)),\,\,Dom\,(f\circ g)=\left\{\right\}$$
 
 
