@@ -40,6 +40,12 @@ Given two function, $f,g$, and a constant $c\in\Re$ the following are function o
 > Difference $(f-g)$:$$\Huge (f-g)(x)=f(x)-g(x),\,\,Dom\,(f-g)=Dom\,f\cap Dom\,g$$
 > Product $(fg)$:$$\Huge (fg)(x)=f(x)g(x),\,\,Dom\,f\cap Dom\,g$$
 > Ratio $\left(\frac{f}{g}\right)$:$$\Huge \left(\frac{f}{g}\right)=\frac{f(x)}{g(x)},\,\,Dom\,\left(\frac{f}{g}\right)=\left(Dom\,f\cap Dom\,g\right)\setminus\{x:g(x)=0\}$$
-> Composition $(f\circ g)$:$$\Huge (f\circ g)=f(g(x)),\,\,Dom\,(f\circ g)=\left\{\right\}$$
+> Composition $(f\circ g)$:$$\Huge (f\circ g)=f(g(x)),\,\,Dom\,(f\circ g)=\left\{x\in Dom\,g:g(x)\in Dom\,f\right\}$$
+> Scalar multiplication $(cf)$:$$\Huge (cf)(x)=cf(x),\,\,Dom\,(cf)=Dom\,f$$
 
+Note that in general, $f\circ g\neq g\circ f$. Linear combinations of functions $f,g$ can be defined as:$$\large (af+bg)(x)=af(x)+bf(g),\,\,Dom\,(af+bg)=Dom\,f\cap Dom\,g,\,\,\forall a,b\in\Re$$
+# Inverse functions:
 
+## Surjectivity:
+
+A function, $f:D\mapsto C$ is surjective if $Ran\,f=C$, that is:$$\Huge \forall y\in C,\,\,\exists x\in D:f(x)=y$$
