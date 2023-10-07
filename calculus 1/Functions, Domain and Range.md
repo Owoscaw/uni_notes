@@ -49,3 +49,12 @@ Note that in general, $f\circ g\neq g\circ f$. Linear combinations of functions 
 ## Surjectivity:
 
 A function, $f:D\mapsto C$ is surjective if $Ran\,f=C$, that is:$$\Huge \forall y\in C,\,\,\exists x\in D:f(x)=y$$
+Every element in the co-domain is an image of an element in the domain.
+
+## Injectivity:
+
+A function, $f:D\mapsto C$ is injective if $\forall x_1,x_2\in D$ with $x_1\neq x_2$, then $f(x_1)\neq f(x_2)$. This is to say that for any two inputs, the same output will not be seen. Note that even functions can never be injective.
+
+## Bijectivity:
+
+If a function is both surjective and injective, then it can be said to be bijective. Only bijective functions can be defined to have an inverse:$$\large \left(f^{-1}\circ f\right)(x)=x=\left(f\circ f^{-1}\right)(x),\,\,Dom\,f^{-1}=Ran\,f,\,\,Ran\,f^{-1}=Dom\,f$$
