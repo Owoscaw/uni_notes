@@ -3,6 +3,10 @@ Probability is a function that is applied to $\mathcal{F}$, the complete set of 
 $$\Huge \mathcal{F}=2^{\Omega}$$
 That is, $\mathcal{F}$ is the set of every possible subset in $\Omega$, where each subset represents an event. Probability is a function that maps this set to a real number, let $A\in\mathcal{F}$ represent an event:
 $$\Huge \mathbb{P}:\mathcal{F}\mapsto\Re,\,\,\mathbb{P}(A)\in\Re$$
+
+
+# Axioms:
+
 The probability function follows these axioms, given that $A,B\in\mathcal{F}$ and $A\cap B=\emptyset$:
 >$$\Huge \mathbb{P}\geq0,\,\,\forall A\in\mathcal{F}$$
 >$$\Huge \mathbb{P}(\Omega)=1,\,\, \mathbb{P}(\emptyset)=0$$
@@ -22,6 +26,12 @@ That is, for all outcomes $\omega _i$ in the event $A$, the probability of $i$ b
 
 Let all events, $A_i$ for $1\leq i\leq\infty$, be pairwise disjoint, that is:
 $$\Huge \bigcap_{i=1}^{\infty}A_i=\emptyset$$
+
+## Partitions:
+
+A partition of the sample space $\Omega$ is a collection of events, $E_1,E_2,\dots E_n$, such that:$$\Huge \bigcup_{i=1}^nE_i=\Omega,\,\,\mathbb{P}(E_i)\gt0,\,\forall i$$
+Giv
+
 # Consequences of probability axioms:
 
 For two events, $A, B\in\Omega$.
@@ -35,4 +45,7 @@ For two events, $A, B\in\Omega$.
 >Given $A_1,A_2,\dots,A_n$ are pairwise disjoint, C7
 > $$\Huge \mathbb{P}\left(\bigcup_{i=1}^nA_i\right)=\sum_{i=1}^n\mathbb{P}(A_i)$$
 >For any sequence of events, $A_1,A_2,\dots$, C8$$\Huge \mathbb{P}\left(\bigcup_{i=1}^{\infty}A_i\right)\leq\sum_{i=1}^{\infty}\mathbb{P}(A_i)$$
->If $A_1$
+>If $A_1\subseteq A_2\subseteq \dots$, as in $A_i\subseteq A_{i+1}$, C9$$\Huge \mathbb{P}\left(\bigcup_{n=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
+>If $A_1\supseteq A_2\supseteq\dots$, as in $A_i\supseteq A_{i+1}$$$\Huge \mathbb{P}\left(\bigcap_{i=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
+>Given events $E_1,E_2,\dots,E_n$ form a partition, C10$$\Huge \sum_{i=1}^n\mathbb{P}(E_i)=1$$
+ 
