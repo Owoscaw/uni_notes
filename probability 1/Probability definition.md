@@ -30,8 +30,9 @@ For two events, $A, B\in\Omega$.
 >C2$$\Huge \mathbb{P}(A^{'})=1-\mathbb{P}(A)$$
 >C3$$\Huge \mathbb{P}(\emptyset)=0$$
 >C4$$\Huge \mathbb{P}(A)\leq1$$
->C5$$\Huge If\,\,A\subseteq B,\,\,\mathbb{P}(A)\leq\mathbb{P}(B)$$
+>Given $A\subseteq B$, C5$$\Huge\mathbb{P}(A)\leq\mathbb{P}(B)$$
 >C6$$\Huge \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$$
->C7$$\Huge If\,\,A_1,A_2,\dots,A_n\,\,are \,\,pairwise\,\,disjoint:$$
->$$\Huge \mathbb{P}\left(\bigcup_{i=1}^nA_i\right)=\sum_{i=1}^n\mathbb{P}(A_i)$$
->
+>Given $A_1,A_2,\dots,A_n$ are pairwise disjoint, C7
+> $$\Huge \mathbb{P}\left(\bigcup_{i=1}^nA_i\right)=\sum_{i=1}^n\mathbb{P}(A_i)$$
+>For any sequence of events, $A_1,A_2,\dots$, C8$$\Huge \mathbb{P}\left(\bigcup_{i=1}^{\infty}A_i\right)\leq\sum_{i=1}^{\infty}\mathbb{P}(A_i)$$
+>If $A_1$
