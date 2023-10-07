@@ -28,3 +28,15 @@ Note that $f(x)=0$ is both even and odd.
 Some functions are defined piecewise, having different expressions for different intervals over its domain:
 $$\Huge f(x)=\begin{cases}g(x)&a\leq x\leq b\\h(x)&b<x\leq c\end{cases}$$
 Where $Dom\,\,f=[a,c]$.
+
+A step function is constant on each piece (piecewise constant). The following is the basic step function, known as the Heaviside step function:
+$$\Huge H(x)=\begin{cases}0&x<0\\1&x>0\end{cases}$$
+Here, $H(x)$ is undefined for $x=0$, that is $Dom\,H(x)=\Re\setminus \{0\}$.
+
+# Function operations:
+
+Given two function, $f,g$, and a constant $c\in\Re$ the following are function operations:
+> Sum $(f+g)$:$$\Huge (f+g)(x)=f(x)+g(x),\,\,Dom\,(f+g)=Dom\,f\cap Dom\,g$$
+> Difference $(f-g)$:$$\Huge (f-g)(x)=f(x)-g(x)$$
+
+
