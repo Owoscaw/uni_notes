@@ -3,16 +3,12 @@ Probability is a function that is applied to $\mathcal{F}$, the complete set of 
 $$\Huge \mathcal{F}=2^{\Omega}$$
 That is, $\mathcal{F}$ is the set of every possible subset in $\Omega$, where each subset represents an event. Probability is a function that maps this set to a real number, let $A\in\mathcal{F}$ represent an event:
 $$\Huge \mathbb{P}:\mathcal{F}\mapsto\Re,\,\,\mathbb{P}(A)\in\Re$$
-The probability function follows these rules, given that $A,B\in\mathcal{F}$ and $A\cap B=\emptyset$:
+The probability function follows these axioms, given that $A,B\in\mathcal{F}$ and $A\cap B=\emptyset$:
 >$$\Huge \mathbb{P}\geq0,\,\,\forall A\in\mathcal{F}$$
 >$$\Huge \mathbb{P}(\Omega)=1,\,\, \mathbb{P}(\emptyset)=0$$
 >$$\Huge \mathbb{P}(A^{'})=1-\mathbb{P}(A)$$
 >$$\Huge \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)$$
 
-This last rule can be generalised given that every event is disjoint from another. That is, any two events $A$, and $B$:
-$$\Huge A\cap B=\emptyset$$
-Give for all $A_i$, $i\geq 1$, each event is pairwise disjoint:
-$$\Huge \mathbb{P}\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}\mathbb{P}(A_i)$$
 The following is also true given the above assumption about $A,B$:
 $$\Huge |A\cup B|=|A|+|B|$$
 If $A\cap B\neq\emptyset$:
@@ -26,5 +22,16 @@ That is, for all outcomes $\omega _i$ in the event $A$, the probability of $i$ b
 
 Let all events, $A_i$ for $1\leq i\leq\infty$, be pairwise disjoint, that is:
 $$\Huge \bigcap_{i=1}^{\infty}A_i=\emptyset$$
-Then:
-$$\Huge \mathbb{P}\left(\bigcup_{i=1}^{\infty}A_i\right)=\sum_{i=1}^{\infty}\mathbb{P}(A_i)$$
+# Consequences of probability axioms:
+
+For two events, $A, B\in\Omega$.
+
+>C1$$\Huge \mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A\cap B)$$
+>C2$$\Huge \mathbb{P}(A^{'})=1-\mathbb{P}(A)$$
+>C3$$\Huge \mathbb{P}(\emptyset)=0$$
+>C4$$\Huge \mathbb{P}(A)\leq1$$
+>C5$$\Huge If\,\,A\subseteq B,\,\,\mathbb{P}(A)\leq\mathbb{P}(B)$$
+>C6$$\Huge \mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)$$
+>C7$$\Huge If\,\,A_1,A_2,\dots,A_n\,\,are \,\,pairwise\,\,disjoint:$$
+>$$\Huge \mathbb{P}\left(\bigcup_{i=1}^nA_i\right)=\sum_{i=1}^n\mathbb{P}(A_i)$$
+>
