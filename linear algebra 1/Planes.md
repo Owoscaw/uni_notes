@@ -7,4 +7,8 @@ $$\Huge \Pi=\left\{\underline a+\lambda_1\underline d_1+\lambda_2\underline d_2:
 # Normal vector:
 
 The plane $\Pi\in\Re^3$ can be describes by a point $\underline a\in\Pi$ and a vector $\underline n$ that is normal to the plane. Let $\underline X$ represent a general point on the plane:
-$$\Huge \Pi=\left\{\underline X\in\Re^3:\underline X-\underline a\perp\underline n\right\}=\left\{\right\}$$
+$$ \Pi=\left\{\underline X\in\Re^3:\underline X-\underline a\perp\underline n\right\}=\left\{\underline X\in\Re^3:(\underline X-\underline a)\cdot\underline n=0\right\}=\left\{\underline X\in\Re^3:\underline X\cdot\underline n=\underline a\cdot\underline n\right\}$$
+# Cartesian:
+
+The cartesian description of a plane is another way to write the normal vector description of a plane. That is, $\Pi\in\Re^3$ can be described as the set of all general points $\begin{pmatrix}x\\y\\z\end{pmatrix}\in\Re^3$ that satisfy:
+$$\Huge \begin{pmatrix}x\\y\\z\end{pmatrix}\cdot\underline n=\underline a\cdot\underline n=n_1x+n_2y+n_3y$$

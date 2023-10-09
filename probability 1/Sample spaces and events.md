@@ -4,7 +4,7 @@ Here, $\omega$ is a sample point from the sample space $\Omega$. The elements of
 $$\Huge \Omega:=\left\{\omega_1,\omega_2,\dots\right\}$$
 If this is possible, $\Omega$ is countable and discrete.
 
-A set, $A$, is countable when it is finite, or can be mapped one-to-one to the set of natural numbers, $\mathbb{N}$. That is to say for every natural number, there is an element in $A$ that corresponds to it.
+A [[Set theory definitions|set]], $A$, is countable when it is finite, or can be mapped one-to-one to the set of natural numbers, $\mathbb{N}$. That is to say for every natural number, there is an element in $A$ that corresponds to it.
 
 # Events:
 
