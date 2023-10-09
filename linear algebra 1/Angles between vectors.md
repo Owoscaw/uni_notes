@@ -22,3 +22,7 @@ If $\underline u, \underline v \in\Re^n$, and that $\underline u, \underline v \
 $$\Huge cos\,\theta=\frac{\underline u\cdot\underline v}{|\underline u||\underline v|}$$
 Vectors are perpendicular when they make an angle of $\frac{\pi}{2}$:
 $$\Huge \underline u\cdot\underline v=0$$
+# Vector product method:
+
+For two vectors, $\underline u, \underline v\in\Re^3$, the [[Vector Product|vector product]] can be used to find the angle between them. Consider the angle $\underline u$ makes with $\underline v$, $\theta\in[0,\pi]$:
+$$\Huge |\underline u\times\underline v|=|\underline u||\underline v|sin\,\theta$$
