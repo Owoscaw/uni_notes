@@ -19,4 +19,22 @@ $$\Huge \cdot:\Re\times\Re\mapsto\Re:(a,b)\mapsto ab$$
 $$\Huge \cdot(a,b)=a\cdot b=ab,\,\forall a,b\in\Re$$
 Multiplication satisfies the following axioms:
 > Commutativity ($MI$):$$\Huge ab=ab,\,\forall a,b\in\Re$$
-> Associativity ($MII$):$$\Huge a(bc)$$
+> Associativity ($MII$):$$\Huge a(bc)=(ab)c,\,\forall a,b,c\in\Re$$
+> Existence of 1 ($MIII$): There exists a number in $\Re$ such that $1\neq 0$ and $1\cdot a=a,\,\forall a\in\Re$
+> Existence of the inverse ($MIV$): There exists for all $a\in\Re\setminus\{0\}$ a unique $a^{-1}\in\Re$ such that $a\cdot a^{-1}=1$
+
+# Distributivity axiom:
+
+This axiom combines addition and multiplication definitions:
+$$\Huge a(b+c)=(ab)+(ac),\,\forall a,b,c\in\Re$$
+
+# Order axioms:
+
+The existence of an order $<$ is assumed, such that for every $a,b\in\Re$, the statement $a<b$ is either true or false:
+$$\Huge <:\Re\times\Re\mapsto\{True, False\}$$
+$$\Huge <(a,b)\mapsto a<b$$
+The order satisfies the following axioms:
+> Trichotomy ($OI$): either $a<b$, $a=b$, or $a>b$ are true
+> Transitivity ($OII$): if $a<b$ and $b<c$, then $a<c$
+> Monotony of addition ($OIII$): if $a<b$, then $a+c<b+c$
+> Monotony of multiplication ($OIV$): if $a<b$
