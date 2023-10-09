@@ -29,4 +29,8 @@ $$\Huge |\underline u\times\underline v|=|\underline u||\underline v|sin\,\theta
 This can be shown through the following:
 $$\small |\underline u\times\underline v|=\left|\begin{pmatrix}u_1\\u_2\\u_3\end{pmatrix}\times\begin{pmatrix}v_1\\v_2\\v_3\end{pmatrix}\right|^2=\left|\begin{pmatrix}u_2v_3-u_3v_2\\u_3v_1-u_1v_3\\u_1v_2-u_2v_1\end{pmatrix}\right|^2=(u_2v_3-u_3v_2)^2+(u_3v_1-u_1v_3)^2+(u_1v_2-u_2v_1)^2$$
 $$\large=(u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2)-(u_1v_1+u_2v_2+u_3v_3)^2=|\underline u|^2|\underline v|^2-(\underline u\cdot\underline v)^2$$
-$$=|\underline u|^2|\underline v|^2-(|\underline u||\underline v|cos\,\theta)^2=|\underline u|^2|\underline v|^2-|\underline u|^2|\underline v|^2cos^2\theta=|\underline |||$$
+$$=|\underline u|^2|\underline v|^2-(|\underline u||\underline v|cos\,\theta)^2=|\underline u|^2|\underline v|^2-|\underline u|^2|\underline v|^2cos^2\theta=|\underline u|^2|\underline v|^2(1-cos^2\theta)=|\underline u|^2|\underline v|^2sin^2\theta$$
+So we have:
+$$\Large |\underline u\times\underline v|^2=|\underline u|^2|\underline v|^2sin^2\theta$$
+Taking positive square roots:
+$$\Huge |\underline u\times\underline v|=|\underline u||\underline v|sin\,\theta$$
