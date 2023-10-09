@@ -37,4 +37,15 @@ The order satisfies the following axioms:
 > Trichotomy ($OI$): either $a<b$, $a=b$, or $a>b$ are true
 > Transitivity ($OII$): if $a<b$ and $b<c$, then $a<c$
 > Monotony of addition ($OIII$): if $a<b$, then $a+c<b+c$
-> Monotony of multiplication ($OIV$): if $a<b$
+> Monotony of multiplication ($OIV$): if $a<b$ and $c>0$, then $a\cdot c<b\cdot c$
+
+$a>b$ is the same statement as $b<a$, and $a\leq b$ is written for ($a<b$ and $a=b$)
+
+# Consequences of axioms:
+
+Let $a,b,c,d\in\Re$:
+> If $a\neq 0$, then $a^2>0$. Proof: 
+> Particularly if $a=1$ then $1\cdot 1>0$ and $1\cdot 1=1$, so $1>0$. Given $a>0$, $a^2>0$ by the monotony of multiplication ($OIV$). If $a<0$, $0<-a$ by monotony of addition ($OIII$), therefore $(-a)^2>0$ by the previous case. Note that $(-a)^2=a^2$, clearly $1^2=1$ ($MIII$), so $1>0$.
+> 
+> If $a<b$ and $c<d$, then $a+c<b+d$. Proof:
+> $a<b$, so $a+c<b+c$ by
