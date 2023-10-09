@@ -48,4 +48,10 @@ Let $a,b,c,d\in\Re$:
 > Particularly if $a=1$ then $1\cdot 1>0$ and $1\cdot 1=1$, so $1>0$. Given $a>0$, $a^2>0$ by the monotony of multiplication ($OIV$). If $a<0$, $0<-a$ by monotony of addition ($OIII$), therefore $(-a)^2>0$ by the previous case. Note that $(-a)^2=a^2$, clearly $1^2=1$ ($MIII$), so $1>0$.
 > 
 > If $a<b$ and $c<d$, then $a+c<b+d$. Proof:
-> $a<b$, so $a+c<b+c$ by
+> $a<b$, so $a+c<b+c$ by monotony of addition ($OIII$). $c<d$, so $c+b<d+b$ by monotony of addition ($OIII$). Transitivity ($OII$) then dictates that $a+c<b+d$.
+> 
+> If $0<a<b$ and $0<c<d$, then $a\cdot  c<b\cdot d$. Proof:
+> $a<b$ and $c>0$ so $a\cdot c<b\cdot c$ by monotony of multiplication ($OIV$), $c<d$ and $b>0$ so $c\cdot b<d\cdot b$ by monotony of multiplication ($OIV$). Transitivity ($OII$) then dictates that $a\cdot c<b\cdot d$.
+> 
+> If $a<b$ and $c<0$, then $c\cdot b<c\cdot a$. Proof:
+> $c<0$, so $-c>0$, then we have $-ca<-cb$ by monotony of multiplication ($OIV$). Therefore $$
