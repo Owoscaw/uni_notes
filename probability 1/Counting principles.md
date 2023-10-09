@@ -21,3 +21,6 @@ $$\Huge (m)_r:=m\times(m-1)\times(m-2)\times\dots\times(m-r+1)=\frac{m!}{(m-r)!}
 This is known as the falling factorial of $m$.
 
 # Unordered choice w/o replacement:
+
+Suppose a collection of $m$ distinct objects and $r\leq m$ are taken without replacement. The number of distinct subsets of size $r$ is given by:
+$$\Huge \begin{pmatrix}m\\r\end{pmatrix}:=\frac{(m)_r}{r!}=\frac{m!}{r!(m-r)!}$$
