@@ -1,6 +1,6 @@
 class Point():
 
-    def __init__(self, x, y):
+    def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
 
@@ -17,10 +17,8 @@ class Point():
         distVector = self - point
         return (distVector.x**2 + distVector.y**2)**0.5
     
-def closeEnough(point1, point2, radius):
+def inDisk(point1, point2, radius):
     return point1.getDistTo(point2) <= radius
 
-point1 = Point(2,3)
-point2 = Point(1.4,4)
-
-print(closeEnough(point1, point2, 1.5))
+def inIntersection(centre1, radius1, centre2, radius2, point):
+    return (centre1.getDistTo(point) <= radius1) and (centre2.getDistTo(point) <= radius2)
