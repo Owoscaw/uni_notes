@@ -54,4 +54,7 @@ Let $a,b,c,d\in\Re$:
 > $a<b$ and $c>0$ so $a\cdot c<b\cdot c$ by monotony of multiplication ($OIV$), $c<d$ and $b>0$ so $c\cdot b<d\cdot b$ by monotony of multiplication ($OIV$). Transitivity ($OII$) then dictates that $a\cdot c<b\cdot d$.
 > 
 > If $a<b$ and $c<0$, then $c\cdot b<c\cdot a$. Proof:
-> $c<0$, so $-c>0$, then we have $-ca<-cb$ by monotony of multiplication ($OIV$). Therefore $$
+> $c<0$, so $-c>0$, then we have $-ca<-cb$ by monotony of multiplication ($OIV$). Therefore $-ca + ca + cb<-cb + ca + cb$ by monotony of addition ($OIII$). By the existence of the negative ($AIV$), $ca-ca=0$ and $cb-ab=0$, so we have $cb<ca$ which is equivalent to $c\cdot b<c\cdot a$ as required.
+> 
+> If $0<a<b$, then $0<b^{-1}<a^{-1}$. Proof:
+> Note that $b^{-1}\neq 0$ and $a^{-1}\neq 0$ by existence of the inverse ($MIV$). Also $b^{-1}=(b^{-1})^2\cdot b$. $b^{-1}>0$ using monotony of multiplication ($OIV$) and the first proof. This also implies that $(ab)^{-1}>0$, so $a^{-1}b^{-1}>0$. Multiplying the inequality $a<b$ (as defined) with $a^{-1}b^{-1}$ (allowed because it is greater than zero) gives $0<b^{-1}<a^{-1}$ as required.
