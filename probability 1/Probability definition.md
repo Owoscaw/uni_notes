@@ -27,11 +27,6 @@ That is, for all outcomes $\omega _i$ in the event $A$, the probability of $i$ b
 Let all events, $A_i$ for $1\leq i\leq\infty$, be pairwise disjoint, that is:
 $$\Huge \bigcap_{i=1}^{\infty}A_i=\emptyset$$
 
-## Partitions:
-
-A partition of the sample space $\Omega$ is a collection of events, $E_1,E_2,\dots E_n$, such that:$$\Huge \bigcup_{i=1}^nE_i=\Omega,\,\,\mathbb{P}(E_i)\gt0,\,\forall i$$
-Given also that all events are pairwise disjoint
-
 # Consequences of probability axioms:
 
 For two events, $A, B\in\Omega$.
@@ -49,7 +44,15 @@ For two events, $A, B\in\Omega$.
 >If $A_1\supseteq A_2\supseteq\dots$, as in $A_i\supseteq A_{i+1}$$$\Huge \mathbb{P}\left(\bigcap_{i=1}^{\infty}A_n\right)=\lim_{n\to\infty}\mathbb{P}(A_n)$$
 >Given events $E_1,E_2,\dots,E_n$ form a partition, C10$$\Huge \sum_{i=1}^n\mathbb{P}(E_i)=1$$
 
-If $\Omega$ is not discrete, there exists subsets of $\Omega$ that cannot be properly assigned a probability that is consistent with all axioms. $\mathbb{P}$ is only defined to satisfy axioms for all events in a collection $\mathcal{F}$, of subsets from $\Omega$ for some $\mathcal{F}\subseteq 2^{\Omega}$.
+If $\Omega$ is not discrete, there exists subsets of $\Omega$ that cannot be properly assigned a probability that is consistent with all axioms. $\mathbb{P}$ is only defined to satisfy axioms for all events in a collection $\mathcal{F}$, of subsets from $\Omega$ for some $\mathcal{F}\subseteq 2^{\Omega}$
+
+# Partitions:
+
+The events $E_1, E_2,\dots,E_n\in\mathcal{F}$ form a partition if their union spans the whole sample space. More specifically, they form a union if the following are satisfied:
+> All positive probability:$$\Huge \mathbb{P}(E_i)>0,\,\forall i$$
+> Pairwise disjoint:$$\Huge E_i\cap E_j=\emptyset,\,when\,\,i\neq j$$
+> Their union spans the sample space:$$\Huge $$
+
 # Sigma algebra:
 
 $\mathcal{F}$ is a $\sigma$ algebra if the following are satisfied:
