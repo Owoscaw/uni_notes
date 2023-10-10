@@ -11,3 +11,11 @@ print(inIntersection(point2, 1/3, point3, 1/3, point1))
 circ1 = plt.Circle((point2.x, point2.y), 1/3, fill=False)
 circ2 = plt.Circle((point3.x, point3.y), 1/3, fill=False)
 
+axes = plt.gca()
+axes.add_patch(circ1)
+axes.add_patch(circ2)
+axes.set_aspect(1)
+plt.plot(0.5, 0.5, "+")
+plt.show()
+
+
