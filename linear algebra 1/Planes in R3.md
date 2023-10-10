@@ -17,4 +17,6 @@ $$\Huge \begin{pmatrix}x\\y\\z\end{pmatrix}\cdot\underline n=\underline a\cdot\u
 The parametric description of a place can be determined, given its cartesian form. Knowing $ax+by+cz=\underline a\cdot\underline n$ allows the following manipulation given $c\neq0$:
 $$\Huge z=\frac{\mathcal{l}}{c}-\frac{a}{c}x-\frac{b}{c}y$$
 $$\Huge \begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x\\y\\\frac{\mathcal{l}}{c}-\frac{a}{c}x-\frac{b}{c}y\end{pmatrix}=\begin{pmatrix}0\\0\\\frac{\mathcal{l}}{c}\end{pmatrix}+x\begin{pmatrix}1\\0\\-\frac{a}{c}\end{pmatrix}+y\begin{pmatrix}0\\1\\-\frac{b}{c}\end{pmatrix}$$
-Now this is in the form of a parametric description for a p
+Now this is in the form of a parametric description for a plane, where $x$ and $y$ are scalars:
+$$\large \Pi=\left\{\begin{pmatrix}0\\0\\\frac{\mathcal{l}}{c}\end{pmatrix}+x\begin{pmatrix}1\\0\\-\frac{a}{c}\end{pmatrix}+y\begin{pmatrix}0\\1\\-\frac{b}{c}\end{pmatrix}:x,y\in\Re\right\}=\left\{\underline a+\lambda_1\underline d_1+\lambda_2\underline d_2:\lambda_1,\lambda_2\in\Re\right\}$$
+Here, $\underline a=\begin{pmatrix}0\\0\\\frac{\mathcal{l}}{c}\end{pmatrix}$ , $\underline d_1=\begin{pmatrix}1\\0\\-\frac{a}{c}\end{pmatrix}$, $\underline d_2=\begin{pmatrix}0\\1\\-\frac{b}{c}\end{pmatrix}$, $x=\lambda_1$, and $y=\lambda_2$. Similar approaches apply when $b\neq0$ and $a\neq0$. Since $n\neq0$ for every plane, this method will always work as not all $a,b,c=0$.
