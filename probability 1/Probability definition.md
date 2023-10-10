@@ -51,13 +51,17 @@ If $\Omega$ is not discrete, there exists subsets of $\Omega$ that cannot be pro
 The events $E_1, E_2,\dots,E_n\in\mathcal{F}$ form a partition if their union spans the whole sample space. More specifically, they form a union if the following are satisfied:
 > All positive probability:$$\Huge \mathbb{P}(E_i)>0,\,\forall i$$
 > Pairwise disjoint:$$\Huge E_i\cap E_j=\emptyset,\,when\,\,i\neq j$$
-> Their union spans the sample space:$$\Huge $$
+> Their union spans the sample space:$$\Huge \bigcup_{i=1}^{\infty}E_i=\Omega$$
 
 # Sigma algebra:
 
-$\mathcal{F}$ is a $\sigma$ algebra if the following are satisfied:
+Over an uncountable sample space ($\Omega=[0,1]$) it is not reasonable to take $\mathcal{F}$ to be all subsets of $\Omega$, as it is to much for $\mathbb{P}$ to be defined on all of these subsets while satisfying axioms. A subsets of all subsets is then taken, that is $\mathcal{F}\subseteq2^{\Omega}$.
+
+$\mathcal{F}$ is a $\sigma$-algebra if the following are satisfied:
 $$\Huge \Omega\in\mathcal{F},\,\,\,A\in\mathcal{F}\implies A^{'}\in\mathcal{F},\,\,\,A_1,A_2,\dots\in\mathcal{F}\implies\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$$
 This defines $\mathcal{F}$ as closed under complementation, and closed under countably infinite unions. This implies $\emptyset\in\mathcal{F}$.
 
-$2^{\Omega}$ is a $\sigma$ algebra over $\Omega$, and is the biggest possible $\sigma$ algebra for $\Omega$. Often, smaller $\sigma$ algebra are considered. If $\Omega$ is a set and $\mathcal{F}$ is a $\sigma$ algebra of subsets of $\Omega$, and $\mathbb{P}$ satisfies all axioms for events in $\mathcal{F}$, then the following is defined as a probability space:
+$2^{\Omega}$ is a $\sigma$-algebra over $\Omega$, and is the biggest possible $\sigma$-algebra for $\Omega$. Often, smaller $\sigma$-algebra are considered. If $\Omega$ is a set and $\mathcal{F}$ is a $\sigma$-algebra of subsets of $\Omega$, and $\mathbb{P}$ satisfies all axioms for events in $\mathcal{F}$, then the following is defined as a probability space:
 $$\Huge (\Omega,\mathcal{F},\mathbb{P})$$
+The largest possible $\sigma$-algebra for $\Omega$ is the power set, $2^{\Omega}$, which holds all information about the sample space $\Omega$. The smallest possible $\sigma$-algebra for $\Omega$ is the trivial $\{\emptyset,\Omega\}$, that is:
+$$\Huge \mathcal{F}_{min}=\{\emptyset,\Omega\},\,\,\mathcal{F}=2^{\Omega}$$
