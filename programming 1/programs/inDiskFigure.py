@@ -12,7 +12,7 @@ axes = plt.gca()
 axes.add_patch(circ1)
 axes.add_patch(circ2)
 axes.set_aspect(1)
-plt.plot(0.5, 0.5, "+")
+plt.plot(0.5, 0.5)
 plt.ion()
 
 for i in range(10000):
@@ -27,6 +27,6 @@ for i in range(10000):
         colour = "blue"
 
     plt.plot(rPoint.x, rPoint.y, "+", color=colour)
-    plt.pause(0.01)
+    plt.pause(0.00000000001)
 
 
