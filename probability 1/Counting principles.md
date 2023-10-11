@@ -24,3 +24,4 @@ This is known as the falling factorial of $m$.
 
 Suppose a collection of $m$ distinct objects and $r\leq m$ are taken without replacement. The number of distinct subsets of size $r$ is given by:
 $$\Huge \begin{pmatrix}m\\r\end{pmatrix}:=\frac{(m)_r}{r!}=\frac{m!}{r!(m-r)!}$$
+This is because there are $(m)_r$ distinct ordered lists of $r$ objects. There are $r!$ ways of arranging $r$ objects, so each unordered subset is counted $r!$ times. This is why we divide $(m)_r$ by $r!$ to give the result above.
