@@ -12,4 +12,10 @@ The following are consequences of this definition, letting $a,b,c,d\in\Re$ and u
 >
 >Assume $-c\leq a\leq c$. If $a\geq0$ we have $|a|=a\leq c$, if $a<0$ we use $-c\leq a$ to give $|a|=-a\leq c$. This completes the statement, showing that $-c\leq a\leq c\implies |a|\leq c$.
 >
->Since these two assumptions imply each other, they must be logically equivalent. That is to say $|a|\leq c\iff -c\leq a\leq c$ 
+>Since these two assumptions imply each other, they must be logically equivalent. That is to say $|a|\leq c\iff -c\leq a\leq c$.
+>
+>$|a+b|\leq |a|+|b|$, the triangle inequality. Proof:
+>Using the above proof, taking $c=|a|$, the following two statements are true; $-|a|\leq a\leq |a|$ and $-|b|\leq b\leq |b|$. Using the monotony of addition to sum these two inequalities gives $-(|a|+|b|)\leq a+b\leq |a|+|b|$. Again using the above proof, taking $c=|a|+|b|$ gives $|a+b|\leq|a|+|b|$.
+>
+>$||a|-|b||\leq|a-b|$. Proof:
+>$|a|=|a-b+b|\leq|a-b|+|b|$, so $|a|-|b|\leq|a-b|$. Similarly, $|b|=|b-a+a|\leq|b-a|+|a|$, so $|b|-|a|\leq|b-a|$. Note that $|b-a|=|-(a-b)|=|a-b|$. So we have both $|a|-|b|\leq|a-b|$ and $|b|-|a|\leq|a-b|$. The last statement can be manipulated to say $|a|-|b|\leq-|a-b|$. Forming one inequality we get $-|a-b|\leq|a|-|b|\leq|a-b|$. By the definition of $|a|\leq c$, taking $c=|a|-|b|$ we get the statement $||a|-|b||\leq|a-b|$. 
