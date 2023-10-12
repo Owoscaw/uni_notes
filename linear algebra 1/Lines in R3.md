@@ -24,4 +24,12 @@ $$\large \Pi_1=\left\{\begin{pmatrix}x\\y\\z\end{pmatrix}:a_1x+b_1y+c_1z=\mathca
 $\Pi_1\cap\Pi_2$ form a line, given that $\begin{pmatrix}a_1\\b_1\\c_1\end{pmatrix}$ and $\begin{pmatrix}a_2\\b_2\\c_2\end{pmatrix}$ are not collinear:
 $$\Huge L=\left\{\begin{pmatrix}x\\y\\z\end{pmatrix}:a_1x+b_1y+c_1z=\mathcal{l}_1\,\,and\,\,a_2x+b_2y+c_2z=\mathcal{l}_2\right\}$$
 $\underline d$ is a vector parallel to $L$, so it is also normal to both plane's normal vectors, that is:
-$$\Huge \underline d=\underline n_1\times\underline n_2=\begin{pmatrix}a_1\\b_1\\c_1\end{pmatrix}\times\begin{pmatrix}a_2\\b_2\\c_2\end{pmatrix}=\begin{pmatrix}b_1c_2-b_2c_1\\c_1d_2-c_2a_1\\\end{pmatrix}$$
+$$\Huge \underline d=\underline n_1\times\underline n_2=\begin{pmatrix}a_1\\b_1\\c_1\end{pmatrix}\times\begin{pmatrix}a_2\\b_2\\c_2\end{pmatrix}=\begin{pmatrix}b_1c_2-b_2c_1\\c_1d_2-c_2a_1\\a_1b_2-a-2b_1\end{pmatrix}$$
+A point on $L$ is also needed to be defined parametrically, in terms of the cartesian equations of two planes. Setting $z=0$ for a general point on $L$:
+$$\Huge a_1x+b_1y=\mathcal{l}_1,\,a_2x+b_2y=\mathcal{l}_2$$
+Solving for $x$ and $y$ gives a single unique solution:
+$$\Huge x=\frac{b_2l_1-b_1l_2}{a_1b_2-a_2b_1},\,\,y=\frac{a_1l_2-a_2l_1}{a_1b_2-a_2b_1}$$
+So substituting into the general point:
+$$\Huge \underline a=\frac{1}{a_1b_2-a_2b_1}\begin{pmatrix}b_2l_1-b_1l_2\\a_1l_2-a_2l_1\\0\end{pmatrix}$$
+Therefore the line can be written parametrically:
+$$\Huge \begin{pmatrix}x\\y\\z\end{pmatrix}=\frac{1}{a_1b_2-a_2b_1}\begin{pmatrix}b_2l_1-b_1l_2\\a_1l_2-a_2l_1\\0\end{pmatrix}+\lambda\begin{pmatrix}b_1c_2-b_2c_1\\c_1d_2-c_2a_1\\a_1b_2-a-2b_1\end{pmatrix}$$
