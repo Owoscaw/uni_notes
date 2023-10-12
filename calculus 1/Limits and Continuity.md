@@ -18,6 +18,8 @@ A function, $f$, is continuous at a point $a$ if the following are satisfied:
 > $\lim_{x\to a}f(x)$ exists
 > $\lim_{x\to a}f(x)=f(a)$
 
+
+
 A function, $f$, is continuous over a subset, $S\subset Dom\,f$, if it is continuous at all points in $S$. If this subset $S$ is the full domain of $f$, then the function can be called continuous. That is, a function is continuous if at every point, $a\in Dom\,f$, $f$ is continuous at $x=a$
 
 ## Consequences of continuity:
