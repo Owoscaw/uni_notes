@@ -9,6 +9,9 @@ Combining the above requirements, a limit can be precisely defined:
 $$\Huge \forall\,\epsilon>0\,\exists\,\delta>0:|f(x)-L|<\epsilon\,\,when\,\,0<|x-a|<\delta$$
 That is:
 $$\Huge \lim_{x\to a}f(x)=a$$
+
+
+
 It is not required that $f(a)$ is equal to $L$ or that $f(a)$ is defined, as we are looking at the tendency of the function as $x$ gets arbitrarily close to $a$. $f(x)$ is no more than $\pm\epsilon$ away from $L$ when $x$ is no more than $\pm\delta$ away from $a$. If there is no such $L$, then the limit does not exist.
 
 # Continuity:
@@ -17,8 +20,6 @@ A function, $f$, is continuous at a point $a$ if the following are satisfied:
 > $f(a)$ exists
 > $\lim_{x\to a}f(x)$ exists
 > $\lim_{x\to a}f(x)=f(a)$
-
-
 
 A function, $f$, is continuous over a subset, $S\subset Dom\,f$, if it is continuous at all points in $S$. If this subset $S$ is the full domain of $f$, then the function can be called continuous. That is, a function is continuous if at every point, $a\in Dom\,f$, $f$ is continuous at $x=a$
 
