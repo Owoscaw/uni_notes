@@ -27,4 +27,9 @@ A function, $f$, is continuous over a subset, $S\subset Dom\,f$, if it is contin
 > Calculus of limits theorem (COLT). If $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$ then:$$\large \lim_{x\to a}(f(x)+g(x))=L+M,\,\lim_{x\to a}(f(x)g(x))=LM,\,\lim_{x\to a}\left(\frac{f(x)}{g(x)}\right)=\frac{L}{M},\,M\neq0$$
 > If $f$ and $g$ are continuous, then $(f+g),(fg),(f/g),$ and $|f|$ are continuous.
 > All polynomials, rational functions, trig functions, and hyperbolic functions are continuous.
-> If $\lim{x\to a}g(x)=L$ 
+> If $\lim_{x\to a}g(x)=L$, and $f(x)$ is continuous at $x=L$, then $\lim_{x\to a}(f\circ g)(x)=f(L)$.
+
+# Sandwich theorem:
+
+If $g(x)\leq f(x)\leq h(x)\,\forall x\in\Re\setminus\{a\}$ over some open interval containing $a$, and $\lim_{x\to a}g(x)=\lim_{x\to a}h(x)=L$, then $g,h$ squeeze $f(x)$ such that:
+$$\Huge \lim_{x\to a}f(x)=L$$

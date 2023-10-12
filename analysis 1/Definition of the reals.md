@@ -1,4 +1,4 @@
-$0 < 1$ is the most important thing proven in [[Axiom definitions|the definition of axioms]]. From this, we can use the monotony of addition to say the following:
+$0 < 1$ is the most important thing proven in [[Axiom definitions#Consequences of axioms|the definition of axioms]]. From this, we can use the monotony of addition to say the following:
 $$\Huge 0<1,\,0+1<1+1,\,0+1+1<1+1+1,\dots$$
 All these numbers are defined to be different, so the notation of different numbers introduced. This is to say, at long last:
 $$\Huge 1+1=2$$
