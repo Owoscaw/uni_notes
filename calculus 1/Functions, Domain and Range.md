@@ -8,7 +8,7 @@ $$\Huge Ran\,\,f\subseteq Codom\,\,f$$
 
 # Graphs:
 
-The graph of a function is the set of all [[Definition of the reals|real]] ordered pairs, $(x,y)\in\Re^2:x\in\,Dom\,\,f$, $y=f(x)$. Domains are often restricted to an interval $[a,b]$, so that they can be sketched. When necessary, a shaded circle is used to represent a point included in the set, while an open circle is used to represent a point excluded from the set.
+The graph of a function is the set of all [[Definition of the reals|real]] ordered pairs, $(x,y)\in\,$[[Vector space definitions|$\Re^2$]]$:x\in\,Dom\,\,f$, $y=f(x)$. Domains are often restricted to an interval $[a,b]$, so that they can be sketched. When necessary, a shaded circle is used to represent a point included in the set, while an open circle is used to represent a point excluded from the set.
 
 # Even and Odd functions:
 
