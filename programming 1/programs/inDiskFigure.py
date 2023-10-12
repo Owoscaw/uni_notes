@@ -15,14 +15,14 @@ axes.set_aspect(1)
 plt.plot(0.5, 0.5)
 plt.ion()
 
-for i in range(10000):
+while True:
     rPoint = Point(r.random(), r.random())
-    colour = "red"
+    colour = "black"
 
     if inIntersection(point2, 1/3, point3, 1/3, rPoint):
-        colour = "yellow"
+        colour = "green"
     elif inDisk(point2, rPoint, 1/3):
-        colour = "cyan"
+        colour = "yellow"
     elif inDisk(point3, rPoint, 1/3):
         colour = "blue"
 
