@@ -17,3 +17,14 @@ A function, $f$, is continuous at a point $a$ if the following are satisfied:
 > $f(a)$ exists
 > $\lim_{x\to a}f(x)$ exists
 > $\lim_{x\to a}f(x)=f(a)$
+
+A function, $f$, is continuous over a subset, $S\subset Dom\,f$, if it is continuous at all points in $S$. If this subset $S$ is the full domain of $f$, then the function can be called continuous. That is, a function is continuous if at every point, $a\in Dom\,f$, $f$ is continuous at $x=a$
+
+## Consequences of continuity:
+> The limit is unique at a point, there does not exist any more than one limit for one point.
+> If $f(x)=g(x)\forall x\in\Re\setminus\{a\}$ over some open interval containing $a$, then:$$\Huge\lim_{x\to a}f(x)=\lim_{x\to a}g(x)$$
+> If $f(x)\geq k$ is bounded by $(a,b)$ or $(c,a)$ and if $\lim_{x\to a}f(x)=L$, then $L\geq k$
+> Calculus of limits theorem (COLT). If $\lim_{x\to a}f(x)=L$ and $\lim_{x\to a}g(x)=M$ then:$$\large \lim_{x\to a}(f(x)+g(x))=L+M,\,\lim_{x\to a}(f(x)g(x))=LM,\,\lim_{x\to a}\left(\frac{f(x)}{g(x)}\right)=\frac{L}{M},\,M\neq0$$
+> If $f$ and $g$ are continuous, then $(f+g),(fg),(f/g),$ and $|f|$ are continuous.
+> All polynomials, rational functions, trig functions, and hyperbolic functions are continuous.
+> If $\lim{x\to a}g(x)=L$ 
