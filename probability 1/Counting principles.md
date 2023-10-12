@@ -30,4 +30,6 @@ This is because there are $(m)_r$ distinct ordered lists of $r$ objects. There a
 
 When dividing $m$ distinguishable objects into $k>2$ groups of sizes $r_1,r_2,\dots,r_k$ each, where $r_1+r_2+\dots r_k=m$:
 $$\Huge \begin{pmatrix}m\\r_1\end{pmatrix}\times\begin{pmatrix}m-r_1\\r_2\end{pmatrix}\times\begin{pmatrix}m-r_1-r_2\\r_3\end{pmatrix}\times\dots\times\begin{pmatrix}m-r_1-\dots-r_{k-1}\\r_k\end{pmatrix}$$
-$$\Large \frac{m!}{(m-r_1)!r_1!}\times\frac{(m-r_1)!}{(m-r_1-r_2)!r_2!}$$
+$$\Large \frac{m!}{(m-r_1)!r_1!}\times\frac{(m-r_1)!}{(m-r_1-r_2)!r_2!}\times\dots\times\frac{(m-r_1-\dots-r_{k-1})!}{(m-r_1-\dots-r_k)!r_k!}$$
+$$\Huge \frac{m!}{r_1!\,r_2!\dots r_k!(m-(r_1+\dots+r_k))!}=\frac{m!}{r_1!\dots r_k!(m-m)!}=\frac{m!}{r_1!\dots r_k!}$$
+Here, the last expression is known as the multinomial coefficient.
