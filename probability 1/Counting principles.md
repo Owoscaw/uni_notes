@@ -25,3 +25,9 @@ This is known as the falling factorial of $m$.
 Suppose a collection of $m$ distinct objects and $r\leq m$ are taken without replacement. The number of distinct subsets of size $r$ is given by:
 $$\Huge \begin{pmatrix}m\\r\end{pmatrix}:=\frac{(m)_r}{r!}=\frac{m!}{r!(m-r)!}$$
 This is because there are $(m)_r$ distinct ordered lists of $r$ objects. There are $r!$ ways of arranging $r$ objects, so each unordered subset is counted $r!$ times. This is why we divide $(m)_r$ by $r!$ to give the result above.
+
+# Multinomial coefficient:
+
+When dividing $m$ distinguishable objects into $k>2$ groups of sizes $r_1,r_2,\dots,r_k$ each, where $r_1+r_2+\dots r_k=m$:
+$$\Huge \begin{pmatrix}m\\r_1\end{pmatrix}\times\begin{pmatrix}m-r_1\\r_2\end{pmatrix}\times\begin{pmatrix}m-r_1-r_2\\r_3\end{pmatrix}\times\dots\times\begin{pmatrix}m-r_1-\dots-r_{k-1}\\r_k\end{pmatrix}$$
+$$\Large \frac{m!}{(m-r_1)!r_1!}\times\frac{(m-r_1)!}{(m-r_1-r_2)!r_2!}$$
