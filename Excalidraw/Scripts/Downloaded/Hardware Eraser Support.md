@@ -71,6 +71,6 @@ Compatible with my *Auto Draw for Pen* script
         }
     }
     
-    window.addEventListener('pointerdown', handlePointer, { capture: true })
+    window.addEventListener('pointerdown', () => {console.log("pointerdown")}), { capture: true })
     window.addEventListener('pointermove', handlePointer, { capture: true })
 })();

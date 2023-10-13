@@ -25,4 +25,15 @@ def timeTo0():
     return length
 
 
-print(timeTo0())
+def randomWalk1(t, N):
+    statistics = []
+    amountOfT = 0
+    for i in range(N):
+        result = timeTo0()
+        statistics.append(result)
+        if result == t:
+            amountOfT +=1
+    
+    return amountOfT/N
+
+print(randomWalk1(2, 10000))
