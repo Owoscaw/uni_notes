@@ -57,4 +57,8 @@ Using these definition, there exists three types of discontinuities:
 > A jump discontinuity is where $L^+$ and $L^-$ both exists, but $L^+\neq L^-$.
 > An infinite/essential discontinuity is where at least one $L^+$ or $L^-$ do not exist.
 
-![[Limits and Continuity .excalidraw]]
+![[types of discontinuity]]
+
+# Infinite limits:
+
+A function has a limit as $x\to\infty$ if $f(x)$ can be kept arbitrarily close to some value, $L$, by making $x$ sufficiently large.
