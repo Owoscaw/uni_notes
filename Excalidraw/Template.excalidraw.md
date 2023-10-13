@@ -105,10 +105,10 @@ tags: [excalidraw]
 			]
 		},
 		{
-			"id": "qp1SBLH5",
+			"id": "NDnKANle",
 			"type": "text",
-			"x": 130.37041558159717,
-			"y": 194.63541666666666,
+			"x": 207.91671752929688,
+			"y": 218.13152313232422,
 			"width": 11.71875,
 			"height": 24,
 			"angle": 0,
@@ -122,12 +122,12 @@ tags: [excalidraw]
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
-			"seed": 1897648994,
+			"seed": 153675134,
 			"version": 2,
-			"versionNonce": 1692656354,
+			"versionNonce": 1879492322,
 			"isDeleted": true,
 			"boundElements": null,
-			"updated": 1697195631388,
+			"updated": 1697196708341,
 			"link": null,
 			"locked": false,
 			"text": "",
@@ -157,10 +157,10 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": 229.33333333333331,
-		"scrollY": 96.22916666666669,
+		"scrollX": 217.5,
+		"scrollY": 71.46484375,
 		"zoom": {
-			"value": 0.75
+			"value": 0.8
 		},
 		"currentItemRoundness": "round",
 		"gridSize": 20,
