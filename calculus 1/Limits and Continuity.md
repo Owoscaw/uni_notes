@@ -34,3 +34,18 @@ A function, $f$, is continuous over a subset, $S\subset Dom\,f$, if it is contin
 
 If $g(x)\leq f(x)\leq h(x)\,\forall x\in\Re\setminus\{a\}$ over some open interval containing $a$, and $\lim_{x\to a}g(x)=\lim_{x\to a}h(x)=L$, then $g,h$ squeeze $f(x)$ such that:
 $$\Huge \lim_{x\to a}f(x)=L$$
+
+# Important trig limits:
+
+Two important trigonometric limits are:
+$$\Huge \lim_{x\to 0}\frac{sin\,x}{x}=1,$$
+
+```desmos-graph
+left=-5; right=5;
+top=1.5; bottom=-1.5;
+---
+(0,1)|open
+(0, 0)|open
+\sin(x)/x
+(1-\cos(x))/x
+```
