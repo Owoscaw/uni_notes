@@ -18,7 +18,7 @@ Compatible with my *Auto Draw for Pen* script
     let revert
     
     function handlePointer(e) {
-	    console.log(e)
+	    ea.setView("active")
         const activeTool = ea.getExcalidrawAPI().getAppState().activeTool;
         const isEraser = e.pointerType === 'pen' && e.buttons & 32
         function setActiveTool(t) {
@@ -71,6 +71,6 @@ Compatible with my *Auto Draw for Pen* script
         }
     }
     
-    window.addEventListener('pointerdown', () => {console.log("pointerdown")}), { capture: true })
+    window.addEventListener('pointerdown', handlePointer, { capture: true })
     window.addEventListener('pointermove', handlePointer, { capture: true })
 })();
