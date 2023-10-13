@@ -38,10 +38,10 @@ $$\Huge \lim_{x\to a}f(x)=L$$
 # Important trig limits:
 
 Two important trigonometric limits are:
-$$\Huge \lim_{x\to 0}\frac{sin\,x}{x}=1,$$
+$$\Huge \lim_{x\to 0}\frac{sin\,x}{x}=1,\,\lim_{x\to 0}\frac{1-cos\,x}{x}=0$$
 
 ```desmos-graph
-left=-5; right=5;
+left=-10; right=10;
 top=1.5; bottom=-1.5;
 ---
 (0,1)|open
@@ -49,3 +49,5 @@ top=1.5; bottom=-1.5;
 \sin(x)/x
 (1-\cos(x))/x
 ```
+ This is proven through the sandwich theorem:
+ ![[Limits and Continuity .excalidraw]]
