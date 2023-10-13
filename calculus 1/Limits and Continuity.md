@@ -51,4 +51,10 @@ $f(x)$ has a right sided limit, $L^+=\lim_{x\to a^+}f(x)$, as $x$ tends to $a$ f
 Note the difference between the restriction on $x-a$. This is different as $x>a$ for a right sided limit. Similarly, $f(x)$ has a left sided limit, $L^-=\lim_{x\to a^-}f(x)$ as $x$ tends to $a$ from below if:
 $$\Huge \forall \epsilon>0\,\exists\,\delta>0:|f(x)-L^-|<\epsilon\,\forall x:0<a-x<\delta$$
 These relate to the general limit, $L$, in the way that $L$ exists if and only if $L^+$ and $L^-$ exists, and are equal, that is:
-$$\Huge \lim_{x\to a}f(x)=L\iff$$
+$$\Huge \lim_{x\to a}f(x)=L\iff L=L^+=L^-$$
+Using these definition, there exists three types of discontinuities:
+> A removable discontinuity is where $L$ exists, but $L\neq f(a)$. This can be removed to make a continuous function:$$\Huge g(x)=\begin{cases}f(x)&\text{if}&x\neq a\\L&\text{if}&x=a\end{cases}$$
+> A jump discontinuity is where $L^+$ and $L^-$ both exists, but $L^+\neq L^-$.
+> An infinite/essential discontinuity is where at least one $L^+$ or $L^-$ do not exist.
+
+![[Limits and Continuity .excalidraw]]
