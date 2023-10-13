@@ -8,7 +8,7 @@ Combining the above requirements, a limit can be precisely defined:
 $$\Huge \forall\,\epsilon>0\,\exists\,\delta>0:|f(x)-L|<\epsilon\,\,when\,\,0<|x-a|<\delta$$
 That is:
 $$\Huge \lim_{x\to a}f(x)=a$$
-![[Limits and Continuity 2023-10-12 22.42.38.excalidraw]]
+![[definition of limit]]
 
 It is not required that $f(a)$ is equal to $L$ or that $f(a)$ is defined, as we are looking at the tendency of the function as $x$ gets arbitrarily close to $a$. $f(x)$ is no more than $\pm\epsilon$ away from $L$ when $x$ is no more than $\pm\delta$ away from $a$. If there is no such $L$, then the limit does not exist.
 
@@ -50,4 +50,6 @@ top=1.5; bottom=-1.5;
 (1-\cos(x))/x
 ```
  This is proven through the sandwich theorem:
- ![[Limits and Continuity .excalidraw]]
+ ![[limit of sinx]]
+ This result can be used to prove the second result:
+ $$\Huge \lim_{x\to 0}\frac{1-cos\,x}{x}=\lim_{x\to 0}\frac{(1-cos\,x)(1+cos\,x)}{}$$
