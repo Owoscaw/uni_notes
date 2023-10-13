@@ -1,6 +1,0 @@
-/*
-```javascript
-*/
-
-ea.setView("active")
-
