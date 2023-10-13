@@ -27,6 +27,6 @@ while True:
         colour = "blue"
 
     plt.plot(rPoint.x, rPoint.y, "+", color=colour)
-    plt.pause(0.00000000001)
+    plt.pause(0.0001)
 
 
