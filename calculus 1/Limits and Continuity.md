@@ -40,16 +40,15 @@ $$\Huge \lim_{x\to a}f(x)=L$$
 Two important trigonometric limits are:
 $$\Huge \lim_{x\to 0}\frac{sin\,x}{x}=1,\,\lim_{x\to 0}\frac{1-cos\,x}{x}=0$$
 
-```desmos-graph
-left=-10; right=10;
-top=1.5; bottom=-1.5;
----
-(0,1)|open
-(0, 0)|open
-\sin(x)/x
-(1-\cos(x))/x
-```
  This is proven through the sandwich theorem:
  ![[limit of sinx]]
  This result can be used to prove the second result:
- $$\Huge \lim_{x\to 0}\frac{1-cos\,x}{x}=\lim_{x\to 0}\frac{(1-cos\,x)(1+cos\,x)}{}$$
+ $$\Huge \lim_{x\to 0}\frac{1-cos\,x}{x}=\lim_{x\to 0}\frac{(1-cos\,x)(1+cos\,x)}{x(1+cos\,x)}=\lim_{x\to 0}\frac{sin^2x}{x(1+cos\,x)}$$
+ $$\Huge =\lim_{x\to 0}\frac{sin\, x}{x}\times\frac{sin\,x}{1+cos\,x}=^{COLT}1\times0=0$$
+# Classification of discontinuities:
+
+$f(x)$ has a right sided limit, $L^+=\lim_{x\to a^+}f(x)$, as $x$ tends to $a$ from above if:$$\Huge \forall\epsilon>0\,\exists\,\delta>0:|f(x)-L^+|<\epsilon\,\forall x:0<x-a<\delta$$
+Note the difference between the restriction on $x-a$. This is different as $x>a$ for a right sided limit. Similarly, $f(x)$ has a left sided limit, $L^-=\lim_{x\to a^-}f(x)$ as $x$ tends to $a$ from below if:
+$$\Huge \forall \epsilon>0\,\exists\,\delta>0:|f(x)-L^-|<\epsilon\,\forall x:0<a-x<\delta$$
+These relate to the general limit, $L$, in the way that $L$ exists if and only if $L^+$ and $L^-$ exists, and are equal, that is:
+$$\Huge \lim_{x\to a}f(x)=L\iff$$
