@@ -20,6 +20,7 @@ Compatible with my *Hardware Eraser Support* script
     let disable
 
     function handlePointer(e) {
+    console.log(e)
         ea.setView("active");
         var activeTool = ea.getExcalidrawAPI().getAppState().activeTool;
         function setActiveTool(t) {
