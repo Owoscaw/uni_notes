@@ -37,5 +37,11 @@ Here, the last expression is known as the multinomial coefficient.
 # Ordered choice of 2 types of objects:
 
 Given $m$ objects, $r$ of type 1 and $m-r$ of type 2, where objects are indistinguishable from others of their type. The number of distinct ordered choices for these $m$ objects is the binomial coefficient:$$\Huge \begin{pmatrix}m\\r\end{pmatrix}$$
+# Ordered grouping of indistinguishable objects:
+
+The number of ways to divide $m$ indistinguishable objects into $k$ distinct groups is:
+$$\Huge \begin{pmatrix}m+k-1\\k-1\end{pmatrix}=\begin{pmatrix}m+k-1\\m\end{pmatrix}$$
+So grouping $m$ objects into $k$ distinct groups, where $m$ is not distinguishable.
+
 
 
