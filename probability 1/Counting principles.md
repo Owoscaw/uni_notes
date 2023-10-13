@@ -24,7 +24,7 @@ This is known as the falling factorial of $m$.
 
 Suppose a collection of $m$ distinct objects and $r\leq m$ are taken without replacement. The number of distinct subsets of size $r$ is given by:
 $$\Huge \begin{pmatrix}m\\r\end{pmatrix}:=\frac{(m)_r}{r!}=\frac{m!}{r!(m-r)!}$$
-This is because there are $(m)_r$ distinct ordered lists of $r$ objects. There are $r!$ ways of arranging $r$ objects, so each unordered subset is counted $r!$ times. This is why we divide $(m)_r$ by $r!$ to give the result above.
+This is because there are $(m)_r$ distinct ordered lists of $r$ objects. There are $r!$ ways of arranging $r$ objects, so each unordered subset is counted $r!$ times. This is why we divide $(m)_r$ by $r!$ to give the result above. This is known as the binomial coefficient.
 
 # Multinomial coefficient:
 
@@ -33,3 +33,4 @@ $$\Huge \begin{pmatrix}m\\r_1\end{pmatrix}\times\begin{pmatrix}m-r_1\\r_2\end{pm
 $$\Large \frac{m!}{(m-r_1)!r_1!}\times\frac{(m-r_1)!}{(m-r_1-r_2)!r_2!}\times\dots\times\frac{(m-r_1-\dots-r_{k-1})!}{(m-r_1-\dots-r_k)!r_k!}$$
 $$\Huge \frac{m!}{r_1!\,r_2!\dots r_k!(m-(r_1+\dots+r_k))!}=\frac{m!}{r_1!\dots r_k!(m-m)!}=\frac{m!}{r_1!\dots r_k!}$$
 Here, the last expression is known as the multinomial coefficient.
+
