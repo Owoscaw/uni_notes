@@ -34,3 +34,8 @@ $$\Large \frac{m!}{(m-r_1)!r_1!}\times\frac{(m-r_1)!}{(m-r_1-r_2)!r_2!}\times\do
 $$\Huge \frac{m!}{r_1!\,r_2!\dots r_k!(m-(r_1+\dots+r_k))!}=\frac{m!}{r_1!\dots r_k!(m-m)!}=\frac{m!}{r_1!\dots r_k!}$$
 Here, the last expression is known as the multinomial coefficient.
 
+# Ordered choice of 2 types of objects:
+
+Given $m$ objects, $r$ of type 1 and $m-r$ of type 2, where objects are indistinguishable from others of their type. The number of distinct ordered choices for these $m$ objects is the binomial coefficient:$$\Huge \begin{pmatrix}m\\r\end{pmatrix}$$
+
+
