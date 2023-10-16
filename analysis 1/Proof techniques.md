@@ -2,12 +2,14 @@
 # Contrapositive:
 
 The general technique for a contrapositive proof is summarised as follows. Let $A,B$ be statements. The statement "If $A$ then $B$" is equivalent to "If not $B$ then not $A$". This can be shown through a truth table:
-$A$ | $B$ | $A\implies B$ | not $B$ | not $A$ | not $B\implies$not $A$
--- | -- | ----------- | ------ | ------ | ------------------
-T  |  T |        T        |     F    |    F     |            T
-T  |  F |        F        |     T    |    F     |             F
-F  |  T |        T        |     F    |    T     |            T
-F  |  F |        T        |     T    |    T     |            T
+
+| $A$ | $B$ | $A\implies B$ | not $A$ | not $B$ | not $B\implies$ not $A$ |
+| --- | --- | ------------- | ------- | ------- | ----------------------- |
+| T   | T   | T             | F       | F       | T                       |
+| T   | F   | F             | T       | F       | F                       |
+| F   | T   | T             | F       | T       | T                       |
+| F   | F   | T             | T       | T       | T                        |
+It is obvious that column 3, $A\implies B$, is logically equivalent to column 6, not $B\implies$ not $A$.
 
 # Indirect:
 
