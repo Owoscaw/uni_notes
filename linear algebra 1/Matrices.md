@@ -1,0 +1,2 @@
+
+A matrix is a rectangular array of real numbers. The $(i,j)$th element of a matrix $M$ is written as $M_{i,j}$, meaning the element of $M$ in the $i$th row and $j$th column. Matrices with a single column are the same as vectors, matrices with a single row are called row vectors.
