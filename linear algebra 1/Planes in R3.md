@@ -27,4 +27,9 @@ Here, $\underline a=\begin{pmatrix}0\\0\\\frac{\mathcal{l}}{c}\end{pmatrix}$ , $
 The intersection of planes can either not exist, form a [[Lines in R3#By two planes|line]], or be represented as a point. Let three planes, $\Pi_1, \Pi_2, \Pi_3$ be defined as follows:
 $$\Huge \Pi_1:\underline a\cdot\underline x=l_1,\,\,\Pi_2: \underline b\cdot\underline x=l_2,\,\,\Pi_3:\underline c\cdot\underline x=l_3$$
 For $\Pi_1\cap\Pi_2\cap\Pi_3$ to be a single point, it is required that $\Pi_2$, $\Pi_3$ are not parallel, that is $\underline b$ and $\underline c$ are not collinear, $\underline b \times\underline c\neq 0$. If $\underline b \times\underline c\neq0$, then it is the direction vector of $\Pi_2\cap\Pi_3$:
-![[Planes in R3 .excalidraw]]
+![[intersection of two planes]]
+$\Pi_1,\Pi_2,\Pi_3$ intersect at a point when $\underline b\times\underline c$ is not parallel to $\Pi_1$. That is $\underline a\cdot(\underline b\times\underline c)\neq 0$
+
+
+
+
