@@ -2,11 +2,12 @@
 # Contrapositive:
 
 The general technique for a contrapositive proof is summarised as follows. Let $A,B$ be statements. The statement "If $A$ then $B$" is equivalent to "If not $B$ then not $A$". This can be shown through a truth table:
-$A$|$B$|$A\implies B$|not $B$|not $A$|not $B\implies$not $A$
-T|T|T|F|F|T
-T|F|F|T|F|F
-F|T|T|F|T|T
-F|F|T|T|T|T
+$A$ | $B$ | $A\implies B$ | not $B$ | not $A$ | not $B\implies$not $A$
+-- | -- | ----------- | ------ | ------ | ------------------
+T  |  T |        T        |     F    |    F     |            T
+T  |  F |        F        |     T    |    F     |             F
+F  |  T |        T        |     F    |    T     |            T
+F  |  F |        T        |     T    |    T     |            T
 
 # Indirect:
 
@@ -17,3 +18,9 @@ The technique for an indirect proof involves showing that for any statement $A$,
 "For all $x$ we have $A(x)$" is negated by "There exists $x$ with not $A(x)$", "There exists $x$ with $B(x)$" is negated by "For all $x$ we have not $B(x)$". In general, For all negates There exists.
 
 Let $A,B$ be statements. The negation of $A\implies B$ is $A$ and not $B$.
+
+# Mathematical induction:
+
+Assume we are given a statement $A(n)$ for every $n\in\mathbb{N}$. To show that $A(n)$ is true for all $n\in\mathbb{N}$ the following need to be shown:
+> $A(1)$ is true
+> For every $n\in\mathbb{N}$, $A(n)\implies A(n+1)$
