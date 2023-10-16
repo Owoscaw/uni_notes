@@ -10,12 +10,14 @@ def step(n, pause):
     seq = [(0, 0)]
 
     for i in range(n):
+        
         if r.random() < 0.5:
             seq.append((i, seq[i][1] + 1))
         else:
             seq.append((i, seq[i][1] - 1))
 
-        plt.plot([i[0] for i in seq], [i[1] for i in seq])
+        plt.clf()
+        plt.plot([i[0] for i in seq][-99:], [i[1] for i in seq][-99:], "-b")
         plt.pause(pause)
 
 def stepXY(n, pause):
@@ -28,8 +30,6 @@ def stepXY(n, pause):
             seq.append((seq[i][0] + 1, seq[i][1]))
         else:
             seq.append((seq[i][0], seq[i][1] + 1))
-
-        seq = seq[-9:]
 
         plt.plot([i[0] for i in seq], [i[1] for i in seq], "-r")
         plt.pause(pause)
