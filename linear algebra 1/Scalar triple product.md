@@ -11,3 +11,4 @@ $$\Huge [\underline a, \underline b,\underline c]=det\begin{pmatrix}a_1&a_2&a_3\
 
 If $\underline a, \underline b, \underline c\in\Re^3$ then:
 $$\Huge [\underline a,\underline b,\underline c]=[\underline b,\underline c,\underline a]=[\underline c,\underline a,\underline b]=-[\underline b,\underline a,\underline c]=-[\underline c,\underline b,\underline a]=-[\underline a,\underline c,\underline b]$$
+I am not going to prove this (excersise to the reader)
