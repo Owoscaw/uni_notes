@@ -1,39 +1,40 @@
 import random as r
+from matplotlib import pyplot as plt
 
-def plotWalk(n):
-    seq = [0]
 
-    for i in range(n-1):
-        if r.random() > 0.5:
-            seq.append(seq[i-1] + 1)
+def step(n, pause):
+    plt.ion()
+    plt.xlabel("time")
+    plt.ylabel("step")
+    plt.axhline(y=0, color="red")
+    seq = [(0, 0)]
+
+    for i in range(n):
+        if r.random() < 0.5:
+            seq.append((i, seq[i][1] + 1))
         else:
-            seq.append(seq[i-1] - 1)
+            seq.append((i, seq[i][1] - 1))
 
-    return seq
+        plt.plot([i[0] for i in seq], [i[1] for i in seq])
+        plt.pause(pause)
 
-def timeTo0():
-    length = 0
-    step = 0
+def stepXY(n, pause):
+    plt.ion()
+    plt.xlabel("x step")
+    plt.ylabel("y step")
+    seq = [(0, 0)]
 
-    while step != 0 or length == 0:
-        if r.random() > 0.5:
-            step += 1
+    for i in range(n):
+        if r.random() < 0.5:
+            seq.append((seq[i][0] + 1, seq[i][1]))
         else:
-            step -= 1
-        length += 1
+            seq.append((seq[i][0], seq[i][1] + 1))
 
-    return length
+        seq = seq[-9:]
+        print(seq)
 
-
-def randomWalk1(t, N):
-    statistics = []
-    amountOfT = 0
-    for i in range(N):
-        result = timeTo0()
-        statistics.append(result)
-        if result == t:
-            amountOfT +=1
+        plt.plot([i[0] for i in seq], [i[1] for i in seq], "-r")
+        plt.pause(pause)
     
-    return amountOfT/N
+step(1000, 0.00001)
 
-print(randomWalk1(2, 10000))

@@ -6,3 +6,6 @@ def gcd(p,q):
         else:
             q -= p
     return p
+
+def lcm(p,q):
+    return p*q/gcd(p, q)
