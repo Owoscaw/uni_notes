@@ -22,4 +22,4 @@ def erastosthenes(n):
 
     return primes
 
-print(erastosthenes(100))
+print(erastosthenes(10000))

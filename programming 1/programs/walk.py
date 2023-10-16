@@ -19,7 +19,6 @@ def step(n, pause):
         plt.pause(pause)
 
 def stepXY(n, pause):
-    plt.ion()
     plt.xlabel("x step")
     plt.ylabel("y step")
     seq = [(0, 0)]
@@ -31,10 +30,10 @@ def stepXY(n, pause):
             seq.append((seq[i][0], seq[i][1] + 1))
 
         seq = seq[-9:]
-        print(seq)
 
         plt.plot([i[0] for i in seq], [i[1] for i in seq], "-r")
         plt.pause(pause)
+        plt.show()
     
 step(1000, 0.00001)
 
