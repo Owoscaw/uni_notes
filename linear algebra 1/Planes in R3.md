@@ -22,4 +22,9 @@ Now this is in the form of a parametric description for a plane, where $x$ and $
 $$\large \Pi=\left\{\begin{pmatrix}0\\0\\\frac{\mathcal{l}}{c}\end{pmatrix}+x\begin{pmatrix}1\\0\\-\frac{a}{c}\end{pmatrix}+y\begin{pmatrix}0\\1\\-\frac{b}{c}\end{pmatrix}:x,y\in\Re\right\}=\left\{\underline a+\lambda_1\underline d_1+\lambda_2\underline d_2:\lambda_1,\lambda_2\in\Re\right\}$$
 Here, $\underline a=\begin{pmatrix}0\\0\\\frac{\mathcal{l}}{c}\end{pmatrix}$ , $\underline d_1=\begin{pmatrix}1\\0\\-\frac{a}{c}\end{pmatrix}$, $\underline d_2=\begin{pmatrix}0\\1\\-\frac{b}{c}\end{pmatrix}$, $x=\lambda_1$, and $y=\lambda_2$. Similar approaches apply when $b\neq0$ and $a\neq0$. Since $n\neq0$ for every plane, this method will always work as not all $a,b,c=0$.
 
-																																																																																																																 	
+# Intersections:
+
+The intersection of planes can either not exist, form a [[Lines in R3#By two planes|line]], or be represented as a point. Let three planes, $\Pi_1, \Pi_2, \Pi_3$ be defined as follows:
+$$\Huge \Pi_1:\underline a\cdot\underline x=l_1,\,\,\Pi_2: \underline b\cdot\underline x=l_2,\,\,\Pi_3:\underline c\cdot\underline x=l_3$$
+For $\Pi_1\cap\Pi_2\cap\Pi_3$ to be a single point, it is required that $\Pi_2$, $\Pi_3$ are not parallel, that is $\underline b$ and $\underline c$ are not collinear, $\underline b \times\underline c\neq 0$. If $\underline b \times\underline c\neq0$, then it is the direction vector of $\Pi_2\cap\Pi_3$:
+![[Planes in R3 .excalidraw]]
