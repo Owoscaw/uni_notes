@@ -1,0 +1,1 @@
+The derivative $f^{\prime}(a)$ of a function $f(x)$ at the points $a$ is equal to the slope of the tangent to the graph of $f$ at $x=a$, if it exists. This is naturally defined as the limit of the slope of a line segment joining two nearby points, $x$ and $x+h$, on the graph:![[Derivative as a limit .excalidraw]]

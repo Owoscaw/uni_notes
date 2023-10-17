@@ -71,4 +71,4 @@ The graph of a function $f$ will have a horizontal asymptote to the right or lef
 # Intermediate Value Theorem:
 
 This theorem states that if $f$ is continuous on a closed interval $[a,b]$, and $u$ is any value between $f(a)$ and $f(b)$, then $\exists c\in(a,b):f(c)=u$:![[IVT]]
-The IVT is useful for finding the roots of a function. If $f$ is continuous on $[a,b]$ with $f(a)<0<f(b)$ or $f(b)<0<f(a)$, then the IVT states that there is at least one root such that $f(x)=0,\,a<x<b$ or $b<x<a$.
+The IVT is useful for finding the roots of a function. If $f$ is continuous on $[a,b]$ with $f(a)<0<f(b)$ or $f(b)<0<f(a)$, then the IVT states that there is at least one root such that $f(x)=0,\,a<x<b$ or $b<x<a$. 
