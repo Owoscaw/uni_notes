@@ -61,4 +61,7 @@ Using these definition, there exists three types of discontinuities:
 
 # Infinite limits:
 
-A function has a limit as $x\to\infty$ if $f(x)$ can be kept arbitrarily close to some value, $L$, by making $x$ sufficiently large.
+A function has a limit as $x\to\infty$ if $f(x)$ can be kept arbitrarily close to some value, $L$, by making $x$ sufficiently large. That is to say:$$\Huge f(x)\,\text{has a limit}\,L\,\text{as}\,x\,\text{tends to}\,\infty\,\text{if:}$$$$\Huge \forall \epsilon>0\,\exists\,S>0:|f(x)-L|<\epsilon\,\,\forall x>S$$
+Similarly for $x\to -\infty$, the above holds $\forall x<S<0$:
+$$\Huge \forall \epsilon>0\,\exists S<0:|f(x)-L|<\epsilon\,\forall x<S$$
+Substitu
