@@ -31,12 +31,12 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": 885.5185072157119,
-		"scrollY": -0.056145562065921695,
+		"scrollX": 467,
+		"scrollY": 297.171875,
 		"zoom": {
 			"value": 1
 		},
-		"currentItemRoundness": "round",
+		"currentItemRoundness": "sharp",
 		"gridSize": 20,
 		"gridColor": {
 			"Bold": "#C9C9C9FF",
