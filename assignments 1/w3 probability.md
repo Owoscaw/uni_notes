@@ -1,0 +1,85 @@
+---
+
+excalidraw-plugin: parsed
+tags: [excalidraw]
+
+---
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==
+
+
+# Text Elements
+%%
+# Drawing
+```json
+{
+	"type": "excalidraw",
+	"version": 2,
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.9.23",
+	"elements": [
+		{
+			"id": "mFU7eSUWNVdwrJYO5RlAX",
+			"type": "rectangle",
+			"x": 680,
+			"y": -60,
+			"width": 60,
+			"height": 200,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "hachure",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 0,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 167403149,
+			"version": 7,
+			"versionNonce": 1424445645,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1697573460365,
+			"link": null,
+			"locked": false
+		}
+	],
+	"appState": {
+		"theme": "dark",
+		"viewBackgroundColor": "#ffffff",
+		"currentItemStrokeColor": "#1e1e1e",
+		"currentItemBackgroundColor": "transparent",
+		"currentItemFillStyle": "hachure",
+		"currentItemStrokeWidth": 0.5,
+		"currentItemStrokeStyle": "solid",
+		"currentItemRoughness": 0,
+		"currentItemOpacity": 100,
+		"currentItemFontFamily": 3,
+		"currentItemFontSize": 20,
+		"currentItemTextAlign": "left",
+		"currentItemStartArrowhead": null,
+		"currentItemEndArrowhead": "triangle",
+		"scrollX": -67.6602633607154,
+		"scrollY": 267.10498525582125,
+		"zoom": {
+			"value": 0.7499999999999998
+		},
+		"currentItemRoundness": "sharp",
+		"gridSize": 20,
+		"gridColor": {
+			"Bold": "#C9C9C9FF",
+			"Regular": "#EDEDEDFF"
+		},
+		"currentStrokeOptions": null,
+		"previousGridSize": null,
+		"frameRendering": {
+			"enabled": true,
+			"clip": true,
+			"name": true,
+			"outline": true
+		}
+	},
+	"files": {}
+}
+```
+%%
