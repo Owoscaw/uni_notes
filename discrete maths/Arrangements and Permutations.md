@@ -18,4 +18,8 @@ Both standard problems 1 and 2 make use of the [[Counting principles#Multiplicat
 
 # Permutations:
 
-A permutations is an arrangement of length $|S|$, where each element in a finite set $S$ is used exactly once.
+A permutations is an arrangement of length $|S|$, where each element in a finite set $S$ is used exactly once. If $|S|=n$, the number of permutations of $S$ is given by using standard problem 2, where $n=k$, as we are using every element from $S$:
+$$\Huge \frac{n!}{(n-n)!}=\frac{n!}{0!}=n!$$
+
+This concept is generalised for $r>0$, an $r$-permutation on the set $S$ is an arrangement of $r$ distinct elements from $S$. $P(n,r)$ is written to represent the number of $r$-permutations on a set of size $n$. We have:$$\Huge P(n,r)=n\times(n-1)\times(n-r+1)=\frac{n!}{(n-r)!}=(n)_r$$
+	$P(n,r)=0$ for any $r>n$, as there are no permutations on $S$ of size $r$ as there are less than $r$ elements in $S$.
