@@ -64,4 +64,10 @@ Using these definition, there exists three types of discontinuities:
 A function has a limit as $x\to\infty$ if $f(x)$ can be kept arbitrarily close to some value, $L$, by making $x$ sufficiently large. That is to say:$$\Huge f(x)\,\text{has a limit}\,L\,\text{as}\,x\,\text{tends to}\,\infty\,\text{if:}$$$$\Huge \forall \epsilon>0\,\exists\,S>0:|f(x)-L|<\epsilon\,\,\forall x>S$$
 Similarly for $x\to -\infty$, the above holds $\forall x<S<0$:
 $$\Huge \forall \epsilon>0\,\exists S<0:|f(x)-L|<\epsilon\,\forall x<S$$
-Substitu
+Substituting for "problem values" can be helpful, for example:
+![[infinite limit example]]
+The graph of a function $f$ will have a horizontal asymptote to the right or left at $y=L$ if $\lim_{x\to\infty}f(x)=L$ for the right or $\lim_{x\to -infty}f(x)=L$ for the left.
+
+# Intermediate Value Theorem:
+
+This theorem states that if $f$ is continuous on a closed interval $[a,b]$, and $u$ is any value between $f(a)$ and $f(b)$, then $\exists c\in(a,b):f(c)=u$:![[IVT]]
