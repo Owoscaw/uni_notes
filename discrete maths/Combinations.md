@@ -8,4 +8,12 @@ The size of a combination is the total number of selections, that is the sum of 
 # Standard problem 3:
 
 How many combinations without repetition of a given size $k$ exist from a given set of size $n$. The arrangements with repetition is given by [[Arrangements and Permutations#Permutations|$P(n,k)$]]. These are ordered lists, so each arrangement using the same elements is counted $k!$ times, so we divide $P(n,k)$ by $k!$ to give the number of combinations without repetition in this scenario:$$\Huge \frac{P(n,k)}{k!}=\frac{n!}{(n-k)!k!}=\begin{pmatrix}n\\k\end{pmatrix}$$
-This is also known as the binomial coefficient. A combination of size $k$
+This is also known as the binomial coefficient. A combination of size $k$ without repetition corresponds to a subset of $S$, the set originally chosen from. This is sometimes written as $^nC_k$. Note that:$$\Huge \begin{pmatrix}n\\k\end{pmatrix}=\begin{pmatrix}n\\n-k\end{pmatrix}$$
+# Pascals triangle and Binomial theorem:
+
+These coefficients are the same as pascals triangle:
+![[pascals triangle]]
+So the $k$th element in the $n$th row in pascals triangle is given by the sum of the two elements "above" it. That is to say:$$\Huge \begin{pmatrix}n\\k\end{pmatrix}=\begin{pmatrix}n-1\\k-1\end{pmatrix}+\begin{pmatrix}n-1\\k\end{pmatrix}$$
+This also corresponds to the coefficients in the expansion of two numbers raised to a power, hence the name "binomial":
+$$\Huge (a+b)^n=\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^kb^{n-k}$$
+This is because there are $\begin{pmatrix}n\\k\end{pmatrix}$ ways of expanding the brackets to produce a term with powers of $a$ and $b$ equivalent to $$
