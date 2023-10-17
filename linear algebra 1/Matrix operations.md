@@ -44,4 +44,4 @@ Let $\lambda, \lambda^{'} \in\Re$, $X, X^{'}\in M_{m\times n}(\Re)$, $Y, Y^{'}\i
 > Existence of one (identity $II$):$$\Huge I_mX=X=XI_n$$
 > Scalar associativity ($III$):$$\Huge \lambda(XY)=(\lambda X)Y=X(\lambda Y)$$
 > Associativity ($IV$):$$\Huge (XY)Z=X(YZ)$$
-> Distributivity ($V$):$$\Huge (X+X^{'})Y=XY+X^{'}Y,\,\,X(Y+Y^{'})=XY+XY^{'}$$$$\Huge \lambda(X+X^{'})=\lambda X+\lambda X^{'},\,\,(\lambda+\lamnda)$$
+> Distributivity ($V$):$$\Huge (X+X^{'})Y=XY+X^{'}Y,\,\,X(Y+Y^{'})=XY+XY^{'}$$$$\Huge \lambda(X+X^{'})=\lambda X+\lambda X^{'},\,\,(\lambda+\lambda^{'})X=\lambda X+\lambda^{'}X$$
