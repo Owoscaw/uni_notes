@@ -12,4 +12,4 @@ The set of all $m\times n$ matrices is written as $M_{m\times n}(\Re)$, and $M_n
 We define $0=0_{m\times n}\in M_{m\times n}(\Re)$ to be the matrix with all entries of 0, that is $0_{m\times n}=(0)_{m\times n}$. This is the $m\times n$ zero matrix:
 $$\Huge 0_{m\times n}=\begin{pmatrix}0&\dots&0\\\vdots&\ddots&\vdots\\0&\dots&0\end{pmatrix},$$
 For $r,s\in\mathbb{Z}$, we define $\delta_{r,s}$ to be $1$ if $r=s$ and $0$ otherwise, known as the Kronecker delta. The matrix $(\delta_{i,j})_{m\times n}$ is denoted as $I_n$. This is the $n\times n$ identity matrix:
-$$\Huge I_n=\begin{pmatrix}1&0&\dots&0\\0&1&\dots&0\\\vdots&\vdots&\ddots&0\\0&0&\dots&1\end{pmatrix},\,\,\delta_{i,j}=\begin{cases}1&\text{if}&i=j\\0&\text{if}&i\neq j\end{cases}$$
+$$\Huge (\delta_{i,j})_{m\times n}=I_n=\begin{pmatrix}1&0&\dots&0\\0&1&\dots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\dots&1\end{pmatrix},\,\,\delta_{i,j}=\begin{cases}1&\text{if}&i=j\\0&\text{if}&i\neq j\end{cases}$$
