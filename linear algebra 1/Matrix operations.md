@@ -14,4 +14,16 @@ Scalar multiplication is a function that takes a scalar and a matrix, and output
 $$\Huge \cdot:\Re\times M_{m\times n}(\Re)\mapsto M_{m\times n}(\Re)$$
 $$\Huge (\lambda, A)\mapsto \lambda A$$
 This is similarly defined as:$$\Huge (\lambda A)_{i,j}=\lambda A_{i.j},\,\,\forall 1\leq i\leq m,\,1\leq j\leq n$$
+If $X^T=-X$, then $X$ is a skew-symmetric matrix.
 
+# Properties of matrix addition:
+
+Similarly to [[Vector addition and multiplication|axioms of vector operations]], matrix operations give the following identities:
+> Existence of zero ($I$):$$\large \exists 0_{m\times n}\in M_{m\times n}(\Re):\forall X\in M_{m\times n}(\Re)\,\,\text{we have}\,\,0_{m\times n}+X=X=X+0_{m\times n}$$
+> Commutativity of addition ($II$):$$\Huge \forall X,Y\in M_{m\times n}(\Re)\,\,\text{we have}\,\,X+Y=Y+X$$
+> Existence of the negative ($III$):$$\large \forall X\in M_{m\times  n}(\Re)\,\exists\,(-X)\in M_{m\times n}(\Re):X+(-X)=0_{m\times n}=(-X)+X$$
+
+
+# Properties of scalar multiplication:
+
+> Existence of zero ($I$):$$\Huge 0\cdot X=0_{}$$
