@@ -11,4 +11,11 @@ $$\Huge (a+b)^n=\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{n-k}b^k=a^n+na^{n
 
 The $n=1$ case is obvious:$$\Huge (a+b)^1=a+b=\sum_{k=0}^1\begin{pmatrix}1\\k\end{pmatrix}a^{1-k}b^k=a+b$$
 Now for the $n+1$ case:
-$$\large (a+b)^{n+1}=(a+b)(a+b)^n,\,\,\text{using the assumed hypothesis},\,\,(a+b)\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{n-k}b^k$$$$ (a+b)^{n+1}=\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{(n+1)-k}b^k+\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{n-k}b^{k+1}=\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{(n+1)-k}b^k+\sum_{k=1}^{n+1}\begin{pmatrix}n\\k-1\end{pmatrix}a^{(n+1)-k}b^{k}$$
+$$\large (a+b)^{n+1}=(a+b)(a+b)^n,\,\,\text{using the assumed hypothesis},\,\,(a+b)\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{n-k}b^k$$$$\implies \sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{(n+1)-k}b^k+\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{n-k}b^{k+1}=\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^{(n+1)-k}b^k+\sum_{k=1}^{n+1}\begin{pmatrix}n\\k-1\end{pmatrix}a^{(n+1)-k}b^{k}$$
+$$\implies a^{n+1}+\sum_{k=1}^n\begin{pmatrix}n\\k\end{pmatrix}a^{(n+1)-k}b^k+\sum_{k=1}^N\begin{pmatrix}n\\k-1\end{pmatrix}a^{(n+1)-k}b^k+b^{n+1}$$
+$$\small \implies a^{n+1}+\sum_{k=1}^n\left(\begin{pmatrix}n\\k\end{pmatrix}a^{(n+1)-k}b^k+\begin{pmatrix}n\\k-1\end{pmatrix}a^{(n+1)-k}b^k\right)+b^{n+1}=a^{n+1}+\sum_{k=1}^n\left(\begin{pmatrix}n\\k\end{pmatrix}+\begin{pmatrix}n\\k-1\end{pmatrix}\right)a^{(n+1)-k}b^k+b^{n+1}$$
+$$\implies a^{n+1}+\sum_{k=1}^n\begin{pmatrix}n+1\\k\end{pmatrix}a^{(n+1)-k}b^k+b^{n+1}=\sum_{k=0}^{n+1}\begin{pmatrix}(n+1)\\k\end{pmatrix}a^{(n+1)-k}b^k$$
+
+# Bernoulli inequality:
+
+The bernoulli
