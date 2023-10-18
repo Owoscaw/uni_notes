@@ -18,4 +18,6 @@ $$\implies a^{n+1}+\sum_{k=1}^n\begin{pmatrix}n+1\\k\end{pmatrix}a^{(n+1)-k}b^k+
 
 # Bernoulli inequality:
 
-The bernoulli
+The Bernoulli inequality states for $x\geq -1$ and $n\in\mathbb{N}$:$$\Huge (1+x)^n\geq1+nx$$
+## Proof by induction:
+![[Bernoulli inequality .excalidraw]]
