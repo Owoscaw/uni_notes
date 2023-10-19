@@ -57,3 +57,15 @@ In general, $XY\neq YX$. This is because if $X\in M_{m\times n}(\Re),\,Y\in M_{n
 # Inverses:
 
 If $A\in M_n(\Re)$, $A$ is invertible or non-singular if and only if there exists such a matrix $B\in M_n(\Re)$ that satisfies $AB=I_n=BA$. If $B$ exists, it is called the inverse of $A$, $B=A^{-1}$. If no such $B$ exists, then $A$ does not have an inverse and is called a singular matrix.
+
+## Properties:
+> A matrix has at most one inverse.
+> Given $A,B\in M_n(\Re)$ are invertible, then $AB$ is invertible such that:$$\Huge (AB)^{-1}=B^{-1}A^{-1}$$
+> Given $A,B\in M_n(\Re)$:$$\Huge (AB)^T=B^TA^T$$
+> Given $A\in M_n(\Re)$ and is invertible, then $A^T$ is also invertible such that:$$\Huge(A^{-1})^T=(A^T)^{-1}$$
+> Given $A,B\in M_n(\Re)$, and that $AB=I_n$, then $BA=I_n$ and $B=A^{-1}$
+
+The first statement is proven by considering if a matrix $A$ has two inverses, $B,C$, $A,B,C\in M_n(\Re)$:
+$$\Huge B=BI_n=B(AC)=(BA)C=I_nC=C,\,\,\text{so}\,B=C$$
+
+The fourth s
