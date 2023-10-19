@@ -1,0 +1,2 @@
+If $f,g$ are both [[Derivative as a limit#Differentiability|differentiable]] $n$ times, then $fg(x)$ is also differentiable $n$ times. We have:$$\Huge D(fg)=(Df)g+f(DG)$$
+$$\Huge D^2(fg)=(D^2f)g+(Df)(Dg)+(Df)(Dg)+f(D^2)g=$$
