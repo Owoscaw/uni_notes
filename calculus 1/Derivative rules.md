@@ -23,4 +23,4 @@ If $M=0$, $L\neq 0$, then this limit does not exist. However if $L=M=0$, then th
 > $1^{\infty}$
 > $\infty^0$
 
-L'Hopital's rule applies to the first two indeterminant forms and states that for two differentiable functions $f,g$ on the interval $I=(a-h,a)\cup (a,a+h)$ for some $h>0$, with $\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0$ and $\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists and $g^{\prime}(x)\neq 0\,\,\forall x\in I$:$$\Huge \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f^{\}}{}$$
+L'Hopital's rule applies to the first two indeterminant forms and states that for two differentiable functions $f,g$ on the interval $I=(a-h,a)\cup (a,a+h)$ for some $h>0$, with $\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0$ and $\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists and $g^{\prime}(x)\neq 0\,\,\forall x\in I$:$$\Huge \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$$
