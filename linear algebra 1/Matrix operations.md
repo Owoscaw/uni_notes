@@ -39,9 +39,13 @@ $$\Huge (AB)_{i,j}=a_{i1}b_{j1}+a_{i2}b_{j2}+\dots+a_{in}b_{jn}=\sum_{k=1}^na_{i
 
 # Axioms of matrix multiplication:
 
-Let $\lambda, \lambda^{'} \in\Re$, $X, X^{'}\in M_{m\times n}(\Re)$, $Y, Y^{'}\in M_{n\times p}(\Re)$, $Z\in M_{p\times r}(\Re)$:
+Let $\lambda, \lambda^{'} \in\Re$, $X, X^{'}\in M_{m\times n}(\Re)$, $Y, Y^{'}\in M_{n\times p}(\Re)$, $Z\in M_{p\times q}(\Re)$:
 > Existence of zero ($I$):$$\Huge 0_{p\times m}X=0_{p\times n},\,\,X0_{n\times p}=0_{m\times p}$$
 > Existence of one (identity $II$):$$\Huge I_mX=X=XI_n$$
 > Scalar associativity ($III$):$$\Huge \lambda(XY)=(\lambda X)Y=X(\lambda Y)$$
 > Associativity ($IV$):$$\Huge (XY)Z=X(YZ)$$
 > Distributivity ($V$):$$\Huge (X+X^{'})Y=XY+X^{'}Y,\,\,X(Y+Y^{'})=XY+XY^{'}$$$$\Huge \lambda(X+X^{'})=\lambda X+\lambda X^{'},\,\,(\lambda+\lambda^{'})X=\lambda X+\lambda^{'}X$$
+
+Associativity is not intuitive, so it is proven by the following:
+$$((XY)Z)_{i,j}=\sum_{k=1}^p(xy)_{ki}z_{kj}=\sum_{k=1}^p\left(\sum_{r=1}^nx_{ir}y_{kr}\right)z_{kj}=\sum_{k=1}^p\sum_{r=1}^nx_{ir}y_{kr}z_{kj}$$
+$$ (X(YZ))_{i,j}=\sum_{r=1}^nx_{ir}(yz)_{jr}=\sum_{r=1}^nx_{ir}\left(\right)$$
