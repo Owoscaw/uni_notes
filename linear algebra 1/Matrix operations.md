@@ -52,4 +52,8 @@ $$\large (X(YZ))_{i,j}=\sum_{r=1}^nx_{ir}(yz)_{jr}=\sum_{r=1}^nx_{ir}\left(\sum_
 $$\large\sum_{k=1}^p\sum_{r=1}^nx_{ir}y_{kr}z_{kj}=\sum_{r=1}^n\sum_{k=1}^px_{ir}y_{kr}z_{kj},\,\text{interchanging order of summation}$$
 $$\Huge \text{so}\,\,((XY)Z)_{i,j}=(X(YZ))_{i,j}\,,\,\,(XY)Z=X(YZ)$$
 
-In general, $XY\neq YX$. This is because if $X\in M_{m\times n}(\Re),\,Y\in M_{n\times p}(\Re)$, then $XY$ is well defined, however $YX$ is only defined if $m=p$. If $m=p$, but $p\neq n$ then $XY$ and $YX$ will have different dimensions.
+In general, $XY\neq YX$. This is because if $X\in M_{m\times n}(\Re),\,Y\in M_{n\times p}(\Re)$, then $XY$ is well defined, however $YX$ is only defined if $m=p$. If $m=p$, but $p\neq n$ then $XY$ and $YX$ will have different dimensions. Also if $XY=0_{m\times n}$, it is not necessarily the case that either $X$ or $Y$ are the zero matrix for their given dimensions.
+
+# Inverses:
+
+If $A\in M_n(\Re)$, $A$ is invertible or non-singular if and only if there exists such a matrix $B\in M_n(\Re)$ that satisfies $AB=I_n=BA$. If $B$ exists, it is called the inverse of $A$, $B=A^{-1}$. If no such $B$ exists, then $A$ does not have an inverse and is called a singular matrix.
