@@ -4,7 +4,7 @@ $$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$$
 For any event $B\subseteq \Omega$, with $\mathbb{P}(B)>0$, $\mathbb{P}(\cdot|B)$ satisfies all [[Probability definition#Axioms|axioms of probability]], and therefore all [[Probability definition#Consequences of probability axioms|consequences of probability]]. Given a [[Probability definition#Sigma algebra|probability space]], $(\Omega,\mathcal{F},\mathbb{P})$ we define:
 $$\Huge \mathbb{P}|_{B}:\mathcal{F}\mapsto\Re\,\,\text{as follows:}$$
 $$\Huge \mathbb{P}|_B(A):=\mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$$
-This is Baye's theorem, that defines the probability of event $A$ happening, given that event $B$ has already happened. Since $\mathbb{P}(A|B)$ is in itself a probability, all axioms and consequences apply to it.
+This defines the probability of event $A$ happening, given that event $B$ has already happened. Since $\mathbb{P}(A|B)$ is in itself a probability, all axioms and consequences apply to it.
 # Multiplication rule:
 
 For any events, $A$ and $B$, with $\mathbb{P}(A),\mathbb{P}(B)>0$:$$\Huge \mathbb{P}(A\cap B)=\mathbb{P}(B)\mathbb{P}(A|B)=\mathbb{P}(A)\mathbb{P}(B|A)$$
@@ -17,4 +17,11 @@ Let $E_1,\dots,E_k$ be a partition of $\Omega$, each $E_i\cap E_j=\emptyset$ and
 This is proven as follows:
 $$\Huge A=A\cap\Omega=A\cap\left(\bigcup_{i=1}^kE_i\right)=\bigcup_{i=1}^k\left(A\cap E_i\right)$$
 Knowing that $A\cap E_i=\emptyset$ for any $E_i$ in our partition:$$\mathbb{P}(A)=\mathbb{P}\left(\bigcup_{i=1}^k\left(A\cap E_i\right)\right)=\sum_{i=1}^k\mathbb{P}(A\cap E_i),\,\text{using the multiplication rule},\,\mathbb{P}(A)=\sum_{i=1}^k\mathbb{P}(E_i)\mathbb{P}(A|E_i)$$
-Given that $\mathbb{P}(A|B)$ is itself a probability,
+Given that $\mathbb{P}(A|B)$ is itself a probability, another result can be shown:$$\Huge\mathbb{P}(A|B)=\sum_{i=1}^k\mathbb{P}(E_i|B)\mathbb{P}((A|B)|E_i)=\sum_{i=1}^k\mathbb{P}(E_i|B)\mathbb{P}(A|B\cap E_i)$$
+# Bayes' theorem:
+
+## V1:
+
+Let $A,B$ be events, with $\mathbb{P}(A),\mathbb{P}(B)>0$, then:$$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A)\mathbb{P}(B|A)}{\mathbb{P}(B)}$$
+More generally if $\mathbb{P}(A|C),\mathbb{P}(B|C)>0$:$$\Huge \mathbb{P}(A|B\cap C)=\frac{\mathbb{P}(A|C)\mathbb{P}(B|A\cap C)}{\mathbb{P}(B|C)}$$
+This is shown through the following:$$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\frac{(\mathbb{P})}{}$$
