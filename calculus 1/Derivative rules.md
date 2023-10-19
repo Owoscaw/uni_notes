@@ -12,4 +12,15 @@ For differentiating the composition $f\circ g$, the chain rule can be used. Give
 
 # L'Hopital's rule:
 
-By the [[Limits and Continuity#Consequences of continuity|calculus of limits theorem]] (COLT):$$\Huge \lim$$
+By the [[Limits and Continuity#Consequences of continuity|calculus of limits theorem]] (COLT), for $\lim_{x\to a}f(x)=L$, $\lim_{x\to a}g(x)=M$:
+$$\Huge \lim_{x\to a}\frac{f(x)}{g(x)}=\frac{L}{M}$$
+If $M=0$, $L\neq 0$, then this limit does not exist. However if $L=M=0$, then the limit is in indeterminant form. A limit is in indeterminant form if it takes the "value":
+> $\frac{0}{0}$
+> $\frac{\infty}{\infty}$
+> $0\times\infty$
+> $\infty-\infty$
+> $0^0$
+> $1^{\infty}$
+> $\infty^0$
+
+L'Hopital's rule applies to the first two indeterminant forms and states that for two differentiable functions $f,g$ on the interval $I=(a-h,a)\cup (a,a+h)$ for some $h>0$, with $\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0$ and $\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists and $g^{\prime}(x)\neq 0\,\,\forall x\in I$:$$\Huge \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f^{\}}{}$$
