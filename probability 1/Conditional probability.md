@@ -24,4 +24,12 @@ Given that $\mathbb{P}(A|B)$ is itself a probability, another result can be show
 
 Let $A,B$ be events, with $\mathbb{P}(A),\mathbb{P}(B)>0$, then:$$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A)\mathbb{P}(B|A)}{\mathbb{P}(B)}$$
 More generally if $\mathbb{P}(A|C),\mathbb{P}(B|C)>0$:$$\Huge \mathbb{P}(A|B\cap C)=\frac{\mathbb{P}(A|C)\mathbb{P}(B|A\cap C)}{\mathbb{P}(B|C)}$$
-This is shown through the following:$$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\frac{(\mathbb{P})}{}$$
+This is shown through the following:$$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\frac{\mathbb{P}(A)\mathbb{P}(B|A)}{\mathbb{P}(B)},\,\text{using the multiplication rule}$$
+## V2:
+
+Let $E_1,\dots,E_k$ form a partition over $\Omega$ and $A\subseteq\Omega$ be an event such that $\mathbb{P}(A)>0$, then:$$\Huge \mathbb{P}(E_i|A)=\frac{\mathbb{P}(A|E_i)\mathbb{P}(E_i)}{\sum_{i=1}^k\mathbb{P}(E_i)\mathbb{P}(A|E_i)}$$
+This result is proven through the following:$$\large\mathbb{P}(E_i|A)=\frac{\mathbb{P}(A|E_i)\mathbb{P}(E_i)}{\mathbb{P}(A)}=\frac{\mathbb{P}(A|E_i)\mathbb{P}(E_i)}{\sum_{i=1}^k\mathbb{P}(E_i)\mathbb{P}(A|E_i)},\,\text{using law of total probability}$$
+This naturally shows the restriction $\mathbb{P}(A)>0$.
+
+Example:
+![[Conditional probability .excalidraw]]
