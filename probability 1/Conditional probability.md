@@ -33,3 +33,7 @@ This naturally shows the restriction $\mathbb{P}(A)>0$.
 
 Example:
 ![[Conditional probability .excalidraw]]
+
+# Independence:
+
+Let $A,B$ be events, then $A$ and $B$ are independent if $\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$.
