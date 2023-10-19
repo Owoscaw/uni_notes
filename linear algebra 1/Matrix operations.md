@@ -68,4 +68,6 @@ If $A\in M_n(\Re)$, $A$ is invertible or non-singular if and only if there exist
 The first statement is proven by considering if a matrix $A$ has two inverses, $B,C$, $A,B,C\in M_n(\Re)$:
 $$\Huge B=BI_n=B(AC)=(BA)C=I_nC=C,\,\,\text{so}\,B=C$$
 
-The fourth s
+The fourth statement is proven as follows:$$\Huge A^T(A^{-1})^T=(A^{-1}A)^T=(I_n)^T=I_n$$
+Similarly,
+$$\Huge $$
