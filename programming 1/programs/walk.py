@@ -4,9 +4,6 @@ from matplotlib import pyplot as plt
 
 def step(n, pause):
     plt.ion()
-    plt.xlabel("time")
-    plt.ylabel("step")
-    plt.axhline(y=0, color="red")
     seq = [(0, 0)]
 
     for i in range(n):
@@ -18,7 +15,10 @@ def step(n, pause):
 
         seq = seq[-99:]
 
-        plt.cla()
+        plt.clf()
+        plt.xlabel("time")
+        plt.ylabel("step")
+        plt.axhline(y=0, color="red")
         plt.plot([i[0] for i in seq], [i[1] for i in seq], "-b")
         plt.pause(pause)
 
@@ -37,5 +37,5 @@ def stepXY(n, pause):
         plt.pause(pause)
         plt.show()
     
-step(1000, 0.00001)
+step(10000, 0.00001)
 

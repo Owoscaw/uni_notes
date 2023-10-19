@@ -32,7 +32,7 @@ This result is proven through the following:$$\large\mathbb{P}(E_i|A)=\frac{\mat
 This naturally shows the restriction $\mathbb{P}(A)>0$.
 
 Example:
-![[Conditional probability .excalidraw]]
+![[conditional probability for cats]]
 
 # Independence:
 
