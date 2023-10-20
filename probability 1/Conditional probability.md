@@ -37,4 +37,7 @@ Example:
 # Independence:
 
 Let $A,B$ be events, then $A$ and $B$ are independent if $\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$. $A$ and $B$ are conditionally independent if, given a third event $C$, $\mathbb{P}(C)$:$$\Huge \mathbb{P}(A\cap B|C)=\mathbb{P}(A|C)\mathbb{P}(B|C)$$
-This is to say, the occurence of event $A$ has no effect on event $B$
+This is to say, the occurrence of event $A$ has no effect on event $B$. 
+
+
+Example:![[conditional probability for die]]
