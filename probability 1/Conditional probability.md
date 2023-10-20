@@ -37,7 +37,18 @@ Example:
 # Independence:
 
 Let $A,B$ be events, then $A$ and $B$ are independent if $\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$. $A$ and $B$ are conditionally independent if, given a third event $C$, $\mathbb{P}(C)$:$$\Huge \mathbb{P}(A\cap B|C)=\mathbb{P}(A|C)\mathbb{P}(B|C)$$
-This is to say, the occurrence of event $A$ has no effect on event $B$. 
+This is to say, the occurrence of event $A$ has no effect on event $B$. Given $\mathbb{P}(A)>0$ and $\mathbb{P}(B)>0$, the following statements are equivalent:
+>$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
+>$\mathbb{P}(A|B)=\mathbb{P}(A)$
+>$\mathbb{P}(B|A)=\mathbb{P}(B)$
+
+This is shown through the following steps:$$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}=\frac{\mathbb{P}(A)\mathbb{P}(B)}{\mathbb{P}(B)}=\mathbb{P}(A),\,\text{using bayes' theorem}$$
+There is a similar statement involving a third event $C$. Given $\mathbb{P}(A\cap B\cap C)>0$, then the following statements are equivalent:
+>$\mathbb{P}(A\cap B|C)=\mathbb{P}(A|C)\mathbb{P}(B|C)$
+>$\mathbb{P}(A|B\cap C)=\mathbb{P}(A|C)$
+>$\mathbb{P}(B|A\cap C)=\mathbb{P}(B|C)$
+>
+
 
 
 Example:![[conditional probability for die]]
