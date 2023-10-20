@@ -56,5 +56,9 @@ A possibly infinite collection of events $A_i$, for $i\in\mathcal{F}$ are mutual
 Similarly, a collection of events $A_i$. for $i\in\mathcal{F}$ are mutually conditionally independent given another event $C$ if for every finite, non-empty $\zeta\in\mathcal{F}$:$$\Huge \mathbb{P}\left(\bigcap_{i\in\zeta}A_i|C\right)=\prod_{i\in\zeta}\mathbb{P}(A_i|C)$$
 For example, $3$ events $A,B,C$ are mutually independent if the following are satisfied:
 >$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
->$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
->$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
+>$\mathbb{P}(B\cap C)=\mathbb{P}(B)\mathbb{P}(C)$
+>$\mathbb{P}(A\cap C)=\mathbb{P}(A)\mathbb{P}(C)$
+>$\mathbb{P}(A\cap B\cap C)=\mathbb{P}(A)\mathbb{P}(B)\mathbb{P}(C)$
+
+Note that it is possible for pairwise independence and not mutual independence. This means that for a collection of events $A_i$ for $i\in\{1,2,\dots,n\}$, events $A_k$ and $A_{k+1}$ may be independent, but $A_k$ and every other event in the collection (mutual independence) may not be independent.
+
