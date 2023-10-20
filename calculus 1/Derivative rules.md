@@ -24,5 +24,6 @@ If $M=0$, $L\neq 0$, then this limit does not exist. However if $L=M=0$, then th
 > $\infty^0$
 
 L'Hopital's rule applies to the first two indeterminant forms and states that for two differentiable functions $f,g$ on the interval $I=(a-h,a)\cup (a,a+h)$ for some $h>0$, with $\lim_{x\to a}f(x)=\lim_{x\to a}g(x)=0$ and $\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$ exists and $g^{\prime}(x)\neq 0\,\,\forall x\in I$:$$\Huge \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$$
-Using the restrictions stated above, namely the differentiability of $f$ and $g$ at $a$ and that $g^{\prime}(a)\neq 0$:
+This can be shown, adding the restrictions that $f$ and $g$ are continuous and differentiable at $a$ and that $g^{\prime}(a)\neq 0$:
 $$ \lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f(x)-f(a)}{g(x)-g(a)}=\lim_{x\to a}\frac{\frac{f(x)-f(a)}{x-a}}{\frac{g(x)-g(a)}{x-a}}=^{COLT}\frac{\lim_{x\to a}\frac{f(x)-f(a)}{x-a}}{\lim_{x\to a}\frac{g(x)-g(a)}{x-a}}=\frac{f^{\prime}(a)}{g^{\prime}(a)}=\lim_{x\to a}\frac{f^{\prime}(x)}{g^{\prime}(x)}$$
+
