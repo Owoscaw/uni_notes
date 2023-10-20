@@ -4,7 +4,7 @@ $$\Huge \mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$$
 For any event $B\subseteq \Omega$, with $\mathbb{P}(B)>0$, $\mathbb{P}(\cdot|B)$ satisfies all [[Probability definition#Axioms|axioms of probability]], and therefore all [[Probability definition#Consequences of probability axioms|consequences of probability]]. Given a [[Probability definition#Sigma algebra|probability space]], $(\Omega,\mathcal{F},\mathbb{P})$ we define:
 $$\Huge \mathbb{P}|_{B}:\mathcal{F}\mapsto\Re\,\,\text{as follows:}$$
 $$\Huge \mathbb{P}|_B(A):=\mathbb{P}(A|B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}$$
-This defines the probability of event $A$ happening, given that event $B$ has already happened. Since $\mathbb{P}(A|B)$ is in itself a probability, all axioms and consequences apply to it.
+This defines the probability of event $A$ happening, given that event $B$ has already happened. Since $\mathbb{P}(A|B)$ is in itself a probability, all axioms and consequences apply to it. Note that $A|B$ is not an event in itself. The $|B$ is a property of the probability only.
 # Multiplication rule:
 
 For any events, $A$ and $B$, with $\mathbb{P}(A),\mathbb{P}(B)>0$:$$\Huge \mathbb{P}(A\cap B)=\mathbb{P}(B)\mathbb{P}(A|B)=\mathbb{P}(A)\mathbb{P}(B|A)$$
@@ -47,8 +47,14 @@ There is a similar statement involving a third event $C$. Given $\mathbb{P}(A\ca
 >$\mathbb{P}(A\cap B|C)=\mathbb{P}(A|C)\mathbb{P}(B|C)$
 >$\mathbb{P}(A|B\cap C)=\mathbb{P}(A|C)$
 >$\mathbb{P}(B|A\cap C)=\mathbb{P}(B|C)$
->
-
-
 
 Example:![[conditional probability for die]]
+
+# Independence of multiple events:
+
+A possibly infinite collection of events $A_i$, for $i\in\mathcal{F}$ are mutually independent if for every finite, non-empty $\zeta\in\mathcal{F}$:$$\Huge \mathbb{P}\left(\bigcap_{i\in\zeta}A_i\right)=\prod_{i\in\zeta}\mathbb{P}(A_i)$$
+Similarly, a collection of events $A_i$. for $i\in\mathcal{F}$ are mutually conditionally independent given another event $C$ if for every finite, non-empty $\zeta\in\mathcal{F}$:$$\Huge \mathbb{P}\left(\bigcap_{i\in\zeta}A_i|C\right)=\prod_{i\in\zeta}\mathbb{P}(A_i|C)$$
+For example, $3$ events $A,B,C$ are mutually independent if the following are satisfied:
+>$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
+>$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
+>$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$
