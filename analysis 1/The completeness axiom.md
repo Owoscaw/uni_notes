@@ -22,4 +22,8 @@ Example:
 
 Every non-empty subset of $\Re$ which is bounded above has a supremum. 
 
-Let $a,b\in\Re$ with $b>0$, then there exists a natural number $n$ with $nb>a$. Assume that this is not the case, then $X=\{nb\in\Re:n\in\mathbb{N}\}$ is bounded above. By the completeness axiom, $sup\,X=C\in\Re$ exists. So $nb\leq C$. Also $C-b<C$, so $C-b$ must not be an upper bound of $X$. So $\exists n\in\mathbb{N}$ such that $nb>C-b\iff(n+1)b>C$. Note that $(n+1)\in\mathbb{N}$, so $(n+1)b\in X$, so $C$ cannot be an upper bound. Here, assuming the opposite of this axiom
+Let $a,b\in\Re$ with $b>0$, then there exists a natural number $n$ with $nb>a$. Assume that this is not the case, then $X=\{nb\in\Re:n\in\mathbb{N}\}$ is bounded above. By the completeness axiom, $sup\,X=C\in\Re$ exists. So $nb\leq C$. Also $C-b<C$, so $C-b$ must not be an upper bound of $X$. So $\exists n\in\mathbb{N}$ such that $nb>C-b\iff(n+1)b>C$. Note that $(n+1)\in\mathbb{N}$, so $(n+1)b\in X$, so $C$ cannot be an upper bound. Here, assuming the opposite of this axiom leads to a contradiction so it must then be true.
+
+Taking $b=1$, this says for any real number $a$, there is a natural number $n\in\mathbb{N}$ with $n>a$. Therefore the natural numbers cannot be bounded above. Therefore, using the example above:![[infimum resolved]]
+Another example:![[The completeness axiom .excalidraw]]This relies on the following:
+
