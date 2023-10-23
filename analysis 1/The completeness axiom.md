@@ -27,3 +27,6 @@ Let $a,b\in\Re$ with $b>0$, then there exists a natural number $n$ with $nb>a$. 
 Taking $b=1$, this says for any real number $a$, there is a natural number $n\in\mathbb{N}$ with $n>a$. Therefore the natural numbers cannot be bounded above. Therefore, using the example above:![[infimum resolved]]
 Another example:![[The completeness axiom .excalidraw]]This relies on the following:
 
+Let $a\geq 0$ and $p\in\mathbb{N}$, there exists exactly one $x\geq 0$ with $x^p=a$. This unique $x$ is called the $p$th root of $a$, denoted as $^p\sqrt{a}$. This gives a function:$$\Huge ^p\sqrt{\cdot}:[0,\infty)\mapsto[0,\infty)$$
+If $p$ is odd, this function definition can be extended to:
+$$\Huge ^p\sqrt{a}=-^p\sqrt{-a}$$
