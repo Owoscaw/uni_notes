@@ -3,4 +3,4 @@ Let $X\subset \Re$. We say $X$ is bounded above if there exists $C\in\Re$ with $
 
 For example, take $X=\mathbb{N}$. $1$ is a lower bound for $\mathbb{N}$ as $1\leq n$ for all $n\in\mathbb{N}$. An upper bound for $\mathbb{N}$ would be a number $C$ such that $n\leq C$ for all $n\in \mathbb{N}$. The existence of such $C$ cannot be ruled out.
 
-Let $X\subset\Re$, an element $M\in X$ is called the maximum of $X$ if $x\leq M$ for all $x\in X$. If such $M$ exists, then we write $M=\text{max}\,X$. Similarly, an element $m\in X$ is called the minimum of $X$ if $x\geq m$ for all $x\in X$. If suck $m$ exists, then we write $m=\text{min}\,X$.
+Let $X\subset\Re$, an element $M\in X$ is called the maximum of $X$ if $x\leq M$ for all $x\in X$. If such $M$ exists, then we write $M=\text{max}\,X$. Similarly, an element $m\in X$ is called the minimum of $X$ if $x\geq m$ for all $x\in X$. If such $m$ exists, then we write $m=\text{min}\,X$.
