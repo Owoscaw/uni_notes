@@ -3,4 +3,7 @@ The framework of probability outlined by the [[Probability definition#Axioms|axi
 
 # Relative Frequency:
 
-Suppose $n$ trials of an experiment of known possible outcomes, and that $n$
+Suppose $n$ trials of an experiment of known possible outcomes, and that $n_A$ is the number of times event $A$ occurs. The relative frequency of occurrence $A$ is $n_A/n$. As $n$ tends to infinity, we suppose that the ratio $n_A/n$ tends to a limit, known as $A$'s relative frequency.
+
+
+
