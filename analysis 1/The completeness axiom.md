@@ -16,4 +16,10 @@ Similarly, a number $c\in\Re$ is called the infimum ($inf\,X$) of $X$, or greate
 If $X$ has a maximum, then this maximum must be the supremum of $X$. Let $X$ be a set and $M\in X$ be the maximum of $X$, then $sup\,X=M$. By definition, $M$ is an upper bound. If $B\in\Re$ is another upper bound of $X$, then we require $M\leq B$. This is the case as $B\geq x,\,\forall x\in X$.
 
 Example:
-![[The completeness axiom .excalidraw]]
+![[infimum example]]
+
+# The axiom:
+
+Every non-empty subset of $\Re$ which is bounded above has a supremum. 
+
+Let $a,b\in\Re$ with $b>0$, then there exists a natural number $n$ with $nb>a$. Assume that this is not the case, then $X=\{nb\in\Re:n\in\mathbb{N}\}$ is bounded above. By the completeness axiom, $sup\,X=C\in\Re$ exists. So $nb\leq C$. Also $C-b<C$, so $C-b$ must not be an upper bound of $X$. So $\exists n\in\mathbb{N}$ such that $nb>C-b\iff(n+1)b>C$. Note that $(n+1)\in\mathbb{N}$, so $(n+1)b\in X$, so $C$ cannot be an upper bound. Here, assuming the opposite of this axiom
