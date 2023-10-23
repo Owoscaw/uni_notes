@@ -27,4 +27,4 @@ $$\Huge \begin{pmatrix}1&\star&\dots&\star&0&\star&\dots&\star&0&\star&\dots&\st
 
 The "augmented matrix", $(A|\underline b)$, fully represents the equation $A\underline x=\underline b$. This is written by augmenting $\underline b$ onto the end of $A$:
 $$\Huge (A|\underline b)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}&|&b_1\\a_{12}&a_{22}&\dots&a_{2n}&|&b_2\\\vdots&\vdots&\ddots&\vdots&|&\vdots\\a_{m1}&a_{m2}&\dots&a_{mn}&|&b_m\end{pmatrix}$$
-The solution set represented by this matrix. Note that the single row matri
+The solution set represented by this matrix. Note that the single row matrix $\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\end{pmatrix}$ represents the equation $a_{11}+a_{12}+\dots+a_{1n}=b_1$. 
