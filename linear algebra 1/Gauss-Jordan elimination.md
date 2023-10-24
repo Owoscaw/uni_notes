@@ -52,7 +52,13 @@ $$\Huge \begin{pmatrix}1&\star&\dots&\star\\0&\star&\dots&\star\\\vdots&\vdots&\
 ### The algorithm:
 
 Let $A\in M_{m\times n}(\Re)$, the Gauss-Jordan elimination of $A$ is described by repeatedly applying the above basic routine in stages. First, the routine is applied to give a matrix of the following form:
-$$\Huge A_1=\begin{pmatrix}1&\star&\dots\end{pmatrix}$$
+$$\Huge A_1=\begin{pmatrix}1&\star&\dots&\star\\0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots\\0&\star&\dots&\star\end{pmatrix}$$
+If all of the remaining rows are zero, then $A_1$ is in RREF. If this is not the case, apply the basic routine to a submatrix of $A_1$, ignoring the first row:
+$$\Huge \bar A_2=\begin{pmatrix}1&\star&\dots&\star&\star&\star&\dots&\star\\0&0&\dots&0&1&\star&\dots&\star\\0&0&\dots&0&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&\star&\dots&\star\end{pmatrix}$$
+Then apply $A_{21}(\mu)$ if necessary to make the entry above the leading 1 in the second row a zero, this will give another matrix:$$\Huge A_2=\begin{pmatrix}1&\star&\dots&\star&0&\star&\dots&\star\\0&0&\dots&0&1&\star&\dots&\star\\0&0&\dots&0&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&\star&\dots&\star\end{pmatrix}$$
+Now repeat these steps inductively. Assume stages $1$ through $k-1$ ($k-1<m$) have been completed, resulting in the matrix $A_{k-1}$. Stage $k$ ($k\leq m$): 
+
+If rows $k,k+1,\dots,m$ of the matrix $A_{k-1}$ are all zero then $A_{k-1}$ is in RREF. Similarly, if the leading 1 in the ($k-1$)th r
 # Using GJ elimination:
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system.
