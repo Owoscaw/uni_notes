@@ -26,4 +26,12 @@ $f(x)$ is monotonic increasing on an interval $[a,b]$ if $f(x_1)\leq f(x_2)\,\fo
 
 # Critical Points:
 
-A function $f(x)$ has a local maximum or minimum at $x=a$ if $\exists\, h>0$ such that $f(x)\leq f(a)$ ($\geq$ for a minimum) $\forall\,x\in(a-h,a+h)$. A local extremum is either a local max or a local min. If $f(x)$ has a local max at $x=a$ and is differentiable at this point
+A function $f(x)$ has a local maximum or minimum at $x=a$ if $\exists\, h>0$ such that $f(x)\leq f(a)$ ($\geq$ for a minimum) $\forall\,x\in(a-h,a+h)$. A local extremum is either a local max or a local min. If $f(x)$ has a local max or min at $x=a$ and is differentiable at this point, then $f^{\prime}(a)=0$. Since $f(x)$ is differentiable at $x=a$:
+$$\Huge \lim_{x\to a^-}\frac{f(x)-f(a)}{x-a}=\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a}=f^{\prime}(a)$$
+If $f(x)$ has a local maximum at $x=a$:
+$$\Huge \frac{f(x)-f(a)}{x-a}\leq0\,\,\,\forall x\in(a,a+h),\,\text{so:}$$
+$$\Huge f^{\prime}(a)=\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a}\leq 0$$
+Similarly:$$\Huge \frac{f(x)-f(a)}{x-a}\geq0\,\,\forall x\in (a-h, a),\,\text{so}:$$$$\Huge f^{\prime}(a)=\lim_{x\to a^-}\frac{f(x)-f(a)}{x-a}\geq 0$$
+There is only one value for $f^{\prime}(a)$ that satisfies both inequalities, that is:
+$$\Huge 0\leq f^{\prime}(a)\leq0\iff f^{\prime}(a)=0$$
+$f(x)$ has a stationary point at $x=a$ if it is differentiable at $x=a$ and that $f^{\prime}(a)=0$. An interior point $x=a$ on the domain of $f$ is critical if either $f^{\prime}(a)=0$ or $f^{}$
