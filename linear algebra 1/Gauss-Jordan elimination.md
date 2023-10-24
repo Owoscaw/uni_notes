@@ -30,4 +30,16 @@ $$\Huge (A|\underline b)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}&|&b_1\\a_{12}
 The solution set represented by this matrix. Note that the single row matrix $\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\end{pmatrix}$ represents the equation $a_{11}+a_{12}+\dots+a_{1n}=b_1$. If this augmented matrix is in RREF, then it can be interpreted that variables in columns with leading ones are equal to that row's associated augmented value, subtract all of the other variables in the row. In this sense, variables corresponding to columns without leading 1s are free variables, the variables with leading ones are written in terms of their augment and free variables.
 
 When leading variables are written in terms of free variables, the solution set becomes obvious:
-$$\Huge \begin{pmatrix}b_1-a_{12}x_2-a_{13}x_4-\dots-a_{1n}x_n\\b_2-\end{pmatrix}$$
+$$\Huge \begin{pmatrix}b_1-a_{12}x_2-a_{13}x_4-\dots-a_{1n}x_n\\b_2-a_{23}x_3-a_{24}x_5-\dots-a_{2n}x_n\\\vdots\\b_m-a_{mm}x_m-a_{m(m+1)}x_{m+1}-\dots-a_{mn}x_{n}\end{pmatrix}$$
+
+# Elementary Row operations:
+
+Elementary row operations, or EROs are defined as follows:
+>$P_{rs}$, permute means to switch row $r$ with row $s$.
+>$M_r(\lambda)$ , multiply means to multiply all elements in row $r$ by $\lambda\neq 0$.
+>$A_{rs}$ , add means to add row $r$ to row $s$.
+>$A_{rs}(\lambda)$ is a composition of add and multiply, equivalent to $M_r(\lambda^{-1})\circ A_{rs}\circ M_r(\lambda)$. Here, $\lambda$ times row $r$ is added onto row $s$.
+
+Every matrix can be made into RREF by a finite sequence of EROs. This is shown through an algorithm:
+> Find the first non-zero column.
+> Go down the first 
