@@ -60,3 +60,5 @@ Suppose $f(x)$ is twice differentiable at $x=a$ with $f^{\prime}(a)=0$:
 If $C\in Dom\,f$ and if $\exists\,h>0$ such that $f(x)$ is defined on $[C,C+h)$ but not on $(C-h,C)$, or vice versa, then $x=C$ is an endpoint of $f(x)$. If $Dom\,f=[a,b]$, then $x=a$ and $x=b$ are endpoints.
 
 If $x=C$ is an endpoint of $f(x)$, then $f(x)$ has an endpoint maximum or minimum at $x=C$ if $f(x)\leq f(C)$ ($\geq$ for minimum) for $x$ sufficiently close to $C$. If $f(x)$ is continuous and differentiable sufficiently close to an endpoint, then the sign of the derivative determines the nature of the endpoint.
+
+If $f(x)$ is continuous on a closed interval $[a,b]$, then all global extrema on this interval are attained at either critical points or endpoints.
