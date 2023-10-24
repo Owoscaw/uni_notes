@@ -34,4 +34,17 @@ $$\Huge f^{\prime}(a)=\lim_{x\to a^+}\frac{f(x)-f(a)}{x-a}\leq 0$$
 Similarly:$$\Huge \frac{f(x)-f(a)}{x-a}\geq0\,\,\forall x\in (a-h, a),\,\text{so}:$$$$\Huge f^{\prime}(a)=\lim_{x\to a^-}\frac{f(x)-f(a)}{x-a}\geq 0$$
 There is only one value for $f^{\prime}(a)$ that satisfies both inequalities, that is:
 $$\Huge 0\leq f^{\prime}(a)\leq0\iff f^{\prime}(a)=0$$
-$f(x)$ has a stationary point at $x=a$ if it is differentiable at $x=a$ and that $f^{\prime}(a)=0$. An interior point $x=a$ on the domain of $f$ is critical if either $f^{\prime}(a)=0$ or $f^{}$
+### Stationary points:
+
+$f(x)$ has a stationary point at $x=a$ if it is differentiable at $x=a$ and that $f^{\prime}(a)=0$. An interior point $x=a$ on the domain of $f$ is critical if either $f^{\prime}(a)=0$ or $f^{\prime}(a)$ does not exist. Every local maxima or minima is a stationary point, however not every stationary point is a local maxima or minima.
+
+### Points of inflection:
+
+If $f(x)$ is twice differentiable on an open interval around $x=a$, with $f^{\prime\prime}(a)=0$, and if $f^{\prime\prime}(a)$ changes sign at $x=a$, then $x=a$ is a point of inflection.
+
+## First derivative test:
+
+Suppose $f(x)$ is continuous at a critical point $x=a$:
+> If $\exists\,h>0$ such that $f^{\prime}(x)<0\,\forall x\in(a-h,a)$ and $f^{\prime}(x)>0\,\forall x\in(a,a+h)$, then $x=a$ is a local minimum
+> If $\exists\,h>0$ such that $f^{\prime}(x)>0\,\forall x\in(a-h,a)$ and $f$
+
