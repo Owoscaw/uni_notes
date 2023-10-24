@@ -67,4 +67,5 @@ By induction, this process must terminate either before or after stage $m$. If i
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system. An augmented matrix is in RREF if its associated coefficient matrix is also in RREF. Applying the above algorithm on $(A|b)$ allows an equivalent system to be produced, where the solution set is easy to spot. Note that:
 > Rows of form $\begin{pmatrix}0&\dots&0|0\end{pmatrix}$ can be deleted.
-> Rows of form $\begin{pmatrix}(0&\dots&0|k)\end{pmatrix}$ 
+> Rows of form $\begin{pmatrix}0&\dots&0|k\end{pmatrix}$ for $k\neq 0$ satisfy $0x_1+0x_2+\dots+0x_n=k=0$, a contradiction. In this case, the system has no solutions and is said to be inconsistent.
+> When an augmented matrix is in RREF, a variable $x_j$ being a free variables corresponds to column $j$ of the coefficient matrix not containing the leading 1.
