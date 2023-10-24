@@ -13,7 +13,7 @@ $$\Huge \underline b=\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix}\in\Re^m,\,\,\u
 $$\Huge A\underline x=\underline b$$
 [[Matrix operations#Matrix multiplication|Matrix multiplication]] between $A$ and $x$ will give the entire original system of linear equations. If $A\in M_n(\Re)$ and $\underline b\in\Re^n$, and $A$ is [[Matrix operations#Inverses|invertible]], then the system of linear equations given above by $(A|\underline b)$ has a unique solution:
 $$ A\underline x=\underline b\iff A^{-1}(A\underline x)=A^{-1}\underline b\iff(A^{-1}A)\underline x=A^{-1}\underline b\iff I_n\underline x=A^{-1}\underline b\iff\underline x=A^{-1}\underline b$$
-
+## RREF:
 
 $A$ is known as the coefficient matrix. A matrix is in RREF if and only if:
 > The first non-zero entry in any non-zero row is $1$, the leading $1$. ($I$)
@@ -23,8 +23,11 @@ $A$ is known as the coefficient matrix. A matrix is in RREF if and only if:
 In general, a matrix in RREF looks like:
 $$\Huge \begin{pmatrix}1&\star&\dots&\star&0&\star&\dots&\star&0&\star&\dots&\star&0&\star&\dots&\star\\0&0&\dots&0&1&\star&\dots&\star&0&\star&\dots&\star&0&\star&\dots&\star\\0&0&\dots&0&0&0&\dots&0&1&\star&\dots&\star&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&0&\dots&0&0&0&\dots&0&1&\star&\dots&\star\end{pmatrix}$$
 
-# Augmentation:
+# Augmentation and solution:
 
 The "augmented matrix", $(A|\underline b)$, fully represents the equation $A\underline x=\underline b$. This is written by augmenting $\underline b$ onto the end of $A$:
 $$\Huge (A|\underline b)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}&|&b_1\\a_{12}&a_{22}&\dots&a_{2n}&|&b_2\\\vdots&\vdots&\ddots&\vdots&|&\vdots\\a_{m1}&a_{m2}&\dots&a_{mn}&|&b_m\end{pmatrix}$$
-The solution set represented by this matrix. Note that the single row matrix $\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\end{pmatrix}$ represents the equation $a_{11}+a_{12}+\dots+a_{1n}=b_1$. 
+The solution set represented by this matrix. Note that the single row matrix $\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\end{pmatrix}$ represents the equation $a_{11}+a_{12}+\dots+a_{1n}=b_1$. If this augmented matrix is in RREF, then it can be interpreted that variables in columns with leading ones are equal to that row's associated augmented value, subtract all of the other variables in the row. In this sense, variables corresponding to columns without leading 1s are free variables, the variables with leading ones are written in terms of their augment and free variables.
+
+When leading variables are written in terms of free variables, the solution set becomes obvious:
+$$\Huge \begin{pmatrix}b_1-a_{12}x_2-a_{13}x_4-\dots-a_{1n}x_n\\b_2-\end{pmatrix}$$
