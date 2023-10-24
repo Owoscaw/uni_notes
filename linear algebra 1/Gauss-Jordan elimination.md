@@ -42,4 +42,17 @@ Elementary row operations, or EROs are defined as follows:
 
 Every matrix can be made into RREF by a finite sequence of EROs. This is shown through an algorithm:
 > Find the first non-zero column.
-> Go down the first 
+> Go down the first non-zero column until the first non-zero entry, $\lambda$, is found.
+> If this is row $r$, with $r\neq 1$, apply $P_{1r}$ so that there is a non-zero entry at the top of the first non-zero column.
+> Apply $M_1(\lambda^{-1})$ so that this first entry is a $1$.
+> Using $A_{1i}(\mu)$ clear all other non-zero entries in the first non-zero column.
+
+The matrix will now be in the form;
+$$\Huge \begin{pmatrix}1&\star&\dots&\star\\0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots\\0&\star&\dots&\star\end{pmatrix}\,\text{or}\,\begin{pmatrix}0&\dots&0&1&\star&\dots&\star\\0&\dots&0&0&\star&\dots&\star\\\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots\\0&\dots&0&0&\star&\dots&\star\end{pmatrix}$$
+### The algorithm:
+
+Let $A\in M_{m\times n}(\Re)$, the Gauss-Jordan elimination of $A$ is described by repeatedly applying the above basic routine in stages. First, the routine is applied to give a matrix of the following form:
+$$\Huge A_1=\begin{pmatrix}1&\star&\dots\end{pmatrix}$$
+# Using GJ elimination:
+
+Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system.
