@@ -46,5 +46,12 @@ If $f(x)$ is twice differentiable on an open interval around $x=a$, with $f^{\pr
 
 Suppose $f(x)$ is continuous at a critical point $x=a$:
 > If $\exists\,h>0$ such that $f^{\prime}(x)<0\,\forall x\in(a-h,a)$ and $f^{\prime}(x)>0\,\forall x\in(a,a+h)$, then $x=a$ is a local minimum
-> If $\exists\,h>0$ such that $f^{\prime}(x)>0\,\forall x\in(a-h,a)$ and $f$
+> If $\exists\,h>0$ such that $f^{\prime}(x)>0\,\forall x\in(a-h,a)$ and $f^{\prime}(x)<0\,\forall x\in(a,a+h)$, then $x=a$ is a local maximum
+> If $\exists\,h>0$ such that $f^{\prime}(x)$ has constant sign $\forall x\neq a\in(a-h,a+h)$, then $x=a$ is not an extremum
+
+## Second derivative test:
+
+Suppose $f(x)$ is twice differentiable at $x=a$ with $f^{\prime}(a)=0$:
+> If $f^{\prime\prime}(a)>0$ then $x=a$ is a local minimum
+> If $f^{\prime\prime}(a)<0$ then $x=a$ is a local maximum
 
