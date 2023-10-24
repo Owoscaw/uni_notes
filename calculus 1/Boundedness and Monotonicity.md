@@ -23,3 +23,7 @@ If $f(x)$ is continuous on a close interval $[a,b]$, then it is bounded on that 
 # Monotonicity:
 
 $f(x)$ is monotonic increasing on an interval $[a,b]$ if $f(x_1)\leq f(x_2)\,\forall\,x_1,x_2:a\leq x_1<x_2\leq b$. This is to say for any $x_1,x_2$ on the interval $[a,b]$ with $x_1<x_2$ if any two $x_1,x_2$ satisfy $f(x_1)\leq f(x_2)$. Similarly, $f(x)$ is strictly monotonic increasing on an interval $[a,b]$ if $f(x_1)<f(x_2)$, with the same conditions as above. Monotonic and strictly monotonic decreasing are defined similarly.
+
+# Critical Points:
+
+A function $f(x)$ has a local maximum or minimum at $x=a$ if $\exists\, h>0$ such that $f(x)\leq f(a)$ ($\geq$ for a minimum) $\forall\,x\in(a-h,a+h)$. A local extremum is either a local max or a local min. If $f(x)$ has a local max at $x=a$ and is differentiable at this point
