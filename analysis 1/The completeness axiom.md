@@ -30,3 +30,10 @@ Another example:![[The completeness axiom .excalidraw]]This relies on the follow
 Let $a\geq 0$ and $p\in\mathbb{N}$, there exists exactly one $x\geq 0$ with $x^p=a$. This unique $x$ is called the $p$th root of $a$, denoted as $^p\sqrt{a}$. This gives a function:$$\Huge ^p\sqrt{\cdot}:[0,\infty)\mapsto[0,\infty)$$
 If $p$ is odd, this function definition can be extended to:
 $$\Huge ^p\sqrt{a}=-^p\sqrt{-a}$$
+This is proven as follows:
+![[The completeness axiom _0.excalidraw]]
+
+Consider the set $A=\{x\in\Re:x^p<a\}$. If $x\in A$, then:
+$$\Huge x^p<a<1+pa\leq(1+a)^p$$
+By the [[Proof techniques#Bernoulli inequality|Bernoulli inequality]]. We also get $x<1+a$, so $1+a$ is an upper bound for the set $A$. By the completeness axiom, $\zeta=sup\,A$ exists. We require $\zeta^p=a$ 
+
