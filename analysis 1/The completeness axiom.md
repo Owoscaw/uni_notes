@@ -36,7 +36,12 @@ This is proven as follows:
 Consider the set $A=\{x\in\Re:x^p<a\}$. If $x\in A$, then:
 $$\Huge x^p<a<1+pa\leq(1+a)^p$$
 By the [[Proof techniques#Bernoulli inequality|Bernoulli inequality]]. We also get $x<1+a$ from looking at $x^p<(1+a)^p$ and taking the $p$th root, so $1+a$ is an upper bound for the set $A$. By the completeness axiom, $\zeta=sup\,A$ exists, as it is bounded above and is non empty ($0\in A$). We require $\zeta^p=a$, so we will show $\zeta^p>a$ and $\zeta^p<a$, as in $\zeta^p\neq a$, leads to a contradiction:
-> Assuming $\zeta^p<a$, then $\zeta$ satisfies the condition on $x$ for set $A$, so $\zeta\in A$, and cannot be an upper bound.
-> By the Bernoulli inequality, we have:$$\Huge \left(\zeta+\frac{1}{n}\right)^p\leq\zeta^p+\frac{\alpha}{n},\,\text{where}:$$$$\Huge \alpha={p\choose1}\zeta^{p-1}+{p\choose 2}\zeta^{p-2}+\dots+{p\choose p-1}\zeta+1>0$$
+> Assuming $\zeta^p<a$, by the Bernoulli inequality, we have:$$\Huge \left(\zeta+\frac{1}{n}\right)^p\leq\zeta^p+\frac{\alpha}{n},\,\text{where}:$$$$\Huge \alpha={p\choose1}\zeta^{p-1}+{p\choose 2}\zeta^{p-2}+\dots+{p\choose p-1}\zeta+1>0$$
 > By the theorem of Archimedes, there exits $n$ so large such that:$$\Huge \frac{\alpha}{n}<a-\zeta^p$$
+> So we have:$$\Huge \left(\zeta+\frac{1}{n}\right)^p\leq\zeta^p+\frac{\alpha}{n}<a,\,\text{so}:$$$$\Huge \left(\zeta+\frac{1}{n}\right)^p<a,\,\text{so}\,\,\,\zeta+\frac{1}{n}\in A$$
+> This contradicts the assumption that $\zeta$ is an upper bound of $A$, as it is a member of the set. So now assume $\zeta^p>a$, then it is given $\zeta\notin A$:
+> $$\Huge \left(\zeta-\frac{1}{n}\right)^p=\zeta^p\left(1-\frac{1}{\zeta n}\right)\geq\zeta^p\left(1-\frac{p}{\zeta n}\right)=\zeta^p-\frac{p\zeta^{p-1}}{n}$$
+> By the Bernoulli inequality. Now by the theorem of Archimedes, there is $n\in\mathbb{N}$ with:$$\Huge 0<\frac{p\zeta^{p-1}}{n}<\zeta^p-a\iff-\zeta^p<\frac{p\zeta^{p-1}}{n}-\zeta^p<-a$$
+> Multiplying by $-1$, flipping the inequality:
+> $$\Huge \zeta^p>\frac{\zeta^p}{}$$
 
