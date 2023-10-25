@@ -35,5 +35,8 @@ This is proven as follows:
 
 Consider the set $A=\{x\in\Re:x^p<a\}$. If $x\in A$, then:
 $$\Huge x^p<a<1+pa\leq(1+a)^p$$
-By the [[Proof techniques#Bernoulli inequality|Bernoulli inequality]]. We also get $x<1+a$, so $1+a$ is an upper bound for the set $A$. By the completeness axiom, $\zeta=sup\,A$ exists. We require $\zeta^p=a$ 
+By the [[Proof techniques#Bernoulli inequality|Bernoulli inequality]]. We also get $x<1+a$ from looking at $x^p<(1+a)^p$ and taking the $p$th root, so $1+a$ is an upper bound for the set $A$. By the completeness axiom, $\zeta=sup\,A$ exists, as it is bounded above and is non empty ($0\in A$). We require $\zeta^p=a$, so we will show $\zeta^p>a$ and $\zeta^p<a$, as in $\zeta^p\neq a$, leads to a contradiction:
+> Assuming $\zeta^p<a$, then $\zeta$ satisfies the condition on $x$ for set $A$, so $\zeta\in A$, and cannot be an upper bound.
+> By the Bernoulli inequality, we have:$$\Huge \left(\zeta+\frac{1}{n}\right)^p\leq\zeta^p+\frac{\alpha}{n},\,\text{where}:$$$$\Huge \alpha={p\choose1}\zeta^{p-1}+{p\choose 2}\zeta^{p-2}+\dots+{p\choose p-1}\zeta+1>0$$
+> By the theorem of Archimedes, there exits $n$ so large such that:$$\Huge \frac{\alpha}{n}<a-\zeta^p$$
 
