@@ -1,4 +1,6 @@
 
+# Bounds, suprema, and infima:
+
 Let $X\subset \Re$. We say $X$ is bounded above if there exists $C\in\Re$ with $x\leq C$ for all $x\in X$. Here, $C$ is an upper bound for $X$, note that $C+1$ is also an upper bound for $X$. $X$ is bounded below is there exists a set $c\in\Re$ with $x\geq c$ for all $x\in X$. Here, $c$ is a lower bound for $X$. The set $X$ is bounded if it is both bounded above and below.
 
 For example, take $X=\mathbb{N}$. $1$ is a lower bound for $\mathbb{N}$ as $1\leq n$ for all $n\in\mathbb{N}$. An upper bound for $\mathbb{N}$ would be a number $C$ such that $n\leq C$ for all $n\in \mathbb{N}$. The existence of such $C$ cannot be ruled out.
@@ -14,6 +16,8 @@ Similarly, a number $c\in\Re$ is called the infimum ($inf\,X$) of $X$, or greate
 > Whenever $b\in\Re$ is a lower bound of $X$, then $c\geq b$.
 
 If $X$ has a maximum, then this maximum must be the supremum of $X$. Let $X$ be a set and $M\in X$ be the maximum of $X$, then $sup\,X=M$. By definition, $M$ is an upper bound. If $B\in\Re$ is another upper bound of $X$, then we require $M\leq B$. This is the case as $B\geq x,\,\forall x\in X$.
+
+Let $X\subset \Re$ and $f:X\mapsto\Re$. If $f(x)$ is bounded above, we denote $sup(f)$ as the supremum of $f(x)$. Similarly if $f(x)$ is bounded below, we denote $inf(f)$ as the infimum of $f(x)$
 
 Example:
 ![[infimum example]]
@@ -43,5 +47,11 @@ By the [[Proof techniques#Bernoulli inequality|Bernoulli inequality]]. We also g
 > $$\Huge \left(\zeta-\frac{1}{n}\right)^p=\zeta^p\left(1-\frac{1}{\zeta n}\right)\geq\zeta^p\left(1-\frac{p}{\zeta n}\right)=\zeta^p-\frac{p\zeta^{p-1}}{n}$$
 > By the Bernoulli inequality. Now by the theorem of Archimedes, there is $n\in\mathbb{N}$ with:$$\Huge 0<\frac{p\zeta^{p-1}}{n}<\zeta^p-a\iff-\zeta^p<\frac{p\zeta^{p-1}}{n}-\zeta^p<-a$$
 > Multiplying by $-1$, flipping the inequality:
-> $$\Huge \zeta^p>\frac{\zeta^p}{}$$
+> $$\Huge \zeta^p>\zeta^p-\frac{p\zeta^{p-1}}{n}>a$$
+> Combining this with the above inequalities gives:$$\Huge \left(\zeta-\frac{1}{n}\right)^p\geq\zeta^p-\frac{p\zeta^{p-1}}{n}>a$$
+> This means that $\zeta -\frac{1}{n}$ is an upper bound for $A$, which is contradictory to the assumption that $\zeta=sup\,A$, as the supremum must be included in the set. Therefore there is only one value for $\zeta^p$ that satisfies $\zeta=sup\,A$, which is $\zeta^p=a$.
+> 
+
+Now we can define powers with rational exponents. Let $a>0$ and $r=\frac{p}{q}$, with $p,q\in\mathbb{N}$. We then define:$$\Huge a^r=^q\sqrt{a^p},\,\,\text{and}\,\,a^{-r}=\frac{1}{^q\sqrt{a^p}}$$
+Then we must set $a^0=1$.
 
