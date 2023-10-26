@@ -72,8 +72,13 @@ In general for a matrix given by:
 $$\Huge A\in M_{2\times n}(\Re)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\\a_{21}&a_{22}&\dots&a_{2n}|b_2\end{pmatrix}$$
 > Applying $M_1(a_{11}^{-1})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a_{11}}|\frac{b_1}{a_{11}}\\a_{21}&a_{22}&\dots&a_{2n}|b_2\end{pmatrix}$$
 > Then applying $A_{12}(-a_{21})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a_{11}}|\frac{b_1}{a_{11}}\\0&a_{22}-\frac{a_{12}}{a_{11}}&\dots&a_{2n}-\frac{a_{1n}}{a_{11}}|b_2-\frac{b_1}{a_{11}}\end{pmatrix}$$
-> Then applying $M_2((a_{22}-\frac{a_{12}}{a_{11}})^{-1})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a{11}}|\frac{b_1}{a_{11}}\\0&1&\dots&\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}}\end{pmatrix}$$
-> 
+> Then applying $M_2((a_{22}-\frac{a_{12}}{a_{11}})^{-1})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a_{11}}|\frac{b_1}{a_{11}}\\0&1&\dots&\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\end{pmatrix}$$
+> Then finally applying $A_{21}(-\frac{a_{12}}{a{11}})$:
+> $$\Huge \begin{pmatrix}1&0&\dots&\frac{a_{1n}}{a_{11}}-\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_1}{a_{11}}-\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\\0&1&\dots&\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\end{pmatrix}$$
+> $A$ is now in RREF
+
+EROs can be proven to not change the solution set of a linear system as each operation is equivalent to left-multiplication by an associated matrix:
+>
 # Using GJ elimination:
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system. An augmented matrix is in RREF if its associated coefficient matrix is also in RREF. Applying the above algorithm on $(A|b)$ allows an equivalent system to be produced, where the solution set is easy to spot. Note that:
@@ -82,4 +87,8 @@ Two linear systems are called equivalent if they share a solution set. Applying 
 > When an augmented matrix is in RREF, a variable $x_j$ being a free variables corresponds to column $j$ of the coefficient matrix not containing the leading 1.
 
 Using the example from above, the solution set is found as follows:![[solution set example]]
+
+# Inverse matrices:
+
+If $B$ is invertible then the linear system $A\underline x=\underline b$ has the same solution set as $(BA)\underline x=(B\underline b)$. This is proven as follows:$$\Huge A\underline x=\underline b\implies BA\underline x=B\underline b\implies B^{-1}(BA\underline x)=IA\underline x=A\underline x=B^{-1}B\underline b=\underline b$$
 
