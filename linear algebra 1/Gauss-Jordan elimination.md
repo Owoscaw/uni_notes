@@ -69,7 +69,11 @@ By induction, this process must terminate either before or after stage $m$. If i
 
 This can be done with an augmented matrix as follows:![[RREF example]]
 In general for a matrix given by:
-$$\Huge A\in M_{2\times n}(\Re)=\begin{pmatrix}a_{11}&a_2&\dots&a_n|b_1\\a\end{pmatrix}$$
+$$\Huge A\in M_{2\times n}(\Re)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\\a_{21}&a_{22}&\dots&a_{2n}|b_2\end{pmatrix}$$
+> Applying $M_1(a_{11}^{-1})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a_{11}}|\frac{b_1}{a_{11}}\\a_{21}&a_{22}&\dots&a_{2n}|b_2\end{pmatrix}$$
+> Then applying $A_{12}(-a_{21})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a_{11}}|\frac{b_1}{a_{11}}\\0&a_{22}-\frac{a_{12}}{a_{11}}&\dots&a_{2n}-\frac{a_{1n}}{a_{11}}|b_2-\frac{b_1}{a_{11}}\end{pmatrix}$$
+> Then applying $M_2((a_{22}-\frac{a_{12}}{a_{11}})^{-1})$:$$\Huge \begin{pmatrix}1&\frac{a_{12}}{a_{11}}&\dots&\frac{a_{1n}}{a{11}}|\frac{b_1}{a_{11}}\\0&1&\dots&\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}}\end{pmatrix}$$
+> 
 # Using GJ elimination:
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system. An augmented matrix is in RREF if its associated coefficient matrix is also in RREF. Applying the above algorithm on $(A|b)$ allows an equivalent system to be produced, where the solution set is easy to spot. Note that:
