@@ -29,15 +29,13 @@ Every non-empty subset of $\Re$ which is bounded above has a supremum.
 Let $a,b\in\Re$ with $b>0$, then there exists a natural number $n$ with $nb>a$. Assume that this is not the case, then $X=\{nb\in\Re:n\in\mathbb{N}\}$ is bounded above. By the completeness axiom, $sup\,X=C\in\Re$ exists. So $nb\leq C$. Also $C-b<C$, so $C-b$ must not be an upper bound of $X$. So $\exists n\in\mathbb{N}$ such that $nb>C-b\iff(n+1)b>C$. Note that $(n+1)\in\mathbb{N}$, so $(n+1)b\in X$, so $C$ cannot be an upper bound. Here, assuming the opposite of this axiom leads to a contradiction so it must then be true.
 
 Taking $b=1$, this says for any real number $a$, there is a natural number $n\in\mathbb{N}$ with $n>a$. Therefore the natural numbers cannot be bounded above. Therefore, using the example above:![[infimum resolved]]
-Another example:![[The completeness axiom .excalidraw]]This relies on the following:
+## Roots:
 
 Let $a\geq 0$ and $p\in\mathbb{N}$, there exists exactly one $x\geq 0$ with $x^p=a$. This unique $x$ is called the $p$th root of $a$, denoted as $^p\sqrt{a}$. This gives a function:$$\Huge ^p\sqrt{\cdot}:[0,\infty)\mapsto[0,\infty)$$
 If $p$ is odd, this function definition can be extended to:
 $$\Huge ^p\sqrt{a}=-^p\sqrt{-a}$$
 This is proven as follows:
-![[The completeness axiom _0.excalidraw]]
-
-Consider the set $A=\{x\in\Re:x^p<a\}$. If $x\in A$, then:
+If $a=0$, use $x=0$, so we assume $a>0$. If $0<x<y$, then $x^p<y^p$, which gives at most one $x$ with $x^p=a$. Consider the set $A=\{x\in\Re:x^p<a\}$. If $x\in A$, then:
 $$\Huge x^p<a<1+pa\leq(1+a)^p$$
 By the [[Proof techniques#Bernoulli inequality|Bernoulli inequality]]. We also get $x<1+a$ from looking at $x^p<(1+a)^p$ and taking the $p$th root, so $1+a$ is an upper bound for the set $A$. By the completeness axiom, $\zeta=sup\,A$ exists, as it is bounded above and is non empty ($0\in A$). We require $\zeta^p=a$, so we will show $\zeta^p>a$ and $\zeta^p<a$, as in $\zeta^p\neq a$, leads to a contradiction:
 > Assuming $\zeta^p<a$, by the Bernoulli inequality, we have:$$\Huge \left(\zeta+\frac{1}{n}\right)^p\leq\zeta^p+\frac{\alpha}{n},\,\text{where}:$$$$\Huge \alpha={p\choose1}\zeta^{p-1}+{p\choose 2}\zeta^{p-2}+\dots+{p\choose p-1}\zeta+1>0$$
