@@ -62,3 +62,10 @@ If $C\in Dom\,f$ and if $\exists\,h>0$ such that $f(x)$ is defined on $[C,C+h)$ 
 If $x=C$ is an endpoint of $f(x)$, then $f(x)$ has an endpoint maximum or minimum at $x=C$ if $f(x)\leq f(C)$ ($\geq$ for minimum) for $x$ sufficiently close to $C$. If $f(x)$ is continuous and differentiable sufficiently close to an endpoint, then the sign of the derivative determines the nature of the endpoint.
 
 If $f(x)$ is continuous on a closed interval $[a,b]$, then all global extrema on this interval are attained at either critical points or endpoints.
+
+# Rolle's Theorem:
+
+Rolle's Theorem states that if $f$ is differentiable on the open interval $(a,b)$ and continuous on the closed interval $[a,b]$ with $f(a)=f(b)$, then there is at least one $c\in(a,b)$ for which $f^{\prime}(c)=0$, that is $c$ is a stationary point.:
+![[Rolle's Theorem example]]
+
+By the extreme value theorem, $\exists\,x_1,x_2\in[a,b]$ such that $f(x_1)\leq f(x)\leq f(x_2)\,\,\forall x\in [a,b]$. If $x_1\in(a,b)$, then $x_1$ is a local minimum and $f^{\prime}(x_1)=0$. If $x_2\in(a,b)$, then $x_2$ is a local maximum and $f^{\prime}(x_2)=0$. Otherwise, both $x_1$ and $x_2$ are endpoints $a,b$. Since $f(a)=f(b)$, then $f(x_1)=f(x_2)=f(a)=f(b)$, and so $f(a)\leq f(x)\leq f(b),\,\,\forall x\in[a,b]$
