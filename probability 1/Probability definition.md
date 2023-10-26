@@ -61,6 +61,8 @@ $\mathcal{F}$ is a $\sigma$-algebra if the following are satisfied:
 $$\Huge \Omega\in\mathcal{F},\,\,\,A\in\mathcal{F}\implies A^{'}\in\mathcal{F},\,\,\,A_1,A_2,\dots\in\mathcal{F}\implies\bigcup_{i=1}^{\infty}A_i\in\mathcal{F}$$
 This defines $\mathcal{F}$ as closed under complementation, and closed under countably infinite unions. This implies $\emptyset\in\mathcal{F}$.
 
+# Probability space:
+
 $2^{\Omega}$ is a $\sigma$-algebra over $\Omega$, and is the biggest possible $\sigma$-algebra for $\Omega$. Often, smaller $\sigma$-algebra are considered. If $\Omega$ is a set and $\mathcal{F}$ is a $\sigma$-algebra of subsets of $\Omega$, and $\mathbb{P}$ satisfies all axioms for events in $\mathcal{F}$, then the following is defined as a probability space:
 $$\Huge (\Omega,\mathcal{F},\mathbb{P})$$
 The largest possible $\sigma$-algebra for $\Omega$ is the power set, $2^{\Omega}$, which holds all information about the sample space $\Omega$. The smallest possible $\sigma$-algebra for $\Omega$ is the trivial $\{\emptyset,\Omega\}$, that is:

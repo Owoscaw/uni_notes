@@ -5,3 +5,7 @@ A random variable on a [[Sample spaces and events|sample space]], $\Omega$ is a 
 
 Example:
 ![[random variable dice]]
+
+For any set $B\subseteq X(\Omega)$, we say $X\in B$ is the event $\{\omega:X(\omega)\in B\}=X^{-1}(B)$. So for any $x\in X(\Omega)$ we write $X=x$ is the event $\{\omega:X(\omega)=x\}$, that is $\mathbb{P}(X=x)=\mathbb{P}(\{\omega:X(\omega)=x\})$, with our [[Probability definition#Probability space|probability space definition]] $(\Omega, \mathcal{F}, \mathbb{P})$.
+## Indicator random variable:
+
