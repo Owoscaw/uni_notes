@@ -11,4 +11,5 @@ $$\Huge S=\bigcap_{i=1}^kW_k$$
 For components in parallel:$$\Huge S=\bigcup_{i=1}^kW_k$$![[parallel reliability]]
 # Genetics:
 
-Inherited characteristics are determined by genes, the mechanisms governing inheritance are random, so the laws of probability are often used.
+Inherited characteristics are determined by genes, the mechanisms governing inheritance are random, so the laws of probability are often used. Genotypes of siblings are dependant if not conditional on the genotypes of parents:
+![[Applications of probability .excalidraw]]
