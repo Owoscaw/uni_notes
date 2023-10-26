@@ -12,4 +12,8 @@ For components in parallel:$$\Huge S=\bigcup_{i=1}^kW_k$$![[parallel reliability
 # Genetics:
 
 Inherited characteristics are determined by genes, the mechanisms governing inheritance are random, so the laws of probability are often used. Genotypes of siblings are dependant if not conditional on the genotypes of parents:
+
+A gene carried on the X chromosome (males) has allels $A$ and $a$. $aa$ women are unhealthy, $a$ men are unhealthy, othwerwise a person is healthy. Jane is healthy, her maternal aunt has an unhealthy son. Jane's maternal grandparents and father are all healthy.
+
+It is given that healthy men have genotype $A$, so Jane's maternal grandfather is healthy so has no $a$ allele, this means that Jane's cousin inherited his $a$ allele via his maternal grandmother, as this cannot be inherited from a healthy grandfather. This also means that Jane's maternal aunt must carry an $a$ allele, as well as Jane's maternal grandmother:
 ![[Applications of probability .excalidraw]]
