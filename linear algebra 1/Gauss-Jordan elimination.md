@@ -105,6 +105,9 @@ $I\implies II$ as $A$ is square, and each entry in a column with a leading $1$ m
 ## Fundamental theorem of invertible matrices:
 
 By $II$, there must exist a series of EROs that put $A$ into RREF, at which stage the RREF of $A$ will be equal to $I_n$. Let $E_1,E_2,\dots,E_s$ be elementary matrices:$$\Huge (E_s\dots E_2\,E_1)A=I_n\implies A=(E_s\dots E_2\,E_1)^{-1}I_n=E_1^{-1}E_{2}^{-1}\dots E_s^{-1}$$
+Therefore $(E_s\dots E_2\,E_1)$ is a left sided inverse of $A$. Now we show:$$A(E_s\dots E_1\,E_2)=I_nA(E_s\dots E_2\,E_1)=(E_1^{-1}E_2^{-1}\dots E_s^{-1}E_s\dots E_2\,E_1)A(E_s\dots E_2\,E_1)$$$$\Huge (E_1^{-1}E_2^{-1}\dots E_s^{-1})(E_s\dots E_2\,E_1A)(E_s\dots E_2\,E_1)$$
+We have already proven that $(E_s\dots E_2\,E_1)=I_n$ above, so the expression becomes:$$\Huge A(E_s\dots E_2\,E_1)=(E_1^{-1}E_{2}^{-1}\dots E_s^{-1})(E_s\dots E_2\,E_1)=I_n$$
+Therefore $A$ is invertible with $A^{-1}=E_s\dots E_2\,E_1$. This gives us the corollary that any invertible square matrix is a product of elementar
 
 
 
