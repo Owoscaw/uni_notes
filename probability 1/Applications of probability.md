@@ -16,4 +16,4 @@ Inherited characteristics are determined by genes, the mechanisms governing inhe
 A gene carried on the X chromosome (males) has allels $A$ and $a$. $aa$ women are unhealthy, $a$ men are unhealthy, othwerwise a person is healthy. Jane is healthy, her maternal aunt has an unhealthy son. Jane's maternal grandparents and father are all healthy.
 
 It is given that healthy men have genotype $A$, so Jane's maternal grandfather is healthy so has no $a$ allele, this means that Jane's cousin inherited his $a$ allele via his maternal grandmother, as this cannot be inherited from a healthy grandfather. This also means that Jane's maternal aunt must carry an $a$ allele, as well as Jane's maternal grandmother:
-![[Applications of probability .excalidraw]]
+![[genetic application of probability]]
