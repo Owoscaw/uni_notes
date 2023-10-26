@@ -71,3 +71,14 @@ Rolle's Theorem states that if $f$ is differentiable on the open interval $(a,b)
 By the extreme value theorem, $\exists\,x_1,x_2\in[a,b]$ such that $f(x_1)\leq f(x)\leq f(x_2)\,\,\forall x\in [a,b]$. If $x_1\in(a,b)$, then $x_1$ is a local minimum and $f^{\prime}(x_1)=0$. If $x_2\in(a,b)$, then $x_2$ is a local maximum and $f^{\prime}(x_2)=0$. Otherwise, both $x_1$ and $x_2$ are endpoints $a,b$. Since $f(a)=f(b)$, then $f(x_1)=f(x_2)=f(a)=f(b)$, and so $f(a)\leq f(x)\leq f(b),\,\,\forall x\in[a,b]$ so $f(x)$ is constant on $[a,b]$ and $f^{\prime}(x)=0,\,\,\forall x\in (a,b)$.
 
 A corollary of this is that if $f(x)$ is differentiable on an open interval $I$, then each pair of zeros of $f(x)$ is separated by at least one zero of $f^{\prime}(x)$. This can be used to find a bound on the number of distinct real zeros of a function.
+
+
+# Mean Value Theorem:
+
+The mean value theorem (MVT) states that if $f$ is differentiable on $(a,b)$, and continuous on $[a,b]$, then there is at least one $c\in(a,b)$ for which:$$\Huge f^{\prime}(c)=\frac{f(b)-f(a)}{b-a}$$
+![[MVT example]]
+Geometrically, this means that there is at least one point at which the gradient is parallel to the line joining $f(a)$ and $f(b)$. Note that Rolle's Theorem is a special case of the MVT (kind of like pulling the line connecting $f(a)$ to $f(b)$ down to the $x$ axis):
+
+Let $g(x)=(b-a)(f(x)-f(a))-(x-a)(f(b)-f(a))$. This is a transformation on the original function $f$, described above. Then:
+$$\Huge g(a)=(b-a)(f(a)-f(a))-(a-a)(f(b)-f(a))=0$$
+$$\Huge g(b)=(b-a)(f(b)-f(a))-(b-a)(f(b)-f(b))$$
