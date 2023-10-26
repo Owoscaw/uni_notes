@@ -94,13 +94,18 @@ Using the example from above, the solution set is found as follows:![[solution s
 
 If $B$ is invertible then the linear system $A\underline x=\underline b$ has the same solution set as $(BA)\underline x=(B\underline b)$. This is proven as follows:$$\Huge A\underline x=\underline b\implies BA\underline x=B\underline b\implies B^{-1}(BA\underline x)=IA\underline x=A\underline x=B^{-1}B\underline b=\underline b$$
 
-Let $A\in M_{n\times n}(\Re)$ be a square matrix. Then the follwing statements are either all true or all false:
+Let $A\in M_{n\times n}(\Re)$ be a square matrix. Then the following statements are either all true or all false:
 > In the RREF of $A$, every column has a leading $1$. ($I$)
 > The RREF of $A$ is $I_n$. ($II$)
 > The only solution to $A\underline x=0$ is $\underline x=0$. ($III$)
 > $A$ is invertible. ($IV$)
 
 $I\implies II$ as $A$ is square, and each entry in a column with a leading $1$ must be $0$, so the RREF of any square matrix must be $I_n$. $I\implies III$, as if $I$ holds then $II$ holds, so the RREF of $A$ is $I_n$, and $I_n\underline x=0$ has one unique solution, that is $\underline x=0$. $III\implies I$, there are no free variables in $I_n$ as the only non-zero entries are in rows with a leading $1$ (every row). 
+
+## Fundamental theorem of invertible matrices:
+
+By $II$, there must exist a series of EROs that put $A$ into RREF, at which stage the RREF of $A$ will be equal to $I_n$. Let $E_1,E_2,\dots,E_s$ be elementary matrices:$$\Huge (E_s\dots E_2\,E_1)A=I_n\implies A=(E_s\dots E_2\,E_1)^{-1}I_n=E_1^{-1}E_{2}^{-1}\dots E_s^{-1}$$
+
 
 
 
