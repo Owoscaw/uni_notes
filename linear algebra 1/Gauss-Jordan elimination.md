@@ -6,6 +6,10 @@ $$\Huge a_{m1}x_1+a_{m2}x_2+\dots +a_{mn}x_n=b_m$$
 This can be written as:
 $$\Huge \sum_{j=1}^na_{ij}x_j=b_j,\,\text{for}\,\,i=1,\dots,m$$
 Here we have $n$ variables with $m$ equations. This is also written as the [[Scalar Product|scalar product]]:$$\Huge \underline a_i\cdot \underline x=\begin{pmatrix}a_{i1}\\a_{i2}\\\vdots\\a_{in}\end{pmatrix}\cdot\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}=b_i,\,\text{for}\,i=1,\dots,m$$
+The general process to solve a system of linear equations is:
+> Form augmented matrix
+> Use EROs to convert the augmented matrix to RREF
+> Read off solutions
 # Formation
 
 The solution to these equations can be called a "hyperplane" in $\Re^n$, where each equation forms a normal vector for one of these "hyperplanes". The set of solutions that satisfy all of these equations can be found by formulating them into a [[Matrix definition|matrix]]. A sequence of EROs (Elementary Row Operations) is then performed to convert the matrix into RREF (Row Reduced Echelon Form), then the solution can be read off. The equations listed above can be written as the matrix:$$\Huge A=(a_{ij})=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}\\a_{21}&a_{22}&\dots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{m1}&a_{m2}&\dots&a_{mn}\end{pmatrix}\in M_{m\times n}(\Re)$$
@@ -63,9 +67,12 @@ Apply $A_{kr}(\mu)$ for $r=1,2,\dots,k-1$, if necessary to $\bar A_k$, ensuring 
 $$\Huge A_k=\begin{pmatrix}1&\star&\dots&\star&0&\star&\dots&0&\star&\dots&\star\\0&0&\dots&0&1&\star&\dots&0&\star&\dots&\star\\0&0&\dots&0&0&0&\dots&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&0&\dots&1&\star&\dots&\star\\0&0&\dots&0&0&0&\dots&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&0&\dots&0&\star&\dots&\star\end{pmatrix}$$
 By induction, this process must terminate either before or after stage $m$. If it terminates before, this is because the matrix is now in RREF. If it terminates after, then the matrix $A_m$ must have a leading 1 on every row, so it is easy to check if $A_m$ is in RREF.
 
+This can be done with an augmented matrix as follows:![[Gauss-Jordan elimination .excalidraw]]
+
 # Using GJ elimination:
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system. An augmented matrix is in RREF if its associated coefficient matrix is also in RREF. Applying the above algorithm on $(A|b)$ allows an equivalent system to be produced, where the solution set is easy to spot. Note that:
 > Rows of form $\begin{pmatrix}0&\dots&0|0\end{pmatrix}$ can be deleted.
 > Rows of form $\begin{pmatrix}0&\dots&0|k\end{pmatrix}$ for $k\neq 0$ satisfy $0x_1+0x_2+\dots+0x_n=k=0$, a contradiction. In this case, the system has no solutions and is said to be inconsistent.
 > When an augmented matrix is in RREF, a variable $x_j$ being a free variables corresponds to column $j$ of the coefficient matrix not containing the leading 1.
+
