@@ -67,12 +67,15 @@ Apply $A_{kr}(\mu)$ for $r=1,2,\dots,k-1$, if necessary to $\bar A_k$, ensuring 
 $$\Huge A_k=\begin{pmatrix}1&\star&\dots&\star&0&\star&\dots&0&\star&\dots&\star\\0&0&\dots&0&1&\star&\dots&0&\star&\dots&\star\\0&0&\dots&0&0&0&\dots&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&0&\dots&1&\star&\dots&\star\\0&0&\dots&0&0&0&\dots&0&\star&\dots&\star\\\vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\0&0&\dots&0&0&0&\dots&0&\star&\dots&\star\end{pmatrix}$$
 By induction, this process must terminate either before or after stage $m$. If it terminates before, this is because the matrix is now in RREF. If it terminates after, then the matrix $A_m$ must have a leading 1 on every row, so it is easy to check if $A_m$ is in RREF.
 
-This can be done with an augmented matrix as follows:![[Gauss-Jordan elimination .excalidraw]]
-
+This can be done with an augmented matrix as follows:![[RREF example]]
+In general for a matrix given by:
+$$\Huge A\in M_{2\times n}(\Re)=\begin{pmatrix}a_{11}&a_2&\dots&a_n|b_1\\a\end{pmatrix}$$
 # Using GJ elimination:
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system. An augmented matrix is in RREF if its associated coefficient matrix is also in RREF. Applying the above algorithm on $(A|b)$ allows an equivalent system to be produced, where the solution set is easy to spot. Note that:
 > Rows of form $\begin{pmatrix}0&\dots&0|0\end{pmatrix}$ can be deleted.
 > Rows of form $\begin{pmatrix}0&\dots&0|k\end{pmatrix}$ for $k\neq 0$ satisfy $0x_1+0x_2+\dots+0x_n=k=0$, a contradiction. In this case, the system has no solutions and is said to be inconsistent.
 > When an augmented matrix is in RREF, a variable $x_j$ being a free variables corresponds to column $j$ of the coefficient matrix not containing the leading 1.
+
+Using the example from above, the solution set is found as follows:![[solution set example]]
 
