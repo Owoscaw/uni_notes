@@ -77,8 +77,10 @@ $$\Huge A\in M_{2\times n}(\Re)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\\a
 > $$\Huge \begin{pmatrix}1&0&\dots&\frac{a_{1n}}{a_{11}}-\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_1}{a_{11}}-\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\\0&1&\dots&\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\end{pmatrix}$$
 > $A$ is now in RREF
 
-EROs can be proven to not change the solution set of a linear system as each operation is equivalent to left-multiplication by an associated matrix:
->
+EROs can be proven to not change the solution set of a linear system as each operation is equivalent to left-multiplication by an associated matrix, equivalent to each ERO applied to $I_n$. These matrices are called the elementary matrices. Each one of these matrices are invertible:
+> $P_{rs}^{-1}=P_{rs}$
+> $M_{r}(\lambda)^{-1}=M_{r}(\lambda^{-1})$
+> $A_{rs}(\lambda)^{-1}=A_{rs}(-\lambda)$
 # Using GJ elimination:
 
 Two linear systems are called equivalent if they share a solution set. Applying EROs to the augmented matrix of a linear system gives an equivalent linear system. An augmented matrix is in RREF if its associated coefficient matrix is also in RREF. Applying the above algorithm on $(A|b)$ allows an equivalent system to be produced, where the solution set is easy to spot. Note that:
@@ -91,4 +93,14 @@ Using the example from above, the solution set is found as follows:![[solution s
 # Inverse matrices:
 
 If $B$ is invertible then the linear system $A\underline x=\underline b$ has the same solution set as $(BA)\underline x=(B\underline b)$. This is proven as follows:$$\Huge A\underline x=\underline b\implies BA\underline x=B\underline b\implies B^{-1}(BA\underline x)=IA\underline x=A\underline x=B^{-1}B\underline b=\underline b$$
+
+Let $A\in M_{n\times n}(\Re)$ be a square matrix. Then the follwing statements are either all true or all false:
+> In the RREF of $A$, every column has a leading $1$. ($I$)
+> The RREF of $A$ is $I_n$. ($II$)
+> The only solution to $A\underline x=0$ is $\underline x=0$. ($III$)
+> $A$ is invertible. ($IV$)
+
+$I\implies II$ as $A$ is square, and each entry in a column with a leading $1$ must be $0$, so the RREF of any square matrix must be $I_n$. $I\implies III$, as if $I$ holds then $II$ holds, so the RREF of $A$ is $I_n$, and $I_n\underline x=0$ has one unique solution, that is $\underline x=0$. $III\implies I$, there are no free variables in $I_n$ as the only non-zero entries are in rows with a leading $1$ (every row). 
+
+
 
