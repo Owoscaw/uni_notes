@@ -100,4 +100,7 @@ $$\Huge g^\prime(f(x))=\frac{1}{f^\prime(x)},\,\,\text{with}\,\,y=f(x):$$$$\Huge
 # Partial derivatives:
 
 Functions can have two or more variables, where $f(x,y)$ can be thought of as the height of a function over the $xy$ plane:
-![[Boundedness, Monotonicity, and Derivatives .excalidraw]]
+![[mv function example]]
+
+The partial derivative is needed to describe the rate of change of $f(x,y)$ as each $x$ or $y$ are varied, while keeping the other constant. The partial derivative of $f$ with respect to $x$ is denoted as $\frac{\partial f}{\partial x}$ or $f_x(x,y)$ and is found by differentiating $f$ with respect to $x$, treating $y$ as a constant. The process is similar when finding the partial derivative of $f$ with respect to $y$, denoted as $\frac{\partial f}{\partial y}$ or $f_y(x,y)$. The following limits are assumed to exist:$$\large \frac{\partial f}{\partial x}(x,y)=\lim_{h\to 0}\frac{f(x+h,y)-f(x,y)}{h},\,\,\frac{\partial f}{\partial y}(x,y)=\lim_{h\to 0}\frac{f(x,y+h)-f(x,y)}{h}$$
+The following second order partial derivatives also exist:$$\large \frac{\partial^2f}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}\right),\,\frac{\partial^2 f}{}$$
