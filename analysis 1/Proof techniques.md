@@ -1,4 +1,10 @@
 
+# Double Inclusion:
+
+The statement $A\iff B$ is true if $A\implies B$ and $B\implies A$, so to prove $A\iff B$, first prove the implication both ways.
+
+This also works for [[Set theory definitions#Subset|set equality]], that is to prove two sets $A,B$ satisfy $A=B$, first prove $A\subseteq B$ then $B\subseteq A$. 
+
 # Contrapositive:
 
 The general technique for a contrapositive proof is summarised as follows. Let $A,B$ be statements. The statement "If $A$ then $B$" is equivalent to "If not $B$ then not $A$". This can be shown through a truth table:
