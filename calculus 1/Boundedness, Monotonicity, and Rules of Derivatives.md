@@ -91,4 +91,8 @@ Suppose $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f^{\
 
 # Inverse function rule:
 
-The inverse function rule states that if $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f^{\prime}(x)>0\,\forall x\in(a,b)$ then it's [[Functions, Domain and Range#Inverse functions|inverse function]]  
+The inverse function rule states that if $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f^{\prime}(x)>0\,\forall x\in(a,b)$ then it's [[Functions, Domain and Range#Inverse functions|inverse function]] $g(y):g(f(x))=x$ is differentiable for all $f(a)<y<f(b)$ with:
+$$\Huge g^{\prime}(y)=\frac{1}{f^{\prime}(g(y))}$$
+
+This is because a continuous function $f(x)$ that is monotonic increasing on $(a,b)$ will always be injective, so will always have an inverse function. The domain of this inverse then becomes the range of $f(x)$, producing the restriction that $g^{\prime}(y)$ is only defined on $f(a)<y<f(b)$. This follows using the chain rule:$$\Huge \frac{d}{dx}\left(g(f(x))\right)=g^{\prime}(f(x))f^{\prime}(x)=\frac{d}{dx}(1)$$
+$$\Huge g^\prime(f(x))=\frac{1}{f^\prime(x)},\,\,\text{with}\,\,y=f(x):$$$$\Huge g^\prime(y)=\frac{1}{f^\prime(g(y))}$$
