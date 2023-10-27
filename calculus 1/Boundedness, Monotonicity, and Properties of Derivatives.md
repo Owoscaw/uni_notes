@@ -86,4 +86,4 @@ $$\Huge g(a)=0=g(b),\,\text{so we can use Rolles Theorem}$$
 So $\exists\,c\in(a,b):g^{\prime}(c)=0$, $g^{\prime}(x)=(b-a)f^{\prime}(x)-(f(b)-f(a))$, so:$$\Huge 0=(b-a)f^{\prime}(c)-(f(b)-f(a))\implies f^{\prime}(c)=\frac{f(b)-f(a)}{b-a}$$
 As required. The MVT can be used to show some results between monotonicity and the derivative:
 
-Suppose $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f^{\prime}(x)\geq 0,\,\,\forall x\in(a,b)$. Then $f(x)$ is monotonic increasing in $(a,b)$. If $a\leq x_1<x_2\leq b$ then by MVT $\exists\,c\in(a,b):f^{\prime}(c)=\frac{f(x_2)-f(x_1)}{x_2-x_1}$. Since $f^{\prime}(x)\geq 0$ in $(a,b)$ then $f^{\prime}(c)\geq 0\implies f(x_)$ 
+Suppose $f(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$ with $f^{\prime}(x)\geq 0,\,\,\forall x\in(a,b)$. Then $f(x)$ is monotonic increasing in $(a,b)$. If $a\leq x_1<x_2\leq b$ then by MVT $\exists\,c\in(a,b):f^{\prime}(c)=\frac{f(x_2)-f(x_1)}{x_2-x_1}$. Since $f^{\prime}(x)\geq 0$ in $(a,b)$ then $f^{\prime}(c)\geq 0\implies f(x_2)\geq f(x_1)$, that is $f$ is monotonic increasing. 
