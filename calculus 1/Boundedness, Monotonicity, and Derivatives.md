@@ -96,3 +96,8 @@ $$\Huge g^{\prime}(y)=\frac{1}{f^{\prime}(g(y))}$$
 
 This is because a continuous function $f(x)$ that is monotonic increasing on $(a,b)$ will always be injective, so will always have an inverse function. The domain of this inverse then becomes the range of $f(x)$, producing the restriction that $g^{\prime}(y)$ is only defined on $f(a)<y<f(b)$. This follows using the chain rule:$$\Huge \frac{d}{dx}\left(g(f(x))\right)=g^{\prime}(f(x))f^{\prime}(x)=\frac{d}{dx}(1)$$
 $$\Huge g^\prime(f(x))=\frac{1}{f^\prime(x)},\,\,\text{with}\,\,y=f(x):$$$$\Huge g^\prime(y)=\frac{1}{f^\prime(g(y))}$$
+
+# Partial derivatives:
+
+Functions can have two or more variables, where $f(x,y)$ can be thought of as the height of a function over the $xy$ plane:
+![[Boundedness, Monotonicity, and Derivatives .excalidraw]]
