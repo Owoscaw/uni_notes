@@ -12,3 +12,6 @@ How many $k$ combinations with repetitions from $n$ objects are there in which e
 ![[combinations with repetitions]]
 So the number of $k$ combinations with repetitions taken from a set with $n$ objects, where there is at least one of each element from the set in each combination is given by:$$\Huge {n-1\choose k-1}$$
 To change a problem of the first type into the second type, one of each object from $n$ can be added to the combination, then taken away at the end. So the answer to the first question is given by:$$\Huge {k+n-1\choose n-1}={k+n-1\choose k}$$
+
+# Extended binomial coefficients:
+
