@@ -22,3 +22,7 @@ Examples:
 A convergent sequence $(x_n)_{n\in\mathbb{N}}$ has precisely one limit. Let $x,x^\circ$ be limits of $x_n$, and assume that $x\neq x^\circ$. Now let $\epsilon=\frac{|x-x^{\circ}|}{2}$:![[Sequences .excalidraw]]
 By convergence to $x$, there must be $n_0$ such that $|x_n-x|<\epsilon$ ,for all $n\geq n_0$. By convergence to $x^\circ$, there must be $n_1$ such that $|x_n-x^\circ|<\epsilon$, for all $n\geq n_1$. For $n\geq max(n_0,n_1)$:$$\Huge 2\epsilon=|x-x^\circ|\leq|x-x_n|+|x_n-x^\circ|<\epsilon+\epsilon=2\epsilon$$So we have $2\epsilon<2\epsilon$, $\epsilon<\epsilon$, a contradiction. Therefore our assumption must be false, so $x\neq x^\circ$ must not be true.
 
+## [[The completeness axiom#Bounds, suprema, and infima|Boundedness]]:
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a real sequence, and denote the set $X=\{x_n\in\Re:n\in\mathbb{N}\}$. The sequence $x_n$ is bounded above if the set $X$ is bounded above. Similarly, $x_n$ is bounded below if the set $X$ is bounded below. Finally $x_n$ is bounded if the set $X$ is bounded. Every covergent sequence is bounded.
+
