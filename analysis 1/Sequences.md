@@ -15,3 +15,10 @@ Examples:
 > Take $x_n=\frac{1}{n}$ for all $n\in\mathbb{N}$. Take $0$ to be a candidate for the limit. Start with $\epsilon>0$, there needs to be an $n_0$ with $|x_n-0|<\epsilon$ for all $n\geq n_0$. This simplifies to $\frac{1}{n}<\epsilon\iff\frac{1}{\epsilon}<n$ for all $n\geq n_0$. By Archimedes theorem, there exists $n_0\in\mathbb{N}$ with $n_0>\frac{1}{\epsilon}$, then use $\frac{1}{\epsilon}<n_0\leq n$. By transitivity, $n>\frac{1}{\epsilon}$ and the definition of a limit is satisfied with $\lim_{n\to\infty}x_n=0$.
 > Take $x_n=(-1)^n$ for $n\in\mathbb{N}$. This is a divergent sequence, so we will show it is not convergent. Take $x\in\Re$ to be a candidate for the limit. $|x_n-x|=|x_n-x_{n+1}+x_{n+1}-x|\leq |x_n-x_{n+1}|+|x_{n+1}-x|=2+|x_{n+1}-x|$. So we have $2\leq |x_n-x|+|x-x_{n+1}|$. If $x_n\to x$ as $n\to\infty$, assume $|x_n-x|<\epsilon$. As soon as $\epsilon\leq1$, this will not work and the limit cannot exist.
 
+# Properties of Limits:
+
+## Uniqueness:
+
+A convergent sequence $(x_n)_{n\in\mathbb{N}}$ has precisely one limit. Let $x,x^\circ$ be limits of $x_n$, and assume that $x\neq x^\circ$. Now let $\epsilon=\frac{|x-x^{\circ}|}{2}$:![[Sequences .excalidraw]]
+By convergence to $x$, there must be $n_0$ such that $|x_n-x|<\epsilon$ ,for all $n\geq n_0$. By convergence to $x^\circ$, there must be $n_1$ such that $|x_n-x^\circ|<\epsilon$, for all $n\geq n_1$. For $n\geq max(n_0,n_1)$:$$\Huge 2\epsilon=|x-x^\circ|\leq|x-x_n|+|x_n-x^\circ|<\epsilon+\epsilon=2\epsilon$$So we have $2\epsilon<2\epsilon$, $\epsilon<\epsilon$, a contradiction. Therefore our assumption must be false, so $x\neq x^\circ$ must not be true.
+
