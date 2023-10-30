@@ -26,4 +26,9 @@ A random variables $X:\Omega\mapsto X(\Omega)$ is said to be discrete if there e
 This is known as the probability mass function. Let $X$ be a discrete random variable and $p$ to be the PMF of $X$. Then:
 $$\Huge \mathbb{P}(X\in B)=\sum_{x\in B}p(x),\,\text{for any}\,B\subseteq\chi$$
 Note that $\sum_{x\in\chi}p(x)=1$. $\chi$ is either finite, or countable, or both, so in any case it can be enumerated. A set $B\subseteq\chi$ will also be finite or countable, so it can be written as:$$\Huge \mathbb{P}_X(B)=\mathbb{P}(X\in B)=\mathbb{P}\left(\bigcup_{x\in B}\{X=x\}\right)=\sum_{x\in B}\mathbb{P}(X=x)=\sum_{x\in B}p(x)$$
-So we have $$\Huge B=\bigcup_{i=1}^\infty\{\}$$
+So we have $$\Huge B=\bigcup_{i=1}^\infty\{X_i=x_i\}$$
+If $B=\chi$, we get $sum_{x\in\chi}p(x)=\mathbb{P}(X\in\chi)=1$.
+
+# Binomial and Geometric distributions:
+
+A random experiment is repeated $n$ times. Each trial is independent of one another. A trial has a binary outcome. Each trial has a fixed probability of success, $p$.
