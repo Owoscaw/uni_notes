@@ -77,6 +77,8 @@ $$\Huge A\in M_{2\times n}(\Re)=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}|b_1\\a
 > $$\Huge \begin{pmatrix}1&0&\dots&\frac{a_{1n}}{a_{11}}-\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_1}{a_{11}}-\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\\0&1&\dots&\frac{a_{2n}-\frac{a_{1n}}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}|\frac{b_2-\frac{b_1}{a_{11}}}{a_{22}-\frac{a_{12}}{a_{11}}}\end{pmatrix}$$
 > $A$ is now in RREF
 
+## Elementary matrices:
+
 EROs can be proven to not change the solution set of a linear system as each operation is equivalent to left-multiplication by an associated matrix, equivalent to each ERO applied to $I_n$. These matrices are called the elementary matrices. Each one of these matrices are invertible:
 > $P_{rs}^{-1}=P_{rs}$
 > $M_{r}(\lambda)^{-1}=M_{r}(\lambda^{-1})$
@@ -96,9 +98,9 @@ If $B$ is invertible then the linear system $A\underline x=\underline b$ has the
 
 Let $A\in M_{n\times n}(\Re)$ be a square matrix. Then the following statements are either all true or all false:
 > In the RREF of $A$, every column has a leading $1$. ($I$)
-> The RREF of $A$ is $I_n$. ($II$)
-> The only solution to $A\underline x=0$ is $\underline x=0$. ($III$)
-> $A$ is invertible. ($IV$)
+> $\iff$The RREF of $A$ is $I_n$. ($II$)
+> $\iff$The only solution to $A\underline x=0$ is $\underline x=0$. ($III$)
+> $\iff$$A$ is invertible. ($IV$)
 
 $I\implies II$ as $A$ is square, and each entry in a column with a leading $1$ must be $0$, so the RREF of any square matrix must be $I_n$. $I\implies III$, as if $I$ holds then $II$ holds, so the RREF of $A$ is $I_n$, and $I_n\underline x=0$ has one unique solution, that is $\underline x=0$. $III\implies I$, there are no free variables in $I_n$ as the only non-zero entries are in rows with a leading $1$ (every row). 
 
@@ -110,8 +112,11 @@ We have already proven that $(E_s\dots E_2\,E_1)=I_n$ above, so the expression b
 Therefore $A$ is invertible with $A^{-1}=E_s\dots E_2\,E_1$. This gives us the corollary that any invertible square matrix is a product of elementary matrices. Notice $E_1^{-1}E_2^{-1}\dots E_s^{-1}$ is an inverse of $A^{-1}=E_s\dots E_2\,E_1$, but so is the matrix $A$. By the uniqueness of inverses, the matrices $A$ and $E_1^{-1}E_2^{-1}\dots E_s^{-1}$ are equivalent.
 
 Suppose that $BA=I_n$ and consider $Ax=0$. Left multiplication by $B$ shows that the only solution is $x=0$, hence $A$ is invertible with $A^{-1}$:$$\Huge AB=ABAA^{-1}=A(I_n)A^{-1}=AA^{-1}=I_n$$
-By the uniqueness of the inverse, this shows that $A^{-1}=B$.
+By the uniqueness of the inverse, this shows that $A^{-1}=B$. 
 
+# Algorithm to compute the inverse:
 
-
-
+Given a matrix $A$, consider the augmented matrix $(A|I_n)$. Since $A$ is assumed to have an inverse, it is square and has RREF of $I_n$. Now apply EROs to make $A$ in this form by left-multiplying $(A|I_n)$ with elementary matrices:$$\Huge (E_sE_{s-1}\dots E_2E_1A|E_sE_{s-1}\dots E_2E_1)$$
+Note if $E_sE_{s-1}\dots E_2E_1=I_n$, then $A$ is fo-sho invertible. Assuming $A$ is invertible, we then have:$$\Huge (I_n|E_sE_{s-1}\dots E_2E_1)$$
+With $A^{-1}=E_sE_{s-1}E_2E_1$. Example:
+![[Gauss-Jordan elimination .excalidraw]]
