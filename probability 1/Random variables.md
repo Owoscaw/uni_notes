@@ -23,4 +23,7 @@ Note that $\mathbb{P}(1_A=1)=\mathbb{P}(\{\omega\in\Omega:\omega\in A\})=\mathbb
 # Discrete random variables:
 
 A random variables $X:\Omega\mapsto X(\Omega)$ is said to be discrete if there exists a finite countable set $\chi\subseteq X(\Omega)$ such that $\mathbb{P}(X\in\chi)=1$. The function $p:\chi\mapsto[0,1]$ defined by:$$\Huge p(x)=\mathbb{P}(X=x),\,\forall x\in\chi$$
-This is known as the probability mass function
+This is known as the probability mass function. Let $X$ be a discrete random variable and $p$ to be the PMF of $X$. Then:
+$$\Huge \mathbb{P}(X\in B)=\sum_{x\in B}p(x),\,\text{for any}\,B\subseteq\chi$$
+Note that $\sum_{x\in\chi}p(x)=1$. $\chi$ is either finite, or countable, or both, so in any case it can be enumerated. A set $B\subseteq\chi$ will also be finite or countable, so it can be written as:$$\Huge \mathbb{P}_X(B)=\mathbb{P}(X\in B)=\mathbb{P}\left(\bigcup_{x\in B}\{X=x\}\right)=\sum_{x\in B}\mathbb{P}(X=x)=\sum_{x\in B}p(x)$$
+So we have $$\Huge B=\bigcup_{i=1}^\infty\{\}$$
