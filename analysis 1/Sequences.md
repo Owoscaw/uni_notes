@@ -13,5 +13,5 @@ If the sequence is not convergent, it is divergent:
 Examples:
 > Take $x_n=\lambda$ for all $n\in\mathbb{N}$. Take $\lambda$ to be a candidate for the limit. Start with $\epsilon>0$, there needs to be an $n_0$ with $|x_n-\lambda|<\epsilon$ for all $n\geq n_0$. This simplifies to $|\lambda-\lambda|<\epsilon$, then to $\epsilon>0$. So $\lim_{n\to\infty}x_n=\lambda$.
 > Take $x_n=\frac{1}{n}$ for all $n\in\mathbb{N}$. Take $0$ to be a candidate for the limit. Start with $\epsilon>0$, there needs to be an $n_0$ with $|x_n-0|<\epsilon$ for all $n\geq n_0$. This simplifies to $\frac{1}{n}<\epsilon\iff\frac{1}{\epsilon}<n$ for all $n\geq n_0$. By Archimedes theorem, there exists $n_0\in\mathbb{N}$ with $n_0>\frac{1}{\epsilon}$, then use $\frac{1}{\epsilon}<n_0\leq n$. By transitivity, $n>\frac{1}{\epsilon}$ and the definition of a limit is satisfied with $\lim_{n\to\infty}x_n=0$.
-> Take $x_n=(-1)^n$
+> Take $x_n=(-1)^n$ for $n\in\mathbb{N}$. This is a divergent sequence, so we will show it is not convergent. Take $x\in\Re$ to be a candidate for the limit. $|x_n-x|=|x_n-x_{n+1}+x_{n+1}-x|\leq |x_n-x_{n+1}|+|x_{n+1}-x|=2+|x_{n+1}-x|$. So we have $2\leq |x_n-x|+|x-x_{n+1}|$. If $x_n\to x$ as $n\to\infty$, assume $|x_n-x|<\epsilon$. As soon as $\epsilon\leq1$, this will not work and the limit cannot exist.
 
