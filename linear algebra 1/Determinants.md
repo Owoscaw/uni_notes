@@ -21,5 +21,9 @@ That is the expansion along the $i$th row.
 
 Consider $A=\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\underline a_n\end{pmatrix}$, where each $\underline a_i$ is a row vector. Then the following are true:
 > $det\,I_n=1$
-> $det\begin{pmatrix}\underline a_1\\\vdots\\\underline \lambda a_r\\\vdots\\\underline a_n\end{pmatrix}=\lambda det\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\underline a_n\end{pmatrix}$
-> $det\begin{pmatrix}a_1\\\vdots\\\underl\end{pmatrix}$
+> $det\begin{pmatrix}\underline a_1\\\vdots\\\underline \lambda a_r\\\vdots\\\underline a_n\end{pmatrix}=\lambda det\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\underline a_n\end{pmatrix}$, linearity in multiplication
+> $det\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r+b_r\\\vdots\\\underline a_n\end{pmatrix}=det\begin{pmatrix}\underline a_1\\\vdots\\\underline b_r\\\vdots\\\underline a_n\end{pmatrix}$, linearity in addition
+> Swapping two rows, $det(P_{rs}A)=-det(A)$
+> $det\,A=0$ if it has two equal rows, or two rows that are multiplies of one another.
+> $det\,A=0$ if $A$ has a zero row.
+> $det(A_{rs}(\lambda)A)=det\,A$
