@@ -6,4 +6,8 @@ A sequence of real numbers is a function, $\mathbb{N}\mapsto\Re$. Each $n\in\mat
 
 # Limit of a sequence:
 
-A real sequence $(x_n)_{n\in\mathbb{N}}$ is said to be convergent to limit $x\in\Re$ if for every $\epsilon>0$, there exists an index $n_0\in\$
+A real sequence $(x_n)_{n\in\mathbb{N}}$ is said to be convergent to limit $x\in\Re$ if for every $\epsilon>0$, there exists an index $n_0\in\mathbb{N}$ such that $|x_n-x|<\epsilon$ for all $n\geq n_0$. In this case, we write:
+$$\Huge \forall \epsilon>0,\,\exists\,n_0\in\mathbb{N}:|x_n-x|<\epsilon\,\,\,\forall n\geq n_0,\,\,\lim_{n\to\infty}x_n=x$$
+If the sequence is not convergent, it is divergent:
+![[conv div example]]
+
