@@ -119,4 +119,4 @@ By the uniqueness of the inverse, this shows that $A^{-1}=B$.
 Given a matrix $A$, consider the augmented matrix $(A|I_n)$. Since $A$ is assumed to have an inverse, it is square and has RREF of $I_n$. Now apply EROs to make $A$ in this form by left-multiplying $(A|I_n)$ with elementary matrices:$$\Huge (E_sE_{s-1}\dots E_2E_1A|E_sE_{s-1}\dots E_2E_1)$$
 Note if $E_sE_{s-1}\dots E_2E_1=I_n$, then $A$ is fo-sho invertible. Assuming $A$ is invertible, we then have:$$\Huge (I_n|E_sE_{s-1}\dots E_2E_1)$$
 With $A^{-1}=E_sE_{s-1}E_2E_1$. Example:
-![[Gauss-Jordan elimination .excalidraw]]
+![[G-J example]]
