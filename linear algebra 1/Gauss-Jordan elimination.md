@@ -15,7 +15,7 @@ The general process to solve a system of linear equations is:
 The solution to these equations can be called a "hyperplane" in $\Re^n$, where each equation forms a normal vector for one of these "hyperplanes". The set of solutions that satisfy all of these equations can be found by formulating them into a [[Matrix definition|matrix]]. A sequence of EROs (Elementary Row Operations) is then performed to convert the matrix into RREF (Row Reduced Echelon Form), then the solution can be read off. The equations listed above can be written as the matrix:$$\Huge A=(a_{ij})=\begin{pmatrix}a_{11}&a_{12}&\dots&a_{1n}\\a_{21}&a_{22}&\dots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{m1}&a_{m2}&\dots&a_{mn}\end{pmatrix}\in M_{m\times n}(\Re)$$
 $$\Huge \underline b=\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix}\in\Re^m,\,\,\underline x=\begin{pmatrix}x_1\\\vdots\\x_m\end{pmatrix}$$
 $$\Huge A\underline x=\underline b$$
-[[Matrix operations#Matrix multiplication|Matrix multiplication]] between $A$ and $x$ will give the entire original system of linear equations. If $A\in M_n(\Re)$ and $\underline b\in\Re^n$, and $A$ is [[Matrix operations#Inverses|invertible]], then the system of linear equations given above by $(A|\underline b)$ has a unique solution:
+[[Matrix operations and inverses#Matrix multiplication|Matrix multiplication]] between $A$ and $x$ will give the entire original system of linear equations. If $A\in M_n(\Re)$ and $\underline b\in\Re^n$, and $A$ is [[Matrix operations and inverses#Inverses|invertible]], then the system of linear equations given above by $(A|\underline b)$ has a unique solution:
 $$ A\underline x=\underline b\iff A^{-1}(A\underline x)=A^{-1}\underline b\iff(A^{-1}A)\underline x=A^{-1}\underline b\iff I_n\underline x=A^{-1}\underline b\iff\underline x=A^{-1}\underline b$$
 ## RREF:
 
@@ -108,6 +108,9 @@ By $II$, there must exist a series of EROs that put $A$ into RREF, at which stag
 Therefore $(E_s\dots E_2\,E_1)$ is a left sided inverse of $A$. Now we show:$$A(E_s\dots E_1\,E_2)=I_nA(E_s\dots E_2\,E_1)=(E_1^{-1}E_2^{-1}\dots E_s^{-1}E_s\dots E_2\,E_1)A(E_s\dots E_2\,E_1)$$$$\Huge (E_1^{-1}E_2^{-1}\dots E_s^{-1})(E_s\dots E_2\,E_1A)(E_s\dots E_2\,E_1)$$
 We have already proven that $(E_s\dots E_2\,E_1)=I_n$ above, so the expression becomes:$$\Huge A(E_s\dots E_2\,E_1)=(E_1^{-1}E_{2}^{-1}\dots E_s^{-1})(E_s\dots E_2\,E_1)=I_n$$
 Therefore $A$ is invertible with $A^{-1}=E_s\dots E_2\,E_1$. This gives us the corollary that any invertible square matrix is a product of elementary matrices. Notice $E_1^{-1}E_2^{-1}\dots E_s^{-1}$ is an inverse of $A^{-1}=E_s\dots E_2\,E_1$, but so is the matrix $A$. By the uniqueness of inverses, the matrices $A$ and $E_1^{-1}E_2^{-1}\dots E_s^{-1}$ are equivalent.
+
+Suppose that $BA=I_n$ and consider $Ax=0$. Left multiplication by $B$ shows that the only solution is $x=0$, hence $A$ is invertible with $A^{-1}$:$$\Huge AB=ABAA^{-1}=A(I_n)A^{-1}=AA^{-1}=I_n$$
+By the uniqueness of the inverse, this shows that $A^{-1}=B$.
 
 
 
