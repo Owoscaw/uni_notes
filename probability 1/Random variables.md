@@ -31,4 +31,4 @@ If $B=\chi$, we get $sum_{x\in\chi}p(x)=\mathbb{P}(X\in\chi)=1$.
 
 # Binomial and Geometric distributions:
 
-A random experiment is repeated $n$ times. Each trial is independent of one another. A trial has a binary outcome. Each trial has a fixed probability of success, $p$.
+A random experiment is repeated $n$ times. Each trial is independent of one another. A trial has a binary outcome. Each trial has a fixed probability of success, $p$. $X$ is defined to be the number of successful trials in $n$ total trials. $\Omega=\{\omega_n=(\omega_1,\omega_2,\dots,\omega_n):\omega_i\in\{0,1\}\}$, so we define:$$\Huge X(\omega)=\sum_{i=1}^n\omega_i=x\iff\mathbb{P}(X=x)={n\choose x}p^x(1-p)^{n-x}$$
