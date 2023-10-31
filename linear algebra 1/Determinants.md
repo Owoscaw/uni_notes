@@ -41,4 +41,7 @@ So we have $det(A^\prime)=\lambda_l\dots\lambda_1det(A)$, and $f(A^\prime)=\lamb
 >$A^\prime=I_n:f(A^\prime)=1=det(A^\prime)$
 >$A^\prime$ has a row of zeroes: $f(A^\prime)=0=det(A^\prime)$
 
-Hence $det(A)=f(A)$, making $det(A)$ the unique function that satisfies all the properties above.
+Hence $det(A)=f(A)$, making $det(A)$ the unique function that satisfies all the properties above. To turn any square matrix $A$ into $I_n$, $A_{rs}(\lambda)$ and $M_r(\lambda)$ are used, $P_{rs}$ is never used. This can be used to track what the determinant of the original matrix was.
+
+$A$ is called upper triangular $\iff$ all entries below the diagonal are $0$. If $A$ is an upper or lower $n\times n$ matrix with diagonal entries $a_{11},a_{22},\dots,a_{nn}$:$$\Huge det(A)=\prod_{k=1}^na_{kk}$$
+So to compute the determinant of a general $A\in M_n(\Re)$ matrix, EROs can be used to turn $A$ into upper or lower triangular form, then the above product can be calculated. The EROs must be used to modify the determinant as well as the matrix, as above.
