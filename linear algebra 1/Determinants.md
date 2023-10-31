@@ -32,3 +32,13 @@ Consider $A=\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\unde
 
 # Uniqueness:
 
+Let $A\in M_n(\Re)$ and $f(A)=det(A)$. Let $E_1,\dots,E_l$ be [[Gauss-Jordan elimination#Elementary matrices|elementary matrices]] such that $A^\prime=E_l\dots E_1A$ is in [[Gauss-Jordan elimination#RREF|RREF]]. Cases for $E_i$:
+> $E_i=M_r(\mu)$, set $\lambda_i=\mu$
+> $E_i=A_{rs}(\mu)$, set $\lambda_i=1$
+> $E_i=P_{rs}$, set $\lambda_i=-1$
+
+So we have $det(A^\prime)=\lambda_l\dots\lambda_1det(A)$, and $f(A^\prime)=\lambda_l\dots\lambda_1f(A)$. Also $det(A)=\lambda_l^{-1}\dots\lambda_1^{-1}det(A^\prime)$ as well as $f(A)=\lambda_l^{-1}\dots\lambda_1^{-1}f(A^\prime)$. In RREF, $A^\prime$ is either $I_n$ or has a row of zeroes. In each case:
+>$A^\prime=I_n:f(A^\prime)=1=det(A^\prime)$
+>$A^\prime$ has a row of zeroes: $f(A^\prime)=0=det(A^\prime)$
+
+Hence $det(A)=f(A)$, making $det(A)$ the unique function that satisfies all the properties above.
