@@ -10,12 +10,15 @@ A function $f(x)$ is integrable in $(a,b)$ if it has an indefinite integral $F(x
 
 A definite integral of $f(x)$ gives the signed area under the curve of the graph of $f(x)$:
 ![[Integration .excalidraw]]
-This area is defined as the limit of a Riemann sum, by splitting the area into rectangles:
-![[Integration _0.excalidraw]]
-If $f(x)$ is continuous and the rectangles are small, the method of summing rectangular areas can become a good approximation. The error can be reduced to zero by taking the limit of the size of the rectangles to zero. This limit exists if it is independent of how the rectangles are constructed to form the approximation.
+This area is defined as the limit of a Riemann sum, by splitting the area into rectangles. If $f(x)$ is continuous and the rectangles are small, the method of summing rectangular areas can become a good approximation. The error can be reduced to zero by taking the limit of the size of the rectangles to zero. This limit exists if it is independent of how the rectangles are constructed to form the approximation.
 
 A subdivision, $S$, of a closed interval $[a,b]$ is a [[Probability definition#Partitions|partition]] into a finite number of sub-intervals, the following would be a subdivision of $[a,b]$:
 $$\Huge [x_0,x_1],[x_1,x_2],\dots,[x_{n-1},x_n]$$
 Here, $a=x_0<x_1<x_2<\dots<x_{n-1}<x_n=b$. The norm of a subdivision, $|S|$, is the maximum of the sub-interval lengths, $|a-x_1|,|x_1-x_2|,\dots,|x_{n-1}-b|$. The numbers $z_1,z_2,\dots,z_n$ form a set of sample points from $S$ if $z_j\in[x_{j-1},x_j]$ for $j=1,\dots,n$. Now this can be used to define a Reimann sum:
 
-Suppose that $f(x)$
+Suppose that $f(x)$ is defined for $x\in[a,b]$. The Reimann sum is:
+$$\Huge \mathcal{R}=\sum_{j=1}^n(x_j-x_{j-1})f(z_j)$$
+![[Integration _0.excalidraw]]
+The definite integral is then given in terms of a Reimann sum by taking the limit as $|S|$ tends to zero. This limit exists if it is independent of the subdivision and set of sample points. Let $f(x)$ be defined $\forall\,x\in[a,b]$, the definite integral of $f(x)$ from $a$ to $b$ is then defined as:
+$$\Huge \int_a^bf(x)dx=\lim_{|S|\to0}\mathcal{R}$$
+It can be shown that this limit exists if $f(x)$ is continuous in $[a,b]$. The above is defined for $a<b$, however can be generalised by defining $\int_b^a$
