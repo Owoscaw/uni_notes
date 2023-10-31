@@ -45,3 +45,9 @@ Hence $det(A)=f(A)$, making $det(A)$ the unique function that satisfies all the 
 
 $A$ is called upper triangular $\iff$ all entries below the diagonal are $0$. If $A$ is an upper or lower $n\times n$ matrix with diagonal entries $a_{11},a_{22},\dots,a_{nn}$:$$\Huge det(A)=\prod_{k=1}^na_{kk}$$
 So to compute the determinant of a general $A\in M_n(\Re)$ matrix, EROs can be used to turn $A$ into upper or lower triangular form, then the above product can be calculated. The EROs must be used to modify the determinant as well as the matrix, as above.
+
+# Relation to [[Matrix operations and inverses#Inverses|inverses]]:
+
+For $A\in M_n(\Re)$, if $det(A)\neq 0\iff A$ is invertible.
+
+For $A,B\in M_n(\Re)$, $det(AB)=det(A)det(B)$. This has a corollary where if $A$ is not invertible, then $AB$ is not invertible. Assume $A$ is not invertible, it follows that $det(A)=0$. Then $0=det(A)=det(A)det(B)=det(AB)$, so $AB$ is not invertible.
