@@ -9,7 +9,7 @@ A function $f(x)$ is integrable in $(a,b)$ if it has an indefinite integral $F(x
 ### Definite:
 
 A definite integral of $f(x)$ gives the signed area under the curve of the graph of $f(x)$:
-![[Integration .excalidraw]]
+![[signed area]]
 This area is defined as the limit of a Riemann sum, by splitting the area into rectangles. If $f(x)$ is continuous and the rectangles are small, the method of summing rectangular areas can become a good approximation. The error can be reduced to zero by taking the limit of the size of the rectangles to zero. This limit exists if it is independent of how the rectangles are constructed to form the approximation.
 
 A subdivision, $S$, of a closed interval $[a,b]$ is a [[Probability definition#Partitions|partition]] into a finite number of sub-intervals, the following would be a subdivision of $[a,b]$:
@@ -18,7 +18,11 @@ Here, $a=x_0<x_1<x_2<\dots<x_{n-1}<x_n=b$. The norm of a subdivision, $|S|$, is 
 
 Suppose that $f(x)$ is defined for $x\in[a,b]$. The Reimann sum is:
 $$\Huge \mathcal{R}=\sum_{j=1}^n(x_j-x_{j-1})f(z_j)$$
-![[Integration _0.excalidraw]]
+![[Reimann sum example]]
 The definite integral is then given in terms of a Reimann sum by taking the limit as $|S|$ tends to zero. This limit exists if it is independent of the subdivision and set of sample points. Let $f(x)$ be defined $\forall\,x\in[a,b]$, the definite integral of $f(x)$ from $a$ to $b$ is then defined as:
 $$\Huge \int_a^bf(x)dx=\lim_{|S|\to0}\mathcal{R}$$
-It can be shown that this limit exists if $f(x)$ is continuous in $[a,b]$. The above is defined for $a<b$, however can be generalised by defining $\int_b^a$
+It can be shown that this limit exists if $f(x)$ is continuous in $[a,b]$. The above is defined for $a<b$, however can be generalised by defining $\int_b^af(x)dx=-\int_a^bf(x)dx$. This implies $\int_a^af(x)dx=0$. The definite integral satisfies the following properties. Let $f,g$ be integrable in $(a,b)$:
+>Linearity of integrals. For $\lambda,\mu\in\Re$, $(\lambda f+\mu g)(x)$ is also integrable in $(a,b)$ with:$$\Huge \int_a^b(\lambda f+\mu g)(x)dx=\lambda\int_a^bf(x)dx+\mu\int_a^bf(x)dx$$
+>If $c\in[a,b]$, then:$$\Huge \int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$
+>If $f(x)\geq g(x)\,\forall x\in(a,b)$, then:$$\Huge\int_a^bf(x)dx\geq\int_a^bg(x)dx$$
+>If $m\leq f(x)\leq M,\,\forall x\in[a,b]$, then:$$\Huge m(b-a)\leq\int_a^bf(x)dx\leq M(b-a)$$
