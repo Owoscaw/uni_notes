@@ -28,4 +28,7 @@ Consider $A=\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\unde
 > $det\,A=0$ if $A$ has a zero row. $VI$
 > $det(A_{rs}(\lambda)A)=det\,A$ $VII$
 
-![[Determinants .excalidraw]]
+![[determinant properties proof]]
+
+# Uniqueness:
+
