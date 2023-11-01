@@ -43,4 +43,7 @@ Let $(x_n)_{n\in\mathbb{N}}$, $(y_n)_{n\in\mathbb{N}}$ be convergent to $x=\lim_
 > 
 
 Proof for second consequence is as follows. Consider $|x_ny_n-xy|=|x_ny_n-x_ny+x_ny-xy|$. Using the triangle inequality:$$\Huge |x_ny_n-xy|\leq |x_n(y_n-y)|+|(x_n-x)y|=|x_n||y_n-y|+|y||x_n-x|$$
-As convergent sequences are bounded, $x_n$ must be bounded. Then $x_n\leq C$ for some $C\in\Re$, also assume $|y|\leq C$. Then we have:$$\Huge |x_ny_n-xy|\leq C\left(|y_n-y|-|x|\right)$$
+As convergent sequences are bounded, $x_n$ must be bounded. Then $x_n\leq C$ for some $C\in\Re$, also assume $|y|\leq C$. Then we have:$$\Huge |x_ny_n-xy|\leq C\left(|y_n-y|-|x_n-x|\right)$$
+Now choose some $\epsilon>0$. Since $x_n$ converges, there is $n_0$ with $|x_n-x|<\frac{\epsilon}{2C}$ and since $y_n$ converges there is $n_1$ with $|y_n-y|<\frac{\epsilon}{2C}$. Then for $n\geq max\{n_0,n_1\}$:$$\Huge |x_ny_n-xy|\leq C\left(|y_n-y|+|x_n-x|\right)<C\left(\frac{\epsilon}{2C}+\frac{\epsilon}{2C}\right)=\epsilon$$
+Then this means $\lim_{n\to\infty}x_ny_n=xy$, as the criteria for convergence have been met ($|(x_ny_n)-(xy)|<\epsilon$) for all $\epsilon>0$. Now consider this example:
+![[COLT example]]
