@@ -19,7 +19,7 @@ Examples:
 
 ## Uniqueness:
 
-A convergent sequence $(x_n)_{n\in\mathbb{N}}$ has precisely one limit. Let $x,x^\circ$ be limits of $x_n$, and assume that $x\neq x^\circ$. Now let $\epsilon=\frac{|x-x^{\circ}|}{2}$:![[Sequences .excalidraw]]
+A convergent sequence $(x_n)_{n\in\mathbb{N}}$ has precisely one limit. Let $x,x^\circ$ be limits of $x_n$, and assume that $x\neq x^\circ$. Now let $\epsilon=\frac{|x-x^{\circ}|}{2}$:![[uniqueness of the limit example]]
 By convergence to $x$, there must be $n_0$ such that $|x_n-x|<\epsilon$ ,for all $n\geq n_0$. By convergence to $x^\circ$, there must be $n_1$ such that $|x_n-x^\circ|<\epsilon$, for all $n\geq n_1$. For $n\geq max(n_0,n_1)$:$$\Huge 2\epsilon=|x-x^\circ|\leq|x-x_n|+|x_n-x^\circ|<\epsilon+\epsilon=2\epsilon$$So we have $2\epsilon<2\epsilon$, $\epsilon<\epsilon$, a contradiction. Therefore our assumption must be false, so $x\neq x^\circ$ must not be true.
 
 ## [[The completeness axiom#Bounds, suprema, and infima|Boundedness]]:
@@ -33,3 +33,14 @@ Let $(x_n)_{n\in\mathbb{N}}$ be a real sequence, and denote the set $X=\{x_n\in\
 Let $(x_n)_{n\in\mathbb{N}}$, $(y_n)_{n\in\mathbb{N}}$ be real sequences. If $|x_n|\leq y_n$ for all $n\in\mathbb{N}$, and $y_n\to0$ as $n\to\infty$, then also $x_n\to0$ as $n\to\infty$. Let $\epsilon>0$, since $y_n\to0$ as $n\to\infty$, $\exists\,n_0\in\mathbb{N}$ with $y_n=|y_n-0|<\epsilon$ for all $n\geq n_0$. This implies:$$\Huge |x_n-0|=|x_n|\leq y_n<\epsilon,\,\forall n\geq n_0$$
 This shows that $x_n\to0$ as $n\to\infty$. Example:
 ![[convergent example]]
+
+## Calculus of limits theorem ([[Limits and Continuity#Consequences of continuity|COLT]]):
+
+Let $(x_n)_{n\in\mathbb{N}}$, $(y_n)_{n\in\mathbb{N}}$ be convergent to $x=\lim_{n\to\infty}x_n$ and $y=\lim_{n\to\infty}y_n$, let $a,b\in\Re$, then:
+> $ax_n+by_n\to ax+by$ as $n\to\infty$
+> $x_ny_n\to xy$ as $n\to\infty$
+> $\frac{x_n}{y_n}\to \frac{x}{y}$ as $n\to\infty$ given $y\neq 0$ and $y_n\neq 0,\,\forall n\in\mathbb{N}$
+> 
+
+Proof for second consequence is as follows. Consider $|x_ny_n-xy|=|x_ny_n-x_ny+x_ny-xy|$. Using the triangle inequality:$$\Huge |x_ny_n-xy|\leq |x_n(y_n-y)|+|(x_n-x)y|=|x_n||y_n-y|+|y||x_n-x|$$
+As convergent sequences are bounded, $x_n$ must be bounded. Then $x_n\leq C$ for some $C\in\Re$, also assume $|y|\leq C$. Then we have:$$\Huge |x_ny_n-xy|\leq C\left(|y_n-y|-|x|\right)$$
