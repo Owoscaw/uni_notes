@@ -18,7 +18,7 @@ This also corresponds to the coefficients in the expansion of two numbers raised
 $$\Huge (a+b)^n=\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}a^kb^{n-k}$$
 This is because there are $\begin{pmatrix}n\\k\end{pmatrix}$ ways of expanding the brackets to produce a term with powers of $a$ and $b$ equivalent to $a^kb^{n-k}$. The following are identities that can be shown using the binomial theorem:
 >$\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}=2^n$
->$\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}(-1)^k$=0
+>$\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}(-1)^k=0$
 >$\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}2^k=3^n$
 >$\sum_{k=0}^n\begin{pmatrix}n\\k\end{pmatrix}k=n2^{n-1}$
 
