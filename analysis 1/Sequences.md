@@ -24,5 +24,12 @@ By convergence to $x$, there must be $n_0$ such that $|x_n-x|<\epsilon$ ,for all
 
 ## [[The completeness axiom#Bounds, suprema, and infima|Boundedness]]:
 
-Let $(x_n)_{n\in\mathbb{N}}$ be a real sequence, and denote the set $X=\{x_n\in\Re:n\in\mathbb{N}\}$. The sequence $x_n$ is bounded above if the set $X$ is bounded above. Similarly, $x_n$ is bounded below if the set $X$ is bounded below. Finally $x_n$ is bounded if the set $X$ is bounded. Every covergent sequence is bounded.
+Let $(x_n)_{n\in\mathbb{N}}$ be a real sequence, and denote the set $X=\{x_n\in\Re:n\in\mathbb{N}\}$. The sequence $x_n$ is bounded above if the set $X$ is bounded above. Similarly, $x_n$ is bounded below if the set $X$ is bounded below. Finally $x_n$ is bounded if the set $X$ is bounded. Every convergent sequence is bounded.
 
+# Convergence criteria:
+
+## Squeezing theorem:
+
+Let $(x_n)_{n\in\mathbb{N}}$, $(y_n)_{n\in\mathbb{N}}$ be real sequences. If $|x_n|\leq y_n$ for all $n\in\mathbb{N}$, and $y_n\to0$ as $n\to\infty$, then also $x_n\to0$ as $n\to\infty$. Let $\epsilon>0$, since $y_n\to0$ as $n\to\infty$, $\exists\,n_0\in\mathbb{N}$ with $y_n=|y_n-0|<\epsilon$ for all $n\geq n_0$. This implies:$$\Huge |x_n-0|=|x_n|\leq y_n<\epsilon,\,\forall n\geq n_0$$
+This shows that $x_n\to0$ as $n\to\infty$. Example:
+![[Sequences _0.excalidraw]]
