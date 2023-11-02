@@ -59,3 +59,7 @@ For $A,B\in M_n(\Re)$, $det(AB)=det(A)det(B)$. Suppose $A,B$ are both invertible
 Where each $E_i,F_j$ are appropriate elementary matrices for $1\leq i\leq k,1\leq j\leq k$. Note that:
 $$\Huge det(AB)=det(E_1\dots E_kF_1\dots F_l)=det(E_1)det(E_2\dots E_kF_1\dots F_l)$$$$\Huge \implies det(AB)=det(E_1)\dots det(E_k)det(F_1)\dots det(F_l)$$$$\Huge \implies det(AB)=det(E_1\dots E_k)det(F_1\dots F_l)=det(A)det(B)$$
 This has a corollary where if $A$ is not invertible, then $AB$ is not invertible. Assume $A$ is not invertible, it follows that $det(A)=0$. Then $0=det(A)=det(A)det(B)=det(AB)$, so $AB$ is not invertible.
+
+## Transpose:
+
+If $A\in M_n(\Re)$, then $det(A^t)=det(A)$. Every row operation on $A$ is equivalent to a column operation on $A^t$. We know $A$ is invertible $\iff A^t$ is invertible, that is $(A^t)^{-1}=(A^{-1})^t$. 
