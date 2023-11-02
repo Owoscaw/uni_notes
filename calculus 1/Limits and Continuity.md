@@ -72,3 +72,13 @@ The graph of a function $f$ will have a horizontal asymptote to the right or lef
 
 This theorem states that if $f$ is continuous on a closed interval $[a,b]$, and $u$ is any value between $f(a)$ and $f(b)$, then $\exists c\in(a,b):f(c)=u$:![[IVT]]
 The IVT is useful for finding the roots of a function. If $f$ is continuous on $[a,b]$ with $f(a)<0<f(b)$ or $f(b)<0<f(a)$, then the IVT states that there is at least one root such that $f(x)=0,\,a<x<b$ or $b<x<a$. 
+
+# Limits with logarithms, powers, and exponentials:
+
+## Lemma 1:
+$$\Huge\forall x\geq0,\,e^x\geq1+x$$
+Consider $f(x)=e^x-(1+x)$. We have $f(0)=0$, and $f^\prime(x)=e^x-1\geq 0$. Since the derivative of $f$ is always positive, it must be [[EVT, MVT, boundedness and monotonicity#Monotonicity|monotic increasing]] on $[0,\infty)$, so $f(x)\geq 0,\,\forall x\geq0$.
+
+## Lemma 2:
+$$\Huge \forall x\geq0,\,n\in\mathbb{N},\,e^x\geq\sum_{j=0}^n\frac{x^j}{j!}$$
+When $n=1$, $e^x\geq\sum_{j=0}^1\frac{}{}$
