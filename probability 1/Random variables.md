@@ -46,3 +46,8 @@ Here, $Z$ is a geometrically distributed random variable. The PMF is given by:$$
 Note that:
 $$\Huge \sum_{x=1}^\infty p(x)=\sum_{x=1}^\infty p(1-p)^{x-1}=p\sum_{x=1}^\infty(1-p)^{x-1}=\frac{p}{1-(1-p)}=\frac{p}{p}=1$$
 A random variable $X$ is said to be geometrically distributed with parameter $p\in(0,1)$, $X\sim Geo(p)$ if the PMF is given as above. Then $\chi=\mathbb{N}$.
+
+# Poisson distribution:
+
+A discrete random variable is Poisson distributed with parameter $\lambda>0$, denoted by $X\sim Poi(\lambda)$, if $\chi=\{0,1,2,dots\}=\mathbb{N}_0$ and:$$\Huge p(x)=\mathbb{P}(X=x)=\frac{e^{-\lambda}\lambda^x}{x!},\,\forall x\in\mathbb{N}_0$$
+This distribution is used to model counts of events that occur randomly at an average rate $\lambda$ per unit time. $$\Huge \mathbb{P}(\text{an event occurs in }[])$$
