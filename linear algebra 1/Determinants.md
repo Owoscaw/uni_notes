@@ -33,9 +33,9 @@ Consider $A=\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\unde
 # Uniqueness:
 
 Let $A\in M_n(\Re)$ and $f(A)=det(A)$. Let $E_1,\dots,E_l$ be [[Gauss-Jordan elimination#Elementary matrices|elementary matrices]] such that $A^\prime=E_l\dots E_1A$ is in [[Gauss-Jordan elimination#RREF|RREF]]. Cases for $E_i$:
-> $E_i=M_r(\mu)$, set $\lambda_i=\mu$
-> $E_i=A_{rs}(\mu)$, set $\lambda_i=1$
-> $E_i=P_{rs}$, set $\lambda_i=-1$
+> $E_i=M_r(\mu)$, set $\lambda_i=\mu=det(M_r(\mu))$
+> $E_i=A_{rs}(\mu)$, set $\lambda_i=1=det(A_{rs}(\mu))$
+> $E_i=P_{rs}$, set $\lambda_i=-1=det(P_{rs})$
 
 So we have $det(A^\prime)=\lambda_l\dots\lambda_1det(A)$, and $f(A^\prime)=\lambda_l\dots\lambda_1f(A)$. Also $det(A)=\lambda_l^{-1}\dots\lambda_1^{-1}det(A^\prime)$ as well as $f(A)=\lambda_l^{-1}\dots\lambda_1^{-1}f(A^\prime)$. In RREF, $A^\prime$ is either $I_n$ or has a row of zeroes. In each case:
 >$A^\prime=I_n:f(A^\prime)=1=det(A^\prime)$
@@ -48,6 +48,7 @@ So to compute the determinant of a general $A\in M_n(\Re)$ matrix, EROs can be u
 
 # Relation to [[Matrix operations and inverses#Inverses|inverses]]:
 
-For $A\in M_n(\Re)$, if $det(A)\neq 0\iff A$ is invertible.
+For $A\in M_n(\Re)$, if $det(A)\neq 0\iff A$ is invertible. We write $A^\prime=E_l\dots E_2E_1A$, where $A^\prime$ is in RREF. $$\Huge det(A^\prime)=\lambda_l\dots\lambda_2\lambda_1det(A)$$$$\Huge det(A)\neq0\iff det(A^\prime)\neq0\iff A^\prime=I$$
+Note each $\lambda_i\neq0$. $det(A)\neq0\iff det(A^\prime)\neq0$.
 
 For $A,B\in M_n(\Re)$, $det(AB)=det(A)det(B)$. This has a corollary where if $A$ is not invertible, then $AB$ is not invertible. Assume $A$ is not invertible, it follows that $det(A)=0$. Then $0=det(A)=det(A)det(B)=det(AB)$, so $AB$ is not invertible.
