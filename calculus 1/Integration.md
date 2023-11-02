@@ -29,7 +29,7 @@ It can be shown that this limit exists if $f(x)$ is continuous in $[a,b]$. The a
 
 # Fundamental theorem of calculus:
 
-The following theorem connects definite and indefinite integrals. Let $f(x)$ be continuous on $[a,b]$, then:$$\Huge F(x)=\int_a^xf(t)dt$$
+The following theorem (FTOC) connects definite and indefinite integrals. Let $f(x)$ be continuous on $[a,b]$, then:$$\Huge F(x)=\int_a^xf(t)dt$$
 This is defined for all $x\in[a,b]$. The theorem states that $F(x)$ is continuous on $[a,b]$, differentiable on $(a,b)$ and is an indefinite integral of $f(x)$ on $(a,b)$:$$\Huge F^{\prime}(x)=\frac{d}{dx}F(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x),\,\forall x\in(a,b)$$
 Furthermore, if $\tilde{F}(x)$ is any indefinite integral of $f(x)$ on $(a,b)$, then:$$\Huge \int_a^bf(t)dt=\tilde{F}(b)-\tilde{F}(a)=\left[\tilde{F}(x)\right]_a^b$$ For $a\leq x<x+h<b$, we have:$$\large F(x+h)-F(x)=\int_a^{x+h}f(t)dt-\int_a^xf(t)dt=\int_x^af(t)dt+\int_a^{x+h}f(t)dt$$
 Using properties of the integral, this can be written as one integral:$$\Huge \implies F(x+h)-F(x)=\int_x^{x+h}f(t)dt$$
@@ -38,3 +38,10 @@ $$\Huge m(h)\times h\leq\int_x^{x+h}f(t)dt\leq M(h)\times h$$
 The two bounds can be thought of as bounding boxes for the area under the curve of the graph of $f(t)$ between $x$ and $x+h$. So we have:
 $$\Huge m(h)\leq\frac{\int_x^{x+h}f(t)dt}{h}\leq M(h)\implies m(h)\leq\frac{F(x+h)-F(x)}{h}\leq M(h)$$
 Since $f(x)$ is continuous on $[x,x+h]$, then we have:$$\Huge \lim_{h\to0^+}m(h)=\lim_{h\to0^+}M(h)=f(x)$$
+By the pinching theorem, we have:
+$$\Huge \lim_{h\to0^+}\frac{F(x+h)-F(x)}{h}=F^{\prime}(x)=f(x)$$
+There is a similar argument for $\lim_{h\to0^-}$. Putting both of these limits together, we have:$$\Huge F^\prime(x)=\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}=f(x)$$
+This shows that $F(x)$ is an indefinite integral of $f(x)$. If $\tilde{F}(x)$ is any indefinite integral of $f(x)$ on $(a,b)$, then $\tilde{F}(x)=F(x)+c$ for some constant $c$, so we get:$$\large \tilde{F}(b)-\tilde{F}(a)=(F(b)+c)-(F(a)+c)=F(b)-F(a)+c-c=F(b)-F(a)$$$$\Huge \tilde{F}(b)-\tilde{F}(a)=F(b)-F(a)=\int_a^bf(t)dt-\int_a^af(t)dt=\int_a^bf(t)dt$$
+This theorem also for differentiating a definite integral with respect to it's limits, using:$$\Huge F^\prime(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x)$$
+For example:$$\Huge \frac{d}{dx}\int_0^x\frac{1}{1+sin^2t}dt=\frac{1}{1+sin^2x}\times\frac{d}{dx}(x)=\frac{1}{1+sin^2x}$$
+$$\Huge \frac{d}{dx}\int_0^{f(x)}f(t)dt=f(x)f^\prime(x)$$
