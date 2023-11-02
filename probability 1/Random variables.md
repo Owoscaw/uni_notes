@@ -49,5 +49,8 @@ A random variable $X$ is said to be geometrically distributed with parameter $p\
 
 # Poisson distribution:
 
-A discrete random variable is Poisson distributed with parameter $\lambda>0$, denoted by $X\sim Poi(\lambda)$, if $\chi=\{0,1,2,dots\}=\mathbb{N}_0$ and:$$\Huge p(x)=\mathbb{P}(X=x)=\frac{e^{-\lambda}\lambda^x}{x!},\,\forall x\in\mathbb{N}_0$$
-This distribution is used to model counts of events that occur randomly at an average rate $\lambda$ per unit time. $$\Huge \mathbb{P}(\text{an event occurs in }[])$$
+A discrete random variable is Poisson distributed with parameter $\lambda>0$, denoted by $X\sim Poi(\lambda)$, if $\chi=\{0,1,2,dots\}=\mathbb{N}_0$ and:
+$$\Huge p(x)=\mathbb{P}(X=x)=\frac{e^{-\lambda}\lambda^x}{x!},\,\forall x\in\mathbb{N}_0$$
+This distribution is used to model counts of events that occur randomly at an average rate $\lambda$ per unit time. $$\Huge \mathbb{P}(\text{an event occurs in }[r,r+h])\approx rh,\,\text{for small h}$$
+Consider $\lambda>0,\,X_n\sim Bin(n,p_n)$, where $\lim_{n\to\infty}np_n=\lambda$, then let $Y\sim Poi(\lambda)$, then for all $x\in\mathbb{Z}_+$:$$\Huge \lim_{n\to\infty}p_{X_n}(x)=p_Y(x)$$
+So $X$ converges in distribution to $Y$. $$\Huge p_{X_n}(x)=\mathbb{P}(X_n=x)={n\choose x}p_n^x(1-p_n)^{n-x}=n^{-x}\frac{n!}{}$$
