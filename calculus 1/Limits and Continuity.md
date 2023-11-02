@@ -81,4 +81,10 @@ Consider $f(x)=e^x-(1+x)$. We have $f(0)=0$, and $f^\prime(x)=e^x-1\geq 0$. Sinc
 
 ## Lemma 2:
 $$\Huge \forall x\geq0,\,n\in\mathbb{N},\,e^x\geq\sum_{j=0}^n\frac{x^j}{j!}$$
-When $n=1$, $e^x\geq\sum_{j=0}^1\frac{}{}$
+When $n=1$, $e^x\geq\sum_{j=0}^1\frac{x^j}{j!}=\frac{x^0}{0!}+\frac{x^1}{1!}$, which is proven true by [[Limits and Continuity#Lemma 1|lemma 1]]. Now let:$$\Huge f_n(x)=e^x-\sum_{j=0}^n\frac{x^j}{j!}=e^x-\left(1+x+\frac{x^2}{2!}+\dots+\frac{x^n}{n!}\right)$$
+Note that $f_n(0)=0,\,\forall n\in\mathbb{N}$. Differentiating, we have:$$\large f^\prime_n(x)=e^x-\left(1+x+\frac{x^2}{2!}+\dots+\frac{x^{n-1}}{(n-1)!}\right)=e^x-\sum_{j=1}^{n-1}\frac{x^j}{j!}=f_{n-1}(x)$$
+Since $f_1(x)\geq0$ by lemma 1, we then have $f^\prime_2(x)\geq0$. Now since $f_2(x)\geq 0,\,\forall x\geq 0$. This continues for $f_n(x)\geq0$ and $f^\prime_n(x)\geq0$. Therefore, for all $n\in\mathbb{N}$, the statement is true by mathematical induction.
+
+## Powers beat logs:
+$$\Huge \forall a>0,\,\lim_{x\to\infty}\frac{log\,x}{x^a}=0$$
+
