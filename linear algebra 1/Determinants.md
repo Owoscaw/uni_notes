@@ -46,9 +46,16 @@ Hence $det(A)=f(A)$, making $det(A)$ the unique function that satisfies all the 
 $A$ is called upper triangular $\iff$ all entries below the diagonal are $0$. If $A$ is an upper or lower $n\times n$ matrix with diagonal entries $a_{11},a_{22},\dots,a_{nn}$:$$\Huge det(A)=\prod_{k=1}^na_{kk}$$
 So to compute the determinant of a general $A\in M_n(\Re)$ matrix, EROs can be used to turn $A$ into upper or lower triangular form, then the above product can be calculated. The EROs must be used to modify the determinant as well as the matrix, as above.
 
-# Relation to [[Matrix operations and inverses#Inverses|inverses]]:
+# Theorems with determinants:
 
-For $A\in M_n(\Re)$, if $det(A)\neq 0\iff A$ is invertible. We write $A^\prime=E_l\dots E_2E_1A$, where $A^\prime$ is in RREF. $$\Huge det(A^\prime)=\lambda_l\dots\lambda_2\lambda_1det(A)$$$$\Huge det(A)\neq0\iff det(A^\prime)\neq0\iff A^\prime=I$$
-Note each $\lambda_i\neq0$. $det(A)\neq0\iff det(A^\prime)\neq0$.
+## Inverse matrices:
 
-For $A,B\in M_n(\Re)$, $det(AB)=det(A)det(B)$. This has a corollary where if $A$ is not invertible, then $AB$ is not invertible. Assume $A$ is not invertible, it follows that $det(A)=0$. Then $0=det(A)=det(A)det(B)=det(AB)$, so $AB$ is not invertible.
+For $A\in M_n(\Re)$, if $det(A)\neq 0\iff A$ is [[Matrix operations and inverses#Inverses|invertible]]. We write $A^\prime=E_l\dots E_2E_1A$, where $A^\prime$ is in RREF. $$\Huge det(A^\prime)=\lambda_l\dots\lambda_2\lambda_1det(A)$$$$\Huge det(A)\neq0\iff det(A^\prime)\neq0\iff A^\prime=I_n$$
+Therefore $A^{-1}$ exists with $A^{-1}=E_l\dots E_2E_1$, note each $\lambda_i\neq0$.
+
+## Products of matrices:
+
+For $A,B\in M_n(\Re)$, $det(AB)=det(A)det(B)$. Suppose $A,B$ are both invertible and expressible as products of elementary matrices.$$\Huge A=E_1\dots E_k,\,B=F_1\dots F_l$$
+Where each $E_i,F_j$ are appropriate elementary matrices for $1\leq i\leq k,1\leq j\leq k$. Note that:
+$$\Huge det(AB)=det(E_1\dots E_kF_1\dots F_l)=det(E_1)det(E_2\dots E_kF_1\dots F_l)$$$$\Huge \implies det(AB)=det(E_1)\dots det(E_k)det(F_1)\dots det(F_l)$$$$\Huge \implies det(AB)=det(E_1\dots E_k)det(F_1\dots F_l)=det(A)det(B)$$
+This has a corollary where if $A$ is not invertible, then $AB$ is not invertible. Assume $A$ is not invertible, it follows that $det(A)=0$. Then $0=det(A)=det(A)det(B)=det(AB)$, so $AB$ is not invertible.
