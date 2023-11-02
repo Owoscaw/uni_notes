@@ -26,3 +26,9 @@ It can be shown that this limit exists if $f(x)$ is continuous in $[a,b]$. The a
 >If $c\in[a,b]$, then:$$\Huge \int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$
 >If $f(x)\geq g(x)\,\forall x\in(a,b)$, then:$$\Huge\int_a^bf(x)dx\geq\int_a^bg(x)dx$$
 >If $m\leq f(x)\leq M,\,\forall x\in[a,b]$, then:$$\Huge m(b-a)\leq\int_a^bf(x)dx\leq M(b-a)$$
+
+# Fundamental theorem of calculus:
+
+The following theorem connects definite and indefinite integrals. Let $f(x)$ be continuous on $[a,b]$, then:$$\Huge F(x)=\int_a^xf(t)dt$$
+This is defined for all $x\in[a,b]$. The theorem states that $F(x)$ is continuous on $[a,b]$, differentiable on $(a,b)$ and is an indefinite integral of $f(x)$ on $(a,b)$:$$\Huge F^{\prime}(x)=\frac{d}{dx}F(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x),\,\forall x\in(a,b)$$
+Furthermore, if $\tilde{F}(x)$ is any indefinite integral of $f(x)$ on $(a,b)$, then:$$\Huge \int_a^bf(t)dt=\tilde{F}(b)-\tilde{F}(a)$$  
