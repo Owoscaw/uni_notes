@@ -31,4 +31,10 @@ It can be shown that this limit exists if $f(x)$ is continuous in $[a,b]$. The a
 
 The following theorem connects definite and indefinite integrals. Let $f(x)$ be continuous on $[a,b]$, then:$$\Huge F(x)=\int_a^xf(t)dt$$
 This is defined for all $x\in[a,b]$. The theorem states that $F(x)$ is continuous on $[a,b]$, differentiable on $(a,b)$ and is an indefinite integral of $f(x)$ on $(a,b)$:$$\Huge F^{\prime}(x)=\frac{d}{dx}F(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x),\,\forall x\in(a,b)$$
-Furthermore, if $\tilde{F}(x)$ is any indefinite integral of $f(x)$ on $(a,b)$, then:$$\Huge \int_a^bf(t)dt=\tilde{F}(b)-\tilde{F}(a)$$  
+Furthermore, if $\tilde{F}(x)$ is any indefinite integral of $f(x)$ on $(a,b)$, then:$$\Huge \int_a^bf(t)dt=\tilde{F}(b)-\tilde{F}(a)=\left[\tilde{F}(x)\right]_a^b$$ For $a\leq x<x+h<b$, we have:$$\large F(x+h)-F(x)=\int_a^{x+h}f(t)dt-\int_a^xf(t)dt=\int_x^af(t)dt+\int_a^{x+h}f(t)dt$$
+Using properties of the integral, this can be written as one integral:$$\Huge \implies F(x+h)-F(x)=\int_x^{x+h}f(t)dt$$
+Let $m(h)$ and $M(h)$ denote the minimum and maximum values of $f(x)$ on $[x,x+h]$ respectively. These minimum and maximum must exist by the [[EVT, MVT, boundedness and monotonicity#Extreme value theorem|extreme value theorem]]. Then by another property of the integral:
+$$\Huge m(h)\times h\leq\int_x^{x+h}f(t)dt\leq M(h)\times h$$
+The two bounds can be thought of as bounding boxes for the area under the curve of the graph of $f(t)$ between $x$ and $x+h$. So we have:
+$$\Huge m(h)\leq\frac{\int_x^{x+h}f(t)dt}{h}\leq M(h)\implies m(h)\leq\frac{F(x+h)-F(x)}{h}\leq M(h)$$
+Since $f(x)$ is continuous on $[x,x+h]$, then we have:$$\Huge \lim_{h\to0^+}m(h)=\lim_{h\to0^+}M(h)=f(x)$$
