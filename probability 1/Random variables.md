@@ -53,4 +53,12 @@ A discrete random variable is Poisson distributed with parameter $\lambda>0$, de
 $$\Huge p(x)=\mathbb{P}(X=x)=\frac{e^{-\lambda}\lambda^x}{x!},\,\forall x\in\mathbb{N}_0$$
 This distribution is used to model counts of events that occur randomly at an average rate $\lambda$ per unit time. $$\Huge \mathbb{P}(\text{an event occurs in }[r,r+h])\approx rh,\,\text{for small h}$$
 Consider $\lambda>0,\,X_n\sim Bin(n,p_n)$, where $\lim_{n\to\infty}np_n=\lambda$, then let $Y\sim Poi(\lambda)$, then for all $x\in\mathbb{Z}_+$:$$\Huge \lim_{n\to\infty}p_{X_n}(x)=p_Y(x)$$
-So $X$ converges in distribution to $Y$. $$\Huge p_{X_n}(x)=\mathbb{P}(X_n=x)={n\choose x}p_n^x(1-p_n)^{n-x}=n^{-x}\frac{n!}{}$$
+So $X$ converges in distribution to $Y$. $$\large p_{X_n}(x)=\mathbb{P}(X_n=x)={n\choose x}p_n^x(1-p_n)^{n-x}=n^{-x}\frac{n!}{(n-x)!x!}(np_n)^x(1-p_n)^{n-x}$$
+Then we have:
+> $\lim_{n\to\infty}(np_n)^x=\lambda^x$
+> $\lim_{n\to\infty}(1-p_n)^n=\lim_{n\to\infty}(1-\frac{np_n}{n})^n=e^{-\lambda}$
+> $\lim_{n\to\infty}(1-p_n)^{-x}=1$
+> $\lim_{n\to\infty}n^{-x}\frac{n!}{(n-x)!}=lim_{n\to\infty}(1-1/n)(1-2/n)\dots(1-\frac{x-1}{n})=1\times 1\times\dots\times 1=1$
+
+Combining these statements:
+$$\Huge\lim_{n\to\infty}\mathbb{P}(X_n=x)=\frac{e^{-\lambda}\lambda^x}{x!}$$
