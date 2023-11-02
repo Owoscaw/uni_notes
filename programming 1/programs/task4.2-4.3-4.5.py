@@ -10,6 +10,8 @@ def is_perfect(n):
 def show_perfect(n):
     print([i for i in range(1,n) if is_perfect(i)])
 
+    print([i for i in range(1,n) if sum([j for j in range(1, i//2 + 1) if i%j == 0]) == i])
+
 def is_prime(n):
     for i in range(2,n//2 + 1):
         if n%i == 0:
@@ -19,4 +21,4 @@ def is_prime(n):
 def prime_factors(n):
     return [i for i in range(2,n+1) if n%i==0 and is_prime(i) for j in range(1, int(log(n,i))+1) if n% i**j == 0]
 
-print(prime_factors(140))
+show_perfect(10000)
