@@ -70,6 +70,10 @@ Let $X:\Omega\mapsto\Re$ be a continuous random variable. $\exists\,f:\Re\mapsto
 Here, $f$ is called the probability density function (PDF). Then we have:
 $$\Huge \mathbb{P}(X=x)=\int_x^xf(t)dt=0,\,\forall x$$
 Single points do not have any associated probability, there only exists a probability for a certain interval, that is:$$\Huge \mathbb{P}(X\in[x,x+dx])=\mathbb{P}(X\in(x,x+dx))=f(x)dx$$
-For a given $B\subseteq\Re$:$$\Huge \mathbb{P}(X\in B)=\int_Bf(x)dx$$
+For a given $B\subseteq\Re$ a finite union of intervals, and a continuously distributed $X$ with a PDF of $f$:$$\Huge \mathbb{P}(X\in B)=\int_Bf(x)dx$$
 This interpretation has the following properties:
 >$$\Huge \int_{-\infty}^\infty f(x)dx=\mathbb{P}(X\in\Re)=1$$
+>$$\Huge \mathbb{P}(-\infty<x\leq b)=\int_{-\infty}^bf(t)dt$$
+>$$\Huge \mathbb{P}(a\leq x<\infty)=\int_a^\infty f(t)dt$$
+
+Note that PDFs can be defined piecewise aswell
