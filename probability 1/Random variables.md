@@ -62,4 +62,14 @@ Then we have:
 
 Combining these statements:
 $$\Huge\lim_{n\to\infty}\mathbb{P}(X_n=x)=\frac{e^{-\lambda}\lambda^x}{x!}$$
-So if $X\sim B(n,p)$ with large $n$ and small $p$, then $X\approx\sim Po(np)$. This approximation allows us to avoid the calculation of ${n\choose x}$ for large $x$ and $n$. 
+So if $X\sim B(n,p)$ with large $n$ and small $p$, then $X\approx\sim Po(np)$. This approximation allows us to avoid the calculation of ${n\choose x}$ for large $x$ and $n$.
+
+# Continuous random variables:
+
+Let $X:\Omega\mapsto\Re$ be a continuous random variable. $\exists\,f:\Re\mapsto[0,\infty)$ such that:$$\Huge \mathbb{P}(X\in[a,b])=\mathbb{P}(a\leq x\leq b)=\int_a^bf(t)dt,\,a\leq b$$
+Here, $f$ is called the probability density function (PDF). Then we have:
+$$\Huge \mathbb{P}(X=x)=\int_x^xf(t)dt=0,\,\forall x$$
+Single points do not have any associated probability, there only exists a probability for a certain interval, that is:$$\Huge \mathbb{P}(X\in[x,x+dx])=\mathbb{P}(X\in(x,x+dx))=f(x)dx$$
+For a given $B\subseteq\Re$:$$\Huge \mathbb{P}(X\in B)=\int_Bf(x)dx$$
+This interpretation has the following properties:
+>$$\Huge \int_{-\infty}^\infty f(x)dx=\mathbb{P}(X\in\Re)=1$$
