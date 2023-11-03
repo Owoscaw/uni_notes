@@ -53,4 +53,7 @@ $$\Huge (f(x)g(x))^\prime=f^\prime(x)g(x)+f(x)g^\prime(x)$$
 Integrating over an interval $[a,b]$ and using FOTC:$$\Huge \int_a^b(f(x)g(x))^\prime dx=\int_a^bf^\prime(x)g(x)+f(x)g^\prime(x)dx$$
 Rewriting:$$\Huge \int_a^bf^\prime(x)g(x)dx=\left[\left(f(x)g(x)\right)\right]_a^b-\int_a^bf(x)g^\prime(x)dx$$
 Which is the integration by parts formula. Consider the following:$$\Huge I_n=\int_0^1x^ne^xdx,\,\forall n\in\mathbb{N}_0$$
-Then:$$\Huge I_{n+1}=\int_0^1x^{n+1}e^xdx,\,\text{using integration by parts:}$$$$\large I_{n+1}=\left[x^{n+1}e^x\right]_0^1-\int_0^1(n+1)x^ne^xdx=\left[x^{n+1}e^x\right]_0^1-(n+1)\int_0^1x^ne^xdx$$$$\Huge I_{n+1}=\left[x^{n+1}e^x\right]_0^1-(n+1)I_n$$
+Then:$$\Huge I_{n+1}=\int_0^1x^{n+1}e^xdx,\,\text{using integration by parts:}$$$$\large I_{n+1}=\left[x^{n+1}e^x\right]_0^1-\int_0^1(n+1)x^ne^xdx=e-(n+1)\int_0^1x^ne^xdx$$$$\Huge I_{n+1}=e-(n+1)I_n$$
+Calculating $n=0$ traditionally allows for any further cases of $n$ to be found, without having to perform a complex sequence of integration by parts. Another way recurrence relations can be found in integrals is through trigonometric identities:
+![[recurrence integral example]]
+This relation only relates every other term, whereas the previous relation related every term to the next.
