@@ -45,3 +45,7 @@ This shows that $F(x)$ is an indefinite integral of $f(x)$. If $\tilde{F}(x)$ is
 This theorem also for differentiating a definite integral with respect to it's limits, using:$$\Huge F^\prime(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x)$$
 For example:$$\Huge \frac{d}{dx}\int_0^x\frac{1}{1+sin^2t}dt=\frac{1}{1+sin^2x}\times\frac{d}{dx}(x)=\frac{1}{1+sin^2x}$$
 $$\Huge \frac{d}{dx}\int_0^{f(x)}f(t)dt=f(x)f^\prime(x)$$
+
+# Integration by recurrence relations:
+
+A common way to find integrals related by recurrence relations is when integrating by parts

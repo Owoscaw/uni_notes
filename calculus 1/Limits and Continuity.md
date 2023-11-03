@@ -103,5 +103,8 @@ Which gives the result as required.
 
 # Exponential as a limit:
 
-For any $a\in\Re$:$$\Huge \lim_{x\to\infty}$$
-
+For any $a\in\Re$:$$\Huge \lim_{x\to\infty}\left(1+\frac{a}{x}\right)^x=e^a$$
+Consider $a>0$, letting $f(x)=log(x)$, then the [[Derivative as a limit|derivative]], $f^\prime(x)=\frac{1}{x}$:$$\Huge f^\prime(1)=\lim_{h\to 0}\frac{log(1+h)-log(1)}{h}=\lim_{h\to 0}\frac{log(1+h)}{h}$$
+Now let $h=\frac{a}{x}$, so we now have:
+$$\large 1=f^\prime(1)=\lim_{x\to\infty}\frac{log(1+\frac{a}{x})}{\frac{a}{x}}\implies a=\lim_{x\to\infty}x\,log\left(1+\frac{a}{x}\right)=\lim_{x\to\infty}log\left(1+\frac{a}{x}\right)^x$$
+Now we can exponentiate both sides, and use the continuity of $e^x$ to give:$$\Huge e^a=e^{\lim_{x\to\infty}log\left(1+\frac{a}{x}\right)^x}=\lim_{x\to\infty}\left(1+\frac{a}{x}\right)^x$$
