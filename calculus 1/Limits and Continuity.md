@@ -87,4 +87,9 @@ Since $f_1(x)\geq0$ by lemma 1, we then have $f^\prime_2(x)\geq0$. Now since $f_
 
 ## Powers beat logs:
 $$\Huge \forall a>0,\,\lim_{x\to\infty}\frac{log\,x}{x^a}=0$$
+Let $x=e^y$, then we have:
+$$\Huge \lim_{x\to\infty}\frac{log\,x}{x^a}=\lim_{y\to\infty}\frac{y}{e^{ay}}$$
+Then for $y>0$, using lemma 2 in the $n=2$ case:$$\Huge 0\leq \frac{y}{e^{ay}}\leq\frac{y}{1+ay+\frac{1}{2}a^2y^2}\leq\frac{y}{\frac{1}{2}a^2y^2}=\frac{2}{a^2y}$$
+Now the expression is bounded from above and below, with two expression that will have a limit of $0$ when $y\to\infty$:$$\Huge 0\leq\lim_{y\to\infty}\frac{y}{e^{ay}}\leq0$$
+So the expression has only one 
 

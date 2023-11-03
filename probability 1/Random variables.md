@@ -79,4 +79,8 @@ Note that PDFs can be defined piecewise also. Example:
 
 ## Uniform distribution:
 
-X is s
+$X$ is said to be uniformly distributed on $[a,b]$ for real numbers $a,b\in\Re$, then $X\sim U(a,b)$ where:$$\Huge f(x)=\begin{cases}\frac{1}{b-a}&\forall x\in[a,b]\\0&\text{elsewhere}\end{cases}$$
+When $X$ is distributed normally then $X$ can take any value in the continuous range of values from $a$ to $b$ and the probability of finding $X$ in any interval $[x,x+h]\subseteq[a,b]$ is independent of $x$.
+
+## Exponential distribution:
+
