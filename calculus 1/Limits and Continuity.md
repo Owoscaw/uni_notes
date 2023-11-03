@@ -91,5 +91,17 @@ Let $x=e^y$, then we have:
 $$\Huge \lim_{x\to\infty}\frac{log\,x}{x^a}=\lim_{y\to\infty}\frac{y}{e^{ay}}$$
 Then for $y>0$, using lemma 2 in the $n=2$ case:$$\Huge 0\leq \frac{y}{e^{ay}}\leq\frac{y}{1+ay+\frac{1}{2}a^2y^2}\leq\frac{y}{\frac{1}{2}a^2y^2}=\frac{2}{a^2y}$$
 Now the expression is bounded from above and below, with two expression that will have a limit of $0$ when $y\to\infty$:$$\Huge 0\leq\lim_{y\to\infty}\frac{y}{e^{ay}}\leq0$$
-So the expression has only one 
+So the expression has only one value, $0$ as $y\to\infty$. This proves the original result by our change of variables.
+
+## Exponentials beat powers:
+
+For any $a>0$:$$\Huge \lim_{x\to\infty}\frac{x^a}{e^x}=0$$
+Let $n$ be the smallest possible integer such that $n>a$. By lemma 2 for $x>0$ we have:
+$$\Huge 0\leq \frac{x^a}{e^x}\leq\frac{x^a}{1+x+\dots+\frac{x^n}{n!}}=\frac{x^{a-n}}{x^{-n}+x^{1-n}+\dots+\frac{1}{n!}}$$
+This is bounded above by expressions that will both take value $0$ when $x\to\infty$, so the squeezing theorem applies ($n-a<0$):$$\Huge 0\leq\lim_{x\to\infty}\frac{x^a}{e^x}\leq0$$
+Which gives the result as required.
+
+# Exponential as a limit:
+
+For any $a\in\Re$:$$\Huge \lim_{x\to\infty}$$
 
