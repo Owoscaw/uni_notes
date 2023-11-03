@@ -62,3 +62,4 @@ Then we have:
 
 Combining these statements:
 $$\Huge\lim_{n\to\infty}\mathbb{P}(X_n=x)=\frac{e^{-\lambda}\lambda^x}{x!}$$
+So if $X\sim B(n,p)$ with large $n$ and small $p$, then $X\approx\sim Po(np)$. This approximation allows us to avoid the calculation of ${n\choose x}$ for large $x$ and $n$. 
