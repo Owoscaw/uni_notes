@@ -84,3 +84,4 @@ When $X$ is distributed normally then $X$ can take any value in the continuous r
 
 ## Exponential distribution:
 
+Given an event happens randomly in time at a rate $\beta>0$, and $T>0$ denotes the time at which the first event occurs, the number of chimes 
