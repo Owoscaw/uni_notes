@@ -76,4 +76,5 @@ This interpretation has the following properties:
 >$$\Huge \mathbb{P}(-\infty<x\leq b)=\int_{-\infty}^bf(t)dt$$
 >$$\Huge \mathbb{P}(a\leq x<\infty)=\int_a^\infty f(t)dt$$
 
-Note that PDFs can be defined piecewise aswell
+Note that PDFs can be defined piecewise also. Example:
+![[PDF example]]
