@@ -91,3 +91,10 @@ Let $\beta>0$. A continuous random variable $X$ is exponentially distributed wit
 ## Normal distribution:
 
 Let $\mu,\sigma\in\Re$ with $\sigma>0$. A continuous random variable $X$ is normally distributed, $X\sim\mathcal{N}(\mu,\sigma^2)$, when:$$\Huge f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},\,\forall x\in\Re$$
+There is no closed analytical form for $\int_a^bf(x)dx,\,\forall a,b\in\Re$ with $a,b$, so numerical integration is often used.
+
+# Cumulative distribution function:
+
+For any real valued random variable $X$, the cumulative distribution function (CDF) $F:\Re\mapsto[0,1]$ is defined as:
+$$\Huge F(x)=\mathbb{P}(X\leq x)=\mathbb{P}(-\infty<X\leq x)$$
+This function completely characterises a distribution. It immediately follows that:$$\Huge \mathbb{P}(X\in(a,b])$$
