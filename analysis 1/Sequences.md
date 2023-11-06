@@ -47,3 +47,8 @@ As convergent sequences are bounded, $x_n$ must be bounded. Then $x_n\leq C$ for
 Now choose some $\epsilon>0$. Since $x_n$ converges, there is $n_0$ with $|x_n-x|<\frac{\epsilon}{2C}$ and since $y_n$ converges there is $n_1$ with $|y_n-y|<\frac{\epsilon}{2C}$. Then for $n\geq max\{n_0,n_1\}$:$$\Huge |x_ny_n-xy|\leq C\left(|y_n-y|+|x_n-x|\right)<C\left(\frac{\epsilon}{2C}+\frac{\epsilon}{2C}\right)=\epsilon$$
 Then this means $\lim_{n\to\infty}x_ny_n=xy$, as the criteria for convergence have been met ($|(x_ny_n)-(xy)|<\epsilon$) for all $\epsilon>0$. Now consider this example:
 ![[COLT example]]
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a real sequence such that $x_n\in[a,b]$ for all $n\in\mathbb{N}$, where $a,b\in\Re$. If the sequence is convergent to $x\in\Re$, then $x\in[a,b]$. The proof is by contradiction, assume that $x<a$. Now choose $\epsilon=\frac{a-x}{2}>0$. By convergence:$$\Huge \exists\,n_o\in\mathbb{N}:|x_n-x|<\epsilon,\,\forall n\geq n_0$$$$\Huge -\epsilon<x_n-x<\epsilon$$$$\Huge -\epsilon<x-x_n$$
+Now consider:$$\Huge a-x_n=a-x+x-x_n>2\epsilon-\epsilon=\epsilon>0$$
+So then $a>x_n$, a contradiction. Therefore our assumption is false, so the theorem must be true, as a similar proof exists for $x>b$. This has a corollary with $(x_n)_{n\in\mathbb{N}}$ and $(y_n)_{n\in\mathbb{N}}$, two convergent sequences with $x_n\leq y_n,\,\forall n\in\mathbb{N}$, then:$$\Huge \lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$$
+This is proven by considering $a_n=y$
