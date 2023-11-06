@@ -51,4 +51,10 @@ Then this means $\lim_{n\to\infty}x_ny_n=xy$, as the criteria for convergence ha
 Let $(x_n)_{n\in\mathbb{N}}$ be a real sequence such that $x_n\in[a,b]$ for all $n\in\mathbb{N}$, where $a,b\in\Re$. If the sequence is convergent to $x\in\Re$, then $x\in[a,b]$. The proof is by contradiction, assume that $x<a$. Now choose $\epsilon=\frac{a-x}{2}>0$. By convergence:$$\Huge \exists\,n_o\in\mathbb{N}:|x_n-x|<\epsilon,\,\forall n\geq n_0$$$$\Huge -\epsilon<x_n-x<\epsilon$$$$\Huge -\epsilon<x-x_n$$
 Now consider:$$\Huge a-x_n=a-x+x-x_n>2\epsilon-\epsilon=\epsilon>0$$
 So then $a>x_n$, a contradiction. Therefore our assumption is false, so the theorem must be true, as a similar proof exists for $x>b$. This has a corollary with $(x_n)_{n\in\mathbb{N}}$ and $(y_n)_{n\in\mathbb{N}}$, two convergent sequences with $x_n\leq y_n,\,\forall n\in\mathbb{N}$, then:$$\Huge \lim_{n\to\infty}x_n=\lim_{n\to\infty}y_n$$
-This is proven by considering $a_n=y$
+This is proven by considering $a_n=y_n-x_n\in[0,C]$.
+
+## Continuity of [[The completeness axiom#Roots|Root]]:
+
+Let $(x_n)_{n\in\mathbb{N}}$  be a convergent sequence with $x_n\geq 0$ for all $n\in\mathbb{N}$. Then $(\sqrt{x_n})_{n\in\mathbb{N}}$ is a convergent sequence with:$$\Huge \lim_{n\to\infty}\sqrt{x_n}=\sqrt{\lim_{n\to\infty}x_n}$$
+Denote $x=\lim_{n\to\infty}x_n$. Since $x_n\geq 0, x\geq 0$ by the above corollary. Distinguish the cases $x=0$ and $x>0$. So assume $x>0$, then also $\sqrt{x}>0$. $$\large \left|\sqrt{x_n}-\sqrt{x}\right|=\left|\frac{(\sqrt{x_n}-\sqrt{x})(\sqrt{x_n}+\sqrt{x})}{\sqrt{x_n}+\sqrt{x}}\right|=\left|\frac{x_n-x}{\sqrt{x_n}+\sqrt{x}}\right|\leq\frac{|x_n-x|}{\sqrt{x}}$$
+By squeezing theorem, $\sqrt{x_n}-\sqrt{x}\to0$ as $n\to\infty$, then the proof is completed using COLT. Example:![[Sequences .excalidraw]]
