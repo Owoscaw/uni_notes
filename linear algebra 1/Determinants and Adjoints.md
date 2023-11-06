@@ -82,5 +82,5 @@ So this takes value $det(A)$ along the diagonal, $0$ otherwise. This is equivale
 
 # Cramer's rule:
 
-Give $A\in M_n(\Re),\,\underline b\in\Re^n$ and that $A$ is invertible. Then $A\underline x=\underline b$ has a unique solution, that is $\underline x=A^{-1}\underline b$. The coordinates of this unique solution are given by:$$\Huge x_i=det\begin{pmatrix}1&1&\dots&1&\dots&1\\\underline a_1&\underline a_2&\dots&\underline b&\dots&\underline a_n\\1&1&\dots&1&\dots&1\end{pmatrix}$$
+Give $A\in M_n(\Re),\,\underline b\in\Re^n$ and that $A$ is invertible. Then $A\underline x=\underline b$ has a unique solution, that is $\underline x=A^{-1}\underline b$. The coordinates of this unique solution are given by:$$\Huge x_i=\frac{det\begin{pmatrix}1&1&\dots&1&\dots&1\\\underline a_1&\underline a_2&\dots&\underline b&\dots&\underline a_n\\1&1&\dots&1&\dots&1\end{pmatrix}}{det(A)}$$
 
