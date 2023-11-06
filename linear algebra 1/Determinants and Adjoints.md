@@ -68,4 +68,9 @@ Using the above theorem. Also $A^t=(E_1\dots E_s)^t=E_s^t\dots E_1^t$. Note $(M_
 # Adjoints:
 
 Given $A\in M_n(\Re)$, the adjoint of $A$ is defined by:$$\Huge (adj(A))_{rs}:=(-1)^{r+s}det(A_{s,r})$$
-This is equivalent to the transpose of the matrix of signed cofactors
+This is equivalent to the transpose of the matrix of signed cofactors. Also:$$\Huge A\cdot adj(A)=det(A)\cdot I_n=adj(A)\cdot A$$
+This has a corollary, given $det(A)\neq 0$:
+$$\Huge A\cdot\left(\frac{1}{det(A)}adj(A)\right)=I_n=\left(\frac{1}{det(A)}adj(A)\right)\cdot A$$
+Therefore this gives another method to compute the inverse:
+$$\Huge A^{-1}=\frac{1}{det(A)}adj(A)$$
+To prove this, we compute $A\cdot adj(A)$. Each entry is defined by:$$\Huge (A\cdot adj(A))_{rs}=\sum_{k=1}^na_{rk}(adj(A))_{ks}=\sum_{k=1}^na_{rk}(-1)^{k+s}det(A_{s,k})$$
