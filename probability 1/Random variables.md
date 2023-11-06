@@ -84,4 +84,10 @@ When $X$ is distributed normally then $X$ can take any value in the continuous r
 
 ## Exponential distribution:
 
-Given an event happens randomly in time at a rate $\beta>0$, and $T>0$ denotes the time at which the first event occurs, the number of chimes 
+Given an event happens randomly in time at a rate $\beta>0$, and $T>0$ denotes the time at which the first event occurs, the number of events that occur in the interval $[0,\tau]$ is given by $Po(\beta\tau)$, so:$$\Huge \mathbb{P}(T>\tau)=e^{-\beta\tau},\,\mathbb{P}(T\leq\tau)=1-e^{-\beta\tau}$$ For all $\tau\geq0$. This expression is equivalent to $\int_0^\tau\beta e^{-\beta t}dt$, so $T$ is a random variably with PDF of $f(t)=\beta e^{-\beta t}$. Now we define the exponential distribution:
+
+Let $\beta>0$. A continuous random variable $X$ is exponentially distributed with parameter $\beta$, $X\sim Exp(\beta)$ when:$$\Huge f(x)=\begin{cases}\beta e^{-\beta x}&\forall x\geq0\\0&\text{elsewhere}\end{cases}$$
+
+## Normal distribution:
+
+Let $\mu,\sigma\in\Re$ with $\sigma>0$. A continuous random variable $X$ is normally distributed, $X\sim\mathcal{N}(\mu,\sigma^2)$, when:$$\Huge f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},\,\forall x\in\Re$$
