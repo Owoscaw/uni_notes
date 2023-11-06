@@ -64,3 +64,8 @@ This has a corollary where if $A$ is not invertible, then $AB$ is not invertible
 
 If $A\in M_n(\Re)$, then $det(A^t)=det(A)$. Every row operation on $A$ is equivalent to a column operation on $A^t$. We know $A$ is invertible $\iff A^t$ is invertible, that is $(A^t)^{-1}=(A^{-1})^t$. If $A$ is invertible, then $A=E_1\dots E_s$. where each $E_i$ is an elementary matrix. $$\Huge det(A)=det(E_1\dots E_s)=det(E_1)\dots det(E_s)$$
 Using the above theorem. Also $A^t=(E_1\dots E_s)^t=E_s^t\dots E_1^t$. Note $(M_r(\lambda))^t=M_r(\lambda),\,(P_{rs})^t=P_{rs},\,(A_{rs}(\lambda))^t=A_{sr}(\lambda)$, therefore the determinants of transposed elementary matrices are unchanged. So:$$\Huge det(A^t)=det(E_s^t)\dots det(E_1^t)=det(E_1)\dots det(E_s)=det(A)$$
+
+# Adjoints:
+
+Given $A\in M_n(\Re)$, the adjoint of $A$ is defined by:$$\Huge (adj(A))_{rs}:=(-1)^{r+s}det(A_{s,r})$$
+This is equivalent to the transpose of the matrix of signed cofactors
