@@ -103,3 +103,7 @@ Rearranging, we have:$$\Huge \mathbb{P}(X\in(a,b])=\mathbb{P}(X\leq b)-\mathbb{P
 Suppose that $X$ is a continuously distributed random variable on $\Re$ with a PDF of $f$, then $F$ is also a continuous function, and $\forall x\in\Re$:$$\Huge F(x)=\int_{-\infty}^xf(t)dt,\,f(d)=\frac{dF}{dx}(x)$$
 This can be proving using the [[Integration#Fundamental theorem of calculus|fundamental theorem of calculus]].
 
+## Discrete case:
+
+If $X$ is a discrete real valued random variable with a probability mass function $p$, the $F$ is piecewise constant, so can be written as a sum:$$\Huge $$
+
