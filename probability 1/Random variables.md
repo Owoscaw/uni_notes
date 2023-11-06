@@ -97,4 +97,9 @@ There is no closed analytical form for $\int_a^bf(x)dx,\,\forall a,b\in\Re$ with
 
 For any real valued random variable $X$, the cumulative distribution function (CDF) $F:\Re\mapsto[0,1]$ is defined as:
 $$\Huge F(x)=\mathbb{P}(X\leq x)=\mathbb{P}(-\infty<X\leq x)$$
-This function completely characterises a distribution. It immediately follows that:$$\Huge \mathbb{P}(X\in(a,b])$$
+This function completely characterises a distribution. It immediately follows that:$$\small \mathbb{P}(X\in(-\infty,b])=\mathbb{P}(X^{-1}((-\infty,b]))=\mathbb{P}(\omega:X(\omega)\in(-\infty,b])=\mathbb{P}(\omega:X(\omega)\in(-\infty,a]\cup(a,b])$$
+Since $(-\infty,a]$ and $(a,b]$ are disjoint unions, then the following is true:$$\Huge \mathbb{P}(X\in(-\infty,b])=\mathbb{P}(\omega:X(\omega)\in(-\infty,a])+\mathbb{P}(\omega:X(\omega)\in(a,b])$$$$\Huge \mathbb{P}(X\in(-\infty,b))=\mathbb{P}(X\leq a)+\mathbb{P}(X\in(a,b])$$
+Rearranging, we have:$$\Huge \mathbb{P}(X\in(a,b])=\mathbb{P}(X\leq b)-\mathbb{P}(X\leq a)=F(b)-F(a)$$
+Suppose that $X$ is a continuously distributed random variable on $\Re$ with a PDF of $f$, then $F$ is also a continuous function, and $\forall x\in\Re$:$$\Huge F(x)=\int_{-\infty}^xf(t)dt,\,f(d)=\frac{dF}{dx}(x)$$
+This can be proving using the [[Integration#Fundamental theorem of calculus|fundamental theorem of calculus]].
+
