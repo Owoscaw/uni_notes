@@ -105,5 +105,8 @@ This can be proving using the [[Integration#Fundamental theorem of calculus|fund
 
 ## Discrete case:
 
-If $X$ is a discrete real valued random variable with a probability mass function $p$, the $F$ is piecewise constant, so can be written as a sum:$$\Huge $$
+If $X$ is a discrete real valued random variable with a probability mass function $p$, then $F$ is piecewise constant and right-continuous (all discontinuities are to the right of a point for an interval), so can be written as a sum:$$\Huge F(x)=\mathbb{P}(X\leq x)=\sum_{t:t\leq x}p(t)$$
+Here, $p(x)=F(x)-F(x-)$, where $F(x-)=\lim_{y\to x}F(y)$. 
+
+The CDF, $F$, of a real valued random variable therefore completely determines a distribution
 
