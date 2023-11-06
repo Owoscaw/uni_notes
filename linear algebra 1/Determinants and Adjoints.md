@@ -74,3 +74,13 @@ $$\Huge A\cdot\left(\frac{1}{det(A)}adj(A)\right)=I_n=\left(\frac{1}{det(A)}adj(
 Therefore this gives another method to compute the inverse:
 $$\Huge A^{-1}=\frac{1}{det(A)}adj(A)$$
 To prove this, we compute $A\cdot adj(A)$. Each entry is defined by:$$\Huge (A\cdot adj(A))_{rs}=\sum_{k=1}^na_{rk}(adj(A))_{ks}=\sum_{k=1}^na_{rk}(-1)^{k+s}det(A_{s,k})$$
+When $r=s$:$$\Huge \sum_{k=1}^na_{rk}(-1)^{k+s}det(A_{s,k})=\sum_{k=1}^na_{sk}(-1)^{k+s}det(A_{s,k})=det(A)$$
+As this is an expansion along the $r=s$th row. When $r\neq s$, replace the $s$th row of $A$ with the $r$th row of $A$:$$\Huge B=\begin{pmatrix}\underline a_1\\\vdots\\\underline a_r\\\vdots\\\underline a_r\\\vdots\\\underline a_n\end{pmatrix}$$
+Since $B$ has a repeated row, it satisfied one of the properties of the determinant. Namely that when two rows are equal or multiples of one another, the determinant is zero. Note that:$$\Huge \sum_{k=1}^na_{rk}(-1)^{k+s}det(A_{s,k})=det(B)=0,\,\text{given}\,r\neq s$$
+So we have:$$\Huge \sum_{k=1}^na_{rk}(-1)^{k+s}det(A_{s,k})=\begin{cases}det(A)&\text{if}\,\,\,r=s\\0&\text{otherwise}\end{cases}$$
+So this takes value $det(A)$ along the diagonal, $0$ otherwise. This is equivalent to $det(A)I_n$.
+
+# Cramer's rule:
+
+Give $A\in M_n(\Re),\,\underline b\in\Re^n$
+
