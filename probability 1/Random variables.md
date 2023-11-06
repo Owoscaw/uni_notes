@@ -91,7 +91,8 @@ Let $\beta>0$. A continuous random variable $X$ is exponentially distributed wit
 ## Normal distribution:
 
 Let $\mu,\sigma\in\Re$ with $\sigma>0$. A continuous random variable $X$ is normally distributed, $X\sim\mathcal{N}(\mu,\sigma^2)$, when:$$\Huge f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2},\,\forall x\in\Re$$
-There is no closed analytical form for $\int_a^bf(x)dx,\,\forall a,b\in\Re$ with $a,b$, so numerical integration is often used.
+There is no closed analytical form for $\int_a^bf(x)dx,\,\forall a,b\in\Re$ with $a,b$, so numerical integration is often used. As is, the normal distribution's CDF has four parameters ($\mu,\sigma^2,a,b$). By defining a standard normal distribution, $Z$, then the amount of parameters can be reduced, $Z\sim\mathcal{N}(0,1)$. To transform $X$ into $Z$, a change of variable is used:$$\Huge Z=\frac{X-\mu}{\sigma}$$
+Now denoting the PDF of $Z$ as $\phi$:$$\Huge \phi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}$$ 
 
 # Cumulative distribution function:
 
