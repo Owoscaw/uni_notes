@@ -57,4 +57,7 @@ This is proven by considering $a_n=y_n-x_n\in[0,C]$.
 
 Let $(x_n)_{n\in\mathbb{N}}$  be a convergent sequence with $x_n\geq 0$ for all $n\in\mathbb{N}$. Then $(\sqrt{x_n})_{n\in\mathbb{N}}$ is a convergent sequence with:$$\Huge \lim_{n\to\infty}\sqrt{x_n}=\sqrt{\lim_{n\to\infty}x_n}$$
 Denote $x=\lim_{n\to\infty}x_n$. Since $x_n\geq 0, x\geq 0$ by the above corollary. Distinguish the cases $x=0$ and $x>0$. So assume $x>0$, then also $\sqrt{x}>0$. $$\large \left|\sqrt{x_n}-\sqrt{x}\right|=\left|\frac{(\sqrt{x_n}-\sqrt{x})(\sqrt{x_n}+\sqrt{x})}{\sqrt{x_n}+\sqrt{x}}\right|=\left|\frac{x_n-x}{\sqrt{x_n}+\sqrt{x}}\right|\leq\frac{|x_n-x|}{\sqrt{x}}$$
-By squeezing theorem, $\sqrt{x_n}-\sqrt{x}\to0$ as $n\to\infty$, then the proof is completed using COLT. Example:![[Sequences .excalidraw]]
+By squeezing theorem, $\sqrt{x_n}-\sqrt{x}\to0$ as $n\to\infty$, then the proof is completed using COLT. Example:![[root sequence example]]
+## Monotonic sequences:
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a [[EVT, MVT, boundedness and monotonicity#Monotonicity|monotonically increasing]] sequence, that is $x_m\leq x_n$ for all $m\leq n$. If $(x_n)_{n\in\mathbb{N}}$ is bounded, then it is convergent. A similar statement exists for a monotonically decreasing sequence. Take the candidate for the limit, $x$ be given by:$$\Huge x=sup\left\{x_n\in\Re:n\in\mathbb{N}\right\}$$
