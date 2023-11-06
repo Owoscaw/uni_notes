@@ -60,4 +60,9 @@ Denote $x=\lim_{n\to\infty}x_n$. Since $x_n\geq 0, x\geq 0$ by the above corolla
 By squeezing theorem, $\sqrt{x_n}-\sqrt{x}\to0$ as $n\to\infty$, then the proof is completed using COLT. Example:![[root sequence example]]
 ## Monotonic sequences:
 
-Let $(x_n)_{n\in\mathbb{N}}$ be a [[EVT, MVT, boundedness and monotonicity#Monotonicity|monotonically increasing]] sequence, that is $x_m\leq x_n$ for all $m\leq n$. If $(x_n)_{n\in\mathbb{N}}$ is bounded, then it is convergent. A similar statement exists for a monotonically decreasing sequence. Take the candidate for the limit, $x$ be given by:$$\Huge x=sup\left\{x_n\in\Re:n\in\mathbb{N}\right\}$$
+Let $(x_n)_{n\in\mathbb{N}}$ be a [[EVT, MVT, boundedness and monotonicity#Monotonicity|monotonically increasing]] sequence, that is $x_m\leq x_n$ for all $m\leq n$. If $(x_n)_{n\in\mathbb{N}}$ is bounded, then it is convergent. A similar statement exists for a monotonically decreasing sequence. Consider the set of all values in the sequence:$$\Huge M=\left\{x_n\in\Re:n\in\mathbb{N}\right\}$$
+$M$ must be bounded, as the sequence is bounded. Therefore we can take the [[The completeness axiom#Bounds, suprema, and infima|supremum]] of the set, which exists by the [[The completeness axiom#The axiom|completeness axiom]]. Let $\epsilon>0$, and $x=sup\,M$. Now we need $n_0\in M$:$$\Huge |x_n-x|<\epsilon,\,\forall n\geq n_0$$
+Since $x>x-\epsilon$, it is less than $sup\,M$ and therefore cannot be an upper bound of $M$, so there must exists $x_{n_0}\in M$ with $x_{n_0}>x-\epsilon$. As $x_n$ is monotonically increasing:$$\Huge x-\epsilon<x_{n_0}\leq x_n\leq x\iff x-\epsilon< x_n\leq x$$
+$$\Huge \implies x-\epsilon<x\iff$$
+So our candidate for the limit is the limit, that is $x=sup\,M$.
+ 
