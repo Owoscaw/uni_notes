@@ -44,7 +44,7 @@ There is a similar argument for $\lim_{h\to0^-}$. Putting both of these limits t
 This shows that $F(x)$ is an indefinite integral of $f(x)$. If $\tilde{F}(x)$ is any indefinite integral of $f(x)$ on $(a,b)$, then $\tilde{F}(x)=F(x)+c$ for some constant $c$, so we get:$$\large \tilde{F}(b)-\tilde{F}(a)=(F(b)+c)-(F(a)+c)=F(b)-F(a)+c-c=F(b)-F(a)$$$$\Huge \tilde{F}(b)-\tilde{F}(a)=F(b)-F(a)=\int_a^bf(t)dt-\int_a^af(t)dt=\int_a^bf(t)dt$$
 This theorem also for differentiating a definite integral with respect to it's limits, using:$$\Huge F^\prime(x)=\frac{d}{dx}\int_a^xf(t)dt=f(x)$$
 For example:$$\Huge \frac{d}{dx}\int_0^x\frac{1}{1+sin^2t}dt=\frac{1}{1+sin^2x}\times\frac{d}{dx}(x)=\frac{1}{1+sin^2x}$$
-$$\Huge \frac{d}{dx}\int_0^{f(x)}f(t)dt=f(x)f^\prime(x)$$
+$$\Huge \frac{d}{dx}\int_0^{g(x)}f(t)dt=f(x)g^\prime(x)$$
 
 # Integration by recurrence relations:
 
