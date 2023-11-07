@@ -29,3 +29,7 @@ This is equivalent to the series expansion of $e^{-1}$:$$\Huge \lim_{n\to\infty}
 > For any $n\geq n_0$, $P(n)\implies P(n+1)$
 
 Assuming $P(n_0)$ is true, and that $P(n)\implies P(n+1)$, then $P(n_0+1)$ is true, so is $P(n_0+2)$. This chain continues for any $n\geq n_0$
+
+# Pigeon Hole principle:
+
+If $n$ envelopes are distributed among $m$ pigeon holes with $n>m$, then at least one pigeon hole will have more than one envelope.
