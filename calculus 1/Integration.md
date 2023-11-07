@@ -64,4 +64,5 @@ If $f_{odd}(x)$ is an integrable odd function on $[-a,a]$, then:$$\Huge \int_{-a
 $$\large \int_{-a}^af_{odd}(x)dx=\int_0^af_{odd}(x)dx+\int_{-a}^0f_{odd}(x)dx=\int_0^af_{odd}(x)dx-\int_a^0f_{odd}(-x)dx$$
 $$\large \int_{-a}^af_{odd}(x)dx=\int_0^af_{odd}(x)dx+\int_0^af_{odd}(-x)dx=\int_0^af_{odd}(x)dx-\int_0^af_{odd}(x)dx=0$$
 Similarly, if $f_{even}(x)$ is an integrable even function on $[-a,a]$, then:$$\Huge \int_{-a}^af_{even}(x)dx=2\int_0^af_{even}(x)dx$$
-The proof is similar to that of the odd integral.
+The proof is similar to that of the odd integral. This has a corollary when $f(x)$ is decomposed into an odd and even function:
+$$\Huge \int_{-a}^af(x)dx=\int_{-a}^af_{even}(x)dx+\int_{-a}^af_{odd}(x)dx=2\int_0^af_{even}(x)dx$$
