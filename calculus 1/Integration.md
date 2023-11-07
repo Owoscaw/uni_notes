@@ -66,3 +66,8 @@ $$\large \int_{-a}^af_{odd}(x)dx=\int_0^af_{odd}(x)dx+\int_0^af_{odd}(-x)dx=\int
 Similarly, if $f_{even}(x)$ is an integrable even function on $[-a,a]$, then:$$\Huge \int_{-a}^af_{even}(x)dx=2\int_0^af_{even}(x)dx$$
 The proof is similar to that of the odd integral. This has a corollary when $f(x)$ is decomposed into an odd and even function:
 $$\Huge \int_{-a}^af(x)dx=\int_{-a}^af_{even}(x)dx+\int_{-a}^af_{odd}(x)dx=2\int_0^af_{even}(x)dx$$
+
+# Double integrals:
+
+Given a function $f(x,y)$ and a region $D$ in the $xy$-plane, the double integral is the signed volume of the region between the surface $z=f(x,y)$ and the region $D$ in the $z=0$ plane:$$\Huge \iint_Df(x,y)dxdy$$
+The double definite integral is then defined as the limit of a Reimann sum. The rectangular region, $
