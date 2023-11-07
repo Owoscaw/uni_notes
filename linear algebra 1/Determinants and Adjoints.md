@@ -87,5 +87,11 @@ This is shown as follows:$$\Huge \underline x=A^{-1}\underline b=\frac{1}{det(A)
 So we have:
 $$\Huge x_i=\frac{1}{det(A)}\sum_{k=1}^nadj(A)_{ik}\,b_{k1}=\frac{1}{det(A)}\sum_{k=1}^n(-1)^{i+k}det(A)_{k,i}\,b_k$$
 This expression is equivalent to the expansion down the $i$th column:
-$$\Huge x_i=\frac{1}{det(A)}det\begin{pmatrix}1&1&\dots&1&1&1&\dots&1\\\underline a_1&\underline a_2&\dots&\underline a_{i-1}&\underline b&\underline a_{i+1}&\dots&\underline a_n\\1&1&\dots&1&1&1&\dots\end{pmatrix}$$
+$$\Huge x_i=\frac{1}{det(A)}det\begin{pmatrix}1&1&\dots&1&1&1&\dots&1\\\underline a_1&\underline a_2&\dots&\underline a_{i-1}&\underline b&\underline a_{i+1}&\dots&\underline a_n\\1&1&\dots&1&1&1&\dots&1\end{pmatrix}$$
 
+# Geometric interpretation of determinants:
+
+
+The determinant has the following relationship to the area of a parallelogram formed by two vectors in [[Vector space definitions|$\Re$]]:
+![[geometric determinant]]
+A parallelopiped formed in $\Re^3$ formed by the vectors $\underline 0,\underline u, \underline v,\underline w$ and all their possible combinations, $P$
