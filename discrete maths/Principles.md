@@ -24,7 +24,7 @@ This is equivalent to the series expansion of $e^{-1}$:$$\Huge \lim_{n\to\infty}
 # Mathematical induction:
 
 [[Proof techniques#Mathematical induction|Mathematical induction]] provides a method to determine the truth of a sequence of statements, each associated with a non-negative integer. The general form is as follows:
-> Suppose each integer $n\geq n_0$ has an associated statements $P(n)$.
+> Suppose each integer $n\geq n_0$ has an associated statement $P(n)$.
 > Show $P(n_0)$ is true
 > For any $n\geq n_0$, $P(n)\implies P(n+1)$
 
