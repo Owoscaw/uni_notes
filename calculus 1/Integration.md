@@ -57,3 +57,11 @@ Then:$$\Huge I_{n+1}=\int_0^1x^{n+1}e^xdx,\,\text{using integration by parts:}$$
 Calculating $n=0$ traditionally allows for any further cases of $n$ to be found, without having to perform a complex sequence of integration by parts. Another way recurrence relations can be found in integrals is through trigonometric identities:
 ![[recurrence integral example]]
 This relation only relates every other term, whereas the previous relation related every term to the next.
+
+# Event and odd integrals:
+
+If $f_{odd}(x)$ is an integrable odd function on $[-a,a]$, then:$$\Huge \int_{-a}^af_{odd}(x)dx=0$$
+$$\large \int_{-a}^af_{odd}(x)dx=\int_0^af_{odd}(x)dx+\int_{-a}^0f_{odd}(x)dx=\int_0^af_{odd}(x)dx-\int_a^0f_{odd}(-x)dx$$
+$$\large \int_{-a}^af_{odd}(x)dx=\int_0^af_{odd}(x)dx+\int_0^af_{odd}(-x)dx=\int_0^af_{odd}(x)dx-\int_0^af_{odd}(x)dx=0$$
+Similarly, if $f_{even}(x)$ is an integrable even function on $[-a,a]$, then:$$\Huge \int_{-a}^af_{even}(x)dx=2\int_0^af_{even}(x)dx$$
+The proof is similar to that of the odd integral.
