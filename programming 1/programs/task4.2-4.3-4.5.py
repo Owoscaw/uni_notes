@@ -8,8 +8,6 @@ def is_perfect(n):
     return sum(divisors(n)) == n
 
 def show_perfect(n):
-    print([i for i in range(1,n) if is_perfect(i)])
-
     print([i for i in range(1,n) if sum([j for j in range(1, i//2 + 1) if i%j == 0]) == i])
 
 def is_prime(n):
