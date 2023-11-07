@@ -83,4 +83,9 @@ So this takes value $det(A)$ along the diagonal, $0$ otherwise. This is equivale
 # Cramer's rule:
 
 Give $A\in M_n(\Re),\,\underline b\in\Re^n$ and that $A$ is invertible. Then $A\underline x=\underline b$ has a unique solution, that is $\underline x=A^{-1}\underline b$. The coordinates of this unique solution are given by:$$\Huge x_i=\frac{det\begin{pmatrix}1&1&\dots&1&\dots&1\\\underline a_1&\underline a_2&\dots&\underline b&\dots&\underline a_n\\1&1&\dots&1&\dots&1\end{pmatrix}}{det(A)}$$
+This is shown as follows:$$\Huge \underline x=A^{-1}\underline b=\frac{1}{det(A)}adj(A)\underline b$$
+So we have:
+$$\Huge x_i=\frac{1}{det(A)}\sum_{k=1}^nadj(A)_{ik}\,b_{k1}=\frac{1}{det(A)}\sum_{k=1}^n(-1)^{i+k}det(A)_{k,i}\,b_k$$
+This expression is equivalent to the expansion down the $i$th column:
+$$\Huge x_i=\frac{1}{det(A)}det\begin{pmatrix}1&1&\dots&1&1&1&\dots&1\\\underline a_1&\underline a_2&\dots&\underline a_{i-1}&\underline b&\underline a_{i+1}&\dots&\underline a_n\\1&1&\dots&1&1&1&\dots\end{pmatrix}$$
 
