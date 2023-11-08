@@ -66,7 +66,7 @@ Since $x>x-\epsilon$, it is less than $sup\,M$ and therefore cannot be an upper 
 $$\Huge \implies -\epsilon<x_n-x<\epsilon$$
 Which is what is required for convergence, so our candidate for the limit is the limit, that is $x=sup\,M$.
 
-## Exponential and logarithmic sequences:
+## Exponential sequences:
 
 For every $x\in\Re$, the sequence $\left(1+\frac{x}{n}\right)^n$ is convergent, with a limit of $e^x$ as $n\to\infty$. This satisfies $e^x>0$ and $e^{-x}=\frac{1}{e^x}$. To prove this, show that the sequence is monotonically increasing for $x\geq0$ and that it is bounded above by $e^k$ for $k\in\mathbb{N}$ with $x\leq k$. This gives convergence as every bounded sequence has a limit. 
 
@@ -79,6 +79,19 @@ So we have the inequality as required. This lemma can be used to show that $e^{x
 If $x<y$, then $\frac{\text{exp}(y)}{\text{exp}(x)}=\text{exp}(y-x)>1\iff\text{exp}(x)<\text{exp}(y)$, as the exponential function is strictly monotonic increasing. Let $a>0$, then there exists $x\in\Re$ with $\text{exp}(x)=a$. Consider the set:$$\Huge X=\left\{y\in\Re:\text{exp}(y)<a\right\}$$
 $e^n$ is an unbounded sequence, so there is $n\in\mathbb{N}$ with $\text{exp}(n)>a$. As the exponential function is increasing, $n$ is an upper bound for $X$. Note that $e^{-n}=\left(\frac{1}{e}\right)^n\to0$ as $n\to\infty$. So this means that there exists $n\in\mathbb{N}$ with $\text{exp}(-n)<a$, so $-n\in X$. This means that $X$ is bounded above, and is non-empty, so the [[The completeness axiom|completeness axiom]] can be used. 
 
-Now we can use the completeness and set $x=sup\,X$. Still to show that $\text{exp}(x)=a$, we need to show $e^x<a$ is not true and $e^x>a$ is not true. So first assume $\text{exp}(x)<a$, then $\frac{a}{\text{exp}(x)}>1$. Now consider $\text{exp}\left(x+\frac{1}{n}\right)=\text{exp}(x)\,\text{exp}\left(\frac{1}{n}\right)$. By the above lemma, $\text{exp}\left(\frac{1}{n}\right)\leq1+\frac{1}{n-1}$, now by Archimedes there exists $n$ with $1+\frac{1}{n-1}<\frac{a}{\text{exp}(x)}$. Now $\text{exp}\left(x+\frac{1}{n}\right)=\text{exp}(x)\,\text{exp}\left(\frac{1}{n}\right)<\text{exp}(x)\,\frac{a}{\text{exp}(x)}=a$. So we have $\text{exp}\left(x+\frac{1}{n}\right)<a$, so $x+\frac{1}{n}\in X$, contradicting $x=sup\,X$. So assuming $\text{exp}(x)<a$ leads to a contradiction, so it must not be true.
+Now we can use the completeness and set $x=sup\,X$. Still to show that $\text{exp}(x)=a$, we need to show $e^x<a$ is not true and $e^x>a$ is not true. So first assume $\text{exp}(x)<a$, then $\frac{a}{\text{exp}(x)}>1$. Now consider $\text{exp}\left(x+\frac{1}{n}\right)=\text{exp}(x)\,\text{exp}\left(\frac{1}{n}\right)$. By the above lemma, $\text{exp}\left(\frac{1}{n}\right)\leq1+\frac{1}{n-1}$, now by Archimedes there exists $n$ with $1+\frac{1}{n-1}<\frac{a}{\text{exp}(x)}$. Now $\text{exp}\left(x+\frac{1}{n}\right)=\text{exp}(x)\,\text{exp}\left(\frac{1}{n}\right)<\text{exp}(x)\,\frac{a}{\text{exp}(x)}=a$. So we have $\text{exp}\left(x+\frac{1}{n}\right)<a$, so $x+\frac{1}{n}\in X$, contradicting $x=sup\,X$. So assuming $\text{exp}(x)<a$ leads to a contradiction, so it must not be true. A similar method can be used for $\text{exp}(x)>a$, leading to the conclusion that for $a>0$, there exists $x\in\Re$ with $\text{exp}(x)=a$, making the exponential function bijective, so the folllowing inverse is defined: 
 
-For the second part of the proof, consider the inverse to the exponential function, the logarithm:$$\Huge log:(0,\infty)\mapsto\Re,\,\,log(\text{exp}(x))=x$$
+## Logarithmic sequences:
+
+Consider the inverse to the exponential function, the logarithm:$$\Huge log:(0,\infty)\mapsto\Re,\,\,log(\text{exp}(x))=x$$
+Let $a>0$ and $x\in\Re$, define the following:$$\Huge a^x=\text{exp}(x\,log(a))$$
+If $a\neq 1$, then:
+$$\Huge log_a(x)=\frac{log(x)}{log(a)}$$
+Now let $a,b>0$ with $b\neq 1$ and $x,y\in\Re$, then the logarithm has the following properties:
+>$a^{x+y}=a^x\,a^y$
+>$(a^x)^y=a^{xy}$
+>$log_b(xy)=log_b(x)+log_b(y)$, for $x,y>0$
+>$log_b(x^y)-y\,log(x)$, for $x>0$
+
+Using a similar lemma from the exponential function, we have:$$\Huge \frac{x-1}{x}\leq log(x)\leq x-1$$
+Now we arrive at our final comparison between functions, powers beat logarithms. That is to say, for $k\in\mathbb{N}$L$$$$
