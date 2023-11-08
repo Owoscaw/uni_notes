@@ -94,4 +94,6 @@ Now let $a,b>0$ with $b\neq 1$ and $x,y\in\Re$, then the logarithm has the follo
 >$log_b(x^y)-y\,log(x)$, for $x>0$
 
 Using a similar lemma from the exponential function, we have:$$\Huge \frac{x-1}{x}\leq log(x)\leq x-1$$
-Now we arrive at our final comparison between functions, powers beat logarithms. That is to say, for $k\in\mathbb{N}$L$$$$
+Now we arrive at our final comparison between functions, powers beat logarithms. That is to say, for $k\in\mathbb{N}$:$$\Huge \lim_{n\to\infty}\frac{n^k}{e^n}=0$$
+$$\Huge e^n\geq\left(1+\frac{n}{k+1}\right)^{k+1}\geq\frac{n^{k+1}}{(k+1)^{k+1}}$$
+Here, the rightmost term is the final term in the binomial expansion of the middle term. Now:$$\Huge \frac{n^k}{e^n}\leq\frac{n^k(k+1)^{k+1}}{n^{k+1}}\leq\frac{(k+1)^{k+1}}{n}$$
