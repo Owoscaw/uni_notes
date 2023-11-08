@@ -68,4 +68,10 @@ Which is what is required for convergence, so our candidate for the limit is the
 
 ## Exponential and logarithmic sequences:
 
-For every $x\in\Re$, the sequence $\left(1+\frac{x}{n}\right)^n$ is convergent, with a limit of $e^x$ as $n\to\infty$. This satisfies $e^x>0$ and $e^{-x}=\frac{1}{e^x}$. To prove this, show that the sequence is monotonically increasing for $x\geq0$ and that it is bounded above by $e^k$ for $k\in\mathbb{N}$ with $x\leq k$. This gives converge
+For every $x\in\Re$, the sequence $\left(1+\frac{x}{n}\right)^n$ is convergent, with a limit of $e^x$ as $n\to\infty$. This satisfies $e^x>0$ and $e^{-x}=\frac{1}{e^x}$. To prove this, show that the sequence is monotonically increasing for $x\geq0$ and that it is bounded above by $e^k$ for $k\in\mathbb{N}$ with $x\leq k$. This gives convergence as every bounded sequence has a limit. 
+
+Let $x\in(-\infty,1)$, then:$$\Huge 1+x\leq e^x\leq\frac{1}{1-x}$$
+Take $n\in\mathbb{N}$ with $\frac{x}{n}>-1$. By the Bernoulli inequality:$$\Huge \left(1+\frac{x}{n}\right)^n\geq 1+x$$
+Now tending $n\to\infty$:$$\Huge \lim_{n\to\infty}\left(1+\frac{x}{n}\right)\geq\lim_{n\to\infty}1+x\implies e^x\geq1+x$$
+Now consider:$$\Huge \frac{1}{\left(1-\frac{x}{n}\right)^n}\geq\frac{1}{1-x}$$
+Again tending $n\to\infty$:$$\Huge \lim_{n\to\infty}$$
