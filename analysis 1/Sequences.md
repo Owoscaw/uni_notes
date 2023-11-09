@@ -96,4 +96,7 @@ Now let $a,b>0$ with $b\neq 1$ and $x,y\in\Re$, then the logarithm has the follo
 Using a similar lemma from the exponential function, we have:$$\Huge \frac{x-1}{x}\leq log(x)\leq x-1$$
 Now we arrive at our final comparison between functions, powers beat logarithms. That is to say, for $k\in\mathbb{N}$:$$\Huge \lim_{n\to\infty}\frac{n^k}{e^n}=0$$
 $$\Huge e^n\geq\left(1+\frac{n}{k+1}\right)^{k+1}\geq\frac{n^{k+1}}{(k+1)^{k+1}}$$
-Here, the rightmost term is the final term in the binomial expansion of the middle term. Now:$$\Huge \frac{n^k}{e^n}\leq\frac{n^k(k+1)^{k+1}}{n^{k+1}}\leq\frac{(k+1)^{k+1}}{n}$$
+Here, the rightmost term is the final term in the binomial expansion of the middle term. Now reverse the inequality and multiply by $n^k$:$$\Huge \frac{n^k}{e^n}\leq\frac{n^k(k+1)^{k+1}}{n^{k+1}}=\frac{(k+1)^{k+1}}{n}$$
+Since $(k+1)^{k+1}$ is constant, the limit as $n\to\infty$ of the rightmost term is $0$. We also have $\frac{n^k}{e^n}>0$ as both numerator and denominator are $>0$, so by the squeezing theorem we get the required result. 
+
+We also have $log(n)=k\,log(n^{\frac{1}{k}})\leq\epsilon\,n^{\frac{1}{n}}$. Given large enough $n$ and since $\epsilon>0$ is arbitrary, we also get:$$\Huge \lim_{n\to\infty}\frac{log(n)}{\sqrt[k]{n}}=0$$  
