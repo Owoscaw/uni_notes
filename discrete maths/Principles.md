@@ -32,4 +32,4 @@ Assuming $P(n_0)$ is true, and that $P(n)\implies P(n+1)$, then $P(n_0+1)$ is tr
 
 # Pigeon Hole principle:
 
-If $n$ envelopes are distributed among $m$ pigeon holes with $n>m$, then at least one pigeon hole will have more than one envelope.
+If $n$ envelopes are distributed among $m$ pigeon holes with $n>m$, then at least one pigeon hole will have more than one envelope. 
