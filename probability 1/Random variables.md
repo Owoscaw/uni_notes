@@ -95,6 +95,9 @@ There is no closed analytical form for $\int_a^bf(x)dx,\,\forall a,b\in\Re$ with
 Now denoting the PDF of $Z$ as $\phi$:$$\Huge \phi(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}$$
 And the CDF as $\Phi$:
 $$\Huge \Phi(x)=\int_{-\infty}^x\phi(t)dt$$
+Since $\phi(x)$ is symmetric, the following statement holds:
+$$\large \Phi(-z)=\int_{-\infty}^{-z}\phi(t)dt=-\int_{\infty}^z\phi(-x)dx=\int_z^\infty\phi(x)dx=\mathbb{P}(Z>z)=1-\Phi(z)$$
+As $\Phi$ has no closed analytical form, it is often tabulated. Using the above statement, only positive values of $z$ need to be tabulated as negative values follow from positive.
 
 # Cumulative distribution function:
 
