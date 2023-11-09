@@ -27,4 +27,5 @@ If $U=span(\underline u_1,\dots,\underline u_k)$, then we say $U$ is spanned by 
 
 Suppose $\underline u_1,\dots,\underline u_k\in\Re^n$ with:$$\Huge \underline u_i=\begin{pmatrix}u_{1i}\\u_{2i}\\\vdots\\u_{ni}\end{pmatrix}$$
 From this, we form the matrix $A=(\underline u_1\,\dots\,\underline u_k)$:$$\Huge A=\begin{pmatrix}u_{11}&u_{12}&\dots&u_{1k}\\u_{21}&u_{22}&\dots&u_{2k}\\\vdots&\vdots&\ddots&\vdots\\u_{n1}&u_{n2}&\dots&u_{nk}\end{pmatrix}$$
-Let $$
+Let $\underline\lambda\in\Re^k$, then the following:$$\Huge A\underline\lambda=\begin{pmatrix}\lambda_1u_{11}+\lambda_2u_{12}+\dots+\lambda_ku_{1k}\\\lambda_1u_{21}+\lambda_2u_{22}+\dots+\lambda_ku_{2k}\\\vdots\\\lambda_1u_{n1}+\lambda_2u_{n2}+\dots+\lambda_ku_{nk}\end{pmatrix}=\lambda_1\begin{pmatrix}u_{11}\\u_{21}\\\vdots\\u_{n1}\end{pmatrix}+\dots+\lambda_k\begin{pmatrix}u_{1k}\\u_{2k}\\\vdots\\u_{nk}\end{pmatrix}$$$$\Huge A\underline\lambda=\lambda_1\underline u_1+\dots+\lambda_k\underline u_k$$
+This is equivalent to $span(\underline u_1,\dots,\underline u_k)$, so we write:$$\large span(\underline u_1,\dots,\underline u_k)=\left\{A\underline\lambda:\underline\lambda\in\Re^k\right\}=\left\{\underline b\in\Re^n:A\underline\lambda=\underline b\,\text{has a solution}\,\underline\lambda\in\Re^k\right\}$$
