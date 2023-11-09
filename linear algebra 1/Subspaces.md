@@ -20,4 +20,11 @@ The solution to an inhomogeneous system $A\underline x=\underline b$, where $\un
 # Spanning sets:
 
 If $\underline u_1,\dots,\underline u_k\in\Re^n$, then $\lambda_1\underline u_1,\dots,\lambda_k\underline u_k\in\Re^n$ is called a linear combination of $\underline u_1,\dots,\underline u_k$. Given $\underline u_1,\dots,\underline u_k\in\Re^n$, then the span of $\underline u_1,\dots,\underline u_k$ is:$$\Huge span(\underline u_1,\dots,\underline u_k):=\{\lambda_1\underline u_1+\dots+\lambda_k\underline u_k:\lambda_1,\dots,\lambda_k\in\Re\}$$
-If $U=span(\underline u_1,\dots,\underline u_k)$, then we say $U$ is spanned by $\{\underline u_1,\dots,\underline u_k\}$, the spanning set of $U$. Given all of this, $$
+If $U=span(\underline u_1,\dots,\underline u_k)$, then we say $U$ is spanned by $\{\underline u_1,\dots,\underline u_k\}$, the spanning set of $U$. Given all of this, $U\subseteq\Re^n$, that is $U$ is a subspace of $\Re^n$. To prove this, we show it satisfies all closure and non-empty requirements:
+> Suppose $\lambda_1,\dots,\lambda_k,\mu_1,\dots,\mu_k,\lambda\in\Re$, then:$$\large \left(\lambda_1\underline u_1+\dots+\lambda_k\underline u_k\right)+\left(\mu_1\underline u_1+\dots+\mu_k\underline u_k\right)=(\lambda_1+\mu_1)\underline u_1+\dots+(\lambda_k+\mu_k)\underline u_k$$ So we have closure under addition.
+> $$\Huge \lambda\left(\lambda_1\underline u_1+\dots+\lambda_k\underline u_k\right)=(\lambda\lambda_1)\underline u_1+\dots+(\lambda\lambda_k)\underline u_k$$So we have closure under scalar multiplication.$$\Huge \underline 0=0\underline u_1+\dots+0\underline u_k$$
+> So $0\in span(\underline u_1,\dots,\underline u_k)$, the span is not empty. All properties are satisfied, so the span must be a subspace.
+
+Suppose $\underline u_1,\dots,\underline u_k\in\Re^n$ with:$$\Huge \underline u_i=\begin{pmatrix}u_{1i}\\u_{2i}\\\vdots\\u_{ni}\end{pmatrix}$$
+From this, we form the matrix $A=(\underline u_1\,\dots\,\underline u_k)$:$$\Huge A=\begin{pmatrix}u_{11}&u_{12}&\dots&u_{1k}\\u_{21}&u_{22}&\dots&u_{2k}\\\vdots&\vdots&\ddots&\vdots\\u_{n1}&u_{n2}&\dots&u_{nk}\end{pmatrix}$$
+Let $$
