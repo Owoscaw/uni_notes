@@ -1,0 +1,1 @@
+A student has a flight of $n$ stairs to climb, and can either climb $1$ or $2$ stairs at a time, how many distinct ways are there to climb $n$ stairs? Call the solution $f$
