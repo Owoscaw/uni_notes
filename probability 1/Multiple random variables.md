@@ -1,0 +1,2 @@
+Given two [[Random variables|random variables]] $X,Y$ both defined on $\Omega$, that is $X:\Omega\mapsto X(\Omega)$ and $Y:\Omega\mapsto Y(\Omega)$. Then $(X,Y):\Omega\mapsto(X,Y)(\Omega)$, defined as:$$\Huge (X,Y)(\omega):=(X(\omega),Y(\omega))$$
+Here, $W=X,Y$ is called a bivariate random variable.
