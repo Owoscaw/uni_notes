@@ -6,10 +6,18 @@ A subspace, $U$, of [[Vector space definitions|$\Re^n$]] is a subset, $U\subsete
 
 Trivial examples of subspaces are $\{\underline 0\}\subseteq\Re^n$, and $\Re^n\subseteq\Re^n$. [[Lines in R3|Lines]] and [[Planes in R3|planes]] are examples of subspaces, they can be defined in any vector space, not just $\Re^2$ or $\Re^3$.
 
+## Homogeneous systems:
+
 Given [[Matrix definition|$A\in M_{m\times n}(\Re)$]], then the solution set is homogeneous to the system $A\underline x=\underline 0$:$$\Huge U=\left\{\underline x\in\Re^n:A\underline x=\underline 0\right\}\subseteq\Re^n$$ 
 To prove this, we show solutions in $U$ satisfy all conditions for a subspace:
 >Let $\underline u,\underline v\in U$, then:$$\Huge A(\underline u+\underline v)=A\underline u+A\underline v=\underline 0+\underline 0=\underline 0,\,\text{therefore}\,\,\underline u+\underline v\in U$$
 >Let $\underline u\in U,\lambda\in\Re$:$$\Huge A(\lambda\underline u)=\lambda(A\underline u)=\lambda\underline 0=\underline 0,\,\text{therefore}\,\,\lambda\underline u\in U$$
 >Also note $A\underline 0=\underline 0$, so $\underline 0\in U$, the subspace is not empty.
 
-The solution to an inhomogeneous system $A\underline x=\underline b$, where $\underline b=0$ is an affine subspace, the solution set is of form:$$\Huge \underline c+U:=\left\{\underline c+\underline u\right\}$$
+## Inhomogeneous systems:
+
+The solution to an inhomogeneous system $A\underline x=\underline b$, where $\underline b=0$ is an affine subspace, the solution set is of form:$$\Huge \underline c+U:=\left\{\underline c+\underline u:\underline u\in U\right\}$$
+# Spanning sets:
+
+If $\underline u_1,\dots,\underline u_k\in\Re^n$, then $\lambda_1\underline u_1,\dots,\lambda_k\underline u_k\in\Re^n$ is called a linear combination of $\underline u_1,\dots,\underline u_k$. Given $\underline u_1,\dots,\underline u_k\in\Re^n$, then the span of $\underline u_1,\dots,\underline u_k$ is:$$\Huge span(\underline u_1,\dots,\underline u_k):=\{\lambda_1\underline u_1+\dots+\lambda_k\underline u_k:\lambda_1,\dots,\lambda_k\in\Re\}$$
+If $U=span(\underline u_1,\dots,\underline u_k)$, then we say $U$ is spanned by $\{\underline u_1,\dots,\underline u_k\}$, the spanning set of $U$. Given all of this, $$
