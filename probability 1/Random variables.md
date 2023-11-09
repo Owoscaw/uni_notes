@@ -115,4 +115,6 @@ The CDF, $F$, of a real valued random variable therefore completely determines a
 
 # Functions of random variables:
 
-Let $X:\Omega\mapsto X(\Omega)$ and $g:X(\Omega)\mapsto S$ be a random variable and som
+Let $X:\Omega\mapsto X(\Omega)$ and $g:X(\Omega)\mapsto S$ be a random variable and some function respectively. Then $g(X)$ is also a random variable, defined as $g(X)=g\circ X:\Omega\mapsto S$:
+$$\Huge g(X)(\omega):=g(X(\omega)),\,\forall\omega\in\Omega$$
+$$\Huge \mathbb{P}(g(X)\in B)=\mathbb{P}(\{\omega\in\Omega:g(X(\omega))\in B\}),\,\forall B\subseteq S$$
