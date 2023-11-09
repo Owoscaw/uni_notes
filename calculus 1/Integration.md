@@ -83,6 +83,8 @@ Example:
 ![[y-simple integral example]]
 
 There is a similar definition for an $x$-simple region:![[x-simple example]]
-This region $D$ is $x$-simple, with functions of $y$ that define the upper and lower boundaries. The integral is computed in a similar way:$$\Huge \iint_Df(x,y)dxdy=\int_{b_0}^{b_1}\left(\int_{\psi_2(y)}^{\psi_1(y)}f(x,y)dx\right)dy$$
-If a region is both $x$ and $y$ simple, then the integral can be done in either order, and the integral is given by:$$\Huge \iint_Df(x,y)dxdy=\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dxdy$$Where $\psi_1$ and $\psi_2$ define the upper and lower boundaries of 
+This region $D$ is $x$-simple, with functions of $y$ that define the left and right boundaries. The integral is computed in a similar way:$$\Huge \iint_Df(x,y)dxdy=\int_{b_0}^{b_1}\left(\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dx\right)dy$$
+If a region is both $x$ and $y$ simple, then the integral can be done in either order, and the integral is given by:$$\Huge \iint_Df(x,y)dxdy=\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dxdy$$Where $\psi_1$ and $\psi_2$ define left and right boundaries in terms of $y$, and $\phi_1$ and $\phi_2$ define the upper and lower boundaries in terms of $x$.
+
+## 
 
