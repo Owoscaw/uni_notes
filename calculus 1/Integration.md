@@ -86,5 +86,7 @@ There is a similar definition for an $x$-simple region:![[x-simple example]]
 This region $D$ is $x$-simple, with functions of $y$ that define the left and right boundaries. The integral is computed in a similar way:$$\Huge \iint_Df(x,y)dxdy=\int_{b_0}^{b_1}\left(\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dx\right)dy$$
 If a region is both $x$ and $y$ simple, then the integral can be done in either order, and the integral is given by:$$\Huge \iint_Df(x,y)dxdy=\int_{\phi_1(x)}^{\phi_2(x)}\int_{\psi_1(y)}^{\psi_2(y)}f(x,y)dxdy$$Where $\psi_1$ and $\psi_2$ define left and right boundaries in terms of $y$, and $\phi_1$ and $\phi_2$ define the upper and lower boundaries in terms of $x$.
 
-## 
+## Integration using polar coordinates:
+
+When the region $D$ is rotationally symmetric, or has some kind of circular symmetry to it, polar coordinates could be useful to describe the region where $x=r\,cos\theta$ and $y=r\,sin\theta$. To convert a region in terms of cartesian coordinates into a region in terms of polar coordinates, the area element $dA=dxdy$ needs to be converted into polar coordinates. $dA$ describes the area of a rectangle with lengths $dx$ and $dy$, the area element in the infinitesimal limit of the integral.
 
