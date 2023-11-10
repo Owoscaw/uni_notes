@@ -1,4 +1,4 @@
-
+	
 The determinant of a square matrix is a function:
 $$\Huge det:M_{n\times n}(\Re)\mapsto\Re$$
 For small $n$:
