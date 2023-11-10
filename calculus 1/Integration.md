@@ -95,3 +95,8 @@ Example:
 
 # Changing variable and the Jacobian:
 
+Cartesian coordinates $x$ and $y$ may need to be changed into new variables, $u$ and $v$. This is given by the transformation $x=g(u,v),\,y=h(u,v)$. A region $D$ will be changed under this transformation, so need to be considered in terms of $u$ and $v$, as well as the area element $dA$. The following definition is used in finding the new area element:
+
+The Jacobian of the transformation from $x,y$ to $u,v$ is given by:$$\Huge J=\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\end{vmatrix}$$
+The area element is then given in terms of the Jacobian, with:$$\Huge dA=dxdy=|J|dudv=\left|\begin{vmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\end{vmatrix}\right|dudv$$
+For polar coordinates, $x=r\,cos\,\theta$ and $y=r\,sin\,\theta$, so the Jacobian is given by:$$\Huge J=\begin{vmatrix}\frac{\partial}{\partial r}(r\,cos\,\theta)&\frac{\partial}{\partial\theta}(r\,cos\,\theta)\\\frac{\partial}{\partial r}(r\,sin\,\theta)&\frac{\partial}{\partial\theta}(r\,sin\,\theta)\end{vmatrix}=\begin{vmatrix}cos\,\theta&-r\end{vmatrix}$$
