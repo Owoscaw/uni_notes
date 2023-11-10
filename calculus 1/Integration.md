@@ -88,5 +88,5 @@ If a region is both $x$ and $y$ simple, then the integral can be done in either 
 
 ## Integration using polar coordinates:
 
-When the region $D$ is rotationally symmetric, or has some kind of circular symmetry to it, polar coordinates could be useful to describe the region where $x=r\,cos\theta$ and $y=r\,sin\theta$. To convert a region in terms of cartesian coordinates into a region in terms of polar coordinates, the area element $dA=dxdy$ needs to be converted into polar coordinates. $dA$ describes the area of a rectangle with lengths $dx$ and $dy$, the area element in the infinitesimal limit of the integral.
+When the region $D$ is rotationally symmetric, or has some kind of circular symmetry to it, polar coordinates could be useful to describe the region where $x=r\,cos\theta$ and $y=r\,sin\theta$. To convert a region in terms of cartesian coordinates into a region in terms of polar coordinates, the area element $dA=dxdy$ needs to be converted into polar coordinates. $dA$ describes the area of a rectangle with lengths $dx$ and $dy$, the area element in the infinitesimal limit of the integral. Consider a point $(r,\theta)$
 
