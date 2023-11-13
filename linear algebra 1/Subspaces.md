@@ -34,4 +34,12 @@ Suppose $U=span(\underline u_1,\dots,\underline u_k)\subseteq\Re^n$ and that $u_
 This is proven as follows. Set $V=span(\underline u_2,\dots,\underline u_k)$. First we show that $V\subseteq U$ then $U\subseteq V$:
 > If $\underline v\in V$. then $\underline v=\lambda_2\underline u_2+\dots+\lambda_k\underline u_k$ for some $\lambda_i\in\Re$, then also $v=0\cdot\underline u_1+\lambda_2\underline u_2+\dots+\lambda_k\underline u_k$, so $\underline v\in U$, then we have $V\subseteq U$.
 > Suppose $\underline u\in U$, then $\underline u=\lambda_1\underline u_1+\dots+\lambda_k\underline u_k$ for some $\lambda_i\in\Re$. Since $\underline u_1\in span(\underline u_2,\dots,\underline u_k)$, we also have $\underline u_1=\mu_2\underline u_2+\dots+\mu_k\underline u_k$ for some $\mu_i\in\Re$, then we get:$$\large\underline u=\lambda_1(\mu_2\underline u_2+\dots+\mu_k\underline u_k)+\dots+\lambda_k\underline u_k=(\lambda_1\mu_2+\lambda_2)\underline u_2+\dots+(\lambda_1\mu_k+\lambda_k)\underline u_k$$This is a linear combination of $\underline u_2,\dots,\underline u_k$, so $\underline u\in V$, and we get $U\subseteq V$. 
-> Since both sets subset eachother, we can say that they are equal, as required.
+> Since both sets subset each other, we can say that they are equal, as required.
+
+# Linear independence:
+
+$\underline u_1,\dots,\underline u_k\in\Re^n$ are linearly independent if and only if:$$\Huge \lambda_1\underline u_1+\dots+\lambda_k\underline u_k=\underline 0$$
+Has a single unique solution that is $\lambda_1=\dots=\lambda_k=0$. Set $A=\begin{pmatrix}\underline u_1&\dots&\underline u_k\end{pmatrix}\in M_{n\times k}(\Re)$ and $\underline\lambda$ be a column vector of all coefficients, then we have shown that $A\underline\lambda=\lambda_1\underline u_1+\dots+\lambda_k\underline u_k=span(\underline u_1,\dots,\underline u_k)$. So we can then say the set $\{\underline u_1,\dots,\underline u_k\}$ is linearly independent if and only if $A\underline\lambda=\underline 0$ has one unique solution $\underline\lambda=\underline 0$, as this is equivalent to saying that the span of the set has this trivial solution only, as the definition above.
+
+A pair of non-zero vectors $\underline u,\underline v\in\Re^n$ are linearly dependent if and only if one of $\underline u$ or $\underline v$ is a multiple of the other, that is they are colinear. This is proven by showing the implication both ways:
+> If $\underline u=\lambda\underline v$, then $1\underline u+(-\lambda)\underline v=\underline 0$, so $$
