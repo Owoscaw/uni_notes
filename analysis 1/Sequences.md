@@ -106,3 +106,8 @@ We also have $log(n)=k\,log(n^{\frac{1}{k}})\leq\epsilon\,n^{\frac{1}{n}}$. Give
 Let $(x_n)_{n\in\mathbb{N}}$ be a sequence. A subsequence of $(x_n)_{n\in\mathbb{N}}$ is a sequence $(x_{n_j})_{j\in\mathbb{N}}$ with $n_1<n_2<\dots$, for example $(x_{2j})_{j\in\mathbb{N}}$ would be a subsequence of $(x_n)_{n\in\mathbb{N}}$, with only the even indexes.
 
 Given a convergent sequence $(x_n)_{n\in\mathbb{N}}$ with a limit $x_n\to x$ as $n\to\infty$. Then every subsequence $(x_{n_j})_{j\in\mathbb{N}}$ is also convergent with:$$\Huge \lim_{j\to\infty}x_{n_j}=x$$
+The Bolzano-Weierstrass theorem dictates that for a bounded sequence $(x_n)_{n\in\mathbb{N}}$, there exists a convergent subsequence. This is proven using the following lemma:
+
+Every real sequence $(x_n)_{n\in\mathbb{N}}$ contains a subsequence that is either increasing or decreasing. Let $(x_n)_{n\in\mathbb{N}}$ be a sequence. $x_{n_0}$ is a peak element if $x_{n_0}\geq x_n$ for all $n>n_0$, then $n_0$ is called the peak index.
+> If there are infinitely many peak indices, $n_0<n_1<n_2<\dots$, which forms a subsequence with $x_{n_0}\geq x_{n_1}\geq x_{n_2}\geq\dots$, which is a monotonically decreasing subsequence.
+> If there are finitely many peak indices 
