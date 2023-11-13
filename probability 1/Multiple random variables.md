@@ -5,5 +5,6 @@ Two random variables $X$ and $Y$ on the same sample space $\Omega$ are independe
 
 # Jointly distributed discrete random variables:
 
-Let $(X,Y)$ be a bivariate random variable, with:$$\Huge \mathbb{P}((X,Y)\in\mathcal{Z})=1$$
-Where $\mathcal{Z}\subseteq(X,Y)(\Omega)$. The joint [[Random variables#Discrete random variables|PMF]] 
+Let $(X,Y)$ be a bivariate discrete random variable, with:$$\Huge \mathbb{P}((X,Y)\in\mathcal{Z})=1$$
+Where $\mathcal{Z}\subseteq(X,Y)(\Omega)$. The joint [[Random variables#Discrete random variables|PMF]] is defined as:$$\Huge p_{X,Y}(x,y)=\mathbb{P}(X=x,Y=y),\,\text{for}\,\,(x,y)\in\mathcal{Z}$$
+Each variable's PMF can be given in terms of the joint PMF:$$\Huge p_X(x)=\sum_{y\in\mathcal{Y}}p_{X,Y}(x,y),\,\,p_Y(y)=\sum_{x\in\mathcal{X}}p_{X,Y}(x,y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y}$$
