@@ -113,3 +113,10 @@ Every real sequence $(x_n)_{n\in\mathbb{N}}$ contains a subsequence that is eith
 > 	If there are finitely many peak indices, there must exists an $n_0$ such that $n_0$ is greater than all other peak indices. Then there must also exist $n_1=n_0+1>n_0$ that is not a peak index. Since $n_1$ is not a peak index, there exists $n_2$ with $x_{n_1}<x_{n_2}$ and $n_2>n_1$. $n_2$ is also not a peak index, so there exists $n_3>n_2$ such that $x_{n_2}<x_{n_3}$ and so on. Using these indices, a monotonically increasing subsequence can be formed.
 
 Now let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. By the above lemma, there exists a subsequence $(x_{n_j})_{j\in\mathbb{N}}$ that is either monotonically increasing or decreasing. Since the sequence is bounded, we have $|x_n|\leq C$ for all $n\in\mathbb{N}$. The subsequence must also be bounded by $C$. Since the subsequence is bounded and either monotonically increasing or decreasing, it must be convergent as it is a [[Sequences#Monotonic sequences|monotonic sequence]].
+
+# Lim inf and Lim sup:
+
+Given a bounded sequence $(x_n)_{n\in\mathbb{N}}$, two sequences are defined, $(\overline x_n)_{n\in\mathbb{N}}$ and $(\underline x_n)_{n\in\mathbb{N}}$:$$\Huge \overline x_n=sup\{x_m:m\geq n\}$$$$\Huge \underline x_n=inf\{x_m:m\geq n\}$$
+Let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence, then $(\overline x_n)_{n\in\mathbb{N}}$ is monotonically decreasing and bounded, and $(\underline x_n)_{n\in\mathbb{N}}$ is monotonically increasing and bounded. So they both have limits, given by:$$\Huge \lim_{n\to\infty}\underline x_n\leq\lim_{n\to\infty}\overline x_n$$
+This is proven as follows:
+> Since $(x_n)_{n\in\mathbb{N}}$ is bounded, there exists $c<C$ with $c\leq x_n\leq X$
