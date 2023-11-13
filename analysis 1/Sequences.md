@@ -110,4 +110,6 @@ The Bolzano-Weierstrass theorem dictates that for a bounded sequence $(x_n)_{n\i
 
 Every real sequence $(x_n)_{n\in\mathbb{N}}$ contains a subsequence that is either increasing or decreasing. Let $(x_n)_{n\in\mathbb{N}}$ be a sequence. $x_{n_0}$ is a peak element if $x_{n_0}\geq x_n$ for all $n>n_0$, then $n_0$ is called the peak index.
 > If there are infinitely many peak indices, $n_0<n_1<n_2<\dots$, which forms a subsequence with $x_{n_0}\geq x_{n_1}\geq x_{n_2}\geq\dots$, which is a monotonically decreasing subsequence.
-> If there are finitely many peak indices 
+> 	If there are finitely many peak indices, there must exists an $n_0$ such that $n_0$ is greater than all other peak indices. Then there must also exist $n_1=n_0+1>n_0$ that is not a peak index. Since $n_1$ is not a peak index, there exists $n_2$ with $x_{n_1}<x_{n_2}$ and $n_2>n_1$. $n_2$ is also not a peak index, so there exists $n_3>n_2$ such that $x_{n_2}<x_{n_3}$ and so on. Using these indices, a monotonically increasing subsequence can be formed.
+
+Now let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. By the above lemma, there exists a subsequence $(x_{n_j})_{j\in\mathbb{N}}$ that is either monotonically increasing or decreasing. Since the sequence is bounded, we have $|x_n|\leq C$ for all $n\in\mathbb{N}$. The subsequence must also be bounded by $C$. Since the subsequence is bounded and either monotonically increasing or decreasing, it must be convergent as it is a [[Sequences#Monotonic sequences|monotonic sequence]].
