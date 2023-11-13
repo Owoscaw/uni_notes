@@ -13,3 +13,13 @@ This also leads to the definition:$$\Huge \mathbb{P}((X,Y)\in A)=\sum_{(x,y)\in 
 
 Let $X$ and $Y$ be discrete random variables, then the conditional probability mass function of $X$ given $Y$ is defined as:$$\Huge p_{X|Y}(x|y)=\mathbb{P}(X=x|Y=y)=\frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(Y=y)}=\frac{p_{X,Y}(x,y)}{p_Y(y)}$$
 Given $p_Y(y)>0$. The definition for the conditional probability mass function of $Y$ given $X$ is defined similarly.
+
+## [[Probability definition#Partitions|Partition theorem]] on multiple random variables:
+
+Let $X$ and $Y$ be discrete random variables, then then:$$\Huge p_X(x)=\sum_{y\in\mathcal{Y}}p_{X|Y}(x|y)p_Y(y)$$
+Since:$$\Huge p_X(x)=\mathbb{P}(X=x)=\sum_{y\in\mathcal{Y}}P(X=x|Y=y)\mathbb{P}(Y=y)=\sum_{y\in\mathcal{Y}}p_{X|Y}(x|y)p_Y(y)$$
+## [[Conditional probability#Independence|Independece]] on multiple random variables:
+
+Given two independent discrete random variables, $X$ and $Y$:$$\Huge p_{X|Y}(x|y)=p_X(x)$$
+Then we also have, that if $X$ and $Y$ are independent $\iff$:
+$$\Huge p_{X,Y}(x,y)=p_X(x)p_Y(y)$$$$\Huge p_{X|Y}(x|y)=p_X(x),\,p_{Y|X}(y|x)=p_Y(y)$$
