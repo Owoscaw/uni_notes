@@ -99,4 +99,10 @@ $$\Huge e^n\geq\left(1+\frac{n}{k+1}\right)^{k+1}\geq\frac{n^{k+1}}{(k+1)^{k+1}}
 Here, the rightmost term is the final term in the binomial expansion of the middle term. Now reverse the inequality and multiply by $n^k$:$$\Huge \frac{n^k}{e^n}\leq\frac{n^k(k+1)^{k+1}}{n^{k+1}}=\frac{(k+1)^{k+1}}{n}$$
 Since $(k+1)^{k+1}$ is constant, the limit as $n\to\infty$ of the rightmost term is $0$. We also have $\frac{n^k}{e^n}>0$ as both numerator and denominator are $>0$, so by the squeezing theorem we get the required result. 
 
-We also have $log(n)=k\,log(n^{\frac{1}{k}})\leq\epsilon\,n^{\frac{1}{n}}$. Given large enough $n$ and since $\epsilon>0$ is arbitrary, we also get:$$\Huge \lim_{n\to\infty}\frac{log(n)}{\sqrt[k]{n}}=0$$  
+We also have $log(n)=k\,log(n^{\frac{1}{k}})\leq\epsilon\,n^{\frac{1}{n}}$. Given large enough $n$ and since $\epsilon>0$ is arbitrary, we also get:$$\Huge \lim_{n\to\infty}\frac{log(n)}{\sqrt[k]{n}}=0$$
+
+# The Bolzano-Weierstrass Theorem:
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a sequence. A subsequence of $(x_n)_{n\in\mathbb{N}}$ is a sequence $(x_{n_j})_{j\in\mathbb{N}}$ with $n_1<n_2<\dots$, for example $(x_{2j})_{j\in\mathbb{N}}$ would be a subsequence of $(x_n)_{n\in\mathbb{N}}$, with only the even indexes.
+
+Given a convergent sequence $(x_n)_{n\in\mathbb{N}}$ with a limit $x_n\to x$ as $n\to\infty$. Then every subsequence $(x_{n_j})_{j\in\mathbb{N}}$ is also convergent with:$$\Huge \lim_{j\to\infty}x_{n_j}=x$$
