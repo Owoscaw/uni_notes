@@ -8,3 +8,8 @@ Two random variables $X$ and $Y$ on the same sample space $\Omega$ are independe
 Let $(X,Y)$ be a bivariate discrete random variable, with:$$\Huge \mathbb{P}((X,Y)\in\mathcal{Z})=1$$
 Where $\mathcal{Z}\subseteq(X,Y)(\Omega)$. The joint [[Random variables#Discrete random variables|PMF]] is defined as:$$\Huge p_{X,Y}(x,y)=\mathbb{P}(X=x,Y=y),\,\text{for}\,\,(x,y)\in\mathcal{Z}$$
 Each variable's PMF can be given in terms of the joint PMF:$$\Huge p_X(x)=\sum_{y\in\mathcal{Y}}p_{X,Y}(x,y),\,\,p_Y(y)=\sum_{x\in\mathcal{X}}p_{X,Y}(x,y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y}$$
+This also leads to the definition:$$\Huge \mathbb{P}((X,Y)\in A)=\sum_{(x,y)\in A}p_{X,Y}(x,y),\,\sum_{(x,y)\in\mathcal{Z}}p_{X,Y}(x,y)=1$$
+## [[Conditional probability]] on multiple random variables:
+
+Let $X$ and $Y$ be discrete random variables, then the conditional probability mass function of $X$ given $Y$ is defined as:$$\Huge p_{X|Y}(x|y)=\mathbb{P}(X=x|Y=y)=\frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(Y=y)}=\frac{p_{X,Y}(x,y)}{p_Y(y)}$$
+Given $p_Y(y)>0$. The definition for the conditional probability mass function of $Y$ given $X$ is defined similarly.
