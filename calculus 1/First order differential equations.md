@@ -14,4 +14,5 @@ The standard ODE is homogeneous if $f(tx,ty)=f(x,y),\,\forall t\in\Re$. In this 
 
 The standard ODE is linear if $f(x,y)=-p(x)y+q(x)$, in which case the standard ODE can be written as:$$\Huge \frac{dy}{dx}+py=q$$
 Here, $p$ and $q$ can be any functions of $x$. This is solved using an integrating factor, $I(x)$, which gives the solution:$$\Huge y=\frac{1}{I(x)}\int I(x)q(x)dx,\,\text{where}\,\,\,I(x)=e^{\int p(x)dx}$$
-This is proven as follows:![[First order differential equations .excalidraw]]
+This is proven as follows:![[integrating factor]]
+
