@@ -33,3 +33,13 @@ Linear combinations, linear spans, [[Subspaces#Spanning sets|spanning sets]], an
 
 A finite basis for a vector space $V$ is a finite subset of vectors $\{v_1,\dots,v_k\}\in V$ such that:
 > $v_1,\dots,v_k$ are linearly independent
+> $V=span(v_1,\dots,v_k)$
+
+Not every vector space has a basis. 
+
+Every [[Matrix definition|matrix]] $A\in M_{m\times n}(\Re)$ can be written in terms of each of it's entries. Let $E_{rs}=(e_{ij})$ be the matrix with $e_{rs}=1$ and $e_{ij}=0$ when $(i,j)\neq(r,s)$. Then $E_{rs}$ form a basis for the $m$ by $n$ matrices, every matrix can be expressed as a linear combination:$$\Huge A=a_{11}E_{11}+\dots+a_{mn}E_{mn}=\sum_{i=1}^m\sum_{j=1}^na_{ij}E_{ij}$$
+# Various lemmas:
+
+For vectors $u_1,\dots,u_k\in V$, then $span(u_1,\dots,u_k)$ is a vector subspace of $V$. Assume that $u_1$ can be expressed as a linear combination of other vectors in the set, then $span(u_1,\dots,u_k)=span(u_2,\dots,u_k)$.
+
+Suppose that $\{u_1,\dots,u_k\}$ is a set that is not linearly independent. Then for some $1\leq i\leq k$, we have:$$
