@@ -106,4 +106,5 @@ Giving us the result $dA=rdrd\theta$, used in [[Integration#Integration using po
 $$\Huge I=\int_{-\infty}^\infty e^{-ax^2}dx=\sqrt{\frac{\pi}{a}}$$
 This is a result that appears across a wide range of mathematics. This is shown as follows:
 $$\Huge I^2=\left(\int_{-\infty}^\infty e^{-ax^2}dx\right)\left(\int_{-\infty}^\infty e^{-ay^2}dy\right)=\iint_{\Re^2}e^{-a(x^2+y^2)}dxdy$$
-Now using polar coordinates, we get:$$\Huge I^2=\iint_{\Re^2}e^{-ar^2}rdrd\theta=\int_0^\infty\left(\right)dr$$
+Now using polar coordinates, we get:$$\large I^2=\iint_{\Re^2}e^{-ar^2}rdrd\theta=\int_0^\infty\left(\int_0^{2\pi}re^{-ar^2}\right)dr=2\pi\int_0^\infty re^{-ar^2}dr=-2\pi\left[\frac{e^{-ar^2}}{2a}\right]_0^\infty=\frac{\pi}{a}$$
+Taking square roots gives the result as required.
