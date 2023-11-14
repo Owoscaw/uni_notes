@@ -123,4 +123,7 @@ This is proven as follows:
 > Notice $X_{n+1}\subseteq X_n$. Then $\overline x_n$ is an upper bound for $X_{n+1}$, so we get $\overline x_{n+1}\leq \overline x_n$ for all $n\in\mathbb{N}$, that is $\overline x_n$ is monotonically decreasing. Similarly, $\underline x_n$ is a lower bound for $X_{n+1}$, so we get $\underline x_n\leq \underline x_{n+1}$, that is $\underline x_n$ is monotonically increasing.
 > As both $\overline x_n$ and $\underline x_n$ are bounded and either monotonically increasing or decreasing, they are both convergent. Also since $\underline x_n\leq \overline x_n$ for all $n\in\mathbb{N}$, then we get the limit result as required.
 
-Let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. The limes superior of the sequence if defined as:$$\Huge \limsup_{n\to\infty}\,x_n=\lim_{n\to\infty}\overline x_n=\inf_{n\geq 1}$$
+# Limes superior and inferior:
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. The limes superior of the sequence is defined as:$$\Huge \limsup_{n\to\infty}\,x_n=\lim_{n\to\infty}\overline x_n=\inf_{n\geq 1}\left\{\sup_{m\geq n}\{x_m\}\right\}$$
+Similarly, the limes inferior of the sequence is defined as:$$\Huge \liminf_{n\to\infty}x_n=\lim_{n\to\infty}\underline x_n=\sup_{n\geq 1}\left\{\inf_{m\geq n}\{x_m\}\right\}$$
