@@ -3,7 +3,7 @@ A real [[Vector space definitions|vector space]] is a non-empty set $V$ with two
 > Addition:$$\Huge V\times V\mapsto V$$
 > Scalar multiplication:$$\Huge \Re\times V\mapsto V$$
 
-These operations must further satisfy the axioms of a real vector space. Any vector [[Subspaces|subspace]] of $\Re^n$, including $\Re^n$ itself, is also a vector space. The set of all $m\times n$ matrices, $M_{m\times n}(\Re)$ is a vector space. All [[Functions, Domain and Range|functions]] are vector spaces, as we have for a function $f:\Re\mapsto\Re$:$$\Huge (f+g)(t):=f(t)+g(t),\,$$
+These operations must further satisfy the axioms of a real vector space. Any vector [[Subspaces|subspace]] of $\Re^n$, including $\Re^n$ itself, is also a vector space. The set of all $m\times n$ matrices, $M_{m\times n}(\Re)$ is a vector space. All [[Functions, Domain and Range|functions]] are vector spaces, as we have for a function $f:\Re\mapsto\Re$:$$\Huge (f+g)(t):=f(t)+g(t),\,\,(\lambda f)(t)=\lambda f(t)$$
 
 # Axioms:
 
@@ -20,3 +20,16 @@ The following axioms are associated with the scalar multiplication function:
 > Distributivity, For all $\lambda,\mu\in\Re$ and $v,w\in V$ we have $(\lambda+\mu)v=\lambda v+\mu v$ and $\lambda(v+w)=\lambda v+\lambda w$
 > 
 
+# Vector subspaces:
+
+A vector subspace of a vector space $V$ is a non-empty that is a non-empty subset that is itself a vector space with respect to the operations associated with $V$. We say that a non-empty subset $U$ of a vector space $V$ is a vector subspace of $V$ if and only if the following conditions are met:
+> For all $u_1,u_2\in U$, then $u_1+u_2\in U$, closure under addition.
+> For all $u\in U$ and $\lambda\in\Re$, then $\lambda u\in U$, closure under scalar multiplication.
+> $0\in U$, existence of the origin. 
+
+## Bases and dimensions:
+
+Linear combinations, linear spans, [[Subspaces#Spanning sets|spanning sets]], and [[Subspaces#Linear independence|linear independence]] are defined exactly the same way for a vector space $V$ as they are for $\Re^n$. They lead to the following concept.
+
+A finite basis for a vector space $V$ is a finite subset of vectors $\{v_1,\dots,v_k\}\in V$ such that:
+> $v_1,\dots,v_k$ are linearly independent
