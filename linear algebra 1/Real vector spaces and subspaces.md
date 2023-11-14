@@ -42,4 +42,14 @@ Every [[Matrix definition|matrix]] $A\in M_{m\times n}(\Re)$ can be written in t
 
 For vectors $u_1,\dots,u_k\in V$, then $span(u_1,\dots,u_k)$ is a vector subspace of $V$. Assume that $u_1$ can be expressed as a linear combination of other vectors in the set, then $span(u_1,\dots,u_k)=span(u_2,\dots,u_k)$.
 
-Suppose that $\{u_1,\dots,u_k\}$ is a set that is not linearly independent. Then for some $1\leq i\leq k$, we have:$$
+Suppose that $\{u_1,\dots,u_k\}$ is a set that is not linearly independent. Then for some $1\leq i\leq k$, we have:$$\Huge u_i\in span(u_1,\dots,u_{i-1},u_{i+1},\dots,u_k)$$
+Which further implies:$$\Huge span(u_1,\dots,u_k)=span(u_1,\dots,u_{i-1},u_{i+1},\dots,u_k)$$
+Since there is some linear dependence within the set, then:$$\Huge \sum_{j=1}^k\lambda_ju_j=0$$
+Has a solution with at least one $\lambda_j$ being non zero. Then the linear dependence relationship can be rearranged to:$$\Huge u_i=\sum_{j=1}^{i-1}-\frac{\lambda_j}{\lambda_i}u_j+\sum_{j=i+1}^k-\frac{\lambda_j}{\lambda_i}u_j$$
+This is a linear combination of the vectors $u_1,\dots,u_{i-1},u_{i+1},\dots,u_k$, so it is in the span, as required.
+
+Suppose that $u_1,\dots,u_k$ are linearly independent in a vector subspace $V$ and let $u\in V$ such that $u\notin span(u_1,\dots,u_k)$, then the vectors $u_1,\dots,u_k,u$ are linearly independent.
+
+# Assorted Theorems:
+
+## 
