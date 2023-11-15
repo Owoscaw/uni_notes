@@ -132,4 +132,10 @@ Given a bounded sequence $(x_n)_{n\in\mathbb{N}}$:
 
 # Cauchy sequences:
 
-A sequence $(x_n)_{n\in\mathbb{N}}$ is a Cauchy sequence if for every $\epsilon>0$, there exists $n_0\in\mathbb{N}$ such that:$$\Huge |x_m-x_n|<\epsilon\,\,\fora$$
+A sequence $(x_n)_{n\in\mathbb{N}}$ is a Cauchy sequence if for every $\epsilon>0$, there exists $n_0\in\mathbb{N}$ such that:$$\Huge |x_m-x_n|<\epsilon,\,\forall n,m\geq n_0$$
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a Cauchy sequence, then it must be a bounded sequence.
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a convergent sequence, then it must be a Cauchy sequence.
+
+Let $(x_n)_{n\in\mathbb{N}}$ be a Cauchy sequence, then it must be a convergent sequence, proven as follows:![[Sequences .excalidraw]]
