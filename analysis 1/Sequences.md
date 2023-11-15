@@ -125,3 +125,11 @@ This is proven as follows:
 
 Let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. The limes superior of the sequence is defined as:$$\Huge \limsup_{n\to\infty}\,x_n=\lim_{n\to\infty}\overline x_n=\inf_{n\geq 1}\left\{\sup_{m\geq n}\{x_m\}\right\}$$
 Similarly, the limes inferior of the sequence is defined as:$$\Huge \liminf_{n\to\infty}x_n=\lim_{n\to\infty}\underline x_n=\sup_{n\geq 1}\left\{\inf_{m\geq n}\{x_m\}\right\}$$
+Given a bounded sequence $(x_n)_{n\in\mathbb{N}}$:
+> There exists a subsequence $(x_{n_j})_{j\in\mathbb{N}}$ with:$$\Huge \lim_{j\to\infty}x_{n_j}=\limsup_{n\to\infty}x_n$$
+> There exists a subsequence $(x_{n_j})_{j\in\mathbb{N}}$ with:$$\Huge \lim_{j\to\infty}x_{n_j}=\liminf_{n\to\infty}x_n$$
+> If $(x_{n_j})_{j\in\mathbb{N}}$ is a convergent subsequence of $(x_n)_{n\in\mathbb{N}}$ then:$$\Huge \liminf_{n\to\infty}x_n\leq\lim_{j\to\infty}x_{n_j}\leq\limsup_{n\to\infty}x_n$$
+
+# Cauchy sequences:
+
+A sequence $(x_n)_{n\in\mathbb{N}}$ is a Cauchy sequence if for every $\epsilon>0$, there exists $n_0\in\mathbb{N}$ such that:$$\Huge |x_m-x_n|<\epsilon\,\,\fora$$
