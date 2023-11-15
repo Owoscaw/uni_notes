@@ -12,4 +12,6 @@ Let $a_n$ be a sequence indexed by $n=0,1,\dots$ . We are given the following:
 > Initial conditions $a_0,a_1,\dots,a_{r-1}$
 > Recurrence relation:$$\Huge a_n=\sum_{i=1}^rc_ia_{n-i}$$
 
-Where each $c_i$ are constants to be determined. This is linear and homogeneous as no term involves more than a single factor of $a_i$ and it is homogeneous as every term involves an $a_i$. Substituting $a_n=x^n$, $x\neq0$ then dividing through by $x^{n-r}$$$\Huge x^n=\sum_{i=1}^rc_ix^{n-i},\,\,x^r-\sum_{}$$
+Where each $c_i$ are constants to be determined. This is linear and homogeneous as no term involves more than a single factor of $a_i$ and it is homogeneous as every term involves an $a_i$. Substituting $a_n=x^n$, $x\neq0$ then dividing through by $x^{n-r}$$$\Huge x^n=\sum_{i=1}^rc_ix^{n-i},\,\,x^r-\sum_{i=1}^rc_ix^{r-i}=0$$
+This is the characteristic equation of the recurrence relation. This will have at most $r$ roots, call them $\alpha_1,\dots,\alpha_r$, then for each $i$, $a_n=\lambda\alpha_i^n$ is a solution to the recurrence relation. Linear combinations of each solution produce a new solution, so the general solution is given by:$$\Huge a_n=g(n)=\lambda_1\alpha_1^n+\lambda_2\alpha_2^n+\dots+\lambda_r\alpha_r^n$$
+Finally, applying initial conditions to the general solution will reveal the particular solution.
