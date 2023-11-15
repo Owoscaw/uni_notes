@@ -114,7 +114,7 @@ Every real sequence $(x_n)_{n\in\mathbb{N}}$ contains a subsequence that is eith
 
 Now let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. By the above lemma, there exists a subsequence $(x_{n_j})_{j\in\mathbb{N}}$ that is either monotonically increasing or decreasing. Since the sequence is bounded, we have $|x_n|\leq C$ for all $n\in\mathbb{N}$. The subsequence must also be bounded by $C$. Since the subsequence is bounded and either monotonically increasing or decreasing, it must be convergent as it is a [[Sequences#Monotonic sequences|monotonic sequence]].
 
-# Lim inf and Lim sup:
+# Limis inferior and superior:
 
 Given a bounded sequence $(x_n)_{n\in\mathbb{N}}$, two sequences are defined, $(\overline x_n)_{n\in\mathbb{N}}$ and $(\underline x_n)_{n\in\mathbb{N}}$:$$\Huge \overline x_n=sup\{x_m:m\geq n\}$$$$\Huge \underline x_n=inf\{x_m:m\geq n\}$$
 Let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence, then $(\overline x_n)_{n\in\mathbb{N}}$ is monotonically decreasing and bounded, and $(\underline x_n)_{n\in\mathbb{N}}$ is monotonically increasing and bounded. So they both have limits, given by:$$\Huge \lim_{n\to\infty}\underline x_n\leq\lim_{n\to\infty}\overline x_n$$
@@ -122,8 +122,6 @@ This is proven as follows:
 > Since $(x_n)_{n\in\mathbb{N}}$ is bounded, there exists $c<C$ with $c\leq x_n\leq X$. Define $X_n=\{x_n,x_{n+1},\dots\}=\{x_m:m\geq n\}$, then $\overline x_n=sup\,X_n\leq C$ and $\underline x_n=inf\,X_n\geq c$. Also $\underline x_n\leq \overline x_n$, so we get $c\leq\underline c_n\leq\overline x_n\leq C$ for all $n\in\mathbb{N}$. We have that both sequences are bounded.
 > Notice $X_{n+1}\subseteq X_n$. Then $\overline x_n$ is an upper bound for $X_{n+1}$, so we get $\overline x_{n+1}\leq \overline x_n$ for all $n\in\mathbb{N}$, that is $\overline x_n$ is monotonically decreasing. Similarly, $\underline x_n$ is a lower bound for $X_{n+1}$, so we get $\underline x_n\leq \underline x_{n+1}$, that is $\underline x_n$ is monotonically increasing.
 > As both $\overline x_n$ and $\underline x_n$ are bounded and either monotonically increasing or decreasing, they are both convergent. Also since $\underline x_n\leq \overline x_n$ for all $n\in\mathbb{N}$, then we get the limit result as required.
-
-# Limes superior and inferior:
 
 Let $(x_n)_{n\in\mathbb{N}}$ be a bounded sequence. The limes superior of the sequence is defined as:$$\Huge \limsup_{n\to\infty}\,x_n=\lim_{n\to\infty}\overline x_n=\inf_{n\geq 1}\left\{\sup_{m\geq n}\{x_m\}\right\}$$
 Similarly, the limes inferior of the sequence is defined as:$$\Huge \liminf_{n\to\infty}x_n=\lim_{n\to\infty}\underline x_n=\sup_{n\geq 1}\left\{\inf_{m\geq n}\{x_m\}\right\}$$
