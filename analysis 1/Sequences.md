@@ -138,4 +138,4 @@ Let $(x_n)_{n\in\mathbb{N}}$ be a Cauchy sequence, then it must be a bounded seq
 
 Let $(x_n)_{n\in\mathbb{N}}$ be a convergent sequence, then it must be a Cauchy sequence.
 
-Let $(x_n)_{n\in\mathbb{N}}$ be a Cauchy sequence, then it must be a convergent sequence, proven as follows:![[Sequences .excalidraw]]
+Let $(x_n)_{n\in\mathbb{N}}$ be a Cauchy sequence, then it must be a convergent sequence, proven as follows:![[Cauchy sequence proof]]
