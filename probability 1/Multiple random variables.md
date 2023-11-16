@@ -37,3 +37,7 @@ Note also that given jointly continuous random variables $X$ and $Y$, then each 
 
 Given jointly distributed continuous random variables $X$ and $Y$, and given $Y=y$, then we have:$$\Huge f_{X|Y}(x|y)=\frac{f_{X,Y}(x,y)}{f_Y(y)},\,\forall x,y\in\Re:f_Y(y)>0$$
 A similar definition exists given $X=x$.
+
+## Partition theorem:
+
+$$\Huge f_X(x)=\int_{-\infty}^\infty f_{X|Y}(x|y)f_Y(y)dy$$
