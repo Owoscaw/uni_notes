@@ -32,3 +32,8 @@ If $B=[a,b]\times[c,d]$ is a nice [[Integration#Double integrals|region]], then 
 The interpretation of the function $f(x,y)$ is:
 $$\Huge \mathbb{P}(X\in[x,x+dx],Y\in[y,y+dy])=f(x,y)dxdy$$
 When integrating over the entire plane in $\Re^2$, that is to say $B=[-\infty,\infty]\times[-\infty,\infty]=\Re^2$, then we get:$$\Huge \mathbb{P}((X,Y)\in\Re^2)=\iint_{\Re^2}f(x,y)dxdy=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)dxdy=1$$
+Note also that given jointly continuous random variables $X$ and $Y$, then each is continuous with marginal PDFs given by:$$\Huge f_X(x)=\int_{-\infty}^\infty f(x,y)dy,\,f_Y(y)=\int_{-\infty}^\infty f(x,y)dx,\,\forall x,y\in\Re$$
+## Conditional PDF:
+
+Given jointly distributed continuous random variables $X$ and $Y$, and given $Y=y$, then we have:$$\Huge f_{X|Y}(x|y)=\frac{f_{X,Y}(x,y)}{f_Y(y)},\,\forall x,y\in\Re:f_Y(y)>0$$
+A similar definition exists given $X=x$.
