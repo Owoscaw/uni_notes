@@ -35,3 +35,5 @@ If so, the ODE is equivalent to $dg=0$, so $g(x,y)$ is constant, a solution to t
 
 The equality of the [[EVT, MVT, boundedness and monotonicity#Partial derivatives|partial derivatives]] allows for an exactness test to be derived:
 $$\Huge \frac{\partial^2g}{\partial y\partial x}=\frac{\partial^2g}{\partial x\partial y}\iff\frac{\partial}{\partial y}\left(\frac{\partial g}{\partial x}\right)=\frac{\partial}{\partial x}\left(\frac{\partial g}{\partial y}\right)\iff\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$$
+So the ODE $M(x,y)dx+N(x,y)dy=0$ is exact, if and only if it satisfies the above equality. Example:
+![[first order exact example]]
