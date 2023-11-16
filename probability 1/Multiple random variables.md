@@ -9,18 +9,22 @@ Let $(X,Y)$ be a bivariate discrete random variable, with:$$\Huge \mathbb{P}((X,
 Where $\mathcal{Z}\subseteq(X,Y)(\Omega)$. The joint [[Random variables#Discrete random variables|PMF]] is defined as:$$\Huge p_{X,Y}(x,y)=\mathbb{P}(X=x,Y=y),\,\text{for}\,\,(x,y)\in\mathcal{Z}$$
 Each variable's PMF can be given in terms of the joint PMF:$$\Huge p_X(x)=\sum_{y\in\mathcal{Y}}p_{X,Y}(x,y),\,\,p_Y(y)=\sum_{x\in\mathcal{X}}p_{X,Y}(x,y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y}$$
 This also leads to the definition:$$\Huge \mathbb{P}((X,Y)\in A)=\sum_{(x,y)\in A}p_{X,Y}(x,y),\,\sum_{(x,y)\in\mathcal{Z}}p_{X,Y}(x,y)=1$$
-## [[Conditional probability]] on multiple random variables:
+## [[Conditional probability]]:
 
 Let $X$ and $Y$ be discrete random variables, then the conditional probability mass function of $X$ given $Y$ is defined as:$$\Huge p_{X|Y}(x|y)=\mathbb{P}(X=x|Y=y)=\frac{\mathbb{P}(X=x,Y=y)}{\mathbb{P}(Y=y)}=\frac{p_{X,Y}(x,y)}{p_Y(y)}$$
 Given $p_Y(y)>0$. The definition for the conditional probability mass function of $Y$ given $X$ is defined similarly.
 
-## [[Probability definition#Partitions|Partition theorem]] on multiple random variables:
+## [[Probability definition#Partitions|Partition theorem]]:
 
 Let $X$ and $Y$ be discrete random variables, then then:$$\Huge p_X(x)=\sum_{y\in\mathcal{Y}}p_{X|Y}(x|y)p_Y(y)$$
 Since:$$\Huge p_X(x)=\mathbb{P}(X=x)=\sum_{y\in\mathcal{Y}}P(X=x|Y=y)\mathbb{P}(Y=y)=\sum_{y\in\mathcal{Y}}p_{X|Y}(x|y)p_Y(y)$$
-## [[Conditional probability#Independence|Independece]] on multiple random variables:
+## [[Conditional probability#Independence|Independence]]:
 
 Given two independent discrete random variables, $X$ and $Y$:$$\Huge p_{X|Y}(x|y)=p_X(x)$$
 Then we also have, that if $X$ and $Y$ are independent $\iff$:
 $$\Huge p_{X,Y}(x,y)=p_X(x)p_Y(y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y}$$$$\Huge p_{X|Y}(x|y)=p_X(x),\,p_{Y|X}(y|x)=p_Y(y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y},\,p_X(x),p_Y(y)>0$$
-This is proven as follows, by the definition of independence we have:$$\large p_{X,Y}(x,y)=\mathbb{P}(X\in A,Y\in B)=\sum_{x\in A}\sum_{y\in B}p_{X,Y}(x,y)=\left(\sum_{x\in A}p_X(x)\right)\left(\sum_{y\in B}p_Y(y)\right)$$$$\Huge \implies p_{X}$$
+This is proven as follows, by the definition of independence we have:$$\large p_{X,Y}(x,y)=\mathbb{P}(X\in A,Y\in B)=\sum_{x\in A}\sum_{y\in B}p_{X,Y}(x,y)=\left(\sum_{x\in A}p_X(x)\right)\left(\sum_{y\in B}p_Y(y)\right)$$$$\Huge \implies p_{X,Y}(x,y)=\mathbb{P}(X\in A)\mathbb{P}(Y\in B)=p_X(x)p_Y(y)$$
+
+# Jointly distributed continuous random variables:
+
+Continuous random variables $X:\Omega\mapsto\Re$ and $Y:\Omega\mapsto\Re$ are jointly continuous if $\exists f:\Re^2\mapsto[0,\infty)$ such that:$$\Huge \mathbb{P}(X\in[a,b],Y\in[c,d])=\int_a^b\int_c^df(x,y)dxdy,\,a<b,\,c<d,\,\forall[a,b]\times[c,d]\subseteq\Re^2$$
