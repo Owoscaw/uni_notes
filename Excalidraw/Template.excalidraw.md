@@ -31,10 +31,10 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": 467,
-		"scrollY": 297.171875,
+		"scrollX": 583.7500000000001,
+		"scrollY": 371.46484375000006,
 		"zoom": {
-			"value": 1
+			"value": 0.7999999999999998
 		},
 		"currentItemRoundness": "sharp",
 		"gridSize": 20,
