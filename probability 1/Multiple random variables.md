@@ -22,4 +22,5 @@ Since:$$\Huge p_X(x)=\mathbb{P}(X=x)=\sum_{y\in\mathcal{Y}}P(X=x|Y=y)\mathbb{P}(
 
 Given two independent discrete random variables, $X$ and $Y$:$$\Huge p_{X|Y}(x|y)=p_X(x)$$
 Then we also have, that if $X$ and $Y$ are independent $\iff$:
-$$\Huge p_{X,Y}(x,y)=p_X(x)p_Y(y)$$$$\Huge p_{X|Y}(x|y)=p_X(x),\,p_{Y|X}(y|x)=p_Y(y)$$
+$$\Huge p_{X,Y}(x,y)=p_X(x)p_Y(y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y}$$$$\Huge p_{X|Y}(x|y)=p_X(x),\,p_{Y|X}(y|x)=p_Y(y),\,\forall x\in\mathcal{X},\,\forall y\in\mathcal{Y},\,p_X(x),p_Y(y)>0$$
+This is proven as follows, by the definition of independence we have:$$\large p_{X,Y}(x,y)=\mathbb{P}(X\in A,Y\in B)=\sum_{x\in A}\sum_{y\in B}p_{X,Y}(x,y)=\left(\sum_{x\in A}p_X(x)\right)\left(\sum_{y\in B}p_Y(y)\right)$$$$\Huge \implies p_{X}$$
