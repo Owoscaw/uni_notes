@@ -72,7 +72,7 @@ For every $x\in\Re$, the sequence $\left(1+\frac{x}{n}\right)^n$ is convergent, 
 
 Let $x\in(-\infty,1)$, then:$$\Huge 1+x\leq e^x\leq\frac{1}{1-x}$$
 Take $n\in\mathbb{N}$ with $\frac{x}{n}>-1$. By the Bernoulli inequality:$$\Huge \left(1+\frac{x}{n}\right)^n\geq 1+x$$
-Now tending $n\to\infty$:$$\Huge \lim_{n\to\infty}\left(1+\frac{x}{n}\right)\geq\lim_{n\to\infty}1+x\implies e^x\geq1+x$$
+Now tending $n\to\infty$:$$\Huge \lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n\geq\lim_{n\to\infty}1+x\implies e^x\geq1+x$$
 Now consider:$$\Huge \frac{1}{\left(1-\frac{x}{n}\right)^n}\leq\frac{1}{1-x}$$
 Again tending $n\to\infty$:$$\Huge \lim_{n\to\infty}\frac{1}{\left(1-\frac{x}{n}\right)^n}\leq\lim_{n\to\infty}\frac{1}{1-x}\implies e^x=\frac{1}{e^{-x}}\leq\frac{1}{1-x}$$
 So we have the inequality as required. This lemma can be used to show that $e^{x+y}=e^x+e^y$ for any $x,y\in\Re$. This also allows the exponential function to be defined:$$\Huge\text{exp}:\Re\mapsto(0,\infty)$$
