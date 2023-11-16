@@ -19,5 +19,11 @@ This is proven as follows:![[integrating factor]]
 
 # First order exact ODEs:
 
+The general first order ODE can be written as:$$\Huge M(x,y)dx+N(x,y)dy=0$$
+Then rearranging for $\frac{dy}{dx}$:$$\Huge \frac{dy}{dx}=-\frac{M(x,y)}{N(x,y)}$$
+Note that both $M$ and $N$ can be multiplied by an arbitrary function, as $f(x,y)$ is only characterised by their ratio, not their exact functions. So each ODE in the above form has a unique $f(x,y)$, but a function $f(x,y)$ will not have a unique function in the form above.
 
+## Total differential:
 
+Given a function $g(x,y)$, the total differential, $dg$, is defined as:$$\Huge dg=\frac{\partial g}{\partial x}dx+\frac{\partial g}{\partial y}dy$$
+$dg$ can be thought of as the change in the function $g(x,y)$ when moving from $(x,y)$ to $(x+dx,y+dy)$.
