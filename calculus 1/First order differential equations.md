@@ -26,4 +26,12 @@ Note that both $M$ and $N$ can be multiplied by an arbitrary function, as $f(x,y
 ## Total differential:
 
 Given a function $g(x,y)$, the total differential, $dg$, is defined as:$$\Huge dg=\frac{\partial g}{\partial x}dx+\frac{\partial g}{\partial y}dy$$
-$dg$ can be thought of as the change in the function $g(x,y)$ when moving from $(x,y)$ to $(x+dx,y+dy)$.
+$dg$ can be thought of as the change in the function $g(x,y)$ when moving from $(x,y)$ to $(x+dx,y+dy)$. If $dg=0$, then $g(x,y)$ is constant.
+
+The standard ODE in the rewritten form is exact if there exists a function $g(x,y)$ such that $M(x,y)dx+N(x,y)dy$ is total differential $dg$, that is:$$\Huge M=\frac{\partial g}{\partial x},\,N=\frac{\partial g}{\partial y}$$
+If so, the ODE is equivalent to $dg=0$, so $g(x,y)$ is constant, a solution to the ODE.
+
+## Test for exactness:
+
+The equality of the [[EVT, MVT, boundedness and monotonicity#Partial derivatives|partial derivatives]] allows for an exactness test to be derived:
+$$\Huge \frac{\partial^2g}{\partial y\partial x}=\frac{\partial^2g}{\partial x\partial y}\iff\frac{\partial}{\partial y}\left(\frac{\partial g}{\partial x}\right)=\frac{\partial}{\partial x}\left(\frac{\partial g}{\partial y}\right)\iff\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$$
