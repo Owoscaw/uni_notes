@@ -9,7 +9,7 @@ The standard ordinary differential equation is separable if $f(x,y)=X(x)Y(y)$, w
 # First order homogeneous ODEs:
 
 The standard ODE is homogeneous if $f(tx,ty)=f(x,y),\,\forall t\in\Re$. In this case, the substitution $y=xv$ produces a separable ODE in terms of  $v(x)$. Example:
-![[First order differential equations .excalidraw]]
+![[first order homogeneous example]]
 
 # First order linear ODEs:
 
