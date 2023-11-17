@@ -41,3 +41,6 @@ So the ODE $M(x,y)dx+N(x,y)dy=0$ is exact, if and only if it satisfies the above
 ## Non-Exact ODEs:
 
 If an ODE of form $M(x,y)dx+N(x,y)dy=0$ is not exact, multipling by $I(x,y)$ gives an equivalent ODE, $M(x,y)I(x,y)dx + N(x,y)I(x,y)dy=0$. If this new form of the ODE is exact, then $I(x,y)$ is the integrating factor.
+
+# Bernoulli equations:
+
