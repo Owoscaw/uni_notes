@@ -40,4 +40,4 @@ A similar definition exists given $X=x$.
 
 ## Partition theorem:
 
-$$\Huge f_X(x)=\int_{-\infty}^\infty f_{X|Y}(x|y)f_Y(y)dy$$
+$$\Huge f_X(x)=\int_{-\infty}^\infty f_{X|Y}(x|y)f_Y(y)dy,\,\,f_Y(y)=\int_{-\infty}^\infty f_{Y|X}(y|x)f_X(x)dx$$
