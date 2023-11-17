@@ -45,4 +45,4 @@ If an ODE of form $M(x,y)dx+N(x,y)dy=0$ is not exact, multipling by $I(x,y)$ giv
 # Bernoulli equations:
 
 A Bernoulli equation is a nonlinear ODE of the form:$$\Huge y^\prime+p(x)y=q(x)y^n$$
-These can be solved by performing the substitution $v=y^{1-n}$, which converts the equation to a linear ODE for $v$:$$\Huge y^{-n}y^\prime+p(x)y^{1-n}=q(x)\implies(v^{\frac{1}{1-n}})^{-n}\frac{d}{dx}(v^{\frac{1}{1-n}})+p(x)v=q(x)$$$$\Huge \implies v^{\frac{n}{n-1}}\left(\frac{1}{1-n}\right)$$
+These can be solved by performing the substitution $v=y^{1-n}$, which converts the equation to a linear ODE for $v$:$$\Huge y^{-n}y^\prime+p(x)y^{1-n}=q(x)\implies(v^{\frac{1}{1-n}})^{-n}\frac{d}{dx}(v^{\frac{1}{1-n}})+p(x)v=q(x)$$$$\large \implies v^{\frac{n}{n-1}}\left(\frac{1}{1-n}v^{\frac{1-1+n}{1-n}}\right)v^\prime+p(x)v=q(x)=\frac{1}{1-n}v^{\frac{n}{n-1}+\frac{n}{1-n}}v^\prime+p(x)v=q(x)$$$$\Huge \implies \frac{1}{1-n}v^\prime+p(x)v=q(x),\,\text{which is linear}$$
