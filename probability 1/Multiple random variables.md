@@ -40,4 +40,9 @@ A similar definition exists given $X=x$.
 
 ## Partition theorem:
 
+For jointly continuous random variables, $X$ and $Y$:
 $$\Huge f_X(x)=\int_{-\infty}^\infty f_{X|Y}(x|y)f_Y(y)dy,\,\,f_Y(y)=\int_{-\infty}^\infty f_{Y|X}(y|x)f_X(x)dx$$
+
+## Independence:
+
+For jointly continuous random variables, $X$ and $Y$:$$\Huge f_{X,Y}(x,y)=f_X(x)f_Y(y)\iff\text{X and Y are independent}$$
