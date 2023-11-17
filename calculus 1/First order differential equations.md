@@ -37,3 +37,7 @@ The equality of the [[EVT, MVT, boundedness and monotonicity#Partial derivatives
 $$\Huge \frac{\partial^2g}{\partial y\partial x}=\frac{\partial^2g}{\partial x\partial y}\iff\frac{\partial}{\partial y}\left(\frac{\partial g}{\partial x}\right)=\frac{\partial}{\partial x}\left(\frac{\partial g}{\partial y}\right)\iff\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$$
 So the ODE $M(x,y)dx+N(x,y)dy=0$ is exact, if and only if it satisfies the above equality. Example:
 ![[first order exact example]]
+
+## Non-Exact ODEs:
+
+If an ODE of form $M(x,y)dx+N(x,y)dy=0$ is not exact, multipling by $I(x,y)$ gives an equivalent ODE, $M(x,y)I(x,y)dx + N(x,y)I(x,y)dy=0$. If this new form of the ODE is exact, then $I(x,y)$ is the integrating factor.
