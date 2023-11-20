@@ -74,4 +74,7 @@ A vector space is finite-dimensional if and only if it has a finite basis. This 
 Let $V$ be a vector space and $S=\{\underline u_1,\dots,\underline u_k\}\subseteq V$ be a spanning set of $V$, that is $V=span(S)$. Also let $\{\underline v_1,\dots,\underline v_l\}\subseteq V$ be linearly independent. Then there exist distinct elements $\underline u_{i_1},\dots,\underline u_{i_l}\in S$, $l$ elements are chosen from $S$ such that for each $1\leq j\leq l$:$$\Huge (S\setminus\{\underline u_{i_1},\dots,\underline u_{i_j}\})\cup\{\underline v_1,\dots,\underline v_j\}\,\,\text{spans} \,\,V$$
 This has corollaries:
 > $k\geq l$, as $l$ elements are taken from a set with $k$ elements. For this to be possible, the statement $k\geq l$ must be true.
-> If $\{\underline u_1,\dots,\underline u_s\},\{\underlin\}$
+> If $\{\underline u_1,\dots,\underline u_s\},\{\underline v_1,\dots,\underline v_t\}\subseteq V$ are both bases for $V$, then $s=t$. Since $\{\underline u_1,\dots,\underline u_s\}$ spans $V$ and $\{\underline v_1,\dots,\underline v_t\}$ is linearly independent, then we have $s\geq t$ by above. Switch their roles then you get $t\geq s$. The only scenario in which this is satisfied is when $t=s$.
+
+If $V$ is finite-dimensional, then we define $\dim(V)\in\mathbb{N}_0$ to be the number of elements in any basis of $V$. We can then prove the Steinitz Exchange Lemma:
+![[Real vector spaces and subspaces .excalidraw]]
