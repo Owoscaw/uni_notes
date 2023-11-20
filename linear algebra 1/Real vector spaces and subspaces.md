@@ -65,4 +65,4 @@ Let $u_1,\dots,u_k$ be vectors in a vector space $V$, then the following stateme
 > The vectors $u_1,\dots,u_k$ form a minimal spanning set of $V$ ($IV$)
 
 This is proven as follows:
-![[Real vector spaces and subspaces .excalidraw]]
+![[basis proof]]
