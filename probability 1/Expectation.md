@@ -21,4 +21,9 @@ This implies:
 >$\mathbb{E}(X+Y)=\mathbb{E}(X)+\mathbb{E}(Y)$
 >$$\Huge \mathbb{E}\left(\sum_{i=1}^n X_i\right)=\sum_{i=1}^n\mathbb{E}(X_i)$$
 
+For the discrete case, this is proven by:$$\Huge \mathbb{E}(g(X,Y))=\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}(x+y)p(x,y)=\sum_{x\in\mathcal X}x\sum_{y\in\mathcal Y}p(x,y)+\sum_{y\in\mathcal Y}y\sum_{x\in\mathcal X}p(x,y)$$$$\Huge =\sum_{x\in\mathcal X}xp_X(x)+\sum_{y\in\mathcal Y}yp_Y(y)=\mathbb{E}(X)+\mathbb{E}(Y)$$
 
+# Variance and Co-Variance:
+
+The variance of a random variable $X$ is defined as:$$\Huge var(X)=\mathbb{E}((X-\mathbb{E}(X))^2)$$
+And the standard deviation of $X$ is defined as:$$\Huge sd(X)=\sqrt$$
