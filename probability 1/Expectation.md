@@ -25,5 +25,14 @@ For the discrete case, this is proven by:$$\Huge \mathbb{E}(g(X,Y))=\sum_{x\in\m
 
 # Variance and Co-Variance:
 
-The variance of a random variable $X$ is defined as:$$\Huge var(X)=\mathbb{E}((X-\mathbb{E}(X))^2)$$
-And the standard deviation of $X$ is defined as:$$\Huge sd(X)=\sqrt$$
+The variance of a random variable $X$ is defined as:$$\Huge var(X)=\mathbb{E}[(X-\mathbb{E}(X))^2]$$
+And the standard deviation of $X$ is defined as:$$\Huge sd(X)=\sqrt{var(x)}$$
+By LOTUS, we have:$$\Huge var(X)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}(x-\mathbb{E}(x))^2p(x)}&\text{if}\,X\,\text{is discrete}\\\displaystyle{\int_{-\infty}^\infty(x-\mathbb{E}(x))^2f(x)dx}&\text{if}\,X\,\text{is continuous}\end{cases}$$
+The co-variance between two random variables $X$ and $Y$ is defined by:$$\Huge cov(X,Y)=\mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}[Y])]=cov(Y,X)$$
+This gives the result:$$\Huge cov(X,X)=var(X)$$
+The interpretation of this is:
+> $cov(X,Y)>0$ implies that both $X>\mathbb{E}[X]$ and $Y>\mathbb{E}[Y]$, they are positively correlated
+> $cov(X,Y)<0$ implies the opposite, they are negatively correlated
+> $cov(X,Y)=0$ implies they are uncorrolated
+
+By LOTUS we have:$$\Huge cov(X,Y)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}}(x-\mathbb{E}[x])(y-\mathbb{E}(y))p(x,y)\\\end{cases}$$
