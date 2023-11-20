@@ -66,3 +66,7 @@ Let $u_1,\dots,u_k$ be vectors in a vector space $V$, then the following stateme
 
 This is proven as follows:
 ![[basis proof]]
+
+# Dimension:
+
+A vector space is finite-dimensional if and only if it has a finite basis. This also means that the vector space has a finite spanning set.
