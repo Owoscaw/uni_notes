@@ -59,7 +59,10 @@ Every vector space that is spanned by finitely many vectors has a basis.
 ## What is a basis:
 
 Let $u_1,\dots,u_k$ be vectors in a vector space $V$, then the following statements are pairwise equivalent:
-> The vectors $u_1,\dots,u_k$ form a (finite) basis of $V$
-> The vectors $u_1,\dots,u_k$ form a maximal linear independent set in $V$
-> Any vector $u\in V$ can be uniquely expressed as:$$\Huge u=\lambda_1u_1+\dots+\lambda_ku_k$$
-> The vectors $u_1,\dots,u_k$ form a minimal spanning set of $V$
+> The vectors $u_1,\dots,u_k$ form a (finite) basis of $V$ ($I$)
+> The vectors $u_1,\dots,u_k$ form a maximal linear independent set in $V$ ($II$)
+> Any vector $u\in V$ can be uniquely expressed as: ($III$)$$\Huge u=\lambda_1u_1+\dots+\lambda_ku_k$$
+> The vectors $u_1,\dots,u_k$ form a minimal spanning set of $V$ ($IV$)
+
+This is proven as follows:
+![[Real vector spaces and subspaces .excalidraw]]
