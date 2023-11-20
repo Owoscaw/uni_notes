@@ -77,4 +77,4 @@ This has corollaries:
 > If $\{\underline u_1,\dots,\underline u_s\},\{\underline v_1,\dots,\underline v_t\}\subseteq V$ are both bases for $V$, then $s=t$. Since $\{\underline u_1,\dots,\underline u_s\}$ spans $V$ and $\{\underline v_1,\dots,\underline v_t\}$ is linearly independent, then we have $s\geq t$ by above. Switch their roles then you get $t\geq s$. The only scenario in which this is satisfied is when $t=s$.
 
 If $V$ is finite-dimensional, then we define $\dim(V)\in\mathbb{N}_0$ to be the number of elements in any basis of $V$. We can then prove the Steinitz Exchange Lemma:
-![[Real vector spaces and subspaces .excalidraw]]
+![[SET proof]]
