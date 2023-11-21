@@ -91,6 +91,9 @@ Let $V$ be a vector space of dimension $k$, then let $v_1,\dots,v_l\in V$. Then 
 > If $l>k$, then $v_1,\dots,v_l$ are linearly dependent
 > If $l<k$, then $v_1,\dots,v_l$ does not span $V$
 > If $l=k$, then the following statements are a tautology:
-> >$v_1,\dots,v_l$ form a basis of $V$
-> >$v_1,\dots,v_l$ are linearly independent
-> >$v_1,\dots,v_l$ span $V$
+> >$v_1,\dots,v_l$ form a basis of $V$ $(I)$
+> >$v_1,\dots,v_l$ are linearly independent ($II$)
+> >$v_1,\dots,v_l$ span $V$ ($III$)
+
+This is proven as follows:
+![[Real vector spaces and subspaces .excalidraw]]
