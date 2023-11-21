@@ -83,4 +83,14 @@ Let $V$ be a finite dimension vector space and $U$ a vector subspace of $V$, the
 > $U$ is finite dimensional
 > $dim(U)\leq dim(V)$
 > $dim(U)=dim(V)\iff U=V$
-![[Real vector spaces and subspaces .excalidraw]]
+![[finite dimension proof]]
+
+The other two results follow from this.
+
+Let $V$ be a vector space of dimension $k$, then let $v_1,\dots,v_l\in V$. Then we have:
+> If $l>k$, then $v_1,\dots,v_l$ are linearly dependent
+> If $l<k$, then $v_1,\dots,v_l$ does not span $V$
+> If $l=k$, then the following statements are a tautology:
+> >$v_1,\dots,v_l$ form a basis of $V$
+> >$v_1,\dots,v_l$ are linearly independent
+> >$v_1,\dots,v_l$ span $V$
