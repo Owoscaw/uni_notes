@@ -80,3 +80,7 @@ If $V$ is finite-dimensional, then we define $\dim(V)\in\mathbb{N}_0$ to be the 
 ![[SET proof]]
 
 Let $V$ be a finite dimension vector space and $U$ a vector subspace of $V$, then:
+> $U$ is finite dimensional
+> $dim(U)\leq dim(V)$
+> $dim(U)=dim(V)\iff U=V$
+![[Real vector spaces and subspaces .excalidraw]]
