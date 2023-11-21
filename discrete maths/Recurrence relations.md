@@ -29,12 +29,7 @@ Finally, apply initial conditions to determine unknown constants.
 ## Finding the particular solution:
 
 In order to find the particular solution, use this table:
-| $f(n)$    | form of $p(n)$               |
-| --------- | ---------------------------- |
-| $A$       | $B_0$                        |
-| $An$      | $B_0+B_1n$                   |
-| $An^q$    | $B_0+B_1n+\dots+B_qn^q$      |
-| $Aq^n$    | $B_0q^n$                     |
-| $Anq^n$   | $(B_0+B_1n)q^n$              |
-| $An^qq^n$ | $(B_0+B_1n+\dots+B_qn^q)q^n$ |
-||                              |
+| $f(n)$ | form of $p(n)$ |
+| ------ | -------------- |
+| $A$    | $B_0$          |
+| $An$   |                |
