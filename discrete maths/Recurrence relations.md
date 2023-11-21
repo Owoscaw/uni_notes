@@ -19,4 +19,22 @@ Finally, applying initial conditions to the general solution will reveal the par
 # General method for inhomogeneous linear recurrence relations:
 
 Assume we have the following:
-> Initial conditions: $a_0,$
+> Initial conditions: $a_0,a_r,\dots,a_{r-1}$
+> Recurrence relation: $$\Huge a_n=c_1a_{n-1}+\dots+c_ra_{n-r}+f(n)$$
+
+To solve this, first consider the homogeneous part of the relation, $a_n=c_1a_{n-1}+\dots+c_ra_{n-r}$. Then find the general solution to this, by following the steps for a homogeneous recurrence relation, then we get:$$\Huge a_n=g(n)$$
+Then a particular solution, $a_n=p(n)$ to the full inhomogeneous problem needs to be found. Once found, the general solution is given by:$$\Huge a_n=g(n)+p(n)$$
+Finally, apply initial conditions to determine unknown constants.
+
+## Finding the particular solution:
+
+In order to find the particular solution, use this table:
+| $f(n)$    | form of $p(n)$               |
+| --------- | ---------------------------- |
+| $A$       | $B_0$                        |
+| $An$      | $B_0+B_1n$                   |
+| $An^q$    | $B_0+B_1n+\dots+B_qn^q$      |
+| $Aq^n$    | $B_0q^n$                     |
+| $Anq^n$   | $(B_0+B_1n)q^n$              |
+| $An^qq^n$ | $(B_0+B_1n+\dots+B_qn^q)q^n$ |
+||                              |
