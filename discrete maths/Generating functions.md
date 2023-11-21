@@ -3,4 +3,6 @@ Generating functions encode combinatorial information in an analytical form. For
 Let $a_0,a_1,a_2,\dots$ be a sequence of numbers. The ordinary generating function for the sequence is the formal sum:$$\Huge f(x)=\sum_{k=0}^\infty a_kx^k$$
 Since this is discrete mathematics, we do not care if this series converges and can manipulate it however we need to, this is why it is called a formal sum.
 
-Example:![[Generating functions .excalidraw]]
+Example:![[7 into 4 example]]
+Now to generalise this, consider the amount of solutions to the equation:$$\Huge e_1+e_2+\dots+e_n=k$$
+Where $e_i\in\{0,1\}$ and $n,k\in\mathbb{N}_0$ 
