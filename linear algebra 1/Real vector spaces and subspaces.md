@@ -96,4 +96,4 @@ Let $V$ be a vector space of dimension $k$, then let $v_1,\dots,v_l\in V$. Then 
 > >$v_1,\dots,v_l$ span $V$ ($III$)
 
 This is proven as follows:
-![[Real vector spaces and subspaces .excalidraw]]
+![[basis tautology]]

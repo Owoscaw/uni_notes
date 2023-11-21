@@ -18,3 +18,5 @@ Finally, applying initial conditions to the general solution will reveal the par
 
 # General method for inhomogeneous linear recurrence relations:
 
+Assume we have the following:
+> Initial conditions: $a_0,$
