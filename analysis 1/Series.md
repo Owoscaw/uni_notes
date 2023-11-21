@@ -10,4 +10,4 @@ The special cases where $q=\pm1$ are defined as follows:$$\Huge S_n=\sum_{k=0}^n
 $$\large S_n=\sum_{k=0}^n(-1)^k=1-1+\dots+(-1)^n=\begin{cases}1&\text{if $n$ is even}\\0&\text{if $n$ is odd}\end{cases},\,\lim_{n\to\infty}S_n\,\text{is not convergent}$$
 So we have:$$\Huge \sum_{k=0}^\infty q^k=\frac{1}{1-q}\iff|q|<1$$
 If $\sum_{k=0}^\infty a_k$ is convergent, then $\lim_{k\to\infty}a_k=0$. This is proven as follows:![[series divergence criteria]]
-Just because the sequence converges to zero, the series does not necessarily converge. This is shown in the following example:![[Series .excalidraw]]
+Just because the sequence converges to zero, the series does not necessarily converge. This is shown in the following example:![[harmonic divergence]]
