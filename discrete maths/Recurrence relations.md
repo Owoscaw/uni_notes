@@ -29,7 +29,13 @@ Finally, apply initial conditions to determine unknown constants.
 ## Finding the particular solution:
 
 In order to find the particular solution, use this table:
-| $f(n)$ | form of $p(n)$ |
-| ------ | -------------- |
-| $A$    | $B_0$          |
-| $An$   |                |
+| $f(n)$    | form of $p(n)$               |
+| --------- | ---------------------------- |
+| $A$       | $B_0$                        |
+| $An$      | $B_0+B_1n$                   |
+| $An^k$    | $B_0+B_1n+\dots+B_kn^k$      |
+| $Ak^n$    | $B_0k^n$                     |
+| $Ank^n$   | $(B_0+B_1n)k^n$              |
+| $An^kk^n$ | $(B_0+B_1n+\dots+B_kn^k)k^n$ |
+
+If $f(n)$ contains $k^n$ and the constant $k$ is a root of the characteristic equation, the the homogeneous part of the solution already contains $k^n$, so in $p(n)$, $k^n$ is replaced with $nk^n$. If $1$ is a root of the characteristic equation, then if $f(n)=An^k$, it should be thought of as $An^k\times1^n$, allowing for the above case.
