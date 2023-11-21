@@ -14,4 +14,7 @@ This will either have one, two, or zero solutions depending on $\alpha_2,\alpha_
 > If the equation has one real root, then the auxiliary equation is of form $\alpha_1^2-4\alpha_2\alpha_0=0$. In this case, we get $\alpha_2(\lambda+\frac{\alpha_1}{2\alpha_2})^2=0$ for the auxiliary equation, so the double root is $\lambda=-\frac{\alpha_1}{2\alpha_2}$. We have one solution $y_1=e^{\lambda_1x}$, however also $y_2=xe^{\lambda_1x}$ is also a solution. So the general solution becomes:$$\Huge y=Ae^{\lambda x}+Bxe^{\lambda x}$$
 > If the equation has two complex conjugate solutions, that is $\lambda_1=a+bi$ and $\lambda_2=a-bi$, then we have two solution $y_1=e^{ax+bix}=e^{ax}e^{ibx}$ and $y_2=e^{ax-bix}=e^{ax}e^{-bix}$. These suck because they are complex functions, and we want real solutions. Since any linear combination of these gives a solution, consider:$$\Huge Y_1=\frac{1}{2}(y_1+y_2)=\frac{1}{2}e^{ax}(e^{i(bx)}+e^{-i(bx)})=e^{ax}cos(bx)$$$$\Huge Y_2=\frac{1}{2}(y_1-y_2)=\frac{1}{2}e^{ax}(e^{i(bx)}-e^{-i(bx)})=e^{ax}sin(bx)$$These are two independent real solutions, so the general solution can be expressed as a linear combination of both, that is:$$\Huge y=e^{ax}(Acos(bx)+Bsin(bx))$$With arbitrary real constants $A$ and $B$, with real $a,b$ satisfying $\lambda=a\pm bi$ for the auxiliary equation.
 
-## Inhomogeneous case, $\phi(x)\$
+## Inhomogeneous case, $\phi(x)\neq 0$:
+
+A general solution to this will contain two arbitrary constants. The general solution takes form:$$\Huge y=y_{CF}+y_{PI}$$
+Where $y_{CF}$ is the complementary function, equivalent to the general solution to the associated homogeneous ODE above. Then $y_{PI}$ is known as the particular integral.
