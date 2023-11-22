@@ -32,4 +32,11 @@ If $\alpha=1$, we get the harmonic series, which has been shown to diverge. If w
 # Alternating series:
 
 A series $\displaystyle{\sum_{k=1}^\infty a_k}$ is alternating if:
-> $a_{2k}\geq0$
+> $a_{2k}\geq0$ and $a_{2k-1}\leq 0$ for all $k\in\mathbb N$
+> or $a_{2k}\leq0$ and $a_{2k-1}\geq0$ for all $k\in\mathbb N$
+
+## Alternating sign test:
+
+Let $(a_k)_{k\in\mathbb N}$ be a monotonically decreasing sequence of positive numbers with $\lim_{n\to\infty} a_k=0$, then the alternating series $\displaystyle{\sum_{k=1}^\infty(-1)^{k+1}a_k}$ is also convergent. Considering the sequence of partial sums, we have:$$\Huge s_2\leq s_4\leq\dots\leq\sum_{k=1}^\infty(-1)^{k+1}a_k\leq\dots\leq s_3\leq s_1$$
+$$\Huge \left|s_n-\sum_{k=1}^\infty(-1)^{k+1}a_k\right|\leq a_{n+1}$$
+Since $a_k$ is monotonically increasing, we get $a_k-a_{k-1}\geq0$, which implies $a_{2n+1}-a_{2n+2}\geq0$. Adding the partial sum $s_{2n}$, we get $s_{2n+2}=s_{2n}+a_{2n+1}-a_{2n+2}\geq s_{2n}$, so the subsequence $(s_{2n})_{n\in\mathbb N}$ is monotonically increasing. Similarly, we can show $(s_{2n-1})_{n\in\mathbb N}$ 
