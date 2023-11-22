@@ -28,3 +28,8 @@ Notice that $a_k\geq0$ is bounded by the limit of $t_n$. So if $s_n$ is not conv
 Let $\alpha\in\Re$, then:$$\Huge \sum_{k=1}^\infty\frac{1}{k^\alpha}\,\,\text{converges}\iff\alpha>1$$
 If $\alpha=1$, we get the harmonic series, which has been shown to diverge. If we take $\alpha\leq1$, we get that the series is still divergent by the above theorem. So now assume $\alpha>1$:
 ![[Series .excalidraw]]
+
+# Alternating series:
+
+A series $\displaystyle{\sum_{k=1}^\infty a_k}$ is alternating if:
+> $a_{2k}\geq0$
