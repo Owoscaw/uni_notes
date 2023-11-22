@@ -17,6 +17,14 @@ Assume that $\sum_{k=0}^\infty a_k$ and $\sum_{k=0}^\infty b_k$ both converge to
 
 # Convergence criteria:
 
-Let $N\in\mathbb N$, and $(a_k)_{k\geq N},(b_k)_{k\geq N}$ be sequences with $0\leq a_k\leq b_k$ for all $k\geq N$:
+Let $N\in\mathbb N$, and $(a_k)_{k\geq N},(b_k)_{k\geq N}$ be sequences with $0\leq a_k\leq b_k$ for all $k\geq N$ (comparison test):
 > If $\displaystyle{\sum_{k=N}^\infty b_k}$ is convergent with limit $b$, then $\displaystyle{\sum_{k=N}^\infty a_k}$ is also convergent with limit $a\leq b$
-> If $\displaystyle{\sum_{k=}}$
+> If $\displaystyle{\sum_{k=N}^\infty a_k}$ is divergent, then so is $\displaystyle{\sum_{k=N}^\infty b_k}$
+
+This is proven as follows. Let $s_n=\sum_{k=N}^na_k$ and $t_n=\sum_{k=N}^n$. We have $0\leq s_n\leq t_n\leq b$, since $(t_n)$ is monotonically increasing with a limit $b$. $(s_n)$ is also monotonically increasing and bounded above by $b$, so must be convergent to a limit $a$. $s_n\leq t_n$ implies:$$\Huge a=\lim_{n\to\infty}s_n\leq\lim_{n\to\infty}t_n=b
+$$
+Notice that $a_k\geq0$ is bounded by the limit of $t_n$. So if $s_n$ is not convergent, it is not bounded by the limit of $t_n$, so this limit cannot exist. Therefore $t_n$ must also be divergent.
+
+Let $\alpha\in\Re$, then:$$\Huge \sum_{k=1}^\infty\frac{1}{k^\alpha}\,\,\text{converges}\iff\alpha>1$$
+If $\alpha=1$, we get the harmonic series, which has been shown to diverge. If we take $\alpha\leq1$, we get that the series is still divergent by the above theorem. So now assume $\alpha>1$:
+![[Series .excalidraw]]
