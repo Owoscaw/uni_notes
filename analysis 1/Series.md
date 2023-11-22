@@ -11,3 +11,12 @@ $$\large S_n=\sum_{k=0}^n(-1)^k=1-1+\dots+(-1)^n=\begin{cases}1&\text{if $n$ is 
 So we have:$$\Huge \sum_{k=0}^\infty q^k=\frac{1}{1-q}\iff|q|<1$$
 If $\sum_{k=0}^\infty a_k$ is convergent, then $\lim_{k\to\infty}a_k=0$. This is proven as follows:![[series divergence criteria]]
 Just because the sequence converges to zero, the series does not necessarily converge. This is shown in the following example:![[harmonic divergence]]
+Assume that $\sum_{k=0}^\infty a_k$ and $\sum_{k=0}^\infty b_k$ both converge to $a$ and $b$ respectively. Then we can define a sort of [[Sequences#Calculus of limits theorem ( Limits and Continuity Consequences of continuity COLT )|COLT]] for series:
+> $\displaystyle{\sum_{k=0}^\infty}a_k+b_k$ converges to $a+b$
+> $\displaystyle{\sum_{k=0}^\infty \lambda a_k}$ converges to $\lambda a$ with $\lambda\in\Re$
+
+# Convergence criteria:
+
+Let $N\in\mathbb N$, and $(a_k)_{k\geq N},(b_k)_{k\geq N}$ be sequences with $0\leq a_k\leq b_k$ for all $k\geq N$:
+> If $\displaystyle{\sum_{k=N}^\infty b_k}$ is convergent with limit $b$, then $\displaystyle{\sum_{k=N}^\infty a_k}$ is also convergent with limit $a\leq b$
+> If $\displaystyle{\sum_{k=}}$
