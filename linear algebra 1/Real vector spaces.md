@@ -103,4 +103,8 @@ Let $A\in M_{n\times k}(\Re)$, then:
 > The row space of $A$ is the subspace of $\Re^k$ spanned by the transposes of the rows of $A$:$$\Huge rowrank(A):=dim(rowspace(A))$$
 > The nullspace, or kernel, of $A$ is the subspace of $\Re^k$ consisting of all solutions to $A\underline x=\underline 0$:$$\Huge null(A):=dim(ker(A))$$
 
-Suppose that we have $A£
+Suppose that we have $A$ as before, then $P\in M_n(\Re)$ where $P$ is invertible. Then we get:
+>$colrank(PA)=colrank(A)$
+>$rowspace(PA)=rowspace(A)$. $P$ can be written as a series of elementary row operations, sp the rows of $PA$ are linear combinations of the rows of $A$. That is to say $rowspace(PA)\subseteq rowspace(A)$. We also have that $rowspace(A)=rowspace(P^{-1}(PA))\subseteq rowspace(PA)$. By double inclusion we get that these are equal.
+>$ker(PA)=ker(A)$. For any $\underline v\in ker(A)$, we have $A\underline v=\underline 0\implies P(A\underline v)=\underline 0\implies (PA)\underline v$
+
