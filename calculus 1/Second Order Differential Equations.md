@@ -33,4 +33,8 @@ The values of the two arbitrary constants found in the general solution to a sec
 
 ## IVPs:
 
-An initial value problem (IVP) is where we require $y(x_0)=y_0$ and $y'(x_0)=\delta$ for given constants $x_0,y_0,\delta$
+An initial value problem (IVP) is where we require $y(x_0)=y_0$ and $y'(x_0)=\delta$ for given constants $x_0,y_0,\delta$. Here, the function is constrained on the same value of the independent variable $x_0$.
+
+## BVPs:
+
+A boundary value problem (BVP) is where we require $y(x_0)=y_0$ and $y(x_1)=y_1$ for given constants $x_0,x_1,y_0,y_1$. In this case, two constraints are given at two different values of the independent variable.
