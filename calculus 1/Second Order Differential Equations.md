@@ -17,4 +17,12 @@ This will either have one, two, or zero solutions depending on $\alpha_2,\alpha_
 ## Inhomogeneous case, $\phi(x)\neq 0$:
 
 A general solution to this will contain two arbitrary constants. The general solution takes form:$$\Huge y=y_{CF}+y_{PI}$$
-Where $y_{CF}$ is the complementary function, equivalent to the general solution to the associated homogeneous ODE above. Then $y_{PI}$ is known as the particular integral.
+Where $y_{CF}$ is the complementary function, equivalent to the general solution to the associated homogeneous ODE above. Then $y_{PI}$ is known as the particular integral. We have $y'=y_{CF}'+y_{PI}'$, and $y''=y_{CF}''+y_{PI}''$, so subtituting we get:$$\Huge \alpha_2(y_{CF}''+y_{PI}'')+\alpha_1(y_{CF}'+y_{PI}')+\alpha_0(y_{CF}+y_{PI})=\phi(x)$$$$\Huge (\alpha_2y_{CF}''+\alpha_1y_{CF}'+\alpha_0y)+(\alpha_2y_{PI}''+\alpha_1y_{PI}'+\alpha_0y_{PI})=0+\phi(x)=\phi(x)$$When $\phi(x)$ takes the form of a polynomial, exponential, trigonometric function, or a sum/product of these, we can apply the method of undetermined coefficients (guessing):
+
+| Term in $\phi(x)$ | Form of $y_{PI}$                    |
+| ----------------- | ----------------------------------- |
+| $e^{\gamma x}$    | $a_1e^{\gamma x}$                   |
+| $x^n$             | $a_0+a_1x+\dots+a_nx^n$             |
+| $cos(\gamma x)$   | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
+| $sin(\gamma x)$   | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
+

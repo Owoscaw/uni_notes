@@ -29,6 +29,7 @@ Finally, apply initial conditions to determine unknown constants.
 ## Finding the particular solution:
 
 In order to find the particular solution, use this table:
+
 | $f(n)$    | form of $p(n)$               |
 | --------- | ---------------------------- |
 | $A$       | $B_0$                        |
