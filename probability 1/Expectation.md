@@ -40,3 +40,10 @@ It immediately follows that for $\alpha,\beta,\gamma,\delta\in\Re$:$$\Huge var(\
 $$\Huge cov(X,Y+Z)=cov(X,Y)+cov(X,Z)$$
 These results come from the linearity of expectation. This can also be used to obtain an alternative formula for variance:$$\large var(X)=\mathbb E[(X-\mathbb E[X])^2]=\mathbb E[X^2-2X\mathbb E[X]+(\mathbb E[X])^2]=\mathbb E[X^2]-2\mathbb E[X]\mathbb E[X]+(\mathbb E[X])^2$$$$\Huge var(X)=\mathbb E[X^2]-(\mathbb E[X])^2$$
 For any real valued random variables $X$ and $Y$:$$\large cov(X,Y)=\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]=\mathbb E[XY-X\mathbb E[Y]-Y\mathbb E[X]+\mathbb E[X]\mathbb E[Y]]$$$$\Huge cov(X,Y)=\mathbb E[XY]-2\mathbb E[X]\mathbb E[Y]+\mathbb E[X]\mathbb E[Y]=\mathbb E[XY]-\mathbb E[X]\mathbb E[Y]$$
+Similarly, we also get:$$\Huge var(X+Y)=cov(X+Y,X+Y)=cov(X+Y,X)+cov(X+Y,Y)$$$$ var(X+Y)=cov(X,X)+cov(Y,X)+cov(X,Y)+cov(Y,Y)=var(X)+var(Y)+2cov(X,Y)$$
+This implies the general case, where:$$\Huge var\left(\sum_{i=1}^nX_i\right)=\sum_{i=1}^nvar(X_i)+2\sum_{i=1}^{n-1}\sum_{j=i+1}^ncov(X_i,X_j)$$
+
+# Conditional expectation:
+
+Note that the expectation of an [[Random variables#Indicator random variables|indicator random variable]], $1_A$ is given by:$$\Huge \mathbb E[1_A]=1\times\mathbb P(\omega\in A)+0\times\mathbb P(\omega\in A^c)=\mathbb P(\omega\in A)=\mathbb P(A)$$
+Now let $X$ be a real valued random variable, 
