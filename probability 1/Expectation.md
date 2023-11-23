@@ -38,4 +38,5 @@ The interpretation of this is:
 By LOTUS we have:$$\Huge cov(X,Y)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}}(x-\mathbb{E}[x])(y-\mathbb{E}[y])p(x,y)&\text{if}\,X,Y\,\text{are discrete}\\\displaystyle{\iint_{\Re^2}(x-\mathbb{E}[x])(y-\mathbb{E}[y])dydx}&\text{if}\,X,Y\,\text{are continuous}\end{cases}$$
 It immediately follows that for $\alpha,\beta,\gamma,\delta\in\Re$:$$\Huge var(\alpha+\beta X)=\beta^2var(X)$$$$\Huge cov(\alpha+\beta X,\gamma+\delta Y)=\beta\delta cov(X,Y)$$$$\Huge cov(X+Y,Z)=cov(X,Z)+cov(Y,Z)$$
 $$\Huge cov(X,Y+Z)=cov(X,Y)+cov(X,Z)$$
-These results come from the linearity of expectation
+These results come from the linearity of expectation. This can also be used to obtain an alternative formula for variance:$$\large var(X)=\mathbb E[(X-\mathbb E[X])^2]=\mathbb E[X^2-2X\mathbb E[X]+(\mathbb E[X])^2]=\mathbb E[X^2]-2\mathbb E[X]\mathbb E[X]+(\mathbb E[X])^2$$$$\Huge var(X)=\mathbb E[X^2]-(\mathbb E[X])^2$$
+For any real valued random variables $X$ and $Y$:$$\large cov(X,Y)=\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]=\mathbb E[XY-X\mathbb E[Y]-Y\mathbb E[X]+\mathbb E[X]\mathbb E[Y]]$$$$\Huge cov(X,Y)=\mathbb E[XY]-2\mathbb E[X]\mathbb E[Y]+\mathbb E[X]\mathbb E[Y]=\mathbb E[XY]-\mathbb E[X]\mathbb E[Y]$$
