@@ -98,3 +98,9 @@ Let $V$ be a vector space of dimension $k$, then let $v_1,\dots,v_l\in V$. Then 
 This is proven as follows:
 ![[basis tautology]]
 
+Let $A\in M_{n\times k}(\Re)$, then:
+> The column space of $A$ is the subspace of $\Re^n$ spanned by the columns of $A$. We then define:$$\Huge colrank(A):=dim(columnspace(A))$$
+> The row space of $A$ is the subspace of $\Re^k$ spanned by the transposes of the rows of $A$:$$\Huge rowrank(A):=dim(rowspace(A))$$
+> The nullspace, or kernel, of $A$ is the subspace of $\Re^k$ consisting of all solutions to $A\underline x=\underline 0$:$$\Huge null(A):=dim(ker(A))$$
+
+Suppose that we have $A£
