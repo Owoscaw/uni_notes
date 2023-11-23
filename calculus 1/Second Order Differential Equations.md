@@ -19,10 +19,11 @@ This will either have one, two, or zero solutions depending on $\alpha_2,\alpha_
 A general solution to this will contain two arbitrary constants. The general solution takes form:$$\Huge y=y_{CF}+y_{PI}$$
 Where $y_{CF}$ is the complementary function, equivalent to the general solution to the associated homogeneous ODE above. Then $y_{PI}$ is known as the particular integral. We have $y'=y_{CF}'+y_{PI}'$, and $y''=y_{CF}''+y_{PI}''$, so subtituting we get:$$\Huge \alpha_2(y_{CF}''+y_{PI}'')+\alpha_1(y_{CF}'+y_{PI}')+\alpha_0(y_{CF}+y_{PI})=\phi(x)$$$$\Huge (\alpha_2y_{CF}''+\alpha_1y_{CF}'+\alpha_0y)+(\alpha_2y_{PI}''+\alpha_1y_{PI}'+\alpha_0y_{PI})=0+\phi(x)=\phi(x)$$When $\phi(x)$ takes the form of a polynomial, exponential, trigonometric function, or a sum/product of these, we can apply the method of undetermined coefficients (guessing):
 
-| Term in $\phi(x)$ | Form of $y_{PI}$                    |
-| ----------------- | ----------------------------------- |
-| $e^{\gamma x}$    | $a_1e^{\gamma x}$                   |
-| $x^n$             | $a_0+a_1x+\dots+a_nx^n$             |
-| $cos(\gamma x)$   | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
-| $sin(\gamma x)$   | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
+| Term in $\phi(x)$ |          Form of $y_{PI}$           |
+|:-----------------:|:-----------------------------------:|
+|  $e^{\gamma x}$   |          $a_1e^{\gamma x}$          |
+|       $x^n$       |       $a_0+a_1x+\dots+a_nx^n$       |
+|  $cos(\gamma x)$  | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
+|  $sin(\gamma x)$  | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
 
+If $\phi(x)$ contains sums or products of the above terms, try the corresponding sum or product of the corresponding forms for $y_{PI}$. If the listed form to try is a term in $y_{CF}$, then putting this into the original differential equation will give $0$ instead of $\phi(x)$. To remedy this, multiply the form by $x$. If this first application still gives a term in the original equation, this rule can be applied repeatedly until the term is not in $y_{CF}$. Example:![[Second Order Differential Equations .excalidraw]]
