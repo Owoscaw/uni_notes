@@ -97,3 +97,4 @@ Let $V$ be a vector space of dimension $k$, then let $v_1,\dots,v_l\in V$. Then 
 
 This is proven as follows:
 ![[basis tautology]]
+

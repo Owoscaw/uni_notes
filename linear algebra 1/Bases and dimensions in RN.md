@@ -1,3 +1,3 @@
-Let $U$ be a vector [[Subspaces|subspace]] of [[Vector space definitions|$\Re^n$]]. A [[Real vector spaces and subspaces#What is a basis|basis]] for $U$ is any linearly independent set of vectors that span $U$. Let $\underline u_1,\dots,\underline u_k$ be $k$ vectors in $\Re^n$. Then we have:
+Let $U$ be a vector [[Subspaces|subspace]] of [[Vector space definitions|$\Re^n$]]. A [[Real vector spaces#What is a basis|basis]] for $U$ is any linearly independent set of vectors that span $U$. Let $\underline u_1,\dots,\underline u_k$ be $k$ vectors in $\Re^n$. Then we have:
 > If $k>n$ then $\underline u_1,\dots,\underline u_k$ are [[Subspaces#Linear independence|linearly dependent]].
 > If $k<n$, then $\underline u_1,\dots,\underline u_k$ form a basis of $U$.
