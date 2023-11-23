@@ -26,4 +26,11 @@ Where $y_{CF}$ is the complementary function, equivalent to the general solution
 |  $cos(\gamma x)$  | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
 |  $sin(\gamma x)$  | $a_1cos(\gamma x)+a_2sin(\gamma x)$ |
 
-If $\phi(x)$ contains sums or products of the above terms, try the corresponding sum or product of the corresponding forms for $y_{PI}$. If the listed form to try is a term in $y_{CF}$, then putting this into the original differential equation will give $0$ instead of $\phi(x)$. To remedy this, multiply the form by $x$. If this first application still gives a term in the original equation, this rule can be applied repeatedly until the term is not in $y_{CF}$. Examples:![[Second Order Differential Equations .excalidraw]]
+If $\phi(x)$ contains sums or products of the above terms, try the corresponding sum or product of the corresponding forms for $y_{PI}$. If the listed form to try is a term in $y_{CF}$, then putting this into the original differential equation will give $0$ instead of $\phi(x)$. To remedy this, multiply the form by $x$. If this first application still gives a term in the original equation, this rule can be applied repeatedly until the term is not in $y_{CF}$. Examples:![[2nd order non-homo example]]
+# Initial and boundary value functions:
+
+The values of the two arbitrary constants found in the general solution to a second order ODE are fixed by imposing two extra requirements on the function and/or it's derivative.
+
+## IVPs:
+
+An initial value problem (IVP) is where we require $y(x_0)=y_0$ and $y'(x_0)=\delta$ for given constants $x_0,y_0,\delta$
