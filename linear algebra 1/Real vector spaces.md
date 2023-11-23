@@ -112,6 +112,6 @@ Suppose that we have $A$ as before, then $P\in M_n(\Re)$ where $P$ is invertible
 ## Rank theorem:
 
 $$\Huge rowrank(A)=colrank(A)$$
-For $A\in M_{n\times k}(\Re)$, we define:$$\Huge rk(A)=rowrank(A)=colrank(A)$$Then also:$$\Huge rk(A)+null(A)=k$$This is because since doing EROs is left multipli
+For $A\in M_{n\times k}(\Re)$, we define:$$\Huge rk(A)=rowrank(A)=colrank(A)$$Then also:$$\Huge rk(A)+null(A)=k$$This is because since doing EROs is left multiplying by elementary matrices, we know that EROs do not change rowrank, colrank, or nullity. When $A$ is put in RREF, each $r$ rows will define the column space as any column vector with $0$ entries after row $r$. This specifically has dimension $r$. A similar argument goes for the rows, as each $r$ row is linearly independent.
 
 
