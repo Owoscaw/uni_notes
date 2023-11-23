@@ -35,4 +35,5 @@ The interpretation of this is:
 > $cov(X,Y)<0$ implies the opposite, they are negatively correlated
 > $cov(X,Y)=0$ implies they are uncorrelated
 
-By LOTUS we have:$$\Huge cov(X,Y)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}}(x-\mathbb{E}[x])(y-\mathbb{E}(y))p(x,y)&\text{if}\,X,Y\,\text{are discrete}\\\displaystyle{\iint_{\Re^2}(x-\mathbb{E}(x))(y-\mathbb{E}(y))dydx}&\text{if}\,X,Y\,\text{are continuous}\end{cases}$$
+By LOTUS we have:$$\Huge cov(X,Y)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}}(x-\mathbb{E}[x])(y-\mathbb{E}[y])p(x,y)&\text{if}\,X,Y\,\text{are discrete}\\\displaystyle{\iint_{\Re^2}(x-\mathbb{E}[x])(y-\mathbb{E}[y])dydx}&\text{if}\,X,Y\,\text{are continuous}\end{cases}$$
+It immediately follows that for $\alpha,\nb$
