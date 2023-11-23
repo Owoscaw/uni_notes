@@ -19,9 +19,9 @@ Let $X$ be a random variable, taking real values. Now let $\alpha,\beta\in\Re$:$
 This implies:
 >$\mathbb{E}(\alpha X+\beta)=\alpha\mathbb{E}(X)+\beta$
 >$\mathbb{E}(X+Y)=\mathbb{E}(X)+\mathbb{E}(Y)$
->$$\Huge \mathbb{E}\left(\sum_{i=1}^n X_i\right)=\sum_{i=1}^n\mathbb{E}(X_i)$$
+>E(∑i=1nXi)=∑i=1nE(Xi)
 
-For the discrete case, this is proven by:$$\Huge \mathbb{E}(g(X,Y))=\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}(x+y)p(x,y)=\sum_{x\in\mathcal X}x\sum_{y\in\mathcal Y}p(x,y)+\sum_{y\in\mathcal Y}y\sum_{x\in\mathcal X}p(x,y)$$$$\Huge =\sum_{x\in\mathcal X}xp_X(x)+\sum_{y\in\mathcal Y}yp_Y(y)=\mathbb{E}(X)+\mathbb{E}(Y)$$
+For the discrete case, this is proven by:E(g(X,Y))=∑x∈X∑y∈Y(x+y)p(x,y)=∑x∈Xx∑y∈Yp(x,y)+∑y∈Yy∑x∈Xp(x,y)=∑x∈XxpX(x)+∑y∈YypY(y)=E(X)+E(Y)
 
 # Variance and Co-Variance:
 
@@ -48,4 +48,5 @@ This implies the general case, where:$$\Huge var\left(\sum_{i=1}^nX_i\right)=\su
 Note that the expectation of an [[Random variables#Indicator random variables|indicator random variable]], $1_A$ is given by:$$\Huge \mathbb E[1_A]=1\times\mathbb P(\omega\in A)+0\times\mathbb P(\omega\in A^c)=\mathbb P(\omega\in A)=\mathbb P(A)$$
 Now let $X$ be a real valued random variable, the conditional expectance of $X$ given an event $A\subseteq\Omega$ is given by:$$\Huge \mathbb E[X|A]=\frac{\mathbb E[X1_A]}{\mathbb P(A)},\,\,\text{for}\,\,\mathbb P(A)>0$$This comes from the formula for [[Conditional probability#Bayes' theorem|conditional probability]]:$$\Huge \mathbb P(A\cap B)=\mathbb E[1_{A\cap B}]=\mathbb E[1_A\cdot1_B]=\mathbb P(B)\mathbb P(A|B)$$
 For the general case, we get:$$\Huge \mathbb E[X|A]=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)$$
-This is proven by letting $Y=X1_A$, then for $x\neq 0$ we get:$$\Huge \mathbb P(Y=1)=\mathbb P(\{X=x\}\cap A)=$$
+This is proven by letting $Y=X1_A$, then for $x\neq 0$ we get:$$\Huge \mathbb P(Y=1)=\mathbb P(\{X=x\}\cap A)=\mathbb P(X=x|A)\mathbb P(A)$$$$\Huge \mathbb E[Y]=\sum_{x\in\mathcal X}x\mathbb P(Y=x)=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)\mathbb P(A)$$$$\Huge \mathbb E[X|A]=\frac{\mathbb E[X1_A]}{\mathbb P(A)}=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)$$
+Since conditional probablity can be defined on expectance, it follows that a partition theorem exists. Let $X$ be a real valued random variables, and $E_1,\dots,E_k$ be $k$ events that form a partition
