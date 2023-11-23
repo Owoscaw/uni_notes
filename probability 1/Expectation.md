@@ -46,4 +46,6 @@ This implies the general case, where:$$\Huge var\left(\sum_{i=1}^nX_i\right)=\su
 # Conditional expectation:
 
 Note that the expectation of an [[Random variables#Indicator random variables|indicator random variable]], $1_A$ is given by:$$\Huge \mathbb E[1_A]=1\times\mathbb P(\omega\in A)+0\times\mathbb P(\omega\in A^c)=\mathbb P(\omega\in A)=\mathbb P(A)$$
-Now let $X$ be a real valued random variable, 
+Now let $X$ be a real valued random variable, the conditional expectance of $X$ given an event $A\subseteq\Omega$ is given by:$$\Huge \mathbb E[X|A]=\frac{\mathbb E[X1_A]}{\mathbb P(A)},\,\,\text{for}\,\,\mathbb P(A)>0$$This comes from the formula for [[Conditional probability#Bayes' theorem|conditional probability]]:$$\Huge \mathbb P(A\cap B)=\mathbb E[1_{A\cap B}]=\mathbb E[1_A\cdot1_B]=\mathbb P(B)\mathbb P(A|B)$$
+For the general case, we get:$$\Huge \mathbb E[X|A]=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)$$
+This is proven by letting $Y=X1_A$, then for $x\neq 0$ we get:$$\Huge \mathbb P(Y=1)=\mathbb P(\{X=x\}\cap A)=$$
