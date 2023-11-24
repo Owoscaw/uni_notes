@@ -53,5 +53,6 @@ Substituting these derivatives into the original ODE gives us:$$\large \alpha_2(
 Collecting terms of $u_1$ and $u_2$ gives:$$\large u_1(\alpha_2y_1''+\alpha_1y_1'+\alpha_0y_1)+u_2(\alpha_2y_2''+\alpha_1y_2'+\alpha_0y_2)+\alpha_2(u_1'y_1'+u_2'y_2')=\phi(x)$$
 Since $y_1$ and $y_2$ are solutions to the homogeneous ODE, the first two terms in this equation are $0$:$$\Huge \alpha_2(u_1'y_1'+u_2'y_2')=\phi(x)$$
 This gives $2$ simultaneous equations for $u_1$ and $u_2$ (we chose the other). Which we solve:
-$$\Huge u_1'y_1'y_1'+u_2'y_2'y_1'=\frac{\phi(x)y_1'}{\alpha_2}=u_2'(y_2'y_1-y_2y_1')$$This used the constraint $u_1'y_1+u_2'y_2$. We can then find formulae for the derivative of each $u$:
-$$\Huge u_2'=\frac{\phi(x)y_1'}{\alpha_2W(y_1,y_2)},\,\,\text{similarly}\,\,u_1'=-\frac{\phi(x)y_2'}{}$$
+$$\Huge u_1'y_1'y_1+u_2'y_2'y_1=\frac{\phi(x)y_1}{\alpha_2}=u_2'(y_2'y_1-y_2y_1')$$This used the constraint $u_1'y_1+u_2'y_2$. We can then find formulae for the derivative of each $u$:
+$$\Huge u_2'=\frac{\phi(x)y_1}{\alpha_2W(y_1,y_2)},\,\,\text{similarly}\,\,u_1'=-\frac{\phi(x)y_2}{\alpha_2W(y_1,y_2)}$$
+Note that $W(y_1,y_2)\neq0$ as we required that $y_1$ and $y_2$ are linearly independent. Finally, we find $u_1$ and $u_2$ by directly integrating:$$\Huge u_1(x)=-\int\frac{\phi(x)y_2}{\alpha_2W(y_1,y_2)}dx,\,\,u_2(x)=\int\frac{\phi(x)y_1}{\alpha_2W(y_1,y_2)}dx$$
