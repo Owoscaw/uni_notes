@@ -48,4 +48,10 @@ $$\Huge W(y_1,y_2)=\begin{vmatrix}y_1&y_2\\y_1'&y_2'\end{vmatrix}=y_1y_2'+y_2y_1
 Note that if $y_1$ and $y_2$ are linearly dependent, then the Wronskian of the two functions becomes identically $0$. That is, the Wronskian is $0$ for all $x$. This implies that if $W(y_1,y_2)$ is not identically $0$, then $y_1$ and $y_2$ are linearly independent. This can be used to solve the general non-homogeneous second order ODE by considering the fact that the homogeneous version of the ODE has two linearly independent solutions, that is:$$\Huge y_{CF}=Ay_1+By_2$$
 Constants $A$ and $B$ are then replaced with functions, $u_1$ and $u_2$ respectively. So we look for solutions of form:$$\Huge y_{PI}=u_1y_1+u_2y_2$$
 We look for such functions such that $y_{PI}$ is a solution to the ODE. This gives one constraint on $u_1$ and $u_2$. To find unique functions we then need to impose another restriction, so we choose:$$\Huge u_1'y_1+u_2'y=0$$
-$$\Huge y_{PI}'=u_1'y_1+u_1y_1'+u_2'y_2+u_2y_2'=u_1y_1'+u_2y_2'$$$$\Huge y_{PI}''=$$
+$$\Huge y_{PI}'=u_1'y_1+u_1y_1'+u_2'y_2+u_2y_2'=u_1y_1'+u_2y_2'$$$$\Huge y_{PI}''=u_1'y_1'+u_1y_1''+u_2'y_2'+u_2y_2''$$
+Substituting these derivatives into the original ODE gives us:$$\large \alpha_2(u_1'y_1'+u_1y_1''+u_2'y_2'+u_2y_2'')+\alpha_1(u_1y_1'+u_2y_2')+\alpha_0(u_1y_1+u_2y_2)=\phi(x)$$
+Collecting terms of $u_1$ and $u_2$ gives:$$\large u_1(\alpha_2y_1''+\alpha_1y_1'+\alpha_0y_1)+u_2(\alpha_2y_2''+\alpha_1y_2'+\alpha_0y_2)+\alpha_2(u_1'y_1'+u_2'y_2')=\phi(x)$$
+Since $y_1$ and $y_2$ are solutions to the homogeneous ODE, the first two terms in this equation are $0$:$$\Huge \alpha_2(u_1'y_1'+u_2'y_2')=\phi(x)$$
+This gives $2$ simultaneous equations for $u_1$ and $u_2$ (we chose the other). Which we solve:
+$$\Huge u_1'y_1'y_1'+u_2'y_2'y_1'=\frac{\phi(x)y_1'}{\alpha_2}=u_2'(y_2'y_1-y_2y_1')$$This used the constraint $u_1'y_1+u_2'y_2$. We can then find formulae for the derivative of each $u$:
+$$\Huge u_2'=\frac{\phi(x)y_1'}{\alpha_2W(y_1,y_2)},\,\,\text{similarly}\,\,u_1'=-\frac{\phi(x)y_2'}{}$$
