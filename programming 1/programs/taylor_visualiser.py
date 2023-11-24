@@ -49,9 +49,9 @@ def get_taylor_func(func, n, a):
     return sp.lambdify(x, sp_func)
 
 def test_func(x):
-    return m.e**x
+    return 1
 
 def show_taylor_to_n(func, n, a, start, end, detail):
     showplots([func] + [get_taylor_func(func, i, a) for i in range(1, n)], start, end, detail)
 
-show_taylor_to_n(test_func, 10, 0, -m.pi, m.pi, 1000)
+show_taylor_to_n(sp.tan, 10, 1, -m.pi, m.pi, 1000)
