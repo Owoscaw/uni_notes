@@ -38,3 +38,11 @@ An initial value problem (IVP) is where we require $y(x_0)=y_0$ and $y'(x_0)=\de
 ## BVPs:
 
 A boundary value problem (BVP) is where we require $y(x_0)=y_0$ and $y(x_1)=y_1$ for given constants $x_0,x_1,y_0,y_1$. In this case, two constraints are given at two different values of the independent variable.
+
+# Method of variation of parameters:
+
+The method of undetermined coefficients allows the solution to an inhomogeneous ODE to be found, given that $\phi(x)$ takes certain forms. The following method applies to more general cases.
+
+Given two differentiable functions, $y_1$ and $y_2$, the Wronskian is defined as:
+$$\Huge W(y_1,y_2)=\begin{vmatrix}y_1&y_2\\y_1'&y_2'\end{vmatrix}=y_1y_2'+y_2y_1'$$
+Note that if $y_1$ and $y_2$ are linearly dependent, then the Wronskian of the two functions becomes identically $0$. That is, the Wronskian is $0$ for all $x$. This implies that if $W(y_1,y_2)$ is not identically $0$, then $y_1$ and $y_2$ are linearly independent. This can be used to solve the general non-homogeneous second order ODE by considering the fact that the homogeneous version of the ODE has two linearly independent solutions, that is:$$\Huge y_{CF}=Ay_$$
