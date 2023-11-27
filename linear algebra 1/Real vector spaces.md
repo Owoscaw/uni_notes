@@ -119,4 +119,13 @@ For $A\in M_{n\times k}(\Re)$, we define:$$\Huge rk(A)=rowrank(A)=colrank(A)$$Th
 
 # Sums and intersections of vector subspaces:
 
-Let $V$ be a vector space, and $U,W\subseteq V$ be su
+Let $V$ be a vector space, and $U,W\subseteq V$ be subspaces of $V$. Then we define:
+>$$\Huge U+W:=\left\{v\in V:v=u+w\,\,\text{for some}\,\,u\in U,w\in W\right\}$$
+>$$\Huge U\cap W:=\left\{v\in V:v\in U\,\,\text{and}\,\,v\in W\right\}$$
+
+Both $U+W$ and $U\cap W$ are vector subspaces of $V$. Note that:
+> If $U=span(u_1,\dots,u_j)$ and $W=span(w_1,\dots,w_k)$, then we have $U+W=span(u_1,\dots,u_j,w_1,\dots,w_k)$. This does not always give a basis for $U+W$.
+> For two lines in $\Re^n$ such that $L_1,L_2$ have direction vectors $d_1,d_2$ respectively and pass through the origin, then $L_1+L_2$ is the plane spanned by $d_1$ and $d_2$. (this is a line if they are colinear).
+
+Let $U,W$ be finite dimensional vector subspaces of $V$, then:$$\Huge dim(U)+dim(W)=dim(U+W)+dim(U\cap W)$$Proof:
+![[Real vector spaces .excalidraw]]
