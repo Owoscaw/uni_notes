@@ -45,4 +45,7 @@ So take $n_0=max\{n_e,n_o\}$, then for all $n\geq n_0$ we get that $|s_n-s|<\eps
 
 # Absolute convergence:
 
-Let $\sum_{k=1}^\infty a_k$ be a series. This series is absolute convergent if $\sum_{k=1}^\infty|a_k|$ is convergent.
+Let $\sum_{k=1}^\infty a_k$ be a series. This series is absolute convergent if $\sum_{k=1}^\infty|a_k|$ is convergent. Every absolute convergent series is also convergent with:$$\Huge \left|\sum_{k=1}^\infty a_k\right|\leq \sum_{k=1}^\infty|a_k|$$
+Let $\sum_{k=1}^\infty a_k$ be absolute convergent. Then $\sum_{k=1}^\infty 2|a_k|$ is also convergent by COLT. Since $0\leq |a_k|+a_k\leq 2|a_k|$. By the comparison theorem, $\sum_{k=1}^\infty|a_k|+a_k$ is convergent. Using COLT again, we get:$$\Huge \sum_{k=1}^\infty a_k=\sum_{k=1}^\infty|a_k|+a_k-|a_k|\,\,\text{is convergent}$$
+We have the result by the triangle inequality when considering:$$\Huge \left|\sum_{k=1}^n a_k\right|\leq\sum_{k=1}^n|a_k|\leq\sum_{k=1}^\infty|a_k|$$And taking the limit as $n\to\infty$. Since we know it is convergent.
+
