@@ -130,3 +130,15 @@ Both $U+W$ and $U\cap W$ are vector subspaces of $V$. Note that:
 Let $U,W$ be finite dimensional vector subspaces of $V$, then:$$\Huge dim(U)+dim(W)=dim(U+W)+dim(U\cap W)$$Proof:
 ![[vector intersection proof]]
 
+#  Direct sum:
+
+Suppose that $U,W$ are vector subspaces of $V$ that satisfy:
+> $U+W=V$
+> $U\cap W=\emptyset$
+
+When we say that $V$ is the direct sum of $U$ and $W$, written as $V=U\oplus W$. Knowing this, the following are pairwise equivalent:
+> $V=U\oplus W$
+> If $\{u_1,\dots,u_s\}$ is a basis for $U$, and if $\{w_1,\dots,w_t\}$ is a basis for $W$, then $\{u_1,\dots,u_s,w_1,\dots,w_t\}$ is a basis for $V$
+> $V=U+W$ and $dim(V)=dim(U)+dim(W)$
+> Every $v\in V$ can be uniquely written as $v=u+w$ where $u\in U,w\in W$
+

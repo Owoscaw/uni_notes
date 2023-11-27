@@ -57,3 +57,9 @@ Then by linearity of expectation we get:$$\Huge \mathbb E(X)=\mathbb E\left[X\su
 Conditional expectation with respect to random variables is defined by a function $g:Y(\Omega)\mapsto\Re$ such that:$$\Huge g(y)=\mathbb E[X|Y=y]$$Given two random variables $X$ and $Y$. We then define:$$\Huge g(Y)=\mathbb E[X|Y]$$
 So $\mathbb E[X|Y]$ is a random variable that takes values $\mathbb E[X|Y=y]$ with probabilities $\mathbb P(Y=y)$. For any real valued random variable $X$ and $Y$:$$\Huge \mathbb E[X]=\mathbb E[\mathbb E[X|Y]]$$
 This is because $\mathbb E[X]=\mathbb E[g(Y)]$. Then by LOTUS, we get:$$\Huge \mathbb E[X]=\sum_{y\in\mathcal Y}g(y)\mathbb P(Y=y)=\sum_{y\in\mathcal Y}\mathbb E[X|Y=y]\mathbb P(Y=y)=\mathbb E[X]$$
+# Independence:
+
+If $X$ and $Y$ are real valued random variables, then they are independent if:$$\Huge \mathbb E[XY]=\mathbb E[X]\mathbb E[Y]$$
+Then for functions $g,h:\Re\mapsto\Re$:$$\Huge \mathbb E[g(X)h(Y)]=\mathbb E[g(X)]\mathbb E[h(Y)]$$More generally, for random variables $X_1,\dots,X_n$:$$\Huge \mathbb E\left[\prod_{i=1}^nX_i\right]=\prod_{i=1}^n\mathbb E[X_i]$$
+This is because by LOTUS, we get:
+$$\Huge \mathbb E[g(X)h(Y)]=\sum_{x\in\mathcal X}$$
