@@ -128,4 +128,5 @@ Both $U+W$ and $U\cap W$ are vector subspaces of $V$. Note that:
 > For two lines in $\Re^n$ such that $L_1,L_2$ have direction vectors $d_1,d_2$ respectively and pass through the origin, then $L_1+L_2$ is the plane spanned by $d_1$ and $d_2$. (this is a line if they are colinear).
 
 Let $U,W$ be finite dimensional vector subspaces of $V$, then:$$\Huge dim(U)+dim(W)=dim(U+W)+dim(U\cap W)$$Proof:
-![[Real vector spaces .excalidraw]]
+![[vector intersection proof]]
+
