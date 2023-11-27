@@ -66,3 +66,6 @@ $$\Huge \mathbb E[g(X)h(Y)]=\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}g(x)h(y)p_
 Since $X$ and $Y$ are independent. Finally we get:$$\Huge =\sum_{x\in\mathcal X}g(x)p_X(x)\sum_{y\in\mathcal Y}h(y)p_Y(y)=\mathbb E[g(X)]\mathbb E[h(Y)]$$
 This has a corollary where if $X$ and $Y$ are independent, then this implies that their covariance is $0$. This implication only goes one way:$$\Huge cov(X,Y)=\mathbb E[XY]-\mathbb E[X]\mathbb E[Y]=\mathbb E[X]\mathbb E[Y]-\mathbb E[X]\mathbb E[Y]=0$$
 If $X_1,\dots,X_n$ are pairwise independent, then:$$\Huge var\left(\sum_{i=1}^nX_i\right)=\sum_{i=1}^nvar(X_i)+2\sum_{i<j}cov(X_i,X_j)=\sum_{i=1}^nvar(X_i)$$
+# Inequalities:
+
+For a random variable $X$, if $\mathbb P(X\geq a)=1$, then :$$\Huge\mathbb E[X]\geq a$$
