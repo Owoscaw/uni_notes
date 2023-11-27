@@ -62,4 +62,7 @@ This is because $\mathbb E[X]=\mathbb E[g(Y)]$. Then by LOTUS, we get:$$\Huge \m
 If $X$ and $Y$ are real valued random variables, then they are independent if:$$\Huge \mathbb E[XY]=\mathbb E[X]\mathbb E[Y]$$
 Then for functions $g,h:\Re\mapsto\Re$:$$\Huge \mathbb E[g(X)h(Y)]=\mathbb E[g(X)]\mathbb E[h(Y)]$$More generally, for random variables $X_1,\dots,X_n$:$$\Huge \mathbb E\left[\prod_{i=1}^nX_i\right]=\prod_{i=1}^n\mathbb E[X_i]$$
 This is because by LOTUS, we get:
-$$\Huge \mathbb E[g(X)h(Y)]=\sum_{x\in\mathcal X}$$
+$$\Huge \mathbb E[g(X)h(Y)]=\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}g(x)h(y)p_{X,Y}(x,y)=\sum_{x\in\mathcal X}\sum_{y\in\mathcal Y}g(x)p_X(x)h(y)p_Y(y)$$
+Since $X$ and $Y$ are independent. Finally we get:$$\Huge =\sum_{x\in\mathcal X}g(x)p_X(x)\sum_{y\in\mathcal Y}h(y)p_Y(y)=\mathbb E[g(X)]\mathbb E[h(Y)]$$
+This has a corollary where if $X$ and $Y$ are independent, then this implies that their covariance is $0$. This implication only goes one way:$$\Huge cov(X,Y)=\mathbb E[XY]-\mathbb E[X]\mathbb E[Y]=\mathbb E[X]\mathbb E[Y]-\mathbb E[X]\mathbb E[Y]=0$$
+If $X_1,\dots,X_n$ are pairwise independent, then:$$\Huge var\left(\sum_{i=1}^nX_i\right)=\sum_{i=1}^nvar(X_i)+2\sum_{i<j}cov(X_i,X_j)=\sum_{i=1}^nvar(X_i)$$
