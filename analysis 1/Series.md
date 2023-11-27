@@ -49,3 +49,11 @@ Let $\sum_{k=1}^\infty a_k$ be a series. This series is absolute convergent if $
 Let $\sum_{k=1}^\infty a_k$ be absolute convergent. Then $\sum_{k=1}^\infty 2|a_k|$ is also convergent by COLT. Since $0\leq |a_k|+a_k\leq 2|a_k|$. By the comparison theorem, $\sum_{k=1}^\infty|a_k|+a_k$ is convergent. Using COLT again, we get:$$\Huge \sum_{k=1}^\infty a_k=\sum_{k=1}^\infty|a_k|+a_k-|a_k|\,\,\text{is convergent}$$
 We have the result by the triangle inequality when considering:$$\Huge \left|\sum_{k=1}^n a_k\right|\leq\sum_{k=1}^n|a_k|\leq\sum_{k=1}^\infty|a_k|$$And taking the limit as $n\to\infty$. Since we know it is convergent.
 
+# Ratio test:
+
+Let $(a_k)_{k\in\mathbb N}$ be a sequence with $a_k\neq0$ for all but possibly finitely many $k$:
+> If $\displaystyle{\lim_{k\to\infty}\left|\frac{a_{k+1}}{a_k}\right|<1}$ then the series $\displaystyle{\sum_{k=1}^\infty a_k}$ converges absolutely
+> If $\displaystyle{\lim_{k\to\infty}\left|\frac{a_{k+1}}{a_k}\right|>1}$ then the series $\displaystyle{\sum_{k=1}^\infty a_k}$ is divergent
+> If this limit equals $1$, try a different test
+
+This limit does not necessarily have to exist. In fact if $\displaystyle{\limsup_{k\to\infty}}\left|\frac{a_{k+1}}{a_k}\right|<1$, then we can conclude the same as above. The other case where if $\left|\frac{a_{k+1}}{a_k}\right|\geq1$ for all but finitely many $k$, then the series diverges.
