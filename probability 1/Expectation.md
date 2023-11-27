@@ -50,3 +50,5 @@ Now let $X$ be a real valued random variable, the conditional expectance of $X$ 
 For the general case, we get:$$\Huge \mathbb E[X|A]=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)$$
 This is proven by letting $Y=X1_A$, then for $x\neq 0$ we get:$$\Huge \mathbb P(Y=1)=\mathbb P(\{X=x\}\cap A)=\mathbb P(X=x|A)\mathbb P(A)$$$$\Huge \mathbb E[Y]=\sum_{x\in\mathcal X}x\mathbb P(Y=x)=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)\mathbb P(A)$$$$\Huge \mathbb E[X|A]=\frac{\mathbb E[X1_A]}{\mathbb P(A)}=\sum_{x\in\mathcal X}x\mathbb P(X=x|A)$$
 Since conditional probability can be defined on expectance, it follows that a partition theorem exists. Let $X$ be a real valued random variables, and $E_1,\dots,E_k$ be $k$ events that form a partition, then:$$\Huge \mathbb E(X)=\sum_{i=1}^k\mathbb E(X|E_i)\mathbb P(E_i)$$
+This is because each $E_i$ are pairwise disjoint, and the union over all events is $\Omega$, so we get:$$\Huge 1=1_\Omega=1_{\cup_iE_i}=\sum_i1_{E_i}$$
+Then by linearity of expectation we get:$$\Huge \mathbb E(X)=\mathbb E\left[X\sum_i1_{E_i}\right]=\sum_i\mathbb E(X1_{E_i})$$
