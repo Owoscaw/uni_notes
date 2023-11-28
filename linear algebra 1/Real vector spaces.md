@@ -131,7 +131,7 @@ Both $U+W$ and $U\cap W$ are vector subspaces of $V$. Note that:
 Let $U,W$ be finite dimensional vector subspaces of $V$, then:$$\Huge dim(U)+dim(W)=dim(U+W)+dim(U\cap W)$$Proof:
 ![[vector intersection proof]]
 
-#  Direct sum:
+## Direct sum:
 
 Suppose that $U,W$ are vector subspaces of $V$ that satisfy:
 > $U+W=V$
