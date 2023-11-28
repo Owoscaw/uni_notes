@@ -14,4 +14,7 @@ These can be used to simplify generating functions into a more compact form, whe
 
 # [[Recurrence relations]] and generating functions:
 
-Generating functions are often used to solve recurrence relations. The generating function for $(a_n)$ can be written as $\sum_{n=0}^\infty a_nx^n$. $a_n$ is substituted for the given recurrence formula
+Generating functions are often used to solve recurrence relations. The generating function for $(a_n)$ can be written as $\sum_{n=0}^\infty a_nx^n$. $a_n$ is substituted for the given recurrence formula. For example, if the first $N$ initial conditions are given, then the recurrence relation can be given by:$$\Huge f(x)=a_0+a_1x+\dots+a_Nx^N+\sum_{n=N}^\infty a_nx^n$$
+Assume the relation $a_n=b_0a_{n-1}+b_1a_{n-2}+\dots+b_ka_{n-k}$ is given, then the sum becomes:$$\large \sum_{n=N}^\infty a_nx^n=\sum_{n=N}^\infty (b_0a_{n-1}+\dots+b_ka_{n-k})x_n=b_0\sum_{n=N}^\infty a_{n-1}x^n+\dots+b_k\sum_{n=N}^\infty a_{n-k}x^n$$
+The powers and indexes of each term can be made equal by factoring powers of $x$ the sum to make it in the form:$$\Huge \sum_{n=N}^\infty a_nx^n=b_0x\sum_{n=N}^\infty a_{n-1}x^{n-1}+\dots+b_kx^k\sum_{n=N}^\infty a_{n-k}x^{n-k}$$
+This sum can be further manipulated to make each summand $a_nx^n$:$$\Huge \sum_{n=N}^\infty a_nx^n=b_0x\sum_{n=N-1}^\infty a_nx^n+\dots+b_kx^k\sum_{n=N-k}^\infty a_nx^n$$
