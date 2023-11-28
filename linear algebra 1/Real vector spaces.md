@@ -135,7 +135,7 @@ Let $U,W$ be finite dimensional vector subspaces of $V$, then:$$\Huge dim(U)+dim
 
 Suppose that $U,W$ are vector subspaces of $V$ that satisfy:
 > $U+W=V$
-> $U\cap W=\emptyset$
+> $U\cap W=\{\underline 0\}$
 
 When we say that $V$ is the direct sum of $U$ and $W$, written as $V=U\oplus W$. Knowing this, the following are pairwise equivalent:
 > $V=U\oplus W$
@@ -143,6 +143,7 @@ When we say that $V$ is the direct sum of $U$ and $W$, written as $V=U\oplus W$.
 > $V=U+W$ and $dim(V)=dim(U)+dim(W)$
 > Every $v\in V$ can be uniquely written as $v=u+w$ where $u\in U,w\in W$
 
+The equivalence of the first 3 statements follow from the theorem and its above proof.
 
 # Coordinates:
 
