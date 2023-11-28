@@ -147,4 +147,5 @@ The equivalence of the first 3 statements follow from the theorem and its above 
 
 # Coordinates:
 
-
+Suppose $\{v_1,\dots,v_n\}\subseteq\Re^n$ is an ordered basis. Then each $\underline u\in\Re^n$ can be written uniquely as a linear combination of the elements of the basis, that is:$$\Huge \underline u=x_1\underline v_1+x_2\underline v_2+\dots+x_n\underline v_n$$
+($x_1,\dots,x_n$) are called the coordinates of $\underline u$ with respect to the basis. Let $P=\begin{pmatrix}\underline v_1&\dots&v_n\end{pmatrix}\in M_n(\Re)$, we know this is invert
