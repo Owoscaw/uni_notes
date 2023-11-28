@@ -26,7 +26,7 @@ $$
 Notice that $a_k\geq0$ is bounded by the limit of $t_n$. So if $s_n$ is not convergent, it is not bounded by the limit of $t_n$, so this limit cannot exist. Therefore $t_n$ must also be divergent.
 
 Let $\alpha\in\Re$, then:$$\Huge \sum_{k=1}^\infty\frac{1}{k^\alpha}\,\,\text{converges}\iff\alpha>1$$
-If $\alpha=1$, we get the harmonic series, which has been shown to diverge. If we take $\alpha\leq1$, we get that the series is still divergent by the above theorem. So now assume $\alpha>1$:
+If $\alpha=1$, we get the harmonic series, which has been shown to diverge. If we take $\alpha\leq1$, we get that the series is still divergent by the comparison test. So now assume $\alpha>1$:
 ![[inverse alpha convergence]]
 
 # Alternating series:
