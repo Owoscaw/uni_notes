@@ -148,4 +148,6 @@ The equivalence of the first 3 statements follow from the theorem and its above 
 # Coordinates:
 
 Suppose $\{v_1,\dots,v_n\}\subseteq\Re^n$ is an ordered basis. Then each $\underline u\in\Re^n$ can be written uniquely as a linear combination of the elements of the basis, that is:$$\Huge \underline u=x_1\underline v_1+x_2\underline v_2+\dots+x_n\underline v_n$$
-($x_1,\dots,x_n$) are called the coordinates of $\underline u$ with respect to the basis. Let $P=\begin{pmatrix}\underline v_1&\dots&v_n\end{pmatrix}\in M_n(\Re)$, we know this is invert
+($x_1,\dots,x_n$) are called the coordinates of $\underline u$ with respect to the basis. Let $P=\begin{pmatrix}\underline v_1&\dots&\underline v_n\end{pmatrix}\in M_n(\Re)$, we know this is invertible as the vectors forming a basis implies that $det(P)\neq 0$. Then we have:$$\Huge P\underline e_i=\underline v_i$$
+then:$$\Huge \underline u=x_1P\underline e_1+x_2P\underline e_2+\dots+x_nP\underline e_n=P(x_1\underline e_1+\dots+x_n\underline e_n)=P\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}$$
+This gives the result:$$\Huge \begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}=P^{-1}\underline u$$
