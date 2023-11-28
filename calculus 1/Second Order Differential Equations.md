@@ -59,4 +59,5 @@ Note that $W(y_1,y_2)\neq0$ as we required that $y_1$ and $y_2$ are linearly ind
 
 # Systems of first order linear ODEs:
 
-A system of $n$ coupled linear ODEs for $n$ different dependent variables can be rewritten as a single $n$th order linear ODE in a single dependent variable by eliminating the other depend
+A system of $n$ coupled linear ODEs for $n$ different dependent variables can be rewritten as a single $n$th order linear ODE in a single dependent variable by eliminating the other dependent variables. This results in an associated IVP if all the values of the $n$ dependent variables are specified at a single value of the independent variable:
+![[Second Order Differential Equations .excalidraw]]
