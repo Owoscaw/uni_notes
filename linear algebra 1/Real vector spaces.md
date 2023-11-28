@@ -127,6 +127,7 @@ Both $U+W$ and $U\cap W$ are vector subspaces of $V$. Note that:
 > If $U=span(u_1,\dots,u_j)$ and $W=span(w_1,\dots,w_k)$, then we have $U+W=span(u_1,\dots,u_j,w_1,\dots,w_k)$. This does not always give a basis for $U+W$.
 > For two lines in $\Re^n$ such that $L_1,L_2$ have direction vectors $d_1,d_2$ respectively and pass through the origin, then $L_1+L_2$ is the plane spanned by $d_1$ and $d_2$. (this is a line if they are colinear).
 
+
 Let $U,W$ be finite dimensional vector subspaces of $V$, then:$$\Huge dim(U)+dim(W)=dim(U+W)+dim(U\cap W)$$Proof:
 ![[vector intersection proof]]
 
@@ -141,4 +142,8 @@ When we say that $V$ is the direct sum of $U$ and $W$, written as $V=U\oplus W$.
 > If $\{u_1,\dots,u_s\}$ is a basis for $U$, and if $\{w_1,\dots,w_t\}$ is a basis for $W$, then $\{u_1,\dots,u_s,w_1,\dots,w_t\}$ is a basis for $V$
 > $V=U+W$ and $dim(V)=dim(U)+dim(W)$
 > Every $v\in V$ can be uniquely written as $v=u+w$ where $u\in U,w\in W$
+
+
+# Coordinates:
+
 
