@@ -58,7 +58,7 @@ Calculating $n=0$ traditionally allows for any further cases of $n$ to be found,
 ![[recurrence integral example]]
 This relation only relates every other term, whereas the previous relation related every term to the next.
 
-# Event and odd integrals:
+# Even and odd integrals:
 
 If $f_{odd}(x)$ is an integrable odd function on $[-a,a]$, then:$$\Huge \int_{-a}^af_{odd}(x)dx=0$$
 $$\large \int_{-a}^af_{odd}(x)dx=\int_0^af_{odd}(x)dx+\int_{-a}^0f_{odd}(x)dx=\int_0^af_{odd}(x)dx-\int_a^0f_{odd}(-x)dx$$

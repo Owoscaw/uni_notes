@@ -56,3 +56,7 @@ This gives $2$ simultaneous equations for $u_1$ and $u_2$ (we chose the other). 
 $$\Huge u_1'y_1'y_1+u_2'y_2'y_1=\frac{\phi(x)y_1}{\alpha_2}=u_2'(y_2'y_1-y_2y_1')$$This used the constraint $u_1'y_1+u_2'y_2$. We can then find formulae for the derivative of each $u$:
 $$\Huge u_2'=\frac{\phi(x)y_1}{\alpha_2W(y_1,y_2)},\,\,\text{similarly}\,\,u_1'=-\frac{\phi(x)y_2}{\alpha_2W(y_1,y_2)}$$
 Note that $W(y_1,y_2)\neq0$ as we required that $y_1$ and $y_2$ are linearly independent. Finally, we find $u_1$ and $u_2$ by directly integrating:$$\Huge u_1(x)=-\int\frac{\phi(x)y_2}{\alpha_2W(y_1,y_2)}dx,\,\,u_2(x)=\int\frac{\phi(x)y_1}{\alpha_2W(y_1,y_2)}dx$$
+
+# Systems of first order linear ODEs:
+
+A system of $n$ coupled linear ODEs for $n$ different dependent variables can be rewritten as a single $n$th order linear ODE in a single dependent variable by eliminating the other depend
