@@ -59,4 +59,10 @@ Let $(a_k)_{k\in\mathbb N}$ be a sequence with $a_k\neq0$ for all but possibly f
 This limit does not necessarily have to exist. In fact if $\displaystyle{\limsup_{k\to\infty}}\left|\frac{a_{k+1}}{a_k}\right|<1$, then we can conclude the same as above. The other case where if $\left|\frac{a_{k+1}}{a_k}\right|\geq1$ for all but finitely many $k$, then the series diverges.
 
 We can show that if $\left|\frac{a_{k+1}}{a_k}\right|\leq q<1$ for all but finitely many $k$, then the series converges absolutely. We assume that this inequality is true for all $k\geq n_0\in\mathbb N$. This implies that for all $j\in\mathbb N$, $|a_{n_0+j}|\leq q|a_{n_0+j-1}|\leq\dots\leq q^j|a_{n_0}|$. Now we look at the series:$$\Huge \sum_{j=1}^\infty|a_{n_0+j}|\leq\sum_{j=1}^\infty q^j|a_{n_0}|=\frac{|a_{n_0}|}{1-q}\,\,\text{is convergent}$$
-By the comparison theorem, our LHS series must also converge
+By the comparison theorem, our LHS series must also converge. So we have that:$$\Huge \sum_{j=1}^\infty|a_{n_0+j}|=\sum_{j=n_0+1}^\infty a_j\,\,\text{converges absolutely}$$
+On the other hand, we assume that $\left|\frac{a_{k+1}}{a_k}\right|\geq 1$ for all $k\geq n_0$. Then $|a_{k+1}|\geq|a_k|\geq|a_{n_0}|>0$. We have that every term is greater than the previous, so the series is bounded from below by $0$ and is not bounded above, as there will always be a term $|a_{k+1}|$ that makes the series greater. Since this series is unbounded, it does not converge.
+
+# Root test:
+
+For a sequence $(a_k)_{k\in\mathbb N}$, we set $a=\limsup_{k\to\infty} \sqrt[k]{|a_k|}$. Then we get:
+> If $a<1$ then $\displaystyle{\sum_{k=1}^\infty a_k}$ 
