@@ -71,3 +71,8 @@ For a sequence $(a_k)_{k\in\mathbb N}$, we set $a=\limsup_{k\to\infty} \sqrt[k]{
 To prove this, assume $a<1$. Then for all buy finitely many $k\geq n_0$ we have:$$\Huge \sqrt[k]{|a_k|}\leq q<1\implies|a_k|\leq q^k$$
 Comparing this with a converging geometric series $\sum_{k=1}^\infty q^k$, we get that the aforementioned series is convergent. To prove the other part, assume $a>1$. Then there exists $q>1$ with:$$\Huge \sqrt[k]{|a_k|}\geq q>1\implies|a_k|\geq q^k$$
 Comparing this with the diverging geometric series $\sum_{k=1}^\infty q^k$, we get that the aforementioned series is divergent. Both parts of this proof use the comparison test.
+
+# Rearrangement of series:
+
+$$\Huge \sum_{k=1}^\infty\frac{(-1)^{k+1}}{k}$$
+Is a convergent series by the alternating sign test, with limit $c\in(\frac{1}{2},1)$. Rearranging the summands such that every positive term is followed by the next two negative summands 
