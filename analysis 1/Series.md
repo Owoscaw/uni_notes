@@ -65,4 +65,9 @@ On the other hand, we assume that $\left|\frac{a_{k+1}}{a_k}\right|\geq 1$ for a
 # Root test:
 
 For a sequence $(a_k)_{k\in\mathbb N}$, we set $a=\limsup_{k\to\infty} \sqrt[k]{|a_k|}$. Then we get:
-> If $a<1$ then $\displaystyle{\sum_{k=1}^\infty a_k}$ 
+> If $a<1$ then $\displaystyle{\sum_{k=1}^\infty a_k}$ is absolutely convergent
+> If $a>1$ then $\displaystyle{\sum_{k=1}^\infty a_k}$ diverges
+
+To prove this, assume $a<1$. Then for all buy finitely many $k\geq n_0$ we have:$$\Huge \sqrt[k]{|a_k|}\leq q<1\implies|a_k|\leq q^k$$
+Comparing this with a converging geometric series $\sum_{k=1}^\infty q^k$, we get that the aforementioned series is convergent. To prove the other part, assume $a>1$. Then there exists $q>1$ with:$$\Huge \sqrt[k]{|a_k|}\geq q>1\implies|a_k|\geq q^k$$
+Comparing this with the diverging geometric series $\sum_{k=1}^\infty q^k$, we get that the aforementioned series is divergent. Both parts of this proof use the comparison test.
