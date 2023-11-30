@@ -11,6 +11,21 @@ class Poly():
     def evaluate(self, x):
         return sum([self.__coefs[i]*x**i for i in range(len(self.__coefs))])
     
+    def display(self):
+        poly_as_string = ""
+        for i in range(self.__order+1):
+            if i > 1 and self.__coefs[i] > 0:
+                poly_as_string += "+{}x^{}".format(self.__coefs[i], i)
+            elif self.__coefs[i] < 0:
+                poly_as_string += "{}x^{}".format(self.__coefs[i], i)
+            elif i == 0:
+                poly_as_string += "{}".format(self.__coefs[i])
+            else:
+                poly_as_string += "+{}x".format(self.__coefs[i])
+            print(poly_as_string)
+
+        print(poly_as_string)
+
     def get_order(self):
         return self.__order
     
@@ -35,4 +50,6 @@ class Poly():
 
 poly1 = Poly(1, 1)
 poly2 = Poly(0, 2)
-print(poly2.evaluate(-2))
+poly1.display()
+# poly3 = poly1 + poly2
+# print(poly2.evaluate(-2))
