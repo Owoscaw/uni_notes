@@ -13,3 +13,8 @@ If $x=a$ is omitted, assume $x=0$. This is called the Maclaurin series. The Tayl
 
 If $f(x)$ is infinitely differentiable (smooth) on an open interval $I$ that contains $x=a$, as well as for all $x\in I,\,\lim_{n\to\infty}R_n(x)=0$, then we can say that the Taylor series about $x=a$ is given by:$$\Huge f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{k!}(x-a)^n$$
 The $n$th order Taylor polynomial is obtained by taking the first $n+1$ terms of the Taylor series, including zero terms.
+
+# Lagrange form of the remainder:
+
+There exists a more convenient expression for the remainder function from Taylor's theorem. This is called the Lagrange form of the remainder, given by:$$\Huge R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\,\,\text{for some}\,\,c\in(a,x)$$
+The proof of this requires the following lemma: Let $h(t)$ be a differentiable function $n+1$ times on the interval $[a,x]$ with $h^{(k)}(a)=0$ for $0\leq k\leq n$ and $h(x)=0$. Then $\exists c\in(a,x):h^{(n+1)}(c)=0$.
