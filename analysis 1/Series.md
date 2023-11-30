@@ -75,4 +75,4 @@ Comparing this with the diverging geometric series $\sum_{k=1}^\infty q^k$, we g
 # Rearrangement of series:
 
 $$\Huge \sum_{k=1}^\infty\frac{(-1)^{k+1}}{k}$$
-Is a convergent series by the alternating sign test, with limit $c\in(\frac{1}{2},1)$. Rearranging the summands such that every positive term is followed by the next two negative summands 
+Is a convergent series by the alternating sign test, with limit $c\in(\frac{1}{2},1)$. Rearranging the summands such that every positive term is followed by the next two negative summands leads to the result that $c=\frac{1}{2}c$, which implies that $c=0$, a contradiction. This shows that the commutativity used in finite sums cannot be used for infinite sums.
