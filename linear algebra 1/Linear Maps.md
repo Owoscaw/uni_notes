@@ -9,4 +9,6 @@ For example, suppose that $A\in M_{m\times n}(\Re)$. We then defined $T=T_A:\Re^
 
 Suppose vector spaces $V$ and $W$ and let $\{\underline v_1,\dots,\underline v_n\}$ be a basis for $V$. Then we have:
 > A linear map $T:V\mapsto W$ is determined by its values on the basis, $T(\underline v_1),\dots,T(\underline v_n)$.
-> Conversely, given arbitrary vectors $\underline w_1,\dots,\un$
+> Conversely, given arbitrary vectors $\underline w_1,\dots,\underline w_n\in W$ there exists a linear map $T:V\mapsto W$ with $T(\underline v_1)=w_1,\dots,T(\underline v_n)=w_n$.
+
+Suppose $\underline v\in V$, then $\underline v$ can be written as $\underline v=\lambda_1\underline v_1+\dots+\lambda_n\underline v_n$ for some $\lambda_i\in\Re$, so $T(\underline v)=T(\lambda_1\underline v_1+\dots+\lambda_n\underline v_n)=\lambda_1T(\underline v_1)+\dots+\lambda_nT(\underline v_n)$. So the map is fully characterised by $T(\underline v_1),\dots,T(\underline v_n)$, as any vector that undergoes this map is expressed as a linear combination of basis elements that have undergone the map. For the second part of the proof, note that the linear combination of basis elements uniquely defines any $v\in V$. So we define:$$\Huge T(\underline v)=\lambda_1\underline w_1+\dots+\lambda_n\underline w_n$$This shows that $T$ is well defined, by the uniqueness of each $\lambda_i\in\Re$. If $\underline u_1,\underline u_2\in V$
