@@ -1,0 +1,1 @@
+A linear map from [[Real vector spaces|vector spaces]] $V$ to $W$ is a function $T:V\mapsto W$ that satisfies the f

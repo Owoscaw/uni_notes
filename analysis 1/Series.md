@@ -1,4 +1,4 @@
-# Fundamental notions and properties:
+0r# Fundamental notions and properties:
 
 Let $(a_k)_{k\in\mathbb N}$ be a [[Sequences#Limit of a sequence|sequence]]. Then the sequence of partial sums $(s_n)_{n\in\mathbb N}$ is defined as:$$\Huge S_n=\sum_{k=1}^na_k=a_1+\dots+a_n$$
 This sequence is called the series of $(a_k)_{k\in\mathbb N}$ . If the sequence $(S_n)_{n\in\mathbb N}$ is convergent, then the series is convergent. In this case we write:$$\Huge \sum_{k=1}^\infty a_k=\lim_{n\to\infty}s_n$$
