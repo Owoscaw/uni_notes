@@ -25,4 +25,5 @@ This expands to a generating function, that can be used to solve the recurrence 
 
 # Partitions:
 
-A partition of a positive integer $n$ is an expression of $n$ as an unordered sum of positive integers, called the parts of the partition. Let $p(n)$ represent the number of partitions of $n$. $p(5)=7$ since $5=4+1=3+2=3+1+1=2+3=2+2+1=2+1+1+1=1+1+1+1+1$. There are $7$ unordered sums that $5$ can be written as.
+A partition of a positive integer $n$ is an expression of $n$ as an unordered sum of positive integers, called the parts of the partition. Let $p(n)$ represent the number of partitions of $n$. $p(5)=7$ since $5=4+1=3+2=3+1+1=2+3=2+2+1=2+1+1+1=1+1+1+1+1$. There are $7$ unordered sums that $5$ can be written as. As of writing, there does not exist an explicit formula or recurrence relation for $p(n)$, however Hardy and Ramanujan showed that:$$\Huge p(n)\sim\frac{1}{4n\sqrt{3}}\exp\left(\pi\sqrt{\frac{2n}{3}}\right)\,\,\text{as}\,\,n\to\infty$$
+We can make significant process for $p(n)$ using generating functions. We find the number $a_n$ of partitions into $n$ distinct positive integers. In such a partition, each integer $k$ is either present or not. Denote $e_k$ as the integer's contribution to the partition, then it can be described as $(e_1,e_2,\dots)$ satisfying:$$\Huge e_1+e_2+$$
