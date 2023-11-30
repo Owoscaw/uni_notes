@@ -22,3 +22,7 @@ If $k=N$, then the last term is in the appropriate form of $f(x)$, if not then f
 Finally substituting this back into the original relation gives:$$\Huge f(x)=a_0+\dots+a_Nx^N+\left(b_1x\sum_{n=N-1}^\infty a_nx^n+\dots+b_kx^k\sum_{n=N-k}^\infty a_nx^n\right)$$$$\large f(x)=a_0+\dots+a_Nx^N+\left(b_1xf(x)-b_1x\sum_{n=0}^{N-2}a_nx^n+\dots+b_kx^kf(x)-b_kx^k\sum_{n=0}^{N-k-1}a_nx^n\right)$$$$\Huge f(x)=a_0+\dots+a_Nx^N+(b_1x+\dots+b_kx^k)f(x)-\sum_{n=1}^kb_kx^k\sum_{m=1}^{N-n-1}a_mx^m$$
 Rearranging to solve $f(x)$ gives:$$\Huge f(x)(1-b_1x-\dots-b_kx^k)=a_0+\dots+a_Nx^N-\sum_{n=1}^kb_kx^k\sum_{n=m}^{N-n-1}a_mx^m$$$$\Huge f(x)=\frac{\sum_{n=0}^Na_nx^n-\sum_{n=1}^kb_kx^k\sum_{m=1}^{N-n-1}a_mx^m}{1-\sum_{n=1}^kb_kx^k}$$
 This expands to a generating function, that can be used to solve the recurrence relation.
+
+# Partitions:
+
+A partition of a positive integer $n$ is an expression of $n$ as an unordered sum of positive integers, called the parts of the partition. Let $p(n)$ represent the number of partitions of $n$. $p(5)=7$ since $5=4+1=3+2=3+1+1=2+3=2+2+1=2+1+1+1=1+1+1+1+1$. There are $7$ unordered sums that $5$ can be written as.
