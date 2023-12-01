@@ -22,4 +22,6 @@ This is proven by applying the central limit theorem. Let $X_1,X_2,\dots$ be ide
 
 # Generating functions:
 
-For any real valued random variable 
+For any real valued random variable $X$, the function $M_X:\Re\mapsto[0,\infty]$ is given by:$$\Huge M_X(t)=\mathbb E[e^{tx}]\,\,\forall t\in\Re$$
+Using LOTUS, we can derive the following definitions for $M_X(t)$:$$\Huge M_X(t)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}e^{tx}p(x)}&\text{if X is discrete}\\\displaystyle{\int_{-\infty}^\infty e^{tx}f(x)}&\text{if X is continuous}\end{cases}$$
+Note that $M_X(t)\geq 0$ but can take the value $+\infty$.
