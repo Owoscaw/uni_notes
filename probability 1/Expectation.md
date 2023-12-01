@@ -68,4 +68,8 @@ This has a corollary where if $X$ and $Y$ are independent, then this implies tha
 If $X_1,\dots,X_n$ are pairwise independent, then:$$\Huge var\left(\sum_{i=1}^nX_i\right)=\sum_{i=1}^nvar(X_i)+2\sum_{i<j}cov(X_i,X_j)=\sum_{i=1}^nvar(X_i)$$
 # Inequalities:
 
+We can produce a number of results by considering the monotonicity of sums and integrals, that is for $f(x)\geq g(x)$:$$\Huge \sum_if(x_i)\geq\sum_ig(x_i)\,\,\text{and}\,\,\int_Af(x)dx\geq\int_Ag(x)dx$$
 For a random variable $X$, if $\mathbb P(X\geq a)=1$, then :$$\Huge\mathbb E[X]\geq a$$
+This has a corollary where variance is non-negative, since the variance comes from $\mathbb E[(X-\mathbb E[X])^2]$, we are taking the expectation of a term that is $\geq 0$, and by the above result we get that $var(X)\geq 0$. This gives rise to another inequality:
+$$\Huge \text{If}\,\,X\geq0,a>0:\,\,\mathbb P(X\geq a)\leq\frac{\mathbb E[X]}{a}$$
+Note $X\geq a1_{\{X\geq a\}}$, so $X-a1_{\{X\geq a\}}\geq 0$, so we get $\mathbb E[X-a1_{X\geq a}]=\m\geq 0$
