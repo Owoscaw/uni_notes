@@ -10,6 +10,6 @@ This is interpreted as being very close to the expected value $\mu$ for large $n
 
 # The central limit theorem:
 
-Suppose a sequence of infinite independent variables, $X_1,X_2,\dots$. Then let $\mathbb E[X]=\mu,var(X)=\sigma^2,\,\sigma>0$. Define the following:$$\Huge S_n=\sum_{i=1}^nX_i,\,\,\overline X_n=\frac{S_n}{n}$$
+Suppose a sequence of identically distributed independent variables, $X_1,X_2,\dots$. Then let $\mathbb E[X]=\mu,var(X)=\sigma^2,\,\sigma>0$. Define the following:$$\Huge S_n=\sum_{i=1}^nX_i,\,\,\overline X_n=\frac{S_n}{n}$$
 Then for any $z\in\Re$:$$\Huge Z_n:=\frac{S_n-n\mu}{\sigma\sqrt{n}}=\frac{\overline X_n-\mu}{\sigma/\sqrt{n}}$$$$\Huge \lim_{n\to\infty}F_{Z_n}(z)=\lim_{n\to\infty}\mathbb P(Z_n\leq z)=\Phi(z)$$
 Here, $Z_n$ converges in distribution to the [[Random variables#Normal distribution|standard normal distribution]].
