@@ -13,3 +13,13 @@ This is interpreted as being very close to the expected value $\mu$ for large $n
 Suppose a sequence of identically distributed independent variables, $X_1,X_2,\dots$. Then let $\mathbb E[X]=\mu,var(X)=\sigma^2,\,\sigma>0$. Define the following:$$\Huge S_n=\sum_{i=1}^nX_i,\,\,\overline X_n=\frac{S_n}{n}$$
 Then for any $z\in\Re$:$$\Huge Z_n:=\frac{S_n-n\mu}{\sigma\sqrt{n}}=\frac{\overline X_n-\mu}{\sigma/\sqrt{n}}$$$$\Huge \lim_{n\to\infty}F_{Z_n}(z)=\lim_{n\to\infty}\mathbb P(Z_n\leq z)=\Phi(z)$$
 Here, $Z_n$ converges in distribution to the [[Random variables#Normal distribution|standard normal distribution]].
+
+# Normal approximations:
+
+Let $X_n\sim Bin(n,p), B_n=\frac{X_n}{n}$ and:$$\Huge Z_n=\frac{X_n-np}{\sqrt{np(1-p)}}=\frac{B_n-p}{\sqrt{p(1-p)/n}}$$
+Then:$$\Huge \lim_{n\to\infty}\mathbb P(Z_n\leq z)=\Phi(z)\,\,\forall z\in\Re$$
+This is proven by applying the central limit theorem. Let $X_1,X_2,\dots$ be identically distributed independent random variables. Let $S_n=\sum_{i=1}^nX_i$, we know that $\mathbb E[S_n]=np$ and $var(S_n)=\sum_{i=1}^nvar(X_i)=n\,var(X_1)=np(1-p)$. Applying the theorem gives the result above for $Z_n$, which gives the approximation as required. So for large enough $n$ and $0<p<1$:$$\Huge \mathbb P(X\leq x)\approx\Phi\left(\frac{x-np}{\sqrt{np(1-p)}}\right)$$
+
+# Generating functions:
+
+For any real valued random variable 
