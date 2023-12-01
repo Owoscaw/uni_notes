@@ -18,3 +18,8 @@ The $n$th order Taylor polynomial is obtained by taking the first $n+1$ terms of
 
 There exists a more convenient expression for the remainder function from Taylor's theorem. This is called the Lagrange form of the remainder, given by:$$\Huge R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\,\,\text{for some}\,\,c\in(a,x)$$
 The proof of this requires the following lemma: Let $h(t)$ be a differentiable function $n+1$ times on the interval $[a,x]$ with $h^{(k)}(a)=0$ for $0\leq k\leq n$ and $h(x)=0$. Then $\exists c\in(a,x):h^{(n+1)}(c)=0$.
+
+[[EVT, MVT, boundedness and monotonicity#Rolle's Theorem|Rolle's theorem]] can be used since $h(a)=h(x)=0$, so $\exists c_1\in(a,x)$ such that $h'(c_1)=0$. Now we can use the theorem again, because we have $h'(a)=h'(c_1)=0$, so $\exists c_1\in(a,c_1)$ such that $h''(c_2)=0$. This can be applied a total of $n$ times, so we finally get that $h^{(n)}(a)=h^{(n)}(c_n)=0$ so $\exists c_{n+1}\in(a,c_n)$ such that $h^{(n+1)}(c_{n+1})=0$. We claim that $c_{n+1}=c$, the original constant used in the Lagrange form of the remainder.
+
+Using a similar argument to the [[EVT, MVT, boundedness and monotonicity#Mean Value Theorem|mean value theorem]], we state:$$\Huge h(t)=(f(t)-P_n(t))(x-a)^{n+1}-(f(x)-P_n(x))(t-a)^{n+1}$$
+We have $h(x)=0$. Since $P_n(t)=\sum_{k=0}^n\frac{f^{()}}{}$
