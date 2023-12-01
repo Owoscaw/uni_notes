@@ -26,3 +26,7 @@ We have $h(x)=0$. Since $P_n(t)=\sum_{k=0}^n\frac{f^{(k)}(0)}{k!}(t-a)^k$, then 
 Rearranging, we get:$$\Huge f(x)=P_n(x)+\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$$As required.
 
 The Lagrange form of the remained is useful for putting an upper bound on the error of a Taylor polynomial approximation to a function. Suppose that:$$\Huge |f^{(n+1)}(t)|\leq M\,\,\forall t\in[a,x],\,\,\text{then:}$$$$\Huge |R_n(x)|=\left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|\leq\frac{M|x-a|^{n+1}}{(n+1)!}$$The significance of the absolute value signs indicates the absolute error of the function. This provides a bound on the error.
+
+# Calculating limits using Taylor series:
+
+Let $n\in\mathbb N_0$, we say that $f(x)=o(x^n)$ if $\lim_{x\to0}\frac{f(x)}{x^n}=0$. In particular, for any constant $\alpha\neq0$, $\alpha x^m=o(x^n)\iff m>n$  
