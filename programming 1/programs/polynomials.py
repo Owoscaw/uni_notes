@@ -14,15 +14,21 @@ class Poly():
     def display(self):
         poly_as_string = ""
         for i in range(self.__order+1):
+
+            adj_coef = self.__coefs[i]
+            if adj_coef == 1:
+                adj_coef = ""
+            elif adj_coef == -1:
+                adj_coef = "-"
+
             if i > 1 and self.__coefs[i] > 0:
-                poly_as_string += "+{}x^{}".format(self.__coefs[i], i)
+                poly_as_string += "+{}x^{}".format(adj_coef, i)
             elif self.__coefs[i] < 0:
-                poly_as_string += "{}x^{}".format(self.__coefs[i], i)
+                poly_as_string += "{}x^{}".format(adj_coef, i)
             elif i == 0:
                 poly_as_string += "{}".format(self.__coefs[i])
             else:
-                poly_as_string += "+{}x".format(self.__coefs[i])
-            print(poly_as_string)
+                poly_as_string += "+{}x".format(adj_coef)
 
         print(poly_as_string)
 
@@ -40,16 +46,30 @@ class Poly():
         new_coefs = [0]*(max_order + 1)
         if order_diff > 0:
             adj_coefs = other.get_coefs() + [0]*order_diff
-            new_coefs = [self.__coefs[i] + adj_coefs[i] for i in range(len(max_order))]
+            new_coefs = [self.__coefs[i] + adj_coefs[i] for i in range(max_order + 1)]
         else:
             adj_coefs = self.__coefs + [0]*order_diff
-            new_coefs = [other.get_coefs()[i] + adj_coefs[i] for i in range(len(max_order))]
+            new_coefs = [other.get_coefs()[i] + adj_coefs[i] for i in range(max_order + 1)]
 
-        return Poly(*new_coefs[0])
+        return Poly(*new_coefs)
+    
+    def __sub__(self, other):
+        max_order = max(self.__order, other.get_order())
+        order_diff = self.__order - other.get_order()
+
+        new_coefs = [0]*(max_order + 1)
+        if order_diff > 0:
+            adj_coefs = other.get_coefs() + [0]*order_diff
+            new_coefs = [self.__coefs[i] - adj_coefs[i] for i in range(max_order + 1)]
+        else:
+            adj_coefs = self.__coefs + [0]*order_diff
+            new_coefs = [adj_coefs[i] - other.get_coefs()[i] for i in range(max_order + 1)]
+
+        return Poly(*new_coefs)
 
 
-poly1 = Poly(1, 1)
+poly1 = Poly(1, 1, 3)
 poly2 = Poly(0, 2)
 poly1.display()
-# poly3 = poly1 + poly2
-# print(poly2.evaluate(-2))
+poly3 = poly1 - poly2
+poly3.display()
