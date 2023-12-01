@@ -1,0 +1,4 @@
+# Weak law of large numbers:
+
+Consider a coin tossed $n$ times, with probability of heads on each toss being $p$. Let $X$ denoted the number of heads and $B_n:=\frac{X}{n}$ be the proportion of heads tossed. Since $X\sim Bin(n,p)$, then the [[Expectation#Definition and interpretation|expectation]] and [[Expectation#Variance and Co-Variance|variance]] are given by $np,np(1-p)$ respectively. We also get:$$\Huge \mathbb E[B_n]=\frac{\mathbb E[x]}{n}=p,\,\,var(B_n)=\frac{Var(X)}{n^2}=\frac{p(1-p)}{n}$$
+So by [[Expectation#Inequalities|Chebychev's]] inequality, for any $\epsilon>0$:$$\Huge \mathbb P(|B_n-p|\geq \epsilon)\leq\frac{p(1-p)}{}$$
