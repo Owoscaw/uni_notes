@@ -29,4 +29,7 @@ The Lagrange form of the remained is useful for putting an upper bound on the er
 
 # Calculating limits using Taylor series:
 
-Let $n\in\mathbb N_0$, we say that $f(x)=o(x^n)$ if $\lim_{x\to0}\frac{f(x)}{x^n}=0$. In particular, for any constant $\alpha\neq0$, $\alpha x^m=o(x^n)\iff m>n$  
+Let $n\in\mathbb N_0$, we say that $f(x)=o(x^n)$ if $\lim_{x\to0}\frac{f(x)}{x^n}=0$. In particular, for any constant $\alpha\neq0$, $\alpha x^m=o(x^n)\iff m>n$.
+
+If we know that a Taylor series is valid on a given interval, then it may be useful in calculating certain limits. For example, the two most important trigonometric limits can be calculated in this way:
+$$ \lim_{x\to 0}\frac{\sin x}{x}=\lim_{x\to0}\frac{x-\frac{x^3}{3!}+o(x^4)}{x}=\lim_{x\to0}\left(1-\frac{x^2}{3!}+o(x^3)\right)=\lim_{x\to0}(1+o(x))=1+\lim_{x\to0}o(x)=1$$$$\large \lim_{x\to0}\frac{1-\cos x}{x}=\lim_{x\to0}\frac{1-1+\frac{x^2}{2!}+o(x^3)}{x}=\lim_{x\to0}\left(\frac{x}{2!}+o(x^2)\right)=\lim_{x\to0}o(x)=0$$
