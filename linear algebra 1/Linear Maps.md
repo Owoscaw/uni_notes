@@ -27,4 +27,11 @@ For the statement with real vector spaces we have:$$\Huge (S\circ T)(\underline 
 # Isomorphism:
 
 If $T:V\mapsto W$ is a linear map, we call $T$ an isomorphism if and only if $T$ is [[Functions, Domain and Range#Bijectivity|bijective]]. In this case we call $V$ and $W$ isomorphic and write $V\cong W$. We then suppose that if $T$ is isomorphic, then $T^{-1}:W\mapsto V$ is also isomorphic. This transformation is obviously bijective, but it is not obvious that it is linear, so we let $\underline w_1,\underline w_2,\underline w\in W,\lambda\in\Re$ and show:
-> $\underline v_1=T^{-1}(\underline w_1),\underline v_2=T^{-1}(\underline w_2)\implies T(\underline v_1)=\underline w_1,T(\underline v_2)=w_2$ so we then write:$$\Huge T(\underline v_1+\underline v_2)=T(\underline v_1)+T(\underline v_2)$$
+> $\underline v_1=T^{-1}(\underline w_1),\underline v_2=T^{-1}(\underline w_2)\implies T(\underline v_1)=\underline w_1,T(\underline v_2)=w_2$ so we then write:$$\Huge T(\underline v_1+\underline v_2)=T(\underline v_1)+T(\underline v_2)=\underline w_1+\underline w_2$$$$\Huge \underline v_1+\underline v_2=T^{-1}(\underline w_1+\underline w_2)=T^{-1}(\underline w_1)+T^{-1}(\underline w_2)$$Now we set $\underline v=T^{-1}(\underline w)$. Then:$$\Huge T(\lambda\underline v)=\lambda T(\underline v)=\lambda\underline w\implies\lambda T^{-1}(\underline w)=\lambda\underline v=T^{-1}(\lambda\underline w)$$
+> Therefore $T^{-1}$ is also a linear map.
+
+
+
+Suppose that $V$ has a basis $\{\underline v_1,\dots,\underline v_n\}$. Then the coordinate map $\Phi:V\mapsto\Re^n$ is an isomorphism:$$\Huge \lambda_1\underline v_1+\dots+\lambda_n\underline v_n=\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}$$
+We know that $\Phi$ is linear, so we check that it is bijective:$$\Huge \text{If}\,\,\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}\in\Re^n\,\,\text{then}\,\,\Phi(\lambda_1\underline v_1+\dots\lambda_n\underline v_n)=\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}$$Also if $\underline v,\underline w\in V$ where $\underline v\neq\underline w$, then if $\underline v=\lambda_1\underline v_1+\dots+\lambda_n\underline v_n$ and $\underline w=\mu_1\underline v_1+\dots+\mu_n\underline v_n$ then for at least one $i,\lambda_i\neq\mu_i$. This implies that $\Phi(\underline v)$ and $\P$
+
