@@ -30,3 +30,4 @@ Here, each $\mathbb E(X)$ is known as the moment. Increasing powers of $X$ insid
 > If $X,Y$ are two random variables with moment generating functions $M_X,M_Y$ respectively, then there is some $h>0$ such that:$$\Huge M_X(t)=M_Y(t)<\infty,\,\,\text{for all}\,\,|t|<h$$Then $X$ and $Y$ have the same distribution, that is $F_X(x)=F_Y(x)$ for all $x\in\Re$
 > For $a,b\in\Re$:$$\Huge M_{aX+b}(t)=e^{bt}M_X(at)$$
 > If $X_1,\dots,X_n$ are independent random variables and $S_n=\sum_{i=1}^nX_i$ then:$$\Huge M_{S_n}(t)=\prod_{i=1}^nM_{X_i}(t)$$
+> Suppose that $X,X_1,X_2,\dots$ are random variables. If there exists $h>0$ such that:$$\Huge \lim_{n\to\infty}M_{X_n}(t)=M_X(t)<\infty\,\,\text{for all }\,\,|t|<h$$Then $X_n$ converges in distribution to $X$. This means that 
