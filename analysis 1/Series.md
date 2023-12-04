@@ -76,3 +76,5 @@ Comparing this with the diverging geometric series $\sum_{k=1}^\infty q^k$, we g
 
 $$\Huge \sum_{k=1}^\infty\frac{(-1)^{k+1}}{k}$$
 Is a convergent series by the alternating sign test, with limit $c\in(\frac{1}{2},1)$. Rearranging the summands such that every positive term is followed by the next two negative summands leads to the result that $c=\frac{1}{2}c$, which implies that $c=0$, a contradiction. This shows that the commutativity used in finite sums cannot be used for infinite sums.
+
+Let $\sum_{k=1}^\infty a_k$ be a series that is convergent but not absolutely convergent, we call this conditionally convergent. Riemann's Rearrangement Theorem states that for $L\in\Re$, there exists a rearrangement:$$\Huge \sigma:\mathbb N\mapsto\mathbb N$$Such that the rearranged sum will converge to $L$. Moreover, the sum can also be rearranged so that it diverges. The idea of the proof is as follows: Take all the positive terms in $a_k$ and order them decreasingly, that is $b_1\geq b_2\geq\dots\geq b_n\geq\dots\geq 0$
