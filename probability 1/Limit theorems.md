@@ -20,7 +20,7 @@ Let $X_n\sim Bin(n,p), B_n=\frac{X_n}{n}$ and:$$\Huge Z_n=\frac{X_n-np}{\sqrt{np
 Then:$$\Huge \lim_{n\to\infty}\mathbb P(Z_n\leq z)=\Phi(z)\,\,\forall z\in\Re$$
 This is proven by applying the central limit theorem. Let $X_1,X_2,\dots$ be identically distributed independent random variables. Let $S_n=\sum_{i=1}^nX_i$, we know that $\mathbb E[S_n]=np$ and $var(S_n)=\sum_{i=1}^nvar(X_i)=n\,var(X_1)=np(1-p)$. Applying the theorem gives the result above for $Z_n$, which gives the approximation as required. So for large enough $n$ and $0<p<1$:$$\Huge \mathbb P(X\leq x)\approx\Phi\left(\frac{x-np}{\sqrt{np(1-p)}}\right)$$
 
-# Generating functions:
+# Moment Generating functions:
 
 For any real valued random variable $X$, the function $M_X:\Re\mapsto[0,\infty]$ is given by:$$\Huge M_X(t)=\mathbb E[e^{tx}]\,\,\forall t\in\Re$$
 Using LOTUS, we can derive the following definitions for $M_X(t)$:$$\Huge M_X(t)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}e^{tx}p(x)}&\text{if X is discrete}\\\displaystyle{\int_{-\infty}^\infty e^{tx}f(x)}&\text{if X is continuous}\end{cases}$$

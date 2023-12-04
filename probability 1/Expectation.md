@@ -72,4 +72,4 @@ We can produce a number of results by considering the monotonicity of sums and i
 For a random variable $X$, if $\mathbb P(X\geq a)=1$, then :$$\Huge\mathbb E[X]\geq a$$
 This has a corollary where variance is non-negative, since the variance comes from $\mathbb E[(X-\mathbb E[X])^2]$, we are taking the expectation of a term that is $\geq 0$, and by the above result we get that $var(X)\geq 0$. This gives rise to another inequality:
 $$\Huge \text{If}\,\,X\geq0,a>0:\,\,\mathbb P(X\geq a)\leq\frac{\mathbb E[X]}{a}$$
-Note $X\geq a1_{\{X\geq a\}}$, so $X-a1_{\{X\geq a\}}\geq 0$, so we get $\mathbb E[X-a1_{X\geq a}]=\mathbb E[X]-a\mathbb P(\geq a)\geq 0$, rearranging gives the result as required. This in turn produces another inequality, this time for any $X$:$$\Huge \mathbb P(|X-\mathbb E[X]|\geq a)\leq\frac{var(X)}{a^2}$$\
+Note $X\geq a1_{\{X\geq a\}}$, so $X-a1_{\{X\geq a\}}\geq 0$, so we get $\mathbb E[X-a1_{X\geq a}]=\mathbb E[X]-a\mathbb P(\geq a)\geq 0$, rearranging gives the result as required. This in turn produces another inequality, this time for any $X$:$$\Huge \mathbb P(|X-\mathbb E[X]|\geq a)\leq\frac{var(X)}{a^2}$$
