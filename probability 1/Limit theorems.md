@@ -27,3 +27,6 @@ Using LOTUS, we can derive the following definitions for $M_X(t)$:$$\Huge M_X(t)
 Note that $M_X(t)\geq 0$ but can take the value $+\infty$. Consider the [[Taylor series#Taylor polynomials|taylor expansion]] for $e^{tx}$:$$\Huge e^{tx}=1+tx+\frac{t^2x^2}{2!}+\dots\implies\mathbb E(e^{tx})=1+t\mathbb E(X)+\frac{t^2}{2!}\mathbb E(X^2)+\dots$$
 Here, each $\mathbb E(X)$ is known as the moment. Increasing powers of $X$ inside the expectation products the next moment. For example $\mathbb E(X)$ is the first moment, $\mathbb E(X^2)$ is the second moment, et cetera. $\mathbb E(X^k)$ are the moments of $X$. The moment generating function has the following properties:
 > It follows that differentiating this Taylor polynomial $k$ times will product the $k$th moment of $X$:$$\Huge M_X^{(k)}(0)=\frac{d^k}{dt^k}M_X(T)|_{t=0}=\mathbb E(X^k)$$
+> If $X,Y$ are two random variables with moment generating functions $M_X,M_Y$ respectively, then there is some $h>0$ such that:$$\Huge M_X(t)=M_Y(t)<\infty,\,\,\text{for all}\,\,|t|<h$$Then $X$ and $Y$ have the same distribution, that is $F_X(x)=F_Y(x)$ for all $x\in\Re$
+> For $a,b\in\Re$:$$\Huge M_{aX+b}(t)=e^{bt}M_X(at)$$
+> If $X_1,\dots,X_n$ are independent random variables and $S_n=\sum_{i=1}^nX_i$ then:$$\Huge M_{S_n}(t)=\prod_{i=1}^nM_{X_i}(t)$$
