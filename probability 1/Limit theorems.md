@@ -24,4 +24,6 @@ This is proven by applying the central limit theorem. Let $X_1,X_2,\dots$ be ide
 
 For any real valued random variable $X$, the function $M_X:\Re\mapsto[0,\infty]$ is given by:$$\Huge M_X(t)=\mathbb E[e^{tx}]\,\,\forall t\in\Re$$
 Using LOTUS, we can derive the following definitions for $M_X(t)$:$$\Huge M_X(t)=\begin{cases}\displaystyle{\sum_{x\in\mathcal X}e^{tx}p(x)}&\text{if X is discrete}\\\displaystyle{\int_{-\infty}^\infty e^{tx}f(x)}&\text{if X is continuous}\end{cases}$$
-Note that $M_X(t)\geq 0$ but can take the value $+\infty$.
+Note that $M_X(t)\geq 0$ but can take the value $+\infty$. Consider the [[Taylor series#Taylor polynomials|taylor expansion]] for $e^{tx}$:$$\Huge e^{tx}=1+tx+\frac{t^2x^2}{2!}+\dots\implies\mathbb E(e^{tx})=1+t\mathbb E(X)+\frac{t^2}{2!}\mathbb E(X^2)+\dots$$
+Here, each $\mathbb E(X)$ is known as the moment. Increasing powers of $X$ inside the expectation products the next moment. For example $\mathbb E(X)$ is the first moment, $\mathbb E(X^2)$ is the second moment, et cetera. $\mathbb E(X^k)$ are the moments of $X$. The moment generating function has the following properties:
+> It follows that differentiating this Taylor polynomial $k$ times will product the $k$th moment of $X$:$$\Huge M_X^{(k)}(0)=\frac{d^k}{dt^k}M_X(T)|_{t=0}=\mathbb E(X^k)$$
