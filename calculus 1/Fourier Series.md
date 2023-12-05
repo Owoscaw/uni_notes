@@ -2,6 +2,8 @@ Consider a function $f(x)$ with period $2L$ given on the interval $(-L,L)$. The 
 Where $a_0, a_n, b_n$ are the Fourier coefficients of $f(x)$. If this sum converges, it is called the Fourier series of $f(x)$. In general, an infinite number of coefficients may be non-zero, which need to be determined from $f(x)$. For positive integers $m,n$:
 >$\displaystyle{\int_{-L}^L\cos{\frac{n\pi x}{L}}dx}=0$
 >$\displaystyle{\int_{-L}^L\sin{\frac{n\pi x}{L}}dx}=0$
->$\displaystyle{\int_{-L}^L\cos{\frac{m\pi x}{L}}dx}=0$
+>$\displaystyle{\int_{-L}^L\cos{\frac{m\pi x}{L}}\sin{\frac{n\pi x}{L}}dx}=0$
 >$\displaystyle{\frac{1}{L}\int_{-L}^L\cos{\frac{m\pi x}{L}}\cos{\frac{n\pi x}{L}}dx=\begin{cases}0&\text{if}&m\neq n\\1&\text{if}&m=n\end{cases}}$
->$\displaystyle$
+>$\displaystyle{\frac{1}{L}\int_{-L}^L\sin{\frac{m\pi x}{L}}\sin{\frac{n\pi x}{L}}dx=\begin{cases}0&\text{if}&m\neq n\\1&\text{if}&m=n\end{cases}}$
+
+It is convienient to write the RHS of the last two results as the [[Matrix definition#Special matrices|Kronecker delta]] function, defined as:$$\Huge \delta_{mn}=\begin{cases}0&\text{if}&m\neq n\\1&\text{if}&m=n\end{cases}$$The proof for the first result comes from the fact that $\sin$ is $0$ at integer multiples of $\pi$. The second and third result are integrals of odd functions over a symmetric interval, so it is obvious that they integrate to $0$. Recall that $\cos{(x\pm y)}=\cos x\cos y\mp\sin x\sin y$, so $\cos{(x+y)}+\cos{(x-y)}=2\cos x\cos y$. Then the fourth result can be written as:$$\Huge \frac{}{}\int_{-L}^L$$ 
