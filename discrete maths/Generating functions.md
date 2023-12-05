@@ -32,3 +32,5 @@ The number of partitions of $n, p(n)$ has generating function:$$\Huge \sum_{n=1}
 # Calculus of generating functions:
 
 If $a_n$ is a sequence with generating function $f(x)=\sum_{k=0}^\infty a_nx^n$, then the generating function for the sequence $na_n$ is $xf'(x)$. This is shown as follows:$$\large \sum_{k=0}^\infty(na_n)x^n=x\sum_{k=0}^\infty a_n(nx^{n-1})=x\sum_{k=0}^\infty a_n\frac{d}{dx}(x^n)=x\frac{d}{dx}\left(\sum_{k=0}^\infty a_nx^n\right)=xf'(x)$$
+Similarly, the generating function for $s_n=\sum_{k=0}^na_k$ is given by $\frac{f(x)}{1-x}$, proven as follows:
+$$\large (a_0+a_1x+a_2x^2+\dots)(1+x+x^2+\dots)=a_0+(a_0+a_1)x+(a_0+a_1+a_2)x^2+\dots$$$$\Huge \implies \sum_{k=0}^\infty s_nx^n=\left(\sum_{k=0}^\infty a_nx^n\right)\left(\sum_{k=0}^\infty x^k\right)=f(x)\times\frac{1}{1-x}=\frac{f(x)}{1-x}$$
