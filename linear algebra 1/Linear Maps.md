@@ -35,6 +35,5 @@ If $T:V\mapsto W$ is a linear map, we call $T$ an isomorphism if and only if $T$
 Suppose that $V$ has a basis $\{\underline v_1,\dots,\underline v_n\}$. Then the coordinate map $\Phi:V\mapsto\Re^n$ is an isomorphism:$$\Huge \lambda_1\underline v_1+\dots+\lambda_n\underline v_n=\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}$$
 We know that $\Phi$ is linear, so we check that it is bijective:$$\Huge \text{If}\,\,\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}\in\Re^n\,\,\text{then}\,\,\Phi(\lambda_1\underline v_1+\dots\lambda_n\underline v_n)=\begin{pmatrix}\lambda_1\\\vdots\\\lambda_n\end{pmatrix}$$Also if $\underline v,\underline w\in V$ where $\underline v\neq\underline w$, then if $\underline v=\lambda_1\underline v_1+\dots+\lambda_n\underline v_n$ and $\underline w=\mu_1\underline v_1+\dots+\mu_n\underline v_n$ then for at least one $i,\lambda_i\neq\mu_i$. This implies that $\Phi(\underline v)$ and $\Phi(\underline w)$ differ in the $i$th dimension.
 
-In order to transform a vector in $\Re^m$ to a vector in $\Re^n$, the following diagram can be used:![[vector space transformation example]]
-
-
+In order to transform a vector in $\Re^n$ to a vector in $\Re^m$, the following diagram can be used:![[vector space transformation example]]
+Let $A$ be such transformation. $A$ is then defined by $\Psi\circ T\circ\Phi^{-1}$. We give this transformation form:$$\Huge A:\Re^n\mapsto\Re^n:\underline x\mapsto A\underline x:A\in M_{m\times n}(\Re)$$Given bases for $U$ and $V$, coordinate maps are defined as $\Phi:U\xrightarrow{\cong}\Re^n$ and $\Psi:V\xrightarrow{\cong}\Re^m$. Suppose that $T:U\mapsto V$ is linear, then the matrix that maps this transformatoin is known as the matrix of $T$ 
