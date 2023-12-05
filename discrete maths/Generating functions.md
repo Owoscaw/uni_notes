@@ -31,3 +31,4 @@ With each $e_k\in\{0,k\}$ for each $k$. Associate the expression $(1+x^k)$ with 
 The number of partitions of $n, p(n)$ has generating function:$$\Huge \sum_{n=1}^\infty x^np(n)=\prod_{k=1}^\infty(1-x^k)^{-1}$$
 # Calculus of generating functions:
 
+If $a_n$ is a sequence with generating function $f(x)=\sum_{k=0}^\infty a_nx^n$, then the generating function for the sequence $na_n$ is $xf'(x)$. This is shown as follows:$$\large \sum_{k=0}^\infty(na_n)x^n=x\sum_{k=0}^\infty a_n(nx^{n-1})=x\sum_{k=0}^\infty a_n\frac{d}{dx}(x^n)=x\frac{d}{dx}\left(\sum_{k=0}^\infty a_nx^n\right)=xf'(x)$$
