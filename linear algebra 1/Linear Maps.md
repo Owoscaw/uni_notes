@@ -40,4 +40,10 @@ Let $A$ be such transformation. $A$ is then defined by $\Psi\circ T\circ\Phi^{-1
 
 # Image, rank, kernel, nullity:
 
-Given a linear map $T:U\mapsto V$, we define the image of $T$:$$\Huge im(T):=\{T(\underline u):\underline u\in U\}\subseteq V$$And the kernel of $T$:$$\Huge ker(T):=\{\underline u\in U:T(\underline u)=\underline0\}\subseteq U$$These are proven to be subsets as follows: Suppose $\underline v,\underline v_1,\underline v_2\in im(T)$ and $\underline u,\underline u_1$
+Given a linear map $T:U\mapsto V$, we define the image of $T$:$$\Huge im(T):=\{T(\underline u):\underline u\in U\}\subseteq V$$And the kernel of $T$:$$\Huge ker(T):=\{\underline u\in U:T(\underline u)=\underline0\}\subseteq U$$These are proven to be subsets as follows: Suppose $\underline v,\underline v_1,\underline v_2\in im(T)$ and $\underline u,\underline u_1,\underline u_2\in ker(T)$ and $\lambda\in\Re$. Then we define $\underline v=T(\underline w),\underline v_1=T(\underline w_1),\underline v_2=T(\underline w_2)$ for some $\underline w,\underline w_1,\underline w_2\in U$. So:
+> $\underline v_1+\underline v_2=T(\underline w_1)+T(\underline w_2)=T(\underline w_1+\underline w_2)\in im(T)$
+> $\lambda\underline v=\lambda T(\underline w)=T(\lambda\underline w)\in im(T)$
+> So we have that $im(T)$ is closed under addition and scalar multiplication.
+> $T(\underline u_1+\underline u_2)=T(\underline u_1)+T(\underline u_2)=\underline 0+\underline 0=\underline 0$
+> So $\underline u_1+\underline u_2\in ker(T)$, similarly $T(\lambda\underline u)\in ker(T)$
+> We have that both $im(T)$ and $ker(T)$ are closed under addition and scalar multiplication. These spaces by definition contain $\underline 0$, so this makes them vector subspaces.
