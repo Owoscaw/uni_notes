@@ -63,4 +63,10 @@ On the same vector spaces define the maps $\phi:V'\mapsto V$, $\psi:W\mapsto W'$
 ## Rank nullity for linear maps:
 
 Let $V,W$ be two finite dimensional vector spaces with $T:V\mapsto W$ then we propose:$$\Huge dim(V)=rk(T)+null(T)$$
-$T$ can be viewed as a linear map from $\Re^n$ to $\Re^m$ for some $n,m$. This means that $T$ can be represented by a matrix $A\in M_{m\times n}(\Re)$. The coordinate maps must be isomorphisms, so the rank and nullity of the map is unchanged under any associated coordinate map. Thus the statement above immediately follows from the rank nullity theorem for matrices. This can also be argued directly:![[Linear Maps .excalidraw]]
+$T$ can be viewed as a linear map from $\Re^n$ to $\Re^m$ for some $n,m$. This means that $T$ can be represented by a matrix $A\in M_{m\times n}(\Re)$. The coordinate maps must be isomorphisms, so the rank and nullity of the map is unchanged under any associated coordinate map. Thus the statement above immediately follows from the rank nullity theorem for matrices. This can also be argued directly:![[rank nullity for maps]]
+Finally, we can completely categorise vector spaces by their dimension. For two finite dimensional vector spaces, $V$ and $W$ we have:$$\Huge V\cong W\iff dim(V)=dim(W)$$
+This is because if $T:V\mapsto W$ is an isomorphism then $ker(T)=\{0\}$ and $im(T)=W$. By rank nullity, $dim(V)=dim(W)$. Conversely, if their dimension is equal then suppose that each space has a basis $\{v_1,\dots,v_n\}$ and $\{w_1,\dots,w_n\}$ respectively. Then define a map $V\mapsto W$ such that $v_i\mapsto w_i$ and $W\mapsto V$ such that $w_i\mapsto v_i$. Each of these is the inverse of the other, and hence isomorphisms. This shows that any two vector spaces of the same dimension are essentially the same space.
+
+# Change of basis and of coordinates:
+
+Let $T:\Re^n\mapsto\Re^m$ be a linear map. Suppose that with respect to the standard bases 
