@@ -63,4 +63,4 @@ On the same vector spaces define the maps $\phi:V'\mapsto V$, $\psi:W\mapsto W'$
 ## Rank nullity for linear maps:
 
 Let $V,W$ be two finite dimensional vector spaces with $T:V\mapsto W$ then we propose:$$\Huge dim(V)=rk(T)+null(T)$$
-$T$ can be viewed as a linear map from $\Re^n$ to $\Re^m$ for some $n,m$. This means
+$T$ can be viewed as a linear map from $\Re^n$ to $\Re^m$ for some $n,m$. This means that $T$ can be represented by a matrix $A\in M_{m\times n}(\Re)$. The coordinate maps must be isomorphisms, so the rank and nullity of the map is unchanged under any associated coordinate map. Thus the statement above immediately follows from the rank nullity theorem for matrices. This can also be argued directly:![[Linear Maps .excalidraw]]
