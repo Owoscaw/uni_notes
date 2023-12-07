@@ -33,4 +33,8 @@ Here, each $\mathbb E(X)$ is known as the moment. Increasing powers of $X$ insid
 > Suppose that $X,X_1,X_2,\dots$ are random variables. If there exists $h>0$ such that:$$\Huge \lim_{n\to\infty}M_{X_n}(t)=M_X(t)<\infty\,\,\text{for all }\,\,|t|<h$$Then $X_n$ converges in distribution to $X$.
 
 One can show that the CDF of any any random variable has at most a countable number of points where the CDF is not continuous. To see this consider:$$\Huge D_n=\left\{x\in\Re:F(x)-F(x-)>\frac{1}{n}\right\}$$
-This is the set of points, $x$, where $F(x)$ has a jump of at least size $1/n$. The discontinuous points of $F$ can then be expressed as:$$\Huge D=\bigcup_{n\in\mathbb N}D_n$$
+This is the set of points, $x$, where $F(x)$ has a jump of at least size $1/n$. The discontinuous points of $F$ can then be expressed as:$$\Huge D=\bigcup_{n\in\mathbb N}D_n$$Consider that $D_n$ is a finite set as $F$ is non-decreasing (since its a CDF). Note $D_n$ is of size at most $n$, otherwise the jumps would sum to a size of more than $1$, which is impossible for a CDF. This makes $D$ a countable union of finite sets, which must be countable.
+
+# Proof of CLT:
+
+We need to show that for:$$\Huge Z_n=\sum_{i=1}^n\frac{X_i-\mu}{\sigma\sqrt{n}},\,\,\text{we have}\,\,M_{Z_n}(t)\to e^{\frac{t^2}{2}}$$For all $t$ on an open interval containing $0$. This converges to and characterises the CLT. Let $Y_i=(X_i-\mu)/\sigma$ and denote the MGF of $Y_i$ by $m(t)$. Then we have that $Y_i/\sqrt{n}$ will have $m(t/\sqrt{n})$, and that $\sum_{i=1}^nY_i/\sqrt{n}$ is given by:$$\Huge M_{Z_n}(t)=(m(t/\sqrt{n}))^n$$Using the moment generating property of $m(t/\sqrt{n})$ we have:$$\Huge m(0)=\mathbb E(Y_i^0)=1,\,m'(0)=\mathbb E(Y_i)=0,\,m''(0)=\mathbb E(Y_i^2)=1$$So by [[Taylor series#Taylor's theorem|Taylor's theorem]] we have that there exists a function $h$ around $0$ with $$
