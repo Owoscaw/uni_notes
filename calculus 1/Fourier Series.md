@@ -12,5 +12,5 @@ We say that the set $\left\{1,\cos{\frac{n\pi x}{L}}, \sin{\frac{n\pi x}{L}}\rig
 Similarly, consider:$$\large \frac{1}{L}\int_{-L}^Lf(x)\sin\frac{m\pi x}{L}dx=\frac{1}{L}\int_{-L}^L\left(\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos\frac{n\pi x}{L}+b_n\sin\frac{n\pi x}{L}\right)\sin\frac{m\pi x}{L}$$$$\Huge =\sum_{n=1}^\infty b_n\delta_{mn}=b_m$$Therefore we get the other coefficient with:$$\Huge b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\frac{n\pi x}{L}$$
 
 For example, consider $f(x)=|x|$ for $-1<x<1$ with $f(x+2)=f(x)$:
-![[Fourier Series .excalidraw]]
+![[Fourier Series .excalidraw]]Here, every $b_n$ was $0$. This happens when $f(x)$ is even on $(-L,L)$. In this case, the Fourier series only consists of cosine terms, so the series is called a cosine series.
   
