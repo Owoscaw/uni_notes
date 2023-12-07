@@ -69,4 +69,6 @@ This is because if $T:V\mapsto W$ is an isomorphism then $ker(T)=\{0\}$ and $im(
 
 # Change of basis and of coordinates:
 
-Let $T:\Re^n\mapsto\Re^m$ be a linear map. Suppose that with respect to the standard bases 
+Let $T:\Re^n\mapsto\Re^m$ be a linear map. Suppose that with respect to the standard bases, $T$ is represented by a matrix $A$. Let $S=\{v_1,\dots,v_n\}$ be a basis of $\Re^n$ and let $P=(v_1,\dots,v_n)$. Let $S'=\{w_1,\dots,w_m\}$ be a basis for $\Re^m$ and let $Q=(w_1,\dots,w_m)$. Then with respect to $S$ and $S'$, then $T$ is represented by $B=Q^{-1}AP$, proven as follows:
+
+Suppose that $x\in\Re^n$ is given with respect to the standard basis:$$\Huge x=x_1e_1+\dots+x_ne_n=\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}$$

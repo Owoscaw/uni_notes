@@ -17,3 +17,8 @@ For example, consider $f(x)=|x|$ for $-1<x<1$ with $f(x+2)=f(x)$:
 # Partial sum:
 
 To show that the Fourier series approaches $f(x)$, we define the partial sum as:$$\Huge S_m(x)=\frac{a_0}{2}+\sum_{n=1}^ma_n\cos\frac{n\pi x}{L}+b_n\sin\frac{n\pi x}{L}$$
+As more terms are included in the partial sum, the Fourier series becomes an increasingly accurate approximation to $f(x)$ on $(-L,L)$. However at jump discontinuity points, the Fourier series converges to the midpoint of the jump. This leads to Dirichlet's theorem:
+
+# Dirichlet's theorem:
+
+Let $f(x)$ be a periodic function with period $2L$ such that on the interval $(-L,L)$ it has a finite number of [[EVT, MVT, boundedness and monotonicity#Extreme value theorem|extreme values]], a finite number of [[Limits and Continuity#Classification of discontinuities|jump discontinuities]] and $|f(x)|$ is integrable on $(-L,L)$, then it's Fourier series converges for all values of $x\in(-L,L)$
