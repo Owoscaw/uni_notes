@@ -58,4 +58,9 @@ This is proven as follows. Assume that $ker(T)=\{0\}$ and assume that $T(v_1)=T(
 
 The above has a corollary where for a linear map $T:V\mapsto W$ where $ker(T)=\{0\}$. Assume $dim(V)=n$ with basis $\{v_1,\dots,v_n\}$. Then we have that $\{T(v_1),\dots,T(v_n)\}$ are a basis for $im(T)$, in particular:$$\Huge dim(im(T))=dim(V)$$Leading to the definitions:$$\Huge rk(T):=dim(im(T)),\,\,null(T):=dim(ker(T))$$
 
-On the same vector spaces define the maps $\phi:V'\mapsto V$, $\psi:W\mapsto W'$ such that both are isomorphic. Then:$$\Huge rk(\psi\circ T\circ\phi)=rk(T),\,\,null(\psi\circ T\circ\phi)=null(T)$$
+On the same vector spaces define the maps $\phi:V'\mapsto V$, $\psi:W\mapsto W'$ such that both are isomorphic. Then:$$\Huge rk(\psi\circ T\circ\phi)=rk(T),\,\,null(\psi\circ T\circ\phi)=null(T)$$Since $\phi$ is a bijection, then $im(\phi)=V$, hence $im(\psi\circ T\circ\phi)=\psi(im(T))$. But since $ker(\psi)=\{0\}$, applying $\psi$ does not change the rank of the image by the above corollary. Another consequence of this is that $ker(\psi\circ T\circ\phi)=ker(T\circ\phi)$. This is the set of vectors $v'\in V'$ such that $T(\phi(v'))=0$, that is the set of points in the kernel of $T$ that are of form $\phi(v')$. Thus $ker(\psi\circ T\circ\phi)=\phi^{-1}(ker(T))$, by the same argument as before this has the same dimension of $ker(T)$, giving us the result above. This can be used with the [[Real vector spaces#Rank theorem|rank nullity theorem]] of matrices to determine the rank and nullity of associated linear maps:
+
+## Rank nullity for linear maps:
+
+Let $V,W$ be two finite dimensional vector spaces with $T:V\mapsto W$ then we propose:$$\Huge dim(V)=rk(T)+null(T)$$
+$T$ can be viewed as a linear map from $\Re^n$ to $\Re^m$ for some $n,m$. This means
