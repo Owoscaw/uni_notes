@@ -47,3 +47,11 @@ Given a linear map $T:U\mapsto V$, we define the image of $T$:$$\Huge im(T):=\{T
 > $T(\underline u_1+\underline u_2)=T(\underline u_1)+T(\underline u_2)=\underline 0+\underline 0=\underline 0$
 > So $\underline u_1+\underline u_2\in ker(T)$, similarly $T(\lambda\underline u)\in ker(T)$
 > We have that both $im(T)$ and $ker(T)$ are closed under addition and scalar multiplication. These spaces by definition contain $\underline 0$, so this makes them vector subspaces.
+
+Generalising this, we have that for a linear map $T:V\mapsto W$ and a basis for $V$ of $\{v_1,\dots,v_n\}$, then we get that:$$\Huge im(T)=span(T(v_1),\dots,T(v_n))$$
+The proof of this is immediate. We also have that the following are pairwise equivalent:
+>$ker(T)=\{0\}$
+>$T$ is injective
+>For linearly independent vectors $v_1,\dots,v_n\in V$, then the images $T(v_1),\dots,T(v_n)$ are linearly independent in $W$
+
+This is proven as follows. Assume that $ker(T)=\{0\}$ and assume that $T(v_1)=T(v_2)$ for some $v_1,v_2\in V$, that is $T$ is not injective. Then $0=T(v_1)-T(v_2)=T(v_1-v_2)$, but since $ker(T)=\{0\}$ then we get $v_1=v_2$, a contradiction. This implies th
