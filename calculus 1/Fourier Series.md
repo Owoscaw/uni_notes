@@ -30,3 +30,6 @@ Proven as follows:
 ![[Parsevals theorem proof]]
 
 This can be used to find the value of certain infinite sums, for example:![[Parsevals example]]
+# Half-range Fourier series:
+
+If a function is defined on only $(0,L)$, a different Fourier series can be found that still converges to $f(x)$ on $(0,L)$. We can obtain $f$'s '
