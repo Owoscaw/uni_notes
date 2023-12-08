@@ -19,6 +19,12 @@ For example, consider $f(x)=|x|$ for $-1<x<1$ with $f(x+2)=f(x)$:
 To show that the Fourier series approaches $f(x)$, we define the partial sum as:Sm(x)=a02+∑n=1mancos⁡nπxL+bnsin⁡nπxL
 As more terms are included in the partial sum, the Fourier series becomes an increasingly accurate approximation to $f(x)$ on $(-L,L)$. However at jump discontinuity points, the Fourier series converges to the midpoint of the jump. This leads to Dirichlet's theorem:
 
-# Dirichlet's theorem:
+# Dirichlet's Theorem:
 
 Let $f(x)$ be a periodic function with period $2L$ such that on the interval $(-L,L)$ it has a finite number of [[EVT, MVT, boundedness and monotonicity#Extreme value theorem|extreme values]], a finite number of [[Limits and Continuity#Classification of discontinuities|jump discontinuities]] and $|f(x)|$ is integrable on $(-L,L)$, then it's Fourier series converges for all values of $x$ where $f(x)$ is continuous and if $x=a$ is a jump discontinuity then it converges to:$$\Huge \frac{1}{2}\lim_{x\to a^-}f(x)+\frac{1}{2}\lim_{x\to a^+}f(x)$$That is, it converges to the midpoint of the jump.
+
+# Parseval's Theorem:
+
+If $f(x)$ is a function of period $2L$ with Fourier coefficients $a_n,b_n$ then:$$\Huge \frac{1}{2L}\int_{-L}^Lf(x)^2dx=\frac{a_0^2}{4}+\frac{1}{2}\sum_{n=1}^\infty(a_n^2+b_n^2)$$
+Proven as follows:
+![[Fourier Series .excalidraw]]
