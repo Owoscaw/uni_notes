@@ -27,4 +27,6 @@ Let $f(x)$ be a periodic function with period $2L$ such that on the interval $(-
 
 If $f(x)$ is a function of period $2L$ with Fourier coefficients $a_n,b_n$ then:$$\Huge \frac{1}{2L}\int_{-L}^Lf(x)^2dx=\frac{a_0^2}{4}+\frac{1}{2}\sum_{n=1}^\infty(a_n^2+b_n^2)$$
 Proven as follows:
-![[Fourier Series .excalidraw]]
+![[Parsevals theorem proof]]
+
+This can be used to find the value of certain infinite sums, for example:![[Parsevals example]]
