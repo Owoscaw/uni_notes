@@ -32,4 +32,10 @@ Proven as follows:
 This can be used to find the value of certain infinite sums, for example:![[Parsevals example]]
 # Half-range Fourier series:
 
-If a function is defined on only $(0,L)$, a different Fourier series can be found that still converges to $f(x)$ on $(0,L)$. We can obtain $f$'s '
+If a function is defined on only $(0,L)$, a different Fourier series can be found that still converges to $f(x)$ on $(0,L)$. We can obtain $f$'s half range sine series by calculating the Fourier series of its odd extension:$$\Huge f_o(x)=\begin{cases}f(x)&\text{if}&x\in(0,L)\\-f(-x)&\text{if}&x\in(-L,0)\end{cases}$$
+The Fourier coefficients of $f_o(x)$ are then $a_n=0$ and:$$\Huge b_n=\frac{1}{L}\int_{-L}^Lf_o(x)\sin\frac{n\pi x}{L}dx=\frac{2}{L}\int_{0}^Lf(x)\sin\frac{n\pi x}{L}dx$$This gives the half range sine series for $f$:$$\Huge f(x)=\sum_{n=1}^\infty b_n\sin\frac{n\pi x}{L}$$Similarly, an even function can be extended past $0$. The half range cosine series is then found by computing the Fourier series of its even extension:$$\Huge f_e(x)=\begin{cases}f(x)&\text{if}&x\in(0,L)\\f(-x)&\text{if}&x\in(-L,0)\end{cases}$$
+The Fourier coefficients of $f_e(x)$ are then $b_n=0$ and:$$\Huge a_n=\frac{1}{L}\int_{-L}^Lf_e(x)\cos\frac{n\pi x}{L}dx=\frac{2}{L}\int_0^Lf_e(x)\cos\frac{n\pi x}{L}$$This gives the half range cosine series for $f$:$$\Huge f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos\frac{n\pi x}{L}$$
+
+# Fourier series in complex form:
+
+Using the relations $\cos\frac{}{}$
