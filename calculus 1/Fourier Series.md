@@ -38,4 +38,5 @@ The Fourier coefficients of $f_e(x)$ are then $b_n=0$ and:$$\Huge a_n=\frac{1}{L
 
 # Fourier series in complex form:
 
-Using the relations $\cos\frac{}{}$
+Using the relations $2\cos\frac{n\pi x}{L}=e^{\frac{in\pi x}{L}}+e^{-\frac{in\pi x}{L}}$ and $2\sin\frac{n\pi x}{L}=e^{\frac{in\pi x}{L}}-e^{-\frac{in\pi x}{L}}$, any Fourier series can be rewritten more compactly:$$\small f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos\frac{n\pi x}{L}+b_n\sin\frac{n\pi x}{L}=\frac{a_0}{2}+\frac{1}{2}\sum_{n=1}^\infty\left((a_n-ib_n)e^{\frac{in\pi x}{L}}+(a_n+ib_n)e^{-\frac{in\pi x}{L}}\right)=\sum_{n=-\infty}^\infty c_ne^{\frac{in\pi x}{L}}$$
+Where we define $c_0=\frac{a_0}{2}=\frac{1}{2L}\int_{-L}^Lf(x)dx$. For $n>1$:$$\Huge c_n=\frac{1}{2}(a_n-ib_n)=\frac{1}{2L}\int_{-L}^Lf(x)\left(\cos\frac{n\pi x}{L}-i\sin\frac{n\pi x}{L}\right)$$
