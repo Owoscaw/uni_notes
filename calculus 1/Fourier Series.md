@@ -21,7 +21,7 @@ As more terms are included in the partial sum, the Fourier series becomes an inc
 
 # Dirichlet's Theorem:
 
-Let $f(x)$ be a periodic function with period $2L$ such that on the interval $(-L,L)$ it has a finite number of [[EVT, MVT, boundedness and monotonicity#Extreme value theorem|extreme values]], a finite number of [[Limits and Continuity#Classification of discontinuities|jump discontinuities]] and $|f(x)|$ is integrable on $(-L,L)$, then it's Fourier series converges for all values of $x$ where $f(x)$ is continuous and if $x=a$ is a jump discontinuity then it converges to:$$\Huge \frac{1}{2}\lim_{x\to a^-}f(x)+\frac{1}{2}\lim_{x\to a^+}f(x)$$That is, it converges to the midpoint of the jump.
+Let $f(x)$ be a periodic function with period $2L$ such that on the interval $(-L,L)$ it has a finite number of [[EVT, MVT, boundedness and monotonicity#Extreme value theorem|extreme values]], a finite number of [[Limits and Continuity#Classification of discontinuities|jump discontinuities]] and $|f(x)|$ is integrable on $(-L,L)$, then it's Fourier series converges for all values of $x$ where $f(x)$ is continuous and if $x=a$ is a jump discontinuity then it converges to:12limx→a−f(x)+12limx→a+f(x)That is, it converges to the midpoint of the jump.
 
 # Parseval's Theorem:
 
@@ -40,4 +40,4 @@ The Fourier coefficients of $f_e(x)$ are then $b_n=0$ and:$$\Huge a_n=\frac{1}{L
 
 Using the relations $2\cos\frac{n\pi x}{L}=e^{\frac{in\pi x}{L}}+e^{-\frac{in\pi x}{L}}$ and $2\sin\frac{n\pi x}{L}=e^{\frac{in\pi x}{L}}-e^{-\frac{in\pi x}{L}}$, any Fourier series can be rewritten more compactly:$$\small f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos\frac{n\pi x}{L}+b_n\sin\frac{n\pi x}{L}=\frac{a_0}{2}+\frac{1}{2}\sum_{n=1}^\infty\left((a_n-ib_n)e^{\frac{in\pi x}{L}}+(a_n+ib_n)e^{-\frac{in\pi x}{L}}\right)=\sum_{n=-\infty}^\infty c_ne^{\frac{in\pi x}{L}}$$
 Where we define $c_0=\frac{a_0}{2}=\frac{1}{2L}\int_{-L}^Lf(x)dx$. For $n>1$:$$\large c_n=\frac{1}{2}(a_n-ib_n)=\frac{1}{2L}\int_{-L}^Lf(x)\left(\cos\frac{n\pi x}{L}-i\sin\frac{n\pi x}{L}\right)=\frac{1}{2L}\int_{-L}^Lf(x)e^{-\frac{in\pi x}{L}}dx$$
-Then for $n<1$:$$ c_n=\frac{1}{2}(a_{-n}+ib_{-n})=\frac{1}{2L}\int_{-L}^Lf(x)\left(\cos\frac{(-n)\pi x}{L}+\sin\frac{(-n)\pi x}{L}\right)dx=\frac{1}{2L}\int_{-L}^Lf(x)e^{-\frac{in\pi x}{L}}$$Note that for all three cases, the same formula is true. So we define for all $n$:$$\Huge c_n=\frac{1}{2L}\int_{-L}^Lf(x)e^{-\frac{in\pi x}{L}}dx$$
+Then for $n<1$:$$ c_n=\frac{1}{2}(a_{-n}+ib_{-n})=\frac{1}{2L}\int_{-L}^Lf(x)\left(\cos\frac{(-n)\pi x}{L}+\sin\frac{(-n)\pi x}{L}\right)dx=\frac{1}{2L}\int_{-L}^Lf(x)e^{-\frac{in\pi x}{L}}$$Note that for all three cases, the same formula is true. So we define for all $n$:$$\Huge c_n=\frac{1}{2L}\int_{-L}^Lf(x)e^{-\frac{in\pi x}{L}}dx$$Then the Fourier series becomes:$$\Huge f(x)=\frac{1}{2L}\sum_{-\infty}^\infty\int_{-L}^Lf(x)e^{-\frac{in\pi x}{L}}dx\,e^{\frac{in\pi x}{L}}$$
