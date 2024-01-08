@@ -1,4 +1,4 @@
 
 A particle on the $x$ axis can have its position described by a function $x(t)$ where $t$ denotes time. The velocity of this particle can be described by the time derivative of it's position, that is $v(t)=\dot x$. Here, $\cdot$ denotes $\frac{d}{dt}$. Similarly, the acceleration of the particle is described by the time derivative of it's velocity, $\ddot x(t)$.
 
-The particle also has a property, mass ($m>0$). Then the mom
+The particle also has a property, mass ($m>0$). Then the momentum of this particle is given by $p=m\dot x$. When a force $F$ is applied, then $x(t)$ satisfied the equation of motion:$$\Huge \dot p=F=\frac{d}{dt}\left(m\dot x\right)=m\ddot x=ma$$Where $a$ is the acceleration of the particle. Unless otherwise stated, mass is assumed to be constant. The force applied is not always a constant function, so the more general case is given as:$$\Huge m\ddot x=F(t,x,\dot x)$$This cannot explicitly be solved in general, so special cases are focused on. Close to the surface of a planet, considering vertical motion then the force has magnitude $|F|=mg$, where $g$ is a constant depending on the planet.
