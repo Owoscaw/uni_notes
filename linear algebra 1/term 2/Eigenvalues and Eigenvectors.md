@@ -1,0 +1,2 @@
+
+Let $T:\Re^n\mapsto\Re^n$ be a [[Linear Maps#Properties of linear maps|linear mapping]] from [[Real vector spaces|$\Re^n$]] to $\Re^n$. $T$ is represented as an $n\times n$ [[Matrix definition|matrix]] $M$. The form of $M$ depends on the [[basis, and changes under a change of basis. 
