@@ -11,4 +11,8 @@ Close to the surface of a planet, considering vertical motion then the force has
 
 ## $F=F(t)$:
 
-For a constant force, integrating wrt $t$ twice gives the solution. For example consider a unit mass particle lying at rest at $x=0$. A force $F=e^{-t}$ is applied at $t=0$. We have $\ddot x=e^{-t}$. Integrating this gives $\dot x=-e^{-t}$
+For a constant force, integrating wrt $t$ twice gives the solution. For example consider a unit mass particle lying at rest at $x=0$. A force $F=e^{-t}$ is applied at $t=0$. We have $\ddot x=e^{-t}$. Integrating this gives $\dot x=-e^{-t}+c_1$, then $x=e^{-t}+c_1t+c_2$. Applying initial conditions shows that $c_1=1$ and $c_2=-1$. Therefore the solution to this example is $x=e^{-t}+t-1$.
+
+## $F=F(\dot x)$:
+
+With this case, we have $m\ddot x=F(\dot x)$. This is a non-linear [[Second Order Differential Equations#Linear constant coefficient ODEs|differential equation]]. Renaming $v=\dot x$, we get $m\dot v=F(v)$. This is now a [[First order differential equations#Separable ODEs|seperable first order differential equation]]. Separating variables to get $v(t)$ and then integrating wrt $t$ gives the solution in the form $x(t)$.
