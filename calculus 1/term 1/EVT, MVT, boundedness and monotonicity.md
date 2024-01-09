@@ -17,7 +17,7 @@ It is true that $|cos\,x|\leq 1,\,\forall x\in I$ where $I=Dom\, cos\,x$. Both $
 
 ## Extreme value theorem:
 
-If $f(x)$ is continuous on a close interval $[a,b]$, then it is bounded on that interval and has upper bounds which are attained, $x_1,x_2\in[a,b]:f(x_2)\leq f(x)\leq f(x_1),\,\forall x\in[a,b]$. This is to say if $f(x)$ always has a global maximum and minimum if it is defined on a closed interval.
+If $f(x)$ is continuous on a close interval $[a,b]$, then it is bounded on that interval and has bounds which are attained, $x_1,x_2\in[a,b]:f(x_2)\leq f(x)\leq f(x_1),\,\forall x\in[a,b]$. This is to say if $f(x)$ always has a global maximum and minimum if it is defined on a closed interval.
 
 
 # Monotonicity:
