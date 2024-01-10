@@ -1,0 +1,2 @@
+
+A subset $X\subset\Re$ is called open if for each $c\in X$ there exists in an open interval $(c-\delta,c+\delta)\subset X$ with $\delta>0$. This $\delta$ usually depends on $c$ and is not unique, if $\delta>0$ works, then every $\delta^\prime$ with $0<\delta^\prime<\delta$ also works. For example, any open interval $(a,b)$ is open since for $c\in(a,b)$ then choose $\delta=\min(c-a,b-c)$. $\emptyset$ is also open, since $\nexists c\in\emptyset$. Any closed interval $[a,b]$ is not open, $\delta$ can be fou  
