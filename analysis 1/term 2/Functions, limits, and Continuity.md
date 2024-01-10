@@ -12,4 +12,5 @@ Note that sets can be both open and closed, for example [[Definition of the real
 
 # Limits of functions:
 
-Let $f:X\mapsto\Re$ be a [[Functions, Domain and Range|function]] and assume $X\subset\Re$ contains an open interval $(a,b)$ with the possible exception of $c\in(a,b)$
+Let $f:X\mapsto\Re$ be a [[Functions, Domain and Range|function]] and assume $X\subset\Re$ contains an open interval $(a,b)$ with the possible exception of $c\in(a,b)$. We say that:$$\Huge \lim_{x\to c}f(x)=L$$For some $L\in\Re$ if for all $\epsilon>0$ there exists a $\delta>0$ such that $|f(x)-L|<\epsilon$ for all $x\in(a,b)\setminus\{c\}$ with $|x-c|<\delta$. Note that if $c\in X$ then $L$ can be $f(c)$, but not necessarily:![[limit of a function]]
+Let $f:X\mapsto\Re$ be a function and assume $X\subset\Re$ contains an open interval $(a,b)$ again with the possible exception of $c\in(a,b)$. Then $\lim_{x\to c}f(x)=L\iff$ for all sequences $(x_n)-{n\in\mathbb N}\in X\setminus\{c\}$ with $\lim_{n\to\infty}x_n=c$. 
