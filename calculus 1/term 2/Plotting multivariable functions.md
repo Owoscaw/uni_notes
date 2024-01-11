@@ -1,2 +1,2 @@
 
-For a function of one variable, it is trivial to plot:![[function of single variable example]]This curve has been defined parametrically with $x$ as the parameter. Functions can also be defined implicitly 
+For a function of one variable, it is trivial to plot:![[function of single variable example]]This curve has been defined parametrically with $x$ as the parameter. Functions can also be defined implicitly in the form $g(x,y)=0$:$$\Huge C=\{(x,y):g(x,y)=0\}$$This defines the curve as the set of points where the function is satisfied. $x^2+y^2-1=0$ is a good example.
