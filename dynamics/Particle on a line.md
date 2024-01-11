@@ -24,4 +24,4 @@ This is a [[Second Order Differential Equations|second order ODE]], which might 
 
 ## $F(t,\dot x)=-\dot x+e^{-t}$:
 
-Take $\dot x(0)=0$, find $\dot x(t)$. Write $v=\dot x$, so by the equation of motion we get:$$\Huge \dot v=-v+e^{-t}$$
+Take $\dot x(0)=0$, find $\dot x(t)$. Write $v=\dot x$, so by the equation of motion we get:$$\Huge \dot v=-v+e^{-t}\implies\dot ve^{\int dt}+ve^{\int dt}=e^{-t}e^{\int dt}\implies \dot ve^t+ve^t=1=\frac{d(ve^t)}{dt}$$
