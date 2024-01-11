@@ -6,8 +6,18 @@ Given a graph $G=(E,V,\Phi)$, the degree of a vertex $v\in V$ denoted by $d_G(v)
 
 # Standard Graphs:
 
+## Null:
 The null graph $G=(V,E)$ on $m$ vertices is denoted as $N_m$ has $|V|=m$ but $|E|=0$, not very interesting.
 
+## Complete:
 The complete graph on $m$ vertices is denoted as $K_m=(V_m,E_m)$. If $|V_m|=m$, then $|E_m|={m\choose 2}$. Every vertex is connected to every other vertex.
 
-The cycle graph on $m$ vertices is denoted as $C_m$
+## Cycle:
+The cycle graph on $m$ vertices is denoted as $C_m$. Given $|V|=m$, the cycle graph is constructed by the following: $V=\{v_1,\dots,v_m\}$, $E=\{v_1v_2,v_2v_3,\dots,v_{m-1}v_m,v_mv_1\}$.
+
+## N-cube:
+The $n$-cube is denoted as $Q_n$ and has vertices defined by $V=\{x:\{1,2,\dots,n\}\mapsto\{0,1\}\}=\{(x_i,i\in\{1,2,\dots,n\}):x_i\in\{0,1\}\}$ and $E_n=\{uv:\sum_{i=1}^n|u_i-v_i|=1\}$. Here $|V|=2\times2\times\dots\times2$ for a total of $n$ times, since each $x_i$ can be $0$ or $1$. So we have that $|V|=2^n$ and $|E|=n2^{n-1}$.
+
+# Handshaking:
+
+For any graph $G=(V,E)$, we have that: $$\Huge \sum_{v\in V}d_G(v)=2|E|$$ Using the $n$-cube as an example, each $d_{Q_n}$
