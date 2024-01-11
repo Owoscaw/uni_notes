@@ -1,0 +1,2 @@
+
+For a function of one variable, it is trivial to plot:![[function of single variable example]]This curve has been defined parametrically with $x$ as the parameter. Functions can also be defined implicitly 
