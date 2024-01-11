@@ -1,0 +1,1 @@
+Informally, a graph consists of a set of vertices, joined by edges. A finite undirected graph is a triple $(V,E,\Phi)$ where $V$ and $E$ are finite sets and $\Phi:E\mapsto V$. $\Phi$ is the incidence function
