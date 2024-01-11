@@ -15,4 +15,7 @@ For a constant force, integrating wrt $t$ twice gives the solution. For example 
 
 ## $F=F(\dot x)$:
 
-With this case, we have $m\ddot x=F(\dot x)$. This is a non-linear [[Second Order Differential Equations#Linear constant coefficient ODEs|differential equation]]. Renaming $v=\dot x$, we get $m\dot v=F(v)$. This is now a [[First order differential equations#Separable ODEs|seperable first order differential equation]]. Separating variables to get $v(t)$ and then integrating wrt $t$ gives the solution in the form $x(t)$. Example:![[Particle on a line .excalidraw]]
+With this case, we have $m\ddot x=F(\dot x)$. This is a non-linear [[Second Order Differential Equations#Linear constant coefficient ODEs|differential equation]]. Renaming $v=\dot x$, we get $m\dot v=F(v)$. This is now a [[First order differential equations#Separable ODEs|seperable first order differential equation]]. Separating variables to get $v(t)$ and then integrating wrt $t$ gives the solution in the form $x(t)$. Example:![[function of velocity example]]
+# Case $F=F(x)$:
+
+This is a [[Second Order Differential Equations|second order ODE]], which might not necessarily be linear. To solve this, think of $v=\dot x$ as a function of $x$ instead of time.
