@@ -27,4 +27,4 @@ For any graph $G=(V,E)$, we have that: $$\Huge \sum_{v\in V}d_G(v)=2|E|$$ Using 
 Given two simple graphs, $G_1=(V_1,E_1)$ and $G_2=(V_2,E_2)$, are isomorphic when there is a map $\psi:V_1\mapsto V_2$ such that $\psi$ is [[Functions, Domain and Range#Bijectivity|bijective]] (one to one) and $\{u,v\}\in E_1=\{\psi(u),\psi(v)\}\in E_2$. That is, $\psi$ is bijective and preserves adjacency of vertices. The following graphs are isomorphic:![[isomorphic graphs example]]
 # Complements:
 
-For a graph $G=(V,E)$, the complement of $G$ is the graph $\overline G=(V,F)$ where 
+For a graph $G=(V,E)$, the complement of $G$ is the graph $\overline G=(V,F)$ where $E\cup F=\mathbb V$
