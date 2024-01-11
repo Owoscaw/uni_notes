@@ -18,4 +18,10 @@ For a constant force, integrating wrt $t$ twice gives the solution. For example 
 With this case, we have $m\ddot x=F(\dot x)$. This is a non-linear [[Second Order Differential Equations#Linear constant coefficient ODEs|differential equation]]. Renaming $v=\dot x$, we get $m\dot v=F(v)$. This is now a [[First order differential equations#Separable ODEs|seperable first order differential equation]]. Separating variables to get $v(t)$ and then integrating wrt $t$ gives the solution in the form $x(t)$. Example:![[function of velocity example]]
 # Case $F=F(x)$:
 
-This is a [[Second Order Differential Equations|second order ODE]], which might not necessarily be linear. To solve this, think of $v=\dot x$ as a function of $x$ instead of time:$$\Huge \ddot x=\frac{d}{dt}v(x(t))=\frac{dv}{dt}\frac{dx}{dt}=\frac{dv}{dx}v$$This makes the equation of motion:$$\Huge m\frac{dv}{dx}v=F(x)$$Which may not be linear, however is now a separable first order ODE in $v$ and $x$. When you solve for $v$, then substitute $v=\frac{dv}{dt}$ to get a separable first order ODE in $x$ and $t$.
+This is a [[Second Order Differential Equations|second order ODE]], which might not necessarily be linear. To solve this, think of $v=\dot x$ as a function of $x$ instead of time:$$\Huge \ddot x=\frac{d}{dt}v(x(t))=\frac{dv}{dt}\frac{dx}{dt}=\frac{dv}{dx}v$$This makes the equation of motion:$$\Huge m\frac{dv}{dx}v=F(x)$$Which may not be linear, however is now a separable first order ODE in $v$ and $x$. When you solve for $v$, then substitute $v=\frac{dv}{dt}$ to get a separable first order ODE in $x$ and $t$:$$\Huge (mv)dv=F(x)dx\implies\int mv\,dv=\int F(x)dx=\frac{1}{2}mv^2$$$$\large v^2=\frac{2}{m}\int F(x)dx\implies\frac{dx}{dt}=\sqrt{\frac{2}{m}\int F(x)dx}\implies x(t)=\int\left(\sqrt{\frac{2}{m}\int F(x)dx}\right)dt$$
+
+# General examples:
+
+## $F(t,\dot x)=-\dot x+e^{-t}$:
+
+Take $\dot x(0)=0$, find $\dot x(t)$. Write $v=\dot x$, so by the equation of motion we get:$$\Huge \dot v=-v+e^{-t}$$
