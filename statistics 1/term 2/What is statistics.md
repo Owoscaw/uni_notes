@@ -1,0 +1,2 @@
+
+Statistics is the study of uncertainty. Statistics involves the mathematical representation of real world quantities and their associated uncertainties. [[Probability definition#Probability space|Probability]] is useful but not always used, statistics is also the coherent incorporation of any knowledge, information, or data into this framework.
