@@ -24,4 +24,7 @@ This is a [[Second Order Differential Equations|second order ODE]], which might 
 
 ## $F(t,\dot x)=-\dot x+e^{-t}$:
 
-Take $\dot x(0)=0$, find $\dot x(t)$. Write $v=\dot x$, so by the equation of motion we get:$$\Huge \dot v=-v+e^{-t}\implies\dot ve^{\int dt}+ve^{\int dt}=e^{-t}e^{\int dt}\implies \dot ve^t+ve^t=1=\frac{d(ve^t)}{dt}$$
+Take $\dot x(0)=0$, find $\dot x(t)$. Write $v=\dot x$, so by the equation of motion we get:$$\Huge \dot v=-v+e^{-t}\implies\dot ve^{\int dt}+ve^{\int dt}=e^{-t}e^{\int dt}\implies \dot ve^t+ve^t=1=\frac{d(ve^t)}{dt}$$$$\Huge ve^t=\int dt=t\implies v(t)=te^{-t}$$
+## Non-constant mass:
+
+A rocket of mass $m(t)$ burns fuel at a rate $\dot m=-c$ for a positive constant $c$. This produces an initial thrust of $F=k|\dot m|=kc$. The rocket starts at rest with $x=0$ and mass $m_0$. Find $x(t)$:![[Particle on a line .excalidraw]]
