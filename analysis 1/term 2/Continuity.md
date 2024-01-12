@@ -1,4 +1,4 @@
 Let $f:X\mapsto\Re$ be a function and let $x\in X$. Then $f$ is called continuous at $c$ if for all $\epsilon>0$ there exists a $\delta>0$ such that:$$\Huge |f(x)-f(c)|<\epsilon\,\,\forall x\in X:|x-c|<\delta$$The function is called continuous if it is continuous at $c$ for all $c\in X$. If $c\in X$ is an [[Functions and their limits#Open-ness? and interior points|interior point]], then $f$ is continuous at $c$ if and only if:$$\Huge \lim_{x\to c}f(x)=f(c)$$Left continuity can be defined at $c\in X$ if and only if $\lim_{x\to c^-}f(x)=f(c)$. Similarly, right continuity can be defined at $c\in X$ if and only if $\lim_{x\to c^+}f(x)=f(c)$. For interior points $c$, $f$ is only continuous at $c$ if it is both left and right continuous at that point.
 
 Continuity at a point $c\in X$ is a local property, it is only dependent on the behaviour of the function over a small interval around $c$. Examples:
-![[Continuity .excalidraw]]
+![[continuous function examples]]
