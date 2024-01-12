@@ -32,4 +32,4 @@ The following are proven using [[Sequences#Calculus of limits theorem ( Limits a
 
 # Squeezing theorem:
 
-Let $X\subset\Re$, $x\in X
+Let $X\subset\Re$, $c\in X$, and $f,g,h:X\mapsto\Re$ with $f(x)\leq g(x)\leq h(x)$ for all $x\in X$. Assume that:$$\Huge \lim_{x\to c}f(x)=L=\lim_{x\to c}h(x)\implies\lim_{x\to c}g(x)=L$$
