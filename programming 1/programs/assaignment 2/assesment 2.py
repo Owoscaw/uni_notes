@@ -18,6 +18,11 @@ def draw_circle(circ, thecolour):
     theta = np.linspace(0, 2*m.pi, 10000)
     plt.plot([m.sin(t)*circ[1] + circ[0][0] for t in theta], [m.cos(t)*circ[1] + circ[0][1] for t in theta], color=thecolour)
 
-draw_circle([[1,1], 5], "red")
+#task4
+def show_six_circles_example():
+    for j in range(0,6):
+        draw_circle([[m.cos(j*(m.pi/3)), m.sin(j*(m.pi/3))], 0.5], "red")
+
+show_six_circles_example()
 plt.gca().set_aspect("equal","box")
 plt.show()
