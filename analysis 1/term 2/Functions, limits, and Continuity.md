@@ -16,4 +16,20 @@ Let $f:X\mapsto\Re$ be a [[Functions, Domain and Range|function]] and assume $X\
 Let $f:X\mapsto\Re$ be a function and assume $X\subset\Re$ contains an open interval $(a,b)$ again with the possible exception of $c\in(a,b)$. Then $\lim_{x\to c}f(x)=L\iff$ for all sequences $(x_n)-{n\in\mathbb N}\in X\setminus\{c\}$ with $\lim_{n\to\infty}x_n=c$, we have:$$\Huge\lim_{x\to c}f(x)=L\iff\lim_{n\to\infty}f(x_n)=L$$Proven as follows:![[sequence limit proof]]
 # Sided limits:
 
-Let $f:(a,b)\mapsto\Re$ be a function. The right sided limit is then defined as: $$\Huge \lim_{x\to a^+}f(x)=L\iff\forall\epsilon>0,\,\,\exists\delta>0:|f(x)-L|<\epsilon\,\forall x\in(a,b)\,\,\text{}$$
+Let $f:(a,b)\mapsto\Re$ be a function. The right sided limit is then defined as: $$\large \lim_{x\to a^+}f(x)=L\iff\forall\epsilon>0,\,\,\exists\delta>0:|f(x)-L|<\epsilon\,\forall x\in(a,b)\,\,\text{with}\,\,|x-a|<\delta$$The left sided limit is defined similarly. The right and left sided limits for $c\in(a,b)$ can be defined by restricting the domain to $(a,c)$ or $(c,b)$.
+
+# Infinite limits:
+
+Let $f:X\mapsto\Re$ be a function such that $X$ contains an interval $(a,\infty)$. Then we define:$$\Huge \lim_{x\to\infty}f(x)=L\iff\forall\epsilon>0,\,\exists K>a:|f(x)-L|<\epsilon\,\,\forall x>K$$Similarly, if $X$ contains an interval $(-\infty, b)$, define:$$\Huge \lim_{x\to-\infty}f(x)=L\iff\forall\epsilon>0,\,\exists K<b:|f(x)-L|<\epsilon\,\forall x<K$$
+# COLT:
+
+Let $f,g:X\mapsto\Re$ be two functions with limits $\lim_{x\to c}f(x)=L_1$ and $\lim_{x\to c}g(x)=L_2$:
+> For any $\alpha,\beta\in\Re$, $\lim_{x\to c}(\alpha f(x)+\beta g(x))=\alpha L_1+\beta L_2$
+> $\lim_{x\to c}f(x)g(x)=L_1L_2$
+> $\lim_{x\to c}\frac{f(x)}{g(x)}=\frac{L_1}{L_2}$, assuming $L_2\neq0$
+
+The following are proven using [[Sequences#Calculus of limits theorem ( Limits and Continuity Consequences of continuity COLT )|COLT]] and the above theorems regarding a sequence within an interval.
+
+# Squeezing theorem:
+
+Let $X\subset\Re$, $x\in X
