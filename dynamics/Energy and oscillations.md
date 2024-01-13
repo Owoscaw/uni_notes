@@ -4,3 +4,7 @@ Consider a particle on the line in the case [[Particle on a line#Case $F=F(x)$|$
 > When $F(x)$ is constant, $V$ is linear in $x$.
 > Using the conservation of energy, an idea of the particles motion can be gained without finding $x(t)$.
 > $E$, energy, is constant for a given solution.
+
+# Simple harmonic oscillator:
+
+A simple approximation for an object in SHM is Hooke's law, which states that the restoring force towards equilibrium is equal to:$$\Huge F=-kx$$Where $k>0$ is the spring constant.
