@@ -28,6 +28,19 @@ def draw_ellipse(n,m,a,b):
     xVals = [np.linspace(n-a, n+a, 1000)]
     plt.plot(xVals + xVals, [m+(b/a)*((a/b)**2-(x-n)**2)**0.5 for x in xVals] + [m-(b/a)*((a/b)**2-(x-n)**2)**0.5 for x in xVals])
 
-draw_ellipse(5,2,5,2)
+#task6b
+def draw_tangent(circ, xy, d, thecolour):
+    if round((xy[0]-circ[0][0])**2 + (xy[1]-circ[0][1])**2, 5) != round(circ[1]**2, 5):
+        raise ArithmeticError
+    
+    tVals = np.linspace(0,2*m.pi,10000)
+    draw_line((circ[0][0]-xy[0])/(xy[1]-circ[0][1]), (xy[0]-circ[0][0])/(xy[1]-circ[0][1])+xy[1], xy[0], d/2)
+    draw_line(-(circ[0][0]-xy[0])/(xy[1]-circ[0][1]), (xy[0]-circ[0][0])/(xy[1]-circ[0][1])+xy[1], xy[0], d/2)
+
+    plt.plot([circ[1]*m.cos(t)+xy[0] for t in tVals],[circ[1]*m.sin(t)+xy[0] for t in tVals])
+
+    
+
+draw_tangent([[0, 0], 1], [0, 1], 2, "red")
 plt.gca().set_aspect("equal","box")
 plt.show()
