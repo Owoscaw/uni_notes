@@ -26,7 +26,7 @@ def show_six_circles_example():
 #task5b
 def draw_ellipse(n,m,a,b):
     xVals = [np.linspace(n-a, n+a, 1000)]
-    plt.plot(xVals + xVals, [m+(b/a)*((a/b)**2-(x-n)**2)**0.5 for x in xVals] + [m-(b/a)*((a/b)**2-(x-n)**2)**0.5 for x in xVals])
+    plt.plot(xVals + xVals, [m+b*(1-(1/a**2)*(x-n)**2)**0.5 for x in xVals] + [m-b*(1-(1/a**2)*(x-n)**2)**0.5 for x in xVals])
 
 #task6b
 def draw_tangent(circ, xy, d, thecolour):
@@ -40,6 +40,7 @@ def draw_tangent(circ, xy, d, thecolour):
 
     
 
-draw_tangent([[1, 1], 1], [1, 2], 2, "red")
+draw_tangent([[0, 0], 1], [(2**0.5)/2, (2**0.5)/2], 2, "red")
+
 plt.gca().set_aspect("equal","box")
 plt.show() 
