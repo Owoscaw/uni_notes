@@ -34,12 +34,12 @@ def draw_tangent(circ, xy, d, thecolour):
         raise ArithmeticError
     
     tVals = np.linspace(0,2*m.pi,10000)
-    draw_line((circ[0][0]-xy[0])/(xy[1]-circ[0][1]), (xy[0]-circ[0][0])/(xy[1]-circ[0][1])+xy[1], xy[0], d)
+    draw_line((circ[0][0]-xy[0])/(xy[1]-circ[0][1]), (xy[0]-circ[0][0])/(xy[1]-circ[0][1])+xy[1], xy[0]-(d/2)*(1/(1+((circ[0][0]-xy[0])/(xy[1]-circ[0][1]))**2))**0.5, d)
 
-    plt.plot([circ[1]*m.cos(t)+xy[0] for t in tVals],[circ[1]*m.sin(t)+xy[0] for t in tVals])
+    plt.plot([circ[1]*m.cos(t)+xy[0] for t in tVals],[circ[1]*m.sin(t)+xy[0] for t in tVals], color=thecolour)
 
     
 
 draw_tangent([[1, 1], 1], [1, 2], 2, "red")
 plt.gca().set_aspect("equal","box")
-plt.show()
+plt.show() 
