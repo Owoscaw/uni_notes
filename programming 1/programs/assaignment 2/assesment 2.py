@@ -44,5 +44,11 @@ def box_the_circle(circ, angle, thecolour):
         point = [circ[1]*m.cos(i*(m.pi/2)+angle)+circ[0][0],circ[1]*m.sin(i*(m.pi/2)+angle)+circ[0][1]]
         draw_tangent(circ, point, 2*circ[1], thecolour)
 
+#task 7
+def show_tangent_example():
+    draw_circle([[-1,3], 2], "red")
+    draw_tangent([[-1,3], 2], [0.2, 4.6], 4, "blue")
+
+show_tangent_example()
 plt.gca().set_aspect("equal","box")
 plt.show() 
