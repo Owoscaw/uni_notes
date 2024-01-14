@@ -33,14 +33,16 @@ def draw_tangent(circ, xy, d, thecolour):
     if round((xy[0]-circ[0][0])**2 + (xy[1]-circ[0][1])**2, 2) != round(circ[1]**2, 2):
         raise ArithmeticError
     
-    tVals = np.linspace(0,2*m.pi,10000)
-    draw_line((circ[0][0]-xy[0])/(xy[1]-circ[0][1]), (xy[0]-circ[0][0])/(xy[1]-circ[0][1])*xy[0]+xy[1], xy[0]+(d/2)*(1/(1+((circ[0][0]-xy[0])/(xy[1]-circ[0][1]))**2))**0.5, d)
+    draw_line((circ[0][0]-xy[0])/(xy[1]-circ[0][1]), (xy[0]-circ[0][0])/(xy[1]-circ[0][1])*xy[0]+xy[1], xy[0]-(d/2)*(1/(1+((circ[0][0]-xy[0])/(xy[1]-circ[0][1]))**2))**0.5, d)
 
+def box_the_circle(circ, angle, thecolour):
+
+    tVals = np.linspace(0, 2*m.pi, 1000)
     plt.plot([circ[1]*m.cos(t)+circ[0][0] for t in tVals],[circ[1]*m.sin(t)+circ[0][1] for t in tVals], color=thecolour)
 
-    
-
-draw_tangent([[0, 0], 1], [(2**0.5)/2, (2**0.5)/2], 2, "red")
+    for i in range(0,4):
+        point = [circ[1]*m.cos(i*(m.pi/2)+angle)+circ[0][0],circ[1]*m.sin(i*(m.pi/2)+angle)+circ[0][1]]
+        draw_tangent(circ, point, 2*circ[1], thecolour)
 
 plt.gca().set_aspect("equal","box")
 plt.show() 
