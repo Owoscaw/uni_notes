@@ -16,4 +16,10 @@ Suppose that there are $p_\lambda$ linearly independent eigenvectors of $A$ with
 # Eigenspaces:
 
 The eigenspace $V_\lambda$ for the eigenvalue $\lambda$ is the $p_\lambda$-dimensional [[Subspaces#Spanning sets|vector subspace]] spanned by these eigenvectors. That is:$$\Huge V_\lambda=\ker(A-\lambda I)$$This is because:$$\large \underline v\in V_\lambda=\ker(A-\lambda I)\implies (A-\lambda I)\underline v=0\implies A\underline v-\lambda(I\underline v)=0\implies A\underline v=\lambda\underline v$$Since there is always at least one and at most $\kappa_\lambda$:$$\Huge 1\leq \dim V_\lambda=\dim\ker(A-\lambda I)\leq\kappa_\lambda=\text{algebraic multiplicity}$$In fact $\dim V_{\lambda}=p_\lambda=\text{geometric multiplicity}=null(A-\lambda I)$.  
+
+# Cayley-Hamilton theorem:
+
+Let $A\in M_{n\times n}(\Re)$ with a characteristic polynomial $p_A(t)$. Then $p_A(A)=0$. 
+
+Let matrices $A,B$ represent the same linear transformation $T$ but in different bases. Then $A$ and $B$ should be considered equivalent, as they will have the same eigenvalues however will be different matrices.
  
