@@ -49,6 +49,16 @@ def show_tangent_example():
     draw_circle([[-1,3], 2], "red")
     draw_tangent([[-1,3], 2], [0.2, 4.6], 4, "blue")
 
-draw_ellipse(1,1,100,6)
+#task 8b
+def xcircles_and_radicalaxis(r, R, c, thecolours):
+    draw_circle([[0, 0], r], thecolours[0])
+    draw_circle([[c, 0], R], thecolours[1])
+
+    if r > c - R:
+        p1 = [(r**2+c**2-R**2)/(2*c), (r**2-((r**2+c**2-R**2)/(2*c))**2)**0.5]
+        p2 = [(r**2+c**2-R**2)/(2*c), -(r**2-((r**2+c**2-R**2)/(2*c))**2)**0.5]
+        plt.plot([p1[0], p2[0]], [p1[1], p2[1]], color=thecolours[2])
+
+xcircles_and_radicalaxis(5, 6, 10, ["red", "green", "blue"])
 plt.gca().set_aspect("equal","box")
 plt.show() 
