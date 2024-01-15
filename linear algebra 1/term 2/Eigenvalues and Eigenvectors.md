@@ -29,4 +29,7 @@ An equivalence relation on the set $X$ is a binary relation "$\sim$" with proper
 >$a\sim b$, $b\sim c\implies a\sim c$, transitivity
 
 Then we can say that for $A,B\in M_n(\Re)$, $A$ and $B$ are similar ($A\sim B$) if $\exists M:A=M_{-1}BM$:$$\Huge A\sim B\iff\exists M:A=M_{-1}BM$$We then propose that similarity is an equivalence relation:![[equiv relation similar]]
-So the set of all $n\times n$ matrices gets partitioned into equivalence classes, that is classes of matrices that are similar:$$\Huge [A]=\{B\in M_{n}(\Re):B\sim A\}$$$[A]$ will contain all matrices that represent the same linear transformation in all possible bases. We propose that similar matrices have the same eigenvalues and characteristic polynomials, proven as follows:![[Eigenvalues and Eigenvectors .excalidraw]]
+So the set of all $n\times n$ matrices gets partitioned into equivalence classes, that is classes of matrices that are similar:$$\Huge [A]=\{B\in M_{n}(\Re):B\sim A\}$$$[A]$ will contain all matrices that represent the same linear transformation in all possible bases. We propose that similar matrices have the same eigenvalues and characteristic polynomials, proven as follows:![[similar matrices same polynomial proof]]
+# Diagonalisation:
+
+$A$ is said to be diagonalisable if $A\sim D$ with $D$ being any diagonal matrix. That is $\exists M:M^{-1}AM=D$
