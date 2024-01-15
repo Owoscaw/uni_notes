@@ -22,4 +22,10 @@ The eigenspace $V_\lambda$ for the eigenvalue $\lambda$ is the $p_\lambda$-dimen
 Let $A\in M_{n\times n}(\Re)$ with a characteristic polynomial $p_A(t)$. Then $p_A(A)=0$. 
 
 Let matrices $A,B$ represent the same linear transformation $T$ but in different bases. Then $A$ and $B$ should be considered equivalent, as they will have the same eigenvalues however will be different matrices.
- 
+## Equivalence relation:
+An equivalence relation on the set $X$ is a binary relation "$\sim$" with properties (for $a,b,c\in X$):
+>$a\sim a$, reflexivity
+>$a\sim b\implies b\sim a$, symmetry
+>$a\sim b$, $b\sim c\implies a\sim c$, transitivity
+
+Then we can say that for $A,B\in M_n(\Re)$, $A$ and $B$ are similar ($A\sim B$) if $\exists M:A=M_{-1}BM$:$$\Huge A\sim B\iff\exists M:A=M_{-1}BM$$We then propose that similarity is an equivalence relation:![[Eigenvalues and Eigenvectors .excalidraw]]
