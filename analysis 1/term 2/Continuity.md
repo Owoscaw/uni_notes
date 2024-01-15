@@ -14,4 +14,8 @@ Let $X\subset\Re,c\in X$ and $f,g:X\mapsto\Re$ be continuous at $c$, then:
 > $h(x)=f(x)g(x)$ is continuous at $c$
 > $h(x)=\frac{f(x)}{g(x)}$ is continuous at $c$, given that $g(c)\neq0$
 
-This is proven by using COLT with continuity through sequences. For example, consider a polynomial $p:\Re\mapsto\Re$ as a function given by:$$\Huge f(x)=a_nx^n+\dots+a_1x+a_0\text{ with }n\in\mathbb N_0, a_0,\dots,a_n\in\Re$$Any polynomial is continuous,
+This is proven by using COLT with continuity through sequences. For example, consider a polynomial $p:\Re\mapsto\Re$ as a function given by:$$\Huge f(x)=a_nx^n+\dots+a_1x+a_0\text{ with }n\in\mathbb N_0, a_0,\dots,a_n\in\Re$$Any polynomial is continuous, since it can be broken down into a linear combination of continuous functions to certain powers, which can be broken down into the repeated product of the same function ($h(x)=x$). 
+
+## Function compositions:
+
+Given two functions $f:X\mapsto\Re$, $g:Y\mapsto\Re$ with $X,Y\subset\Re$ and:$$\Huge f(X)=\{y\in\Re:y=f(x)\text{ for some }x\in X\}\subset Y$$We can then form the composition $g\circ f:X\mapsto\Re$ given by:$$\Huge g\circ f(x)=g(f(x))\,\forall x\in X$$If $f$ is continuous at $c\in X$ and $g$ is continuous at $f(c)\in Y$ then $g\circ f$ is continuous at $c\in X$. Proof:![[Continuity .excalidraw]]
