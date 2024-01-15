@@ -2,3 +2,16 @@ Let $f:X\mapsto\Re$ be a function and let $x\in X$. Then $f$ is called continuou
 
 Continuity at a point $c\in X$ is a local property, it is only dependent on the behaviour of the function over a small interval around $c$. Examples:
 ![[continuous function examples]]
+
+## Continuity through sequences:
+
+Let $X\subset\Re$, $c\in X$, and $f:X\mapsto\Re$ be a function. Then $f$ is continuous at $c$ if and only if for all sequences $(x_n)_{n\in\mathbb N}\in X$ with $\lim_{n\to\infty}x_n=c$ we have:$$\Huge \lim_{n\to\infty}f(x_n)=f(c)=f(\lim_{n\to\infty}x_n)$$To prove this, use the above results.
+
+## Continuity through COLT:
+
+Let $X\subset\Re,c\in X$ and $f,g:X\mapsto\Re$ be continuous at $c$, then:
+> $h(x)=\alpha f(x)+\beta g(x)$ is continuous at $c$ for all $\alpha,\beta\in\Re$
+> $h(x)=f(x)g(x)$ is continuous at $c$
+> $h(x)=\frac{f(x)}{g(x)}$ is continuous at $c$, given that $g(c)\neq0$
+
+This is proven by using COLT with continuity through sequences. For example, consider a polynomial $p:\Re\mapsto\Re$ as a function given by:$$\Huge f(x)=a_nx^n+\dots+a_1x+a_0\text{ with }n\in\mathbb N_0, a_0,\dots,a_n\in\Re$$Any polynomial is continuous,
