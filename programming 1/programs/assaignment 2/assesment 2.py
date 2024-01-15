@@ -25,9 +25,11 @@ def show_six_circles_example():
 
 #task5b
 def draw_ellipse(n,m,a,b):
-    xVals = [np.linspace(n-a, n+a, 1000)]
-    xValsReversed = xVals.reverse()
-    plt.plot(xVals + xValsReversed, [m+b*(1-(1/a**2)*(x-n)**2)**0.5 for x in xVals] + [m-b*(1-(1/a**2)*(x-n)**2)**0.5 for x in xValsReversed])
+    xVals = np.linspace(n-a, n+a, 1000)
+    plt.plot(xVals, [m+b*(1-(1/a**2)*(x-n)**2)**0.5 for x in xVals])
+    xVals.reverse()
+    plt.plot(xVals, [m-b*(1-(1/a**2)*(x-n)**2)**0.5 for x in xVals])
+    print(xVals)
 
 #task6b
 def draw_tangent(circ, xy, d, thecolour):
