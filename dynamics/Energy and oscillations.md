@@ -8,4 +8,4 @@ Consider a particle on the line in the case [[Particle on a line#Case $F=F(x)$|$
 
 # Motion in Potential:
 
-This is best demonstrated in an example:![[Energy and oscillations .excalidraw]]
+This is best demonstrated in an example:![[motion in potential]]
