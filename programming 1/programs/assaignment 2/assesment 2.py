@@ -59,6 +59,11 @@ def xcircles_and_radicalaxis(r, R, c, thecolours):
         p2 = [(r**2+c**2-R**2)/(2*c), -(r**2-((r**2+c**2-R**2)/(2*c))**2)**0.5]
         plt.plot([p1[0], p2[0]], [p1[1], p2[1]], color=thecolours[2])
 
-xcircles_and_radicalaxis(5, 6, 10, ["red", "green", "blue"])
+#task9b
+def gencircles_and_radicalaxis(circ1, circ2, thecolours):
+    draw_circle(circ1, thecolours[0])
+    draw_circle(circ2, thecolours[1])
+
+gencircles_and_radicalaxis([[1,1], 5], [[2,3], 4], ["red", "green", "blue"])
 plt.gca().set_aspect("equal","box")
 plt.show() 

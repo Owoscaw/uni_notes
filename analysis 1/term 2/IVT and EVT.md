@@ -1,1 +1,1 @@
-Let $a,b\in\Re$ with $a<b$ and $f:[a,b]\mapsto\Re$ be a [[Continuity|continuous]] function. If $f(a)<f(b)$ and $d\in[f(a),f(b)]$ then there exists $c\in[a,b]$ with $f(c)=d$. Similarly, if $f(a)>f(b)$ and $d\in$
+Let $a,b\in\Re$ with $a<b$ and $f:[a,b]\mapsto\Re$ be a [[Continuity|continuous]] function. If $f(a)<f(b)$ and $d\in[f(a),f(b)]$ then there exists $c\in[a,b]$ with $f(c)=d$. Similarly, if $f(a)>f(b)$ and $d\in[f(b),f(a)]$ then there exists $c\in[a,b]$ with $f(c)=d$. Proof:![[IVT and EVT .excalidraw]]
