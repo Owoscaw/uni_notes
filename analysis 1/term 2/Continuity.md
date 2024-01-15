@@ -18,4 +18,4 @@ This is proven by using COLT with continuity through sequences. For example, con
 
 ## Function compositions:
 
-Given two functions $f:X\mapsto\Re$, $g:Y\mapsto\Re$ with $X,Y\subset\Re$ and:$$\Huge f(X)=\{y\in\Re:y=f(x)\text{ for some }x\in X\}\subset Y$$We can then form the composition $g\circ f:X\mapsto\Re$ given by:$$\Huge g\circ f(x)=g(f(x))\,\forall x\in X$$If $f$ is continuous at $c\in X$ and $g$ is continuous at $f(c)\in Y$ then $g\circ f$ is continuous at $c\in X$. Proof:![[Continuity .excalidraw]]
+Given two functions $f:X\mapsto\Re$, $g:Y\mapsto\Re$ with $X,Y\subset\Re$ and:$$\Huge f(X)=\{y\in\Re:y=f(x)\text{ for some }x\in X\}\subset Y$$We can then form the composition $g\circ f:X\mapsto\Re$ given by:$$\Huge g\circ f(x)=g(f(x))\,\forall x\in X$$If $f$ is continuous at $c\in X$ and $g$ is continuous at $f(c)\in Y$ then $g\circ f$ is continuous at $c\in X$. Proof:![[continuous composition]]
