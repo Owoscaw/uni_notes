@@ -4,7 +4,8 @@ Consider a particle on the line in the case [[Particle on a line#Case $F=F(x)$|$
 > When $F(x)$ is constant, $V$ is linear in $x$.
 > Using the conservation of energy, an idea of the particles motion can be gained without finding $x(t)$.
 > $E$, energy, is constant for a given solution.
+> A point where $F(x)=0$ is called an equilibrium point.
 
-# Simple harmonic oscillator:
+# Motion in Potential:
 
-A simple approximation for an object in SHM is Hooke's law, which states that the restoring force towards equilibrium is equal to:$$\Huge F=-kx$$Where $k>0$ is the spring constant.
+This is best demonstrated in an example:![[Energy and oscillations .excalidraw]]
