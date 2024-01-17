@@ -61,8 +61,27 @@ def xcircles_and_radicalaxis(r, R, c, thecolours):
 
 #task9b
 def gencircles_and_radicalaxis(circ1, circ2, thecolours):
-    draw_circle(circ1, thecolours[0])
-    draw_circle(circ2, thecolours[1])
+    #draw_circle(circ1, thecolours[0])
+    #draw_circle(circ2, thecolours[1])
+    distBetweenCentres = ((circ1[0][0]-circ2[0][0])**2+(circ1[0][1]-circ2[0][1])**2)**0.5
+
+    xcircles_and_radicalaxis(circ1[1], circ2[1], distBetweenCentres, thecolours)
+
+    xVals = np.linspace(-max(circ1[1], circ2[1]), max(circ1[1], circ2[1]), 1000)
+
+    if distBetweenCentres < circ1[1] + circ2[1]:
+        p1 = [(circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres), (circ1[1]**2-((circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres))**2)**0.5]
+        p2 = [(circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres), -(circ1[1]**2-((circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres))**2)**0.5]
+
+        rotation = m.atan((circ1[0][1]*(circ2[0][1]-circ1[0][1]))/(circ2[0][1]*(circ2[0][0]-circ1[0][0])))
+        rotationMatrix = [[m.cos(rotation),-m.sin(rotation)],[m.sin(rotation),m.cos(rotation)]]
+
+        p1Rotated = [rotationMatrix[0][0]*p1[0]+rotationMatrix[0][1]*p1[1], rotationMatrix[1][0]*p1[0]+rotationMatrix[1][1]*p1[1]]
+        p2Rotated = [rotationMatrix[0][0]*p2[0]+rotationMatrix[0][1]*p2[1], rotationMatrix[1][0]*p2[0]+rotationMatrix[1][1]*p2[1]]
+
+        offset = [circ1[0][0], circ1[0][1]]
+        #plt.plot(xVals, [((circ2[0][1] - circ1[0][1])/(circ2[0][0] - circ1[0][0]))*(x - circ2[0][0]) + circ2[0][1] for x in xVals])
+        #plt.plot([p1Rotated[0] + circ1[0][0], p2Rotated[0] + circ1[0][0]], [p1Rotated[1] + circ1[0][1], p2Rotated[1] + circ1[0][1]], thecolours[2])
 
 gencircles_and_radicalaxis([[1,1], 5], [[2,3], 4], ["red", "green", "blue"])
 plt.gca().set_aspect("equal","box")
