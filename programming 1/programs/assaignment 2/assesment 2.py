@@ -44,12 +44,12 @@ def box_the_circle(circ, angle, thecolour):
         point = [circ[1]*m.cos(i*(m.pi/2)+angle)+circ[0][0],circ[1]*m.sin(i*(m.pi/2)+angle)+circ[0][1]]
         draw_tangent(circ, point, 2*circ[1], thecolour)
 
-#task 7
+#task7
 def show_tangent_example():
     draw_circle([[-1,3], 2], "red")
     draw_tangent([[-1,3], 2], [0.2, 4.6], 4, "blue")
 
-#task 8b
+#task8b
 def xcircles_and_radicalaxis(r, R, c, thecolours):
     draw_circle([[0, 0], r], thecolours[0])
     draw_circle([[c, 0], R], thecolours[1])
@@ -67,22 +67,33 @@ def gencircles_and_radicalaxis(circ1, circ2, thecolours):
     distBetweenCentres = ((circ1[0][0]-circ2[0][0])**2+(circ1[0][1]-circ2[0][1])**2)**0.5
 
     if distBetweenCentres < circ1[1] + circ2[1]:
+
+        #points from task 8b
         p1 = [(circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres), (circ1[1]**2-((circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres))**2)**0.5]
         p2 = [(circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres), -(circ1[1]**2-((circ1[1]**2-circ2[1]**2+distBetweenCentres**2)/(2*distBetweenCentres))**2)**0.5]
 
         if circ1[0][1] == circ2[0][1]:
+            #avoiding division by 0 in case where they lie on a straight line
             rotation = 0
         else:
             rotation = m.atan(abs((circ2[0][1] - circ1[0][1])/(circ2[0][0] - circ1[0][0])))
+
+        #rotating to account for gradient
         rotationMatrix = [[m.cos(rotation),-m.sin(rotation)],[m.sin(rotation),m.cos(rotation)]]
 
         p1Rotated = [rotationMatrix[0][0]*p1[0]+rotationMatrix[0][1]*p1[1], rotationMatrix[1][0]*p1[0]+rotationMatrix[1][1]*p1[1]]
         p2Rotated = [rotationMatrix[0][0]*p2[0]+rotationMatrix[0][1]*p2[1], rotationMatrix[1][0]*p2[0]+rotationMatrix[1][1]*p2[1]]
 
+        #translating
         offset = [circ1[0][0], circ1[0][1]]
         plt.plot([p1Rotated[0] + offset[0], p2Rotated[0] + offset[0]], [p1Rotated[1] + offset[1], p2Rotated[1] + offset[1]], thecolours[2])
 
-gencircles_and_radicalaxis([[1,1], 5], [[2,3], 4], ["red", "green", "blue"])
-#gencircles_and_radicalaxis([[5, 5], 5], [[10, 5], 3], ["red", "green", "blue"])
+
+#task10b
+def single_bumper(theta, circ, ell, circ_col, line_col):
+    draw_circle(circ, circ_col)
+
+
+single_bumper(m.pi/4, [[2,4],2], 5, "blue", "red")
 plt.gca().set_aspect("equal","box")
 plt.show() 
