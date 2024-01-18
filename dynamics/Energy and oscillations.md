@@ -21,4 +21,4 @@ Consider a simple harmonic oscillator when a shock absorber is added. This will 
 > $0\leq b<\omega$, underdamping. Here $b^2-\omega^2<0$, so the roots $\lambda_\pm$ are complex, $\lambda_{\pm}=-b\pm i\sqrt{\omega^2-b^2}$. The general solution then becomes:$$\Huge x(t)=e^{-bt}(A\cos(t\sqrt{\omega^2-b^2})+{B\sin(t\sqrt{\omega^2-b^2})})$$
 > $b=\omega$, critical damping. Now $\lambda_\pm=-b$, so the general solution is:$$\Huge x(t)=e^{bt}(A+Bt)$$
 
-![[Energy and oscillations .excalidraw]]
+![[damped oscillations]]
