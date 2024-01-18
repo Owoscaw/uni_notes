@@ -17,4 +17,8 @@ A spring extended by a distance $x$ will have a restoring force $F=-kx$. this is
 # Damped oscillators:
 
 Consider a simple harmonic oscillator when a shock absorber is added. This will add a new restoring force proportional to velocity. Take this force to be $-2mb\dot x$ with $b>0$. The equation of motion becomes:$$\Huge m\ddot x=-kx-2mb\dot x\implies \ddot x+2b\dot x+\omega^2x=0$$Where again $\omega=\sqrt{\frac{k}{m}}$. This has auxiliary equation $\lambda^2+2b\lambda+\omega^2=0$. This has roots $\lambda=-b\pm\sqrt{b^2-\omega^2}$. Three cases naturally arise from this:
-> $b>\omega$, overdamping. Here $\lambda_\pm$ are real and negative since $b-\pm\sqrt{b^2-\omega^2}$. Here the general solution is:$$\Huge x(t)=$$
+> $b>\omega$, overdamping. Here $\lambda_\pm$ are real and negative since $b-\pm\sqrt{b^2-\omega^2}$. Here the general solution is:$$\Huge x(t)=Ae^{\lambda_+t}+Be^{\lambda_-t}$$
+> $0\leq b<\omega$, underdamping. Here $b^2-\omega^2<0$, so the roots $\lambda_\pm$ are complex, $\lambda_{\pm}=-b\pm i\sqrt{\omega^2-b^2}$. The general solution then becomes:$$\Huge x(t)=e^{-bt}(A\cos(t\sqrt{\omega^2-b^2})+{B\sin(t\sqrt{\omega^2-b^2})})$$
+> $b=\omega$, critical damping. Now $\lambda_\pm=-b$, so the general solution is:$$\Huge x(t)=e^{bt}(A+Bt)$$
+
+![[Energy and oscillations .excalidraw]]
