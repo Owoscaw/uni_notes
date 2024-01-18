@@ -9,3 +9,7 @@ Consider a particle on the line in the case [[Particle on a line#Case $F=F(x)$|$
 # Motion in Potential:
 
 This is best demonstrated in an example:![[motion in potential]]
+
+# Simple Harmonic Oscillator:
+
+A spring extended by a distance $x$ will have a restoring force $F=-kx$. this is a case where [[Particle on a line#Case $F=F(x)$|$F=F(x)$]] and is a conservative force. This allows for conserved energy. So potential energy is given by:$$\Huge V(x)=\int Fdx=\int-kxdx=\frac{1}{2}kx^2$$This has $F=0$ point at $x=0$, the equilibrium position. In this case, the equation of motion can be completely solved:$$\Huge m\ddot x=-kx\implies\ddot x+\frac{k}{m}x=0\implies\lambda=\pm i\sqrt{\frac{k}{m}}$$This implies that the general solution is given by:$$\Huge x(t)=A\cos(\omega t)+B\sin(\omega t)$$Where $\omega=\sqrt{\frac{k}{m}}$ is the angular frequency of oscillation. This is known as Simple Harmonic Motion, periodic in $t$ with $T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}$
