@@ -33,4 +33,10 @@ So the set of all $n\times n$ matrices gets partitioned into equivalence classes
 # Diagonalisation:
 
 $A$ is said to be diagonalisable if $A\sim D$ with $D$ being any diagonal matrix. That is $\exists M:M^{-1}AM=D$. The following are a summary of facts about diagonal and similar matrices:
-> For two diagonalisable matrices
+> For two diagonalisable matrices that have the same eigenvalues, $A$ and $B$, then $A\sim B$. Since these matrices are diagonalisable, we have that $A\sim D_1$ and $B\sim D_2$ where $D_1$ and $D_2$ are diagonal matrices. However since $A$ and $B$ share eigenvalues, $D_1\sim D_2$ and since similarity is transitive, we get that $A\sim B$.
+> If $A$ is diagonalisable and $B$ is not, then they cannot be similar. Since $A$ is diagonalisable, $A\sim D$. However assuming $A\sim B$, then by transitivity of similarity we have that $B\sim D$, contradicting the assumption.
+> Not all square matrices are diagonalisable.
+> If all eigenvalues of a matrix $A$ are distinct, then $A$ is diagonalisable.
+> If $A$ is real and symmetric then $A$ is diagonalisable.
+
+The matrix $A\in M_n(\Re)$ is diagonalisable if and only if it has exactly $n$ linearly independent eigenvalues. Suppose that $\{v_1,v_2,\dots,v_n\}$ is a set of linearly independent eigenvectors with associated ei
