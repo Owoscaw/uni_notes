@@ -32,4 +32,5 @@ Then we can say that for $A,B\in M_n(\Re)$, $A$ and $B$ are similar ($A\sim B$) 
 So the set of all $n\times n$ matrices gets partitioned into equivalence classes, that is classes of matrices that are similar:$$\Huge [A]=\{B\in M_{n}(\Re):B\sim A\}$$$[A]$ will contain all matrices that represent the same linear transformation in all possible bases. We propose that similar matrices have the same eigenvalues and characteristic polynomials, proven as follows:![[similar matrices same polynomial proof]]
 # Diagonalisation:
 
-$A$ is said to be diagonalisable if $A\sim D$ with $D$ being any diagonal matrix. That is $\exists M:M^{-1}AM=D$
+$A$ is said to be diagonalisable if $A\sim D$ with $D$ being any diagonal matrix. That is $\exists M:M^{-1}AM=D$. The following are a summary of facts about diagonal and similar matrices:
+> For two diagonalisable matrices
