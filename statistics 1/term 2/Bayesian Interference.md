@@ -1,0 +1,2 @@
+
+In interpreting a [[Disease testing using Bayesian Methods|disease test]] result of $T^+$, typically there exists a prior probability of $P(D^+)$ of an individual having the disease. This usually represents the background prevalence of the disease in a population.
