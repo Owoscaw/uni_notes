@@ -39,4 +39,4 @@ $A$ is said to be diagonalisable if $A\sim D$ with $D$ being any diagonal matrix
 > If all eigenvalues of a matrix $A$ are distinct, then $A$ is diagonalisable.
 > If $A$ is real and symmetric then $A$ is diagonalisable.
 
-The matrix $A\in M_n(\Re)$ is diagonalisable if and only if it has exactly $n$ linearly independent eigenvalues. Suppose that $\{v_1,v_2,\dots,v_n\}$ is a set of linearly independent eigenvectors with associated ei
+The matrix $A\in M_n(\Re)$ is diagonalisable if and only if it has exactly $n$ linearly independent eigenvalues. Proof: Suppose that $\{v_1,v_2,\dots,v_n\}$ is a set of linearly independent eigenvectors with associated eigenvalues $\{\lambda_1,\lambda_2,\dots,\lambda_n\}$. From this assemble the matrix:$$\Huge M=\begin{pmatrix}v_1&v_2&\dots&v_n\end{pmatrix}$$And let:$$\Huge D=\begin{pmatrix}\lambda_1&0&\dots&0\\0&\lambda_2&\dots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\dots&\lambda_n\end{pmatrix}$$\
