@@ -10,4 +10,4 @@ A connected component of $G=(V,E)$ is a [[Graph definitions#Subgraphs|subgraph]]
 
 # Euler's Theorem:
 
-An Euler circuit in a graph $G$ is a circuit in $G$ which uses each edge in $G$ exactly once. A graph that contains an Eul
+An Euler circuit in a graph $G$ is a circuit in $G$ which uses each edge in $G$ exactly once. A graph that contains an Eulerian circuit is known as an Eulerian graph. Euler's theorem states that for a finite connected graph $G=(V,E)$ with $|V|>1$ then $G$ has an Euler circuit if and only if the degree of all vertices in $G$ is even.
