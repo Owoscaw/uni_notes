@@ -31,4 +31,4 @@ For a graph $G=(V,E)$, the complement of $G$ is the graph $\overline G=(V,F)$ wh
 
 # Subgraphs:
 
-Given a graph $G=(V,E)$
+Given a graph $G=(V,E)$ and $G_1=(V_1,E_1)$ such that $V_1\subset V$ and $E_1\subset E$ then $G_1$ is a subgraph of $G$.
