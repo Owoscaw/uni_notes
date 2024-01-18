@@ -45,4 +45,8 @@ A trail is a walk with no edges repeated, and a circuit is a closed trail ($v_1=
 A path is a trail such that all vertices are distinct, and a cycle is a closed path.
 
 ## Hamiltonian cycle:
-A Hamiltonian cycle is a cycle that visits every vertex in $G$. That is the set of vertices in the cycle is equal to $V$. A graph that contains a Hamiltonian cycle is called a Hamiltonian graph
+A Hamiltonian cycle is a cycle that visits every vertex in $G$. That is the set of vertices in the cycle is equal to $V$. A graph that contains a Hamiltonian cycle is called a Hamiltonian graph.
+
+Given vertices $u\neq w$ in a graph $G$, if there is a walk from $u$ to $w$, then there is a path from $u$ to $w$. Let $\gamma$ be a walk in $G$ consisting of vertices $(v_i)_{1\leq i\leq k}$ with $v_1=u$ and $v_k=w$ and edges $(e_i)_{1\leq i\leq k-1}$. Given that $v_1,\dots,v_{k-1}$ are distinct, then $\gamma$ is a path. If this is the case, let $v_j$ be the first occurance of a repeated vertex and $v_{j^\prime}$ be the last appearance, so that $j^\prime$ is the greatest index such that $v_{j^\prime}=v_j$. Now let $\gamma^\prime$ be a walk formed from $\gamma$ by removing vertices $v_{j+1},\dots,v_{j^\prime}$ and edges $e_{j},\dots,e_{j^\prime-1}$. Now $v_j$ appears only once in $\gamma^\prime$. Now the number of repeated vertices is less than that in $\gamma$. Repeat this process until $\gamma$ is now a path. Similarly, one can prove that if $G$ has a circuit then it must also have a cycle:
+
+If every vertex in a graph $G=(V,E,\Phi)$ has degree greater than $1$, then $G$ contains a cycle. Let $n=|V|$, starting from any vertex in $G$ we have that $d_G(u)>1$. Then there must exist some edge $e$ such that $u\in\phi(e)=\{u,v\}$. Now let $v_1=u,v_2=v$. A cycle can then be constructed as follows. At $$
