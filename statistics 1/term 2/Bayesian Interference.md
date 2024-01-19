@@ -9,4 +9,9 @@ Note that $P(D^+|T^+)$ is still low because the prior probability $P(D^+)$ was v
 
 # Advanced Bayesian Calculations:
 
-Consider the august 2020 covid example where $P(D^+|T^+)=0.0156$. Then take a second test which is also positive, denoting this as $T^{++}$.  
+
+## Repeated tests:
+Consider the august 2020 covid example where $P(D^+|T^+)=0.0156$. Then take a second test which is also positive, denoting this as $T^{++}$. However in this case, the nature of the test has to be explored further. One assumption could be that the test results are conditionally independent given disease status, that is:$$\Huge P(T^{++}|D^+)=P(T^+|D^+)^2,\,\,P(T^{++}|D^-)=P(T^+|D^-)^2$$This is reasonable if the test fails independently each time. So consider this:$$\small P(D^+|T^{++})=\frac{P(T^{++}|D^+)P(D^+)}{P(T^{++}|D^+)P(D^+)+P(T^{++}|D^-)P(D^-)}=\frac{P(T^+|D^+)^2P(D^+)}{P(T^+|D^+)^2P(D^+)+P(T^+|D^-)^2P(D^-)}=0.501$$
+
+## Sequential learning:
+Sequential learning occurs when multiple tests are conducted in a row (sequence), for 
