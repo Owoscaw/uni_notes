@@ -8,6 +8,11 @@ def draw_line(m,c,x0,ell):
     rightPoint = [x0+ell/((1+m**2)**0.5), m*x0+(m*ell)/((1+m**2)**0.5)+c]
     plt.plot([leftPoint[0], rightPoint[0]], [leftPoint[1], rightPoint[1]])
 
+def draw_line_with_colour(m,c,x0,ell,colour):
+    leftPoint = [x0, m*x0+c]
+    rightPoint = [x0+ell/((1+m**2)**0.5), m*x0+(m*ell)/((1+m**2)**0.5)+c]
+    plt.plot([leftPoint[0], rightPoint[0]], [leftPoint[1], rightPoint[1]], color=colour)
+
 #task2
 def draw_unit_circle(thecolour):
     theta = np.linspace(0, 2*m.pi, 10000)
@@ -102,6 +107,9 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
         #line reaches circle
         if ell > (px**2 + py**2)**0.5:
             plt.plot([0, px], [0, py], color=line_col)
+
+            remainingEll = ell - (px**2 + py**2)**0.5
+            draw_line()
     else:
         draw_line(m.tan(theta), 0, 0, ell)
             
