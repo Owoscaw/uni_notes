@@ -1,0 +1,2 @@
+
+Let $X\subset\Re$ be open, and $f:X\mapsto\Re$  a function. $f$ is called differentiable at a point $c\in X$ if the following exists:$$\Huge \lim_{x\to c}\frac{f(x)-f(c)}{x-c}$$This is denoted as $f^\prime(c)$
