@@ -110,11 +110,13 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
 
             remainingEll = ell - (px**2 + py**2)**0.5
             draw_line_with_colour(-m.tan(theta), 2*py, px, remainingEll, line_col)
+        else:
+            draw_line(m.tan(theta), 0, 0, ell)
     else:
         draw_line(m.tan(theta), 0, 0, ell)
             
 
 
-single_bumper(m.pi/4, [[3,4],2], 5, "blue", "red")
+single_bumper(5*m.pi/4, [[3,4],2], 5, "blue", "red")
 plt.gca().set_aspect("equal","box")
 plt.show() 
