@@ -6,3 +6,7 @@ In interpreting a [[Disease testing using Bayesian Methods|disease test]] result
 
 Bayes theorem is used to calculate the posterior probability:$$\Huge P(D^+|T^+)=\frac{P(T^+|D^+)P(D^+)}{P(T^+)}=\frac{P(T^+|D^+)P(D^+)}{P(T^+|D^+)P(D^+)+P(T^+|D^-)P(D^-)}$$Using partition theorem also. Below is an example of calculating posterior probability for the data used in [[Disease testing using Bayesian Methods]]:![[disease testing follow up]]
 Note that $P(D^+|T^+)$ is still low because the prior probability $P(D^+)$ was very low. Despite evidence from a positive test, it is still unlikely to have covid. Another way to see this is by looking at the denominator of Bayes theorem, $P(T^+)=P(T^+|D^+)P(D^+)+P(T^+|D^-)P(D^-)$. In the above case, $P(D^+)$ is so low that the probability of getting a false positive result is much greater than that of an accurate positive test. Therefore the majority of people testing positive for covid would be doing so due to a false positive rather than an accurate positive test.
+
+# Advanced Bayesian Calculations:
+
+Consider the august 2020 covid example where $P(D^+|T^+)=0.0156$. Then take a second test which is also positive, denoting this as $T^{++}$.  
