@@ -1,4 +1,4 @@
-
+	
 # Connectedness: 
 
 A [[Graph definitions#Standard Graphs|graph]] $G$ is connected if given any two vertices $u,v$, there is a [[Graph definitions#Path|path]] in $G$ from $u$ to $v$.

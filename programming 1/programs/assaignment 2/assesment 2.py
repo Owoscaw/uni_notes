@@ -114,17 +114,16 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
             plt.plot([0, px], [0, py], color=line_col)
 
             remainingEll = ell - (px**2 + py**2)**0.5
-            #check gradient
-            reflectedTheta = theta + 2*m.asin(abs((circ[0][1]-py)/circ[1]))
-
-            draw_line_with_colour(-m.tan(reflectedTheta), (m.tan(reflectedTheta) + m.tan(theta))*px, px, remainingEll, line_col)
+            
+            #some angles become negative here, and its easier to use the helper function "draw_line_from_rightmost_point_with_colour" :p
+            if theta > m.atan(abs(circ[0][1]/circ[0][0])):
+                reflectedTheta = -theta + 2*m.asin(abs((circ[0][1]-py)/circ[1]))
+                draw_line_from_rightmost_point_with_colour(-m.tan(reflectedTheta), (m.tan(reflectedTheta) + m.tan(theta))*px, px, remainingEll, line_col)
+            else:
+                reflectedTheta = theta + 2*m.asin(abs((circ[0][1]-py)/circ[1]))
+                draw_line_with_colour(-m.tan(reflectedTheta), (m.tan(reflectedTheta) + m.tan(theta))*px, px, remainingEll, line_col)
         else:
             draw_line_with_colour(m.tan(theta), 0, 0, ell, line_col)
     else:
         draw_line_with_colour(m.tan(theta), 0, 0, ell, line_col)
             
-
-
-single_bumper((0.525)*m.pi/2, [[1,4],2], 5, "blue", "red")
-plt.gca().set_aspect("equal","box")
-plt.show() 
