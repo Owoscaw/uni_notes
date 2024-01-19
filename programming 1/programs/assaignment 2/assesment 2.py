@@ -93,14 +93,14 @@ def gencircles_and_radicalaxis(circ1, circ2, thecolours):
 def single_bumper(theta, circ, ell, circ_col, line_col):
     draw_circle(circ, circ_col)
 
-    if circ[1]**2 > (m.sin(theta)*circ[0][0] + m.cos(theta)*circ[0][1])**2:
+    if circ[1]**2 > (m.sin(theta)*circ[0][0] - m.cos(theta)*circ[0][1])**2:
         
         #coordinates of segment intersection
-        px = m.cos(theta)*(m.cos(theta)*circ[0][0]-m.sin(theta)*circ[0][1]+(circ[1]**2 - (m.sin(theta)*circ[0][0] + m.cos(theta)*circ[0][1])**2)**0.5)
-        py = m.sin(theta)*(m.cos(theta)*circ[0][0]-m.sin(theta)*circ[0][1]+(circ[1]**2 - (m.sin(theta)*circ[0][0] + m.cos(theta)*circ[0][1])**2)**0.5)
+        px = m.cos(theta)*(m.cos(theta)*circ[0][0]+m.sin(theta)*circ[0][1]-(circ[1]**2 - (m.sin(theta)*circ[0][0] - m.cos(theta)*circ[0][1])**2)**0.5)
+        py = m.sin(theta)*(m.cos(theta)*circ[0][0]+m.sin(theta)*circ[0][1]-(circ[1]**2 - (m.sin(theta)*circ[0][0] - m.cos(theta)*circ[0][1])**2)**0.5)
 
         #line reaches circle
-        if ell < (px**2 + py**2)**0.5:
+        if ell > (px**2 + py**2)**0.5:
             plt.plot([0, px], [0, py], color=line_col)
     else:
         draw_line(m.tan(theta), 0, 0, ell)
