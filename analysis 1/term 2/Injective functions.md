@@ -1,0 +1,4 @@
+
+A function $f:X\mapsto\Re$ is said to be strictly increasing if $\forall x,y\in X$ with $x<y$, then $f(x)<f(y)$. A strictly decreasing function can be defined similarly. Strictly increasing or decreasing functions are always injective.
+
+Let $f:I\mapsto\Re$ be continuous and injective with $I$ as an interval. Then $f$ is either strictly increasing or decreasing. To prove this, assume that $f:I\mapsto\Re$ is neither increasing or decreasing. Then there must exist $a,b,c\in I$ with $a<b<c$ such that $f(a)<f(b)>f(c)$ or $f(a)>f(b)<f(c)$. The proofs for each of these cases are very similar, so focus on $f(a)<f(b)>f(c)$. Assume also $f(a)<f(c)$

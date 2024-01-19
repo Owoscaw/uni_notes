@@ -115,6 +115,6 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
             
 
 
-single_bumper(m.pi/4, [[2.5,5.5],2], 5, "blue", "red")
+single_bumper(m.pi/4, [[3,4],2], 5, "blue", "red")
 plt.gca().set_aspect("equal","box")
 plt.show() 
