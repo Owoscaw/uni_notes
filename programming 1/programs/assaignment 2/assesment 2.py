@@ -13,6 +13,11 @@ def draw_line_with_colour(m,c,x0,ell,colour):
     rightPoint = [x0+ell/((1+m**2)**0.5), m*x0+(m*ell)/((1+m**2)**0.5)+c]
     plt.plot([leftPoint[0], rightPoint[0]], [leftPoint[1], rightPoint[1]], color=colour)
 
+def draw_line_from_rightmost_point_with_colour(m,c,x0,ell,colour):
+    rightPoint = [x0, m*x0+c]
+    leftPoint = [x0-ell/((1+m**2)**0.5), m*x0+(m*ell)/((1+m**2)**0.5)+c]
+    plt.plot([leftPoint[0], rightPoint[0]], [leftPoint[1], rightPoint[1]], color=colour)
+
 #task2
 def draw_unit_circle(thecolour):
     theta = np.linspace(0, 2*m.pi, 10000)
@@ -109,9 +114,9 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
             plt.plot([0, px], [0, py], color=line_col)
 
             remainingEll = ell - (px**2 + py**2)**0.5
-            if theta < m.pi/2:
-                theta -= m.pi
-            draw_line_with_colour(-m.tan(theta), 2*py, px, remainingEll, line_col)
+            #check gradient
+            reflectedTheta = m.pi - theta - m.atan(abs((circ[0][1]-py)/(circ[0][0]-px)))
+            draw_line_from_rightmost_point_with_colour(-m.tan(reflectedTheta), (m.tan(reflectedTheta)*m.cos(theta) + m.sin(theta))*(px/m.cos(theta)), px, remainingEll, line_col)
         else:
             draw_line(m.tan(theta), 0, 0, ell)
     else:
@@ -119,6 +124,6 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
             
 
 
-single_bumper(5*m.pi/12, [[3,4],2], 5, "blue", "red")
+single_bumper(4*m.pi/12, [[3,4],2], 5, "blue", "red")
 plt.gca().set_aspect("equal","box")
 plt.show() 
