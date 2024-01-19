@@ -115,12 +115,15 @@ def single_bumper(theta, circ, ell, circ_col, line_col):
 
             remainingEll = ell - (px**2 + py**2)**0.5
             #check gradient
-            reflectedTheta = m.pi - theta - m.atan(abs((circ[0][1]-py)/(circ[0][0]-px)))
+            if theta > m.atan(abs(circ[0][1]/(circ[0][0]))):
+                reflectedTheta = -m.pi + theta + m.atan(abs((circ[0][1]-py)/(circ[0][0]-px)))
+            else:
+                reflectedTheta = m.pi - theta - m.atan(abs((circ[0][1]-py)/(circ[0][0]-px)))
             draw_line_from_rightmost_point_with_colour(-m.tan(reflectedTheta), (m.tan(reflectedTheta)*m.cos(theta) + m.sin(theta))*(px/m.cos(theta)), px, remainingEll, line_col)
         else:
-            draw_line(m.tan(theta), 0, 0, ell)
+            draw_line_with_colour(m.tan(theta), 0, 0, ell, line_col)
     else:
-        draw_line(m.tan(theta), 0, 0, ell)
+        draw_line_with_colour(m.tan(theta), 0, 0, ell, line_col)
             
 
 
