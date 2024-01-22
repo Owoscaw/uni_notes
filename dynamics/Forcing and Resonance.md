@@ -8,3 +8,8 @@ If $\omega=p$, then the complimentary function remains the same however a differ
 
 # Forcing + [[Energy and oscillations#Damped oscillators|Damping]]:
 
+Adding a damping force can often give $x_{CF}$ that will tend to $0$ as $t\to\infty$, for example exponentials with negative powers. In this case, $x_{CF}$ is said to by the transient response. If the non-homogenous side of the second order [[Second Order Differential Equations#Inhomogeneous case, $ phi(x) neq 0$|ODE]] is periodic, then it will not tend to $0$ and is said to be the steady-state response. If this $x_{PI}$ is a linear combination of $\cos$ and $\sin$ terms, then it can be written as a single term using a phase shift. By defining $\tan\phi=\frac{2bp}{\omega^2-p^2}$ then $x_{PI}$ is written as:$$\Huge x_{PI}(t)=C\sin(pt-\phi)$$Note that resonance will now be out of phase with applied force, so cannot happen.
+
+# Small oscillations:
+
+Suppose that [[Energy and oscillations#Motion in Potential|$V(x)$]] has a local minimum at $x_0$.
