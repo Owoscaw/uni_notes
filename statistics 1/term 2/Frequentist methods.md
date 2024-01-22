@@ -9,4 +9,9 @@ The [[Expectation#Variance and Co-Variance|variance]] of a discrete random varia
 
 The probability density function ([[Random variables#Continuous random variables|PDF]]) of a continuous random variable $X$ describes the probability density of each value:$$\Huge P(x\leq X\leq x+dx)=f(x)dx,\,\,P(a\leq X\leq B)=\int_a^bf(x)dx$$Take the [[Random variables#Normal distribution|normal distribution]], $X\sim N(\mu,\sigma^2)$ and its PDF:$$\Huge f(x|\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$
 ## Expectation and Variance:
-$$\Huge E[X]=\int xf(x)dx,\,\,Var[X]=E[X^2]-E^2[X]$$That is:$$$$
+$$\Huge E[X]=\int xf(x)dx,\,\,Var[X]=E[X^2]-E^2[X]$$That is:$$\Huge Var[X]=\int x^2f(x)dx-\left(\int xf(x)dx\right)^2$$
+
+# Properties of expectation and variance:
+
+## Change in scale and location:
+Consider and random variable $X$ with any $a,b\in\Re$. Then we have:$$\Huge E[aX+b]=aE[X]+b$$By the linearity of the sum and of the integral. Similarly:$$\Huge Var[aX+b]=a^2Var[X]$$
