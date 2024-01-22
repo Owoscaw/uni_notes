@@ -15,3 +15,5 @@ $$\Huge E[X]=\int xf(x)dx,\,\,Var[X]=E[X^2]-E^2[X]$$That is:$$\Huge Var[X]=\int 
 
 ## Change in scale and location:
 Consider and random variable $X$ with any $a,b\in\Re$. Then we have:$$\Huge E[aX+b]=aE[X]+b$$By the linearity of the sum and of the integral. Similarly:$$\Huge Var[aX+b]=a^2Var[X]$$
+## Sums and differences:
+Consider two random variables $X$ and $Y$ with $a,b\in\Re$:$$\Huge E[aX+bY]=aE[X]+bE[Y]$$If $X$ and $Y$ are independent, we get:$$\Huge Var[aX+bY]=a^2Var[X]+b^2Var[Y]$$However if this is not the case:$$\Huge Var[aX+bY]=a^2Var[X]+2ab\,Cov[X,Y]+b^2Var[Y]$$Both of these concepts can be extended to a countably infinite amount of random variables.
