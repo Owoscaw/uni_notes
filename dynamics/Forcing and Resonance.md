@@ -12,4 +12,4 @@ Adding a damping force can often give $x_{CF}$ that will tend to $0$ as $t\to\in
 
 # Small oscillations:
 
-Suppose that [[Energy and oscillations#Motion in Potential|$V(x)$]] has a local minimum at $x_0$.
+Suppose that we are dealing with a conservative force and [[Energy and oscillations#Motion in Potential|$V(x)$]] has a local minimum at $x_0$. $V^\prime(x_0)=0$, so $x_0$ is an equilibrium point. If $V''(x_0)<0$ then $x_0$ is a stable equilibrium, if $V''(x_0)>0$ then $x_0$ is an unstable equilibrium. Small oscillations around a stable equilibrium can be approximated. Given a stable equilbirum point $x_0$, we can approxmate $x(t)$ by:$$\Huge x(t)=x_0+\epsilon(t)$$Where $\epsilon(t)$ is a small function. Then the equation of motion becomes:$$\Huge m\ddot x=F(x)\implies m\ddot\epsilon=F(x_0+\epsilon)=F(x_0)+\epsilon F'(x_0)+\dots$$Using a [[Taylor series#Taylor polynomials|Taylor expansion]]. The increasing powers of $\epsilon$ become very small very quickly and note $F()$
