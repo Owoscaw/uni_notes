@@ -21,3 +21,7 @@ The directional derivative can also be defined as:$$\Huge \underline{\nabla }f \
 
 ![[partials in new coordinates]]
 A coordinate change from $(x,y)$ to $(u,v)$ where $x=x(u,v)$ and $y=y(u,v)$ involves the use of the chain rule:![[change of variables partials]]
+
+# Taylor series for multivariate functions:
+
+For functions of one variable:$$\Huge f(x)=f(x_0)+(x-x_0)f'(x_0)+\frac{(x-x_0)^2}{2!}f''(x_0)+\dots+\frac{(x-x_0)^n}{n!}f^{(n)}(x_0)$$
