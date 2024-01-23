@@ -4,4 +4,4 @@ An inner product gives geometric relations between vectors, for example the angl
 >$B(\underline w,\underline u + \underline v)=B(\underline w,\underline u)+B(\underline w,\underline v)$
 >$B(\lambda\underline u,\underline v)=\lambda B(\underline u,\underline v)=B(\underline u,\lambda\underline v)$
 
-Hence $B$ is linear in both arguments. Given a basis for $\Re^n$ 
+Hence $B$ is linear in both arguments. Given a basis for $\Re^n$ of form $\{\underline v_1,\dots,\underline v_n\}$ defined as $V$ and let $\underline u=x_1\underline v_1+\dots+x_n\underline v_n,\,\,\underline v=y_1\underline v_1+\dots+y_n\underline v_n$ and let $B$ be a bilinear form. Then:$$\large B(\underline u,\underline v)=B\left(\sum_{j=1}^nx_j\underline v_j,\sum_{i=1}^ny_i\underline v_i\right)=\sum_{i,j=1}^ny_iB(\underline v_j,\underline v_i)x_j=\sum_{i,j=1}^ny_iA_{ij}x_j=\underline y^TA\underline x$$Where $A_{ij}=B(\underline v_j,\underline v_i)$, the matrix representing the bilinear form $B$ wrt the basis $\{\underline v_j\}$. For the dot product with respect to the standard basis, $A=I_n$.
