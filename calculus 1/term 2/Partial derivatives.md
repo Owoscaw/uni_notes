@@ -20,4 +20,4 @@ The directional derivative can also be defined as:$$\Huge \underline{\nabla }f \
 # Changing coordinates:
 
 ![[partials in new coordinates]]
-A coordinate change from $(x,y)$ to $(u,v)$ where $x=x(u,v)$ and $y=y(u,v)$ involves the use of the chain rule:![[Partial derivatives .excalidraw]]
+A coordinate change from $(x,y)$ to $(u,v)$ where $x=x(u,v)$ and $y=y(u,v)$ involves the use of the chain rule:![[change of variables partials]]
