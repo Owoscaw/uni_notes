@@ -16,3 +16,8 @@ Recall that $\delta f=f(x_0+\delta x,y_0+\delta y)-f(x_0,y_0)=M\delta x+N\delta 
 A directional derivative gives the slope in the direction of a unit vector $\underline{\hat n}$:![[directional derivative diagram]]
 If $f$ is a function of $n$ variables, then:$$\Huge \underline\nabla f=\left(\frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},\dots,\frac{\partial f}{\partial x_n}\right)$$To find the slope of $f$ in the direction of any vector $\underline u$, you can normalise $u$ by dividing it by $|\underline u|$. Example:![[directional derivative example]]
 The directional derivative can also be defined as:$$\Huge \underline{\nabla }f \cdot\underline{\hat n}=|\underline {\nabla} f||\underline{\hat n}|\cos(\theta)=|\underline\nabla f|\cos(\theta)$$Where $\theta$ is the angle between $\underline{\hat n}$ and $\underline\nabla f$. Since $-1\leq\cos\theta\leq1$ it follows that:$$\Huge -|\underline\nabla f|\leq \underline\nabla f\cdot\underline{\hat n}\leq|\underline\nabla f|$$So the directional derivative is maximum when $\theta=0$, when $\underline{\hat n}$ and $\underline\nabla f$ point in the same direction. Then $\underline\nabla f\cdot\underline{\hat n}=|\underline\nabla f|$. On the other hand if $\underline{\hat n}$ is tangential to the level set $f=c$ then the slope in the direction of $\underline{\hat n}$ is $0$, $\underline\nabla f$ is perpendicular to the tangent and normal to the level set.
+
+# Changing coordinates:
+
+![[partials in new coordinates]]
+A coordinate change from $(x,y)$ to $(u,v)$ where $x=x(u,v)$ and $y=y(u,v)$ involves the use of the chain rule:![[Partial derivatives .excalidraw]]
