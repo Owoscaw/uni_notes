@@ -16,4 +16,4 @@ At a local maximum, $f(x)-f(c)\leq0$ so consider the left and right limits of th
 
 # Rolle's theorem:
 
-Let $f:[a,b]\mapsto\Re$ be continuous and differentiable on $(a,b)$ and suppose that $f(a)=f(b)$ then there exists $c\in(a,b)$ such that $f'(c)=0$. Since $f$ is continuous 
+Let $f:[a,b]\mapsto\Re$ be continuous and differentiable on $(a,b)$ and suppose that $f(a)=f(b)$ then there exists $c\in(a,b)$ such that $f'(c)=0$. Since $f$ is continuous on $[a,b]$ then $f$ attains its maximum and minimum, so there exists $d,e\in[a,b]$ with $f(d)\geq f(x)\geq f(e)\,\,\forall x\in[a,b]$.
