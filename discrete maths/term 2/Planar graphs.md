@@ -1,0 +1,2 @@
+
+Given a [[Graph definitions|graph]] $G(V,E)$, where there exists subsets $V_1,V_2\subset V$ such that $V_1\cup V_2=V$ and $V_1\cap V_2=\emptyset$ and every edge is of form $uv$ where $u\in V_1,v\in V_2$, that is every edge connects a node in $V_1$ to a node in $V_2$, then $G$ is said to be bipartite.
