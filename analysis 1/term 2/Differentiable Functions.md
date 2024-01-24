@@ -7,4 +7,4 @@ Let $f:X\mapsto\Re$ be a function where $X\subset\Re$. If $f$ is differentiable 
 # Differentiable results:
 
 Let $f,g$ be two differentiable functions at the point $c$ and $\alpha\in\Re$, then $f+c$ and $\alpha f$ are also differentiable at $c$:$$\Huge (f+g)'(c)=f'(c)+g'(c),\,\,(\alpha f)'(c)=\alpha f'(c)$$Furthermore, their product $fg$ is also differentiable at $c$:$$\Huge (fg)'(c)=f(c)g'(c)+f'(c)g(c)$$
-Let $f,g$ be two functions such that $g$ is differentiable at $c$ and $f$ is differentiable at $g(c)$. Then $f\circ g$ is differentiable at $c$ with:$$\Huge  (f\circ g)'(c)=f'(g(c))g'(c)$$![[Differentiable Functions .excalidraw]]
+Let $f,g$ be two functions such that $g$ is differentiable at $c$ and $f$ is differentiable at $g(c)$. Then $f\circ g$ is differentiable at $c$ with:$$\Huge  (f\circ g)'(c)=f'(g(c))g'(c)$$![[function compositions differentiability]]
