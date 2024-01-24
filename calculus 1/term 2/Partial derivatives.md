@@ -22,6 +22,7 @@ The directional derivative can also be defined as:$$\Huge \underline{\nabla }f \
 ![[partials in new coordinates]]
 A coordinate change from $(x,y)$ to $(u,v)$ where $x=x(u,v)$ and $y=y(u,v)$ involves the use of the chain rule:![[change of variables partials]]
 
-# Taylor series for multivariate functions:
+# [[Taylor series]] for multivariate functions:
 
-For functions of one variable:$$\Huge f(x)=f(x_0)+(x-x_0)f'(x_0)+\frac{(x-x_0)^2}{2!}f''(x_0)+\dots+\frac{(x-x_0)^n}{n!}f^{(n)}(x_0)$$
+For functions of one variable:$$\small f(x)=f(x_0)+(x-x_0)f'(x_0)+\frac{(x-x_0)^2}{2!}f''(x_0)+\dots+\frac{(x-x_0)^n}{n!}f^{(n)}(x_0)+\frac{(x-x_0)^{n+1}}{(n+1)!}f^{(n+1)}(\zeta)$$This becomes simpler when letting $x=x_0+\delta x$. For a function of two variables $f(x,y)$ we need to find $f(x_0+\delta x,y_0+\delta y)$ in terms of $f$ and derivatives at $(x_0,y_0)$:![[multivariate taylor]]
+From this construction, define:$$\Huge F(t)=F(0)+tF'(0)+\frac{t^2}{2!}F''(0)+\dots+\frac{t^n}{n!}F^{(n)}(0)+\frac{t^{n+1}}{(n+1)!}F^{(n+1)}(\zeta)$$
