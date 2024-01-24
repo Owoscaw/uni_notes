@@ -7053,6 +7053,254 @@ tags: [excalidraw]
 				9.3333740234375,
 				37.3333740234375
 			]
+		},
+		{
+			"id": "G5xcmQg6Fr83ahNtQn-qx",
+			"type": "freedraw",
+			"x": 1653.333251953126,
+			"y": 258.3436889648436,
+			"width": 25.3333740234375,
+			"height": 1.33331298828125,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "hachure",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 0,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 583678828,
+			"version": 10,
+			"versionNonce": 1304751444,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1706106716559,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-1.3333740234375,
+					0
+				],
+				[
+					5.333251953125,
+					0
+				],
+				[
+					9.333251953125,
+					-1.33331298828125
+				],
+				[
+					14.6666259765625,
+					-1.33331298828125
+				],
+				[
+					17.333251953125,
+					-1.33331298828125
+				],
+				[
+					21.333251953125,
+					0
+				],
+				[
+					24,
+					0
+				],
+				[
+					24,
+					0
+				]
+			],
+			"pressures": [
+				0.517578125,
+				0.6044921875,
+				0.958984375,
+				0.9765625,
+				0.8955078125,
+				0.814453125,
+				0.5361328125,
+				0.056640625,
+				0
+			],
+			"simulatePressure": false,
+			"lastCommittedPoint": [
+				24,
+				0
+			]
+		},
+		{
+			"id": "n3DLwEVdsEivhTb9QMkwf",
+			"type": "freedraw",
+			"x": 1655.9998779296884,
+			"y": 271.67706298828114,
+			"width": 25.3333740234375,
+			"height": 5.33331298828125,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "hachure",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 0,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 386081900,
+			"version": 12,
+			"versionNonce": 808587092,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1706106716840,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					-4,
+					2.6666259765625
+				],
+				[
+					-5.3333740234375,
+					2.6666259765625
+				],
+				[
+					-1.3333740234375,
+					4
+				],
+				[
+					1.3333740234375,
+					4
+				],
+				[
+					6.6666259765625,
+					4
+				],
+				[
+					12,
+					4
+				],
+				[
+					16,
+					5.33331298828125
+				],
+				[
+					18.6666259765625,
+					5.33331298828125
+				],
+				[
+					20,
+					5.33331298828125
+				],
+				[
+					20,
+					5.33331298828125
+				]
+			],
+			"pressures": [
+				0.4619140625,
+				0.5810546875,
+				0.6552734375,
+				0.93359375,
+				0.9609375,
+				1,
+				0.939453125,
+				0.8125,
+				0.583984375,
+				0.3291015625,
+				0
+			],
+			"simulatePressure": false,
+			"lastCommittedPoint": [
+				20,
+				5.33331298828125
+			]
+		},
+		{
+			"id": "nDftyTqIrUXRh9rmQIQPg",
+			"type": "freedraw",
+			"x": 1501.3332519531257,
+			"y": 406.34368896484375,
+			"width": 17.333251953125,
+			"height": 6.6666259765625,
+			"angle": 0,
+			"strokeColor": "#1e1e1e",
+			"backgroundColor": "transparent",
+			"fillStyle": "hachure",
+			"strokeWidth": 0.5,
+			"strokeStyle": "solid",
+			"roughness": 0,
+			"opacity": 100,
+			"groupIds": [],
+			"frameId": null,
+			"roundness": null,
+			"seed": 857306732,
+			"version": 9,
+			"versionNonce": 1985518804,
+			"isDeleted": false,
+			"boundElements": null,
+			"updated": 1706106818382,
+			"link": null,
+			"locked": false,
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					1.333251953125,
+					-1.33331298828125
+				],
+				[
+					4,
+					-1.33331298828125
+				],
+				[
+					8,
+					-2.6666259765625
+				],
+				[
+					12,
+					-4
+				],
+				[
+					16,
+					-5.33331298828125
+				],
+				[
+					17.333251953125,
+					-6.6666259765625
+				],
+				[
+					17.333251953125,
+					-6.6666259765625
+				]
+			],
+			"pressures": [
+				0.37109375,
+				0.583984375,
+				0.6572265625,
+				0.654296875,
+				0.484375,
+				0.2275390625,
+				0.056640625,
+				0
+			],
+			"simulatePressure": false,
+			"lastCommittedPoint": [
+				17.333251953125,
+				-6.6666259765625
+			]
 		}
 	],
 	"appState": {
@@ -7070,8 +7318,8 @@ tags: [excalidraw]
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "triangle",
-		"scrollX": 55.3334960937504,
-		"scrollY": 134.3438110351567,
+		"scrollX": 15.888702392578239,
+		"scrollY": 280.01054382324276,
 		"zoom": {
 			"value": 0.4999999999999996
 		},
