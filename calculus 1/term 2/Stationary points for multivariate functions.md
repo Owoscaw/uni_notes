@@ -1,4 +1,4 @@
 
 For a function of one variable, a stationary point is defined to be a point where $f'(x)=0$. There are two types of extema for functions of one variable, minima and maxima. For functions of two or more variables, there are three types of extrema: minima, maxima, and saddle points. For a function of two variables, there will be a stationary point whenever the tangent plane is zero. Generalising to $n$ variables, there will be a stationary point when the $n-1$ hyperplane is zero.
 
-Let $f(x_1,\dots,x_n):\Re^n\mapsto\Re$. $f$ has a stationary point at $\underline a$ if $f$ is differentiable at $\underline a$ and:$$\Huge \underline\nabla f=\left(\frac{\partial f}{\partial x_1},\dots,\frac{\partial f}{\}\right)$$
+Let $f(x_1,\dots,x_n):\Re^n\mapsto\Re$. $f$ has a stationary point at $\underline a$ if $f$ is differentiable at $\underline a$ and:$$\Huge \underline\nabla f=\left(\frac{\partial f}{\partial x_1},\dots,\frac{\partial f}{\partial x_n}\right)=0$$For example:![[Stationary points for multivariate functions .excalidraw]]
