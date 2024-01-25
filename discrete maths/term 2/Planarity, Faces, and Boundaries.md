@@ -19,6 +19,9 @@ We propose that for any edge $e\in E$ for a graph $G=(V,E)$, then $e$ is a bridg
 
 If $e$ is a bridge then there are two vertices $w_1,w_2$ which are in the same connected component in $G$, but different components in $G'$. Therefore there exists a path from $w_1$ to $w_2$ in $G$, but no such path in $G'$. This is the same as saying any path from $w_1$ to $w_2$ in $G$ passes through $e$. Also in $G'$ there must be a path from either $u$ or $v$ to $w_1$ and a path from the other to $w_2$. Since $w_1,w_2$ will be in different connected components of $G'$, so must the endpoints of $e$ ($u,v$).
 
-Suppose $e$ is not a bridge, then there is a path from $u$ to $v$ in $G'$. Adding back $e$ will create a cycle in $G$. Conversely suppose that $e$ is part of a cycle in $G$, then there is a path from $u$ to $v$ in $G'$ (by going around the cycle). Then $e$ must not be a bridge
+Suppose $e$ is not a bridge, then there is a path from $u$ to $v$ in $G'$. Adding back $e$ will create a cycle in $G$. Conversely suppose that $e$ is part of a cycle in $G$, then there is a path from $u$ to $v$ in $G'$ (by going around the cycle). Then $e$ must not be a bridge.
 
-10.2
+# Jordan curve theorem:
+
+A simple closed curve in the plane divides it into two regions, one outside and one inside. This has a corollary where in a planar representation of a graph, an edge $e$ has both sides on the same face if and only if $e$ is a bridge.
+
