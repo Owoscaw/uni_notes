@@ -1,3 +1,9 @@
 # Bernoulli distribution:
 
-When an experiment has binary outcome, that is a success or failure. We denote the two outcomes at $0$ or $1$. We then define the Bernoulli distribution with parameter $p\in[0,1]$ that has outcome either $0$ or $1$:$$\Huge P(X=1)=p,\,\,P(X=0)=1-p$$$$\Huge f(x|p)=\begin{cases}p^xq^{1-x}&\text{for }x=0,1\\0&\text{otherwise}\end{cases}$$Where $q=1-p$. Note that $f(1|p)=p,\,f(0|p)=q$. From this we calculate the expectation and variance:$$\Huge E[X]=\sum_{x=0}^1xf(x|p)=0\times q+1\times p=p$$$$\Huge E[X^2]=\sum_{x=0}^1x^2f(x|p)=0^2\times q+1^2\times p=p$$$$\Huge Var[X]=E[X^2]-E^2[X]=p-p^2=p(1-p)=pq$$We can alco calculate the [[Limit theorems#Moment Generating functions|MGF]] aswell:$$\Huge \psi(t)=E[e^{tX}]=\sum_{x=0}^1e^{tx}f(x|p)=e^0\timesq$$
+When an experiment has binary outcome, that is a success or failure. We denote the two outcomes at $0$ or $1$. We then define the Bernoulli distribution with parameter $p\in[0,1]$ that has outcome either $0$ or $1$:$$\Huge P(X=1)=p,\,\,P(X=0)=1-p$$$$\Huge f(x|p)=\begin{cases}p^xq^{1-x}&\text{for }x=0,1\\0&\text{otherwise}\end{cases}$$Where $q=1-p$. Note that $f(1|p)=p,\,f(0|p)=q$. From this we calculate the expectation and variance:$$\Huge E[X]=\sum_{x=0}^1xf(x|p)=0\times q+1\times p=p$$$$\Huge E[X^2]=\sum_{x=0}^1x^2f(x|p)=0^2\times q+1^2\times p=p$$$$\Huge Var[X]=E[X^2]-E^2[X]=p-p^2=p(1-p)=pq$$We can also calculate the [[Limit theorems#Moment Generating functions|MGF]] also:$$\Huge \psi(t)=E[e^{tX}]=\sum_{x=0}^1e^{tx}f(x|p)=e^0\times q+e^t\times p=q+pe^t$$
+## Bernoulli trials:
+Given a sequence of $n$ random variables $X_1,\dots,X_n$ which are independent and identically distributed. If each $X_i$ has a Bernoulli distribution with parameter $p$ then we say $X_1,\dots,X_n$ form $n$ Bernoulli trials. This is a great model for the US presidential election.
+
+# Probability vs Statistics:
+
+Often probability would involve the calculation of more complex configurations of $X_1,\dots,X_n$
