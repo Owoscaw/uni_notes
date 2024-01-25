@@ -6,4 +6,12 @@ Assume Euler's formula is true for any planar graph with $k$ connected component
 
 # Simple planar graphs have few edges:
 
-If $G=(V,E)$ is a simple planar graph with $|V|\geq 3$ then:$$\Huge |E|\leq3|V|-6$$This is proven by considering that if $G$ has at least $2$ edges, then $b(f)\geq 3$ for every face. This becomes:$$\Huge 2|E|=\sum_{f\in F}b(f)\geq$$
+If $G=(V,E)$ is a simple planar graph with $|V|\geq 3$ then:$$\Huge |E|\leq3|V|-6$$This is proven by considering that if $G$ has at least $2$ edges, then $b(f)\geq 3$ for every face. This becomes:$$\Huge 2|E|=\sum_{f\in F}b(f)\geq\sum_{f\in F}3=3|F|$$If $G$ has one or fewer edges then we already get the inequality for free. Now use this bound with Euler's formula:$$\Huge |V|-|E|+\frac{2|E|}{3}\geq k+1\geq 2$$Which simplifies to prove the inequality.
+
+# Girth:
+
+We define the girth, $g$, of a graph $G=(V,E)$ to be the length of the shortest cycle in $G$. We then propose that if $G$ is simple and planar with nonzero girth then:$$\Huge |E|\leq\frac{g}{g-2}(|V|-2)$$To prove this, start with the planar handshaking lemma. Note that for every face, $b(f)\geq g$ by definition:$$\Huge 2|E|=\sum_{f\in F}b(f)\geq\sum_{f\in F}g=g|F|$$Again using Euler's formula:$$\Huge |V|-|E|+\frac{2|E|}{g}\geq k+1\geq 2$$Which simplifies to prove the inequality.
+
+# Subdivisions:
+
+A subdivision of a graph $G$ is obtained by subdividing the ed
