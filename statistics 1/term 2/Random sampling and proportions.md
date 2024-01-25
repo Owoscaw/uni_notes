@@ -4,6 +4,14 @@ When an experiment has binary outcome, that is a success or failure. We denote t
 ## Bernoulli trials:
 Given a sequence of $n$ random variables $X_1,\dots,X_n$ which are independent and identically distributed. If each $X_i$ has a Bernoulli distribution with parameter $p$ then we say $X_1,\dots,X_n$ form $n$ Bernoulli trials. This is a great model for the US presidential election.
 
-# Probability vs Statistics:
+# Statistical inference:
 
-Often probability would involve the calculation of more complex configurations of $X_1,\dots,X_n$
+Often in statistics, the results of a real world experiment are taken and the statistician is asked to infer something meaningful about an underlying probability $p$. This probability can be thought of in one of two ways:
+>$p$ is real with a fixed value that is unknown (frequentist)
+>$p$ is an unknown quantity which should represent our subjective uncertainty (bayesian)
+
+For the first interpresentation, an estimation of $p$ can be constructed from $X_1,\dots,X_n$. The attributes of this estimator can then be examined to determine its reliability.
+
+# Totals and estimators:
+
+Define $X$ as the total sum of all successes over $n$ trials:$$\Huge X=\sum_{i=1}^nX_n$$With each $X_i$ taking value $0$ or $1$, i.e. a Bernoulli distribution. Then we need to take the [[Frequentist methods#Continuous random variables|PMF]] of all $n$ trials:$$\Huge f(x_1,\dots,x_n|p)=\prod_{i=1}^nf(x_i|p)=\prod_{}$$
