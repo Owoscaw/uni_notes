@@ -1,0 +1,3 @@
+Let $G=(V,E,\phi)$ be a [[Planarity, Faces, and Boundaries#Planarity|planar graph]] with [[Planarity, Faces, and Boundaries#Faces and Boundaries|face]] set $F$ and $k$ connected components. Then Euler states:$$\Huge |V|-|E|+|F|=k+1$$This is proven by induction on $|E|$. Take our base case to be $|E|=0$. Then every vertice is a connected component, so $|V|=k$. Then the formula becomes $|V|-|E|+|F|=k-0+1=k+1$, which is true. This is because there will only be one face, the unbounded one.
+
+Assume Euler's formula is true for any planar graph with $k$ connected components and $|E|=k$. Remove any edge $e\in E$ to form the graph $G_0$

@@ -24,4 +24,3 @@ Suppose $e$ is not a bridge, then there is a path from $u$ to $v$ in $G'$. Addin
 # Jordan curve theorem:
 
 A simple closed curve in the plane divides it into two regions, one outside and one inside. This has a corollary where in a planar representation of a graph, an edge $e$ has both sides on the same face if and only if $e$ is a bridge.
-
