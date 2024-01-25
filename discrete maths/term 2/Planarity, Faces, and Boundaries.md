@@ -11,4 +11,6 @@ A graph is planar if it can be drawn with no edges crossing. Such a drawing is a
 
 # Faces and Boundaries:
 
+A planar representation of a graph $G$ divides the plane into a set of faces $F$. The boundary of a face $f$, denoted by $B(f)$ is the set of edges that contain the face. The length of $B(f)$ is the smallest length of closed [[Graph definitions#Walk|walks]] in $G$ that cover $B(f)$ denoted as $b(f)$. For a disconnected graph, $b(f)$ is defined as the smallest sum of closed walks in $G$ that cover $B(f)$:![[faces example]]In the plane, every edge has two sides but both can be bound by the same face (i.e. $f_4$ binds $de$ and $ed$). Note that for every finite planar graph, there is one infinite face (i.e. $f_4$).
+
 10.2
