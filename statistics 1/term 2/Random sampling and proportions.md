@@ -14,4 +14,4 @@ For the first interpresentation, an estimation of $p$ can be constructed from $X
 
 # Totals and estimators:
 
-Define $X$ as the total sum of all successes over $n$ trials:$$\Huge X=\sum_{i=1}^nX_n$$With each $X_i$ taking value $0$ or $1$, i.e. a Bernoulli distribution. Then we need to take the [[Frequentist methods#Continuous random variables|PMF]] of all $n$ trials:$$\Huge f(x_1,\dots,x_n|p)=\prod_{i=1}^nf(x_i|p)=\prod_{}$$
+Define $X$ as the total sum of all successes over $n$ trials:$$\Huge X=\sum_{i=1}^nX_n$$With each $X_i$ taking value $0$ or $1$, i.e. a Bernoulli distribution. Then we need to take the [[Frequentist methods#Continuous random variables|PMF]] of all $n$ trials:$$\Huge f(x_1,\dots,x_n|p)=\prod_{i=1}^nf(x_i|p)=\prod_{i=1}^np^{x_i}q^{1-x_i}=p^{\sum_{i=1}^nx_i}q^{\sum_{i=1}^n1-x_i}=p^xq^{n-x}$$
