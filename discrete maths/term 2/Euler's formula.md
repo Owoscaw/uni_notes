@@ -1,3 +1,9 @@
 Let $G=(V,E,\phi)$ be a [[Planarity, Faces, and Boundaries#Planarity|planar graph]] with [[Planarity, Faces, and Boundaries#Faces and Boundaries|face]] set $F$ and $k$ connected components. Then Euler states:$$\Huge |V|-|E|+|F|=k+1$$This is proven by induction on $|E|$. Take our base case to be $|E|=0$. Then every vertice is a connected component, so $|V|=k$. Then the formula becomes $|V|-|E|+|F|=k-0+1=k+1$, which is true. This is because there will only be one face, the unbounded one.
 
-Assume Euler's formula is true for any planar graph with $k$ connected components and $|E|=k$. Remove any edge $e\in E$ to form the graph $G_0$
+Assume Euler's formula is true for any planar graph with $k$ connected components and $|E|=k$. Remove any edge $e\in E$ to form the graph $G_0$. Now, $G_0$ has $|V|$ vertices, $|E|-1$ edges, $k_0$ connected components, and $|F_0|$ faces. Using the induction hypothesis:$$\Huge |V|-(|E|-1)+|F_0|=k_0+1$$Consider the two cases:
+>$e$ was a bridge. Removing $e$ increased the amount of connecting components by $1$, $k_0=k+1$, and will not change the number of faces $|F|=|F_0|$, so we get:$$\Huge |V|-(|E|-1)+|F|=k+1+1\implies|V|-|E|+|F|+1=k+1$$This simplifies to show that the formula holds when removing $e$.
+>$e$ was not a bridge. Removing $e$ does not disconnect $G$, so $k_0=k$ and by the [[Planarity, Faces, and Boundaries#Jordan curve theorem|Jordan curve theorem]], $e$ divided a face into two so removing $e$ will decrease the amount of faces in $G_0$ by $1$. That is $|F_0|=|F|-1$, so the formula becomes:$$\Huge |V|-(|E|-1)+(|F|-1)=k+1\implies|V|-|E|+|F|+1-1=k+1$$Which again simplifies to prove the formula.
+
+# Simple planar graphs have few edges:
+
+If $G=(V,E)$ is a simple planar graph with $|V|\geq 3$ then:$$\Huge |E|\leq3|V|-6$$This is proven by considering that if $G$ has at least $2$ edges, then $b(f)\geq 3$ for every face. This becomes:$$\Huge 2|E|=\sum_{f\in F}b(f)\geq$$
