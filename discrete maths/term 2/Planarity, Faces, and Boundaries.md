@@ -8,3 +8,6 @@ If a bipartite graph is simple and if for the partition $V_1,V_2$ is such that $
 # Planarity:
 
 A graph is planar if it can be drawn with no edges crossing. Such a drawing is a planar representation of $G$.
+
+# Faces and Boundaries:
+
