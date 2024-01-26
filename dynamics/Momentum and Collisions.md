@@ -1,1 +1,3 @@
-If there are no external forces, then the total momentum $p=p_1+\dots+p_n$ of $n$ particles is conserved. However total kinetic energy $E=\frac{1}{2}m_1v_1^2+\dots+\frac{1}{2}m_nv_n^2$ need not be conserved. If a $E$ is conserved in a collision then the collision is elastic, if not then it is called inelastic.
+If there are no external forces, then the total momentum $p=p_1+\dots+p_n$ of $n$ particles is conserved. However total kinetic energy $E=\frac{1}{2}m_1v_1^2+\dots+\frac{1}{2}m_nv_n^2$ need not be conserved. If a $E$ is conserved in a collision then the collision is elastic, if not then it is called inelastic. Example:
+
+Masses $M\geq m$ move towards each other on the $x$-axis, each with speed $v$. They coalesce into a single mass with 
