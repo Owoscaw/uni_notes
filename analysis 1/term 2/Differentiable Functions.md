@@ -28,3 +28,6 @@ Let $f:I\mapsto\Re$ be continuous on an interval $I$ and differentiable over its
 > If $f'(x)\leq0$ for all $x$, then $f$ is monotonically decreasing
 
 For the above inequalities, if the inequality is strict then the function can be said to be strictly monotonically increasing/decreasing. These are proven using the [[EVT, MVT, boundedness and monotonicity#Mean Value Theorem|MVT]]. Let $c,d\in I$ with $c<d$. By the MVT we have that there exists $\alpha\in(c,d)$ such that $f(d)-f(c)=f'(\alpha)(d-c)$:$$\Huge f(d)-f(d)=f'(\alpha)(d-c)=\begin{cases}0&\text{if }f'(x)=0\\\geq0&\text{if }f'(x)\geq0\\\leq0&\text{if }f'(x)\leq0\end{cases}$$Hence we get:$$\Huge f(d)=\begin{cases}f(c)&\text{if }f'(x)=0\\\geq f(c)&\text{if }f'(x)\geq0\\\leq f(c)&\text{if }f'(x)\leq0\end{cases}$$Which proves our cases for constant, increasing, and decreasing functions.
+
+## Cauchy's generalised MVT:
+Let $f,g:[a,b]\mapsto\Re$ be continuous and differentiable on interior points. Assume that $g'(x)\neq0\forall x\in(a,b)$. Then there exists $c\in(a,b)$ such that:$$\Huge \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)}$$Note that the MVT is a special case where $g(x)=x$. To prove this, consider $h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x)$
