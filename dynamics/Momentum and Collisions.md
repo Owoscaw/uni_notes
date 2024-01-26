@@ -1,3 +1,5 @@
 If there are no external forces, then the total momentum $p=p_1+\dots+p_n$ of $n$ particles is conserved. However total kinetic energy $E=\frac{1}{2}m_1v_1^2+\dots+\frac{1}{2}m_nv_n^2$ need not be conserved. If a $E$ is conserved in a collision then the collision is elastic, if not then it is called inelastic. Example:
 
-Masses $M\geq m$ move towards each other on the $x$-axis, each with speed $v$. They coalesce into a single mass with 
+Masses $M\geq m$ move towards each other on the $x$-axis, each with speed $v$. They coalesce into a single mass with speed $\alpha v$ with $\alpha\in[0,1)$. Find $M/m$ in terms of $\alpha$. Find $Z$, the fraction of energy lost in the collision. What happens as $\alpha\to 1$:
+
+Momentum is conserved, define $M$ to be moving along the $x$-axis in the $+x$ direction, and mass $m$ to be moving in the $-x$ direction. The resultant mass is of $M+m$, and since $M\geq m$, the resultant mass will move in the $+x$ direction. Using the conservation of momentum equation:$$\Huge Mv-mv=(M+m)\alpha v\implies(v-\alpha v)M=(\alpha v+v)m$$$$\Huge\implies R=\frac{M}{m}=\frac{v(\alpha+1)}{v(1-\alpha)}=\frac{\alpha+1}{1-\alpha}$$$$\Huge $$
