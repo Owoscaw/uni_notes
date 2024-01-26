@@ -23,4 +23,4 @@ $X$ has a binomial distribution with parameters $n,p$ if $X$ is discrete with PM
 >$0\leq p\leq 1$
 >$X\sim Bin(n,p)$
 
-If the collection of random variables, $X_1,\dots,X_n$ form $n$ Bernoulli trials with parameter $p$ and if $X=X_1+\dots+X_n$ represents the sum of successes then $X\sim Bin(n,p)$. We can therefore calculate expectation, variance:$$\Huge E[X]=\sum_{i=1}^nE[X_i]=n\times p=np$$$$\Huge Var[X]=\sum_{i=1}^nVar[X_i]=n\times pq=np(1-p)$$
+If the collection of random variables, $X_1,\dots,X_n$ form $n$ Bernoulli trials with parameter $p$ and if $X=X_1+\dots+X_n$ represents the sum of successes then $X\sim Bin(n,p)$. We can therefore calculate expectation, variance, and MGF:$$\Huge E[X]=\sum_{i=1}^nE[X_i]=n\times p=np$$$$\Huge Var[X]=\sum_{i=1}^nVar[X_i]=n\times pq=np(1-p)$$$$\Huge \psi(t)=E[e^{tX}]=\prod_{i=1}^nE[e^{tX_i}]=(pe^t+q)^n$$Note that $E[X]$ and $Var[X]$ are to be interpreted as before $X$ is measured. A normal approximation can be used since ${n\choose x}$ is often hard to calculate $Bin(n,p)\approx\sim N(np,np(1-p))$. This is a good approximation for large $n$, however a continuity correction is needed for small $n$:$$\Huge \text{}$$
