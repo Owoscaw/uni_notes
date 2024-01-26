@@ -9,3 +9,10 @@ For a function of one variable, with a stationary point at $x=x_0$, the nature o
 > If $f''(x_0)<0\implies\delta f<0\implies x_0$ is a maximum
 > If $f''(x_0)=0\implies x_0$ is a degenerate stationary point
 
+## Methods of finding stationary points:
+Let $f(x,y)$ have a stationary point at $(x_0,y_0)$:
+>If $\delta f=f(x_0+\delta x,y_0+\delta y)-f(x_0,y_0)>0$ for $(\delta x,\delta y)\neq(0,0)$, then $(x_0,y_0)$ is a minimum
+>If $\delta f=f(x_0+\delta x,y_0+\delta y)-f(x_0,y_0)<0$ for $(\delta x,\delta y)\neq(0,0)$, then $(x_0,y_0)$ is a maximum
+>if $\delta f$ takes either sign for the above constraint, then it is a saddle point
+
+This is shown by observing the taylor series about $(x_0,y_0)$:$$\small f(x_0+\delta x,y_0+\delta y)=f(x_0,y_0)+f_x(x_0,y_0)\delta x+f_y(x_0,y_0)\delta y+\frac{1}{2}((\delta x)^2f_{xx}+2\delta x\delta yf_{xy}(x_0,y_0)+(\delta y)^2)f_{yy}(x_0,y_0))+\dots$$The $f_x$ and $f_y$ terms will vanish, which gives:$$ \delta f=f(x_0+\delta x,y_0+\delta y)-f(x_0,y_0)=\frac{1}{2}((\delta x)^2f_{xx}(x_0,y_0)+2\delta x\delta yf_{xy}(x_0,y_0)+(\delta y)^2f_{yy}(x_0,y_0))+\dots$$This term will dominate as $\delta x,\delta y\to 0$, so we let:$$\Huge Q(x,y)=f_{xx}x^2+2f_{xy}xy+f_{yy}y^2$$This is called the quadratic form and can be written as:$$\Huge Q(x,y)=(x,y)\begin{pmatrix}f_{xx}&f_{xy}\\f_{xy}&f_{yy}\end{pmatrix}$$
