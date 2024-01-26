@@ -18,7 +18,7 @@ At a local maximum, $f(x)-f(c)\leq0$ so consider the left and right limits of th
 
 Let $f:[a,b]\mapsto\Re$ be continuous and differentiable on $(a,b)$ and suppose that $f(a)=f(b)$ then there exists $c\in(a,b)$ such that $f'(c)=0$. Since $f$ is continuous on $[a,b]$ then $f$ attains its maximum and minimum, so there exists $d,e\in[a,b]$ with $f(d)\geq f(x)\geq f(e)\,\,\forall x\in[a,b]$.
 
-Using the same function as before, there exists $c\in(a,b)$ such that:$$\Huge f'(c)=\frac{f(b)-f(a)}{b-a}$$To prove this we set $g(x)=f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Since this contains $f(x)$, this function is continuous on $[a,b]$ and differentiable on $(a,b)$. Then:$$\Huge g'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}$$Note that $g(a)=f(a)$ and $g(b)=f(a)=g(a)$. Then we can apply Rolle's theorem to $g$. So there exists $c\in(a,b)$ such that $g'(c)=0$:$$\Huge g'(c)=0\implies f'(c)=\frac{f(b)-f(a)}{b-a}$$So we get the mean value theorem proven by Rolle's theorem.
+Using the same function as before, there exists $c\in(a,b)$ such that:f′(c)=f(b)−f(a)b−aTo prove this we set $g(x)=f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Since this contains $f(x)$, this function is continuous on $[a,b]$ and differentiable on $(a,b)$. Then:g′(x)=f′(x)−f(b)−f(a)b−aNote that $g(a)=f(a)$ and $g(b)=f(a)=g(a)$. Then we can apply Rolle's theorem to $g$. So there exists $c\in(a,b)$ such that $g'(c)=0$:g′(c)=0⟹f′(c)=f(b)−f(a)b−aSo we get the mean value theorem proven by Rolle's theorem.
 
 # Monotonicity:
 
@@ -31,3 +31,7 @@ For the above inequalities, if the inequality is strict then the function can be
 
 ## Cauchy's generalised MVT:
 Let $f,g:[a,b]\mapsto\Re$ be continuous and differentiable on interior points. Assume that $g'(x)\neq0\forall x\in(a,b)$. Then there exists $c\in(a,b)$ such that:$$\Huge \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)}$$Note that the MVT is a special case where $g(x)=x$. To prove this, consider $h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x)$, which is continuous on $[a,b]$ and differentiable on $(a,b)$ since $f,g$ are both continuous and differentiable.$$\Huge h(a)=(g(b)-g(a))f(a)-(f(b)-f(a))g(a)=g(b)f(a)-f(b)g(a)=h(b)$$Now we can use Rolle's theorem on $h$. So we get that $\exists c\in(a,b)$ with $h'(c)=0$:$$\Huge h'(c)=0=(g(b)-g(a))f'(c)-(f(b)-f(a))g'(c)$$$$\Huge \implies f'(c)(g(b)-g(a))=g'(c)(f(b)-f(a))\implies\frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)}$$Note that neither $g'(c)=0$ (by assumption) or $g(b)-g(a)=0$ by MVT.
+
+# L'Hopital's rule:
+
+Let $f,g$ be differentiable functions in some interval $(a,b)$. Assume that both $\lim_{x\to a^+}f(x)=0$ and $\lim_{x\to a^+}g(x)=0$ and $g(x),g'(x)\neq0$ for all $x$, then if $\lim_{x\to a^+}\frac{f'(x)}{g'(x)}$ exists, then $\lim_{x\to a^+}\frac{f(x)}{g(x)}$ also exists with:$$\Huge \lim_{x\to a^+}\frac{f(x)}{g(x)}=\lim_{x\to a^+}\frac{f'(x)}{g'(x)}$$This also holds for the other endpoint, and any interior points, as well as a two sided limit. Limits to infinity also work.
