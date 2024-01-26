@@ -17,3 +17,5 @@ At a local maximum, $f(x)-f(c)\leq0$ so consider the left and right limits of th
 # Rolle's theorem:
 
 Let $f:[a,b]\mapsto\Re$ be continuous and differentiable on $(a,b)$ and suppose that $f(a)=f(b)$ then there exists $c\in(a,b)$ such that $f'(c)=0$. Since $f$ is continuous on $[a,b]$ then $f$ attains its maximum and minimum, so there exists $d,e\in[a,b]$ with $f(d)\geq f(x)\geq f(e)\,\,\forall x\in[a,b]$.
+
+Using the same function as before, there exists $c\in(a,b)$ such that:$$\Huge f'(c)=\frac{f(b)-f(a)}{b-a}$$To prove this we set $g(x)=f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Since this contains $f(x)$, this function is continuous on $[a,b]$ and differentiable on $(a,b)$. Then:$$\Huge g'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}$$Note that $g(a)=f(a)$ and $g(b)=f(a)=g(a)$. Then we can apply Rolle's theorem to $g$. So there exists $c\in(a,b)$ such that $g'(c)=0$:$$\Huge g'(c)=0\implies f'(c)=\frac{f(b)-f(a)}{b-a}$$So we get the mean value theorem proven by Rolle's theorem.
