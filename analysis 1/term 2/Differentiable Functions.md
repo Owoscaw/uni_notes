@@ -19,3 +19,12 @@ At a local maximum, $f(x)-f(c)\leq0$ so consider the left and right limits of th
 Let $f:[a,b]\mapsto\Re$ be continuous and differentiable on $(a,b)$ and suppose that $f(a)=f(b)$ then there exists $c\in(a,b)$ such that $f'(c)=0$. Since $f$ is continuous on $[a,b]$ then $f$ attains its maximum and minimum, so there exists $d,e\in[a,b]$ with $f(d)\geq f(x)\geq f(e)\,\,\forall x\in[a,b]$.
 
 Using the same function as before, there exists $c\in(a,b)$ such that:$$\Huge f'(c)=\frac{f(b)-f(a)}{b-a}$$To prove this we set $g(x)=f(x)-\frac{f(b)-f(a)}{b-a}(x-a)$. Since this contains $f(x)$, this function is continuous on $[a,b]$ and differentiable on $(a,b)$. Then:$$\Huge g'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}$$Note that $g(a)=f(a)$ and $g(b)=f(a)=g(a)$. Then we can apply Rolle's theorem to $g$. So there exists $c\in(a,b)$ such that $g'(c)=0$:$$\Huge g'(c)=0\implies f'(c)=\frac{f(b)-f(a)}{b-a}$$So we get the mean value theorem proven by Rolle's theorem.
+
+# Monotonicity:
+
+Let $f:I\mapsto\Re$ be continuous on an interval $I$ and differentiable over its interior points, then:
+> If $f'(x)=0$ for all $x$, then $f$ is a constant function
+> If $f'(x)\geq0$ for all $x$, then $f$ is monotonically increasing
+> If $f'(x)\leq0$ for all $x$, then $f$ is monotonically decreasing
+
+For the above inequalities, if the inequality is strict then the function can be said to be strictly monotonically increasing/decreasing. These are proven using the [[EVT, MVT, boundedness and monotonicity#Mean Value Theorem|MVT]]. Let $c,d\in I$ with $c<d$. By the MVT we have that there exists $\alpha\in(c,d)$ such that $f(d)-f(c)=f'(\alpha)(d-c)$:$$\Huge f(d)-f(d)=f'(\alpha)(d-c)=\begin{cases}0&\text{if }f'(x)=0\\\geq0&\text{if }f'(x)\geq0\\\leq0&\text{if }f'(x)\leq0\end{cases}$$Hence we get:$$\Huge f(d)=\begin{cases}f(c)&\text{if }f'(x)=0\\\geq f(c)&\text{if }f'(x)\geq0\\\leq f(c)&\text{if }f'(x)\leq0\end{cases}$$Which proves our cases for constant, increasing, and decreasing functions.
