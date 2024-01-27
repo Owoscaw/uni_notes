@@ -25,3 +25,5 @@ New edges can further be subdivided. Note that subdivision does not change the p
 A graph $G$ is planar if and only if $G$ contains no subdivisions of $K_5$ or $K_{3,3}$ as a subgraph. This is proven in chapter $11$ of Frank Harary's "Graph Theory".
 
 Every finite simple graph has a vertex of degree $\leq 5$. This is obviously true for $|V|\leq 6$ (see above inequalities), for $|V|>6$. Assume every vertex has degree $\geq 6$, then by handshaking we get $2|E|\geq 6|V|\implies|E|\geq 3|V|$, which does not satisfy the above inequalities so $G$ cannot be planar.
+
+:3
