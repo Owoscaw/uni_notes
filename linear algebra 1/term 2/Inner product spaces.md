@@ -12,4 +12,5 @@ So we define an inner product on a real vector space $V$, $(\cdot,\cdot):V\times
 >$(\lambda\underline u,\underline v)=\lambda(\underline u,\underline v)$
 >$(\underline v,\underline v)\geq 0$ with $\underline v=0$ if and only if $(\underline v,\underline v)=0$
 
-Properties 2 and 3 together with symmetry imply that $(\cdot,\cdot)$ is a bilinear form. $V$ endowed with $(\cdot,\cdot)$ is a real inner product space
+Properties 2 and 3 together with symmetry imply that $(\cdot,\cdot)$ is a bilinear form. $V$ endowed with $(\cdot,\cdot)$ is a real inner product space.
+
