@@ -1,2 +1,4 @@
 
-A mass $m$ slides down a [[Planes in R3|plane]] inclined at an angle $\alpha$ to the horizontal. There is then a normal force $\underline N$ that acts perpendicular to the plane.
+A mass $m$ slides down a [[Planes in R3|plane]] inclined at an angle $\alpha$ to the horizontal. There is then a normal force $\underline N$ that acts perpendicular to the plane. A frictional force acts up the plane with magnitude $\mu\underline N$ for a constant $\mu>0$:![[inclined plane diagram]]The question then becomes: Starting from rest, how far does the mass travel in time $t$? This then begs the question: How large does $\alpha$ have to be for the mass to move at all?
+
+One choice of basis is to have $\underline i$ directly down the slope, then [[Dynamics in space|$\underline r(t)$]] becomes trivial, $\underline r(t)=x(t)\underline i$:![[Inclined plane .excalidraw]]
