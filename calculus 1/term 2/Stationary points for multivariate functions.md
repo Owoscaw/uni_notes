@@ -36,4 +36,4 @@ Example:![[hessian eigenvalues example]]This required the calculation of eigenva
 
 # Sylvester's criterion:
 
-A real $n\times n$ symmetric matrix $H$ has all positive eigenvalues $\lambda_i>0$ if and only if it's leading principle minors are strictly positive. We define $H^{(m)}$ to be the $m\times m$ matrix formed from restricting $H$ to it's top left $m\times m$ submatrix. Then the leading principle minors are given by $\det(H^{(m)})$.
+A real $n\times n$ symmetric matrix $H$ has all positive eigenvalues $\lambda_i>0$ if and only if it's leading principle minors are strictly positive. We define $H^{(m)}$ to be the $m\times m$ matrix formed from restricting $H$ to it's top left $m\times m$ submatrix. Then the leading principle minors are given by $\det(H^{(m)})$. We prove this inductively:![[Stationary points for multivariate functions .excalidraw]]
