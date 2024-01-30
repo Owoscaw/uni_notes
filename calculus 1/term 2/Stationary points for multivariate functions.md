@@ -28,6 +28,12 @@ You can divide through $Q(x,y)$ by $x^2$ and solve for $\frac{y}{x}$ to get:$$\H
 
 Stationary points can also be classified by observing the [[Eigenvalues, Eigenvectors, and Diagonalisation#Characteristic polynomials|eigenvalues]] of the Hessian. This easily extends to $n$ variables where we say:$$\Huge Q(x_1,\dots,x_n)=\lambda_1x_1^2+\dots+\lambda_nx_n^2$$Then for the eigenvalues of the Hessian $\lambda_1,\dots,\lambda_n$ we can classify stationary points for $1\leq\lambda\leq n$:
 > If $\lambda_i>0$, $Q>0$ for $\underline x\neq\underline 0$ and the stationary point is a minimum
-> If $\lambda_i<0$, $Q<0$ for $\underline x\neq\underline 0$ and the stationary points is a maximum
-> If $\lambda_i\neq0$ 
-\
+> If $\lambda_i<0$, $Q<0$ for $\underline x\neq\underline 0$ and the stationary point is a maximum
+> If $\lambda_i\neq0$ and each $\lambda_i$ does not have a common sign, then the stationary point is a saddle point
+> If $\lambda_i=0$ for some $i$ then $\det H=0$ and the rank of $H$ becomes less than $n$, then the stationary point is degenerate
+
+Example:![[hessian eigenvalues example]]This required the calculation of eigenvalues, which can become tedious for larger matrices. We then turn to a different method for determining the signs of eigenvalues:
+
+# Sylvester's criterion:
+
+A real $n\times n$ symmetric matrix $H$ has all positive eigenvalues $\lambda_i>0$ if and only if it's leading principle minors are strictly positive. We define $H^{(m)}$ to be the $m\times m$ matrix formed from restricting $H$ to it's top left $m\times m$ submatrix. Then the leading principle minors are given by $\det(H^{(m)})$.
