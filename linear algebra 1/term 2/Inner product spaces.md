@@ -17,4 +17,11 @@ Properties 2 and 3 together with symmetry imply that $(\cdot,\cdot)$ is a biline
 An alternative way to propose the same idea is by using Sylvester's criterion. These state that for a real $n\times n$ matrix to be positive definite, all $n$ of its upper-left submatrices have positive determinants:![[Sylvester's criterion]] 
 # Complex inner products:
 
-A complex, or Hermitian, inner product on a complex [[Real vector spaces|vector space]] $V$ is defined as:$$\Huge \langle\cdot,\cdot\rangle:V\times V\mapsto\mathbb C$$This satisfies the same properties as a real inner product space, however instead of symmetry we have Hermiticity. That is:$$\Huge \langle\underline u,\underline v\rangle=\overline{\langle\underline v,\underline u\rangle}$$Where overline represents the complex conjugate. We alsp have the additional property $\langle\underline v,\underline v\rangle\geq0$ and $\langle\underline v,\underline v\rangle=0\iff\underline v=\underline0$
+A complex, or Hermitian, inner product on a complex [[Real vector spaces|vector space]] $V$ is defined as:$$\Huge \langle\cdot,\cdot\rangle:V\times V\mapsto\mathbb C$$This satisfies the following properties:
+>$\langle\underline u,\underline v\rangle=\overline{\langle\underline v,\underline u\rangle}$, Hermiticity, where overline represents the complex conjugate
+>$\langle\underline u+\underline v,\underline w\rangle=\langle\underline u,\underline w\rangle+\langle\underline v,\underline w\rangle$
+>$\langle\lambda\underline u,\underline v\rangle=\lambda\langle\underline u,\underline v\rangle$
+>$\langle\underline u,\lambda\underline v\rangle=\overline{\langle\lambda\underline v,\underline u\rangle}=\overline{\lambda\langle\underline v,\underline u\rangle}=\overline\lambda\overline{\langle\underline v,\underline u\rangle}=\overline\lambda\langle\underline u,\underline v\rangle$
+>$\langle\underline v,\underline v\rangle\geq0$ and $\langle\underline v,\underline v\rangle=0\iff\underline v=\underline 0$. Note that by the first property, $\langle\underline v,\underline v\rangle$ is real.
+
+We see that the Hermitian inner product is linear in the first term, and what we call complex conjugate linear in the second. We can fix a basis for a Hermitian inner product, $\{\underline v_1,\dots,\underline v_n\}$ to create the matrix form of $\langle\cdot,\cdot\rangle$:$$\Huge\underline u=\sum_{i=1}^nx_i\underline v_i,\,\,\underline v=\sum_{j=1}^ny_j\underline v_j,\,\,x_i,y_$$
