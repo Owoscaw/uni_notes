@@ -25,3 +25,9 @@ You can divide through $Q(x,y)$ by $x^2$ and solve for $\frac{y}{x}$ to get:$$\H
 > If $\det(H)>0$ and $f_{xx}>0$ then the stationary point is a minimum
 > If $\det(H)>0$ and $f_{xx}<0$ then the stationary point is a maximum
 > If $\det(H)=0$, that is the rank of $H$ is less than $2$, then the stationary point is degenerate
+
+Stationary points can also be classified by observing the [[Eigenvalues, Eigenvectors, and Diagonalisation#Characteristic polynomials|eigenvalues]] of the Hessian. This easily extends to $n$ variables where we say:$$\Huge Q(x_1,\dots,x_n)=\lambda_1x_1^2+\dots+\lambda_nx_n^2$$Then for the eigenvalues of the Hessian $\lambda_1,\dots,\lambda_n$ we can classify stationary points for $1\leq\lambda\leq n$:
+> If $\lambda_i>0$, $Q>0$ for $\underline x\neq\underline 0$ and the stationary point is a minimum
+> If $\lambda_i<0$, $Q<0$ for $\underline x\neq\underline 0$ and the stationary points is a maximum
+> If $\lambda_i\neq0$ 
+\
