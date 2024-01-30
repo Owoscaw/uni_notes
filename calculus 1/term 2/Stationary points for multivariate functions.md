@@ -36,4 +36,6 @@ Example:![[hessian eigenvalues example]]This required the calculation of eigenva
 
 # Sylvester's criterion:
 
-A real $n\times n$ symmetric matrix $H$ has all positive eigenvalues $\lambda_i>0$ if and only if it's leading principle minors are strictly positive. We define $H^{(m)}$ to be the $m\times m$ matrix formed from restricting $H$ to it's top left $m\times m$ submatrix. Then the leading principle minors are given by $\det(H^{(m)})$. We prove this inductively:![[Stationary points for multivariate functions .excalidraw]]
+A real $n\times n$ symmetric matrix $H$ has all positive eigenvalues $\lambda_i>0$ if and only if it's leading principle minors are strictly positive. We define $H^{(m)}$ to be the $m\times m$ matrix formed from restricting $H$ to it's top left $m\times m$ submatrix. Then the leading principle minors are given by $\det(H^{(m)})$. We prove this inductively:![[sylvesters criterion proof]]
+If all leading principle minors are found to be positive, the above states that all eigenvalues of the Hessian are positive, corresponding to a minimum. If the stationary point is a maximum, then all eigenvalues are negative, so $-H$ will have all positive eigenvalues and therefore have all positive leading principle minors. Combining this with the fact that for $A\in M_j(\Re), \det(-A)=(-1)^j\det A$, it follows that for $H\in M_n(\Re)$ to have all negative eigenvalues then $\det(H^{(j)})(-1)^j>0$. It follows that $\det(H)=0$ implies that one or more eigenvalues are $0$, so the stationary point is degenerate.
+
