@@ -1,0 +1,1 @@
+A common problem involves determining the maximum or minimum of some function $f(x,y)$ subject to a constraint $g(x,y)=0$. Example:![[Constrained optimisation and Lagrange multipliers .excalidraw]]
