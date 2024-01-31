@@ -30,4 +30,4 @@ Every finite simple graph has a vertex of degree $\leq 5$. This is obviously tru
 
 A platonic graph is finite, simple, planar, connected, and has all vertices with the same degree $\geq3$, and has all faces with the same boundary length $\geq3$.
 
-There are only $5$ platonic graphs. We prove this as follows:![[Euler's formula and Subdivisions .excalidraw]]
+There are only $5$ platonic graphs. We prove this as follows:![[platonic solids proof]]
