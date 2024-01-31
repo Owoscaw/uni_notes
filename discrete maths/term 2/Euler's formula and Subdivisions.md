@@ -26,4 +26,8 @@ A graph $G$ is planar if and only if $G$ contains no subdivisions of $K_5$ or $K
 
 Every finite simple graph has a vertex of degree $\leq 5$. This is obviously true for $|V|\leq 6$ (see above inequalities), for $|V|>6$. Assume every vertex has degree $\geq 6$, then by handshaking we get $2|E|\geq 6|V|\implies|E|\geq 3|V|$, which does not satisfy the above inequalities so $G$ cannot be planar.
 
-:3
+# Platonic graphs:
+
+A platonic graph is finite, simple, planar, connected, and has all vertices with the same degree $\geq3$, and has all faces with the same boundary length $\geq3$.
+
+There are only $5$ platonic graphs. We prove this as follows:![[Euler's formula and Subdivisions .excalidraw]]
