@@ -9,3 +9,4 @@ We propose that if $\underline u\perp\underline v$ then:$$\Huge ||\underline u+\
 
 # Cauchy-Schwarz inequality:
 
+For a real inner product space $\{V,(\cdot,\cdot)\}$:$$\Huge (\underline u,\underline v)^2\leq(\underline u,\underline u)(\underline v,\underline v)$$The inequality becomes equality when $\underline u,\underline v$ are linearly dependent. We prove the above by first considering $\underline v=0$, in this case the proof is trivial so take $\underline v\neq0$ without loss of generality. Consider $\underline w=\underline u-\frac{(\underline u,\underline v)}{||\underline v||^2}\underline v$, then $0\leq||\underline w||^2=(\underline w,\underline w)=(\underline u-\frac{(\underline u,\underline v)}{||\underline v||^2}\underline v,\underline u-\frac{(\underline u,\underline v)}{||\underline v||^2}\underline v)=(\underline u,\underline u)-2\frac{(\underline u,\underline v)^2}{||\underline v||^2}+\frac{(\underline u,\underline v)^2(\underline v)}{}$
