@@ -7,4 +7,4 @@ Suppose two particles, $A$ and $B$, move in $\Re^3$ with positions $\underline r
 
 # Energy:
 
-Suppose $\underline F=F_x\underline i+F_y\underline j+F_z\underline k$, we say that $\underline F$ is conservative if there e
+Suppose $\underline F=F_x\underline i+F_y\underline j+F_z\underline k$, we say that $\underline F$ is conservative if there exists a function $V(x,y,z)$ such that:$$\Huge \underline F=\left(-\frac{\partial V}{\partial x},-\frac{\partial V}{\partial y},-\frac{\partial V}{\partial z}\right)$$Then the total energy is given by $E=V+K$. If $\underline F$ is a conservative force, it is constant in time:$$\Huge \frac{dE}{dt}=0=\frac{d}{dt}(K+V)=\frac{1}{2}m\frac{d}{dt}(v_x^2+v_y^2+v_z^2)+\frac{d}{dt}V(x,y,z)$$$$\Huge \frac{dE}{dt}=m(v_x\dot v_x+v_y\dot v_y+v_z\dot v_z)+\frac{\partial V}{\partial x}\dot x+\frac{\partial V}{\partial y}\dot y+\frac{\partial V}{\partial z}\dot z$$Notice that the first term look like an [[Inner product spaces|inner product]], and that each partial derivative is equivalent to a component in the force vector:$$\Huge \frac{dE}{dt}=$$
