@@ -1,0 +1,1 @@
+A real power series is an expression of the form:$$\Huge \sum_{k=0}^\infty a_kx^k$$

@@ -39,4 +39,4 @@ Let $f,g$ be differentiable functions in some interval $(a,b)$. Assume that both
 
 Let $f:I\mapsto\Re$ be a function differentiable $n$ times on $I$, and let $c\in I$. Then there exists a function $r_n(x)$ such that:$$\large f(x)=f(c)+f'(c)(x-c)+\frac{f''(c)}{2}(x-c)^2+\dots+\frac{f^{(n)}(c)}{n!}(x-c)^n+r_n(x)(x-c)^{n+1}$$With $\lim_{x\to c}r_n(x)=0$. This is called the Peano form of the remainder. If additionally, $f$ is $n+1$ times differentiable on $I$, then:$$\large f(x)=f(c)+f'(c)(x-c)+\frac{f''(c)}{2}(x-c)^2+\dots+\frac{f^{(n)}(c)}{n!}(x-c)^n+\frac{f^{(n+1)}(\zeta)}{(n+1)!}(x-\zeta)^{n+1}$$Is called the Lagrange form of the remainder.
 Proof:![[taylors theorem proof]]The polynomial part in Taylor's theorem is called the Taylor polynomial, denoted as:$$\Huge T_{f,c}^{(n)}(x)=f(c)+f'(c)(x-c)+\dots+\frac{f^{(n)}(c)}{n!}(x-c)^n$$
-Assume we have $|f^{(n+1)}(x)|\leq M_{n+1}$ for some constant, then:$$\Huge |f(x)-T_{f,c}^{(n)}(x)|\leq\frac{M_{n+1}}{(n+1)!}|x-c|$$
+Assume we have $|f^{(n+1)}(x)|\leq M_{n+1}$ for some constant, then:$$\Huge |f(x)-T_{f,c}^{(n)}(x)|\leq\frac{M_{n+1}}{(n+1)!}|x-c|^{n+1}$$
