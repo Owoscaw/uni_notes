@@ -6,4 +6,4 @@ Assume there is a population of interest with mean value $\mu$ and standard devi
 
 # The central limit theorem:
 
-The above works well, however the population distribution is not always normal, so we suppose the following. Let $X_1,\dots,X_n$ be $n$ identically distributed independent variables, each with mean $\mu$ and standard deviation $\sigma$. Then we can say that the distribution of the sample mean satisfies:$$\Huge \bar X\to N\left(\mu,\frac{\sigma^2}{n}\right)\,\,\text{as}\,\,n\to\infty$$This is true regardless of the population distribution.
+The above works well, however the population distribution is not always normal, so we suppose the following. Let $X_1,\dots,X_n$ be $n$ identically distributed independent variables, each with mean $\mu$ and standard deviation $\sigma$. Then we can say that the distribution of the sample mean satisfies:$$\Huge \bar X\to N\left(\mu,\frac{\sigma^2}{n}\right)\,\,\text{as}\,\,n\to\infty$$This is true regardless of the population distribution. 
