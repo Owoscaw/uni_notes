@@ -4,4 +4,6 @@ A real power series is an expression of the form:$$\Huge \sum_{k=0}^\infty a_kx^
 
 A power series is an infinite series of form:$$\Huge \sum_{k=0}^\infty a_kx^k$$With $a_k\in\Re$ and $x\in\Re$. The Cauchy-Hadamard theorem states that for such a power series, there exists a constant $R\in[0,\infty]$ such that:
 > If $R=0$, then the series converges only for $x=0$
-> If $R>0$, then the series converges absolutely for $x\in(-R,R)$
+> If $R>0$, then the series converges absolutely for $x\in(-R,R)$, and diverges for $|x|>R$
+
+For the latter case, we write $c=\limsup_{k\to\infty}\sqrt[k]{|a_k|}\in[0,\infty]$, then $R=\frac{1}{c}$. We then call $R$ the radius of convergence of the power series. To prove this:![[Power series .excalidraw]]
