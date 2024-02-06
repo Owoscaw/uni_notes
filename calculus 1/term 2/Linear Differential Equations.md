@@ -2,4 +2,4 @@ An $n$-th order linear differential equation can be written in the form:$$\Huge 
 
 # Principle of Superposition:
 
-If $y_1(x),y_2(x)$ solve a linear homogeneous ODE, then $y=\alpha y_1+\beta y_2$ is also a solution for constants $\alpha,\beta\in\Re$. This can be easily proven by considering the linearity of the derivative.
+If $y_1(x),y_2(x)$ solve a linear homogeneous ODE, then $y=\alpha y_1+\beta y_2$ is also a solution for constants $\alpha,\beta\in\Re$. This can be easily proven by considering the linearity of the derivative. Since any linear combination of solutions is also a solution, the solution space of the differential equation is a [[Vector space definitions|vector space]]. An $n$-th order differential equations has a general solution with $n$ parameters, if there is a basiss of $n$ linearly independent solutions $\{y_1,\dots,y_n\}$ then:$$\Huge y=\alpha_1y_1+\alpha_2y_2+\dots+\alpha_ny_n$$Has $n$ arbitrary parameters $(\alpha_1,\dots,\alpha_n)$ and is a general solution.
