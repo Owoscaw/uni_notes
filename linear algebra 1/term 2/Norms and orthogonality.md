@@ -32,4 +32,7 @@ By this inductive process, we can construct an orthonormal basis for $U$. Note i
 
 # Orthogonal complement and projection:
 
-Let $U$ be a [[Subspaces|vector subspace]] of the inner product space $V$, then the orthogonal complement of $U$ is defined as:$$\Huge U^\perp=\{\underline v\in V:(\underline u,\underline v)=0\,\forall u\in U\}$$This is the set of all vectors $V$
+Let $U$ be a [[Subspaces|vector subspace]] of the inner product space $V$, then the orthogonal complement of $U$ is defined as:$$\Huge U^\perp=\{\underline v\in V:(\underline u,\underline v)=0\,\forall u\in U\}$$This is the set of all vectors in $V$ that are orthogonal to all the vectors in $U$.
+
+We propose that if $U$ is finite dimensional, then there always exists a unique decomposition $\underline v=\underline u+\underline{\bar u}$ where $\underline u\in U,\underline{\bar u}\in U^\perp$, so we write: $$\Huge V=U\oplus U^\perp$$
+Given any vector $\underline v\in V$, there is a unique vector $\underline u\in U$ called the orthogonal projection of $\underline v$ onto $U$, said $\underline u$ can be found as follows
