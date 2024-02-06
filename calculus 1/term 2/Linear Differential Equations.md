@@ -1,7 +1,11 @@
-An $n$-th order linear differential equation can be written in the form:$$\Huge \frac{d^ny}{dy^n}+p_1(x)\frac{d^{n-1}y}{dy^{n-1}}+p_2(x)\frac{d^{n-2}y}{dy^{n-2}}+\dots+p_{n-1}(x)\frac{dy}{dx}+p_n(x)y=c(x)$$If $c(x)=0$, then the equation is homogeneous, if not then it is inhomogeneous. Linearity constrains the dependent variable, $y$, such that only of it's derivatives can appear in each term, there is no such constraint for the independent variable, $x$.
+An $n$-th order linear differential equation can be written in the form:$$\Huge \frac{d^ny}{dx^n}+p_1(x)\frac{d^{n-1}y}{dx^{n-1}}+p_2(x)\frac{d^{n-2}y}{dx^{n-2}}+\dots+p_{n-1}(x)\frac{dy}{dx}+p_n(x)y=c(x)$$If $c(x)=0$, then the equation is homogeneous, if not then it is inhomogeneous. Linearity constrains the dependent variable, $y$, such that only of it's derivatives can appear in each term, there is no such constraint for the independent variable, $x$.
 
 # Principle of Superposition:
 
 If $y_1(x),y_2(x)$ solve a linear homogeneous ODE, then $y=\alpha y_1+\beta y_2$ is also a solution for constants $\alpha,\beta\in\Re$. This can be easily proven by considering the linearity of the derivative. Since any linear combination of solutions is also a solution, the solution space of the differential equation is a [[Vector space definitions|vector space]]. An $n$-th order differential equations has a general solution with $n$ parameters, if there is a basis of $n$ linearly independent solutions $\{y_1,\dots,y_n\}$ then:$$\Huge y=\alpha_1y_1+\alpha_2y_2+\dots+\alpha_ny_n$$Has $n$ arbitrary parameters $(\alpha_1,\dots,\alpha_n)$ and is a general solution.
 
 The general solution to an $n$-th order linear inhomogeneous differential equation is given by:$$\Huge y=y_{PI}+\alpha_1y_1+\dots+\alpha_ny_n$$Where $y_{PI}$ is the solution to the inhomogeneous part, and the latter terms form the general solution fo the homogeneous equation, the solutions space is an affine space.
+
+# Series solutions:
+
+Consider a second order ODE of form:$$\Huge \frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$$We look for solutions in the form of a [[Power series|power series]], $y(x)=\sum_{n=0}^\infty a_n(x-x_0)^n$. It is provided that a solution exists if $x_0$ is a regular point of the differential equation. $x_0$ is a regular point of the differential equation if and only if $p(x),q(x)$ are analytic at $x_0$, that is they can be represented by their [[Taylor series]] in a neighbourhood around $x_0$.
