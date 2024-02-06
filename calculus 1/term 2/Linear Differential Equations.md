@@ -1,0 +1,1 @@
+An $n$-th order linear differential equation can be written in the form:$$\Huge \frac{d^ny}{dy^n}+p_1(x)\frac{d^{n-1}y}{dy^{n-1}}+p_2(x)\frac{d^{n-2}y}{dy^{n-2}}+\dots+p_{n-1}(x)\frac{dy}{dx}+p_n(x)y=c(x)$$If $c(x)=0$, then the equation is homogeneous, if not then it is inhomogeneous.
