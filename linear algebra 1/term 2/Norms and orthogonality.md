@@ -29,3 +29,7 @@ The Gram-Schmidt procedure is a systematic method to produce an orthonormal basi
 > Suppose now that we find mutually orthogonal unit vectors $\underline u_1,\dots,\underline u_r$ with $span\{\underline u_1,\dots,\underline u_r\}=span\{\underline v_1,\dots,\underline v_r\}$ for some $1\leq r\leq k$. If $r<k$ then define:$$\large \underline{\bar v}_{r+1}=\underline v_{r+1}-(\underline v_{r+1},\underline u_1)\underline u_1-\dots-(\underline v_{r+1},\underline u_r)\underline u_r\implies(\underline{\bar v}_{r+1},\underline u_1)=\dots=(\underline{\bar v}_{r+1},\underline u_r)=0$$We know $\underline{\bar v}_{r+1}\neq\underline 0$ since $\underline{\bar v}_{r+1}\notin span\{\underline u_1,\dots,\underline u_r\}=span\{\underline v_1,\dots,\underline v_r\}$. Define $\underline u_{r+1}=\frac{\underline{\bar v}_{r+1}}{||\underline{\bar v}_{r+1}||}$, then we have that $\underline u_1,\dots,\underline u_{r+1}$ are mutually orthogonal unit vectors with $span\{\underline u_1,\dots,\underline u_{r+1}\}=span\{\underline v_1,\dots,\underline v_{r+1}\}$
 
 By this inductive process, we can construct an orthonormal basis for $U$. Note if $U=V$, we can use this process to create an orthonormal basis for $V$.
+
+# Orthogonal complement and projection:
+
+Let $U$ be a [[Subspaces|vector subspace]] of the inner product space $V$, then the orthogonal complement of $U$ is defined as:$$\Huge U^\perp=\{\underline v\in V:(\underline u,\underline v)=0\,\forall u\in U\}$$This is the set of all vectors $V$
