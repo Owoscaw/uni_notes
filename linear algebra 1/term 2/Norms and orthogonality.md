@@ -14,3 +14,6 @@ $$ (||\underline u||+||\underline v||)^2-||\underline u+\underline v||^2=||\unde
 # [[Inner product spaces#Complex inner products|Hermitian]] norms:
 
 Let $\{V,\langle,\rangle\}$ be a complex inner product space. We then define the norm induced by $\langle,\rangle$:$$\Huge ||\underline v||=\sqrt{\langle\underline v,\underline v\rangle}$$For all $v\in V$. Orthogonality and unit vectors are then defined in the same way.
+
+## Complex Cauchy-Schwarz inequality:
+We suppose:$$\Huge |\langle\underline u,\underline v\rangle|^2\leq||\underline u||^2||\underline v||^2$$To prove this, assume $\underline u\neq0$ and $\langle\underline u,\underline v\rangle\neq0$ and consider:$$\Huge ||x\underline u-\underline v||^2=|x|^2||\underline u||^2-2\Re(x\langle\underline u,\underline v\rangle)+||\underline v||^2\geq0$$Since this must be non-negative for all $x\in\mathbb C$ we choose:$$\Huge x=\lambda\frac{|\langle\underline u,\underline v\rangle|}{\langle\underline u,\underline v\rangle}$$For some $\lambda\in\Re$, the equation becomes:$$\Huge\lambda^2 ||\underline u||^2-2\lambda|\langle\underline u,\underline v\rangle|+||\underline v||^2\geq0$$At this point, the same argument used for the real Cauchy-Schwarz inequality can be used to prove the statement.
