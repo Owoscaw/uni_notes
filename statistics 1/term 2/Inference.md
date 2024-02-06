@@ -8,6 +8,10 @@ Assume there is a population of interest with mean value $\mu$ and standard devi
 
 The above works well, however the population distribution is not always normal, so we suppose the following. Let $X_1,\dots,X_n$ be $n$ identically distributed independent variables, each with mean $\mu$ and standard deviation $\sigma$. Then we can say that the distribution of the sample mean satisfies:$$\Huge \bar X\to N\left(\mu,\frac{\sigma^2}{n}\right)\,\,\text{as}\,\,n\to\infty$$This is true regardless of the population distribution. 
 
-# Standard errors and the $t$ distribution:
+# Standard errors:
 
-Often $\sigma$ is not known, so we need to estimate it sometimes. Before the data is measured, this is the random variable $S$:$$\Huge S=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar X)^2}=\sqrt{\frac{1}{n-1}\left(\sum_{i=1}^nX_i^2-n\bar X^2\right)}$$Under certain conditions, $E[S^2]=\sigma^2$ and is hence an unbiased estimator, dependent on the $\frac{1}{n-1}$ term rather than the $\frac{1}{n}$ term. Therefore we estimate the standard deviation of the sample mean $\frac{\sigma}{\sqrt{n}}$ by the standar
+Often $\sigma$ is not known, so we need to estimate it sometimes. Before the data is measured, this is the random variable $S$:$$\Huge S=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar X)^2}=\sqrt{\frac{1}{n-1}\left(\sum_{i=1}^nX_i^2-n\bar X^2\right)}$$Under certain conditions, $E[S^2]=\sigma^2$ and is hence an unbiased estimator, dependent on the $\frac{1}{n-1}$ term rather than the $\frac{1}{n}$ term. Therefore we estimate the standard deviation of the sample mean $\frac{\sigma}{\sqrt{n}}$ by the standard error of the sample mean, $\frac{s}{\sqrt{n}}$. Then we get the result:$$\Huge \frac{\bar X-\mu}{S/\sqrt{n}}\sim N(0,1)$$Given that $n$ is sufficiently large. However if $n$ is not sufficiently large, then $s$ is a poor estimator for $\sigma$ and the above fraction is no longer normally distributed
+
+# $t$ distribution:
+
+What if $\sigma$ is unknown and $n$ is small. If the distribution of $X_i$ is Normal, then we proceed as follows:$$\Huge \frac{\bar X-\mu}{S/\sqrt{n}}\sim t_{n-1}$$Where $t$ represents the $t$ distribution and $s$ is the estimator for $\sigma$. A random variable $T$ has a $t$ distribution with degrees of freedom parameter $\nu$ if it has PDF:$$\Huge f(t|\nu)=\frac{\Gamma(\frac{\nu+1}{})}{}$$  
