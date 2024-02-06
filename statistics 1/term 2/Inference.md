@@ -7,3 +7,7 @@ Assume there is a population of interest with mean value $\mu$ and standard devi
 # The central limit theorem:
 
 The above works well, however the population distribution is not always normal, so we suppose the following. Let $X_1,\dots,X_n$ be $n$ identically distributed independent variables, each with mean $\mu$ and standard deviation $\sigma$. Then we can say that the distribution of the sample mean satisfies:$$\Huge \bar X\to N\left(\mu,\frac{\sigma^2}{n}\right)\,\,\text{as}\,\,n\to\infty$$This is true regardless of the population distribution. 
+
+# Standard errors and the $t$ distribution:
+
+Often $\sigma$ is not known, so we need to estimate it sometimes. Before the data is measured, this is the random variable $S$:$$\Huge S=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar X)^2}=\sqrt{\frac{1}{n-1}\left(\sum_{i=1}^nX_i^2-n\bar X^2\right)}$$Under certain conditions, $E[S^2]=\sigma^2$ and is hence an unbiased estimator, dependent on the $\frac{1}{n-1}$ term rather than the $\frac{1}{n}$ term. Therefore we estimate the standard deviation of the sample mean $\frac{\sigma}{\sqrt{n}}$ by the standar
