@@ -18,4 +18,4 @@ Let $\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence $R$,
 
 When considering a power series as a series, every $x\in(-R,R)$ converges to a value and therefore gets assigned a real value, so we can think of it as a function, $f:(-R,R)\mapsto\Re$ with:$$\Huge f(x)=\sum_{k=0}^\infty a_kx^k=\lim_{n\to\infty}\left(\sum_{k=0}^n a_kx^k\right)$$
 ## Power series are continuous:
-Let $\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence $R>0$ that defines $f$ as above.
+Let $\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence $R>0$ that defines $f$ as above. Then $f$ is continuous on $(-R,R)$, in fact $f$ is locally Lipschitz continuous on $(-r,r)$ where $0<r<R$. To prove this, pick $n\in\mathbb N$ and define $f_n=\sum_{k=0}^n a_kx^k$, then:$$\large |f_n(x)-f_n(y)|=\left|\sum_{k=1}^na_k(x^k-y^k)\right|=\left|\sum_{k=1}^n a_k(x-y)(x^{k-1}+x^{k-2}y+x^{k-3}y^2+\dots+y^{k-1})\right|$$$$\large |f_n(x)-f_n(y)|=|x-y|\left|\sum_{k=1}^na_k(x^{k-1}+\dots+y^{k-1})\right|\leq|x-y|\sum_{k=1}^n|a_k|(|x^{k-1}|+\dots+|y^{k-1}|)$$$$\Huge $$
