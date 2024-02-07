@@ -26,4 +26,4 @@ Given a sequence $P=(p_1,p_2,\dots,p_{n-2})$ of elements $L=\{1,\dots,n\}$, cons
 > Remove $l$ from $L$ and the first element in $P$
 > If $P$ is not empty then repeat, if it is empty then $L$ only has two numbers left, create an edge between these two vertices
 
-![[Trees .excalidraw]]
+![[Prufer trees example]]So we have a bijection between Prufer codes and labelled trees. Then the number of Prufer codes of size $n$ is equal to the number of labelled trees of size $n$:![[Trees .excalidraw]]
