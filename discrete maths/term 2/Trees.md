@@ -34,4 +34,4 @@ So we have a bijection between Prufer codes and labelled trees. Then the number 
 > How do we know that the sequences to trees algorithm indeed produces a tree?
 > How can we be sure that the two algorithms are truly inverses to each other
 
-We (try) prove this using linear algebra:![[Trees .excalidraw]]
+We (try) prove this using linear algebra:![[Cayley proof]]
