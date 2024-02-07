@@ -26,4 +26,12 @@ Given a sequence $P=(p_1,p_2,\dots,p_{n-2})$ of elements $L=\{1,\dots,n\}$, cons
 > Remove $l$ from $L$ and the first element in $P$
 > If $P$ is not empty then repeat, if it is empty then $L$ only has two numbers left, create an edge between these two vertices
 
-![[Prufer trees example]]So we have a bijection between Prufer codes and labelled trees. Then the number of Prufer codes of size $n$ is equal to the number of labelled trees of size $n$:![[Trees .excalidraw]]
+![[Prufer trees example]]
+
+# Cayley's formula:
+
+So we have a bijection between Prufer codes and labelled trees. Then the number of Prufer codes of length $n-2$ is equal to the number of labelled trees of size $n$. There are $n-2$ positions to fill for any Prufer code, and $n$ choices for each position, so the total number of possible Prufer codes, and therefore the total number of labelled trees of size $n$ is given by:$$\Huge \text{There are }n^{n-2}\text{ distinct labelled trees with }n\text{ vertices}$$This is convincing, however not rigorous as there are two doubts:
+> How do we know that the sequences to trees algorithm indeed produces a tree?
+> How can we be sure that the two algorithms are truly inverses to each other
+
+We (try) prove this using linear algebra:![[Trees .excalidraw]]
