@@ -19,4 +19,5 @@ What if $\sigma$ is unknown and $n$ is small. If the distribution of $X_i$ is No
 # Confidence Intervals:
 
 ## Inference about $\mu$:
-Suppose random samples $X_1,\dots,X_n$ are taken from a population of mean $\mu$ and variance $\sigma^2$ . Then by CLT we know $\bar X\sim N(\mu,\sigma^2/\sqrt{n})$, statements of probability can then be made about $\bar X$  
+Suppose random samples $X_1,\dots,X_n$ are taken from a population of mean $\mu$ and variance $\sigma^2$ . Then by CLT we know $\bar X\sim N(\mu,\sigma^2/\sqrt{n})$, statements of probability can then be made about $\bar X$. Since we know this, we can make statements that infer knowledge about $\mu$:$$\large P\left(-1.96\leq\frac{\bar X-\mu}{\sigma/\sqrt{n}}\leq1.96\right)=0.95\implies P\left(\bar X-1.96\frac{\sigma}{\sqrt n}\leq\mu\leq\bar X+1.96\frac{\sigma}{\sqrt n}\right)$$
+Suppose we observe $X_1=x_1,\dots, X_n=x_n$, then we can onstruct the confidence interval by $\bar X\mapsto\bar x$:$$\Huge \left[\bar x-1.96\frac{\sigma}{\sqrt n},\bar x+1.96\frac{\sigma}{\sqrt n}\right]$$This is called a $95$% confidence interval, $\mu$ lies within this interval with probability of $0.95$. This is not a probability statement since each $X_i$ has been observed, it is a realisation of the random interval
