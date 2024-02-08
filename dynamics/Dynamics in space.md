@@ -16,4 +16,4 @@ A rigid light rod of length $L$ pivots at one end, swinging in a vertical plane 
 
 # Projectiles:
 
-Suppose a projectile is fired at an angle $\theta$ to the horizontal with initial speed $u$, the subsequent motion is in a plane. Take axes $z$ and $\underline k$ upwards and axes $x$ and $\underline i$ horizontal, there is no motion in $\underline j$. The velocity becomes:v―(0)=ui―cos⁡θ+uk―sin⁡θWe take gravity to be $\underline F=-mg\underline k$ and $\underline r(0)=0$, solving the equation of motion:mr¨―=F―=−mgk―⟹r―(t)=ucos⁡θti―+usin⁡θtk―−g2t2k―
+Suppose a projectile is fired at an angle $\theta$ to the horizontal with initial speed $u$, the subsequent motion is in a plane. Take axes $z$ and $\underline k$ upwards and axes $x$ and $\underline i$ horizontal, there is no motion in $\underline j$. The velocity becomes: $\underline v(0)=u\underline i\cos\theta+u\underline k\sin\theta$. We take gravity to be $\underline F=-mg\underline k$ and $\underline r(0)=0$, solving the equation of motion:$$\Huge m\underline{\ddot r}=\underline F=-mg\underline k\implies\underline r(t)=u\cos\theta\,t\underline i+y\sin\theta\,t\underline k-\frac{1}{2}gt^2\underline k$$
