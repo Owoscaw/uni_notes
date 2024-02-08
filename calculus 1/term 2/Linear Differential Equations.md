@@ -8,4 +8,4 @@ The general solution to an $n$-th order linear inhomogeneous differential equati
 
 # Series solutions:
 
-Consider a second order ODE of form:$$\Huge \frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$$We look for solutions in the form of a [[Power series|power series]], $y(x)=\sum_{n=0}^\infty a_n(x-x_0)^n$. It is provided that a solution exists if $x_0$ is a regular point of the differential equation. $x_0$ is a regular point of the differential equation if and only if $p(x),q(x)$ are analytic at $x_0$, that is they can be represented by their [[Taylor series]] in a neighbourhood around $x_0$.
+Consider a second order ODE of form:$$\Huge \frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+q(x)y=0$$We look for solutions in the form of a [[Power series|power series]], $y(x)=\sum_{n=0}^\infty a_n(x-x_0)^n$. It is provided that a solution exists if $x_0$ is a regular point of the differential equation. $x_0$ is a regular point of the differential equation if and only if $p(x),q(x)$ are analytic at $x_0$, that is they can be represented by their [[Taylor series]] in a neighbourhood around $x_0$. Legendre's equation:![[Linear Differential Equations .excalidraw]]
