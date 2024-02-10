@@ -12,10 +12,16 @@ Consider a second order ODE of form:$$\Huge \frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+
 
 
 # Legendre's equation:
-![[Legendre's equation]]In general, a power series about $x_0$ will only converge in a [[Power series#Radius of Convergence|Radius of convergence]], $R$, where:$$\Huge R=\min|x_0-x_i|$$For all singular points of a function, $x_i$. For Legendre's equation, we can look at the [[Series#Convergence criteria|ratio test]] to prove that it has $R=1$:$$\Huge \lim_{n\to\infty}\left|\frac{a_{n+2}x^{n+2}}{a_xx^n}\right|=\lim_{n\to\infty}\left|\frac{a_{n+2}}{a_n}\right|x^2=\lim_{n\to\infty}\left|\frac{n(n+1)-\lambda}{(n+1)(n+2)}\right|x^2=x^2$$So the series from $y_e$ will diverge for $x^2>1$ and converge for $x^2<1$. Note that when $\lambda=m(m+1)$, all $a_{m+2}$ terms will vanish, so when $m$ is even, all $a_nx^n$ terms will vanish for $n>m$. So for even $n$, $y_e$ is an $m$-th order polynomial and $y_o$ is still an infinite series. Similarly for odd $n$, the reverse happens. The polynomials that come from this process are called Legendre polynomials.
+![[Legendre's equation]]In general, a power series about $x_0$ will only converge in a [[Power series#Radius of Convergence|Radius of convergence]], $R$, where:$$\Huge R=\min|x_0-x_i|$$For all singular points of a function, $x_i$. For Legendre's equation, we can look at the [[Series#Convergence criteria|ratio test]] to prove that it has $R=1$:$$\Huge \lim_{n\to\infty}\left|\frac{a_{n+2}x^{n+2}}{a_xx^n}\right|=\lim_{n\to\infty}\left|\frac{a_{n+2}}{a_n}\right|x^2=\lim_{n\to\infty}\left|\frac{n(n+1)-\lambda}{(n+1)(n+2)}\right|x^2=x^2$$So the series from $y_e$ will diverge for $x^2>1$ and converge for $x^2<1$. Note that when $\lambda=m(m+1)$, all $a_{m+2}$ terms will vanish, so when $m$ is even, all $a_nx^n$ terms will vanish for $n>m$. So for even $n$, $y_e$ is an $m$-th order polynomial and $y_o$ is still an infinite series. Similarly for odd $n$, the reverse happens. The polynomials that come from this process are called Legendre polynomials. We denote the $m$
+-th Legendre polynomial as $P_m$ and fix $P_m(1)=1$:
 
-| $m$ | $\lambda=m(m+1)$ | $y_e$    | $y_0$    | $P_m(x)$ | $P_m(1)=1$ |
-| --- | ---------------- | -------- | -------- | -------- | ---------- |
-| $0$ | $0$              | $1$      | $\infty$ | $1$      |            |
-| $1$ | $2$              | $\infty$ | $x$      | $x$      |            |
-| $2$ | $6$              | $1-3x^2$ | $\infty$ | $\frac{1}{2}(3x^2-1)$         |            |
+| $m$ | $\lambda=m(m+1)$ | $y_e$    | $y_0$    | $P_m(x)$              |
+| --- | ---------------- | -------- | -------- | --------------------- |
+| $0$ | $0$              | $1$      | $\infty$ | $1$                   |
+| $1$ | $2$              | $\infty$ | $x$      | $x$                   |
+| $2$ | $6$              | $1-3x^2$ | $\infty$ | $\frac{1}{2}(3x^2-1)$ |
+| 3   | 12               | $\infty$ | $x-\frac{5}{3}x^3$         | $\frac{1}{2}(5x^3-3x)$                      |
+
+# Frobenius' Method:
+
+The radius of convergence for a power series about $x_0$ is determined by the closest singular point of the series to said value of $x$. Frobenius' method allows
