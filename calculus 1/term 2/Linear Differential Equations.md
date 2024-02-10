@@ -29,4 +29,4 @@ The radius of convergence for a power series about $x_0$ is determined by the cl
 >$x_0$ is a regular single point of the differential equation if $(x-x_0)p(x),(x-x_0)^2q(x)$ can be represented by a Taylor expansion about $x_0$
 >$x_0$ is an irregular single point of the differential equation if none of the above conditions are met
 
-Frobenius' method allows for the expansion of a series solution at these regular single points. In certain cases, this can allow for a series solution to be defined for all $x$. We look for a solution of the form:$$\Huge y(x)=\sum_{n=0}^\infty a_n(x-x+0)$$
+Frobenius' method allows for the expansion of a series solution at these regular single points. In certain cases, this can allow for a series solution to be defined for all $x$. We look for a solution of the form:$$\Huge y(x)=\sum_{n=0}^\infty a_n(x-x_0)^{n+r}$$Where $r$ is a constant to be determined. The method is best demonstrated in an example:![[Linear Differential Equations .excalidraw]]
