@@ -24,4 +24,9 @@ Consider a second order ODE of form:$$\Huge \frac{d^2y}{dx^2}+p(x)\frac{dy}{dx}+
 
 # Frobenius' Method:
 
-The radius of convergence for a power series about $x_0$ is determined by the closest singular point of the series to said value of $x$. Frobenius' method allows
+The radius of convergence for a power series about $x_0$ is determined by the closest singular point of the series to said value of $x$. Frobenius' method allows for a modified power series that can be used at a singular point, provided the singular point behaves nicely. Take the differential equation $y''+p(x)y'+q(x)y=0$, then we classify points as follows:
+>$x_0$ is a regular point of the differential equation if both $p,q$ can be represented by a [[Taylor series#Taylor's theorem|Taylor expansion]] about the point $x_0$
+>$x_0$ is a regular single point of the differential equation if $(x-x_0)p(x),(x-x_0)^2q(x)$ can be represented by a Taylor expansion about $x_0$
+>$x_0$ is an irregular single point of the differential equation if none of the above conditions are met
+
+Frobenius' method allows for the expansion of a series solution at these regular single points. In certain cases, this can allow for a series solution to be defined for all $x$. We look for a solution of the form:$$\Huge y(x)=\sum_{n=0}^\infty a_n(x-x+0)$$
