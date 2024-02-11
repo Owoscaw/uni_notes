@@ -26,3 +26,9 @@ Suppose we observe $X_1=x_1,\dots, X_n=x_n$, then we can construct the confidenc
 Given a random sample $\underline X=(X_1,\dots,X_n)$ and two statistics $[u(\underline X),v(\underline X)]$, a realisation $[u(\underline x),v(\underline x)]$ of the random interval $[u(\underline X),v(\underline X)]$ is called a confidence interval at a confidence level for a population parameter $\theta$ when:$$\Huge P(u(\underline X)\leq\theta\leq v(\underline X))=1-\alpha$$In general, a $1-\alpha$% confidence interval for an unknown parameter $\theta$ is a range between two numbers such that the method of producing the interval gives an interval which contains the true value of $\theta$ $1-\alpha$% of the time.
 
 ## Confidence intervals for the population mean:
+
+### $\sigma$  known:
+When $\sigma$ is known, suppose that we have an SRS $X_1,\dots,X_n$ where the standard devation is known and the population is either normal or large enough to use the central limit theorem. Also suppose the calculated sample mean is $\bar x$, then an $(1-\alpha)$% confidence interval for $\mu$ is given by:$$\Huge \bar x\pm z^*\frac{\sigma}{\sqrt{n}}$$Where $z^*$ is a critical value of a standard normal random variable such that:$$\Huge P(-z^*\leq Z\leq z^*)=1-\alpha$$
+
+### $\sigma$ unkn
+When $\alpha$ is unknown, $n$ is small, the population is normal, a simple random sample $X_1,\dots,X_n$ is taken, the calculated observed sample mean is $\bar x$, and the calculated observed standard deviation is  $s$, then a $(1-\alpha)$% confidence interval for $\mu$ is:$$\Huge \bar x\pm t_{n-1}^*\frac{s}{\sqrt{n}}$$Where $t_{n-1}^*$ is the critical value of a $t$ distributed random variable with $n-1$ degrees of freedom such that:$$\Huge P(-t_{n-1}^*\leq T\leq t_{n-1}^*)=1-\alpha$$
