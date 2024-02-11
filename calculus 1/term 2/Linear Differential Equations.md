@@ -30,3 +30,6 @@ The radius of convergence for a power series about $x_0$ is determined by the cl
 >$x_0$ is an irregular single point of the differential equation if none of the above conditions are met
 
 Frobenius' method allows for the expansion of a series solution at these regular single points. In certain cases, this can allow for a series solution to be defined for all $x$. We look for a solution of the form:$$\Huge y(x)=\sum_{n=0}^\infty a_n(x-x_0)^{n+r}$$Where $r$ is a constant to be determined. The method is best demonstrated in an example:![[Frobenius' method]]
+# Differential Operators:
+
+Legendre's equation can be written in another form:$$\Huge \mathcal L_{L}y(x)=\left[(x^2-1)\frac{d^2y}{dx^2}+2x\frac{dy}{dx}\right]=\lambda y(x)$$
