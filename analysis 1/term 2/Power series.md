@@ -22,3 +22,8 @@ Let $\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence $R>0
 
 ## Power series are differentiable:
 Let $f(x)=\sum_{k=0}^\infty a_kx^k$ be a power series with $R\in(0,\infty]$ be its radius of convergence. Then $f$ is infinitely differentiable on $(-R,R)$, and the derivative is given by:$$\Huge f'(x)=\sum_{k=1}^\infty ka_kx^{k-1}$$Furthermore:$$\Huge f^{(n)}(0)=n!\,a_n$$For all $n\geq0$. To prove this, we need to show that the first derivative exists, since this is itself a power series with the same radius of convergence. Let $c\in(-\infty,\infty)$, then:$$\Huge f(x)-f(c)=\sum_{k=1}^\infty a_k(x-c)(x^{k-1}+x^{k-2}c+\dots+xc^{k-2}+c^{k-1})$$$$\Huge f(x)=f(c)+(x-c)\sum_{k=1}^\infty a_k(x^{k-1}+\dots+c^{k-1}),\,\,f_1(x)=\sum_{k=1}^\infty a_k(\dots)$$$$\Huge f_1(c)=\sum_{k=1}^\infty a_kkc^{k-1}$$We want to use first order Taylor with $f(x)=f(x)+(x-c)f_1(c)$, so we require that $f_1$ is continuous at $c$. The formula for the $n$-th derivative at $0$ is proven by induction:$$\large f^{(n)}(x)=\sum_{k=n}^\infty k(k-1)\dots(k-n+1)a_kx^{k-n}=\sum_{k=0}^\infty (k+1)(k+2)\dots(k+n)a_{k+n}x^k$$Evaluating this at zero:$$\Huge f^{(n)}(0)=n!a_n$$
+Let $\sum_{k=0}^\infty a_kx^k,\sum_{k=0}^\infty b_kx^k$ be two power series with radii of convergence $R_a,R_b$ respectively. If both agree as functions on $(-r,r)$ with $0<r<\min\{R_a,R_b\}$ then we have $a_k=b_k$ for all $k$. To prove this, let $f(x)=\sum_{k=0}^\infty a_kx^k$ and $g(x)=\sum_{k=0}^\infty a_kx^k$, since $f=g$ on $(-r,r)$ then:$$\Huge k!a_k=f^{(k)}(0)=g^{(k)}(0)=k!b_k$$It is trivial to see that then $a_k=b_k$.
+
+# Abel's limit theorem:
+
+Let $f(x)=\sum_{k=0}^\infty a_kx^k$
