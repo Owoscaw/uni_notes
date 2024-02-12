@@ -26,4 +26,7 @@ Let $\sum_{k=0}^\infty a_kx^k,\sum_{k=0}^\infty b_kx^k$ be two power series with
 
 # Abel's limit theorem:
 
-Let $f(x)=\sum_{k=0}^\infty a_kx^k$
+Let $f(x)=\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence $R$ and assume that the power series converges at the endpoint $x=R$:$$\Huge \sum_{k=0}^\infty a_kR^k\,\,\text{converges}$$Then if $f$ is left continuous at $x=R$, that is:$$\Huge \lim_{x\to R^-}f(x)=\sum_{k=0}^\infty a_kR^k$$One can use this to establish Leibniz's formulae for $\log2$ and $\arctan1= \frac{\pi}{4}$.
+
+# Exponentials, logarithms, and trig:
+
