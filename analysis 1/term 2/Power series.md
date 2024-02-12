@@ -30,4 +30,12 @@ Let $f(x)=\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence
 
 # Exponentials, logarithms, and trig:
 
-We define the exponential function $\exp x$ by:$$\Huge e^{x}=\sum _{k=0}^{\infty} \frac{x^k}{k!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\dots$$
+We define the exponential function $\exp x$ by:$$\Huge e^{x}=\sum _{k=0}^{\infty} \frac{x^k}{k!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\dots$$We deduce the following properties:
+>$\exp0=1$ 
+>The exponential function is inifnitely differentiable on $\Re$ with $(\exp x)'=\exp x$
+>For all $x,y\in\Re$ we have $\exp(x+y)=\exp x\exp y$ and $\exp(-x)= \frac{1}{\exp x}$
+>$\exp x>0$ for all $x\in\Re$
+>$\exp x$ is strictly monotone increasing
+>$\lim_{x\to\infty}\exp x=\infty$ and $\lim_{x\to -\infty}\exp x=0$
+
+To prove this, differentiate termwise to get:$$\Huge \exp'x=\sum_{k=1}^{\infty}k \frac{x^{k-1}}{k!}=\sum_{k=0}^{\infty}(k+1)\frac{x^k}{(k+1)!}=\sum_{k=0}^{\infty}\frac{x^k}{k!}=\exp{x}$$
