@@ -12,4 +12,4 @@ If we have a two sided hypothesis, an [[Random sampling and proportions#Totals a
 
 # One sided case:
 
-If we have a one sided hypothesis, an estimator for $\theta$, a sampling distribution of the estimator, and a level of significance $\alpha$, we can then construct a $(1-2\alpha)$ confidence interval for $\theta$. Then we reject $H_0$ if $r$ falls to the right of 
+If we have a one sided hypothesis, an estimator for $\theta$, a sampling distribution of the estimator, and a level of significance $\alpha$, we can then construct a $(1-2\alpha)$ confidence interval for $\theta$. Then we reject $H_0$ if $r$ falls to the right (for $H_0:\theta<r$) of the confidence interval. We fail to reject $H_0$ otherwise.
