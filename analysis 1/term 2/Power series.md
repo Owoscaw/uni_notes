@@ -30,3 +30,4 @@ Let $f(x)=\sum_{k=0}^\infty a_kx^k$ be a power series with radius of convergence
 
 # Exponentials, logarithms, and trig:
 
+We define the exponential function $\exp x$ by:$$\Huge e^{x}=\sum _{k=0}^{\infty} \frac{x^k}{k!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\dots$$
