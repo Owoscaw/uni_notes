@@ -41,4 +41,6 @@ We define the exponential function $\exp x$ by:$$\Huge e^{x}=\sum _{k=0}^{\infty
 To prove this, differentiate termwise to get:$$\Huge \exp'x=\sum_{k=1}^{\infty}k \frac{x^{k-1}}{k!}=\sum_{k=0}^{\infty}(k+1)\frac{x^k}{(k+1)!}=\sum_{k=0}^{\infty}\frac{x^k}{k!}=\exp{x}$$Then for the third result consider $f(t)=\exp(x+t)\exp(y-t)$. Note that this is differentiable on $\Re$ with $f(0)=\exp(x)\exp(y)$ and $f(y)=exp(x+y)$, then:$$\Huge f'(t)=\exp(x+t)\exp(y-t)-\exp(x+t)\exp(y-t)=0$$Therefore $f$ is constant, so $f(0)=f(y)$, proving the statement.
 
 ## Euler's number:
-We define:$$\Huge e=\exp(1)=\sum_{k=0}^{\infty} \frac{1}{k!}=1+\frac{1}{2}+\frac{1}{6}+\dots$$We also have
+We define:$$\Huge e=\exp(1)=\sum_{k=0}^{\infty} \frac{1}{k!}=1+\frac{1}{2}+\frac{1}{6}+\dots$$We also have:$$\Huge \left(1+\frac{1}{k}\right)^k=\exp\left(k\log\left(1+\frac{1}{k}\right)\right)\implies\exp(1)=e$$By continuity of $\exp$ and limit comparisons.
+
+## Logarithms:
