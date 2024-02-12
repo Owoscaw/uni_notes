@@ -44,3 +44,9 @@ To prove this, differentiate termwise to get:$$\Huge \exp'x=\sum_{k=1}^{\infty}k
 We define:$$\Huge e=\exp(1)=\sum_{k=0}^{\infty} \frac{1}{k!}=1+\frac{1}{2}+\frac{1}{6}+\dots$$We also have:$$\Huge \left(1+\frac{1}{k}\right)^k=\exp\left(k\log\left(1+\frac{1}{k}\right)\right)\implies\exp(1)=e$$By continuity of $\exp$ and limit comparisons.
 
 ## Logarithms:
+Since $\exp$ is strictly monotone increasing, mapping $(-\infty,\infty)$ to $(0,\infty)$, we denote its inverse as:$$\Huge \log(x):(0,\infty)\mapsto(-\infty,\infty)$$Then $\exp(\log(x))=x,\log(\exp(x))=x$ for all appropriate $x$. We then define similar properties as above, as we have done in the first term. 
+
+We then define for $a>0$ the function:$$\Huge a^x:=\exp(\log(a)x)$$Then we immediately obtain:
+>$a^0=1,a^1=a,a^{-1}=\frac{1}{a}$
+>$a^x$ is differentiable with $(a^x)'=\log(a)a^x$
+>For all $x,y\in\Re$ we have $$
