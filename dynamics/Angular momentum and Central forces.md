@@ -1,0 +1,4 @@
+
+# Polar basis:
+
+When considering angular momentum, it is useful to use polar coordinates instead of cartesian, where $x=r\cos\theta,y=r\sin\theta$. We write $\underline r=r\underline e_r$ where $\underline e_r$ is the radial unit vector pointing away from the origin. The tangential unit vector $\underline e_\theta$ is a vector perpendicular to $\underline e_r$, pointing in the anticlockwise direction of increasing $\theta$:$$\Huge \underline e_r=\underline i\cos\theta+\underline j\cos\theta,\,\,\underline e_\theta=-\underline i\cos\theta+\underline j\sin\theta$$These both have time derivatives:$$\Huge \underline{\dot e}_r=\frac{d}{dt}\underline e_r=\frac{d\theta}{dt}\times\frac{d\underline e_r}{d\theta}=\dot\theta(-\underline i\sin\theta+\underline j\cos\theta)=$$
