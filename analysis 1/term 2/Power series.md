@@ -49,4 +49,10 @@ Since $\exp$ is strictly monotone increasing, mapping $(-\infty,\infty)$ to $(0,
 We then define for $a>0$ the function:$$\Huge a^x:=\exp(\log(a)x)$$Then we immediately obtain:
 >$a^0=1,a^1=a,a^{-1}=\frac{1}{a}$
 >$a^x$ is differentiable with $(a^x)'=\log(a)a^x$
->For all $x,y\in\Re$ we have $$
+>For all $x,y\in\Re$ we have $a^{x+y}=a^xa^y$ and $a^{-x}=\frac{1}{a^{x}}$
+>$a^x>0$ for all $x\in\Re$
+>$a^x$ is strictly monotone increasing if $a>1$, constant if $a=1$ and strictly monotone decreasing if $a\in(0,1)$
+
+Then we define $\log_a(x)$ as the inverse of this function. From the definition of $a^x$ we immediatley see:$$\Huge \log_a(x)=\frac{\log x}{\log(a)}$$
+## Trig functions:
+We define the sine and cosine functions by:$$\Huge \sin(x)=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1},\,\,\cos(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}$$By the ratio test we see that $R=\infty$ and these functions converge for all $x\in\Re$
