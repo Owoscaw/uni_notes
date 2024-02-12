@@ -37,3 +37,9 @@ Let $U$ be a [[Subspaces|vector subspace]] of the inner product space $V$, then 
 Given any vector $\underline v\in V$, there is a unique vector $\underline u\in U$ called the orthogonal projection of $\underline v$ onto $U$, said $\underline u$ can be found as follows:
 
 Propose that if $U$ is finite dimensional, then there always exists a unique decomposition $\underline v=\underline u+\underline{\bar u}$ where $\underline u\in U,\underline{\bar u}\in U^\perp$, so we write: $$\Huge V=U\oplus U^\perp$$Let $\{\underline u_1,\dots,\underline u_k\}$ be an orthonormal basis of $U$ and set:$$\Huge \underline u=(\underline v,\underline u_1)\underline u_1+\dots+(\underline v,\underline u_k)\underline u_k,\,\,\underline{\bar u}=\underline v-\underline u$$Clearly $\underline u\in U$ as it is a linear combination of each $\underline u_i$, and for each $\underline u_i$ note that $(\underline u,\underline u_i)=(\underline v,\underline u_i)\times(\underline u_i,\underline u_i)=(\underline v,\underline u_i)$, so for each $\underline u_i$ we have:$$\Huge (\underline{\bar u},\underline u_i)=(\underline v-\underline u,\underline u_i)=(\underline v,\underline u_i)-(\underline u,\underline u_i)=(\underline v,\underline u_i)-(\underline v,\underline u_i)=0$$Therefore $\underline u_i$ and $\underline{\bar u}$ are orthogonal and $\underline{\bar u}\in U^\perp$ 
+
+Given a finite dimensional vector subspace $U$ of $\{V,(\cdot,\cdot)\}$, the orthonormal projection operator $P$ onto $U$ is defined as:$$\Huge P_U(\underline v)=(\underline v,\underline u_1)\underline u_1+\dots+(\underline v,\underline u_k)\underline u_k$$Where $k=\dim U$ and $\{\underline u_1,\dots,\underline u_k\}$ is an orthonormal basis of $U$. This operator has the following properties:
+> $P_U$ is linear, $P_U:V\mapsto V$
+> $Im\,P_U=U$ and $\ker P_U=U^\perp$ 
+> $P_U$ is idempotent, $P_U^2=P_U$
+> $P(\underline u)=$   
