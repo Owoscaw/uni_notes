@@ -1,0 +1,4 @@
+
+We saw [[Linear Differential Equations#Differential Operators|earlier]] that it is possible to expand a piecewise smooth function in terms of basis polynomials, namely the [[Linear Differential Equations#Legendre's equation|Legendre Polynomials]]:$$\Huge f(x)=\sum_{i=0}^\infty b_iP_i(x)$$Where $\mathcal{L}_LP_i(x)=i(i+1)P_i(x)$. Legendre polynomials can be given explicitly by:$$\Huge P_i(x)=\frac{1}{2^ii!}\frac{d^i}{dx^i}(x^2-1)^i$$Similarly to [[Fourier Series]], we aim to express any function as a sum of other functions with certain coefficients, in our case $b_i$. Finding a formula for these coefficients leads to the following observations:
+
+It is easy to find components of a vector when the basis is orthogonal. Take this as an example:![[Polynomial expansions and Self-Adjoint operators .excalidraw]]
