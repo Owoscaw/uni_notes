@@ -49,4 +49,4 @@ We propose that if $U$ is a finite dimensional subspace of $\{V,(\cdot,\cdot)\}$
 
 ## Bessel's Inequality:
 
-Let $\{V,(\cdot,\cdot)\}$ be an inner product space, and $U$ a finite dimension subspace. If $v\in V$ and $u\in P_U(\underline v)$:$$\Huge ||\underline u||^2\leq||\underline v||^2$$
+Let $\{V,(\cdot,\cdot)\}$ be an inner product space, and $U$ a finite dimension subspace. If $v\in V$ and $u\in P_U(\underline v)$, then $||\underline u||^2\leq||\underline v||^2$. In particular if $\{u_1,\dots,u_k\}$ is an orthonormal basis for $U$ and $\underline u=\lambda_1\underline u_1+\dots+\lambda_k \underline u_k$ then:$$\Huge \sum_{i=1}^k\lambda_i^2\leq||\underline v||^2$$
