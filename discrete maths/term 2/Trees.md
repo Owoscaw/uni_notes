@@ -35,3 +35,6 @@ So we have a bijection between Prufer codes and labelled trees. Then the number 
 > How can we be sure that the two algorithms are truly inverses to each other
 
 We (try) prove this using linear algebra:![[Cayley proof]]
+# MSTs:
+
+A weighted graph is a graph where each edge $e$ has an associated non-negative number $w(e)$, the weight of $e$. A useful way of encoding this information for a simple graph is with a weight matrix:![[wieghted graph]]Where $\infty$ is used to represent the lack of an edge. A spanning tree is a subgraph which uses the same vertex set
