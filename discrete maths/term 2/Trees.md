@@ -48,3 +48,6 @@ Suppose a connected graph $G$ has $n$ vertices and select a vertex. This itself 
 > Find a least weight edge connecting $T_k$ to a new vertex in $G$, add this new edge and vertex to construct $T_{k+1}$
 > Repeat until all vertices in $G$ are included in $T_k$
 
+This process must create a spanning tree since an edge will be added to the tree only if one of the vertices was not already in the tree, so it is impossible to create a cycle as this algorithm will not add an edge between two vertices already in the tree. Since this algorithm only terminates when all vertices in $G$ are in the tree, it must be spanning.
+
+Suppose that the output tree $T$ is not minimal, and $T'$ be a minimal spanning tree. That is $w(T)>w(T')$, therefore there must exist some edge $e$ in $T$ that is not in $T'$. This is because $T$ either has more edges than $T'$ or the algorithm chose a larger edge to use in $T$, as these are the only ways to satisfy $w(T)>w(T')$. Let $V$ be the set of vertices used in the algorithm before adding $e$. There must be an edge $f$ in $T'$ that connects a vertex in $V$ to a vertex not in $V$, let $T''=T'-f+e$, the graph obtained by replacing $f$ with $e$ in $T'$.
