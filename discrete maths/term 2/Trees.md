@@ -57,3 +57,5 @@ Suppose that the output tree $T$ is not minimal, and $T'$ be a minimal spanning 
 Given a connected graph $G$, construct a sequence of subgraphs by repeating the following:
 > Add in the least weight edge that does not cause a cycle
 
+This will eventually produce a spanning tree, since this algorithm preserves acyclicity and only terminates when it cannot add another edge without creating a cycle. This must mean that the graph is connected. We have that Kruskal's algorithm produces a connected graph that preserves acyclicity, so it must produce a tree. This tree must be spanning since the original graph $G$ was connected, so there are always enough edges to add that will not cause a cycle.
+
