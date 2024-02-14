@@ -1,5 +1,6 @@
 
 A tree is a [[Eulerian Graphs#Connectedness|connected]] acyclic graph, that is a connected graph with no cycles present. A forest is any acyclic graph, note that every connected component of a forest is itself a tree. A leaf of a graph is a vertex of degree one. We try drawing all trees of $n$ vertices:![[size n trees]]
+
 | n               | 1   | 2   | 3   | 4   | 5   | 6   | 7   |
 | --------------- | --- | --- | --- | --- | --- | --- | --- |
 | Number of Trees | 1   | 1   | 1   | 2   | 3   | 6   | 11  |
@@ -59,4 +60,4 @@ Given a connected graph $G$, construct a sequence of subgraphs by repeating the 
 
 This will eventually produce a spanning tree, since this algorithm preserves acyclicity and only terminates when it cannot add another edge without creating a cycle. This must mean that the graph is connected. We have that Kruskal's algorithm produces a connected graph that preserves acyclicity, so it must produce a tree. This tree must be spanning since the original graph $G$ was connected, so there are always enough edges to add that will not cause a cycle.
 
-Suppose that the tree produced from Kruskal's algorithm, $T$, is not optimal, whereas $T'$ is. In order for this to be true, we require $w(T)> w(T')$. Since both are spanning, there must be an edge $e$ in $T$ that is not in $T'$ that causes the above inequality to hold. Consider the set of edges at stage $k$ in the algorithm, $E_k$. If we say $E=\{e_1,e_2,\dots,e_k\}$, then it is true that $w(e_1)\leq w(e_2)\leq\dots\leq w(e_k)$ since the only minimal acyclicity preserving edges are considered. It is also true that $w(E_k)\leq w(T)$, with equality when $k$ is the final stage of the algorithm.
+Suppose that the tree produced from Kruskal's algorithm, $T$, is not optimal, whereas $T'$ is. In order for this to be true, we require $w(T)> w(T')$. Since both are spanning, there must be an edge $e$ in $T$ that is not in $T'$ that causes the above inequality to hold. Consider the set of edges at stage $k$ in the algorithm, $E_k$. If we say $E=\{e_1,e_2,\dots,e_k\}$, then it is true that $w(e_1)\leq w(e_2)\leq\dots\leq w(e_k)$ since the only minimal acyclicity preserving edges are considered. It is also true that $w(E_k)\leq w(T)$, with equality when $k$ is the final stage of the algorithm. Since $e$ was not added by the algorithm, it is also true that $w(e)>w(e_k)$ for any stage $k$.
