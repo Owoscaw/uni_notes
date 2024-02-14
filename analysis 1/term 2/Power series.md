@@ -55,4 +55,7 @@ We then define for $a>0$ the function:$$\Huge a^x:=\exp(\log(a)x)$$Then we immed
 
 Then we define $\log_a(x)$ as the inverse of this function. From the definition of $a^x$ we immediatley see:$$\Huge \log_a(x)=\frac{\log x}{\log(a)}$$
 ## Trig functions:
-We define the sine and cosine functions by:$$\Huge \sin(x)=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1},\,\,\cos(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}$$By the ratio test we see that $R=\infty$ and these functions converge for all $x\in\Re$
+We define the sine and cosine functions by:$$\Huge \sin(x)=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1},\,\,\cos(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}$$By the ratio test we see that $R=\infty$ and these functions converge for all $x\in\Re$. We then have:
+> $\sin(0)=0,\cos(0)=1$ since there are no constant terms in $\sin$ and the constant in $\cos$ is one
+> sine is odd since is only contains odd powers of $x$, cosine is even since it only contains even powers of $x$
+> sine and cosine are infinitely differentiable with $\sin'x=\cos x$
