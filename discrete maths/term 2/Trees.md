@@ -59,4 +59,4 @@ Given a connected graph $G$, construct a sequence of subgraphs by repeating the 
 
 This will eventually produce a spanning tree, since this algorithm preserves acyclicity and only terminates when it cannot add another edge without creating a cycle. This must mean that the graph is connected. We have that Kruskal's algorithm produces a connected graph that preserves acyclicity, so it must produce a tree. This tree must be spanning since the original graph $G$ was connected, so there are always enough edges to add that will not cause a cycle.
 
-Suppose the tree produced by the algorithm, $T$, is not minimal and that the tree $T'$ is. At some point in the algorithm
+Suppose that the set of edges used in the algorithm up until any given point is $E$. Any edge not in $E$, but in $G$ must have greater weight than any edge in $E$. This is because only minimum weight edges are chosen to be included in any subgraph produced during Kruskal's algorithm.
