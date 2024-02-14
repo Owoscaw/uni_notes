@@ -58,4 +58,5 @@ Then we define $\log_a(x)$ as the inverse of this function. From the definition 
 We define the sine and cosine functions by:$$\Huge \sin(x)=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1},\,\,\cos(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}$$By the ratio test we see that $R=\infty$ and these functions converge for all $x\in\Re$. We then have:
 > $\sin(0)=0,\cos(0)=1$ since there are no constant terms in $\sin$ and the constant in $\cos$ is one
 > sine is odd since is only contains odd powers of $x$, cosine is even since it only contains even powers of $x$
-> sine and cosine are infinitely differentiable with $\sin'x=\cos x$
+> sine and cosine are infinitely differentiable with $\sin'x=\cos x$ and $\cos'x=-\sin x$ since:$$\Huge \sin'(x)=\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}(2k+1)x^{2k}=\sum_{k=0}^\infty\frac{(-1)^k}{(2k)!}x^{2k}=\cos(x)$$$$\Huge \cos'x=\sum_{k=1}^\infty\frac{(-1)^k}{(2k)!}(2k)x^{2k-1}=-\sum_{k=0}^\infty\frac{(-1)^k}{(2k+1)!}x^{2k+1}=-\sin(x)$$For all $x,y\in\Re$ we have $\sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$ and $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$. To prove both of these we use the same method used when showing the similar result for the exponential function.
+> For all $x\in\Re$, $\sin^2(x)+\cos^2(x)=1$. In particular $|\sin(x)|\leq1$ and $|\cos(x)|\leq1$.
