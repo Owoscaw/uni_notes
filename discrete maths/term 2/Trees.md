@@ -37,4 +37,14 @@ So we have a bijection between Prufer codes and labelled trees. Then the number 
 We (try) prove this using linear algebra:![[Cayley proof]]
 # MSTs:
 
-A weighted graph is a graph where each edge $e$ has an associated non-negative number $w(e)$, the weight of $e$. A useful way of encoding this information for a simple graph is with a weight matrix:![[wieghted graph]]Where $\infty$ is used to represent the lack of an edge. A spanning tree is a subgraph which uses the same vertex set
+A weighted graph is a graph where each edge $e$ has an associated non-negative number $w(e)$, the weight of $e$. A useful way of encoding this information for a simple graph is with a weight matrix:![[wieghted graph]]Where $\infty$ is used to represent the lack of an edge. A spanning tree is a subgraph that is a tree, which uses the same vertex set as the original graph. A minimum spanning tree is a spanning tree of minimum total edge length, this obviously has many real world applications. We try to minimise $w(T)$, the weight of all spanning trees $T\subset G$.
+
+For a graph to have a spanning tree, there must be a way to connect every edge to a tree, so it is obvious to require that a graph must be connected to have a spanning tree. Suppose that a connected graph contains a cycle, then it is not a tree. Any edge from this cycle can be removed without disconnecting the graph, since there exists a path around the other direction of the cycle. Repeat this for every cycle in a graph to show that there exists a spanning tree for every connected graph. Note if the graph never contained any cycles then it was already its own spanning tree.
+
+# Prim's algorithm:
+
+Suppose a connected graph $G$ has $n$ vertices and select a vertex. This itself is a tree composed of a single vertex and no edges, call this $T_1$:
+> Suppose a tree $T_k$ with $k<n$ has been constructed
+> Find a least weight edge connecting $T_k$ to a new vertex in $G$, add this new edge and vertex to construct $T_{k+1}$
+> Repeat until all vertices in $G$ are included in $T_k$
+
