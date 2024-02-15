@@ -13,3 +13,9 @@ If we have a two sided hypothesis, an [[Random sampling and proportions#Totals a
 # One sided case:
 
 If we have a one sided hypothesis, an estimator for $\theta$, a sampling distribution of the estimator, and a level of significance $\alpha$, we can then construct a $(1-2\alpha)$ confidence interval for $\theta$. Then we reject $H_0$ if $r$ falls to the right (for $H_0:\theta<r$) of the confidence interval. We fail to reject $H_0$ otherwise.
+
+# Hypothesis testing using p-values:
+
+Using confidence intervals is one way to test a hypothesis, an alternative method is to calculate an appropriate test statistic from the data. We can then find the probability of observing a value at least as extreme as the statistic under the assumption that $H_0$ is true, we call said probability the $p$ value.
+
+This probability can be found by comparing the test statistic with critical values of the relevant sampling distribution. The more extreme a statistic is, the less likely it is that $H_0$ is true. The threshold for the $p$ value is the level of significance, $\alpha$.
