@@ -49,4 +49,8 @@ We propose that if $U$ is a finite dimensional subspace of $\{V,(\cdot,\cdot)\}$
 
 ## Bessel's Inequality:
 
-Let $\{V,(\cdot,\cdot)\}$ be an inner product space, and $U$ a finite dimension subspace. If $v\in V$ and $u\in P_U(\underline v)$, then $||\underline u||^2\leq||\underline v||^2$. In particular if $\{u_1,\dots,u_k\}$ is an orthonormal basis for $U$ and $\underline u=\lambda_1\underline u_1+\dots+\lambda_k \underline u_k$ then:$$\Huge \sum_{i=1}^k\lambda_i^2\leq||\underline v||^2$$
+Let $\{V,(\cdot,\cdot)\}$ be an inner product space, and $U$ a finite dimension subspace. If $v\in V$ and $u\in P_U(\underline v)$, then $||\underline u||^2\leq||\underline v||^2$. In particular if $\{u_1,\dots,u_k\}$ is an orthonormal basis for $U$ and $\underline u=\lambda_1\underline u_1+\dots+\lambda_k \underline u_k$ then:$$\Huge \sum_{i=1}^k\lambda_i^2\leq||\underline v||^2$$To prove this, we write $\underline v=\underline u+\underline{\bar u}$ and show:$$\Huge \sum_{i=1}^k \lambda_i^2=||\underline u||^2\leq||\underline u||^2+||\underline{\bar u}||^2=||\underline v||^2$$The fact that the LHS sum is given by $||\underline u||^2=(\underline u,\underline u)$ follows from the bilinearity of the inner product together with orthogonality of the $\{u_1,\dots,u_k\}$ basis.
+
+# Orthogonality and Unitary diagonalisation:
+
+A real $n\times n$ matrix is orthogonal if:$$\Huge M^TM=MM^T=I$$That is $M^T=M^{-1}$. The set of $n\times n$ orthogonal matrices is called the orthogonal group and is denoted by:$$\Huge O(n)=\{\}$$
