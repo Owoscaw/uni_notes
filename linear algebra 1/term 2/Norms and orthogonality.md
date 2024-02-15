@@ -53,4 +53,7 @@ Let $\{V,(\cdot,\cdot)\}$ be an inner product space, and $U$ a finite dimension 
 
 # Orthogonality and Unitary diagonalisation:
 
-A real $n\times n$ matrix is orthogonal if:$$\Huge M^TM=MM^T=I$$That is $M^T=M^{-1}$. The set of $n\times n$ orthogonal matrices is called the orthogonal group and is denoted by:$$\Huge O(n)=\{\}$$
+A real $n\times n$ matrix is orthogonal if:$$\Huge M^TM=MM^T=I$$That is $M^T=M^{-1}$. The set of $n\times n$ orthogonal matrices is called the orthogonal group and is denoted by:$$\Huge O(n)=\{M\in GL(n,\Re):M^TM=MM^T=I\}$$Since $\det M=\det M^T$, orthogonal matrices must have $\det M=\pm 1$. The subset of all orthogonal matrices with determinant $+1$ is known as the special orthogonal group, denoted by:$$\Huge SO(n)=\{M\in O(n):\det M=\pm1\}$$
+A complex $n\times n$ matrix is called unitary if:$$\Huge UU^*=U^*U=I$$That is $U^*=U^{-1}$. Then the set of $n\times n$ unitary matrices is known as the unitary group, denoted by:$$\Huge U(n)=\{U\in GL(n,\mathbb{C}):U^*U=UU^*=I\}$$Similarly, the subset of all orthogonal matrices with determinant $+1$ is known as the special unitary group, denoted by:$$\Huge SU(n)=\{U\in U(n):\det U=1\}$$Here we use $+1$ because $\det U^*=\bar{\det U}$, so any unitary matrix has $|\det U|^2=\det U\det U^*=\det(UU^*)=1$. Note that a matrix is orthogonal or unitary if and only if its columns form an orthonormal basis for the standard linear inner product on $\Re^n$ or $\mathbb{C}^n$.
+
+We propose that if $A$ is complex hermitian or real symettric, then the eigenvalues of $A$ are real. Suppose that $$
