@@ -9,3 +9,7 @@ Take for example, motion in a circle $r=c$ at a constant speed ($\dot r=0$). The
 # Angular momentum:
 
 A particle of mass $m$ at the position $\underline r$ with velocity $\underline v$ has angular momentum:$$\Huge \underline L=m \underline r\times \underline v$$About $\underline r=\underline0$, where $\times$ denotes the [[Vector Product|vector cross product]]. Then:$$\Huge \frac{d}{dt}\underline L=m(\underline{\dot r}\times \underline v+\underline r\times \underline{\dot v})=\underline r\times(m \underline{\dot v})=\underline r\times \underline F$$By the equation of motion. This term is the torque about $\underline r=\underline 0$. We propose that if $\underline F=g \underline r$ for some function $g$, then $\underline{\dot L}=\underline 0$, that is angular momentum is conserved.
+
+# Energy and Forces in central force:
+
+Central forces are of the following form:$$\Huge \underline F=f(r)\underline e_r=r^{-1}f(r)\underline r$$Since energy is conserved
