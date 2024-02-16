@@ -2,9 +2,4 @@
 
 
 
-
-
-
-
-
 ![[plagarism declarastion.png]]
