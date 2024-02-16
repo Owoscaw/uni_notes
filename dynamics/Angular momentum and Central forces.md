@@ -8,8 +8,11 @@ Take for example, motion in a circle $r=c$ at a constant speed ($\dot r=0$). The
 
 # Angular momentum:
 
-A particle of mass $m$ at the position $\underline r$ with velocity $\underline v$ has angular momentum:$$\Huge \underline L=m \underline r\times \underline v$$About $\underline r=\underline0$, where $\times$ denotes the [[Vector Product|vector cross product]]. Then:$$\Huge \frac{d}{dt}\underline L=m(\underline{\dot r}\times \underline v+\underline r\times \underline{\dot v})=\underline r\times(m \underline{\dot v})=\underline r\times \underline F$$By the equation of motion. This term is the torque about $\underline r=\underline 0$. We propose that if $\underline F=g \underline r$ for some function $g$, then $\underline{\dot L}=\underline 0$, that is angular momentum is conserved.
+A particle of mass $m$ at the position $\underline r$ with velocity $\underline v$ has angular momentum:$$\Huge \underline L=m \underline r\times \underline v=mr^2$$About $\underline r=\underline0$, where $\times$ denotes the [[Vector Product|vector cross product]]. Then:$$\Huge \frac{d}{dt}\underline L=m(\underline{\dot r}\times \underline v+\underline r\times \underline{\dot v})=\underline r\times(m \underline{\dot v})=\underline r\times \underline F$$By the equation of motion. This term is the torque about $\underline r=\underline 0$. We propose that if $\underline F=g \underline r$ for some function $g$, then $\underline{\dot L}=\underline 0$, that is angular momentum is conserved.
 
-# Energy and Forces in central force:
+# Planar motion and Motion under central force:
 
-Central forces are of the following form:$$\Huge \underline F=f(r)\underline e_r=r^{-1}f(r)\underline r$$Since energy is conserved
+A central force based at $r=0$ has form:$$\Huge \underline F=f(r)\underline e_r=r^{-1}f(r)\underline r$$This force can act either towards or away from the origin $\underline 0$. It is attractive if $f(r)<0$ and repulsive if $f(r)>0$. As above, we know that angular momentum is constant. Since $\underline L\cdot\underline r=0$, the motion of a particle lies in the plane through $\underline 0$ perpendicular to the constant vector $\underline L$. We take this to be the $r \theta$-plane, our basis being $\{\underline e_r,\underline e_\theta,k\}$ where $k$ is constant. The crucial point is since angular momentum is conserved, this plane is time invariant.
+
+Take $\underline L$ to be in the $z$ direction, so that $\underline L=L \underline k$. Now angular momentum is:$$\Huge \underline L=mr \underline e_r\times(\dot r \underline e_r+r\dot \theta \underline e_{\theta})=mr^2\dot \theta \underline k$$Making the equation of motion:$$\Huge \underline F=m \underline{\ddot r}=m(\ddot r-r\dot \theta^2)=f(r),\,\,2\dot r\dot \theta$$u
+\
