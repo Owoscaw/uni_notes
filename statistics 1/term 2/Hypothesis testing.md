@@ -22,4 +22,7 @@ This probability can be found by comparing the test statistic with critical valu
 
 For a one tailed test, the $p$-value is the tail probability corresponding to being at least as extreme as the value of the test statistic. For a two tailed test, "at least as extreme" is counted in two directions, so the $p$-value will be doubled.
 
+## Proportions:
+
+The $(1-\alpha)$ confidence interval for a proportion $p$ is:$$\Huge y\pm z^*\sqrt{\frac{y(1-y)}{n}}$$Since for a random variable $X$, where $Y=\frac{X}{n}$, we know that $y\simeq \frac{y(1-y)}{n}$. We have $z^*$ such that $P(-z^*\leq Z\leq z^*)=1-\alpha$ for $Z\sim N(0,1)$. The $p$-value for the hypothesis test $H_0:p=p_0,H_a:p\neq p_0$ is given by:$$\Huge 2\left(1-P\left(\frac{Z<|y-p_0|}{\sqrt{\frac{y(1-y)}{n}}}\right)\right)$$To prove this consider the following: $p$-value is the probability that $Y$ is as extreme as $y$, given $H_0$, equivalent to $P(Y\leq p_0-\delta)+P(Y\geq p_0+\delta)$ for $\delta=|y-p_0|$. Now since normal is symettric, we have $p$-value$=2P(Y\geq p_0+\delta)=2P\left(\frac{Y-p_0}{\sqrt{\frac{y(1-y)}{n}}}\geq \frac{\delta}{\sqrt{\frac{y(1-y)}{n}}}\right)=2P()$
 
