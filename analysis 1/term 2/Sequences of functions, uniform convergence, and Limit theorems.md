@@ -8,4 +8,4 @@ Let $(f_n)_{n\in \mathbb{N}}$ be a sequence of functions $f_n:I\mapsto\Re$. We s
 
 To prove this, choose any $x\in I,\epsilon>0$. Then we require $N\in \mathbb{N}$ such that $|f_n(x)-f(x)|<\epsilon$ for all $n\geq N$. Since $(f_n)$ converges uniformly to $f$, choose $N$ for the choice of $\epsilon>0$.
 
-Returning to $f_n(x)=x^n$, note that this does not converge to the proposed function uniformly. Take $\epsilon=\frac{1}{4}$. If we have uniform convergence, then there exists $N\in \mathbb{N}$ with $|f_n(x)-f(x)|<\frac{1}{4}$ for all $n\geq N$ and $x\in[]$
+Returning to $f_n(x)=x^n$, note that this does not converge to the proposed function uniformly. Take $\epsilon=\frac{1}{4}$. If we have uniform convergence, then there exists $N\in \mathbb{N}$ with $|f_n(x)-f(x)|<\frac{1}{4}$ for all $n\geq N$ and $x\in[0,1]$. Choose $x=x_n=\sqrt[n]{\frac{1}{2}}<1\implies f(x_n)=0$, then $|f_n(x_n)-f(x_n)=f_n(x_n)(\sqrt[n]{\frac{1}{2}})^n=\frac{1}{2}>\frac{1}{4}$, so the limit definition is not satisfied and $f_n(x)=x^n$ does not converge to $f$ uniformly.
