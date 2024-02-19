@@ -20,4 +20,6 @@ Using confidence intervals is one way to test a hypothesis, an alternative metho
 
 This probability can be found by comparing the test statistic with critical values of the relevant sampling distribution. The more extreme a statistic is, the less likely it is that $H_0$ is true. The threshold for the $p$ value is the level of significance, $\alpha$.
 
-For a one tailed test, the $p$-value is the tail probability corresponding to being at least as extreme as the value of the test statistic. For a two tailed test, "at least as extreme" is counted in two directions, so the $p$-value will be doubled
+For a one tailed test, the $p$-value is the tail probability corresponding to being at least as extreme as the value of the test statistic. For a two tailed test, "at least as extreme" is counted in two directions, so the $p$-value will be doubled.
+
+
