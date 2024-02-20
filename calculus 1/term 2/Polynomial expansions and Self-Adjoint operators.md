@@ -12,3 +12,6 @@ In the Legendre case, the process is as follows:$$\small \mathcal{L}_L=(x^2-1)\f
 >$\lambda=-n^2<0\implies y''=-n^2y\implies y=A\cos(nx)+B\cos(nx)$, which is $2\pi$ periodic for $n\in \mathbb{Z}$
 
 So we have that $\{\cos(nx),\sin(nx),1\}$ are eigenfunctions of the self adjoint operator $\mathcal{L}_F$, which implies that they are orthogonal functions. Expanding at an arbitrary function, $f(x)$ gives:$$\small (y(x),f(x))=(\frac{a_0}{2}+\sum_{n=1}^\infty a_n\cos(nx)+\sum_{n=1}^\infty b_n\sin(nx),f(x))=\frac{a_0}{2}(1,f(x))+\sum_{n=1}^\infty a_n(\cos(nx),f(x))+\sum_{n=1}^\infty b_n(\sin(nx),f(x))$$
+# Approximating functions:
+
+Given $y(x)=\sum_{n=0}^\infty b_nP_n(x)$, consider:$$\Huge S_m=\sum_{n=0}^mb_nP_n(x)$$Here, $S_m$ will be a polynomial of order $m$. We claim that $S_m$ is the best $m$-th order polynomial approximation to $y(x)$. Let $y_m$ be an $m$-th order polynomial and consider the difference squared between $y$ and $y_m$:$$\Huge ||y-y_m||^2=(y-y_m,y-y_m)=\int_{-1}^1(y-y_m)^2dx$$We claim that this is minimised if $y_m=S_m$
