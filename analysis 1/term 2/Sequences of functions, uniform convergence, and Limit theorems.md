@@ -22,4 +22,10 @@ Take $\epsilon'>0$, we need $N$ such that $|f(x)-f_n(x)|<\epsilon'$ for all $x\i
 
 Let $f_n$ be a sequence of continuous functions on an interval $I$ such that $f_n$ converges uniformly to $f:I\mapsto\Re$, then $f$ is also continuous. Let $c\in I,\epsilon>0$. Since $f_n\to f$ uniformly, there exists $N\in \mathbb{N}$ such that $|f(x)-f_n(x)|<\frac{\epsilon}{3}$ for all $x\in I$ and $n\geq N$. We can use the continuity of $f_N$ at $c$ so that there exists $\delta>0$ such that $|f_N(x)-f_N(c)|<\frac{\epsilon}{3}$ for all $x$ with $|x-c|<\delta$:$$\Huge |f(x)-f(c)|=|f(x)-f_N(x)+f_N(x)-f_N(c)+f_N(c)-f(c)|$$Now we use the triangle inequality:$$\large |f(x)-f(c)|\leq|f(x)-f_N(x)|+|f_N(x)-f_N(c)|+|f_N(c)-f(c)|<\frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon$$Therefore $f$ is continuous at $c$. Since $c$ was arbitrary, then $f$ is also continuous on the interval $I$.
 
-Let $f_n$ be a sequence of continuous functions on an interval $I$ such that $f_n$ converges uniformly on all compact subsets of $I$, then the limit function is continuous. Because continuity i
+Let $f_n$ be a sequence of continuous functions on an interval $I$ such that $f_n$ converges uniformly on all compact subsets of $I$, then the limit function is continuous. Because continuity is a local property, for $c\in I$ look at $c\in[ab]\subset I$. Now apply the above theorem to the function limited to the new interval $f_n|_{[a,b]}$ and we get the result as required.
+
+Let $f_n$ be a sequence of continuously differentiable functions on an interval $I$ and assume:
+>the sequence converges pointwise to $f$
+>the sequence $f_n'$ converges uniformly to $g$
+
+Then $f$ is continuously differentiable on $I$ with:$$\Huge f'(x)=g(x)=\lim_{n\to\infty}f_n'(x)$$
