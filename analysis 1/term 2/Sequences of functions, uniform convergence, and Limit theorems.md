@@ -14,3 +14,7 @@ Let $f_n$ be a sequence of functions on an interval $I$ converging pointwise to 
 > If there exists a sequence $(a_n)_{n\in \mathbb{N}}$ of positive real numbers with $\lim_{n\to \infty}a_n=0$ such that $|f_n(x)-f(x)|\leq a_n$ for all $x\in I$, then $f_n$ converges uniformly to $f$.
 > If there exists $\epsilon>0$ and a sequence $x_n\in I$ such that for all $n$ sufficiently large: $|f(x_n)-f_n(x_n)|\geq\epsilon$, then $f_n$ does not converge uniformly to $f$.
 
+We now prove each criterion. Take $\epsilon>0$, since $a_n\to0$ there exists $N\in \mathbb{N}$ such that $a_n<\epsilon$ for all $n\geq N$. Now $|f(x)-f_n(x)|\leq a_n<\epsilon$ for all $n\geq N$ and all $x\in I$, so we have uniform convergence.
+
+Take $\epsilon'>0$, we need $N$ such that $|f(x)-f_n(x)|<\epsilon'$ for all $x\in I$ and all $n\geq N$. This cannot work for $\epsilon'<\epsilon$ since we can observe at $x=x_n$ this is untrue.
+
