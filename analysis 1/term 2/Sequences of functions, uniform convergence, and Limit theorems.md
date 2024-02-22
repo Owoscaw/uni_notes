@@ -29,3 +29,11 @@ Let $f_n$ be a sequence of continuously differentiable functions on an interval 
 >the sequence $f_n'$ converges uniformly to $g$
 
 Then $f$ is continuously differentiable on $I$ with:$$\Huge f'(x)=g(x)=\lim_{n\to\infty}f_n'(x)$$
+
+# Weierstrass M-test:
+
+Let $I\subset\Re$ be an interval and $(f_k)$ a sequence of functions $f_k:I\mapsto\Re$. Let $M_k$ be a sequence of real numbers satisfying:
+> $|f_k(x)|\leq M_k$ for all $x\in I$
+> $\sum_{k=0}^\infty M_k$ is convergent
+
+Then $\sum_{k=0}^\infty f_k(x)$ converges uniformly and absolutely to a limit function $f:I\mapsto\Re$. This is because for each $x\in I$ the series $\sum f_k(x)$ converges absolutely by the comparison test. So define:$$\Huge f(x)=\sum_{k=0}^\infty f_k(x)$$To show $F_n(x)=\sum_{k=0}^nf_k(x)$ converges uniformly to $f$ let $\epsilon>0,L=\sum_{k=0}^\infty M_k$. Then there exists $N\in \mathbb{N}$ with oogle
