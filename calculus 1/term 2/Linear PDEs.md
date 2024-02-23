@@ -21,4 +21,8 @@ Example: IVP for the heat/wave equation on the whole line $-\infty<x<\infty$. $u
 Example: IVP for heat/wave equation on a finite interval $a\leq x\leq b$. Specify the same functions as above, however we require a boundary condition at each endpoint. We can set $u(b,t)=0$ (Dirichlet), this implies the end of the metal bar is at $0^oC$, and that the displacement of the wave at the end is $0$. We can also set $u_x(b,t)=0$ (Neumann), this implies an insulated end for the heat equation or a free end to the wave.
 
 Example: Laplace's equation
+
+# Method of separation of variables:
+
+The solution to a linear PDE takes form:$$\Huge u(x,t)=\sum_ia_iu_i(x,t)$$Each $u_i(x,t)$ can be thought of as a basis vector for the solution space to the PDE. So we look for basis vectors in the form $u_i(x,t)=X(x)T(t)$. Consider the example:![[Linear PDEs .excalidraw]]
  
