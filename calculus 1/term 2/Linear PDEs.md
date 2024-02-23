@@ -18,5 +18,7 @@ A well-posed problem satisfies:
 
 Example: IVP for the heat/wave equation on the whole line $-\infty<x<\infty$. $u_t=k^2u_{xx}$, specify $u(x,0)=R(x)$ at $t=0$. $u_{tt}=c^2u_{xx}$, specify $u(x,0)=R(x)$ at $t=0$, specify $u_t(x,0)=S(x)$ at $t=0$.
 
-Example
+Example: IVP for heat/wave equation on a finite interval $a\leq x\leq b$. Specify the same functions as above, however we require a boundary condition at each endpoint. We can set $u(b,t)=0$ (Dirichlet), this implies the end of the metal bar is at $0^oC$, and that the displacement of the wave at the end is $0$. We can also set $u_x(b,t)=0$ (Neumann), this implies an insulated end for the heat equation or a free end to the wave.
+
+Example: Laplace's equation
  
