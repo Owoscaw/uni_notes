@@ -36,4 +36,6 @@ Let $I\subset\Re$ be an interval and $(f_k)$ a sequence of functions $f_k:I\maps
 > $|f_k(x)|\leq M_k$ for all $x\in I$
 > $\sum_{k=0}^\infty M_k$ is convergent
 
-Then $\sum_{k=0}^\infty f_k(x)$ converges uniformly and absolutely to a limit function $f:I\mapsto\Re$. This is because for each $x\in I$ the series $\sum f_k(x)$ converges absolutely by the comparison test. So define:$$\Huge f(x)=\sum_{k=0}^\infty f_k(x)$$To show $F_n(x)=\sum_{k=0}^nf_k(x)$ converges uniformly to $f$ let $\epsilon>0,L=\sum_{k=0}^\infty M_k$. Then there exists $N\in \mathbb{N}$ with oogle
+Then $\sum_{k=0}^\infty f_k(x)$ converges uniformly and absolutely to a limit function $f:I\mapsto\Re$. This is because for each $x\in I$ the series $\sum f_k(x)$ converges absolutely by the comparison test. So define:$$\Huge f(x)=\sum_{k=0}^\infty f_k(x)$$To show $F_n(x)=\sum_{k=0}^nf_k(x)$ converges uniformly to $f$ let $\epsilon>0,L=\sum_{k=0}^\infty M_k$. Then there exists $N\in \mathbb{N}$ with:$$\Huge \sum_{k=n+1}^\infty M_k=\left|L-\sum_{k=0}^nM_k\right|<\epsilon$$For all $n\geq N$. This implies for all $x\in I,n\geq N$ that:$$\large |f(x)-F_n(x)|=\left|f(x)-\sum_{k=0}^nf_k(x)\right|=\left|\sum_{k=n+1}^\infty f_k(x)\right|\leq\sum_{k=n+1}^\infty|f_k(x)|\leq\sum_{k=N+1}^\infty M_k<\epsilon$$So we get that $F_n$ converges uniformly to $f$ on the interval $I$. This provides a useful tool to determine the continuity of infinite series of functions.
+
+# 
