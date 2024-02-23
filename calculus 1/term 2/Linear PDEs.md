@@ -14,3 +14,9 @@ A well-posed problem satisfies:
 > The solution is unique
 > The solution depends continuously on initial conditions
 > $n$-th order linear ODEs have an $n$-dimensional solution space which is a vector space
+> linear PDEs solution space is an infinite dimensional vector space, this can take form:$$\Huge u(x,t)=\sum_i \alpha_iu_i(x,y)$$This will need an infinite number of variables to specify $\lambda_i$
+
+Example: IVP for the heat/wave equation on the whole line $-\infty<x<\infty$. $u_t=k^2u_{xx}$, specify $u(x,0)=R(x)$ at $t=0$. $u_{tt}=c^2u_{xx}$, specify $u(x,0)=R(x)$ at $t=0$, specify $u_t(x,0)=S(x)$ at $t=0$.
+
+Example
+ 
