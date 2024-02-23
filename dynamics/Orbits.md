@@ -10,4 +10,4 @@ This parameter $\epsilon$ is called the eccentricity of the orbit.
 
 # Circular orbits and stability:
 
-For a circular orbit, an attractive force ($f(r)<0$) is required. Let us write $g(u)=-f(\frac{1}{u})$ so that $g$ is always positive. This makes the orbit equation:$$\Huge u''+u'=\frac{mg(u)}{L^2u^2}$$A circular orbit where $u$ is constant is possible, with angular momentum satisfying $mg(b)=L^2b^3$ for some constant $b$.
+For a circular orbit, an attractive force ($f(r)<0$) is required. Let us write $g(u)=-f(\frac{1}{u})$ so that $g$ is always positive. This makes the orbit equation:$$\Huge u''+u=\frac{mg(u)}{L^2u^2}$$A circular orbit where $u$ is constant is possible, with angular momentum satisfying $mg(b)=L^2b^3$ for some constant $b$. To determine if this is stable, we observe angular momentum. Take:$$\Huge u(\theta)=b+\epsilon(\theta)$$Substituting this into the orbit equation gives:$$\Huge \epsilon''+b+\epsilon=\frac{m}{L^2}(b+\epsilon)^{-2}g(b+\epsilon)\approx\frac{m}{L^2}b^{-2}(1-2b^{-1}\epsilon)(g(b)+\epsilon g'(b))$$Using Taylors theorem on $(b+ \epsilon)^{-2}$ and $g(b+\epsilon)$:$$\Huge \epsilon''+b+\epsilon\approx$$
