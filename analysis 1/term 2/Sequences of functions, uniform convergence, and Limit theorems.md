@@ -38,4 +38,10 @@ Let $I\subset\Re$ be an interval and $(f_k)$ a sequence of functions $f_k:I\maps
 
 Then $\sum_{k=0}^\infty f_k(x)$ converges uniformly and absolutely to a limit function $f:I\mapsto\Re$. This is because for each $x\in I$ the series $\sum f_k(x)$ converges absolutely by the comparison test. So define:$$\Huge f(x)=\sum_{k=0}^\infty f_k(x)$$To show $F_n(x)=\sum_{k=0}^nf_k(x)$ converges uniformly to $f$ let $\epsilon>0,L=\sum_{k=0}^\infty M_k$. Then there exists $N\in \mathbb{N}$ with:$$\Huge \sum_{k=n+1}^\infty M_k=\left|L-\sum_{k=0}^nM_k\right|<\epsilon$$For all $n\geq N$. This implies for all $x\in I,n\geq N$ that:$$\large |f(x)-F_n(x)|=\left|f(x)-\sum_{k=0}^nf_k(x)\right|=\left|\sum_{k=n+1}^\infty f_k(x)\right|\leq\sum_{k=n+1}^\infty|f_k(x)|\leq\sum_{k=N+1}^\infty M_k<\epsilon$$So we get that $F_n$ converges uniformly to $f$ on the interval $I$. This provides a useful tool to determine the continuity of infinite series of functions.
 
-# 
+Let $f(x)=\sum_{k=0}^\infty a_kx^k$ be a real power series with radius of convergence $R>0$, then:
+> The power series $\sum_{k=0}^\infty a_kx^k$ converges uniformly in compact subsets of $(-R,R)$
+> $f(x)$ is infinitely differentiable on $(-R,R)$ with $f'(x)=\sum_{k=0}^\infty(k+1)a_{k+1}x^k$ 
+
+To prove this, let $[a,b]$ be a compact interval in $(-R,R)$. Then we can find $0<r<R$ such that $[a,b]\subseteq[-r,r]\subset(-R,R)$. We then apply the M test for $f_k(x)=a_kx^k$ for the interval $I=[-r,r]$. Take $M_k=|a_k|r^k$, then $|f_k(x)|\leq M_k$ for all $x\in I$ and $\sum_{k=0}^\infty|a_k|r^k$ converges since power series converge absolutely within their interval of convergence. So we have that $\sum_{k=0}^\infty a_kx^k$ converges uniformly in $[-r,r]$, particularly in $[a,b]$. This shows the first statement.
+
+To prove the second statement, set $g_1(x)=\sum_{k=1}^\infty a_k(x^{k-1}+x^{k-2}c+\dots+xc^{k-2}+c^{k-1})$. Note that $g_1(c)=\sum_{k=1}^\infty a_kkc^{k-1}$. Considering the first order Taylor expansion, what remains to be shown to obtain differentiability is that $g_1(x)$ is continuous 
