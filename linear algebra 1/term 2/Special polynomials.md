@@ -10,6 +10,4 @@ Let $\Re[x]$ denote the infinite dimensional [[Vector space definitions|vector s
 
 # Symmetric differential operators:
 
-If $\{V,(,)\}$ defines a real inner product space, and $\mathcal{L}:V\mapsto V$ is a linear differential operator on $V$, then $\mathcal{L}$ is symmetric if:$$\Huge (\mathcal{L}\underline v, \underline w)=(\underline v,\mathcal{L}\underline w)$$
-
-Note that with $V=\Re^n$ and using the standard Euclidian inner product, where $\mathcal{L}$ is represented by $M\in M_n(\Re)$
+If $\{V,(,)\}$ defines a real inner product space, and $\mathcal{L}:V\mapsto V$ is a linear differential operator on $V$, then $\mathcal{L}$ is symmetric if:$$\Huge (\mathcal{L}\underline v, \underline w)=(\underline v,\mathcal{L}\underline w)$$Note that with $V=\Re^n$ and using the standard Euclidian inner product, where $\mathcal{L}$ is represented by $M\in M_n(\Re)$, $\mathcal{L}$ is symmetric if and only if $M$ is symmetric. $M=M^T\implies \mathcal{L}$ is symmetric since $(\mathcal{L}\underline v, \underline w)=\underline w^TM \underline v=(M \underline w)^T \underline v=(\underline v,\mathcal{L} \underline v)$. To show the converse, choose standard vectors $\underline e_i,\underline e_j$ of $\Re^n$. We then have $(\mathcal{L}\underline e_i,\underline e_j)= \underline e_j^TM \underline e_i=M_{ji}$, $(\underline e_i, \mathcal{L}\underline e_j)=\underline e_j^TM^T \underline e_i=M_{ij}$. This implies $M_{ij}=M_{ij}$, so we get the statement as required.
