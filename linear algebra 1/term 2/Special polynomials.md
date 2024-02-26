@@ -11,3 +11,5 @@ Let $\Re[x]$ denote the infinite dimensional [[Vector space definitions|vector s
 # Symmetric differential operators:
 
 If $\{V,(,)\}$ defines a real inner product space, and $\mathcal{L}:V\mapsto V$ is a linear differential operator on $V$, then $\mathcal{L}$ is symmetric if:$$\Huge (\mathcal{L}\underline v, \underline w)=(\underline v,\mathcal{L}\underline w)$$
+
+Note that with $V=\Re^n$ and using the standard Euclidian inner product, where $\mathcal{L}$ is represented by $M\in M_n(\Re)$
