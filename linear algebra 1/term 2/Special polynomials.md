@@ -15,3 +15,6 @@ If $\{V,(,)\}$ defines a real inner product space, and $\mathcal{L}:V\mapsto V$ 
 >Chebyshev-$I$: $\mathcal{L}_{CI}f=(1-x^2)f''-xf'$
 >Chebyshev-$II$: $\mathcal{L}_{CII}f=(1-x^2)f''-3xf'$
 >Hermite: $\mathcal{L}_Hf=f''-2xf'$
+>Laguerre: $\mathcal{L}_{La}f=xf''+(1-x)f'$
+
+Each of these differential operators are symmetric wrt their associated inner product. We show this in the case of the Laguerre operator: We claim that $\mathcal{L}_{La}=x \frac{d^2}{dx^2}+(1-x)\frac{d}{dx}$ is symmetric with respect to $(f,g)=\int_0^\infty e^{-x}f(x)g(x)dx$:$$\large (\mathcal{L}_{La}f,g)=\int_0^\infty e^{-x}\mathcal{L}_{La}(f)g(x)dx=\int_0^\infty e^{-x}(xf''+(1-x)f')g(x)dx=\int_0^\infty \frac{d}{dx}$$
