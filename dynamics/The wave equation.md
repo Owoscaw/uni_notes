@@ -1,1 +1,2 @@
 
+A string lies on the $x$-axis under tension. It has mass per unit length of $\rho$. Consider a short segment of the string, running from $x$ to $x+\delta x$. Make a transverse displacement of the string such that it is "plucked". This displacement is described by $u(t,x)$. Then define $\theta$ as the angle that the line segment between the point on the string at $x$ and at $x+\delta x$ makes with horizontal, such that $\theta$ and $\delta u$ are small. The equation of motion becomes:$$\Huge (\rho\,\delta x)\frac{\partial^2u}{\partial t^2}=$$
