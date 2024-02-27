@@ -28,6 +28,6 @@ The solution to a linear PDE takes form:$$\Huge u(x,t)=\sum_ia_iu_i(x,t)$$Each $
 Now the heat equation. Consider a bar of metal that lies between $0$ and $\pi$. The temperature at the point $x$ at time $t$ is given by $u(x,t)$. We have the equations:
 > $u_t=k^2u_{xx}$
 > $u(0,t)=0$
-> $u(\pi,t)=0$
+> $u_x(\pi,t)=0$
 > $u(x,0)=100$
 Again we look for a basis of solutions in the form $u(x,t)=X(x)T(t)$:![[Linear PDEs .excalidraw]] 
