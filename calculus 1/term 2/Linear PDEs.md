@@ -25,5 +25,9 @@ Example: Laplace's equation
 # Method of separation of variables:
 
 The solution to a linear PDE takes form:$$\Huge u(x,t)=\sum_ia_iu_i(x,t)$$Each $u_i(x,t)$ can be thought of as a basis vector for the solution space to the PDE. So we look for basis vectors in the form $u_i(x,t)=X(x)T(t)$. Consider the example:![[wave equation]]
-Now the heat equation
- 
+Now the heat equation. Consider a bar of metal that lies between $0$ and $\pi$. The temperature at the point $x$ at time $t$ is given by $u(x,t)$. We have the equations:
+> $u_t=k^2u_{xx}$
+> $u(0,t)=0$
+> $u(\pi,t)=0$
+> $u(x,0)=100$
+Again we look for a basis of solutions in the form $u(x,t)=X(x)T(t)$:![[Linear PDEs .excalidraw]] 
