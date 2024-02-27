@@ -24,5 +24,5 @@ Example: Laplace's equation
 
 # Method of separation of variables:
 
-The solution to a linear PDE takes form:$$\Huge u(x,t)=\sum_ia_iu_i(x,t)$$Each $u_i(x,t)$ can be thought of as a basis vector for the solution space to the PDE. So we look for basis vectors in the form $u_i(x,t)=X(x)T(t)$. Consider the example:![[Linear PDEs .excalidraw]]
+The solution to a linear PDE takes form:$$\Huge u(x,t)=\sum_ia_iu_i(x,t)$$Each $u_i(x,t)$ can be thought of as a basis vector for the solution space to the PDE. So we look for basis vectors in the form $u_i(x,t)=X(x)T(t)$. Consider the example:![[wave equation]]
  
