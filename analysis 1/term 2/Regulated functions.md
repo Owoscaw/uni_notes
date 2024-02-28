@@ -1,5 +1,11 @@
 
-# Step function:
+# Step functions:
 
-A function on a closed interval $[a,b]$ is called a step function if there exists a partition:$$\Huge a=x_0<x_1<\dots<x_{N-1}<x_N=b$$of $[a,b]$ such that $f$ is constant on each subinterval $(x_k,x_{k+1})$ for $k=0,\dots,N-1$. Note each $f(x_k)$ is arbitrary in value. We then immediatley get the following properties:
->
+A function on a closed interval $[a,b]$ is called a step function if there exists a partition:$$\Huge a=x_0<x_1<\dots<x_{N-1}<x_N=b$$of $[a,b]$ such that $f$ is constant on each subinterval $(x_k,x_{k+1})$ for $k=0,\dots,N-1$. Note each $f(x_k)$ is arbitrary in value. We then immediately get the following properties:
+> Let $f,g$ be two step functions on $[a,b]$ and $c\in\Re$, then $cf$ and $f+g$ are also step functions. Therefore step functions form a vector space
+> The product $fg(x)=f(x)g(x)$ is also a step function
+> The absolute value $|f|(x)=|f(x)|$ is also a step function
+
+Let $f$ be a function on a closed interval $[a,b]$. $f$ is a regulated function if there exists a sequence of step functions $f_n$ converging [[Sequences of functions, uniform convergence, and Limit theorems#Uniform convergence preserves continuity|uniformly]] to $f$. That is for all $\epsilon>0$ there exists $N\in \mathbb{N}:|f_n(x)-f(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
+
+Let $f$ be a function on a compact interval $[a,b]$. Then $f$ is regulated if and only if for all $\epsilon>0$ there exists a step function $g$ on $[a,b]$ such that $|f(x)-g(x)|<\epsilon$ for all $x\in[a,b]$. Assume that $f$ is regulated
