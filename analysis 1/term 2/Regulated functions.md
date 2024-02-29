@@ -18,3 +18,5 @@ Assume $f:[a,b]\mapsto\Re$ is is lipschitz continuous with lipschitz constant $M
 
 ## Some discontinuos functions are regulated:
 Some piecewise continuous functions satisfy the definition of a regular function, a few of them are as follows:
+> Heaviside functions:$$\Huge H(x)=\begin{cases}0&\text{if }x<0\\1&\text{if }x\geq0\end{cases}$$Dirac delta function:$$\Huge \delta(x)=\begin{cases}0&\text{if }x\neq0\\1&\text{if }x=0\end{cases}$$
+
