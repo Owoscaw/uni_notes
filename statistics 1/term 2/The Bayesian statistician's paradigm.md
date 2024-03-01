@@ -1,2 +1,2 @@
 
-The goal of statistics is to make [[Inference|inference]] 
+The goal of statistics is to make [[Inference|inference]] using observed data. In order to do this, data is assumed to have originated from a model, $f(x|\theta)$, and inference is usually expressed in terms of an unobserved parameter $\theta$, which reveals information about the real world. We saw that the [[Likelihood#Maximum likelihood estimation|MLE]] can be found from data, however this does not directly tell you much about the underlying patterns of the data since it comes from the randomness of said data. Confidence intervals can be constructed from the MLE since is has a variance and an expected value
