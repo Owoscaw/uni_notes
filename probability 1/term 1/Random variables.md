@@ -107,7 +107,7 @@ This function completely characterises a distribution. It immediately follows th
 Since $(-\infty,a]$ and $(a,b]$ are disjoint unions, then the following is true:$$\Huge \mathbb{P}(X\in(-\infty,b])=\mathbb{P}(\omega:X(\omega)\in(-\infty,a])+\mathbb{P}(\omega:X(\omega)\in(a,b])$$$$\Huge \mathbb{P}(X\in(-\infty,b))=\mathbb{P}(X\leq a)+\mathbb{P}(X\in(a,b])$$
 Rearranging, we have:$$\Huge \mathbb{P}(X\in(a,b])=\mathbb{P}(X\leq b)-\mathbb{P}(X\leq a)=F(b)-F(a)$$
 Suppose that $X$ is a continuously distributed random variable on $\Re$ with a PDF of $f$, then $F$ is also a continuous function, and $\forall x\in\Re$:$$\Huge F(x)=\int_{-\infty}^xf(t)dt,\,f(x)=\frac{dF}{dx}(x)$$
-This can be proving using the [[Integration#Fundamental theorem of calculus|fundamental theorem of calculus]]. $F$ also satisfies the following:
+This can be proving using the [[calculus 1/term 1/Integration#Fundamental theorem of calculus|fundamental theorem of calculus]]. $F$ also satisfies the following:
 > $\lim_{x\to\infty}F(x)=1$
 > $\lim_{x\to-\infty}F(x)=0$
 > $F$ is right continuous, that is for any $t\in\Re$, $F(t)=F(t+)$, where $t+$ is the limit from the right

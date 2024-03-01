@@ -20,3 +20,5 @@ Assume $f:[a,b]\mapsto\Re$ is is lipschitz continuous with lipschitz constant $M
 Some piecewise continuous functions satisfy the definition of a regular function, a few of them are as follows:
 > Heaviside functions:$$\Huge H(x)=\begin{cases}0&\text{if }x<0\\1&\text{if }x\geq0\end{cases}$$Dirac delta function:$$\Huge \delta(x)=\begin{cases}0&\text{if }x\neq0\\1&\text{if }x=0\end{cases}$$
 
+## Regulated functions can have infinitely many discontinuities:
+Let $(a_k)_{k\in \mathbb{N}}$ be a convergent sequence with $a_k\to a\in\Re$ as $k\to \infty$. Define $f:[0,1]\mapsto\Re$ by $f(x)=a_k$ if $x\in\left(\frac{1}{k+1},\frac{1}{k}\right]$ and $f(0)=a$. We propose that despite having infinitely many discontinuities between each $x=a_k$, $f$ is still a regulated function. Define:$$\Huge f_n(x)=\begin{cases}f(x)&\text{if }x\geq \frac{1}{n}\\a&\text{if }x\in\left[0,\frac{1}{n}\right)\end{cases}$$Then looking at the difference:$$\Huge |f_n(x)-f(x)|=\begin{cases}0&\text{if }x\geq\frac{1}{n}\\|a-a_k|&\text{if }x\in\left(\frac{1}{k+1},\frac{1}{k}\right]\end{cases}$$Given $\epsilon>0$

@@ -28,7 +28,7 @@ This is proven as follows, by the definition of independence we have:$$\large p_
 # Jointly distributed continuous random variables:
 
 Continuous random variables $X:\Omega\mapsto\Re$ and $Y:\Omega\mapsto\Re$ are jointly continuous if $\exists f:\Re^2\mapsto[0,\infty)$ such that:$$\large \mathbb{P}(X\in[a,b],Y\in[c,d])=\int_a^b\int_c^df(x,y)dxdy,\,a<b,\,c<d,\,\forall[a,b]\times[c,d]\subseteq\Re^2$$
-If $B=[a,b]\times[c,d]$ is a nice [[Integration#Double integrals|region]], then the integral can be written as:$$\Huge f_{X,Y}(x,y)=\mathbb{P}((X,Y)\in B)=\iint_Bf(x,y)dxdy$$
+If $B=[a,b]\times[c,d]$ is a nice [[calculus 1/term 1/Integration#Double integrals|region]], then the integral can be written as:$$\Huge f_{X,Y}(x,y)=\mathbb{P}((X,Y)\in B)=\iint_Bf(x,y)dxdy$$
 The interpretation of the function $f(x,y)$ is:
 $$\Huge \mathbb{P}(X\in[x,x+dx],Y\in[y,y+dy])=f(x,y)dxdy$$
 When integrating over the entire plane in $\Re^2$, that is to say $B=[-\infty,\infty]\times[-\infty,\infty]=\Re^2$, then we get:$$\Huge \mathbb{P}((X,Y)\in\Re^2)=\iint_{\Re^2}f(x,y)dxdy=\int_{-\infty}^\infty\int_{-\infty}^\infty f(x,y)dxdy=1$$

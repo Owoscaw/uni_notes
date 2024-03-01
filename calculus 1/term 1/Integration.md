@@ -100,7 +100,7 @@ Cartesian coordinates $x$ and $y$ may need to be changed into new variables, $u$
 The Jacobian of the transformation from $x,y$ to $u,v$ is given by:$$\Huge J=\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\end{vmatrix}$$
 The area element is then given in terms of the Jacobian, with:$$\Huge dA=dxdy=|J|dudv=\left|\begin{vmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\end{vmatrix}\right|dudv$$
 For polar coordinates, $x=r\,cos\,\theta$ and $y=r\,sin\,\theta$, so the Jacobian is given by:$$\Huge J=\begin{vmatrix}\frac{\partial}{\partial r}(r\,cos\,\theta)&\frac{\partial}{\partial\theta}(r\,cos\,\theta)\\\frac{\partial}{\partial r}(r\,sin\,\theta)&\frac{\partial}{\partial\theta}(r\,sin\,\theta)\end{vmatrix}=\begin{vmatrix}cos\,\theta&-r\,sin\,\theta\\sin\,\theta&r\,cos\,\theta\end{vmatrix}=r\,cos^2\theta+r\,sin^2\theta=r$$
-Giving us the result $dA=rdrd\theta$, used in [[Integration#Integration using polar coordinates|polar coordinate double integrals]]. Here is another example for using the Jacobian: ![[Jacobian example]]
+Giving us the result $dA=rdrd\theta$, used in [[calculus 1/term 1/Integration#Integration using polar coordinates|polar coordinate double integrals]]. Here is another example for using the Jacobian: ![[Jacobian example]]
 
 # The Gaussian integral:
 $$\Huge I=\int_{-\infty}^\infty e^{-ax^2}dx=\sqrt{\frac{\pi}{a}}$$
