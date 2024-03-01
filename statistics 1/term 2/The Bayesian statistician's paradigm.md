@@ -1,4 +1,6 @@
 
 The goal of statistics is to make [[Inference|inference]] using observed data. In order to do this, data is assumed to have originated from a model, $f(x|\theta)$, and inference is usually expressed in terms of an unobserved parameter $\theta$, which reveals information about the real world. We saw that the [[Likelihood#Maximum likelihood estimation|MLE]] can be found from data, however this does not directly tell you much about the underlying patterns of the data since it comes from the randomness of said data. Confidence intervals can be constructed from the MLE since is has a variance and an expected value.
 
-The fundamental principle of Bayesian statistics is that everything is uncertain and can be treated as random. Everything has an associated probability distribution, provided a subjective interpretation of probability.
+The fundamental principle of Bayesian statistics is that everything is uncertain and can be treated as random. Everything has an associated probability distribution, provided a subjective interpretation of probability. Therefore $\theta$ is treated as a random variable, uncertainty about $\theta$ is described by a subjective PDF $f(\theta)$.
+
+To learn about $\theta$ from data $x$, conditional probability is used with $f(\theta)$ and $f(x|\theta)$ in order to find $f(\theta|x)$. We use $f(\theta|x)$ to answer all questions about $\theta$. The Bayesian approach works for any $n$, whearas the frequentist approach tends to break down for small $n$.
