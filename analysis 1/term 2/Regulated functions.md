@@ -18,10 +18,10 @@ Assume $f:[a,b]\mapsto\Re$ is is lipschitz continuous with lipschitz constant $M
 
 ## Some discontinuos functions are regulated:
 Some piecewise continuous functions satisfy the definition of a regular function, a few of them are as follows:
-> Heaviside functions:$$\Huge H(x)=\begin{cases}0&\text{if }x<0\\1&\text{if }x\geq0\end{cases}$$Dirac delta function:$$\Huge \delta(x)=\begin{cases}0&\text{if }x\neq0\\1&\text{if }x=0\end{cases}$$
+> Heaviside functions:H(x)={0if x<01if x≥0Dirac delta function:δ(x)={0if x≠01if x=0
 
 ## Regulated functions can have infinitely many discontinuities:
-Let $(a_k)_{k\in \mathbb{N}}$ be a convergent sequence with $a_k\to a\in\Re$ as $k\to \infty$. Define $f:[0,1]\mapsto\Re$ by $f(x)=a_k$ if $x\in\left(\frac{1}{k+1},\frac{1}{k}\right]$ and $f(0)=a$. We propose that despite having infinitely many discontinuities between each $x=a_k$, $f$ is still a regulated function. Define:$$\Huge f_n(x)=\begin{cases}f(x)&\text{if }x\geq \frac{1}{n}\\a&\text{if }x\in\left[0,\frac{1}{n}\right)\end{cases}$$Then looking at the difference:$$\Huge |f_n(x)-f(x)|=\begin{cases}0&\text{if }x\geq\frac{1}{n}\\|a-a_k|&\text{if }x\in\left(\frac{1}{k+1},\frac{1}{k}\right]\end{cases}$$Given $\epsilon>0$, there exists $N:|a-a_k|<\epsilon$ for all $k\geq N$. Then $|f_n(x)-f(x)|<\epsilon$ for all $n\geq N$ and $x\in[0,1]$, giving uniform convergence to $f$. Therefore $f$ is a regulated function despite it's infinitely many discontinuities.
+Let $(a_k)_{k\in \mathbb{N}}$ be a convergent sequence with $a_k\to a\in\Re$ as $k\to \infty$. Define $f:[0,1]\mapsto\Re$ by $f(x)=a_k$ if $x\in\left(\frac{1}{k+1},\frac{1}{k}\right]$ and $f(0)=a$. We propose that despite having infinitely many discontinuities between each $x=a_k$, $f$ is still a regulated function. Define:fn(x)={f(x)if x≥1naif x∈[0,1n)Then looking at the difference:|fn(x)−f(x)|={0if x≥1n|a−ak|if x∈(1k+1,1k]Given $\epsilon>0$, there exists $N:|a-a_k|<\epsilon$ for all $k\geq N$. Then $|f_n(x)-f(x)|<\epsilon$ for all $n\geq N$ and $x\in[0,1]$, giving uniform convergence to $f$. Therefore $f$ is a regulated function despite it's infinitely many discontinuities.
 
 ## Monotone functions are regulated:
 Let $f$ be a monotone function on $[a,b]$. Then $f$ is regulated. Assume $f$ is monotonically increasing, then $M=f(b)$ is the maximum of $f$ and $m=f(a)$ is the minimum of $f$. Let $y_k=m+k\frac{M-m}{n}$ for $n\in \mathbb{N}$ and $k=0,\dots,n$, note that $y_0=m$ and $y_n=M$. For the partition points use $x_k=\sup\{x\in[a,b]:f(x)<y_k\}$. On the interval $[x_k,x_{k+1})$ we have $f(x)\in[y_k,y_{k+1})$. Define the step function $f_n$ with partition $x_0<x_1<\dots<x_n$ such that $f_n(x)=y_k^*$ for $x\in[x_k,x_{k+1})$ and $y_k^*\in[y_k,y_{k+1})$ and $f_n(x)=M$ for $x=b$. Now we show that $f_n$ converges to $f$, showing that indeed $f$ is a regulated function:$$\Huge |f_n(x)-f(x)|\leq\frac{M-m}{n}$$Since $y_k^*,f(x)\in[y_k,y_{k+1})$. Now observe as $n\to \infty$, the RHS term tends to $0$ so given $\epsilon>0$ choose $N>\frac{1}{(M-m)\epsilon}$ and we get uniform convergence to $f$. Therefore all monotonically increasing functions are regulated. Similarly, we know that if $f$ is regulated, $\lambda f$ is regulated. Choose $\lambda=-1$, making $f$ monotonically decreasing, so we get that any monotone function is regulated.
@@ -30,8 +30,11 @@ Let $f$ be a monotone function on $[a,b]$. Then $f$ is regulated. Assume $f$ is 
 
 Let $f$ be a regulated function on $[a,b]$. Given a sequence of step functions, $f_n$, converging uniformly to $f$, there exists a constant $C$ such that $|f(x)|\leq C$ and $|f_n(x)|\leq C$ for all $x\in[a,b]$. Take $\epsilon=1,N\in \mathbb{N}$, then $|f(x)-f_n(x)|<1$ for all $x\in[a,b]$ and all $n\geq N$. There is then $M$ with $|f_N(x)|\leq M$ for all $x\in[a,b]$. Note that a step function takes finitely many values, now $|f(x)|\leq|f(x)-f_N(x)|+|f_N(x)|\leq1+M$. If $n\geq N$, then $|f_n(x)|\leq|f_n(x)-f(x)|+|f(x)|\leq1+1+M=2+M$. Note each $f_n$ with $n<N$ has $M_n$ with $|f_n(x)|\leq M_n$, so take $C=\max\{M_1,\dots,M_{n-1},2+M\}$. This satisfies both inequalities, which gives us a bound for any step function as well as any sequence of function convergent to one.
 
+Let $f:[a,b]\mapsto\Re$ be a function. Then $f$ is regulated if and only if for all points $c\in[a,b]$, the left-sided and the right-sided limites exist.
+ 
 ## Regulated COLT proof:
-> $cf$ and $f+g$ are regulated: Let $(f_n)\to f,(g_n)\to g$ with $f_n,g_n$ step functions. Given $\epsilon>0$ there exists $N\in \mathbb{N}$ with $|f(x)-f_n(x)|<\epsilon$ and $|g(x)-g_n(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
-> $cf$ is regulated: $|cf(x)-cf_n(x)|<|c|\epsilon$ for all $x\in[a,b]$ and $n\geq N$. We have
-> 
-> 
+> Let $(f_n)\to f,(g_n)\to g$ with $f_n,g_n$ step functions. Given $\epsilon>0$ there exists $N\in \mathbb{N}$ with $|f(x)-f_n(x)|<\epsilon$ and $|g(x)-g_n(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$. Then: 
+> $cf$ is regulated: $|cf(x)-cf_n(x)|<|c|\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
+> $f+g$ is regulated: $|f(x)+g(x)-(f_n(x)+g_n(x))|<|f(x)-f_n(x)|+|g(x)-g_n(x)|<\epsilon+\epsilon$.
+> $|f|$ is regulated: $||f(x)|-|f_n(x)||\leq|f(x)-f_n(x)|< \epsilon$
+> $fg$ is regulated: $|f(x)g(x)-f_n(x)g_n(x)|\leq|f(x)g(x)-f_n(x)g(x)|+|f_n(x)g(x)-f_n(x)g_n(x)|=|g(x)||f(x)-f_n(x)|+|f_n(x)||g(x)-g_n(x)|$ By the above property, there exists a $C$ with $C\geq|g(x)|$ and $C\geq|f_n(x)|$, so we have $|fg-f_ng_n|\leq2C \epsilon$
