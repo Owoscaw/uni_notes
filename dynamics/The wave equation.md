@@ -3,4 +3,4 @@ A string lies on the $x$-axis under tension. It has mass per unit length of $\rh
 
 # d'Alembert Solution:
 
-Let $f(y),g(z)$ be arbitrary functions of a single variable. Define $u(t,x)=f(x-ct)+g(x+ct)$, we claim that this satisfies the wave equation:$$\Huge \frac{\partial^2u}{\partial t^2}=(-c)^2f''+(c)^2g''=c^2(f''+g''),\,\,\frac{\partial^2u}{\partial x^2}=f''+g''$$This obviously satisfies the wave equation.
+Let $f(y),g(z)$ be arbitrary functions of a single variable. Define $u(t,x)=f(x-ct)+g(x+ct)$, we claim that this satisfies the wave equation:$$\Huge \frac{\partial^2u}{\partial t^2}=(-c)^2f''+(c)^2g''=c^2(f''+g''),\,\,\frac{\partial^2u}{\partial x^2}=f''+g''$$This obviously satisfies the wave equation. We show that this is the most general equation by giving initial condistions as arbitrary functions:$$\Huge u(x,0)=R(x),\,\,\frac{\partial u}{\partial t}(x,0)=u_t(x,0)=S(x)$$Then we need to find functions $f,g$ such that $u(x,t)=f(x-ct)+g(x+ct)$ satisfies such conditions
