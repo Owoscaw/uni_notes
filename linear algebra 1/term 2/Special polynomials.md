@@ -25,3 +25,4 @@ If $\{P_0,P_1,\dots\}$ is an orthogonal set of polynomials with respect to an in
 
 # Hermitian operators:
 
+Let $V$ be a complex vector space. A linear operator $\mathcal{L}:V\mapsto V$ is said to be hermitian if:$$\Huge \langle \mathcal{L}\underline u,\underline v\rangle=\langle \underline u, \mathcal{L} \underline v\rangle$$Similarly, we call the linear operator $\mathcal{L}_\Lambda:V\mapsto V$ is said to be anti-hermitian if:$$\Huge \langle \mathcal{L}_\Lambda \underline u, \underline v\rangle=-\langle \underline u,\mathcal{L}_\Lambda \underline v\rangle$$
