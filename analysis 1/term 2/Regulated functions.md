@@ -28,4 +28,10 @@ Let $f$ be a monotone function on $[a,b]$. Then $f$ is regulated. Assume $f$ is 
 
 # Further properties of regulated functions:
 
-Let $f$ be a regulated function on $[a,b]$. Given a sequence of step functions, $f_n$, converging uniformly to $f$, there exists a constant $C$ such that $|f(x)|\leq C$ and $|f_n(x)|\leq C$ for all $x\in[a,b]$. Take $\epsilon=1,N\in \mathbb{N}$, then $|f(x)-f_n(x)|<1$ for all $x\in[a,b]$ and all $n\geq N$. There is then $M$ with $|f_N(x)|\leq M$ for all $x\in[a,b]$. Note that a step function takes finitely many values, now $|f(x)|\leq|f(x)-f_N(x)|+|f_N(x)|\leq1+M$. If $n\geq N$, then $|f_n()$
+Let $f$ be a regulated function on $[a,b]$. Given a sequence of step functions, $f_n$, converging uniformly to $f$, there exists a constant $C$ such that $|f(x)|\leq C$ and $|f_n(x)|\leq C$ for all $x\in[a,b]$. Take $\epsilon=1,N\in \mathbb{N}$, then $|f(x)-f_n(x)|<1$ for all $x\in[a,b]$ and all $n\geq N$. There is then $M$ with $|f_N(x)|\leq M$ for all $x\in[a,b]$. Note that a step function takes finitely many values, now $|f(x)|\leq|f(x)-f_N(x)|+|f_N(x)|\leq1+M$. If $n\geq N$, then $|f_n(x)|\leq|f_n(x)-f(x)|+|f(x)|\leq1+1+M=2+M$. Note each $f_n$ with $n<N$ has $M_n$ with $|f_n(x)|\leq M_n$, so take $C=\max\{M_1,\dots,M_{n-1},2+M\}$. This satisfies both inequalities, which gives us a bound for any step function as well as any sequence of function convergent to one.
+
+## Regulated COLT proof:
+> $cf$ and $f+g$ are regulated: Let $(f_n)\to f,(g_n)\to g$ with $f_n,g_n$ step functions. Given $\epsilon>0$ there exists $N\in \mathbb{N}$ with $|f(x)-f_n(x)|<\epsilon$ and $|g(x)-g_n(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
+> $cf$ is regulated: $|cf(x)-cf_n(x)|<|c|\epsilon$ for all $x\in[a,b]$ and $n\geq N$. We have
+> 
+> 
