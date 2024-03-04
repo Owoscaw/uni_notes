@@ -7,4 +7,6 @@ Let a regulated function on $[a,b]$, say that $f$ is the uniform limit of the st
 Let $f$ be a regulated function on $[a,b]$ and let $(f_n),(g_n)$ be sequences of step functions converging uniformly to $f$, then:$$\Huge \lim_{n\to \infty}I(f_n)=\lim_{n\to \infty}I(g_n)$$To prove this, pick a common refinement for each $f_n,g_n$ and let $\epsilon>0$. Pick $N\in \mathbb{N}$ such that $|f(x)-f_n(x)|<\frac{\epsilon}{2(b-a)}$ for all $n\geq N$, then:$$ |I(f_n)-I(g_n)|=\left|\sum_{k=0}^{M-1}f_n(x_k^*)(x_{k+1}-x_k)-g_n(x_k^*)(x_{k+1}-x_k)\right|=\left|\sum_{k=0}^{M-1}(f_n(x_k^*)-g_n(x_k^*))(x_{k+1}-x_k)\right|$$$$\Huge \implies|I(f_n)-I(g_n)|=\left|\sum_{k=0}^{M-1}(f_n(x_k^*)-f(x_k^*)+f(x_k^*)-g_n(x_k^*))(x_{k+1}-x_k)\right|$$$$\implies |I(f_n)-I(g_n)|\leq\sum_{k=0}^{M-1}(|f_n(x_k^*)-f(x_k^*)|+|f(x_k^*)-g_n(x_k^*)|)(x_{k+1}-x_k)<\frac{\epsilon}{b-a}\sum_{k=0}^{M-1}(x_{k+1}-x_k)=\epsilon$$So we get that $f,g$ are cauchy sequences and therefore share the same limit, as require. For a regulated function, we write:$$\Huge I(f)=I(f,a,b)=\int_a^bf(x)dx$$
 ## Properties:
 Let $f$ and $g$ be regulated functions on $[a,g]$ then:
-> Linearity, for $c\in\Re$:$$\Huge\int_a^bcf(x)fx=c\in$$
+> Linearity, for $c\in\Re$:$$\Huge\int_a^bcf(x)dx=c\int_a^bf(x)dx,\,\,\int_a^bf(x)+g(x)dx=\int_a^bf(x)dx+\int_a^bg(x)dx$$If $f(x)\leq g(x)$ for all $x\in[a,b]$, then:$$\Huge \int_a^bf(x)dx\leq\int_a^bg(x)dx$$
+
+furthermore, set $m=\inf\{f(x)|x\in[a,b]\}$, then:$$\Huge m(b-a)\leq\int_c^a$$
