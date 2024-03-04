@@ -11,4 +11,6 @@ To learn about $\theta$ from data $x$, conditional probability is used with $f(\
 Let $f(x,y)$ be a joint PDF, the marginal PDF of $Y$ is then given by $\int_\chi f(x,y)dx$ and the conditional pdf of $Y$ given $X=x$ is:$$\Huge f(y|x)=\frac{f(x,y)}{f(x)}\implies f(x,y)=f(x|y)f(y)=f(y|x)f(x)$$
 ## Partition theorem:
 For discrete variables, $P(A)=\sum_{b\in B}P(A|B=b)P(B=b)$, then for continuous variables:$$\Huge f(y)=\int_\chi f(y|x)f(x)dx$$
-## Baye's theorem:
+# Prior:
+
+We ha
