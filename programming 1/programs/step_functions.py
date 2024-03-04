@@ -9,7 +9,7 @@ def nth_partition_of_b(n, b, c):
 
     xVals = np.linspace(1,b,1000)
     plt.plot(xVals, [x**c for x in xVals], "red")
-    plt.pause(0.05)
+    plt.pause(0.001)
     plt.clf()
 
 def increase_partition(limit, b, c):
@@ -21,4 +21,4 @@ def increase_partition(limit, b, c):
 
 
 
-increase_partition(1000, 5, 2)
+increase_partition(5000, 5, 2)
