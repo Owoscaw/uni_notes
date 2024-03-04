@@ -23,3 +23,8 @@ After observing data, the likelihood of each parameter value $\theta$ can be eva
 
 ## Inference:
 Using the posterior distribution $f(\theta|x)$, we can make many inference statements, eg a probability interval, or probability of a given hypothesis
+
+$$\Huge f(\theta)\longrightarrow f(x|\theta)\longrightarrow f(\theta|x)$$
+# Fundamental equation of Bayesian statistics:
+
+Any Bayesian problem is expressed as:$$\Huge f(\theta|x)=\frac{f(x|\theta)f(\theta)}{f(x)},\,\text{posterior}=\frac{\text{likelihood}\times \text{prior}}{\text{data probability}}$$Note that once data is observed, $x$ becomes constant, making the posterior proportional to the product of likelihood and prior. To find this proportionality constant, 
