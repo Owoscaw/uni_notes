@@ -1,0 +1,1 @@
+[[Fourier Series]] can be thought of as frequency analysis of periodic functions, while the Fourier tranform can be thought of as frequency analysis of non-periodic functions.

@@ -30,4 +30,5 @@ Now the heat equation. Consider a bar of metal that lies between $0$ and $\pi$. 
 > $u(0,t)=0$
 > $u_x(\pi,t)=0$
 > $u(x,0)=100$
-Again we look for a basis of solutions in the form $u(x,t)=X(x)T(t)$:![[heat equation]] 
+Again we look for a basis of solutions in the form $u(x,t)=X(x)T(t)$:![[heat equation]]
+
