@@ -14,8 +14,11 @@ To prove linearity, let $(f_n)$ be a sequence of step function converging unifor
 Since $m,M$ are well defined, $f$ is bounded on $[a,b]$ and we have $m\leq f(x)\leq M$ for all $x\in[a,b]$. Therefore we get:$$\Huge m(b-a)=\int_a^bmdx\leq\int_a^bf(x)dx\leq\int_a^bMdx=M(b-a)$$
 $|f(x)|\geq f(x)$ and $|f(x)|\geq-f(x)$ implies that $\int_a^b|f(x)|dx\geq\int_a^bf(x)dx$ and $\int_a^b|f(x)|dx\geq-\int_a^bf(x)$, which implies the statement as required.
 
+Let $f(x)$ be a continuous function on $[a,b]$ such that $f(x)\geq0$ for all $x\in[a,b]$ and $f(c)>0$ for some $c\in[a,b]$, then:$$\Huge \int_a^bf(x)dx>0$$Since by continuity there exists a non-trivial interval $[\alpha,\beta]$ containing $c$ such that $f(x)\geq \frac{C}{2}$ where $C=f(c)>0$. Choose $\epsilon=\frac{C}{2}>0$, now there exists $\delta>$
 ## Additivity:
 For any $c\in(a,b)$, $f$ is also regulated on $[a,c],[c,b]$ and we have:$$\Huge \int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$Since $f_n\to f$ converges uniformly on $[a,b]$, it still converges uniformly on smaller intervals, like $[a,c]$ and $[c,b]$. When $f_n$ is restricted to these intervals, it remains a step function. We assume $c$ to be a part of the partition for each $f_n$, then $I(f_n,a,b)=I(f_n,a,c)+I(f_n,c,b)$.
 
 # MVT for integrals:
+
+Let $f$ be a continuous function on $[a,b]$, then there exists $c\in[a,b]$ such that:$$\Huge \int_a^bf(x)dx=f(c)(b-a)$$Let $C=\frac{1}{b-a}\int_a^bf(x)dx$ and $m=\inf\{f(x):x\in[a,b]\},M=\sup\{f(x):x\in[a,b]\}$. We then have $m\leq C\leq M$. Since $f$ is continuous, there exists $x\in[a,b]$ and $y\in[a,b]$ with $f(x)=m$ and $f(y)=M$. By the intermediate value theorem, there exists $c\in[x,y]:f(c)=C$. Multiplying this equation by $b-a$ gives the result as required.
 
