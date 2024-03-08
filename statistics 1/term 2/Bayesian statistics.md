@@ -37,4 +37,14 @@ The presence of prior distributions in calculations is the main difference betwe
 
 Another consideration is to choose a prior that captures knowledge about $\theta$, which are convienient to do bayesian calculations with. Such priors are called conjugate priors.
 
-A conjugate prior distribution is one where the form of the posterior distribution is the same as the form of the prior distribution, that is they are both normal for example. In which case we say that $f(\theta)$ is a conjugate prior for the likelihood, $f(x|\theta)$. Conjugacy implies that the prior and posterior have the same functional form, however will have different parameters for their shared distribution.
+A conjugate prior distribution is one where the form of the posterior distribution is the same as the form of the prior distribution, that is they are both normal for example. In which case we say that $f(\theta)$ is a conjugate prior for the likelihood, $f(x|\theta)$. Conjugacy implies that the prior and posterior have the same functional form, however will have different parameters for their shared distribution. The use of a conjugate prior makes the subsequent use of Bayes theorem very easy.
+
+For a random variable $X$ with PDF $f(x)$, if we can express its PDF as $f(x)=C\kappa(x)$, where $C>0$ is a constant independent of $X$, we call $\kappa(x)$ the core of the density $f(x)$. We propose that each core of a distribution corresponds to a unique PDF. If you want proof go fuck yourself.
+
+# Conjugate Bayesian Analysis for Binomial data:
+
+To deal with binomial data/scenarios, we aim to choose a good family of priors. The conjugate prior to a binomial likelihood is a known distribution, the Beta distribution: Let $X\sim\beta(a,b)$ for $a,b>0$ known, then $X$ has Beta distribution with PDF:$$\Huge f(x)=\frac{1}{B(a,b)}x^{a-1}(1-x)^{b-1}=\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}x^{a-1}(1-x)^{b-1}$$For $0\leq x\leq1$. Here, $B(a,b)$ is the Beta function and $\Gamma$ is the gamma function. This has properties as follows:
+> The core of a Beta distribution with parameters $a,b$ is $\kappa(x)=x^{a-1}(1-x)^{b-1}$
+> If $X\sim\beta(1,b)$ then $E[X]=\frac{a}{a+b}$ and $Var[X]=\frac{ab}{(a+b)^2(a+b+1)}$ and $Mode[x]=\frac{a-1}{a+b-2}$ 
+> $\beta(1,1)$ is the same as $U[0,1]$ where $U$ is the uniform distribution.
+> For large $a,b$ then $$
