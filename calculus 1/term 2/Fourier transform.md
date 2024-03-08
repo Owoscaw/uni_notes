@@ -22,5 +22,7 @@ The convolution of two functions $f(x),g(x)$ is defined as:$$\Huge f\star g(x)=\
 
 Let $f(x)=e^{-x}$ for $x\geq0$ and $0$ otherwise, we can find the Fourier transform as follows:$$ \tilde f(p)=\int_{-\infty}^\infty f(x)e^{-ipx}=\int_0^\infty e^{-x}e^{-ipx}dx=\int_0^\infty e^{-(ip+1)x}dx=\left[-\frac{e^{-(ip+1)x}}{ip+1}\right]_0^\infty=\frac{1}{ip+1}$$More generally if $g(x)=e^{-bx}$ for $x\geq0$ and $0$ otherwise, we can use the scaling theorem to show that:$$\Huge \tilde g(p)=\frac{1}{b}f\left(\frac{p}{b}\right)=\frac{1}{b}\times\frac{1}{i\left(\frac{p}{b}+1\right)}=\frac{1}{ip+b}$$
 
-Let $f(x)=e^{-x^2}$, then the Fourier transform is:$$\large \tilde f(p)=\int_{-\infty}^\infty e^{-x^2}e^{-ipx}dx=\int_{-\infty}^\infty e^{-(x+\frac{ip}{2})^2}e^{\frac{(ip)^2}{4}}dx=e^{-\frac{p^2}{4}}\int_{-\infty}^\infty e^{-x'^2}dx'=e^{-\frac{p^2}{4}}\sqrt{\pi}$$Letting $x'=x+\frac{ip}{2}$, and using the known result for the integral of a gaussian over the reals. Scaling and shift theorems can be used to find the Fourier transform if $f(x)=e^{-bx^2-cx}$ for $b>0$:$$\Huge \tilde f(p)=e^{-\frac{1}{4b}(p-ic)^2}\s$$
- 
+Let $f(x)=e^{-x^2}$, then the Fourier transform is:$$\large \tilde f(p)=\int_{-\infty}^\infty e^{-x^2}e^{-ipx}dx=\int_{-\infty}^\infty e^{-(x+\frac{ip}{2})^2}e^{\frac{(ip)^2}{4}}dx=e^{-\frac{p^2}{4}}\int_{-\infty}^\infty e^{-x'^2}dx'=e^{-\frac{p^2}{4}}\sqrt{\pi}$$Letting $x'=x+\frac{ip}{2}$, and using the known result for the integral of a gaussian over the reals. Scaling and shift theorems can be used to find the Fourier transform if $f(x)=e^{-bx^2-cx}$ for $b>0$:$$\Huge \tilde f(p)=e^{-\frac{1}{4b}(p-ic)^2}\sqrt{\frac{\pi}{b}}$$
+# Applications of Fourier Transforms to linear inhomogeneous ODEs:
+
+Since the Fourier transform $\frac{dy}{dx}$ is $ip\tilde y$, differentiation in $x$-space corresponds to multiplication of $ip$ in $p$-space. Instead of directly solving an inhomogenous linear ODE, on
