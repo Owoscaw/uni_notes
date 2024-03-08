@@ -6,7 +6,12 @@
 If $f(x),g(x)$ have corresponding Fourier transforms $\tilde f(x),\tilde g(x)$, then $h(x)=\alpha f(x)+\beta g(x)$ has Fourier transform $\tilde h(x)=\alpha\tilde f(x)+\beta\tilde g(x)$, which comes from the linearity of the integral.
 
 ## Shift theorem: 
-If $f(x)$ has Fourier transform $\tilde f(x)$, then $g(x)=f(x+a)$ has Fourier transform $\tilde g(p)=\tilde f(p)e^{ipa}$. Substituting $x'=x+a$ into the integral formula gives:$$\large \int_{-\infty}^\infty f(x+a)e^{-ipx}dx=\int_{-\infty}^\infty f(x')e^{-ip(x'-a)}dx'=e^{-ipa}\int_{-\infty}^\infty f(x')e^{-ipa}dx'=e^{-ipa}\tilde f(p)$$As required.
+If $f(x)$ has Fourier transform $\tilde f(x)$, then $g(x)=f(x+a)$ has Fourier transform $\tilde g(p)=\tilde f(p)e^{ipa}$. Substituting $x'=x+a$ into the integral formula gives:$$\large \int_{-\infty}^\infty f(x+a)e^{-ipx}dx=\int_{-\infty}^\infty f(x')e^{-ip(x'-a)}dx'=e^{ipa}\int_{-\infty}^\infty f(x')e^{-ipa}dx'=e^{ipa}\tilde f(p)$$As required.
 
 ## Scaling theorem:
-If $f(x)$ has Fourier transform 
+If $f(x)$ has Fourier transform $\tilde f(p)$, then the Fourier transform of $F(x)=f(bx)$ is given by:$$\Huge \tilde F(p)=\frac{1}{|b|}\tilde f\left(\frac{p}{b}\right)$$The proof is similar as above, substituting $x'=bx$. Both of the above theorems can be combined to define the Fourier transform of $F(x)=f(bx+a)$:$$\Huge \tilde F(p)=\frac{1}{|b|}\tilde f\left(\frac{p}{b}\right)e^{ipa}$$
+## Even and odd functions:
+If we denote the Fourier transform of an even function $f(x)$ as $\tilde f(p)$, then this will be an even function in $p$. Since this is an integral over all $x$, only the even part of the integrand contributes, so write:$$\small \tilde f(p)=\int_{-\infty}^\infty f(x)e^{-ipx}dx=\frac{1}{2}\int_{-\infty}^\infty f(x)e^{-ipx}+f(-x)e^{ipx}dx=\frac{1}{2}\int_{-\infty}^\infty f(x)(e^{-ipx}+e^{-ipx})dx=\frac{1}{2}(\tilde f(p)+\tilde f(-p))$$Implying that $\tilde f(p)=\tilde f(-p)$, a similar statement holds for odd functions $f(x)$.
+
+## Fourier transform of derivatives:
+If $f(x)$ has Fourier transform $\tilde f(p)$, then the derivative of $f$ has Fourier transform $ip\tilde f(p)$:$$\Huge \tilde f'(p)=\int_{-\infty}^\infty\frac{df}{dx}e^{-ipx}dx=[f(x)e^{-ipx}]_{-\infty}^\infty-\int_{-\infty}^\infty f(x)(ipe^{-ipx})dx=0+ip$$=e
