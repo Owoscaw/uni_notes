@@ -29,3 +29,15 @@ Let $f$ be continuous on $[a,b]$, then $F(x)=\int_a^xf(t)dt$ defines a different
 This gives the following results:
 > If $f:[a,b]\mapsto\Re$ is continuous, then there exists an antiderivative ($F:[a,b]\mapsto\Re:F'=f$)
 > If $f:[a,b]\mapsto\Re$ is continuous with antiderivative $F:[a,b]\mapsto\Re$, then:$$\Huge \int_a^bf(x)dx=F(b)-F(a)=F(x)|^b_a$$
+
+# Substitution:
+
+Let $f$ be a continuous function on a closed interval $I$ and $g:[a,b]\mapsto I$ continuously differentiable. Then:$$\Huge \int_a^bf(g(x))g'(x)dx=\int_{g(a)}^{g(b)}f(t)dt$$Let $F$ be an antiderivative of $f$ on $I$. Then $F\circ g$ is an antiderivative of $f\circ g\times g'$ by the chain rule:$$\Huge \int_c^bf(g(x))g'(x)dx=F(g(b))-F(g(a))=\int_{g(a)}^{g(b)}f(x)dx$$as required.
+
+# Integration by Parts:
+
+Let $f,g$ be continuous functions on $[a,b]$ with $g$ continuous differentiable. Let $F$ be an antiderivative of $f$ on $[a,b]$, then:$$\Huge \int_a^bf(x)g(x)dx=[F(x)g(x)]_a^b-\int_a^bF(x)g'(x)dx$$Since, letting $G(x)=F(x)g(x)$, we have $G'(x)=F'(x)g(x)+F(x)g'(x)$. So:$$\Huge G(b)-G(a)=\int_a^bf(x)g(x)dx+\int_a^bF(x)g'(x)dx$$Which rearranges to give the result as required, using linearity of the integral.
+
+# Functions via integrals:
+
+We can define functions using the integral as follows:$$\Huge F(x)=\int_a^xf(t)dt$$As an example define:$$\Huge L(x)=\int_1^x\frac{dt}{t}$$
