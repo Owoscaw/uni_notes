@@ -18,3 +18,6 @@ If $f(x)$ has Fourier transform $\tilde f(p)$, then the derivative of $f$ has Fo
 
 ## Convolution theorem:
 The convolution of two functions $f(x),g(x)$ is defined as:$$\Huge f\star g(x)=\int_{-\infty}^\infty f(t)g(x-t)dt$$Note that substituting $t'=x-t$, one can show that $f\star g(x)=g\star f(x)$. The convolution theorem states that if $\tilde f(p),\tilde g(p)$ are Fourier transforms of $f,g$ respectively, then the Fourier transform of their convolution is $\tilde f(p)\tilde g(p)$:$$ F(p)=\int_{-\infty}^\infty f\star g(x)e^{-ipx}dx=\int_{-\infty}^\infty\int _{-\infty}^\infty f(t)g(x-t)dt\,e^{-ipx}dx=\int_{-\infty}^\infty\int_{-\infty}^\infty f(t)g(x')dt\,e^{-ip(x'+t)}dx'$$$$\Huge \implies F(p)=\int_{-\infty}^\infty f(t)e^{-ipt}dt\,\,\int_{-\infty}^\infty g(x')e^{-ipx'}dx'=\tilde f(p)\tilde g(p)$$
+# Examples:
+
+Let $f(x)=e^{-x}$ for $x\geq0$ and $0$ otherwise, we can find the Fourier transform as follows:$$ \tilde f(p)=\int_{-\infty}^\infty f(x)e^{-ipx}=\int_0^\infty e^{-x}e^{-ipx}dx=\int_0^\infty e^{-(ip+1)x}dx=\left[-\frac{e^{-(ip+1)x}}{ip+1}\right]_0^\infty=\frac{}{}$$
