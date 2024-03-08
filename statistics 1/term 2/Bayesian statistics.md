@@ -28,3 +28,13 @@ $$\Huge f(\theta)\longrightarrow f(x|\theta)\longrightarrow f(\theta|x)$$
 # Fundamental equation of Bayesian statistics:
 
 Any Bayesian problem is expressed as:$$\Huge f(\theta|x)=\frac{f(x|\theta)f(\theta)}{f(x)},\,\text{posterior}=\frac{\text{likelihood}\times \text{prior}}{\text{data probability}}$$Note that once data is observed, $x$ becomes constant, making the posterior proportional to the product of likelihood and prior. To find this proportionality constant, either integrate over $f(\theta|x)$ and set this to $1$ or spot that $f(x|\theta)f(\theta)$ looks like a known distribution from a known family with a known constant.
+
+# Probability distributions and Conjugates:
+
+The presence of prior distributions in calculations is the main difference between bayesian and frequentist approaches. In general there are two types of prior distributions:
+> Informative priors, $f(\theta)$ expresses specific knowledge about the behaviour of $\theta$
+> Non-informative priors, $f(\theta)$ is very vauge, the simplest form is a uniform distribution
+
+Another consideration is to choose a prior that captures knowledge about $\theta$, which are convienient to do bayesian calculations with. Such priors are called conjugate priors.
+
+A conjugate prior distribution is one where the form of the posterior distribution is the same as the form of the prior distribution, that is they are both normal for example. In which case we say that $f(\theta)$ is a conjugate prior for the likelihood, $f(x|\theta)$. Conjugacy implies that the prior and posterior have the same functional form, however will have different parameters for their shared distribution.
