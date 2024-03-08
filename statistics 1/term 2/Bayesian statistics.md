@@ -47,4 +47,4 @@ To deal with binomial data/scenarios, we aim to choose a good family of priors. 
 > The core of a Beta distribution with parameters $a,b$ is $\kappa(x)=x^{a-1}(1-x)^{b-1}$
 > If $X\sim\beta(1,b)$ then $E[X]=\frac{a}{a+b}$ and $Var[X]=\frac{ab}{(a+b)^2(a+b+1)}$ and $Mode[x]=\frac{a-1}{a+b-2}$ 
 > $\beta(1,1)$ is the same as $U[0,1]$ where $U$ is the uniform distribution.
-> For large $a,b$ then $$
+> For large $a,b$ then $X\sim N(E[X],Var[X])$
