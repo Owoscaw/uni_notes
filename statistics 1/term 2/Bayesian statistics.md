@@ -48,3 +48,6 @@ To deal with binomial data/scenarios, we aim to choose a good family of priors. 
 > If $X\sim\beta(1,b)$ then $E[X]=\frac{a}{a+b}$ and $Var[X]=\frac{ab}{(a+b)^2(a+b+1)}$ and $Mode[x]=\frac{a-1}{a+b-2}$ 
 > $\beta(1,1)$ is the same as $U[0,1]$ where $U$ is the uniform distribution.
 > For large $a,b$ then $X\sim N(E[X],Var[X])$
+
+## Beta-Binomial model:
+Suppose we observe a random variable $X=x$, where $X|p\sim Bin(n,p)$. If our prior distribution for $p=\theta$ is such that $p\sim\beta(a,b)$ then the posterior distribution $p|x$ is:$$\Huge p|x\sim\beta(a+x,b+n-x)$$
