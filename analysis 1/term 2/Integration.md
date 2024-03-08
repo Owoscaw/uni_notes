@@ -40,4 +40,13 @@ Let $f,g$ be continuous functions on $[a,b]$ with $g$ continuous differentiable.
 
 # Functions via integrals:
 
-We can define functions using the integral as follows:$$\Huge F(x)=\int_a^xf(t)dt$$As an example define:$$\Huge L(x)=\int_1^x\frac{dt}{t}$$
+We can define functions using the integral as follows:$$\Huge F(x)=\int_a^xf(t)dt$$As an example define:$$\Huge L(x)=\int_1^x\frac{dt}{t}$$Then we obviously get:
+> $L(0)=1$
+> $L$ is differentiable with $L'(x)=\frac{1}{x}$
+> For all $x,y>0$ we have $L(xy)=L(x)+L(y)$, and $L(\frac{1}{x})=-L(x)$
+> $L$ is strictly monotonically increasing
+> $\frac{x}{x+1}\leq L(x+1)\leq x$ for all $x>-1$
+> $L(2)>\frac{1}{2}$ and $L(2^n)>\frac{n}{2}$
+> $\lim_{x\to \infty}L(x)=\infty$ and $\lim_{x\to 0^+}L(x)=-\infty$
+
+The fifth property implies the sixth by setting $x=1$ in the inequality. The fourth and the sixth properties imply the first half of the seventh, while the third property implies the second half. To prove the third:$$\Huge L(xy)=\int_1^{xy}\frac{dt}{t}$$
