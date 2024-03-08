@@ -24,4 +24,5 @@ Let $f$ be a continuous function on $[a,b]$, then there exists $c\in[a,b]$ such 
 
 # Fundamental theorem of Calculus:
 
-Consider the function $F(x)=\int_a^xf(t)dt$ where $f:[a,b]\mapsto\Re$ is a regulated function. We propose that $F:[a,b]\mapsto\Re$ is Lipschitz continuous with constant $M=\sup\{|f(x)|:x\in[a,b]\}$ 
+Consider the function $F(x)=\int_a^xf(t)dt$ where $f:[a,b]\mapsto\Re$ is a regulated function. We propose that $F:[a,b]\mapsto\Re$ is Lipschitz continuous with constant $M=\sup\{|f(x)|:x\in[a,b]\}$. Let $x,y\in[a,b]$ with $x>y$, then:$$\large |F(x)-F(y)|=\left|\int_a^xf(t)dt-\int_z^yf(t)dt\right|=\left|\int_y^xf(t)dt\right|\leq\int_y^x|f(t)|dt\leq M|x-y|$$
+Let $f$ be continuous on $[a,b]$, then $F(x)=\int_a^xf(t)dt$ defines a differentiable function, that is $F:[a,b]\mapsto\Re$ and $F'(x)=f(x)$ for all $x\in[a,b]$. Let $c\in[a,b]$, we then need to show:$$\Huge\lim_{x\to c}\frac{F(x)-F(c)}{x-c}=f(c)$$For $x\neq c$, we have:$$ \frac{F(x)-F(c)}{x-c}=\frac{1}{x-c}\int_a^xf(t)dt-\frac{1}{x-c}\int_a^cf(t)dt=\frac{1}{x-c}\int_c^xf(t)dt=\frac{f(\xi_x)(x-c)}{x-c}=f(\xi_x)$$By the mean value theorem for integrals, where $\xi_x\in[x,c]$, so:$$\Huge\lim_{x\to c}\frac{F(x)-F(c)}{x-c}=\lim_{x\to c}f(\xi_x)=f(\lim_{x\to c}\xi_c)=f(c)$$By continuity of $f$, we get the result as required.
