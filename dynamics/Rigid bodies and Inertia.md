@@ -11,3 +11,5 @@ The position of a rigid body, rotating about a fixed axis, is specified by an an
 
 ## Total energy:
 If the external forces are conservative, one can define a potential energy $V$ by summing or integrating over all particles, then $E=K+V$ is conserved. Using $\dot E=0$ gives the equation of motion:$$\Huge I\ddot \theta=-V'(\theta)$$
+## Simple pendulum example:
+For a simple pendulum, the 
