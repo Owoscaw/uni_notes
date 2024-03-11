@@ -17,3 +17,10 @@ Sequential learning occurs when multiple tests are conducted in a row (sequence)
 ## Sensitivity of the posterior to the prior:
 We saw that the posterior $P(D^+|T^+)$ was sensitive to the value of the prior. We can explore this locally for a particular prior by examining the [[Differentiable Functions|derivative]] of the posterior with respect to the prior:$$\Huge \frac{d(P(D^+|T^+))}{d(P(D^+))}$$If there was uncertainty about the prior, however a certain action would be taken if the posterior were over a given threshold, Bayes theorem can be rearranged to solve for $P(D^+)$ in terms of the posterior.
 
+# Information from the Posterior:
+
+Simple summaries of $f(\theta|x)$ such as plots, location summaries, and spread summaries can be made from $f(\theta|x)$. Probabilities using $f(\theta|x)$ can directly calculated, for example $P(\theta>a|x)$. Point estimates summaries the distribution in terms of a single value of $\theta$, the best guess. Predictions about future data given $\theta$ and $x$ can be made. Intervals that capture a proportion of the possible values of $\theta$ can be found.
+
+# Point estimates:
+
+Point estimates are single values of $\theta$ that are a "best guess" value obtained from $f(\theta|x)$
