@@ -1,0 +1,3 @@
+A mass $m$ is attatched to one end of a light rigid rod of length $Q$, the other end is attatched to a fixed point with the rod free to rotate in any direction. Gravity acts downwards with initial condition where the rod is horizontal, velocity is horizontal, and speed is $u$. We ask what distance $D$ below horizontal does the mass reach?
+![[Spherical pendulum .excalidraw]]
+Clearly when $g=0$, the mass does not swing downwards and we get circular motion along the equator. When $u=0$ we get a simple pendulum and can determine that 
