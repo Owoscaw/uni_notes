@@ -54,4 +54,9 @@ Using this fact, we can deduce that $\mathbb{Z}_4$ and the Klein $4$-group are n
 # Direct product:
 
 Let $G,H$ be two groups. The direct product $G\times H$ is defined by an operator $\bullet$, where elements of $G\times H$ are the ordered pairs $(g,h)$ for $g\in G,h\in H$. The group operation $\bullet_{G\times H}$ works component wise:$$\Huge (g_1,h_1)\bullet(g_2,h_2)=(g_1\cdot_Gg_2,h_1\cdot_Hh_2)$$Where $\cdot_G,\cdot_H$ are the respective group operations on $G,H$. We propose that the direct product of two groups $G,H$ is a group with order:$$\Huge |G\times H|=|G|\cdot|H|$$
+
+# Rotations and subgroups:
+
+Consider [[Real vector spaces|$\Re^n$]] with respect to the standard [[Inner product spaces|inner product]]:$$\Huge (\underline v,\underline w)=\underline w^T \underline v$$
+
  
