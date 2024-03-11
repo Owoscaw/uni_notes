@@ -47,4 +47,11 @@ Two groups $G$ and $H$ are isomorphic as groups if there is a bijection $f:G\map
 > In $(\mathbb{Z},+)$, no element except the identity has infinite order
 > In $\mathbb{Z}_n$, every element has finite order
 
-We propose that if $G$ and $H$ are isomorphic, then the order of any $g\in G$ corresponds to the order of $f(g)\in H$. Using this fact, we can deduce that $\mathbb{Z}_4$ and the Klein $4$-group are not isomorphic, since in the Klein group, $a,b,c$ all have order $2$, whereas in $\mathbb{Z}_4$ only $[2]$ has order $2$.
+We propose that if $G$ and $H$ are isomorphic, then the order of any $g\in G$ corresponds to the order of $f(g)\in H$. This is because, assuming isomorphism, we have that for any $g\in G$, $f(g^n)=f(g)^n=f(e_G)=e_h$, giving us $n\geq m=|f(g)|$. Similarly, $g^m=(f^{-1}(f(g)))^m=f^{-1}(f(g)^m)=f^{-1}(e_H)=e_G$, giving us $m\geq n$. Therefore we get $n=m$, the order must be the same.
+
+Using this fact, we can deduce that $\mathbb{Z}_4$ and the Klein $4$-group are not isomorphic, since in the Klein group, $a,b,c$ all have order $2$, whereas in $\mathbb{Z}_4$ only $[2]$ has order $2$.
+
+# Direct product:
+
+Let $G,H$ be two groups. The direct product $G\times H$ is defined by an operator $\bullet$, where elements of $G\times H$ are the ordered pairs $(g,h)$ for $g\in G,h\in H$. The group operation $\bullet_{G\times H}$ works component wise:$$\Huge (g_1,h_1)\bullet(g_2,h_2)=(g_1\cdot_Gg_2,h_1\cdot_Hh_2)$$Where $\cdot_G,\cdot_H$ are the respective group operations on $G,H$. We propose that the direct product of two groups $G,H$ is a group with order:$$\Huge |G\times H|=|G|\cdot|H|$$
+ 
