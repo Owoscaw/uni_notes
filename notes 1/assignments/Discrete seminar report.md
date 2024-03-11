@@ -1,8 +1,8 @@
 # Trees:
 
-A tree is simply defined as a connected, acyclic graph. That is, there exists a path between any two vertices in the graph, and said graph contains no cycles.
+A tree is simply defined as a connected, acyclic graph. That is, there exists a path between any two vertices in the graph, and said graph contains no cycles. A forest is then defined to be any acyclic graph, it follows that every connected component of a forest is itself a tree.
 
-## Counting Trees:
+# Counting Trees:
 A counting tree is a tree in which, every vertex is assigned a unique integer from $1$ to $n$, where $n$ is the amount of vertices in the tree.
 
 Cayley's formula states that there are $n^{n-2}$ distinct labelled trees with $n$ vertices. We can prove this using Kirchoff's Matrix Tree Theorem:
@@ -12,3 +12,6 @@ $$\Huge \begin{pmatrix}n-1&-1&-1&\dots&-1\\-1&n-1&-1&\dots&-1\\-1&-1&n-1&\dots&-
 Similarly, the elementary column operation of similar form does not change the determinant by the same line of reasoning, so we perform $A_{i\,1}(1)$ for $i\in\{2,3,\dots,n-2,n-1\}$, adding each column $i$ to the first, multiplied by $1$:
 $$\Huge \begin{pmatrix}n-1&-1&-1&\dots&-1\\-n&n&0&\dots&0\\-n&0&n&\dots&0\\\vdots&\vdots&\vdots&\ddots&\vdots\\-n&0&0&\dots&n\end{pmatrix}\mapsto\begin{pmatrix}1&-1&-1&\dots&-1\\0&n&0&\dots&0\\0&0&n&\dots&0\\\vdots&\vdots&\vdots&\ddots&\vdots\\0&0&0&\dots&n\end{pmatrix}$$
 Denote this new matrix as $M_1'$. We have that $\det(M_1)=\det(M_1')$, so expand $M_1'$ along the first row. Notice that each $(M_1')_{(1,i)}$ for $i\in\{2,3,\dots,n-2,n-1\}$ contains a row of zeros, so expanding along this row shows that each of these have a determinant of zero. Therefore we only need to worry about the term at $1,1$, that is $(M_1')_{(1,1)}=M_2'$:$$\Huge \det(M_1)=1\times\det(M_2')$$Notice that $M_2'$ is simply $n$ times the $n-2$ dimensional identity matrix, so we have that:$$\Huge \det(M_1)=\det(nI_{n-2})=\det\begin{pmatrix}n&0&0&\dots&0\\0&n&0&\dots&0\\0&0&n&\dots&0\\\vdots&\vdots&\vdots&\ddots&\vdots\\0&0&0&\dots&n\end{pmatrix}$$This is simply equal to the product of the diagonal elements, that is:$$\Huge \det(M_1)=\prod_{i=1}^{n-2}nI_{n-2}=\prod_{i=1}^{n-2}n=n^{n-2}$$So we have proven the result as required, using Kirchoff's Matrix Tree theorem, that there indeed are $n^{n-2}$ distinct labelled trees with $n$ vertices.
+
+# Spanning trees and MSTs:
+
