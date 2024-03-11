@@ -14,4 +14,8 @@ Denote this new matrix as $M_1'$. We have that $\det(M_1)=\det(M_1')$, so expand
 
 # Spanning trees and MSTs:
 
-The spanning tree of a graph is a subgraph that shares the same vertex set as the graph, which is also a tree. That is, every vertex in the graph is in the tree, the tree spans the graph. For any weighted graph, the minimum spanning tree (MST) is defined to be the spanning tree of least total weight
+The spanning tree of a graph is a subgraph that shares the same vertex set as the graph, which is also a tree. That is, every vertex in the graph is in the tree, the tree spans the graph. For any weighted graph, the minimum spanning tree (MST) is defined to be the spanning tree of least total weight. 
+
+One way to find the MST of a weighted graph is through Prim's algorithm, the procedure of which is as follows:
+> From any weighted, connected graph $G=(V,E,\Phi_G)$, choose a vertex $v_1\in V$ and include this in $T_1=(\{v_1,\emptyset\})$
+> Find the edge of least weight in $G$ that connects any vertex in $T_k=(V_{T_k},E_{T_k})$ to a vertex not currently in $T_k$, but in $G$. That is the least weighted edge  $e\in E\setminus E_{T_k}$ such that $\Phi$
