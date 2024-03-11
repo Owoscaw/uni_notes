@@ -2,10 +2,9 @@
 
 A tree is simply defined as a connected, acyclic graph. That is, there exists a path between any two vertices in the graph, and said graph contains no cycles. A forest is then defined to be any acyclic graph, it follows that every connected component of a forest is itself a tree.
 
-# Counting Trees:
-A counting tree is a tree in which, every vertex is assigned a unique integer from $1$ to $n$, where $n$ is the amount of vertices in the tree.
+# Labelled Trees:
 
-Cayley's formula states that there are $n^{n-2}$ distinct labelled trees with $n$ vertices. We can prove this using Kirchoff's Matrix Tree Theorem:
+A labelled tree is a tree in which every vertex is assigned a unique integer from $1$ to $n$, where $n$ is the amount of vertices in the tree. Cayley's formula states that there are $n^{n-2}$ distinct labelled trees with $n$ vertices. We can prove this using Kirchoff's Matrix Tree Theorem:
 
 Kirchoff's Matrix Tree Theorem states that given a simple labelled graph $G=(V,E)$ with vertices $V=\{v_1,\dots,v_n\}$, define the matrix $M=(m)_{ij}$:$$\Huge (m)_{ij}=\begin{cases}-1&\text{if }v_iv_j\in E\\0&\text{if }v_iv_j\notin E\\d_G(v_i)&\text{if }i=j\end{cases}$$Then the number of spanning trees of $G$ is any unsigned cofactor of $M$. We want to find the number of spanning trees with $n$ vertices, so applying this result to the complete graph $K_n$ will prove our result. So we construct $M$. Note that the degree of any vertex is $n-1$, and $v_iv_j$ is always an edge, since we are considering $K_n$:$$\Huge M=\begin{pmatrix}n-1&-1&\dots&-1\\-1&n-1&\dots&-1\\\vdots&\vdots&\ddots&\vdots\\-1&-1&\dots&n-1\end{pmatrix}$$Notice that for an undirected graph, this matrix is always symmetric. We will find the cofactor at $1,1$ for convenience:$$\Huge C_{11}(M)=\det(M_{(1,1)})$$Where $M_{(1,1)}$ is the matrix obtained by deleting the first row and column of $M$. This will be an $(n-1)\times(n-1)$ matrix, denoted as $M_1$. So the answer to our question is equal to $\det(M_1)$. Note that the elementary row operation $A_{rs}(\mu)$ does not change the determinant of a matrix, where $A_{rs}(\mu)$ represents multiplying row $r$ by $\mu$ and adding it to row $s$. This is because the determinant of the elementary matrix that represents this operation is $1$, so the determinant of the matrix after an arbitrary amount of these elementary row operations is: $\det(E_1E_2\dots E_nM_1)=\det(E_1)\dots\det(E_n)\det(M_1)=1\times\dots\times1\times\det(M_1)=\det(M_1)$, so we are free to manipulate $M_1$ in this way without changing its determinant. We choose elementary row operations of the form $A_{1\,i}(-1)$ for $i\in\{2,3,\dots,n-2,n-1\}$ so that our matrix is now of the form:
 $$\Huge \begin{pmatrix}n-1&-1&-1&\dots&-1\\-1&n-1&-1&\dots&-1\\-1&-1&n-1&\dots&-1\\\vdots&\vdots&\vdots&\ddots&\vdots\\-1&-1&-1&\dots&n-1\end{pmatrix}\mapsto \begin{pmatrix}n-1&-1&-1&\dots&-1\\-n&n&0&\dots&0\\-n&0&n&\dots&0\\\vdots&\vdots&\vdots&\ddots&\vdots\\-n&0&0&\dots&n\end{pmatrix}$$
@@ -15,3 +14,4 @@ Denote this new matrix as $M_1'$. We have that $\det(M_1)=\det(M_1')$, so expand
 
 # Spanning trees and MSTs:
 
+The spanning tree of a graph is a subgraph that shares the same vertex set as the graph, which is also a tree. That is, every vertex in the graph is in the tree, the tree spans the graph. For any weighted graph, the minimum spanning tree (MST) is defined to be the spanning tree of least total weight
