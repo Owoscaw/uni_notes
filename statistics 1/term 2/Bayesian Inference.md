@@ -25,4 +25,9 @@ Simple summaries of $f(\theta|x)$ such as plots, location summaries, and spread 
 
 Point estimates are single values of $\theta$ that are a "best guess" value obtained from $f(\theta|x)$. There are two main choices for this:
 > Posterior Mode or Maximum a Posteriori estimate. $\hat \theta_{MAP}$ is the value of $\theta$ that maximises the posterior $f(\theta|x)$, analogous to $\hat \theta_{MLE}$
-> Posterior Mean, $E[\theta|x]=\int \theta f(\theta|x)d \theta$. This is simply the posterior expectation. 
+> Posterior Mean, $E[\theta|x]=\int \theta f(\theta|x)d \theta$. This is simply the posterior expectation
+
+
+# Credible Intervals:
+
+A $1-\alpha$ credible interval is derived from the PDF of $\theta$ such that the interval contains $\theta$ with probability $1-\alpha$.
