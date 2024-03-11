@@ -24,16 +24,27 @@ For example, consider the group $G=(\mathbb{Z},+)$, an infinite abelian group. F
 
 Set $\mathbb{Z}_n=\{[0],[1],\dots,[n-1]\}$. Under addition this is a finite abelian group with order $n$, sometimes called the $n$th order cyclic group. The behaviour of this group under addition is encoded by the Cayley table:
 
-| $+$   | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
-| ----- | ----- | ----- | ----- | ----- |
+|  $+$  | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+|:-----:|:-----:|:-----:|:-----:|:-----:|
 | $[0]$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
 | $[1]$ | $[1]$ | $[2]$ | $[3]$ | $[0]$ |
 | $[2]$ | $[2]$ | $[3]$ | $[0]$ | $[1]$ |
-| $[3]$ | $[3]$ | $[0]$ | $[1]$ | $2$   |
-This is the table for $\mathbb{Z}_4$. Another finite set can be defined called the Klein group on the set $\{a,b,c,e\}$ with the table:$$
+| $[3]$ | $[3]$ | $[0]$ | $[1]$ | $[2]$ |
+This is the table for $\mathbb{Z}_4$. Another finite set can be defined called the Klein group on the set $\{a,b,c,e\}$ with the table:
 
-
+| $\cdot$ | $e$ | $a$ | $b$ | $c$ |
+|:-------:|:---:|:---:|:---:|:--- |
+|   $e$   | $e$ | $a$ | $b$ | $c$ |
+|   $a$   | $a$ | $e$ | $c$ | $b$ |
+|   $b$   | $b$ | $c$ | $e$ | $a$ |
+|   $c$   | $c$ | $b$ | $a$ | $e$ |
+These can be thought of as rotations by $\pi$ in $\Re^3$
 
 # Isomorphism:
 
-Two groups $G$ and $H$ are isomorphic as groups if there is a bijection $f:G\mapsto H$ that preserves the group operation:$$\Huge f(g_1\cdot_Gg_2)=f(g_1)\cdot_Hf(g_2)$$Where $\cdot_G,\cdot_H$ are the group operations for $G,H$ respectively. This implies that:$$\Huge f(e_G)=e_H$$Where $e_G,e_H$ are the identity elements of groups $G,H$ respectively.
+Two groups $G$ and $H$ are isomorphic as groups if there is a bijection $f:G\mapsto H$ that preserves the group operation:$$\Huge f(g_1\cdot_Gg_2)=f(g_1)\cdot_Hf(g_2)$$Where $\cdot_G,\cdot_H$ are the group operations for $G,H$ respectively. This implies that:$$\Huge f(e_G)=e_H$$Where $e_G,e_H$ are the identity elements of groups $G,H$ respectively. We claim that $\mathbb{Z}_4$ is not isomorphic to the Klein group. To see this, first let $g\in G$, then call the order of $G$ the smallest positive integer $n$ such that $g^n=e$. We propose that:
+> The identity has order $1$
+> In $(\mathbb{Z},+)$, no element except the identity has infinite order
+> In $\mathbb{Z}_n$, every element has finite order
+
+We propose that if $G$ and $H$ are isomorphic, then the order of any $g\in G$ corresponds to the order of $f(g)\in H$. Using this fact, we can deduce that $\mathbb{Z}_4$ and the Klein $4$-group are not isomorphic, since in the Klein group, $a,b,c$ all have order $2$, whereas in $\mathbb{Z}_4$ only $[2]$ has order $2$.
