@@ -22,4 +22,11 @@ A finite group $G$ is a group with a finite number of elements. The order of $G$
 
 For example, consider the group $G=(\mathbb{Z},+)$, an infinite abelian group. Fix an integer $n\in \mathbb{N}$ with $n\geq2$ and consider an equivalence relation on $\mathbb{Z}$: $p\sim q\iff n$ divides $p-q$, that is $p=q+kn$ for some $k\in \mathbb{Z}$. Then set $[p]=\{q\in \mathbb{Z}:q\sim p\}$, this is the congruence class of integers modulus $n$.
 
-Set $\mathbb{Z}_n=\{[0],[1],\dots,[n-1]\}$. Under addition this is a finite abelian group with order $n$, sometimes called the $n$th order cyclic group.
+Set $\mathbb{Z}_n=\{[0],[1],\dots,[n-1]\}$. Under addition this is a finite abelian group with order $n$, sometimes called the $n$th order cyclic group. The behaviour of this group under addition is encoded by the Cayley table:
+
+| $+$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+---------------------
+$[0]$ | $[0]$ | $[1]$ | $[2]$ $[3]$ |
+
+
+
