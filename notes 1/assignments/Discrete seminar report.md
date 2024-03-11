@@ -18,4 +18,8 @@ The spanning tree of a graph is a subgraph that shares the same vertex set as th
 
 One way to find the MST of a weighted graph is through Prim's algorithm, the procedure of which is as follows:
 > From any weighted, connected graph $G=(V,E,\Phi_G)$, choose a vertex $v_1\in V$ and include this in $T_1=(\{v_1,\emptyset\})$
-> Find the edge of least weight in $G$ that connects any vertex in $T_k=(V_{T_k},E_{T_k})$ to a vertex not currently in $T_k$, but in $G$. That is the least weighted edge  $e\in E\setminus E_{T_k}$ such that $\Phi$
+> Find the edge of least weight in $G$ that connects any vertex in $T_k=(V_{T_k},E_{T_k})$ to a vertex not currently in $T_k$, but in $G$. That is the least weighted edge  $e\in E\setminus E_{T_k}$ such that $e=v_iv_j$ where $v_i\in V_{T_k}$ and $v_j\in V\setminus V_{T_k}$
+> Add such edge, $e$, and such vertex $v_j$ to the tree to construct $T_{k+1}$
+> Repeat the previous two steps until $V_{T_k}=V$
+
+This algorithm naturally avoids creating cycles, since edges are only added if they connect a vertex in $T_k$ to a vertex not in $T_k$. Since this algorithm only terminates when $V_{T_k}=V$, both $G$ and $T$ share a vertex set, so the resulting tree must span.
