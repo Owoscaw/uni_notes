@@ -24,9 +24,16 @@ For example, consider the group $G=(\mathbb{Z},+)$, an infinite abelian group. F
 
 Set $\mathbb{Z}_n=\{[0],[1],\dots,[n-1]\}$. Under addition this is a finite abelian group with order $n$, sometimes called the $n$th order cyclic group. The behaviour of this group under addition is encoded by the Cayley table:
 
-| $+$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
----------------------
-$[0]$ | $[0]$ | $[1]$ | $[2]$ $[3]$ |
+| $+$   | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+| ----- | ----- | ----- | ----- | ----- |
+| $[0]$ | $[0]$ | $[1]$ | $[2]$ | $[3]$ |
+| $[1]$ | $[1]$ | $[2]$ | $[3]$ | $[0]$ |
+| $[2]$ | $[2]$ | $[3]$ | $[0]$ | $[1]$ |
+| $[3]$ | $[3]$ | $[0]$ | $[1]$ | $2$   |
+This is the table for $\mathbb{Z}_4$. Another finite set can be defined called the Klein group on the set $\{a,b,c,e\}$ with the table:$$
 
 
 
+# Isomorphism:
+
+Two groups $G$ and $H$ are isomorphic as groups if there is a bijection $f:G\mapsto H$ that preserves the group operation:$$\Huge f(g_1\cdot_Gg_2)=f(g_1)\cdot_Hf(g_2)$$Where $\cdot_G,\cdot_H$ are the group operations for $G,H$ respectively. This implies that:$$\Huge f(e_G)=e_H$$Where $e_G,e_H$ are the identity elements of groups $G,H$ respectively.
