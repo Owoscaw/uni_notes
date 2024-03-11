@@ -9,7 +9,6 @@ Note that $P(D^+|T^+)$ is still low because the prior probability $P(D^+)$ was v
 
 # Advanced Bayesian Calculations:
 
-
 ## Repeated tests:
 Consider the august 2020 covid example where $P(D^+|T^+)=0.0156$. Then take a second test which is also positive, denoting this as $T^{++}$. However in this case, the nature of the test has to be explored further. One assumption could be that the test results are conditionally independent given disease status, that is:$$\Huge P(T^{++}|D^+)=P(T^+|D^+)^2,\,\,P(T^{++}|D^-)=P(T^+|D^-)^2$$This is reasonable if the test fails independently each time. So consider this:$$\small P(D^+|T^{++})=\frac{P(T^{++}|D^+)P(D^+)}{P(T^{++}|D^+)P(D^+)+P(T^{++}|D^-)P(D^-)}=\frac{P(T^+|D^+)^2P(D^+)}{P(T^+|D^+)^2P(D^+)+P(T^+|D^-)^2P(D^-)}=0.501$$
 
@@ -17,3 +16,4 @@ Consider the august 2020 covid example where $P(D^+|T^+)=0.0156$. Then take a se
 Sequential learning occurs when multiple tests are conducted in a row (sequence), for example $T^{++}$. Additional information about a test changed the probability of a belief one after the other. Bayes theorem is consistent in the sense that sequential updates by $T^+$ can be applied at once, for example going straight from $P(D^+)$ to $P(D^+|T^{++})$. The posteriors $P(D^+|T_1^+)$ and $P(D^-|T^+_1)$ can be used as priors for the second test, $P(D^+|T^{++})=P(D^+|T_1^+,T_2^+)$. This becomes:$$\Huge\frac{P(T_2^+|D^+,T_1^+)P(D^+|T_1^+)}{P(T_2^+|D^+,T_1^+)P(D^+|T_1^+) + P(T_2^+|D^-,T_1^+)P(D^-|T_1^+)}$$However since we assume that the test result dependent only on disease status, this can be rewritten as:$$\Huge\frac{P(T_2^+|D^+)P(D^+|T_1^+)}{P(T_2^+|D^+)P(D^+|T_1^+) + P(T_2^+|D^-)P(D^-|T_1^+)}$$
 ## Sensitivity of the posterior to the prior:
 We saw that the posterior $P(D^+|T^+)$ was sensitive to the value of the prior. We can explore this locally for a particular prior by examining the [[Differentiable Functions|derivative]] of the posterior with respect to the prior:$$\Huge \frac{d(P(D^+|T^+))}{d(P(D^+))}$$If there was uncertainty about the prior, however a certain action would be taken if the posterior were over a given threshold, Bayes theorem can be rearranged to solve for $P(D^+)$ in terms of the posterior.
+
