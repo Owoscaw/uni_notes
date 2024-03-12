@@ -25,6 +25,8 @@ One way to find the MST of a weighted graph is through Prim's algorithm, the pro
 
 This algorithm naturally avoids creating cycles, since edges are only added if they connect a vertex in $T_k$ to a vertex not in $T_k$. Since this algorithm only terminates when $V_{T_k}=V$, both $G$ and $T$ share a vertex set, so the resulting tree must span.
 
+Suppose that the tree produced by this algorithm, $T$, is not optimal and let $T'$ be the MST. Then we have $w(T)>w(T')$ and that there must exist some edge $e$ in $T$ that is not in $T'$ because if they shared the edge set they must be the same tree (since we know trees from Prim's algorithm span). Let $V_e$ be the set of vertices added before $e$ was added, then there must exist an edge $f$ in $T'$ that connects a vertex in $V_e$ to a vertex in $V\setminus V_e$. Form the tree $T''=T'-f+e$, that is the tree formed when replacing edge $f$ with edge $e$ in $T'$. Note that $w(f)\geq w(e)$ since $e$ was the edge used to make $T'$ optimal and $T$ not optimal. Therefore $T''$ is also an MST. So we have $w(T'')=w(T')-w(f)+w(e)\leq w(T')$, and since both are MSTs we must have $w(T'')=w(T')$
+
 ## Kruskal's algorithm:
 
 Another way to find the MST of a connected graph is by applying Kruskal's algorithm. The procedure for this algorithm is much simpler than Prim's with the only rule being:
