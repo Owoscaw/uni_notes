@@ -1,1 +1,2 @@
 
+The position of a particle under quantum mechanics in one dimension is described by the function $\psi(x,t)$ that obeys the Schrodinger equation:$$\Huge i\hbar\frac{\partial\psi}{\partial t}=-\frac{\hbar^2}{2m}\frac{\partial^2\psi}{\partial x^2}+V(x)\psi$$This is first order in time, so to solve the IVP we need $\psi(x,0)=\psi(x)$. Here, $|\psi(x)|^2$ is a probability density of being measured at $x$. $\frac{1}{\sqrt{2\pi}}\tilde\psi(p)$ is the probability density for being measured with momentum $p$. $\delta x$ is the standard de 
