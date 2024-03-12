@@ -26,3 +26,6 @@ Let $f(x)=e^{-x^2}$, then the Fourier transform is:$$\large \tilde f(p)=\int_{-\
 # Applications of Fourier Transforms to linear inhomogeneous ODEs:
 
 Since the Fourier transform $\frac{dy}{dx}$ is $ip\tilde y$, differentiation in $x$-space corresponds to multiplication of $ip$ in $p$-space. Instead of directly solving an inhomogeneous linear ODE, one can find its Fourier transform, then divide by $ip$ to find the solution's Fourier transform, then taking the inverse Fourier transform to find the original solution. Take the example:$$\Huge \frac{dy}{dx}+3y=f(x)\mapsto(ip)\tilde y+3\tilde y=\tilde f(p)\implies\tilde y(p)=\frac{1}{ip+3}\tilde f(p)=\tilde f(p)\tilde g(p)$$Where $\tilde g(p)=\frac{1}{ip+3}$. We can use the convolution theorem here to say that $y(x)=f(x)\star g(x)$. We saw earlier that $\frac{1}{ip+b}$ is the Fourier transform of $e^{-bx}$ for $x\geq0$, so we can take $g(x)=e^{-3x}$:$$\Huge y(x)=\int_{-\infty}^\infty f(t)g(x-t)dt=\int_{-\infty}^xf(t)e^{-3(x-t)}dt=\frac{1}{e^{3x}}\int_{-\infty}^xf(t)e^{3t}dt$$
+# Application of Fourier Transforms to PDEs:
+
+Consider PDEs in two variables, of form $u(x,t)$. Taking the Fourier Transform with respect to $x$ gives:$$\Huge \tilde u(p,t)=\int_{-\infty}^\infty u(x,t)e^{-ipx}dx$$This transforms all partial derivatives of $x$
