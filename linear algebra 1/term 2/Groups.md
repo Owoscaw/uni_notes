@@ -61,4 +61,8 @@ Consider [[Real vector spaces|$\Re^n$]] with respect to the standard [[Inner pro
 
 The group of rotations in $\Re^n$ is the subgroup of $O(n)$ with $\det(M)=1$, that is $SO(n)$. Note that $SO(n)$ is not abelian for $n\geq 3$.
 
-Consider a regular polygon in the plane with $n$ sides, the rotations that leave it unchanged form a finite abelian group of order $n$, isomorphic to $\mathbb{Z}_n$. These have matrix representation $M_j\in SO(2)$:$$\Huge M_j=\begin{pmatrix}\cos\left(\frac{2\pi j}{n}\right)&-\sin\left(\frac{2\pi j}{n}\right)\\\end{pmatrix}$$
+Consider a regular polygon in the plane with $n$ sides, the rotations that leave it unchanged form a finite abelian group of order $n$, isomorphic to $\mathbb{Z}_n$. These have matrix representation $M_j\in SO(2)$:$$\Huge M_j=\begin{pmatrix}\cos\left(\frac{2\pi j}{n}\right)&-\sin\left(\frac{2\pi j}{n}\right)\\\sin\left(\frac{2\pi j}{n}\right)&\cos\left(\frac{2\pi j}{n}\right)\end{pmatrix}$$Note that $M_iM_j=M_{i+j}$. The group of all symmetries of the regular $n$-sided polygon in the plane is called the Dihedral group, $D_n$, which is a finite group with order $2n$.
+
+The symmetric group of degree $n$, denoted by $S_n$, is the group whose elements are all permutations that can be performed on $n$ distinct symbols, with group operation being the composition of permutations. The order of this group is $n!$ and $D_n$ is always a subgroup. Any permutation can be written as a composition of transpositions.
+
+The sign of a permutation $\sigma$ is defined to be $+1$ if a permutation contains an even number of transpositions and $-1$ for an odd number:$$\Huge \$$
