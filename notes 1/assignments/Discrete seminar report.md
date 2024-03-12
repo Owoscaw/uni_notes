@@ -16,6 +16,7 @@ Denote this new matrix as $M_1'$. We have that $\det(M_1)=\det(M_1')$, so expand
 
 The spanning tree of a graph is a subgraph that shares the same vertex set as the graph, which is also a tree. That is, every vertex in the graph is in the tree, the tree spans the graph. For any weighted graph, the minimum spanning tree (MST) is defined to be the spanning tree of least total weight. 
 
+## Prim's Algorithm:
 One way to find the MST of a weighted graph is through Prim's algorithm, the procedure of which is as follows:
 > From any weighted, connected graph $G=(V,E,\Phi_G)$, choose a vertex $v_1\in V$ and include this in $T_1=(\{v_1,\emptyset\})$
 > Find the edge of least weight in $G$ that connects any vertex in $T_k=(V_{T_k},E_{T_k})$ to a vertex not currently in $T_k$, but in $G$. That is the least weighted edge  $e\in E\setminus E_{T_k}$ such that $e=v_iv_j$ where $v_i\in V_{T_k}$ and $v_j\in V\setminus V_{T_k}$
@@ -23,3 +24,10 @@ One way to find the MST of a weighted graph is through Prim's algorithm, the pro
 > Repeat the previous two steps until $V_{T_k}=V$
 
 This algorithm naturally avoids creating cycles, since edges are only added if they connect a vertex in $T_k$ to a vertex not in $T_k$. Since this algorithm only terminates when $V_{T_k}=V$, both $G$ and $T$ share a vertex set, so the resulting tree must span.
+
+## Kruskal's algorithm:
+
+Another way to find the MST of a graph is by applying Kruskal's algorithm. The procedure for this algorithm is much simpler than Prim's with the only rule being:
+> Add the edge of least weight that does not cause a cycle
+
+This will terminate when it is not possible to add an edge without creating a cycle. Since the original graph was connected, 
