@@ -27,7 +27,7 @@ This algorithm naturally avoids creating cycles, since edges are only added if t
 
 ## Kruskal's algorithm:
 
-Another way to find the MST of a graph is by applying Kruskal's algorithm. The procedure for this algorithm is much simpler than Prim's with the only rule being:
+Another way to find the MST of a connected graph is by applying Kruskal's algorithm. The procedure for this algorithm is much simpler than Prim's with the only rule being:
 > Add the edge of least weight that does not cause a cycle
 
-This will terminate when it is not possible to add an edge without creating a cycle. Since the original graph was connected, 
+This will terminate when it is not possible to add an edge without creating a cycle. Assume that the algorithm terminates without adding a vertex. Since the original graph was connected, there exists a path between any two vertices and therefore there must be a an edge connecting any vertex to the rest of the graph. That is, $d_G(e)\geq1$ for all $e\in E$. Since the algorithm terminated without adding a vertex, adding the edge that connects the vertex must create a cycle. In this scenario, the vertex would be connected to some other vertex in the tree, which is a contradiction. Therefore this process always produces a tree, since we have shown connectedness is preserved, and the algorithm preserves acyclicity by nature.
