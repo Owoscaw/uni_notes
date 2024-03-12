@@ -57,6 +57,6 @@ Let $G,H$ be two groups. The direct product $G\times H$ is defined by an operato
 
 # Rotations and subgroups:
 
-Consider [[Real vector spaces|$\Re^n$]] with respect to the standard [[Inner product spaces|inner product]]:$$\Huge (\underline v,\underline w)=\underline w^T \underline v$$
+Consider [[Real vector spaces|$\Re^n$]] with respect to the standard [[Inner product spaces|inner product]]:$$\Huge (\underline v,\underline w)=\underline w^T \underline v$$Orthogonal transformations are linear transformations $\underline v\mapsto M \underline v$ that preserve lengths and angles. We propose that the group of orthogonal transformations on $\Re^n$ is the group [[Norms and orthogonality#Orthogonality and Unitary diagonalisation|$O(n)$]]. In order for $M$ to be an orthogonal transformation we require that it preserves lengths and angles of any two vectors $\underline v$
 
  
