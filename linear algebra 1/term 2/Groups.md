@@ -65,4 +65,4 @@ Consider a regular polygon in the plane with $n$ sides, the rotations that leave
 
 The symmetric group of degree $n$, denoted by $S_n$, is the group whose elements are all permutations that can be performed on $n$ distinct symbols, with group operation being the composition of permutations. The order of this group is $n!$ and $D_n$ is always a subgroup. Any permutation can be written as a composition of transpositions.
 
-The sign of a permutation $\sigma$ is defined to be $+1$ if a permutation contains an even number of transpositions and $-1$ for an odd number:$$\Huge \$$
+The sign of a permutation $\sigma$ is defined to be $+1$ if a permutation contains an even number of transpositions and $-1$ for an odd number:$$\Huge \text{sgn}(\sigma)=\begin{cases}+1&\text{for even transpositions}\\-1&\text{for odd transpositions}\end{cases}$$We can then define the alternating group:$$\Huge A_n=\{\sigma\in S_n:\text{sgn}(\sigma)=+1\}$$Which is a subgroup of $S_n$, with degree $\frac{n!}{2}$.
