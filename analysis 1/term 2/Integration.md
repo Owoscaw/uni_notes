@@ -50,3 +50,11 @@ We can define functions using the integral as follows:$$\Huge F(x)=\int_a^xf(t)d
 > $\lim_{x\to \infty}L(x)=\infty$ and $\lim_{x\to 0^+}L(x)=-\infty$
 
 The fifth property implies the sixth by setting $x=1$ in the inequality. The fourth and the sixth properties imply the first half of the seventh, while the third property implies the second half. To prove the third:$$\large L(xy)=\int_1^{xy}\frac{dt}{t}=\int_{\frac{1}{x}}^y\frac{ds}{s}=\int_{\frac{1}{x}}^1\frac{ds}{s}+\int_1^y\frac{ds}{s}=\int_1^x\frac{du}{u}+L(y)=L(x)+L(y)$$Where $s=\frac{t}{x}$ and $u=xs$. Using $L(1)=0$ and taking $y=\frac{1}{x}$ we get $L(\frac{1}{x})=-L(x)$, proving the third property. Let $g(x)=x-L(x+1)$, then $g'(x)=1-\frac{1}{1+x}\geq0$, which implies the LHS of the inequality for property five. Let $h(x)=L(x+1)-\frac{x}{x+1}$, then $h'(x)=\frac{1}{x+1}-\frac{x+1-x}{(x+1)^2}=\frac{1}{x+1}(1-\frac{1}{1+x})\geq0$, which implies the RHS. Since $L$ is monotonically increasing on $(0,\infty)$ with $\lim_{x\to \infty}L(x)=\infty$ and $\lim_{x\to0^+}L(x)=-\infty$ and $L$ is continuous, there exists an inverse function for $L$ defined as $E:\Re\mapsto(0,\infty)$. From this we can define Euler's number as the unique number $e>0$ with $L(e)=1$.
+
+# Uniform convergence and Integration:
+
+Let $I=[a,b]$ and $(f_n)$ be a sequence of regulated function on $I$ with $f_n\to f$ uniformly. Then:
+> The limit function $f$ is regulated
+> $$\Huge \int_a^bf(x)dx=\lim_{n\to \infty}\int_a^bf_n(x)dx$$
+
+To prove the first statement, let $\epsilon>0$. Since $f_n\to f$ uniformly, there exists $N\in \mathbb{N}$ such that for all $n\geq N$ we have $|f(x)-f_n(x)|<\epsilon$ for all $x\in [a,b]$. There exists a step function $g_n:[a,b]\mapsto\Re$ such that $|g_n(x)-f_n(x)|<\epsilon$ for all $x\in[a,b]$. Now $|f(x)-g_n(x)|\leq|f()|$
