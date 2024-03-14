@@ -47,4 +47,4 @@ Since the MST of a weighted, connected graph does not contain a cycle, and is de
 > Take the lower bound to be the sum of the weights of the RMST and the two edges, $w(LB_v)=w(RMST(v))+w(e_1)+w(e_2)$
 > Repeat this for every vertex in $V$, taking the best lower bound to be the greatest lower bound found
 
-Assume that this does not produce a lower bound, that is $w(LB)>w(OS)$, and that this lower bound was obtained from initially removing vertex $v$. 
+Take the optimal solution, $OS$, and a lower bound, $LB$. $OS$ will have one possible cycle, which is Hamiltonian. Now remove the vertex from $OS$ that was removed in $LB$, including the two edges in which it appears. Note that the degree of all vertices in a Hamiltonian cycle
