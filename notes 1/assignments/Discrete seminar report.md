@@ -40,4 +40,8 @@ The Travelling Salesman Problem (TSP) is a classic problem in decision mathemati
 
 ## TSP-lower bound:
 
-Since the MST of a weighted, connected graph does not contain a cycle, and is defined to be the spanning tree of least weight, the weight of a graph's MST is itself a lower bound to the TSP. However this can be refined by using the Minimum Connector / Edge removal Residual Minimum Spanning Tree algorithms.
+Since the MST of a weighted, connected graph does not contain a cycle, and is defined to be the spanning tree of least weight, the weight of a graph's MST is itself a lower bound to the TSP. However this can be refined by using the Minimum Connector / Edge removal Residual Minimum Spanning Tree algorithms. This algorithm is as follows:
+> Remove any vertex $v\in V$ from the connected, weighted graph $G=(V,E)$, including any edges in which it appears
+> Find the Residual Minimum Spanning Tree, $RMST(v)$, having done this
+> Add the removed vertex back, via the two edges of least weight, $e_1=\min\{v\,\Phi(v)\},e_2=\min\{v,\Phi(v)\}\setminus\{e_1\}$
+> Repeat this for every vertex in 
