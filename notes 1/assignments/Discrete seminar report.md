@@ -33,3 +33,7 @@ Another way to find the MST of a connected graph is by applying Kruskal's algori
 > Add the edge of least weight that does not cause a cycle
 
 This will terminate when it is not possible to add an edge without creating a cycle. Assume that the algorithm terminates without adding a vertex. Since the original graph was connected, there exists a path between any two vertices and therefore there must be a an edge connecting any vertex to the rest of the graph. That is, $d_G(e)\geq1$ for all $e\in E$. Since the algorithm terminated without adding a vertex, adding the edge that connects the vertex must create a cycle. In this scenario, the vertex would be connected to some other vertex in the tree, which is a contradiction. Therefore this process always produces a tree, since we have shown connectedness is preserved, and the algorithm preserves acyclicity by nature. Due to the simpler algorithm, Kruskal's algorithm is often preferred when constructing a computer model of graphs.
+
+# The Travelling Salesman Problem:
+
+The Travelling Salesman Problem (TSP) is a classic problem in decision mathematics. This involves finding the path of least weight in a weighted network that starts at a given vertex, traversing to all other vertices in the graph and returning to the starting vertex. There does
