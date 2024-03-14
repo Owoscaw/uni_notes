@@ -28,6 +28,7 @@ Point estimates are single values of $\theta$ that are a "best guess" value obta
 > Posterior Mean, $E[\theta|x]=\int \theta f(\theta|x)d \theta$. This is simply the posterior expectation
 
 
-# Credible Intervals:$
+# Credible Intervals:
 
-A $1-\alpha$ credible interval is derived from the PDF of $\theta$ such that the interval contains $\theta$ with probability $1-\alpha$. A $1-\alpha$ credible interval $[l,u]$ for a random variable $\theta$ satisfies the following:$$\Huge P(1\leq \theta\leq u)=P(\theta\in[l,u])=1-\alpha$$Similarly, a $1-\alpha$ credible interval for $\theta$ given $X=x$ satisfies:$$\Huge P(l\leq \theta\leq u|X=x)=P(\theta\in [l,u]|X=x)=1-\alpha$$Note that $l,u$ are constants, not random variables.
+A $1-\alpha$ credible interval is derived from the PDF of $\theta$ such that the interval contains $\theta$ with probability $1-\alpha$. A $1-\alpha$ credible interval $[l,u]$ for a random variable $\theta$ satisfies the following:$$\Huge P(1\leq \theta\leq u)=P(\theta\in[l,u])=1-\alpha$$Similarly, a $1-\alpha$ credible interval for $\theta$ given $X=x$ satisfies:$$\Huge P(l\leq \theta\leq u|X=x)=P(\theta\in [l,u]|X=x)=1-\alpha$$Note that $l,u$ are constants, not random variables. There are two standard ways to construct a credible interval:
+> Equal-tailed intervals. Here, the interval is constructed such that $P(\theta<l)=P(\theta>u)=\frac{\alpha}{2}$, so that there is equal probability of falling in each tail of the distribution. If $\theta$ has a standard distribution, the CDF $F_\theta$ can be used to find values of $l,u$. We required$$\Huge F_\theta(l)=\frac{\alpha}{2},\,\,F_\theta(u)=1-\frac{\alpha}{2}$$
