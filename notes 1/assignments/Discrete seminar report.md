@@ -36,4 +36,4 @@ This will terminate when it is not possible to add an edge without creating a cy
 
 # The Travelling Salesman Problem:
 
-The Travelling Salesman Problem (TSP) is a classic problem in decision mathematics. This involves finding the path of least weight in a weighted network that starts at a given vertex, traversing to all other vertices in the graph and returning to the starting vertex. There does
+The Travelling Salesman Problem (TSP) is a classic problem in decision mathematics. This involves finding the path of least weight in a weighted network that starts at a given vertex, traversing to all other vertices in the graph and returning to the starting vertex. There does not exist an efficient algorithm to find the optimal solution for the TSP
