@@ -44,4 +44,5 @@ Since the MST of a weighted, connected graph does not contain a cycle, and is de
 > Remove any vertex $v\in V$ from the connected, weighted graph $G=(V,E)$, including any edges in which it appears
 > Find the Residual Minimum Spanning Tree, $RMST(v)$, having done this
 > Add the removed vertex back, via the two edges of least weight, $e_1=\min\{v\,\Phi(v)\},e_2=\min\{v,\Phi(v)\}\setminus\{e_1\}$
-> Repeat this for every vertex in 
+> Take the lower bound to be the sum of the weights of the RMST and the two edges, $w(LB_v)=w(RMST(v))+w(e_1)+w(e_2)$
+> Repeat this for every vertex in $V$, taking the best lower bound to be the 
