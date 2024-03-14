@@ -33,4 +33,11 @@ Point estimates are single values of $\theta$ that are a "best guess" value obta
 A $1-\alpha$ credible interval is derived from the PDF of $\theta$ such that the interval contains $\theta$ with probability $1-\alpha$. A $1-\alpha$ credible interval $[l,u]$ for a random variable $\theta$ satisfies the following:$$\Huge P(l\leq \theta\leq u)=P(\theta\in[l,u])=1-\alpha$$Similarly, a $1-\alpha$ credible interval for $\theta$ given $X=x$ satisfies:$$\Huge P(l\leq \theta\leq u|X=x)=P(\theta\in [l,u]|X=x)=1-\alpha$$Note that $l,u$ are constants, not random variables. There are two standard ways to construct a credible interval:
 > Equal-tailed intervals. Here, the interval is constructed such that $P(\theta<l)=P(\theta>u)=\frac{\alpha}{2}$, so that there is equal probability of falling in each tail of the distribution. If $\theta$ has a standard distribution, the CDF $F_\theta$ can be used to find values of $l,u$. We required$$\Huge F_\theta(l)=\frac{\alpha}{2},\,\,F_\theta(u)=1-\frac{\alpha}{2}$$
 > 
-> Highest Posterior Density intervals. This interval is the narrowest possible interval (smallest $|l-u|$) that we can construct with the given restriction ($P(\theta\in[l,u])=1-\alpha$). Such intervals contain the regions of highest probability density
+> Highest Posterior Density intervals. This interval is the narrowest possible interval (smallest $|l-u|$) that we can construct with the given restriction ($P(\theta\in[l,u])=1-\alpha$). Such intervals contain the regions of highest probability density.
+
+# Normal approximation to Credible Intervals:
+
+If the distribution of $\theta$ is known, and we can find its CDF, it is possible to calculate $[l,u]$ exactly by integration tables or computers. However we can adopt a normal approximation to the credible interval if this is not the case:
+
+Given a random variable $\theta$, an approximate $1-\alpha$ credible interval for $\theta$ is given by:$$\Huge E[\theta]\pm Z_{\frac{\alpha}{2}}^*\sqrt{Var[\theta]}$$Assuming the approximation $\theta\approx\sim N(E[\theta],Var[\theta])$. This is often done using the posterior distribution, $\theta|x$, giving:$$\Huge E[\theta|x]\pm Z_{\frac{\alpha}{2}}^*\sqrt{Var[\theta|x]}$$This is a good approximation for a uni-modal, symmetric, and "well peaked" distribution.
+ 
