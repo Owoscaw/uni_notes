@@ -51,6 +51,8 @@ We propose that if $G$ and $H$ are isomorphic, then the order of any $g\in G$ co
 
 Using this fact, we can deduce that $\mathbb{Z}_4$ and the Klein $4$-group are not isomorphic, since in the Klein group, $a,b,c$ all have order $2$, whereas in $\mathbb{Z}_4$ only $[2]$ has order $2$.
 
+Note that $\mathbb{Z}_3^\times$ is not a group since, taking $[1]$ as the identity does not allow for $[0]$ to have an inverse, so we remove $[0]$ and consider $\mathbb{Z}_3^\times=\{[1],[2]\}$. Looking at the group table for this, one can see that it is isomorphic to $\mathbb{Z}_2^+$. In general, $\mathbb{Z}_n^\times$ can be made into a proper group by keeping only integers $k$ such that the greatest common divisor of $k,n$ is $1$.
+
 # Direct product:
 
 Let $G,H$ be two groups. The direct product $G\times H$ is defined by an operator $\bullet$, where elements of $G\times H$ are the ordered pairs $(g,h)$ for $g\in G,h\in H$. The group operation $\bullet_{G\times H}$ works component wise:$$\Huge (g_1,h_1)\bullet(g_2,h_2)=(g_1\cdot_Gg_2,h_1\cdot_Hh_2)$$Where $\cdot_G,\cdot_H$ are the respective group operations on $G,H$. We propose that the direct product of two groups $G,H$ is a group with order:$$\Huge |G\times H|=|G|\cdot|H|$$
