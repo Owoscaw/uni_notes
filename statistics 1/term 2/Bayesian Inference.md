@@ -43,3 +43,8 @@ Given a random variable $\theta$, an approximate $1-\alpha$ credible interval fo
 
 # Conjugate Analysis for Normal Data:
 
+When data is normally distributed, we have $X_i\sim N(\mu, \sigma^2)$. Assume $\sigma$ to be known and fixed, we then take $\theta=\mu$. The conjugate prior family for the mean $\mu$ is itself normal.
+
+We define the precision, $\tau$, of a random variable to be the inverse of variance:$$\Huge \tau=\frac{1}{Var[X]}=\frac{1}{\sigma^2}$$We can then write $X\sim N(\mu,\frac{1}{\tau})$, making the PDF:$$\Huge f(x|\mu,\tau)=\sqrt{\frac{\tau}{2\pi}}e^{-\frac{\tau}{2}(x-\mu )^2}$$
+## The normal-normal method:
+Let $X_1,\dots,X_n$ be independently identically distributed with $X_i\sim N(\mu,\frac{1}{\tau})$ and precision $\tau>0$ known. Suppose our prior PDF for uncertain $\mu$ is $\mu\sim N(m,\frac{1}{t})$ with $t>0$.
