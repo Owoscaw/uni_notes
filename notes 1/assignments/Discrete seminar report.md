@@ -47,6 +47,9 @@ Since the MST of a weighted, connected graph does not contain a cycle, and is de
 > Take the lower bound to be the sum of the weights of the RMST and the two edges, $w(LB_v)=w(RMST(v))+w(e_1)+w(e_2)$
 > Repeat this for every vertex in $V$, taking the best lower bound to be the greatest lower bound found
 
-Take the optimal solution, $OS$, and a lower bound, $LB$. $OS$ will have one possible cycle, which is Hamiltonian. Now remove the vertex from $OS$ that was removed in $LB$, including the two edges in which it appears. Note that the degree of all vertices in a Hamiltonian cycle is two. These edges removed correspond to the minimum two edges we add when calculating $LB$. Since in our algorithm, we consider the two edges of least weight, these two edges make $w(LB)$ less than or equal to $w(OS)$. Therefore we have that the lower bounds produced by this algorithm are indeed lower bounds.
+Take the optimal solution, $OS$, and a lower bound, $LB$. Now remove the vertex from $OS$ that was removed in $LB$, including the edges in which it appears. These edges removed correspond to the minimum two edges we add when calculating $LB$. Since in our algorithm, we consider the two edges of least weight, these two edges make $w(LB)$ less than or equal to $w(OS)$. Therefore we have that the lower bounds produced by this algorithm are indeed lower bounds.
 
 ## TSP-upper bound:
+
+A simple upper bound for the TSP is found by doubling the weight of the graph's MST. While this tends not to be a very good upper bound, it is one nonetheless and will always work. This can be visualised in the example:
+![[Discrete seminar report .excalidraw]]
