@@ -47,4 +47,6 @@ When data is normally distributed, we have $X_i\sim N(\mu, \sigma^2)$. Assume $\
 
 We define the precision, $\tau$, of a random variable to be the inverse of variance:$$\Huge \tau=\frac{1}{Var[X]}=\frac{1}{\sigma^2}$$We can then write $X\sim N(\mu,\frac{1}{\tau})$, making the PDF:$$\Huge f(x|\mu,\tau)=\sqrt{\frac{\tau}{2\pi}}e^{-\frac{\tau}{2}(x-\mu )^2}$$
 ## The normal-normal method:
-Let $X_1,\dots,X_n$ be independently identically distributed with $X_i\sim N(\mu,\frac{1}{\tau})$ and precision $\tau>0$ known. Suppose our prior PDF for uncertain $\mu$ is $\mu\sim N(m,\frac{1}{t})$ with $t>0$.
+Let $X_1,\dots,X_n$ be independently identically distributed with $X_i\sim N(\mu,\frac{1}{\tau})$ and precision $\tau>0$ known. Suppose our prior PDF for uncertain $\mu$ is $\mu\sim N(m,\frac{1}{t})$ with $t>0$. Then our posterior PDF for $\mu|x$ where $x=(x_1,\dots,x_n)$ is also normal such that:$$\Huge \mu|x\sim N\left(m_1,\frac{1}{t_1}\right)$$Where $t_1=t+n\tau$ and $m_1=\frac{tm+n\tau\bar x}{t+n\tau}$. The data precision is $n\tau$, which is equal to $\frac{n}{\sigma^2}=\frac{1}{\frac{\sigma^2}{n}}$, which is the precision of the sample mean, since $\bar X\sim N\left(\mu,\frac{\sigma^2}{n}\right)$. The core for a normal density 
+
+"i want to give oli sykes a blumpkin" - aiden 2024
