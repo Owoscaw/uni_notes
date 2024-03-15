@@ -58,7 +58,8 @@ A simple upper bound for the TSP is found by doubling the weight of the graph's 
 
 # Rooted Binary trees:
 
-A rooted binary tree is an unlabelled tree with one unique vertex called the root. From the root, vertices branch upwards either to the left or the right. Subsequent vertices can branch in a similar manner, with the degree of any vertex being at most $3$.
+A rooted binary tree is an unlabelled tree with one unique vertex called the root. From the root, vertices branch upwards either to the left or the right. Subsequent vertices can branch in a similar manner, with the degree of any vertex being at most $3$. The distinct binary trees with $4$ vertices can be seen here:![[n=4 rooted binary trees]]Observe that each branch from the root is either empty, or can itself be considered a binary tree (ignoring any vertices below it). It is therefore possible to formulate the number of distinct binary trees with $n$ vertices:$$\Huge b_n=b_0b_{n-1}+b_1b_{n-2}+\dots+b_{n-2}b_1+b_{n-1}b_0$$With $n\geq1$ and $b_0=1$. Each $b_ib_j$ term represents the product of the number of ways to create a binary tree from $i$ vertices, initially branching to the left of the root and the number of ways to create a binary tree from $j$ vertices, initially branching to the right of the root. It follows that $n=i+j$
+
 
 
 ![[plagarism declarastion.png]]
