@@ -49,7 +49,12 @@ Since the MST of a weighted, connected graph does not contain a cycle, and is de
 
 Take the optimal solution, $OS$, and a lower bound, $LB$. Now remove the vertex from $OS$ that was removed in $LB$, including the edges in which it appears. These edges removed correspond to the minimum two edges we add when calculating $LB$. Since in our algorithm, we consider the two edges of least weight, these two edges make $w(LB)$ less than or equal to $w(OS)$. Therefore we have that the lower bounds produced by this algorithm are indeed lower bounds.
 
+Here is an example of a lower bound found using this algorithm, where edge weights are omitted. The RMST is shown with white edges, and the two edges of least weight used to reconnect $v$ are shown in blue:
+![[Discrete seminar report _0.excalidraw]]
+
 ## TSP-upper bound:
 
-A simple upper bound for the TSP is found by doubling the weight of the graph's MST. While this tends not to be a very good upper bound, it is one nonetheless and will always work. This can be visualised in the example:
-![[Discrete seminar report .excalidraw]]
+A simple upper bound for the TSP is found by doubling the weight of the graph's MST. While this tends not to be a very good upper bound, it is one nonetheless and will always work. This can be visualised in the example, where edge weights are omitted:
+![[Discrete seminar report .excalidraw]]Upper bounds found in this manner can be improved by looking for shortcuts.
+
+# Binary trees:
