@@ -12375,28 +12375,28 @@ tags: [excalidraw]
 			]
 		},
 		{
-			"id": "PKoPRYZKrUnVY2mG-dopj",
 			"type": "freedraw",
-			"x": 291.6784305172366,
-			"y": 207.56996368194797,
-			"width": 89.23076923076928,
-			"height": 75.89749849759619,
-			"angle": 0,
-			"strokeColor": "#e03131",
-			"backgroundColor": "transparent",
+			"version": 47,
+			"versionNonce": 1169467193,
+			"isDeleted": false,
+			"id": "PKoPRYZKrUnVY2mG-dopj",
 			"fillStyle": "hachure",
 			"strokeWidth": 0.5,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
+			"angle": 0,
+			"x": 291.6784305172366,
+			"y": 207.56996368194797,
+			"strokeColor": "#e03131",
+			"backgroundColor": "transparent",
+			"width": 89.23076923076928,
+			"height": 75.89749849759619,
+			"seed": 830792983,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
-			"seed": 830792983,
-			"version": 47,
-			"versionNonce": 1169467193,
-			"isDeleted": false,
-			"boundElements": null,
+			"boundElements": [],
 			"updated": 1710509696996,
 			"link": null,
 			"locked": false,
@@ -12586,6 +12586,8 @@ tags: [excalidraw]
 					-1.0256723257211888
 				]
 			],
+			"lastCommittedPoint": null,
+			"simulatePressure": false,
 			"pressures": [
 				0.205078125,
 				0.2314453125,
@@ -12633,16 +12635,11 @@ tags: [excalidraw]
 				0.443359375,
 				0.056640625,
 				0
-			],
-			"simulatePressure": false,
-			"lastCommittedPoint": [
-				-21.53846153846166,
-				-1.0256723257211888
 			]
 		}
 	],
 	"appState": {
-		"theme": "dark",
+		"theme": "light",
 		"viewBackgroundColor": "#ffffff",
 		"currentItemStrokeColor": "#e03131",
 		"currentItemBackgroundColor": "transparent",
