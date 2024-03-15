@@ -40,4 +40,6 @@ A $1-\alpha$ credible interval is derived from the PDF of $\theta$ such that the
 If the distribution of $\theta$ is known, and we can find its CDF, it is possible to calculate $[l,u]$ exactly by integration tables or computers. However we can adopt a normal approximation to the credible interval if this is not the case:
 
 Given a random variable $\theta$, an approximate $1-\alpha$ credible interval for $\theta$ is given by:$$\Huge E[\theta]\pm Z_{\frac{\alpha}{2}}^*\sqrt{Var[\theta]}$$Assuming the approximation $\theta\approx\sim N(E[\theta],Var[\theta])$. This is often done using the posterior distribution, $\theta|x$, giving:$$\Huge E[\theta|x]\pm Z_{\frac{\alpha}{2}}^*\sqrt{Var[\theta|x]}$$This is a good approximation for a uni-modal, symmetric, and "well peaked" distribution.
- 
+
+# Conjugate Analysis for Normal Data:
+
