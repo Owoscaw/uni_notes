@@ -65,4 +65,6 @@ $$\Huge f(x)=\sum_{k=0}^\infty\frac{1}{2^k}\cos(15^k\pi x)$$This is continuous a
 
 # Improper Integrals:
 
-Let $f$ be a continuous function on an interval $[a,b)$. We then define the improper integral by:$$\Huge \int_a^bf(x)dx=\lim_{c\to b^-}\int_a^cf(x)dx$$We call the integral convergent or divergent depending on whether this limit exists. If $f$ is continuous on $(a,b]$ we have a similar definition:$$\Huge \int_a^bf(x)dx=\lim_{c\to a^+}\int_c^bf(x)dx$$Then for continuity on $(a,b)$ pick $c\in(a,b)$ and consider:$$\Huge \int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$
+Let $f$ be a continuous function on an interval $[a,b)$. We then define the improper integral by:$$\Huge \int_a^bf(x)dx=\lim_{c\to b^-}\int_a^cf(x)dx$$We call the integral convergent or divergent depending on whether this limit exists. If $f$ is continuous on $(a,b]$ we have a similar definition:$$\Huge \int_a^bf(x)dx=\lim_{c\to a^+}\int_c^bf(x)dx$$Then for continuity on $(a,b)$ pick $c\in(a,b)$ and consider:$$\Huge \int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$Take $f(x)=\cos(x)$ on $[0,\infty]$ for example. $\int_0^\infty\cos(x)dx=\lim_{c\to \infty}[\sin(x)]_0^c=\lim_{c\to\infty}\sin(c)$, which is undefined. So we say that this integral is divergent.
+
+## Comparison Test for integrals:
