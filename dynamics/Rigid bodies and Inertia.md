@@ -12,6 +12,5 @@ The position of a rigid body, rotating about a fixed axis, is specified by an an
 ## Total energy:
 If the external forces are conservative, one can define a potential energy $V$ by summing or integrating over all particles, then $E=K+V$ is conserved. Using $\dot E=0$ gives the equation of motion:$$\Huge I\ddot \theta=-V'(\theta)$$
 
-Consider a light rod of length $L$ pivoting at one end, swinging in a vertical plane with gravity $g$. There is a mass $m$ at the free end, and a mass of $3m$ a distance $\frac{L}{3}$ from the pivot. The centre of mass is then halfwau
-
+Consider a light rod of length $L$ pivoting at one end, swinging in a vertical plane with gravity $g$. There is a mass $m$ at the free end, and a mass of $3m$ a distance $\frac{L}{3}$ from the pivot. The centre of mass is then halfway along the rod. Moment of inertia is then $I=3m(\frac{L}{3})^2+mL^2=\frac{4}{3}mL^2$. When considering potential, an equivalent system would be a rod of length $\frac{L}{2}$ with a mass $4m$ on the non-pivoting end. Therefore we can say that total energy is:$$\Huge \frac{1}{2}I\dot\theta^2+(4m)g\left(\frac{L}{2}\right)(1-\cos\theta)=\frac{2}{3}mL^2\dot\theta^2+2mgL(1-\cos\theta)$$At time $0$, $\theta=0,u=L\dot\theta$, making energy:$$\Huge E=\frac{2}{3}m$$
 
