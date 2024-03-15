@@ -68,3 +68,9 @@ $$\Huge f(x)=\sum_{k=0}^\infty\frac{1}{2^k}\cos(15^k\pi x)$$This is continuous a
 Let $f$ be a continuous function on an interval $[a,b)$. We then define the improper integral by:$$\Huge \int_a^bf(x)dx=\lim_{c\to b^-}\int_a^cf(x)dx$$We call the integral convergent or divergent depending on whether this limit exists. If $f$ is continuous on $(a,b]$ we have a similar definition:$$\Huge \int_a^bf(x)dx=\lim_{c\to a^+}\int_c^bf(x)dx$$Then for continuity on $(a,b)$ pick $c\in(a,b)$ and consider:$$\Huge \int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$Take $f(x)=\cos(x)$ on $[0,\infty]$ for example. $\int_0^\infty\cos(x)dx=\lim_{c\to \infty}[\sin(x)]_0^c=\lim_{c\to\infty}\sin(c)$, which is undefined. So we say that this integral is divergent.
 
 ## Comparison Test for integrals:
+Let $0\leq f\leq g$ be two continuous functions on $[a,b)$. If the improper integral $\int_a^bg(x)dx$ converges, so does $\int_a^bf(x)dx$. Also, if the improper integral $\int_a^bf(x)dx$ diverges, so does $\int_a^bg(x)dx$.
+
+Let $f$ be a continuous function on $[a,b)$. If the improper integral $\int_a^b|f(x)|dx$ converges, we say that the improper integral $\int_a^bf(x)dx$ converges absolutely. In the case where the integral converges, but the absolute integral diverges we say that the integral converges conditionally.
+
+## Absolute convergence theorem:
+Let $f$ be a continuous function on $[a,b)$. If $\int_a^bf(x)dx$ is absolute convergent, then $\int_a^bf(x)dx$ is convergent. To prove this, let $\int_a^bf(x)dx$ be absolutely convergent. Then $0\leq f(x)+|f(x)|\leq2|f(x)|$ for all $x\in[a,b)$. By comparison test we get that $\int_a^bf(x)+|f(x)|dx$ is convergent. Now:$$\large \int_a^bf(x)dx=\int_a^bf(x)+|f(x)|-|f(x)|dx=\int_a^bf(x)+|f(x)|dx-\int_a^b|f(x)|dx$$All of these are convergent, so the LHS must be convergent.
