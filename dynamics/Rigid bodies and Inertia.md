@@ -11,3 +11,7 @@ The position of a rigid body, rotating about a fixed axis, is specified by an an
 
 ## Total energy:
 If the external forces are conservative, one can define a potential energy $V$ by summing or integrating over all particles, then $E=K+V$ is conserved. Using $\dot E=0$ gives the equation of motion:$$\Huge I\ddot \theta=-V'(\theta)$$
+
+Consider a light rod of length $L$ pivoting at one end, swinging in a vertical plane with gravity $g$. There is a mass $m$ at the free end, and a mass of $3m$ a distance $\frac{L}{3}$ from the pivot. The centre of mass is then halfwau
+
+
