@@ -6,6 +6,8 @@ A function on a closed interval $[a,b]$ is called a step function if there exist
 > The product $fg(x)=f(x)g(x)$ is also a step function
 > The absolute value $|f|(x)=|f(x)|$ is also a step function
 
+# Regulated functions:
+
 Let $f$ be a function on a closed interval $[a,b]$. $f$ is a regulated function if there exists a sequence of step functions $f_n$ converging [[Sequences of functions, uniform convergence, and Limit theorems#Uniform convergence preserves continuity|uniformly]] to $f$. That is for all $\epsilon>0$ there exists $N\in \mathbb{N}:|f_n(x)-f(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
 
 Let $f$ be a function on a compact interval $[a,b]$. Then $f$ is regulated if and only if for all $\epsilon>0$ there exists a step function $g$ on $[a,b]$ such that $|f(x)-g(x)|<\epsilon$ for all $x\in[a,b]$. Assume that $f$ is regulated, then there is a sequence $(g_n)_{n\in \mathbb{N}}$ of step functions converging uniformly to $f$. Given $\epsilon>0$ then there is $N$ that satisfies the definition for a regulated function, taking $g=g_n$. So we get the forwards implication. For $n\in \mathbb{N}$ take $\epsilon=\frac{1}{n}$, and take $g_n=g$ where $g$ satisfies $|f(x)-g(x)|<\epsilon$. Given $\epsilon>0$ take $N$ with $\frac{1}{N}<\epsilon$. Then for $n\geq N$ we have $\frac{1}{n}\leq \frac{1}{N}<\epsilon$ and we get the statement as required.
