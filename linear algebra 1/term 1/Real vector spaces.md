@@ -98,6 +98,8 @@ Let $V$ be a vector space of dimension $k$, then let $v_1,\dots,v_l\in V$. Then 
 This is proven as follows:
 ![[basis tautology]]
 
+# Rank and nullity
+
 Let $A\in M_{n\times k}(\Re)$, then:
 > The column space of $A$ is the subspace of $\Re^n$ spanned by the columns of $A$. That is, if $A$ is written as the matrix $\begin{pmatrix}\underline c_1&\dots&\underline c_k\end{pmatrix}$, then the column space of $A$ is $span(\underline c_1,\dots,\underline c_2)$ We then define:$$\Huge colrank(A):=dim(columnspace(A))$$
 > Similarly, the row space of $A$ is the subspace of $\Re^k$ spanned by the transposes of the rows of $A$. That is, if $A$ is written as the matrix $\begin{pmatrix}\underline r_1\\\vdots\\\underline r_n\end{pmatrix}$, then the row space of $A$ is $span(\underline r_1,\dots,\underline r_n)$ We then define:$$\Huge rowrank(A):=dim(rowspace(A))$$
