@@ -1,4 +1,4 @@
-
+	
 A real [[Vector space definitions|vector space]] is a non-empty set $V$ with two operations:
 > Addition:$$\Huge V\times V\mapsto V$$
 > Scalar multiplication:$$\Huge \Re\times V\mapsto V$$
