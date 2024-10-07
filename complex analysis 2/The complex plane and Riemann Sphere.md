@@ -1,0 +1,1 @@
+A complex number takes the form:$$\Huge z=x+iy$$Where $x,y\in\Re$ and $i=\sqrt{-1}$, the imaginary unit. We can also write:$$\Huge z=\Re(z)+i\Im(z)$$Addition and subtraction work in the following way:$$\Huge z_1\pm z_2:=(x_1\pm x_2)$$
