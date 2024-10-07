@@ -13,4 +13,4 @@ Note that since:$$\Huge (x+iy)(x-iy)=x^2+y^2\in\Re_+$$Motivating the definition 
 
 # Polar form of complex numbers:
 
-We define for any $z\in \mathbb{C}$:$$\Huge |z|:=r,\,\,\arg(z):=\theta=\begin{cases}\arctan\left(\frac{y}{x}\right)&y,x>0\\\frac{\pi}{2}&x=0,y>0\\-\frac{\pi}{2}&x=0,y<0\\\arctan\left(\frac{y}{x}\right)+\pi&\end{cases}$$Where $r$ is the length of the vector connecting $z$ to the origin, and $\theta$ is the angle it makes with the positive real axis. Note that for any angle, a multiple of $2\pi$ can always be added to give the same complex number. Therefore we assume that $\theta\in(-\pi,\pi]$.
+We define for any $z\in \mathbb{C}$:$$\Huge |z|:=r,\,\,\arg(z):=\theta=\begin{cases}\arctan\left(\frac{y}{x}\right)&y,x>0\\\frac{\pi}{2}&x=0,y>0\\-\frac{\pi}{2}&x=0,y<0\\\arctan\left(\frac{y}{x}\right)+\pi& x<0,y<0\\\pi-\arctan\left(\frac{y}{x}\right)&x<0,y>0\end{cases}$$Where $r$ is the length of the vector connecting $z$ to the origin, and $\theta$ is the angle it makes with the positive real axis. Note that for any angle, a multiple of $2\pi$ can always be added to give the same complex number. Therefore we assume that $\theta\in(-\pi,\pi]$.
