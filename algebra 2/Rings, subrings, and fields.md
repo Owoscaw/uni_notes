@@ -11,3 +11,5 @@ We can then define a ring. A ring $R$ is a set together with two binary operatio
 > There exists an element $1\in R$ such that $1\cdot r=r\cdot r=r$ for all $r\in R$
 > For every $x,y,z\in R$ we have that $(x\cdot y)\cdot z=x\cdot(y\cdot z)$
 > For every $x,y,z\in R$ we have that $x\cdot(y+z)=x\cdot y+x\cdot z$ and $(y+z)\cdot x=y\cdot x+y\cdot z$
+
+Note that if $x\cdot y=y\cdot x$ for every $x,y\in R$, the ring is called commutative. For example $\mathbb{Z}$ is a commutative ring with regular addition and multiplication, however $M_n(\mathbb{Q})$ is not a commutative ring
