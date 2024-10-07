@@ -1,0 +1,3 @@
+Consider the integers, $\mathbb{Z}=\{0,\pm1,\pm2,...\}$. Addition, subtraction, and multiplication between any two integers always result in another integer. Consider the natural numbers, $\mathbb{N}=\{1,2,3,\dots\}$, addition and multiplication between any two natural numbers result in another natural number, however this does not hold for subtraction. Consider the rational numbers, $\mathbb{Q}=\{\frac{a}{b}:a,b\in\mathbb{Z},b\neq0\}$, all elementary operations on two numbers in this set result in another rational number.
+
+This motivates the definition of a ring. 
