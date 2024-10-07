@@ -2,4 +2,11 @@ A complex number takes the form:$$\Huge z=x+iy$$Where $x,y\in\Re$ and $i=\sqrt{-
 
 ## Conjugates:
 
-Note that since:$$\Huge (x+iy)(x-iy)=x^2+y^2\in\Re_+$$Motivating the definition of the conjugate:$$\Huge \bar z=x-iy=\Re(z)-i\Im(z)$$We can then define the modulus, $|z|$:$$\Huge |z|=\sqrt{z\bar z}=\sqrt{\Re(z)^2+\Im(z)^2}$$
+Note that since:$$\Huge (x+iy)(x-iy)=x^2+y^2\in\Re_+$$Motivating the definition of the conjugate:$$\Huge \bar z=x-iy=\Re(z)-i\Im(z)$$We can then define the modulus, $|z|$:$$\Huge |z|=\sqrt{z\bar z}=\sqrt{\Re(z)^2+\Im(z)^2}$$Note that there is no order on $\mathbb{C}$, it does not make sense to compare complex numbers, only their moduli. We can represent conjugacy by reflection in the real axis:![[argand diagram conjugates]]To "realize" the denominator when dividing complex numbers, one must multiply by the conjugate:$$\Huge \frac{z_1}{z_2}=\frac{z_1\bar z_2}{z_2\bar z_2}=\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}+i\frac{x_2y_1-x_1y_2}{x_2^2+y_2^2}$$A similar process exists for finding $z^{-1}$ by taking $z_1=1,z_2=z$.
+
+# Important properties of complex numbers:
+
+> $z_1z_2=0\iff z_1=0$ or $z_2=0$
+> $|z|=\sqrt{z\bar z}$
+> $\Re(z)=\frac{z+\bar z}{2}$ and $\Im(z)=\frac{z-\bar z}{2i}$
+> $z_{-1}=\frac{\bar z}{|z|^2}$
