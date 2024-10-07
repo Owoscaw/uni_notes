@@ -1,0 +1,1 @@
+A curve $C$ is a one dimensional subset of $\Re^n$ usually described by a parametrisation  
