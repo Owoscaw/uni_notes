@@ -13,9 +13,13 @@ $$Therefore, since this starts at the second order in $\epsilon$, we write:$$\Hu
 There is some functional $S[y(t)]$ such that physical paths, $y(t)$, are stationary with respect to $S$
 
 Consider a function $f(x)$ continuous in $[a,b]$ and such that $\int_a^bf(x)g(x)dx=0$ for all smooth $g(x)$ such that $g(a)=g(b)=0$. Then $f(x)=0$ for all $x\in(a,b)$. We assume that there exists some $p\in(a,b)$ such that $f(p)>0$. Then by continuity of $f$ there exists $p_0<p<p_1$ such that $f(x)>0\,\forall x\in(p_0,p_1)$. Choose:$$\Huge g(x)=\begin{cases}\nu(x-p_0)\nu(p_1-x)&x\in[p_0,p_1]\\0&\text{otherwise}\end{cases},\,\,\nu(s):=\exp{\left(-\frac{1}{s}\right)}$$With such choice of $g$, we consider our assumption:
-$$\Huge 0=\int_a^bf(x)g(x)dx=\int_{p_0}^{p_1}f(x)g(x)dx$$Inside this integral, we have that $f(x)>\delta>0$ in the integral (by assumption). We also have that $g(x)>0$ for all $x\in(p_0,p_1)$. Therefore we have that the above integral is greater than zero, since both functions are positive between the bounds of the integral. We therefore get a contradiction.
+$$\Huge 0=\int_a^bf(x)g(x)dx=\int_{p_0}^{p_1}f(x)g(x)dx$$Inside this integral, we have that $f(x)>\delta>0$ in the integral (by assumption). We also have that $g(x)>0$ for all $x\in(p_0,p_1)$. Therefore we have that the above integral is greater than zero, since both functions are positive between the bounds of the integral. We therefore get a contradiction. Therefore, since our assumptions hold (excersise), we have that $f(x)=0\,\forall x\in(a,b)$
 
 
 (excersise proove $f(p)<0$ and $g(x)$ smooth everywhere)
 
 We assume that $S[y(t)]$ takes form:$$\Huge S[y(t)]=\int_{t_0}^{t_1}L(y(t),\dot y(t))dt$$We also assume that $L$ is a function that maps $\Re^2$ to $\Re$.
+
+# Euler-Lagrange equations:
+
+For a particle moving in one dimension, $x(t)$, we have that:$$\Huge \frac{d}{dt}\left(\frac{\partial L(x,\dot x)}{\partial \dot x}\right)-\frac{\partial L(x,\dot x)}{\partial x}=0$$Now using the previous assumption about the form of $S[y(t)]$:$$\large S[x(t)]=\int_{t_0}^{t_1}L(x,\dot x)dt\implies S[x(t)+\delta x(t)]=\int_{t_0}^{t_1}L(x(t)+\delta x(t),\dot x(t)+\delta \dot x(t))dt$$Taking the Taylor expansion in $\delta x(t)$ and $\dot x(t)$:$$\large S[x(t)+\delta x(t)]=\int_{t_0}^{t_1}L(x(t),\dot x(t))+\delta x(t)\frac{\partial L(x(t),\dot x(t))}{\partial x(t)}+\delta \dot x(t)\frac{\partial L(x(t),\dot x(t))}{\partial x(t)}+\dots dt$$$$\Huge S[x+\delta x]=\int_{t_0}^{t_1}L(x,\dot x)+\delta x\frac{\partial L}{\partial x}+(\frac{d}{dt})$$
