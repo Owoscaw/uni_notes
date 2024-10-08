@@ -12,4 +12,6 @@ We can then define a ring. A ring $R$ is a set together with two binary operatio
 > For every $x,y,z\in R$ we have that $(x\cdot y)\cdot z=x\cdot(y\cdot z)$
 > For every $x,y,z\in R$ we have that $x\cdot(y+z)=x\cdot y+x\cdot z$ and $(y+z)\cdot x=y\cdot x+y\cdot z$
 
-Note that if $x\cdot y=y\cdot x$ for every $x,y\in R$, the ring is called commutative. For example $\mathbb{Z}$ is a commutative ring with regular addition and multiplication, however $M_n(\mathbb{Q})$ is not a commutative ring
+Note that if $x\cdot y=y\cdot x$ for every $x,y\in R$, the ring is called commutative. For example $\mathbb{Z}$ is a commutative ring with regular addition and multiplication, however $M_n(\mathbb{Q})$ is not a commutative ring for $n>1$. 
+
+Let $V$ be a complex [[Vector space definitions|vector space]] of dimension $n$. We define:$$\Huge End(V)=\{f:V\mapsto V:\text{f is a linear map}\}$$ To make this a ring, we need to define $+,\cdot$. Let $f,g\in End(V)$. Consider a definition for $(f+g)(v)$:$$\Huge (f+g)(v):=f(v)+g(v)\,\,\forall v\in V$$
