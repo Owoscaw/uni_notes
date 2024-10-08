@@ -10,4 +10,6 @@ Consider the Taylor expansion of $S[y(t)+\epsilon z(t)]$ in $\epsilon$:$$\Huge S
 $$Therefore, since this starts at the second order in $\epsilon$, we write:$$\Huge \delta S:=\mathcal{O}((\delta y)^2)$$
 # Action principle:
 
-There is some functional $S[y(t)]$ such that physical paths are
+There is some functional $S[y(t)]$ such that physical paths, $y(t)$, are stationary with respect to $S$
+
+Consider a function $f(x)$ continuous in $[a,b]$ and such that $\int_a^bf(x)g(x)dx=0$ for all smooth $g(x)$ such that $g(a)=g(b)=0$. Then $f(x)=0$ for all $x\in(a,b)$. We assume that there exists some $p\in(a,b)$ such that $f(p)>0$. Then by continuity of $f$ there exists $p_0<p<p_1$ such that $f(x)>0\,\forall x\in(p_0,p_1)$. Choose:$$\Huge g(x)=\begin{cases}\nu(x-p_0)\nu(p_1-x)\end{cases}$$
