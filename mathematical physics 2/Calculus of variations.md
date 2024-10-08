@@ -6,4 +6,8 @@ Generalising to a function, $\rho:\Re^n\mapsto\Re$, of $n$ variables, we have:$$
 
 A functional is a map from functions to numbers, for example:$$\Huge S[y(t)]=\int_{t_0}^{t_1}(y(t))^2dt$$A function, $y(t)$, can be stationary with respect to a functional, $S[y(t)]$ if:$$\Huge \left.\frac{dS[y(t)+\epsilon z(t)]}{d\epsilon}\right|_{\epsilon=0}=0$$For all smooth $z(t)$ such that $z(t_0)=z(t_1)=0$, where $\epsilon\in\Re$. This restriction ensures that the $z(t)$ term does not affect $y(t)$ at the endpoints $(t_0,t_1)$.
 
-Consider the Taylor expansion of $S[y(t)+\epsilon z(t)]$ in $\epsilon$
+Consider the Taylor expansion of $S[y(t)+\epsilon z(t)]$ in $\epsilon$:$$\Huge S[y(t)+\epsilon z(t)]=S[y(t)]+\epsilon\frac{dS[y(t)+\epsilon z(t)]}{d\epsilon}+\frac{1}{2}\epsilon^2\frac{d^2[y(t)+\epsilon z(t)]}{d\epsilon^2}+\dots$$Since the derivative of $S$ wrt $\epsilon$ vanishes at zero, all higher order term vanish. So we get:$$\large \delta S:=S[y(t)+\epsilon z(t)]-S[y(t)]=S[y(t)+\delta y(t)]-S[y(t)]=\frac{1}{2}\epsilon^2\frac{d^2S[y(t)+\delta y(t)]}{d\epsilon^2}
+$$Therefore, since this starts at the second order in $\epsilon$, we write:$$\Huge \delta S:=\mathcal{O}((\delta y)^2)$$
+# Action principle:
+
+There is some functional $S[y(t)]$ such that physical paths are
