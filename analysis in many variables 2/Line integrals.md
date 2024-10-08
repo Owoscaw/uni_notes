@@ -17,4 +17,4 @@ A parametrisation $\underline x(t)$ is regular if $\frac{d \underline x}{dt}\neq
 
 # Line integrals of Scalar Fields:
 
-A scalar field on $\Re^n$ is a map $f:\Re^n\mapsto\Re$. The line integral of a scalar field $f(\underline x)$ along a curve $C$ with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$ is defined as:$$\Huge \int_Cf(x)dl=\int_{t_0}^{t_1}f(\underline x(t))\left|\frac{d \underline x}{dt}\right|dt$$Take $f(\underline x)=y+x^2$ integrated around the unit circle as an example:![[Line integrals .excalidraw]]
+A scalar field on $\Re^n$ is a map $f:\Re^n\mapsto\Re$. The line integral of a scalar field $f(\underline x)$ along a curve $C$ with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$ is defined as:$$\Huge \int_Cf(x)dl=\int_{t_0}^{t_1}f(\underline x(t))\left|\frac{d \underline x}{dt}\right|dt$$Take $f(\underline x)=y+x^2$ integrated around the unit circle as an example:![[line integral example]]The meaning of the line integral can be thought of as summing the values of $f$ along the line $C$.
