@@ -13,10 +13,8 @@ $$Therefore, since this starts at the second order in $\epsilon$, we write:$$\Hu
 There is some functional $S[y(t)]$ such that physical paths, $y(t)$, are stationary with respect to $S$
 
 Consider a function $f(x)$ continuous in $[a,b]$ and such that $\int_a^bf(x)g(x)dx=0$ for all smooth $g(x)$ such that $g(a)=g(b)=0$. Then $f(x)=0$ for all $x\in(a,b)$. We assume that there exists some $p\in(a,b)$ such that $f(p)>0$. Then by continuity of $f$ there exists $p_0<p<p_1$ such that $f(x)>0\,\forall x\in(p_0,p_1)$. Choose:$$\Huge g(x)=\begin{cases}\nu(x-p_0)\nu(p_1-x)&x\in[p_0,p_1]\\0&\text{otherwise}\end{cases},\,\,\nu(s):=\exp{\left(-\frac{1}{s}\right)}$$With such choice of $g$, we consider our assumption:
-$$\Huge 0=\int_a^bf(x)g(x)dx=\int_{p_0}^{p_1}f(x)g(x)dx$$Inside this integral, we have that $f(x)>\delta>0$ in the integral (by assumption). We also have that $g(x)>0$ for all $x\in(p_0,p_1)$. Therefore we have that the above integral is greater than zero, since both functions are positive between the bounds of the integral. We therefore get a contradiction. Therefore, since our assumptions hold (excersise), we have that $f(x)=0\,\forall x\in(a,b)$
+$$\Huge 0=\int_a^bf(x)g(x)dx=\int_{p_0}^{p_1}f(x)g(x)dx$$Inside this integral, we have that $f(x)>\delta>0$ in the integral (by assumption). We also have that $g(x)>0$ for all $x\in(p_0,p_1)$. Therefore we have that the above integral is greater than zero, since both functions are positive between the bounds of the integral. A similar proof exists for the case where $f(x)<0$. We therefore get a contradiction. Therefore, since our assumptions hold, we have that $f(x)=0\,\forall x\in(a,b)$
 
-
-(excersise proove $f(p)<0$ and $g(x)$ smooth everywhere)
 
 # Euler-Lagrange equations:
 
