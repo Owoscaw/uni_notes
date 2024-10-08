@@ -25,10 +25,13 @@ To prove the first property, simply multiply:$$\small z_1z_1=r_1r_2(\cos\theta_1
 
 We then define the following functional expressions and domains:
 
-| Functional expression | Domain in $\mathbb{C}$ |
-|-----------------------|-----------------------------------------
-| $\mathbb{D}:=\{z\in \mathbb{C}: |z|<1\}$ | unit disc |
-| 
-
-
+| Functional expression                        | Domain in $\mathbb{C}$      |
+| -------------------------------------------- | --------------------------- |
+| $\mathbb{D}:=\{z\in \mathbb{C}:\|z\|<1\}$    | Unit disc                   |
+| $\mathbb{H}:=\{z\in \mathbb{C}:\Im(z)>0\}$   | Upper half plane            |
+| $\mathbb{H}_R:=\{z\in \mathbb{C}:\Re(z)>0\}$ | Right half plane            |
+| $\mathbb{H}_L:\{z\in \mathbb{C}:\Re(z)<0\}$  | Left half plane             |
+| $\arg(z)=\pi/4$                              | Ray with angle $\pi/4$      |
+| $\{z\in \mathbb{C}:\|z-i\|=4\}$              | Circle at $i$ at radius $4$ |
+This is how to define shapes in the complex plane.
 
