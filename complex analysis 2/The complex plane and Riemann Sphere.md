@@ -13,4 +13,9 @@ Note that since:$$\Huge (x+iy)(x-iy)=x^2+y^2\in\Re_+$$Motivating the definition 
 
 # Polar form of complex numbers:
 
-We define for any $z\in \mathbb{C}$:$$\Huge |z|:=r,\,\,\arg(z):=\theta=\begin{cases}\arctan\left(\frac{y}{x}\right)&y,x>0\\\frac{\pi}{2}&x=0,y>0\\-\frac{\pi}{2}&x=0,y<0\\\arctan\left(\frac{y}{x}\right)+\pi& x<0,y>0\\\arctan\left(\frac{y}{x}\right)-\pi&x<0,y<0\end{cases}$$Where $r$ is the length of the vector connecting $z$ to the origin, and $\theta$ is the angle it makes with the positive real axis. Note that for any angle, a multiple of $2\pi$ can always be added to give the same complex number. Therefore we assume that $\theta\in(-\pi,\pi]$. Now we have the polar coordinates for $z$:$$\Huge z=r(\cos\theta+i\sin\theta)$$
+We define for any $z\in \mathbb{C}$:$$\Huge |z|:=r,\,\,\arg(z):=\theta=\begin{cases}\arctan\left(\frac{y}{x}\right)&y,x>0\\\frac{\pi}{2}&x=0,y>0\\-\frac{\pi}{2}&x=0,y<0\\\arctan\left(\frac{y}{x}\right)+\pi& x<0,y>0\\\arctan\left(\frac{y}{x}\right)-\pi&x<0,y<0\end{cases}$$Where $r$ is the length of the vector connecting $z$ to the origin, and $\theta$ is the angle it makes with the positive real axis. Note that for any angle, a multiple of $2\pi$ can always be added to give the same complex number. Therefore we assume that $\theta\in(-\pi,\pi]$. Now we have the polar coordinates for $z$:$$\Huge z=r(\cos\theta+i\sin\theta)$$In this form, we get the following properties:
+> $\arg(z_1z_2)=(\arg(z_1)+\arg(z_2))\mod 2\pi$
+> $\arg\left(\frac{1}{z}\right)=-\arg(z)\mod2\pi$
+> $\arg(\bar z)=-\arg(z)\mod2\pi$
+
+To prove the first property, simply multiply:$$\small z_1z_1=r_1r_2(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)=r_1r_2(\cos\theta_1\cos\theta_2+i\cos\theta_1\sin\theta_2+i\sin\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)$$$$ z_1z_2=r_1r_2((\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)+i(\cos\theta_1\sin\theta_2+\sin\theta_1\cos\theta_2))=r_1r_2(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2))$$This corresponds to scaling the point $z_1$ by $r_2$ and rotating an additional $\theta_2$. Lovely geometry. Using the definition $e^{i\theta}=\cos\theta+i\sin\theta$, we can 
