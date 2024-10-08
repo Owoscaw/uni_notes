@@ -18,8 +18,11 @@ $$\Huge 0=\int_a^bf(x)g(x)dx=\int_{p_0}^{p_1}f(x)g(x)dx$$Inside this integral, w
 
 (excersise proove $f(p)<0$ and $g(x)$ smooth everywhere)
 
-We assume that $S[y(t)]$ takes form:$$\Huge S[y(t)]=\int_{t_0}^{t_1}L(y(t),\dot y(t))dt$$We also assume that $L$ is a function that maps $\Re^2$ to $\Re$.
-
 # Euler-Lagrange equations:
 
-For a particle moving in one dimension, $x(t)$, we have that:$$\Huge \frac{d}{dt}\left(\frac{\partial L(x,\dot x)}{\partial \dot x}\right)-\frac{\partial L(x,\dot x)}{\partial x}=0$$Now using the previous assumption about the form of $S[y(t)]$:$$\large S[x(t)]=\int_{t_0}^{t_1}L(x,\dot x)dt\implies S[x(t)+\delta x(t)]=\int_{t_0}^{t_1}L(x(t)+\delta x(t),\dot x(t)+\delta \dot x(t))dt$$Taking the Taylor expansion in $\delta x(t)$ and $\dot x(t)$:$$\large S[x(t)+\delta x(t)]=\int_{t_0}^{t_1}L(x(t),\dot x(t))+\delta x(t)\frac{\partial L(x(t),\dot x(t))}{\partial x(t)}+\delta \dot x(t)\frac{\partial L(x(t),\dot x(t))}{\partial x(t)}+\dots dt$$$$\Huge S[x+\delta x]=\int_{t_0}^{t_1}L(x,\dot x)+\delta x\frac{\partial L}{\partial x}+\left(\frac{d}{dt}\delta x\right)\frac{\partial L}{\partial \dot x}+\dots dt$$We note that 
+We assume that $S[y(t)]$ takes form:$$\Huge S[y(t)]=\int_{t_0}^{t_1}L(y(t),\dot y(t))dt$$We also assume that $L$ is a function that maps $\Re^2$ to $\Re$.
+
+For a particle moving in one dimension, $x(t)$, we have that:$$\Huge \frac{d}{dt}\left(\frac{\partial L(x,\dot x)}{\partial \dot x}\right)-\frac{\partial L(x,\dot x)}{\partial x}=0$$To prove this, we use the above assumption about the form of $S[y(t)]$:$$\large S[x(t)]=\int_{t_0}^{t_1}L(x,\dot x)dt\implies S[x(t)+\delta x(t)]=\int_{t_0}^{t_1}L(x(t)+\delta x(t),\dot x(t)+\delta \dot x(t))dt$$Consider the Taylor expansion of $L(x+\delta x,\dot x+\delta\dot x)$ up to the first order:$$\Huge L(x+\delta x,\dot x+\delta \dot x)=L(x,\delta x)+\frac{\partial L(x,\delta x)}{\partial x}\delta x+\frac{\partial L(x,\delta x)}{\partial \dot x}\delta \dot x+\dots$$Now putting this into variation of action ($S$):$$\Huge \delta S=$$
+
+
+$$\Huge S[x+\delta x]=\int_{t_0}^{t_1}L(x,\dot x)+\delta x\frac{\partial L}{\partial x}+\left(\frac{d}{dt}\delta x\right)\frac{\partial L}{\partial \dot x}+\dots dt$$We note that 
