@@ -23,4 +23,8 @@ A binary relation on the set $S$ is a subset of $S\times S$. We write $a\sim b$ 
 > $a\sim b\iff b\sim a$ (symettry)
 > If $a\sim b$ and $b\sim c$ then $a\sim c$ (transitivity)
 
-The equivalence class of $a\in S$ under $\sim$, denoted by $[a]$ is defined as:$$\Huge [a]=\{x\in S:x\sim a\}$$x 
+The equivalence class of $a\in S$ under $\sim$, denoted by $[a]$ is defined as:$$\Huge [a]=\{x\in S:x\sim a\}$$Here, $a$ is called the representative of its equivalence class. Note that:$$\Huge a\sim b\iff [a]=[b]$$Given $S$ and $\sim$ we then define:$$\Huge S/\sim:=\{[a]:a\in S\}$$That is the set of equivalence classes on the set $S$ with respect to the given equivalence relation $\sim$
+
+# Integers modulo $n$:
+
+For a fixed $n\in\mathbb{N},n>1$, we define $a\sim b$ as:$$\Huge a\sim b\implies n|a-b$$That is $a-b=kn$ for some $k\in\mathbb{Z}$, $a$ is similar to $b$ if their difference is divided by $n$.
