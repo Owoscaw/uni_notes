@@ -18,4 +18,17 @@ We define for any $z\in \mathbb{C}$:$$\Huge |z|:=r,\,\,\arg(z):=\theta=\begin{ca
 > $\arg\left(\frac{1}{z}\right)=-\arg(z)\mod2\pi$
 > $\arg(\bar z)=-\arg(z)\mod2\pi$
 
-To prove the first property, simply multiply:$$\small z_1z_1=r_1r_2(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)=r_1r_2(\cos\theta_1\cos\theta_2+i\cos\theta_1\sin\theta_2+i\sin\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)$$$$ z_1z_2=r_1r_2((\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)+i(\cos\theta_1\sin\theta_2+\sin\theta_1\cos\theta_2))=r_1r_2(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2))$$This corresponds to scaling the point $z_1$ by $r_2$ and rotating an additional $\theta_2$. Lovely geometry. Using the definition $e^{i\theta}=\cos\theta+i\sin\theta$, we can 
+To prove the first property, simply multiply:$$\small z_1z_1=r_1r_2(\cos\theta_1+i\sin\theta_1)(\cos\theta_2+i\sin\theta_2)=r_1r_2(\cos\theta_1\cos\theta_2+i\cos\theta_1\sin\theta_2+i\sin\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)$$$$ z_1z_2=r_1r_2((\cos\theta_1\cos\theta_2-\sin\theta_1\sin\theta_2)+i(\cos\theta_1\sin\theta_2+\sin\theta_1\cos\theta_2))=r_1r_2(\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2))$$This corresponds to scaling the point $z_1$ by $r_2$ and rotating an additional $\theta_2$. Lovely geometry. Using the definition $e^{i\theta}=\cos\theta+i\sin\theta$, we can also see this result. This definition also motivates the result:$$\Huge (\cos\theta+i\sin\theta)^n=\cos(n\theta)+i\sin(n\theta)$$This can be proven by induction. The modulus also has the following properties:
+> $|z_1+z_2|\leq|z_1|+|z_2|$
+> $|z|\geq0$ with $|z|=0\iff z=0$
+> $\max(|\Re(z)|,|\Im(z)|)\leq|z|\leq|\Re(Z)|+|\Im(z)|$
+
+We then define the following functional expressions and domains:
+
+| Functional expression | Domain in $\mathbb{C}$ |
+|-----------------------|-----------------------------------------
+| $\mathbb{D}:=\{z\in \mathbb{C}: |z|<1\}$ | unit disc |
+| 
+
+
+
