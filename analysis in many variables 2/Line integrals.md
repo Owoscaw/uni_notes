@@ -15,4 +15,6 @@ For example, take the parametrisation $\underline x(t)=\underline a+t(\underline
 If $\underline x(t)$ and $\underline x(\tau)$ are two parametrisations of the same curve, then the [[Leibniz and Chain rules|chain rule]] dictates that:$$\Huge \frac{d \underline x}{dt}=\frac{d \underline x}{d\tau}\frac{d\tau}{dt}$$
 A parametrisation $\underline x(t)$ is regular if $\frac{d \underline x}{dt}\neq0$ everywhere, otherwise it is singular. The points at which a parametrisation is singular are called cusps.
 
-[
+# Line integrals of Scalar Fields:
+
+A scalar field on $\Re^n$ is a map $f:\Re^n\mapsto\Re$. The line integral of a scalar field $f(\underline x)$ along a curve $C$ with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$ is defined as:$$\Huge \int_Cf(x)dl=\int_{t_0}^{t_1}f(\underline x(t))\left|\frac{d \underline x}{dt}\right|dt$$Take $f(\underline x)=y+x^2$ integrated around the unit circle as an example:![[Line integrals .excalidraw]]
