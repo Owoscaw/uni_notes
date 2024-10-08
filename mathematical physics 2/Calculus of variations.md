@@ -4,4 +4,6 @@ Generalising to a function, $\rho:\Re^n\mapsto\Re$, of $n$ variables, we have:$$
 
 # Functionals:
 
-A functional is a map from functions to numbers, for example:$$\Huge S[y(t)]=\int_{t_0}^{t_1}(y(t))^2dt$$A function, $y(t)$, can be stationary with respect to a functional, $S[y(t)]$ if:$$\Huge \left.\frac{dS[y(t)+\epsilon z(t)]}{d\epsilon}\right|_{\epsilon=0}=0$$For all smooth $z(t)$ such that $z(t_0)=z(t_1)=0$, where $\epsilon\in\Re$. This restriction ensures that the $z(t)$ term does not affect $y(t)$ at the endpoints $(t_0,t_1)$
+A functional is a map from functions to numbers, for example:$$\Huge S[y(t)]=\int_{t_0}^{t_1}(y(t))^2dt$$A function, $y(t)$, can be stationary with respect to a functional, $S[y(t)]$ if:$$\Huge \left.\frac{dS[y(t)+\epsilon z(t)]}{d\epsilon}\right|_{\epsilon=0}=0$$For all smooth $z(t)$ such that $z(t_0)=z(t_1)=0$, where $\epsilon\in\Re$. This restriction ensures that the $z(t)$ term does not affect $y(t)$ at the endpoints $(t_0,t_1)$.
+
+Consider the Taylor expansion of $S[y(t)+\epsilon z(t)]$ in $\epsilon$
