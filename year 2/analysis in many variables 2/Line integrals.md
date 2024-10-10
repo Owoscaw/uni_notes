@@ -24,3 +24,6 @@ We propose that the line integral of a scalar field is independent of parametris
 ## Arclength:
 
 There is a special case where $f(\underline x)=1$, then the line integral is called the arclength of the curve:$$\Huge L=\int_Cdl=\int_{t_0}^{t_1}\left|\frac{d \underline x}{dt}\right|dt$$Which represents the geometric length of the path taken. There is always an arclength parametrisation $\underline x(s)$ where $\left|\frac{d \underline x}{ds}\right|=1$ along the entire curve. Then $s$ is distance, making the length $L=\int_0^Lds$. Using our example from before:![[arclength example]]
+# Line integrals of vector fields:
+
+A vector field is a function $\underline f:\Re^n\mapsto\Re^n$ that assigns a vector to each point in $\Re^n$
