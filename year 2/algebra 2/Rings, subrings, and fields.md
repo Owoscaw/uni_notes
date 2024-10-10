@@ -27,4 +27,11 @@ The equivalence class of $a\in S$ under $\sim$, denoted by $[a]$ is defined as:$
 
 # Integers modulo $n$:
 
-For a fixed $n\in\mathbb{N},n>1$, we define $a\sim b$ as:$$\Huge a\sim b\implies n|a-b$$That is $a-b=kn$ for some $k\in\mathbb{Z}$, $a$ is similar to $b$ if their difference is divided by $n$.
+For a fixed $n\in\mathbb{N},n>1$, we define $a\sim b$ as:$$\Huge a\sim b\implies n|a-b$$That is $a-b=kn$ for some $k\in\mathbb{Z}$, $a$ is similar to $b$ if their difference is divided by $n$. This is sometimes denoted as $a\equiv b\mod n$. We now check this is indeed an equivalence relator:
+> $n|a-a, 0=0\times n$, this is reflexive
+> $a\equiv b\mod n\implies n|a-b\iff a-b=k\times n$ for some $k\in\mathbb{Z}$. Then $b-a=(-k)\times n\implies n|b-a\iff b\equiv a\mod n$, this is symmetric
+> $a\equiv b\mod n\implies a-b=k\times n$ and $b\equiv c\mod n\implies b-c=\lambda\times n$ for some $k,\lambda\in\mathbb{Z}$. Then we have $(a-b)+(b-c)=k\times n+\lambda\times n=a-c=(k+\lambda)\times n$. Since $k+\lambda\in\mathbb{Z}$, we get that $n|a-c\iff a\equiv c\mod n$
+
+Therefore modulo is indeed an equivalence relation.
+
+Let $a\in\mathbb{Z},n\in\mathbb{N}$. Then we have an equivalence class:$$\Huge [a]=\{x\in\mathbb{Z}:x\equiv a\mod n\}=\{a+kn:k\in\mathbb{Z}\}$$
