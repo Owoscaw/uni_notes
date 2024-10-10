@@ -26,4 +26,29 @@ We propose that the line integral of a scalar field is independent of parametris
 There is a special case where $f(\underline x)=1$, then the line integral is called the arclength of the curve:$$\Huge L=\int_Cdl=\int_{t_0}^{t_1}\left|\frac{d \underline x}{dt}\right|dt$$Which represents the geometric length of the path taken. There is always an arclength parametrisation $\underline x(s)$ where $\left|\frac{d \underline x}{ds}\right|=1$ along the entire curve. Then $s$ is distance, making the length $L=\int_0^Lds$. Using our example from before:![[arclength example]]
 # Line integrals of vector fields:
 
-A vector field is a function $\underline f:\Re^n\mapsto\Re^n$ that assigns a vector to each point in $\Re^n$
+A vector field is a function $\underline f:\Re^n\mapsto\Re^n$ that assigns a vector to each point in $\Re^n$. Here you can see the vector field $\underline f(\underline x)=- \underline x$ in $\Re^2$:
+```desmos-graph
+left=-2; right=2;
+top=2; bottom=-2;
+---
+F\left(x,y\right)=\left(-x,-y\right)
+m\left(x\right)=3\left(\sqrt{s_{x}s_{y}}\log\left(x+1\right)\right)
+l\left(x\right)=0.4x
+b=1
+\left(x_{0}+tm\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\cos\left(A\left(F\left(x_{0},y_{0}\right)\right)\right),y_{0}+tm\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\sin\left(A\left(F\left(x_{0},y_{0}\right)\right)\right)\right)
+\left(x_{0}+m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\cos\left(A\left(F\left(x_{0},y_{0}\right)\right)\right)+tl\left(m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\right)\cos\left(A\left(F\left(x_{0},y_{0}\right)\right)-b-\frac{\pi}{2}\right),y_{0}+m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\sin\left(A\left(F\left(x_{0},y_{0}\right)\right)\right)+tl\left(m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\right)\sin\left(A\left(F\left(x_{0},y_{0}\right)\right)-b-\frac{\pi}{2}\right)\right)
+\left(x_{0}+m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\cos\left(A\left(F\left(x_{0},y_{0}\right)\right)\right)+tl\left(m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\right)\cos\left(A\left(F\left(x_{0},y_{0}\right)\right)+b+\frac{\pi}{2}\right),y_{0}+m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\sin\left(A\left(F\left(x_{0},y_{0}\right)\right)\right)+tl\left(m\left(M\left(F\left(x_{0},y_{0}\right)\right)\right)\right)\sin\left(A\left(F\left(x_{0},y_{0}\right)\right)+b+\frac{\pi}{2}\right)\right)
+A\left(p\right)=\left\{p.x>0:\left\{p.y\ge0:\tan^{-1}\left(\frac{p.y}{p.x}\right),\tan^{-1}\left(\frac{p.y}{p.x}\right)+2\pi\right\},\left\{p.x<0:\tan^{-1}\left(\frac{p.y}{p.x}\right)+\pi,\left\{p.y>0:\frac{\pi}{2},\left\{p.y<0:\frac{3\pi}{2}\right\}\right\}\right\}\right\}
+M\left(p\right)=\sqrt{p.x^{2}+p.y^{2}}
+y_{0}=p_{y}-s_{y}\operatorname{floor}\left(\frac{i-1}{n_{x}}\right)
+x_{0}=p_{x}+s_{x}\operatorname{mod}\left(i-1,n_{x}\right)
+i=\left[1,...,n_{x}n_{y}\right]
+n_x=13
+n_y=13
+s_x=0.2
+s_y=0.2
+p_x=-1.2
+p_y=1.2
+```
+
+For a curve with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$, the unit tangent vector is:$$\Huge \hat{ \underline t}=\frac{d \underline x}{dt}\div\left|\frac{d \underline x}{dt}\right|$$An oriented curve is a curve together with a specified, consistent choice of $\hat{ \underline t}$. The line integral of a vector field $\underline f(\underline x)$ along an oriented curve, $C$, with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$ is defined as:$$\Huge \int_C\underline f\cdot \hat{}$$
