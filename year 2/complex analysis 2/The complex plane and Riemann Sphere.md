@@ -37,5 +37,4 @@ This is how to define shapes in the complex plane.
 
 # The Riemann Sphere:
 
-One can think of $\mathbb{C}$ as a part of a sphere. Let $S^2=\{(\xi,\nu,\zeta)\in\Re^3:\xi^2+\nu^2+\zeta^2=1\}$. Now think of the complex plane as the $xy$ plane in $\Re^3$. Any point in $S^2$ can be assaigned a unique point in $\mathbb{C}$ which we denote as $p(\xi,\nu,\zeta)$, the stereographic projection of $(\xi,\nu,\zeta)$
-
+One can think of $\mathbb{C}$ as a part of a sphere. Let $S^2=\{(\xi,\nu,\zeta)\in\Re^3:\xi^2+\nu^2+\zeta^2=1\}$. Now think of the complex plane as the $xy$ plane in $\Re^3$. Any point in $S^2$ can be assaigned a unique point in $\mathbb{C}$ which we denote as $p(\xi,\nu,\zeta)$, the stereographic projection of $(\xi,\nu,\zeta)$.![[The complex plane and Riemann Sphere .excalidraw]]
