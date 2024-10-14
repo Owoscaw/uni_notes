@@ -36,4 +36,4 @@ Let $(X,d)$ be a metric space. Then we define the following:
 
 Note that some sets are both open and closed.
 
-We now prove that an open ball is indeed open. Let $y\in B_r(x)$, that is $d(x,y)<r$. Consider $\epsilon=\frac{1}{2}(r-d(x,y))>0$. We claim that $B_\epsilon(y)\subseteq B_r(x)$. Note that if $z\in B_\epsilon(y)$, then $d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\epsilon=d(x,y)+\frac{1}{2}(r-d(x,y))=\frac{1}{2}(r+d(x,y))<\frac{r+r}{2}=r$. So we have 
+We now prove that an open ball is indeed open. Let $y\in B_r(x)$, that is $d(x,y)<r$. Consider $\epsilon=\frac{1}{2}(r-d(x,y))>0$. We claim that $B_\epsilon(y)\subseteq B_r(x)$. Note that if $z\in B_\epsilon(y)$, then $d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\epsilon=d(x,y)+\frac{1}{2}(r-d(x,y))=\frac{1}{2}(r+d(x,y))<\frac{r+r}{2}=r$. This comes from the triangle inequality inherent to the metric space. So we have for $z\in B_\epsilon(y)$, $d(x,z)<r$, since $y\in B_r(x)$, we then have that the ball $B_r(x)$ must be open.`
