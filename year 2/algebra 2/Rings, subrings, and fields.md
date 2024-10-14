@@ -42,4 +42,9 @@ Once we show that these operations are well defined (independent of choice of re
 > $[a+kn]+[b+\lambda n]=[(a+b)+(k+\lambda)n]=[a+b]$
 > $[a+kn]\cdot[b+\lambda n]=[ab+(a\lambda+bk)n+k\lambda n^2]=[ab+(a\lambda+bk+k\lambda n)n]=[ab]$
 
-So we have that these operations are well defined, making $(\mathbb{Z}/n,+,\cdot)$ a ring with this choice of operations. Note that $(\mathbb{Z}/n,+)$ is an abelian group with neutral element $[0]$ and $-[a]=[-a]$. We can use $[1]$ as the multiplicative identity since $[1]\cdot[a]=[1\cdot a]=[a]$. Let $[a],[b],[c]\in\mathbb{Z}/n$, we then show associativity:$$ [a]\cdot([b]+[c])=[a]\cdot([b+c])=[a(b+c)]=[ab+ac]=[ab]+[ac]=[a]\cdot[b]+[a]\cdot[c]$$
+So we have that these operations are well defined, making $(\mathbb{Z}/n,+,\cdot)$ a ring with this choice of operations. Note that $(\mathbb{Z}/n,+)$ is an abelian group with neutral element $[0]$ and $-[a]=[-a]$. We can use $[1]$ as the multiplicative identity since $[1]\cdot[a]=[1\cdot a]=[a]$. Let $[a],[b],[c]\in\mathbb{Z}/n$, we then show associativity:$$\large [a]\cdot([b]+[c])=[a]\cdot([b+c])=[a(b+c)]=[ab+ac]=[ab]+[ac]=[a]\cdot[b]+[a]\cdot[c]$$$$\large ([a]+[b])\cdot[c]=([a+b])\cdot[c]=[(a+b)c]=[ac+bc]=[ac]+[bc]=[a]\cdot[c]+[b]\cdot [c]$$So we have associativity, now we check commutativity:
+$$\Huge [a]\cdot[b]=[ab]=[ba]=[b]\cdot[a]$$Therefore we conclude that $\mathbb{Z}/n$ is a commutative ring.
+
+# Subrings:
+
+Let $(R,+,\cdot)$ be a ring.
