@@ -47,4 +47,14 @@ $$\Huge [a]\cdot[b]=[ab]=[ba]=[b]\cdot[a]$$Therefore we conclude that $\mathbb{Z
 
 # Subrings:
 
-Let $(R,+,\cdot)$ be a ring.
+Let $(R,+,\cdot)$ be a ring. A subset $S\subseteq R$ is called a subring of $R$ if:
+> $0,1\in S$
+> $a,b\in S\implies a+b\in S$
+> $a,b\in S\implies a\cdot b\in S$
+> $a\in S\implies -a\in S$
+
+For example, $\mathbb{Z}\subseteq\mathbb{Q}\subseteq\Re\subseteq\mathbb{C}$. Each is a subring of the following. Also $\mathbb{Q}\subseteq\mathbb{Q}[x]$, since $\mathbb{Q}=\mathbb{Q}[x]_0$. Define $\mathbb{Z}[\sqrt{2}]=\{a+b\sqrt{2}:a,b\in\mathbb{Z}\}\subseteq\Re$. We claim that this is a subring of $\Re$. This is how we prove it:
+>$0\in\mathbb{Z}[\sqrt{2}]$ by taking $a=b=0$
+>$1\in\mathbb{z}[\sqrt{2}]$ by taking $a=1,b=0$
+>Let $a+b\sqrt{2},c+d\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$. Then $(a+b\sqrt{2})+(c+d\sqrt{2})=(a+c)+(b+d)\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$
+>Also $(a+b\sqrt{2})(c+d\sqrt{2})=(ac+2bd)+(ad+bc)\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$
