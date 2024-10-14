@@ -29,5 +29,11 @@ Let $X$ be the space of continuous functions on a given closed interval $[a,b]$.
 
 Recall that a subset $X\subseteq\Re$ is open if for any $c\in X$ there exists $\epsilon>0$ such that:$$\Huge (c-\epsilon,c+\epsilon)\subseteq X$$Note also:$$\Huge (c-\epsilon,c+\epsilon)=\{x\in\Re:|x-c|<\epsilon\}$$This is called a ball of radius $\epsilon$ centred at $c$. This motivates the following definition. Let $(X,d)$ be a metric space, $x\in X$, and let $r>0$ be a real number. Then:
 > The open ball $B_r(x)$ of radius $r$ centred at $x$ is:$$\Huge B_r(x):=\{y\in X:d(x,y)<r\}$$The closed ball $\overline{B_r(x)}$ of radius $r$ centred at $x$ is:$$\Huge \overline{B_r(x)}:=\{y\in X:d(x,y)\leq r\}$$
->  
- 
+
+Let $(X,d)$ be a metric space. Then we define the following:
+> A subset $U\subseteq X$ is open if for every point $x\in U$ there exists $\epsilon>0$ such that $B_\epsilon(x)\subset U$
+> A subset $U\subseteq X$ is closed if its complement $U^C:=X\setminus U$ is open
+
+Note that some sets are both open and closed.
+
+We now prove that an open ball is indeed open. Let $y\in B_r(x)$, that is $d(x,y)<r$. Consider $\epsilon=\frac{1}{2}(r-d(x,y))>0$. We claim that $B_\epsilon(y)\subseteq B_r(x)$. Note that if $z\in B_\epsilon(y)$, then $d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\epsilon=d(x,y)+\frac{1}{2}(r-d(x,y))=\frac{1}{2}(r+d(x,y))<\frac{r+r}{2}=r$. So we have 
