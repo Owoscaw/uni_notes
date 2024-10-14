@@ -34,4 +34,8 @@ For a fixed $n\in\mathbb{N},n>1$, we define $a\sim b$ as:$$\Huge a\sim b\implies
 
 Therefore modulo is indeed an equivalence relation.
 
-Let $a\in\mathbb{Z},n\in\mathbb{N}$. Then we have an equivalence class:$$\Huge [a]=\{x\in\mathbb{Z}:x\equiv a\mod n\}=\{a+kn:k\in\mathbb{Z}\}$$
+Let $a\in\mathbb{Z},n\in\mathbb{N}$. Then we have an equivalence class:$$\Huge [a]=\{x\in\mathbb{Z}:x\equiv a\mod n\}=\{a+kn:k\in\mathbb{Z}\}$$Note that:$$\Huge [a]=[b]\iff a\equiv b\mod n$$We then define $\mathbb{Z}/n$ as the set of all equivalence classes modulo $n$, that is:$$\Huge \mathbb{Z}/n=\{[a]:z\in \mathbb{Z}\}$$Note that a consequence of the above definitions is that $|\mathbb{Z}/n|=n$ since $[a]=[a+kn]$ for $k\in\mathbb{Z}$:$$\Huge \mathbb{Z}/n=\{[0],[1],\dots,[n-1]\}$$To make this a ring, we will need to define $+,\cdot$ such that $(\mathbb{Z}/n,+,\cdot)$ is a ring. Let $[a],[b]\in\mathbb{Z}/n$ and define:
+>$[a]+[b]=[a+b]$
+>$[a]\cdot[b]=[ab]$
+
+Once we show that these operations are well defined (independent of choice of representatives)
