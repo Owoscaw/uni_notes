@@ -27,4 +27,8 @@ Note that $L(r,s)$ is simply a function of $2n$ variables and does not care abou
 
 # Configuration space and generalised coordinates:
 
-The set of all possible instantaneous configurations for a given physical system is known as the configuration space, denoted by $C$. This includes positions but not velocities  
+The set of all possible instantaneous configurations for a given physical system is known as the configuration space, denoted by $C$. This includes positions but not velocities. This space is required before the Lagrangian can be constructed:
+> A particle moving in $\Re^d$ has configuration space of $\Re^d$
+> $N$ particles moving in $\Re^d$ has configuration space $\Re^{dN}$, assuming that all $N$ particles are distinguishable
+> Two particles joined by a rod of length $l$ in $d$ dimensions reduces the possible positions of the second particle, written as:$$\Huge ||\underline x_1-\underline x_2||^2=l^2$$The configuration space of this physical system is therefore $2d-1$ dimensional.
+> Consider a rigid body in $\Re^3$
