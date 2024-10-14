@@ -38,4 +38,8 @@ Let $a\in\mathbb{Z},n\in\mathbb{N}$. Then we have an equivalence class:$$\Huge [
 >$[a]+[b]=[a+b]$
 >$[a]\cdot[b]=[ab]$
 
-Once we show that these operations are well defined (independent of choice of representatives)
+Once we show that these operations are well defined (independent of choice of representatives), we will have made $(\mathbb{Z}/n,+,\cdot)$ a ring. Let $k,\lambda\in\mathbb{Z}$ and $[a],[b]\in\mathbb{Z}/n$:
+> $[a+kn]+[b+\lambda n]=[(a+b)+(k+\lambda)n]=[a+b]$
+> $[a+kn]\cdot[b+\lambda n]=[ab+(a\lambda+bk)n+k\lambda n^2]=[ab+(a\lambda+bk+k\lambda n)n]=[ab]$
+
+So we have that these operations are well defined, making $(\mathbb{Z}/n,+,\cdot)$ a ring with this choice of operations. Note that $(\mathbb{Z}/n,+)$ is an abelian group with neutral element $[0]$ and $-[a]=[-a]$. We can use $[1]$ as the multiplicative identity since $[1]\cdot[a]=[1\cdot a]=[a]$. Let $[a],[b],[c]\in\mathbb{Z}/n$, we then show associativity:$$ [a]\cdot([b]+[c])=[a]\cdot([b+c])=[a(b+c)]=[ab+ac]=[ab]+[ac]=[a]\cdot[b]+[a]\cdot[c]$$
