@@ -58,3 +58,7 @@ For example, $\mathbb{Z}\subseteq\mathbb{Q}\subseteq\Re\subseteq\mathbb{C}$. Eac
 >$1\in\mathbb{z}[\sqrt{2}]$ by taking $a=1,b=0$
 >Let $a+b\sqrt{2},c+d\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$. Then $(a+b\sqrt{2})+(c+d\sqrt{2})=(a+c)+(b+d)\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$
 >Also $(a+b\sqrt{2})(c+d\sqrt{2})=(ac+2bd)+(ad+bc)\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$
+>$a+b\sqrt{2}\in\mathbb{Z}[\sqrt{2}]\implies-(a+b\sqrt{2})=-a+(-b)\sqrt{2}\in\mathbb{Z}[\sqrt{2}]$
+
+Therefore $\mathbb{Z}[\sqrt{2}]$ is indeed a subring of $\Re$.
+
