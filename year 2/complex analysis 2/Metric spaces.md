@@ -15,4 +15,10 @@ Most of these examples were on vector spaces and said metric is derived from a n
 >$||\lambda v||=|\lambda|\cdot||v||$ for $\lambda\in\mathbb{C}$
 >$||v+w||\leq||v||+||w||$
 
-A vector space combined with a norm is called a normed vector space. Any norm induces a m
+A vector space combined with a norm is called a normed vector space. Any norm induces a metric given by:$$\Huge d(v,w):=||v-w||$$
+
+# Taxicab norm:
+
+The $l_p$ norm, with $1\leq p<\infty$ on $\Re^n$ or $\mathbb{C}^n$ is given by:$$\Huge || \underline x||_p=\left(\sum_{i=0}^n|x_i|^p\right)^{\frac{1}{p}}$$Note that $d_{EUC}=l_2$. This norm comes from the dot product on $\Re^n$. In general if $X$ has an inner product, then $||v||=\sqrt{\left<v,v\right>}$ is a norm. Note that when $p\neq 2$, the norm does not come from an inner product.
+
+When $p=1$ on $\Re^2$, we have that $||(x,y)||_l=|x|+|y|$. Consider the limiting case, the $l_{\infty}$ or "sup norm", on $\Re^n$:$$\Huge ||\underline x||_{\infty}=\max$$
