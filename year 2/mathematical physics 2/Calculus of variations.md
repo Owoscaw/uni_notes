@@ -31,4 +31,4 @@ The set of all possible instantaneous configurations for a given physical system
 > A particle moving in $\Re^d$ has configuration space of $\Re^d$
 > $N$ particles moving in $\Re^d$ has configuration space $\Re^{dN}$, assuming that all $N$ particles are distinguishable
 > Two particles joined by a rod of length $l$ in $d$ dimensions reduces the possible positions of the second particle, written as:$$\Huge ||\underline x_1-\underline x_2||^2=l^2$$The configuration space of this physical system is therefore $2d-1$ dimensional.
-> Consider a rigid body in $\Re^3$
+> Consider a rigid body in $\Re^3$. The position of the centre of mass defines three dimensions, and three rotational angles defines a further three, making the configuration space for this system six dimensional.
