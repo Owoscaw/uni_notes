@@ -21,4 +21,11 @@ A vector space combined with a norm is called a normed vector space. Any norm in
 
 The $l_p$ norm, with $1\leq p<\infty$ on $\Re^n$ or $\mathbb{C}^n$ is given by:$$\Huge || \underline x||_p=\left(\sum_{i=0}^n|x_i|^p\right)^{\frac{1}{p}}$$Note that $d_{EUC}=l_2$. This norm comes from the dot product on $\Re^n$. In general if $X$ has an inner product, then $||v||=\sqrt{\left<v,v\right>}$ is a norm. Note that when $p\neq 2$, the norm does not come from an inner product.
 
-When $p=1$ on $\Re^2$, we have that $||(x,y)||_l=|x|+|y|$. Consider the limiting case, the $l_{\infty}$ or "sup norm", on $\Re^n$:$$\Huge ||\underline x||_{\infty}=\max$$
+When $p=1$ on $\Re^2$, we have that $||(x,y)||_l=|x|+|y|$. Consider the limiting case, the $l_{\infty}$ or "sup norm", on $\Re^n$:$$\Huge ||\underline x||_{\infty}=\max_{i=1,\dots,n}|x_i|$$
+
+Let $X$ be the space of continuous functions on a given closed interval $[a,b]$. Since $X$ is a vector space, we can take the sup norm on $X$:$$\Huge ||f||_{\infty}=\sup_{x\in[a,b]}|f(x)|=_{\text{extreme value theorem}}\max_{x\in[a,b]}|f(x)|$$
+
+# Open and closed sets:
+
+Recall that a subset $X\subseteq\Re$ is open if for any $c\in X$ there exists $\epsilon>0$ such that:$$\Huge (c-\epsilon,c+\epsilon)\subseteq X$$Note also:$$\Huge (c-\epsilon,c+\epsilon)=\{x\in\Re:|x-c|<\epsilon\}$$This is called a ball of radius $\epsilon$ centred at $c$. This motivates the following definition.
+ 
