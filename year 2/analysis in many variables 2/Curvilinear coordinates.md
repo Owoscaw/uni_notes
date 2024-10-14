@@ -1,0 +1,3 @@
+
+Curvilinear coordinates $(u,v,w)$ may have curved coordinate lines, so [[Line integrals#Tangent vectors|tangent vectors]] will be in [[Partial derivatives|partial derivative]] form. A parametrisation $\underline x(u,v,w)$ will have tangent vectors:$$\Huge \frac{d \underline x}{dt}=\left(\frac{\partial \underline x}{\partial u},\frac{\partial \underline x}{\partial v},\frac{\partial \underline x}{\partial w}\right)$$![[curvilinear tangent vectors.png]]
+The coordinate systems is called orthogonal if all three tangent vectors are mutually orthogonal at every point
