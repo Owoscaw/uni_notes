@@ -27,5 +27,7 @@ Let $X$ be the space of continuous functions on a given closed interval $[a,b]$.
 
 # Open and closed sets:
 
-Recall that a subset $X\subseteq\Re$ is open if for any $c\in X$ there exists $\epsilon>0$ such that:$$\Huge (c-\epsilon,c+\epsilon)\subseteq X$$Note also:$$\Huge (c-\epsilon,c+\epsilon)=\{x\in\Re:|x-c|<\epsilon\}$$This is called a ball of radius $\epsilon$ centred at $c$. This motivates the following definition.
+Recall that a subset $X\subseteq\Re$ is open if for any $c\in X$ there exists $\epsilon>0$ such that:$$\Huge (c-\epsilon,c+\epsilon)\subseteq X$$Note also:$$\Huge (c-\epsilon,c+\epsilon)=\{x\in\Re:|x-c|<\epsilon\}$$This is called a ball of radius $\epsilon$ centred at $c$. This motivates the following definition. Let $(X,d)$ be a metric space, $x\in X$, and let $r>0$ be a real number. Then:
+> The open ball $B_r(x)$ of radius $r$ centred at $x$ is:$$\Huge B_r(x):=\{y\in X:d(x,y)<r\}$$The closed ball $\overline{B_r(x)}$ of radius $r$ centred at $x$ is:$$\Huge \overline{B_r(x)}:=\{y\in X:d(x,y)\leq r\}$$
+>  
  
