@@ -62,3 +62,9 @@ For example, $\mathbb{Z}\subseteq\mathbb{Q}\subseteq\Re\subseteq\mathbb{C}$. Eac
 
 Therefore $\mathbb{Z}[\sqrt{2}]$ is indeed a subring of $\Re$.
 
+# Fields:
+
+A ring $(R,+,\cdot)$ is called a field if:
+> $R$ is a commutative ring 
+> $1\neq0$, the multiplicative identity is not the same as the additive identity. This also requires that $R$ has at least two distinct elements.
+> For any $a\in R$ with $a\neq0$, there exists $b\in R$ such that $a\cdot b=b\cdot a=1$. We require a multiplicative inverse
