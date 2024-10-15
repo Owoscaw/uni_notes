@@ -45,4 +45,11 @@ Let $(X,d)$ be a metric space, then:
 > $\bigcap_{i\in I}U_i$ is open for any finite collection of open sets $U_i$. Let $x\in\bigcap_{i\in I}U_i$, so for any $i\in\{1,\dots n\}$, we have that $x\in U_i$. Since each $U_i$ is open, there exists $\epsilon_i>0$ such that $B_{\epsilon_i}(x)\subseteq U_i$. Let $\epsilon=\min_{i=1,\dots,n}\epsilon_i$, then $B_\epsilon(x)\subseteq B_{\epsilon_i}(x)\subseteq U_i$ for all $i$. Therefore $B_\epsilon(x)\subseteq\bigcap_{i=1}^nU_i$, and since the chosen $x$ was arbitrary, the finite intersection is open. 
 
 This has a corollary for finite unions of closed sets and arbitrary intersections of closed sets both being closed. this comes from De Morgan's law:$$\Huge \left(\bigcup_{i\in I}U_i\right)^C=\bigcap_{i\in I}U_i^C,\,\,\left(\bigcap_{i\in I}U_i\right)^C=\bigcup_{i\in I}U_i^C$$
-Note that infinite intersections of open sets are not necessarily open since $\bigcap_{n=1}^\infty(\frac{-1}{n},\frac{1}{n})=\{0\}$, which is not open the metric space $(\Re,|\cdot|)$. Similarly, $\bigcup_{n=2}^\infty[\frac{1}{n}]$
+Note that infinite intersections of open sets are not necessarily open since $\bigcap_{n=1}^\infty(\frac{-1}{n},\frac{1}{n})=\{0\}$, which is not open the metric space $(\Re,|\cdot|)$. Similarly, $\bigcup_{n=2}^\infty[\frac{1}{n},1-\frac{1}{n}]=(0,1)$. This shows that an infinite union of closed sets is not necessarily closed.
+
+# Interiors, closure, and boundaries:
+
+Let $A$ be a subset of a metric space $(X,d)$:
+> The interior, $A^0$, of $A$ is defined by $A^0:=\{x\in A:\text{there exists an open set }U\subseteq A\text{ such that }x\in U\}$
+> The closure, $\overline A$, of $A$ is defined as the complement of the interior of the complement:$$\Huge \overline A:=\left(\left(A^C\right)^0\right)^C:\{x\in X:U\cap A\neq\emptyset\text{ for every open set }U\text{ with }x\in U\}$$
+> The boundary, $\partial A$, of $A$ is defined as the closure without the interior:$$\Huge \partial A:=\overline A\setminus A^0=\left(\roght)$$
