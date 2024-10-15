@@ -52,4 +52,6 @@ Note that infinite intersections of open sets are not necessarily open since $\b
 Let $A$ be a subset of a metric space $(X,d)$:
 > The interior, $A^0$, of $A$ is defined by $A^0:=\{x\in A:\text{there exists an open set }U\subseteq A\text{ such that }x\in U\}$
 > The closure, $\overline A$, of $A$ is defined as the complement of the interior of the complement:$$\Huge \overline A:=\left(\left(A^C\right)^0\right)^C:\{x\in X:U\cap A\neq\emptyset\text{ for every open set }U\text{ with }x\in U\}$$
-> The boundary, $\partial A$, of $A$ is defined as the closure without the interior:$$\Huge \partial A:=\overline A\setminus A^0=\left(\roght)$$
+> The boundary, $\partial A$, of $A$ is defined as the closure without the interior:$$\Huge \partial A:=\overline A\setminus A^0=\left(A^0\right)^C\cap\left(\left(A^C\right)^0\right)^C=\left(A^0\cup\left(A^C\right)^0\right)^C$$
+
+Note that $A^0$ is always open, $\overline A$ is always closed, and $\partial A$ is always closed. Note that in $\Re$, with $A=\{x\}$, we have $A^0=\emptyset,\overline A=\{x\},\partial A=\{x\}$
