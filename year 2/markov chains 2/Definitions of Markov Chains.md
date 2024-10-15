@@ -24,5 +24,7 @@ To prove this, we will use the idea of an event $A$ being determined by $X_0,\do
 
 
 Let $(X_n)_{n\geq0}$ be $\text{Markov}(\lambda,P)$. For $n,m\geq0$:
->$\mathbb{P}[X_n=j]=(\lambda p^n)_j$
->$\mathbb{P}_i$
+>$\mathbb{P}[X_n=j]=(\lambda P^n)_j$
+>$\mathbb{P}_i[X_n=j]:=\mathbb{P}[X_n=j|X_0=i]=(P^n)_{ij}$
+
+Note that if $|I|<\infty$, the above is linear algebra as usual, however if $|I|=\infty$ we get the following:$$\Huge (\lambda P)_j:=\sum_{i\in I}\lambda_iP_{ij}\,,\,\,(P^2)=\sum_{k\in I}P_{ik}P_{kj}$$
