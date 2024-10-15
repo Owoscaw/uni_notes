@@ -37,3 +37,9 @@ Let $(X,d)$ be a metric space. Then we define the following:
 Note that some sets are both open and closed.
 
 We now prove that an open ball is indeed open. Let $y\in B_r(x)$, that is $d(x,y)<r$. Consider $\epsilon=\frac{1}{2}(r-d(x,y))>0$. We claim that $B_\epsilon(y)\subseteq B_r(x)$. Note that if $z\in B_\epsilon(y)$, then $d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\epsilon=d(x,y)+\frac{1}{2}(r-d(x,y))=\frac{1}{2}(r+d(x,y))<\frac{r+r}{2}=r$. This comes from the triangle inequality inherent to the metric space. So we have for $z\in B_\epsilon(y)$, $d(x,z)<r$, since $y\in B_r(x)$, we then have that the ball $B_r(x)$ must be open.`
+
+Note that $[0,1)$ is not open, since there is no open interval around $0$ that is contained withing $[0,1)$. This interval is not a closed set either since the same argument exists for its complement. This is a set that is neither open nor closed with respect to the metric space $(\Re,|\cdot|)$. However using the metric space $(X,|\cdot|)$ with $X=[0,\infty)$, this set is indeed open. The notion of being open or closed is relative to the metric space.
+
+Let $(X,d)$ be a metric space, then:
+> $\bigcup_{i\in I}U_i$ is open for any collection of open sets $U_i$. Let $x\in\bigcup_{i\in I}U_i$, then $\exists i_0:x\in U_{i_0}$. Therefore $U_{i_0}$ is open, so there exists some $\epsilon>0$ such that $B_\epsilon(x)\subseteq U_{i_0}\implies B_\epsilon(x)\subseteq\bigcup_{i\in I}U_i$, therefore the
+> $\bigcap_{i\in I}U_i$ is open for any finite collection of open sets $U_i$
