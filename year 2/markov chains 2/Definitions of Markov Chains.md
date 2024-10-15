@@ -10,4 +10,5 @@ Choose $I,\lambda,P$ where $\lambda$ is a distribution on $I$, and $P$ is a stoc
 
 We say that $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$. The same can be said if $(X_n)_{0\leq n\leq N}$ is a finite sequence satisfying the above two requirements.
 
-$(X_n)_{0\leq n\leq N}$ is $\text{Markov}(\lambda,P)$ if and only if for all $i_0,i_1,\dots,i_N\in I$ we have:$$\Huge \mathbb{P}[X_0=i_0,\dotsm]$$
+
+We propose that $(X_n)_{0\leq n\leq N}$ is $\text{Markov}(\lambda,P)$ if and only if for all $i_0,i_1,\dots,i_N\in I$ we have:$$\Huge \mathbb{P}[X_0=i_0,\dots,X_N=i_N]=\lambda_{i_0}P_{i_0i_1}P_{i_1i_2}\dots P_{i_{N-1}i_N}$$To prove this we have to show that the two requirements for a Markov chain imply the above proposition. Assume that $(X_n)_{0\leq n\leq N}$ is $\text{Markov}(\lambda,P)$, then for all $i_0,\dots,i_N\in I$ we have that: $$\tiny\mathbb{P}[X_0=i_0,\dots,X_N=i_N]=\mathbb{P}[X_0=i_0]\mathbb{P}[X_1=i_1,\dots,X_N=i_N]=\mathbb{P}[X_0=i_0]\mathbb{P}[X_1=i_1|X_0=i_0]\mathbb{P}[X_2=i_2,\dots,X_n=i_n|X_0=i_0,X_1=i_1]$$This process continues to give:$$\Huge \mathbb{P}[X_0=i_0]\mathbb{P}[X_1=i_1|X_0=i_0]\dots \mathbb{P}[X_n=i_n|X_0=i_0,\dots,X_{N-1}=i_{N-1}]$$Now we notice that by the two requirements from the assumption, this is equivalent to:$$\Huge \lambda_{i_0}P_{i_0i_1}\dots P_{i_{N-1}i_N}$$This proves the theorem.
