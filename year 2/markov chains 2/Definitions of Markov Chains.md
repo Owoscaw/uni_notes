@@ -1,0 +1,5 @@
+Recall that a [[Probability definition#Axioms|probability space]] is a triple $(\Omega,\mathcal{F},\mathbb{P})$, with the sample space $\Omega$, the sigma algebra $\mathcal{F}$, and the probability measure $\mathbb{P}$. [[Sample spaces and events#Events|Events]] are subsets of $\Omega$, and we get the [[Probability definition#Axioms|probability axioms]].
+
+Let $I$ be a countable set of states, and $X:\Omega\mapsto I$ be an $I$-valued random variable. We define the distribution of $X$ as $\lambda:I\mapsto[0,1]$ given by $\lambda(i)=\lambda_i=\mathbb{P}[X=i]$. A [[Matrix definition|matrix]] $P=(p_{ij})_{i,j\in I}$ induced by $I$ is stochastic if every row of $P$ is a distribution. That is row $i$ is $(p_{ij})_{j\in I}$ is a row vector of probabilities.
+
+This matrix is be used to encode a [[Graph definitions|graph]], where each entry represents the associated probability to go from one state to another.
