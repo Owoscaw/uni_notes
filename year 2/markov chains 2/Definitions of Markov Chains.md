@@ -19,11 +19,9 @@ For example, suppose $X_i$ is uniform on the set $\{a,b,c\}$, with all $X_i$ ind
 
 Let $\delta_i:I\mapsto[0,1]$ defined by:$$\Huge \delta_{ij}=\begin{cases}0&j\neq i\\1&j=i\end{cases}$$This is called the unit mass at $i$. If $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$, then conditional on $X_m=i$, the sequence $(X_{m+n})_{n\geq0}$ is $\text{Markov}(\delta_i,P)$ and is independent of $X_0,X_1,\dots,X_{m-1}$.
 
-To prove this, we will use the idea of an event $A$ being determined by $X_0,\dots,X_m$, meaning that $A$ is a union of events $A_k$, with each:$$\Huge A_k=\{X_0=i_0,\dots,X_m=i_m\}$$Here, each $A_k$ is called an elementary event. We show that for any $A$ determined by $X_0,\dots,X_{m-1}$ and any $i_m,i_{m+1},\dots,i_{m+n}\in I$ we have:$$\large \mathbb{P}[A\cap\{X_m=i_m,\dots,X_{m+n}=i_{m+n}\}|X_m=i]=\delta_{ii_m}P_{i_mi_{m+1}}\dots P_{i_{m+n-1}i_{m+n}}\mathbb{P}[A|X_m=i_m]$$
--
+To prove this, we will use the idea of an event $A$ being determined by $X_0,\dots,X_m$, meaning that $A$ is a union of events $A_k$, with each:$$\Huge A_k=\{X_0=i_0,\dots,X_m=i_m\}$$Here, each $A_k$ is called an elementary event. We show that for any $A$ determined by $X_0,\dots,X_{m-1}$ and any $i_m,i_{m+1},\dots,i_{m+n}\in I$ we have:$$\large \mathbb{P}[A\cap\{X_m=i_m,\dots,X_{m+n}=i_{m+n}\}|X_m=i]=\delta_{ii_m}P_{i_mi_{m+1}}\dots P_{i_{m+n-1}i_{m+n}}\mathbb{P}[A|X_m=i_m]$$This holds for all elementary $A$, by countable additivity. For such $A$, if $i_m\neq i$ then both sides are zero, otherwise $i_m=i$ and we have:$$\small LHS=\frac{\mathbb{P}[X_0=i_0,\dots,X_{m+n}=i_{m+n}]}{\mathbb{P}[X_m=i_m]}\delta_{ii_m}=\frac{\lambda_{i_0}P_{i_0i_1}\dots P_{i_{m+n-1}i_{m+n}}}{\mathbb{P}[X_m=i_m]}\delta_{ii_m}=\frac{\lambda_{i_0}P_{i_0i_1}\dots P_{i_{m-1}i_m}}{\mathbb{P}[X_m=i_m]}\delta_{ii_m}P_{i_mi_{m+1}}\dots P_{i_{m+n-1}i_{m+n}}$$Now notice the fraction is equivalent to $\mathbb{P}[A|X_m=i]$:$$\Huge LHS=\mathbb{P}[A|X_m=i]\delta_{ii_m}P_{i_mi_{m+1}}\dots P_{i_{m+n-1}i_{m+n}}$$And we have the proof as required.
 
-
-Let $(X_n)_{n\geq0}$ be $\text{Markov}(\lambda,P)$. For $n,m\geq0$:
+Sometimes, linear algebra can be used to speed this process up, so let $(X_n)_{n\geq0}$ be $\text{Markov}(\lambda,P)$. For $n,m\geq0$:
 >$\mathbb{P}[X_n=j]=(\lambda P^n)_j$
 >$\mathbb{P}_i[X_n=j]:=\mathbb{P}[X_n=j|X_0=i]=(P^n)_{ij}$
 
