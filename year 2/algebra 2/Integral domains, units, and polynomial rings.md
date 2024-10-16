@@ -1,0 +1,3 @@
+A [[Rings, subrings, and fields|ring]] $R$ which is commutative has at least two elements, and does not have any [[Rings, subrings, and fields#Fields|zero divisors]] other than $0$. This ring is then called an integral domain.
+
+Let $R$ be an integral domain. Then the ring $R[x]_n=\{a_0+a_1x+\dots+a_nx^n:a_i\in R\}$ is also an integral domain. Let $f(x),g(x)\in R[x]$, then we have:$$\Huge f(x)+g(x)=(a_0+b_0)+(a_1+b_1)x+\dots+(a_n+b_n)x^n$$$$\Huge f(x)g(x)=c_0+c_1x+\dots+c_nx^n$$
