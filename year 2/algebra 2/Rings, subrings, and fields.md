@@ -70,3 +70,5 @@ A ring $(R,+,\cdot)$ is called a field if:
 > For any $a\in R$ with $a\neq0$, there exists $b\in R$ such that $a\cdot b=b\cdot a=1$. We require a multiplicative inverse.
 
 Note that each multiplicative inverse is unique, we write this as $a^{-1}$. Some examples of fields are $\mathbb{Q},\Re,\mathbb{C}$. Let $F$ be a field and $a,b\in F$ with $a\cdot b=0$. If $a\neq0$, then $a\cdot b=0\implies a\cdot b\cdot a^{-1}=0\cdot a^{-1}$. Then $a\cdot a^{-1}\cdot b=0=1\cdot b=0\iff b=0$. A similar argument exists for $b\neq0$. This leads to the conclusion that $a=0$. We have $a\neq0\implies b=0$ and $b\neq0\implies a=0$ for any two elements in $F$ that satisfy $a\cdot b=0$.
+
+Let $R$ be a ring and $a\in R$ such that $a\cdot b=0$ for some $b\in R$ with $b\neq0$. Such an element is called a zero-divisor. $0\in R$ is always a zero-divisor.
