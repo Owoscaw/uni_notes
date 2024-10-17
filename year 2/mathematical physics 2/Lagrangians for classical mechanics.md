@@ -1,0 +1,2 @@
+
+Consider a system with kinetic energy $T(q,\dot q)$ and potential energy $V(q)$, where $q$ represents the[[Calculus of variations#Configuration space and generalised coordinates|generalised coordinates]] of the system, then the Lagrangian that leads to the correct physical equations of motion is:$$\Huge L=T-V$$
