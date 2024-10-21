@@ -72,4 +72,13 @@ We say a [[Sequences#Limit of a sequence|sequence]] $(x_n)_{n\in\mathbb{N}}$ in 
 We propose that a sequence of complex numbers $(z_n)$ converges in $(\mathbb{C},|\cdot|)$ if and only if the sequences $(\Re(z_n))$ and $(\Im(z_n))$ converge in $(\Re,|\cdot|)$. This follows from the fact that $\forall z\in \mathbb{C}$:$$\Huge \max{(|\Re(z)|,|\Im(z)|)}\leq|z|\leq|\Re(z)|+|\Im(z)|$$Assume $z_n=x_n+iy_n$ converges to $z=x+iy$:$$\Huge 0\leq|x_n-x|=|\Re(z_n-z)|\leq|z_n-z|$$By our assumption, the RHS and LHS both converge to $0$, so by the sandwich theorem we have that $|\Re(z_n-z)|$ converges to $0$. So we have $x_n\to x$ and $y_n\to y$ as $n\to\infty$. That is $\lim_{n\to\infty}z_n=z\implies\Re(z_n)\to\Re(z)$ and $\Im(z_n)\to\Im(z)$. Conversely, assume $x_n\to x$ and $y_n\to y$ and aim to show $z_n=x_n+iy_n\to x+iy$:$$\Huge 0\leq|z_n-z|\leq|x_n-x|+|y_n-y|$$Both the LHS and RHS tend to $0$, so by the gentle squeeze theorem, we get that $z_n\to z$ as $n\to\infty$ and we have the statement as required.
 
 ## Convergence on the chordal metric:
-Consider the sequence $(ik)_{k\in \mathbb{N}}$ in $\hat{\mathbb{C}}$ and show that it converges to $\infty\in\hat{\mathbb{C}}$ with the chordal metric:$$\Huge d(ik,\infty)=||P^{-1}(ik)-P^{-1}(\infty)||_2=\left|\left|\left(0,\frac{2k}{1+k^2},\frac{k^2-1}{1+k^2}\right)-\left(0,0,1\right)\right|\right|_2$$Where $||\cdot||_2$ represents the euclidian metric. Now:$$\Huge d(ik,)$$
+Consider the sequence $(ik)_{k\in \mathbb{N}}$ in $\hat{\mathbb{C}}$ and show that it converges to $\infty\in\hat{\mathbb{C}}$ with the chordal metric:$$\Huge d(ik,\infty)=||P^{-1}(ik)-P^{-1}(\infty)||_2=\left|\left|\left(0,\frac{2k}{1+k^2},\frac{k^2-1}{1+k^2}\right)-\left(0,0,1\right)\right|\right|_2$$Where $||\cdot||_2$ represents the euclidian metric. Now:$$\Huge d(ik,\infty)=\left|\left|\left(0,\frac{2k}{1+k^2},-\frac{2}{1+k^2}\right)\right|\right|_2=\frac{2}{1+k^2}||(0,k,-1)||_2=\frac{2}{\sqrt{1+k^2}}$$This clearly tends to $0$ as $k\to\infty$, so we have that $ik\to\infty$ as $k\to\infty$
+
+## Limit uniqueness:
+Let $(X,d)$ be a metric space, then:
+> A sequence can have at most one limit
+> We have that $\lim_{n\to\infty}x_n=x$ if and only if for any open $U$ with $x\in U$ there exists $n\in N$ such that for $n>N$ we have $x_n\in U$. Hence the notion of a limit can be stated in terms only of its open sets.
+
+We know that $x_n\to x$ if and only if for any $\epsilon>0\exists N\in \mathbb{N}:\forall n>N$ we have $d(x_n,x)<\epsilon$. This is the same as saying $\forall \epsilon>0\exists N\in \mathbb{N}:\forall n>N$ we have $x_n\in B_\epsilon(x)$. 
+
+Assume $x_n\to x$ and $x_n\to y$. Then for all $n\in \mathbb{N}$ we have:$$\Huge 0\leq d(x,y)\leq d(x,x_n)+d(y,x_n)$$Both sides of the inequality converge to $0$ as $n\to\infty$, so by the gentle sandwich theorem we have that $d(x,y)=0$. Therefore $x=y$
