@@ -4,3 +4,8 @@ For each fixed $u,v$, the position $\underline x(u,v)$ describes a curve with ta
 A surface is smooth if $\hat{\underline n}$ varies continuously over the surface. A surface is piecewise smooth if it can be divided into finitely many smooth pieces. For example, the surface defined by $\underline x(r,\theta)=r\cos\theta \underline e_1+r\sin\theta \underline e_2+r \underline e_3$ for $r\in[0,\infty),\theta\in[0,2\pi]$. Notice that $x^2+y^2=z^2\implies z=\sqrt{x^2+y^2}$, this is a cone centred at the origin. It is smooth everywhere except at the origin, since $\hat{\underline n}$ cannot be defined here. This can be shown algebraically by finding the normal vector and noticing that $\hat{\underline n}\propto-x \underline e_1-y \underline e_2+z \underline e_3$, which does not exists at $(0,0,0)$.
 
 A surface is open if it is bounded by a curve, or closed if it has no boundary. An example of a surface with a boundary would be a hemisphere, the dissection would be the boundary. A boundary of a surface $S$ is often written as $\partial S$.
+
+# Surface integrals of scalar fields:
+
+If $f:\Re^3\mapsto\Re$ is a scalar field and $S$ is a surface with parametrisation $\underline x(u,v)$, then we define the surface integral of $f$ over $S$ to be:$$\Huge \int_SfdS=\int_Uf(\underline x(u,v))\left|\frac{\partial \underline x}{\partial u}\times\frac{\partial \underline x}{\partial v}\right|du\,dv$$Where $U$ is the preimage of $S$ in the $(u,v)$ plane:![[surface integral.png]]
+The area element 
