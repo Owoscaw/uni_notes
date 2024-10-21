@@ -8,4 +8,6 @@ A surface is open if it is bounded by a curve, or closed if it has no boundary. 
 # Surface integrals of scalar fields:
 
 If $f:\Re^3\mapsto\Re$ is a scalar field and $S$ is a surface with parametrisation $\underline x(u,v)$, then we define the surface integral of $f$ over $S$ to be:$$\Huge \int_SfdS=\int_Uf(\underline x(u,v))\left|\frac{\partial \underline x}{\partial u}\times\frac{\partial \underline x}{\partial v}\right|du\,dv$$Where $U$ is the preimage of $S$ in the $(u,v)$ plane:![[surface integral.png]]
-The area element 
+The area element, $\left|\frac{\partial \underline x}{\partial u}\times\frac{\partial \underline x}{\partial v}\right|du\,dv$, is the area on $S$ corresponding to an infinitesimal rectangle with sides $(du,dv)$ in the $(u,v)$ plane. For example, take the plane $z=ax+b$ when parametrised by $(x,y)$. Our parametrisation is then $\underline x(x,y)=x \underline e_1+y \underline e_2+(ax+b) \underline e_3$:$$\Huge \implies\frac{\partial \underline x}{\partial x}=\underline e_1+a \underline e_3,\,\,\frac{\partial\underline x}{\partial y}=\underline e_2\implies\frac{\partial \underline x}{\partial x}\times\frac{\partial \underline x}{\partial y}=-a \underline e_1+\underline e_3$$The magnitude of this vector is then $\sqrt{(-a)^2}+1^2$. Making the area element $\sqrt{1+a^2}dx\,dy$.
+
+If $(u,v)$ are orthogonal [[Curvilinear coordinates|curvilinear coordinates]], then:$$\Huge \left|\frac{\partial \underline x}{\partial u}\times\frac{\partial \underline x}{\partial v}\right|=h_uh_v$$This is pro
