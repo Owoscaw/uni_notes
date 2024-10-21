@@ -79,6 +79,9 @@ Let $(X,d)$ be a metric space, then:
 > A sequence can have at most one limit
 > We have that $\lim_{n\to\infty}x_n=x$ if and only if for any open $U$ with $x\in U$ there exists $n\in N$ such that for $n>N$ we have $x_n\in U$. Hence the notion of a limit can be stated in terms only of its open sets.
 
-We know that $x_n\to x$ if and only if for any $\epsilon>0\exists N\in \mathbb{N}:\forall n>N$ we have $d(x_n,x)<\epsilon$. This is the same as saying $\forall \epsilon>0\exists N\in \mathbb{N}:\forall n>N$ we have $x_n\in B_\epsilon(x)$. 
+Proof:
+>Assume $x_n\to x$ and $x_n\to y$. Then for all $n\in \mathbb{N}$ we have:$$\Huge 0\leq d(x,y)\leq d(x,x_n)+d(y,x_n)$$Both sides of the inequality converge to $0$ as $n\to\infty$, so by the gentle sandwich theorem we have that $d(x,y)=0$. Therefore $\lim_{n\to\infty}d(x,y)=d(x,y)=0\implies x=y$. Therefore we have proven the first statement.
+> Assume $x_n\to x$ as $n\to\infty$, this means that for any $\epsilon>0$ there exists $N\in \mathbb{N}$ such that $\forall n>N$ we have $x_n\in B_\epsilon(x)$. Let $U$ be an open set such that $x\in U$. Since $U$ is open, there exists $\epsilon>0$ such that $B_\epsilon(x)\subseteq U$. Then by definition, there exists $N\in \mathbb{N}$ such that $\forall n>N$ we have that $x_n\in B_\epsilon(x)\subseteq U$. Conversely, assume that for any $U$ open such that $x\in U$, there exists $N\in \mathbb{N}$ such that $\forall n>N$ we have that $x_n\in U$. Given $\epsilon>0$ find $N\in \mathbb{N}$ such that $\forall n>N$ we have that $x_n\in B_\epsilon(x)$
 
-Assume $x_n\to x$ and $x_n\to y$. Then for all $n\in \mathbb{N}$ we have:$$\Huge 0\leq d(x,y)\leq d(x,x_n)+d(y,x_n)$$Both sides of the inequality converge to $0$ as $n\to\infty$, so by the gentle sandwich theorem we have that $d(x,y)=0$. Therefore $x=y$
+## Closure criteria
+Let $(X,d)$ be a metric space. Then $A$ is a closed set if and only if for any sequence $(x_n)_{n\in \mathbb{N}}$ in $A$ that converges to an element $x\in X$ we have that $x\in A$.
