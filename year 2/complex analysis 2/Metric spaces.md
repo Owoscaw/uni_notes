@@ -67,4 +67,9 @@ This is to say $A^0$ is the largest open set that is inside $A$, and $\overline 
 
 We say a [[Sequences#Limit of a sequence|sequence]] $(x_n)_{n\in\mathbb{N}}$ in a metric space $(X,d)$ converges to $x\in X$ if we have:$$\Huge \lim_{n\to\infty}d(x_n,x)=0$$That is, if for every $\epsilon>0$ there exists $N\in \mathbb{N}$ such that $d(x_n,x)<\epsilon$ for every $n>N$. We write $x_n\to x$ as $n\to\infty$, or $\lim_{n\to\infty}x_n=x$.
 
-We propose that a sequence of complex numbers $(z_n)$ converges in $(\mathbb{C},|\cdot|)$ if and only if the sequences $(\Re(z_n))$ and $(\Im(z_n))$ converge in $(\Re,|\cdot|)$. This follows from the fact that $\forall z\in \mathbb{C}$:$$\Huge \max{(|\Re(z)|,|\Im(z)|)}\leq|z|\leq|\Re(z)|+|\Im(z)|$$
+
+## Proving complex numbers converge:
+We propose that a sequence of complex numbers $(z_n)$ converges in $(\mathbb{C},|\cdot|)$ if and only if the sequences $(\Re(z_n))$ and $(\Im(z_n))$ converge in $(\Re,|\cdot|)$. This follows from the fact that $\forall z\in \mathbb{C}$:$$\Huge \max{(|\Re(z)|,|\Im(z)|)}\leq|z|\leq|\Re(z)|+|\Im(z)|$$Assume $z_n=x_n+iy_n$ converges to $z=x+iy$:$$\Huge 0\leq|x_n-x|=|\Re(z_n-z)|\leq|z_n-z|$$By our assumption, the RHS and LHS both converge to $0$, so by the sandwich theorem we have that $|\Re(z_n-z)|$ converges to $0$. So we have $x_n\to x$ and $y_n\to y$ as $n\to\infty$. That is $\lim_{n\to\infty}z_n=z\implies\Re(z_n)\to\Re(z)$ and $\Im(z_n)\to\Im(z)$. Conversely, assume $x_n\to x$ and $y_n\to y$ and aim to show $z_n=x_n+iy_n\to x+iy$:$$\Huge 0\leq|z_n-z|\leq|x_n-x|+|y_n-y|$$Both the LHS and RHS tend to $0$, so by the gentle squeeze theorem, we get that $z_n\to z$ as $n\to\infty$ and we have the statement as required.
+
+## Convergence on the chordal metric:
+Consider the sequence $(ik)_{k\in \mathbb{N}}$ in $\hat{\mathbb{C}}$ and show that it converges to $\infty\in\hat{\mathbb{C}}$ with the chordal metric:$$\Huge d(ik,\infty)=||P^{-1}(ik)-P^{-1}(\infty)||_2=\left|\left|\left(0,\frac{2k}{1+k^2},\frac{k^2-1}{1+k^2}\right)-\left(0,0,1\right)\right|\right|_2$$Where $||\cdot||_2$ represents the euclidian metric. Now:$$\Huge d(ik,)$$
