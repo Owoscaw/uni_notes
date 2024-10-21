@@ -54,4 +54,9 @@ Let $A$ be a subset of a metric space $(X,d)$:
 > The closure, $\overline A$, of $A$ is defined as the complement of the interior of the complement:$$\Huge \overline A:=\left(\left(A^C\right)^0\right)^C:\{x\in X:U\cap A\neq\emptyset\text{ for every open set }U\text{ with }x\in U\}$$
 > The boundary, $\partial A$, of $A$ is defined as the closure without the interior:$$\Huge \partial A:=\overline A\setminus A^0=\left(A^0\right)^C\cap\left(\left(A^C\right)^0\right)^C=\left(A^0\cup\left(A^C\right)^0\right)^C$$
 
-Note that $A^0$ is always open, $\overline A$ is always closed, and $\partial A$ is always closed. Note that in $\Re$, with $A=\{x\}$, we have $A^0=\emptyset,\overline A=\{x\},\partial A=\{x\}$
+Note that $A^0$ is always open, $\overline A$ is always closed, and $\partial A$ is always closed. Note that in $\Re$, with $A=\{x\}$, we have $A^0=\emptyset,\overline A=\{x\},\partial A=\{x\}$.
+
+Properties of a set $A$ in a metric space $(X,d)$:
+> $A$ is open $\iff\partial A\cap A=\emptyset\iff A=A^0$, moreover:$$\Huge A^0=\bigcup_{U\subseteq A}U\,\,\text{for open } U$$
+> $A$ is closed $\iff\partial A\subseteq A\iff A=\overline A$, moreover:
+> $\partial A=\{x\in X:\text{for all open sets }U\text{ containing }x\text{, there exists }y,z\in U\text{ with }y\in A\text{ and }z\in A^C\}$ 
