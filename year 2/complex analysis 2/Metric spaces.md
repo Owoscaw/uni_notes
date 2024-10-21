@@ -58,5 +58,13 @@ Note that $A^0$ is always open, $\overline A$ is always closed, and $\partial A$
 
 Properties of a set $A$ in a metric space $(X,d)$:
 > $A$ is open $\iff\partial A\cap A=\emptyset\iff A=A^0$, moreover:$$\Huge A^0=\bigcup_{U\subseteq A}U\,\,\text{for open } U$$
-> $A$ is closed $\iff\partial A\subseteq A\iff A=\overline A$, moreover:
+> $A$ is closed $\iff\partial A\subseteq A\iff A=\overline A$, moreover:$$\Huge \overline A=\bigcap_{A\subseteq F}F\text{ for closed }F$$
 > $\partial A=\{x\in X:\text{for all open sets }U\text{ containing }x\text{, there exists }y,z\in U\text{ with }y\in A\text{ and }z\in A^C\}$ 
+
+This is to say $A^0$ is the largest open set that is inside $A$, and $\overline A$ is the smallest closed set that contains $A$
+
+# Convergence and Continuity:
+
+We say a [[Sequences#Limit of a sequence|sequence]] $(x_n)_{n\in\mathbb{N}}$ in a metric space $(X,d)$ converges to $x\in X$ if we have:$$\Huge \lim_{n\to\infty}d(x_n,x)=0$$That is, if for every $\epsilon>0$ there exists $N\in \mathbb{N}$ such that $d(x_n,x)<\epsilon$ for every $n>N$. We write $x_n\to x$ as $n\to\infty$, or $\lim_{n\to\infty}x_n=x$.
+
+We propose that a sequence of complex numbers $(z_n)$ converges in $(\mathbb{C},|\cdot|)$ if and only if the sequences $(\Re(z_n))$ and $(\Im(z_n))$ converge in $(\Re,|\cdot|)$. This follows from the fact that $\forall z\in \mathbb{C}$:$$\Huge \max{(|\Re(z)|,|\Im(z)|)}\leq|z|\leq|\Re(z)|+|\Im(z)|$$
