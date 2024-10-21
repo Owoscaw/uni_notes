@@ -8,4 +8,4 @@ A particle of mass $m$ moving freely in $\Re^d$ has a configuration space $\Re^d
 # Pendulum example:
 
 A particle of mass $m$ is free to swing from a rod of length $l$ attached to a fixed surface:![[pendulum.png]]
-Since $l$ is fixed, we have that $x^2+y^2=l^2\implies(x,y)$ is a constrained coordinate system.
+Since $l$ is fixed, we have that $x^2+y^2=l^2\implies(x,y)$ is a constrained coordinate system. Take $x=l\sin\theta,y=-l\cos\theta$, where $\theta$ is unconstrained, then the Lagrangian becomes:$$\Huge L=T-V=\frac{1}{2}m(\dot x^2+\dot y^2)-mgy$$Computing the time derivatives of the $x,y$ coordinates gives:$$\Huge \dot x=l\cos\theta\,\dot\theta,\,\,\dot y=l\sin\theta\,\,\dot \theta$$Making the Lagrangian:$$\Huge L=\frac{1}{2}ml^2\dot\theta^2(\sin^2\theta+\cos^2\theta)-mgy=\frac{1}{2}ml^2\dot\theta^2+mgl\cos\theta$$Now the Euler-Lagrange equations become:$$ \frac{\partial L}{\partial\theta}-\frac{d}{dt}\left(\frac{\partial L}{\partial\dot\theta}\right)=0\implies-mgl\sin\theta-\frac{d}{dt}(ml^2\dot\theta)=0\implies0=-mgl\sin\theta-ml^2\ddot\theta\implies0=g\sin\theta+\ddot\theta$$Using the small angle approximation $\sin\theta\approx$
