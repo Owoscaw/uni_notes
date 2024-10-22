@@ -21,4 +21,9 @@ We then propose that $\mathbb{Z}/n$ is an integral domain if and only if $\mathb
 
 # Polynomials over a field:
 
-Let $F$ be a field. Then $F[x]$ has elements of the form $f(x)=a_0+a_1x+\dots+a_nx^n$
+Let $F$ be a field. Then $F[x]$ has elements of the form $f(x)=a_0+a_1x+\dots+a_nx^n$:$$\Huge F[x]=\{a_0+a_1x+\dots+a_nx^n:a_i\in F\}$$For $i\in\{0,\dots,n\}$. Then we define:$$\Huge \deg(f):=\begin{cases}\max_i\{i:a_i\neq0\}&f\neq0\\-\infty&f=0\end{cases}$$We use $-\infty$ for the zero polynomial because this allows the definitions:
+>$\deg(f\cdot g)=\deg(f)+\deg(g)$
+>$\deg(f+g)\leq\max\{\deg f,\deg g\}$ when $\deg f=\deg g$
+>$\deg(f+g)=\max\{\deg f,\deg g\}$ when $\deg f\neq\deg g$
+
+We have a division algorithm in $F[x]$
