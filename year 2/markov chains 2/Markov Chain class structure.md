@@ -11,8 +11,7 @@ Where $P$ is the [[Definitions of Markov Chains#Stochastic matrices|stochastic m
 ## Communicating class definition:
 A Markov Chain can be divided up into communicating classes, $C_i$, using the relation $\leftrightarrow$:$$\Huge C_i:=\{j\in I:i\leftrightarrow j\}$$Note that if $j\in C_i$, then $C_i=C_j$ and if $j\notin C_i$, then $C_j\cap C_i=\emptyset$. Therefore we can say that communicating classes partition $I$ disjointly. 
 
-We call a Markov Chain irreducible if it consists of a single communicating class, otherwise it is called reducible. 
+We call a Markov Chain irreducible if it consists of a single communicating class, otherwise it is called reducible.  A class $C$ is closed if $i\in C$, $i\to j$ and $j\in C$, that is there is no way to escape $C$ once you are at a node inside it. A state $i$ is called absorbing if $\{i\}$ is a closed communicating class.
 
-A class $C$ is closed if $i\in C$, $i\to j$ and $j\in C$, that is there is no way to escape $C$ once you are at a node inside it.
-
-A state $i$ is called absorbing if $\{i\}$ is a closed communicating class.
+## Periodicity:
+Some properties of Markov Chains hold for all states in a communicating class, called class properties. One of these properties is called periodicity. A state $i$ is called aperiodic if:$$\Huge \gcd\{n:P^{(n)}_{ii}>0\}=1$$That is, $i$ is aperiodic if and only if $P^{(n)}_{ii}>0$ for large enough $n$.
