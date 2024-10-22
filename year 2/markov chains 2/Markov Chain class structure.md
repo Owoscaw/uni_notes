@@ -13,5 +13,8 @@ A Markov Chain can be divided up into communicating classes, $C_i$, using the re
 
 We call a Markov Chain irreducible if it consists of a single communicating class, otherwise it is called reducible.  A class $C$ is closed if $i\in C$, $i\to j$ and $j\in C$, that is there is no way to escape $C$ once you are at a node inside it. A state $i$ is called absorbing if $\{i\}$ is a closed communicating class.
 
-## Periodicity:
+# Periodicity:
+
 Some properties of Markov Chains hold for all states in a communicating class, called class properties. One of these properties is called periodicity. A state $i$ is called aperiodic if:$$\Huge \gcd\{n:P^{(n)}_{ii}>0\}=1$$That is, $i$ is aperiodic if and only if $P^{(n)}_{ii}>0$ for large enough $n$.
+
+If $P$ is the transition matrix of an irreducible Markov Chain, and $i$ is aperiodic, then all $j\in I$ are aperiodic. If $i$ is not aperiodic, then we define the period of state $i$ as $\gcd\{n:P^{(n)}_{ii}>0\}$
