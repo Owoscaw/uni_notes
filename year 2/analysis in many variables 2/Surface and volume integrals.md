@@ -24,4 +24,9 @@ If $S\subset\Re^2$ is a flat surface in the $(x,y)$ plane, then our parametrisat
 
 # Surface integrals of vector fields:
 
-If $\underline f:\Re^3\mapsto\Re^3$ is a vector field and $S$ is an oriented surface with unit normal $\hat{ \underline n}$, we define the surface integral or flux of $\underline f$ through $S$ to be:$$\Huge \int_S \underline f\cdot\hat{\underline n}\,dS=\int_U \underline f(\underline x(u,v))\cdot\hat{ \underline n}(\underline x(u,v))\left|\frac{\partial \underline x}{\partial u}\times \frac{\partial \underline x}{\partial v}\right|du\,dv=$$
+If $\underline f:\Re^3\mapsto\Re^3$ is a vector field and $S$ is an oriented surface with unit normal $\hat{ \underline n}$, we define the surface integral or flux of $\underline f$ through $S$ to be:$$\ \int_S \underline f\cdot\hat{\underline n}\,dS=\int_U \underline f(\underline x(u,v))\cdot\hat{ \underline n}(\underline x(u,v))\left|\frac{\partial \underline x}{\partial u}\times \frac{\partial \underline x}{\partial v}\right|du\,dv=\int_U\underline f(\underline x(u,v))\cdot \left(\frac{\partial \underline x}{\partial u}\times \frac{\partial \underline x}{\partial v}\right)du\,dv$$Note that sometimes $\hat{\underline n}\,dS$ is sometimes written as $\underline{dS}$, known as the vector area element. Unlike a scalar surface integral, the flux also depends on the sign of $\hat{\underline n}$. A non-zero flux requires a component of $\underline f$ through the surface:
+![[surface vector integral.png]]
+
+Take for example the outward flux of $\underline f(\underline x)=\cos^7\theta \underline e_r$ in spherical coordinates through the hemisphere $r=a,z\geq0$:
+![[hemisphere flux.png]]
+So we parametrise the hemisphere in spherical coordinates, $\underline x(\theta,\phi)$. We know $\hat{\underline n}=\underline e_r$ and that $\left|\frac{\partial \underline x}{\partial \theta}\times \frac{\partial \underline x}{\partial \phi}\right|=h_\theta h_\phi=a^2\sin\theta$, so the integral becomes:$$\Huge \int_S \underline f\cdot \hat{\underline n}$$
