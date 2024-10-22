@@ -26,6 +26,8 @@ Let $F$ be a field. Then $F[x]$ has elements of the form $f(x)=a_0+a_1x+\dots+a_
 >$\deg(f+g)\leq\max\{\deg f,\deg g\}$ when $\deg f=\deg g$
 >$\deg(f+g)=\max\{\deg f,\deg g\}$ when $\deg f\neq\deg g$
 
-We have a division algorithm in $F[x]$. Let $f,g\in F[x]$ with $g(x)\neq0$. Then there exists a unique $q,r\in F$ such that:$$\Huge f(x)=q(x)g(x)+r(x)$$Here, $q(x)$ can be thought of the quotient, and $r(x)$ can be thought of as the remainder. We also have $\deg r<\deg g$. If the $\deg g>\deg f$, then we take $q(x)=0$ and $r(x)=f(x)$. The other case, where $\deg g\leq\deg f$ goes as follows:
+We have a division algorithm in $F[x]$. Let $f,g\in F[x]$ with $g(x)\neq0$. Then there exists a unique $q,r\in F$ such that:$$\Huge f(x)=q(x)g(x)+r(x)$$Here, $q(x)$ can be thought of the quotient, and $r(x)$ can be thought of as the remainder. We also have $\deg r<\deg g$. If the $\deg g>\deg f$, then we take $q(x)=0$ and $r(x)=f(x)$. The other case, where $\deg g\leq\deg f$ goes as follows. Let $f(x)=a_0+a_1x+\dots+a_mx^m$ and $g(x)=b_0+b_1x+\dots+b_nx^n$ with $a_m,b_n\neq0$ and $m\neq n$. Define $d:=m-n\geq0$. We prove the existence of $q$ and $r$ by induction on $d$:
 
-Let $f(x)=a_0+a_1x+\dots+a_mx^m$ and $g(x)=b_0+b_1x+\dots+b_nx^n$ with $a_m,b_n\neq0$ and $m\neq n$.
+Base case, $d=0$. Set $q(x)=\frac{a_m}{b_n}$, where $\frac{\cdot}{b_n}$ represents multiplication of $am$ by the multiplicative inverse of $b_n$. This is possible since we are working over a field. Set $r(x)=f(x)-q(x)g(x)$, then $\deg r<\deg g$ and $f(x)=q(x)g(x)+r(x)$, and we have the proposition as required.
+
+Induction, assuming the existence of such $q,r\in F$ for $d<k$. Define $f_1(x):=f(x)-\frac{a_m}{b_n}x^{m-n}g(x)$. Note that $\deg f_1<\deg f$. Now by the induction hypothesis, there exists $q_1,r\in F[x]$ such that:$$\Huge f_1(x)=q_1(x)g(x)+r(x)$$With $\deg r<\deg g$. Now we have:$$\Hu$$
