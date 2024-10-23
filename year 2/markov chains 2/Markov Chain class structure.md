@@ -21,4 +21,4 @@ If $P$ is the transition matrix of an irreducible Markov Chain, and $i$ is aperi
 
 # Hitting times:
 
-The hitting time of a set of states $A\subset I$ is the random variable $H^A:\Omega\mapsto\mathbb{N}_0\cup\{\infty\}$ defined by the following formula:$$\Huge H^A:=\inf\{n\geq0:X_n\in A\}$$
+The hitting time of a set of states $A\subset I$ is the random variable $H^A:\Omega\mapsto\mathbb{N}_0\cup\{\infty\}$ defined by the following formula:$$\Huge H^A:=\inf\{n\geq0:X_n\in A\}$$We also define:$$\Huge h_i^A:=\mathbb{P}_i[H^A<\infty],\,\,k_i^A:=\mathbb{E}_i[H^A]$$That is, when starting at state $i$, $h_i^A$ represents the probability that the hitting time is finite and $k_i^A$ is the expected hitting time. We can find this expectation:$$\Huge k_i^A=\sum_{n=0}^\infty n \mathbb{P}_i[H^A=n]+\begin{cases}0&\mathbb{P}_i[H^A=\infty]=0\\\infty&\text{otherwise}\end{cases}$$Sometimes $H$
