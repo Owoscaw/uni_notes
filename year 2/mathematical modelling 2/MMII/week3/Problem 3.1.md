@@ -1,2 +1,2 @@
 
-While it is well know that $(a+b)^2=a^2+2ab+b^2$, fewer people are aware that $$\Huge e^{i\pi}=-1.$$Hopefully you all knew this!
+The fit of the data is reasonable and the meaning of the parameter $b$ represents the gradient of the line of best fit.
