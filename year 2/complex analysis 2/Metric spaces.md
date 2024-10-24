@@ -113,4 +113,16 @@ Assume $f$ is continuous and let $U\subseteq X_2$ be a given open set. For every
 
 Conversely, assume $f^{-1}(U)$ is open for all open sets $U$. Given $\epsilon>0$ and some $x\in X$, then $B_\epsilon(f(x))$ is open. This implies $f^{-1}(B_\epsilon(f(x)))$ is also open. As $x\in f^{-1}(B_\epsilon(f(x)))$ and $f^{-1}(B_\epsilon(f(x)))$ was open, then there exists a $\delta>0$ such that $B_\delta(x)\subseteq f^{-1}(B_\epsilon(f(x)))$. That is to say $f(y)\in B_\epsilon(f(x))$ when $y\in B_\delta(x)$, so we have that $f$ is continuous at arbitrary $x$, making $f$ continuous. Therefore $f^{-1}(U)\implies f$ is continuous.
 
-The criterion for closed sets follows from the above, completing the tautology.
+The criterion for closed sets follows from the above, completing the tautology. For any $y\in X_2$ we immediately get that $f^{-1}(\{y\})$ is closed, since any singleton set is closed.
+
+Take for example $U=\{(x,y)\in\Re^2:(x^2+y^2)\sin^3(\sqrt{x^2+7})>2\}$. The function $f(x,y)=(x^2+y^2)\sin^3(\sqrt{x^2+7})$ is continuous since is is only composition and addition of other continuous functions. We have $U=\{(x,y)\in\Re^2:f(x,y)>2\}=f^{-1}(2,\infty)$. This is the pre image of an open set on a continuous function, so we automatically get that this set is also open by the above.
+
+# Properties of the pre-image:
+> $f^{-1}(A\cup B)=f^{-1}(A)\cup f^{-1}(B)$
+> $f^{-1}(A\cap B)=f^{-1}(A)\cap f^{-1}(B)$
+> $f^{-1}(A\setminus B)=f^{-1}(A)\setminus f^{-1}(B)$
+> $f^{-1}(A^C)=f^{-1}(Y\setminus A)=f^{-1}(Y)\setminus f^{-1}(A)=X\setminus f^{-1}(A)=(f^{-1}(A))^C$
+
+# Sequential compactness:
+
+A non-empty subset $K$ of a metric space $X$ is called sequentially compact if for any sequence $(x_n)_{n\in\mathbb{N}}$ in $K$ there exists a convergent subsequence $(x_{n_k})_{k\in \mathbb{N}}$
