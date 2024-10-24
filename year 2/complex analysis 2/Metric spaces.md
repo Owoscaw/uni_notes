@@ -85,3 +85,9 @@ Proof:
 
 ## Closure criteria
 Let $(X,d)$ be a metric space. Then $A$ is a closed set if and only if for any sequence $(x_n)_{n\in \mathbb{N}}$ in $A$ that converges to an element $x\in X$ we have that $x\in A$.
+
+# Continuity:
+
+A map between two metric spaces $f:(X_1,d_1)\mapsto(X_2,d_2)$ is called continuous at $x_0\in X_1$ if for all $\epsilon>0$ there exists such $\delta>0$ such that for all $x\in X_1$ with $d_1(x,x_0)<\delta$ we have $d_2(f(x),f(x_0))<\epsilon$. We call a function continuous on $X_1$ if it is continuous at every point $x_0\in X_1$. That is to say a function is continuous at $x_0$ if for any $\epsilon>0\,\,\exists \delta>0$ such that $f(x)\in B_\epsilon^{(d_2)}(f(x))$ when $x\in B_\delta^{(d_1)}(x_0)$
+
+A function $f:X\mapsto Y$ between two metric spaces is continuous at $x\in X$ if and only if:$$\Huge $$
