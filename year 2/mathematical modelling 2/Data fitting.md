@@ -20,3 +20,6 @@ print("a=",popt[0],"b=",popt[1])
 ```
 Here, the last parameter for the scipy function are the starting values of $a$ and $b$.
 
+# Fitting exponential data:
+
+Suppose we have a set of data $t,d(t):(0,d_0),(1,d_1),\dots,(n,d_n)$ where we try to fit the exponential function $D(t)=Ae^{kt}$ for some parameters $A,k$. We can take the logarithm of the function:$$\Huge \ln(Ae^{kt})=\ln A+kt$$Treating this as a linear function and using the curve fitting described above will not work since the data corresponding to the largest value will have much greater impact on the curve fitting algorithm than it should.
