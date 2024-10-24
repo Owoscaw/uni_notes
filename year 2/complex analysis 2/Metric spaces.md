@@ -104,4 +104,9 @@ The proofs for these follow the same as the metric space $(\Re,||_{EUC})$, which
 > > $z\mapsto|z|$
 > Note that $\arg(z)$ is not continuous on $\mathbb{C}$ regardless of the choice of $\theta$ interval. Let $z_n=e^{i(\frac{1}{n}-\pi)}$, then $\arg(z_n)=\frac{1}{n}-\pi\to-\pi$ as $n\to\infty$. However $\lim_{n\to\infty}z_n=e^{-i \pi}=-1$ and $\arg(-1)=\pi$, so $\arg(z_n)\nrightarrow\arg(z_0)$ where $z_n\to z_0$, so this function cannot be continuous.
 
-For any function $f:X_1\mapsto X_2$ and any set $U\subset$
+For any function $f:X_1\mapsto X_2$ and any set $U\subseteq X_2$, the preimage of $U$ under $f$ is defined as:$$\Huge f^{-1}(U):=\{x\in X_1:f(x)\in U\}$$For metric spaces $X_1,X_2$ and $f:X_1\mapsto X_2$ a given map, the following are equivalent:
+>$f$ is continuous
+>$f^{-1}(U)$ is open in $X_1$ for every open set $U\subseteq X_2$
+>$f^{-1}(F)$ is closed in $X_1$ for every closed set $F\subseteq X_2$
+
+Assume $f$ is continuous and let $U\subseteq X_2$ be a given open set. For every element in $f^{-1}(U)$, there must exist an open ball centred at that point such that the ball is completely contained within the set in order for $f^{-1}(U)$ to be an open set. Let $x\in f^{-1}(U)\implies f(x)\in U$. $U$ is open, so there must exist $\epsilon>0$ such that a ball of radius $\epsilon$ around the point $f(x)$ is completely contained within $U$, that is $B_\epsilon(f(x))\subseteq U$. Since $f$ is continuous at $x$, there exist $\delta>0$ such that if $y\in B_\delta(x)$ then $f(y)\in B_\epsilon(f(x))$
