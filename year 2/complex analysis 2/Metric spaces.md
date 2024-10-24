@@ -125,4 +125,10 @@ Take for example $U=\{(x,y)\in\Re^2:(x^2+y^2)\sin^3(\sqrt{x^2+7})>2\}$. The func
 
 # Sequential compactness:
 
-A non-empty subset $K$ of a metric space $X$ is called sequentially compact if for any sequence $(x_n)_{n\in\mathbb{N}}$ in $K$ there exists a convergent subsequence $(x_{n_k})_{k\in \mathbb{N}}$
+A non-empty subset $K$ of a metric space $X$ is called sequentially compact if for any sequence $(x_n)_{n\in\mathbb{N}}$ in $K$ there exists a convergent [[Sequences#The Bolzano-Weierstrass Theorem|subsequence]] $(x_{n_k})_{k\in \mathbb{N}}$ with a limit in $K$. $(0,1)$ is not compact in $(\Re,|\cdot|)$, the sequence $a_n=1-\frac{1}{n}$ does not have a converging subsequence in $(0,1)$
+
+A set $F\subseteq X$ is closed if and only if every sequence in $F$ which converges in $X$ has its limit as a point in $F$. That is to say if $(x_n)_{n\in \mathbb{N}}$ is in $F$ and $\lim_{n\to\infty}x_n=x$ for some $x\in X$, then $x\in F$. This implies a connection between being closed and sequential compactness. We get the corollaries:
+> Sequentially compact sets are closed
+> Any closed subset of a sequentially compact set is sequentially compact
+
+This relies on the [[Sequences#The Bolzano-Weierstrass Theorem|Bolzano-Weierstrass Theorem]]
