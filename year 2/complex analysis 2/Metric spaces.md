@@ -102,3 +102,6 @@ The proofs for these follow the same as the metric space $(\Re,||_{EUC})$, which
 > > $z\mapsto\Im(z)$
 > > $z\mapsto\overline z$
 > > $z\mapsto|z|$
+> Note that $\arg(z)$ is not continuous on $\mathbb{C}$ regardless of the choice of $\theta$ interval. Let $z_n=e^{i(\frac{1}{n}-\pi)}$, then $\arg(z_n)=\frac{1}{n}-\pi\to-\pi$ as $n\to\infty$. However $\lim_{n\to\infty}z_n=e^{-i \pi}=-1$ and $\arg(-1)=\pi$, so $\arg(z_n)\nrightarrow\arg(z_0)$ where $z_n\to z_0$, so this function cannot be continuous.
+
+For any function $f:X_1\mapsto X_2$ and any set $U\subset$
