@@ -137,4 +137,14 @@ Let $K$ be sequentially compact. To show that it is closed, it is enough to show
 
 Note that closedness is not enough to be sequentially compact. For instance with $\Re$ with $|\cdot|$ is not sequentially compact
 
-A subset $A\subseteq X$ of a metric space $X$ is said to be bounded if there exists $R>0$ and $x\in X$ such that $A\subseteq B_R(x)$. In the space $\mathbb{C}$, $A$ is bounded if and only if:$$\Huge \exists R>0:A\subseteq\{z\in \mathbb{C}:|z|<R\}\subseteq B_R(0)$$So we ask what
+## Boundedness:
+A subset $A\subseteq X$ of a metric space $X$ is said to be bounded if there exists $R>0$ and $x\in X$ such that $A\subseteq B_R(x)$. In the space $\mathbb{C}$, $A$ is bounded if and only if:$$\Huge \exists R>0:A\subseteq\{z\in \mathbb{C}:|z|<R\}\subseteq B_R(0)$$So we ask what is the link between boundedness and sequentially compactness.
+
+Let $K\subseteq X$ be a sequentially compact subset of a metric $X$. Then $K$ is bounded.
+
+So we ask if being bounded and closed is enough to guarantee sequential compactness. In most metric spaces, this is not true. In $\Re^n$ and $\mathbb{C}^n$, these two criteria are enough to guarantee sequential compactness, known as the Heine-Borel theorem:
+
+## Heine-Borel:
+A subset $K$ of $\Re^n$ or $\mathbb{C}^n$ is sequentially compact with respect to the standard metric if and only if it is closed and bounded.
+
+Any sequentially compact set in any metric space is automatically bounded and closed, we show the converse for $\Re^2$ or $\mathbb{C}$. The general case follows by induction. Assume $K$ is bounded and closed. Let $(z_n)_{n\in \mathbb{N}}$ be a sequence in $K$. Writing $z_n=x_n+iy_n$ with $x_n,y_n\in \Re$ we see that:$$\Huge \max(|x_n|,|y_n|)\leq|z_n|\implies(x_n)_{n\in \mathbb{N}},(y_n)_{n\in \mathbb{N}}\text{ are bounded}$$By 
