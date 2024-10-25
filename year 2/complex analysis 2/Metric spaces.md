@@ -133,4 +133,8 @@ A set $F\subseteq X$ is closed if and only if every sequence in $F$ which conver
 
 This relies on the [[Sequences#The Bolzano-Weierstrass Theorem|Bolzano-Weierstrass Theorem]], that is if $(x_n)_{n\in \mathbb{N}}$ is a convergent sequence in a metric space $X$, then any subsequence of it converges to the same limit. $\lim_{n\to\infty}x_n=x$ by definition when $d(x,x_n)\to0$ as $n\to\infty$. Let $(x_{n_j})_{j\in \mathbb{N}}$ be a subsequence of $(x_n)$, then $(d(x_{n_j},x))_j$ is a subsequence of $(d(x_n,x))_{n\in \mathbb{N}}$. From the Bolzano-Weierstrass theorem, we know that $d(x_n,x)\to0$ implies that $d(x_{n_j},x)\to 0$ as $n,j\to\infty$. Thus $x_n\to x$ and $x_{n_j}\to x$ as $n,j\to\infty$.
 
-Let $k$ be sequentially compact. To show that it i
+Let $K$ be sequentially compact. To show that it is closed, it is enough to show that if $(x_n)_{n\in \mathbb{N}}$ is a sequence in $K$ that converges to some $x\in X$, then $x\in K$. Let $(x_n)_{n\in \mathbb{N}}\subseteq K$ such that $x_n\to x$ as $n\to\infty$. Since $K$ is compact there exists $(x_{n_j})_{j\in \mathbb{N}}$ such that $x_{n_j}\to k$ as $j\to\infty$ where $k\in K$. However $x_{n_j}\to x$ as $j\to\infty$ since $x_n\to x$ as $n\to\infty$. Therefore we say that $x=k\in K$ and have proven that a sequentially compact set is closed.
+
+Note that closedness is not enough to be sequentially compact. For instance with $\Re$ with $|\cdot|$ is not sequentially compact
+
+A subset $A\subseteq X$ of a metric space $X$ is said to be bounded if there exists $R>0$ and $x\in X$ such that $A\subseteq B_R(x)$. In the space $\mathbb{C}$, $A$ is bounded if and only if:$$\Huge \exists R>0:A\subseteq\{z\in \mathbb{C}:|z|<R\}\subseteq B_R(0)$$So we ask what
