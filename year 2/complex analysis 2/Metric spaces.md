@@ -153,3 +153,7 @@ Any sequentially compact set in any metric space is automatically bounded and cl
 Let $f:X\mapsto Y$ be a continuous map between two metric spaces. Then, if $K\subseteq X$ is sequentially compact, the image $f(K)$ is sequentially compact in $Y$. In particular for $Y=\Re$, any continuous real valued function on a metric space $X$ attains minima and maxima on sequentially compact sets.
 
 To prove this, let $(y_n)_{n\in \mathbb{N}}$ be a sequence in $f(K)$. $y_n\in f(K)\implies\exists x_n\in K:f(x_n)=y_n$. Now since $K$ is sequentially compact, there must exists some $(x_{n_k})_{k\in \mathbb{N}}$ such that $x_{n_k}\to x\in K$. $f$ is continuous, so we have:$$\Huge y_{n_k}=f(x_{n_k})\to f(x)\in f(K)$$As $k\to\infty$. We have found a converging subsequence whose limit is in $f(K)$. The sequence was arbitrary, so $f(K)$ is sequentially compact. In $\Re$, any sequentially compact set is closed and bounded. As such, it must contain its supremum and infimum. Boundedness implies their existence, and closedness implies their Prescence within the set.
+
+Let $X$ be a metric space. We say that a subset $K$ is compact if whenever $U_i$ for $i\in I$ is a collection of open subsets $U_i\subseteq X$ with $K\subseteq\bigcup_{i\in I}U_i$ then there exists a finite subset $J\subseteq I$ with $K\subseteq\bigcup_{i\in J}U_i$
+
+Let $X$ be a metric space and let $K$ be a subset of $X$, then $K$ is sequentially compact if and only if $K$ is compact.
