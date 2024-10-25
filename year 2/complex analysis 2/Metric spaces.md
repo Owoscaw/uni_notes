@@ -131,4 +131,6 @@ A set $F\subseteq X$ is closed if and only if every sequence in $F$ which conver
 > Sequentially compact sets are closed
 > Any closed subset of a sequentially compact set is sequentially compact
 
-This relies on the [[Sequences#The Bolzano-Weierstrass Theorem|Bolzano-Weierstrass Theorem]]
+This relies on the [[Sequences#The Bolzano-Weierstrass Theorem|Bolzano-Weierstrass Theorem]], that is if $(x_n)_{n\in \mathbb{N}}$ is a convergent sequence in a metric space $X$, then any subsequence of it converges to the same limit. $\lim_{n\to\infty}x_n=x$ by definition when $d(x,x_n)\to0$ as $n\to\infty$. Let $(x_{n_j})_{j\in \mathbb{N}}$ be a subsequence of $(x_n)$, then $(d(x_{n_j},x))_j$ is a subsequence of $(d(x_n,x))_{n\in \mathbb{N}}$. From the Bolzano-Weierstrass theorem, we know that $d(x_n,x)\to0$ implies that $d(x_{n_j},x)\to 0$ as $n,j\to\infty$. Thus $x_n\to x$ and $x_{n_j}\to x$ as $n,j\to\infty$.
+
+Let $k$ be sequentially compact. To show that it i
