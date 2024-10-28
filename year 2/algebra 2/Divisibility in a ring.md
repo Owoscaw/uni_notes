@@ -16,5 +16,10 @@ To prove the first statement, assume $d\cdot u$ has the same properties of $d$. 
 
 To prove the second statement, we observe both $d,d'$ are $\gcd(a,b)$. From the properties of the $\gcd$ we have that $d|d'$ and $d'|d$, that is $d'=d\cdot v$ and $d=d'\cdot u$ for $u,v\in R$. Combining these statements gives $d=(d\cdot v)\cdot u\implies d(1-u\cdot v)=0$. Now since $R$ was assumed to be an integral domain, there exist no zero divisors other than $0$. This allows us to conclude that either $d=0$ or $(1-u\cdot v)=0$. $d=0\implies d'=0$. $1-u\cdot v=0\implies u\cdot v=1\implies u,v\in R^X$ are units. So either both $d=d'=0$ or $d$ and $d'$ differ by a unit.
 
-## Monic:
-A polynomial in $F[x]$ with $F$ a field is called monic if its leading coef
+# Monicicity:
+
+A polynomial in $F[x]$ with $F$ a field is called monic if its leading coefficient is $1$.
+
+Note that for $p(x)=a_mx^m+a_{m-1}x^{m-1}+\dots+a_0$ with $a_m\neq0$, $q(x)=a^{-1}_m(a_mx^m+\dots+a_0)=x^m+\dots$, then:$$\Huge q(x)=a^{-1}_mp(x)\text{ is monic}$$If $p(x)=\gcd(f,g)$, then so is $q(x)$.
+
+Assume $p_1(x),p_2(x)$ are monic polynomials in $F[x]$ such that $p_1(x)=u\cdot p_2(x)$ for $u\in F^X$. By comparing leading terms, we observe that $u=1\implies p_1(x)=p_2(x)$. Therefore if $f,g\in F[x]$, then the monic $\gcd(f,g)$ is unique
