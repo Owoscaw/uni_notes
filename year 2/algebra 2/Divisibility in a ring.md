@@ -5,5 +5,9 @@ Let $R$ be a [[Rings, subrings, and fields|commutative ring]]. Let $a,b\in R$. W
 
 Note that according to the definition above, both $-1$ and $1$ are a $\gcd(2,3)$ with $R=\mathbb{Z}$, however since $\mathbb{Z}$ has an ordering, we can define the greatest common divisor as $1$. We must also define:$$\Huge \gcd(0,0):=0$$Note that $\gcd(a,b)$ does not exist for every $a,b$ in every ring $R$.
 
+Let $R$ be $\mathbb{Z}$ or $F[x]$ with $F$ a field. Then:
+> Given $a,b\in R$, a $\gcd(a,b)$ always exists
+> If $a,b\neq0$, then $\gcd(a,b)$ can be computed using the Euclidean Algorithm
+> If $d$ is a $\gcd(a,b)$ then there exists $x,y\in R$
 # Euclidean Algorithm:
 
