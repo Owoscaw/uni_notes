@@ -12,5 +12,6 @@ The parameter $b$ represents the increased amount of temperature the Earth will 
 # Problem 4.1:
 
 $$\Huge \frac{d N}{dt}=R_0N\exp{(-R_1N)}-\frac{Y}{2}\left(1+\tanh \left(\frac{N-N_h}{K}\right) \right)$$
-Let $t=\frac{1}{R_0}\hat t$, $N=\frac{1}{R_0}\hat N$, $Y=$, $R_1=R_0\hat R_1$, $N_h=$ 
-Require $R_0N=\hat N$ and $-R_1N=-\hat R_1\hat N$. This implies $N=\frac{1}{R_0}\hat N$ and $R_1=\frac{}{}$
+Require $R_0N=\hat N$ and $-R_1N=-\hat R_1\hat N$. This implies $N=\frac{1}{R_0}\hat N$ and $R_1=\frac{\hat R_1\hat N}{N}=\frac{\hat R_1\hat N}{\frac{1}{R_0}\hat N}=R_0\hat R_1$. So we have the first two changes of variables, $N=\frac{1}{R_0}\hat N$ and $R_1=R_0\hat R_1$. 
+
+Now $\frac{d}{dt}(N)=\frac{d}{dt}(\frac{1}{R_0}\hat N)=\frac{1}{R_0}\frac{d\hat N}{dt}$. We require that this is equal to $\frac{d\hat N}{d\hat t}$ so let $t=(1/R_)$  
