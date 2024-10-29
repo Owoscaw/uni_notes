@@ -21,3 +21,16 @@ There are two standard ways to differentiate a vector field $\underline f:\Re^3\
 > The curl of $\underline f$ is the vector field:$$\Huge \underline\nabla\times\underline f\vert_x=\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}\times\underline f\,dS$$
 
 For these limits to be well defined, it is sufficient for $\underline f$ to be in $C^1$, the space of all differentiable functions:![[divergence and curl|100%]]
+The intuition for these is that the divergence is a measure of how much $\underline f$ points inwards or outwards, and the curl is a measure of how much $\underline f$ rotates around each axis.
+
+If $\underline a\in\Re^3$ is a constant vector and $f:\Re^3\mapsto\Re$ is a $C^1$ scalar field, we have:
+> $\underline\nabla\cdot(f\underline a)=(\underline \nabla f)\cdot a$
+> $\underline \nabla\times(f \underline a)=(\underline \nabla f)\times \underline a$
+
+To prove this, observe:
+> $$\large \underline \nabla\cdot(f\underline a)=\lim_{d(S)\to 0}\frac{1}{|V|}\oint_S\underline{\hat{n}}\cdot(f\underline a)dS=\left(\lim_{d(S)\to 0}\frac{1}{|V|}\oint_S\underline{\hat{n}}f\,dS\right)\cdot\underline a=(\underline \nabla f)\cdot\underline a$$$$\large \underline \nabla\times(f\underline a)=\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}\times(f\underline a)dS=\left(\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}f\,dS\right)\times\underline a=(\underline \nabla f)\times\underline a$$
+
+In cartesian coordinates, we propose that the divergence and curl take form:
+> $$\Huge \underline\nabla\cdot\underline f=\frac{\partial f_1}{\partial x}+\frac{\partial f_2}{\partial y}+\frac{\partial f_3}{\partial z}$$$$ \underline \nabla\times\underline f=\begin{vmatrix}\underline e_1&\underline e_2&\underline e_3\\\frac{\partial }{\partial x}&\frac{\partial }{\partial y}&\frac{\partial }{\partial z}\\f_1&f_2&f_3\end{vmatrix}=\left(\frac{\partial f_3}{\partial y}-\frac{\partial f_2}{\partial z}\right)\underline e_1+\left(\frac{\partial f_1}{\partial z}-\frac{\partial f_3}{\partial x}\right)\underline e_2+\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)\underline e_3$$
+
+Note that since divergence and curl have been expressed as a combination of partial derivatives, showing that they really are differential operators. When working in cartesian coordinates, $\underline\nabla$ can be thought of as the differential operator defined by:$$\Huge \underline e_1\frac{\partial }{\partial x}+\underline e_2\frac{\partial }{\partial y}+\underline e_3\frac{\partial }{\partial z}$$The proof for each is as follows:![[Differential operators 2024-10-29 21.06.48.excalidraw]]
