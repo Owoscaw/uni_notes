@@ -1,5 +1,4 @@
 
-
 # Problem 3.6:
 
 $\Delta T$ is likely to reach $1.5$ in the year $2056$
@@ -13,3 +12,5 @@ The parameter $b$ represents the increased amount of temperature the Earth will 
 # Problem 4.1:
 
 $$\Huge \frac{d N}{dt}=R_0N\exp{(-R_1N)}-\frac{Y}{2}\left(1+\tanh \left(\frac{N-N_h}{K}\right) \right)$$
+Let $t=\frac{1}{R_0}\hat t$, $N=\frac{1}{R_0}\hat N$, $Y=$, $R_1=R_0\hat R_1$, $N_h=$ 
+Require $R_0N=\hat N$ and $-R_1N=-\hat R_1\hat N$. This implies $N=\frac{1}{R_0}\hat N$ and $R_1=\frac{}{}$
