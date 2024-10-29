@@ -21,4 +21,21 @@ If $P$ is the transition matrix of an irreducible Markov Chain, and $i$ is aperi
 
 # Hitting times:
 
-The hitting time of a set of states $A\subset I$ is the random variable $H^A:\Omega\mapsto\mathbb{N}_0\cup\{\infty\}$ defined by the following formula:$$\Huge H^A:=\inf\{n\geq0:X_n\in A\}$$We also define:$$\Huge h_i^A:=\mathbb{P}_i[H^A<\infty],\,\,k_i^A:=\mathbb{E}_i[H^A]$$That is, when starting at state $i$, $h_i^A$ represents the probability that the hitting time is finite and $k_i^A$ is the expected hitting time. We can find this expectation:$$\Huge k_i^A=\sum_{n=0}^\infty n \mathbb{P}_i[H^A=n]+\begin{cases}0&\mathbb{P}_i[H^A=\infty]=0\\\infty&\text{otherwise}\end{cases}$$Sometimes $h_i^A$ is called absorption probability if $A$ is a closed communicating class. The vector of hitting probabilities $(h_i^A)_{i\in I}$ is the minimal non negative solution to the system of equations:$$\Huge \begin{cases}h_i^A=1&i\in A\\h_i^A=\sum_{j\in I}P_{ij}h_j^A&i\notin A\end{cases}$$The vector of hitting expectations $(k_i^A)_{i\in I}$ is the minimal non negative solution to the system of equations:$$\Huge \begin{cases}k_i^A=0&i\in A\\k_i^A=1+\sum_{j\in I}P_{ij}k_j^A&i\notin A\end{cases}$$To prove this theorem, we need to show that $(h_i^A)_{i\in I}$ solves the system of equations and that any other solution must not be minimal. To show that this solves the system of equations, we notice for $i\in A$, $h_i^A=1$ and if $i\notin A$ we have:$$\large \mathbb{P}_i[H^A<\infty]=\sum_{j\in I}\mathbb{P}_i[H^A<\infty,X_1=j]=\sum_{j\in I}\mathbb{P}_i[H^A<\infty|X_1=j]\mathbb{P}[X_1=j]=\sum_{j\in I}P_{ij}h^A_j$$
+The hitting time of a set of states $A\subset I$ is the random variable $H^A:\Omega\mapsto\mathbb{N}_0\cup\{\infty\}$ defined by the following formula:$$\Huge H^A:=\inf\{n\geq0:X_n\in A\}$$We also define:$$\Huge h_i^A:=\mathbb{P}_i[H^A<\infty],\,\,k_i^A:=\mathbb{E}_i[H^A]$$That is, when starting at state $i$, $h_i^A$ represents the probability that the hitting time is finite and $k_i^A$ is the expected hitting time. We can find this expectation:$$\Huge k_i^A=\sum_{n=0}^\infty n \mathbb{P}_i[H^A=n]+\begin{cases}0&\mathbb{P}_i[H^A=\infty]=0\\\infty&\text{otherwise}\end{cases}$$Sometimes $h_i^A$ is called absorption probability if $A$ is a closed communicating class. The vector of hitting probabilities $(h_i^A)_{i\in I}$ is the minimal non negative solution to the system of equations:$$\Huge \begin{cases}h_i^A=1&i\in A\\h_i^A=\sum_{j\in I}P_{ij}h_j^A&i\notin A\end{cases}$$The vector of hitting expectations $(k_i^A)_{i\in I}$ is the minimal non negative solution to the system of equations:$$\Huge \begin{cases}k_i^A=0&i\in A\\k_i^A=1+\sum_{j\in I}P_{ij}k_j^A&i\notin A\end{cases}$$To prove this theorem, we need to show that $(h_i^A)_{i\in I}$ solves the system of equations and that any other solution must not be minimal. To show that this solves the system of equations, we notice for $i\in A$, $h_i^A=1$ and if $i\notin A$ we have:$$ \mathbb{P}_i[H^A<\infty]=\sum_{j\in I}\mathbb{P}_i[H^A<\infty,X_1=j]=\sum_{j\in I}\mathbb{P}_i[H^A<\infty|X_1=j]\mathbb{P}[X_1=j]=\sum_{j\in I}P_{ij}h^A_j$$
+
+# Gambler's ruin:
+
+![[Markov Chain class structure 2024-10-29 16.11.34.excalidraw|100%]]
+This chain has transitions given by:
+> $P_{00}=1$
+> $P_{i\,i+1}=p$
+> $P_{i\,i-1}=1-p=q$
+
+We aim to find the probability of ending up broke starting from state $1$. Let $h_i=\mathbb{P}_i[H^{\{0\}}<\infty]$, the probability of hitting state $0$ after a finite amount of transitions. By the above theorems, we see that $(h_i)$ is the minimal non negative solution to:$$\Huge h_0=1,\,\,h_i=ph_{i+1}+qh_{i-1}$$For $i\geq1$. We know the solution to this [[Recurrence relations#General method for homogeneous linear recurrence relations|recurrence relation]] takes form:$$\Huge h_i=A+B\left(\frac{q}{p}\right)^i\text{ if }q\neq p,\,\,h_i=A+Bi\text{ if }q=p=\frac{1}{2}$$Now $h_0=1\implies A+B=1$. There are now three possibilities:
+> $p<q$, $h_i=(1-B)+B\left(\frac{q}{p}\right)^i$ and since $h_i\in[0,1]$ we have that $B=0$ and $h_i=1$, you go broke
+> $p>q$, $h_i=1-B\left(1-\left(\frac{q}{p}\right)^i\right)$. The minimal non negative solution to this takes $B=1$. This gives $h_i=\left(\frac{q}{p}\right)^i$. This may tend to zero if $i>>1$.
+> $p=q$, $h_i=1+Bi\implies B=0$ so $h_i=1$ and you go broke.
+
+# Birth-death chains:
+
+Consider a similar, but different, example:![[Markov Chain class structure 2024-10-29 16.34.46.excalidraw]]
