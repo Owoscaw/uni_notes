@@ -32,5 +32,7 @@ Now, being familiar with the map $e^z$ we define the following complex trig func
 > $\cosh^2(z)-\sinh^2(z)=1$
 
 Note that $\sin(z),\cos(z)$ are not bounded as they involve real terms of $\cosh,\sinh$. We get the following lemma from these definitions:
-> The map $\sin(z)$ injectively takes a segment of length $2\pi$ which is open at one end and closed at the other from the line $y=c$ to an ellipse when $c\neq0$. When $c=0$ we get the 
+> The map $\sin(z)$ injectively takes a segment of length $2\pi$ which is open at one end and closed at the other from the line $y=c$ to an ellipse when $c\neq0$. 
+> The map $\sin(z)$ injectively takes the line $x=c$ to a one sided hyperbola when $c\neq\pi k$ and $c\neq \frac{\pi}{2}+\pi k$ for some $k\in \mathbb{N}$
 
+While $e^z$ is not injective, we observe that a restricted domain can make the map injective with image $\mathbb{C}^*$. This prompts the definition of an inverse. For every $w\in\mathbb{C}^*$ the equation $e^z=w$ has a solution $z$. Furthermore if we write $w=|w|e^{i\varphi}$ with $\varphi=\arg(w)$. Then all solutions $z$ are given by:$$\Huge z=\log|w|+i(\varphi+2\pi k)$$For some $k\in \mathbb{Z}$. To prove this, write $z=x+iy$ and $w=|w|e^{i\varphi}$. Then we get the following:$$\Huge e^z=w\iff e^xe^{iy}=|w|e^{i\varphi}\iff e^x=|w|,\,\,y=\varphi+2\pi k$$Which gives the solution $z=x+iy$ as required. Fixing $k$ and considering $\mathbb{C}^*$ we propose that:$$\Huge g(w)=\log|w|+i(\arg w+2\pi k)$$Is a continuous inverse to $e^z$. Consider $w_n=e^{i(-\pi+\frac{1}{n})}$ then $w_n\to e^{i\pi}$
