@@ -20,4 +20,4 @@ There are two standard ways to differentiate a vector field $\underline f:\Re^3\
 > The divergence of $\underline f$ is the scalar field:$$\Huge \underline\nabla\cdot\underline f\vert_{z}=\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}\cdot\underline f\,dS$$
 > The curl of $\underline f$ is the vector field:$$\Huge \underline\nabla\times\underline f\vert_x=\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}\times\underline f\,dS$$
 
-For these limits to be well defined, it is sufficient for $\underline f$ to be in $C^1$, the space of all differentiable functions:
+For these limits to be well defined, it is sufficient for $\underline f$ to be in $C^1$, the space of all differentiable functions:![[divergence and curl|100%]]
