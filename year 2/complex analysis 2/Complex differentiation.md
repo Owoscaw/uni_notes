@@ -23,4 +23,14 @@ A line segment from $z=a$ to $z=a+ib$ under the map $e^z$ becomes a portion of t
 > The map $e^z$ injectively takes the line $y=c$ to the ray of angle $c\mod2\pi$ without the origin.
 > The map $e^z$ injectively takes the set $\{z\in\mathbb{C}:\theta<\Im(z)\leq\theta+2\pi\}$ to $\mathbb{C}^*=\mathbb{C}\setminus\{0\}$
 
-Now, being familiar with the map $e^z$ we define the following complex trig functions:$$\Huge \sin(z):=\frac{1}{2i}(e^{iz}-e^{-iz}),\,\,\cos(z):=\frac{1}{2}(e^{iz}+e^{-iz})$$$$\Huge \sinh(z):=\frac{1}{2}()$$
+Now, being familiar with the map $e^z$ we define the following complex trig functions:$$\Huge \sin(z):=\frac{1}{2i}(e^{iz}-e^{-iz}),\,\,\cos(z):=\frac{1}{2}(e^{iz}+e^{-iz})$$$$\Huge \sinh(z):=\frac{1}{2}(e^z-e^{-z}),\,\,\cosh(z):=\frac{1}{2}(e^z+e^{-z})$$Then, for $z=x+iy$, we get the following formulae associated with these definitions:
+> $\sin(z)=\sin(x)\cosh(y)+i\cos(x)\sinh(y)$
+> $\cos(z)=\cos(x)\cosh(y)-i\sin(x)\sinh(y)$
+> $\sinh(z)=-i\sin(iz)=\sinh(x)\cos(y)+i\cosh(x)\sin(y)$
+> $\cosh(z)=\cos(iz)=\cosh(x)\cos(y)+i\sinh(x)\sin(y)$
+> $\sin^2(z)+\cos^2(z)=1$
+> $\cosh^2(z)-\sinh^2(z)=1$
+
+Note that $\sin(z),\cos(z)$ are not bounded as they involve real terms of $\cosh,\sinh$. We get the following lemma from these definitions:
+> The map $\sin(z)$ injectively takes a segment of length $2\pi$ which is open at one end and closed at the other from the line $y=c$ to an ellipse when $c\neq0$. When $c=0$ we get the 
+
