@@ -33,4 +33,13 @@ To prove this, observe:
 In cartesian coordinates, we propose that the divergence and curl take form:
 > $$\Huge \underline\nabla\cdot\underline f=\frac{\partial f_1}{\partial x}+\frac{\partial f_2}{\partial y}+\frac{\partial f_3}{\partial z}$$$$ \underline \nabla\times\underline f=\begin{vmatrix}\underline e_1&\underline e_2&\underline e_3\\\frac{\partial }{\partial x}&\frac{\partial }{\partial y}&\frac{\partial }{\partial z}\\f_1&f_2&f_3\end{vmatrix}=\left(\frac{\partial f_3}{\partial y}-\frac{\partial f_2}{\partial z}\right)\underline e_1+\left(\frac{\partial f_1}{\partial z}-\frac{\partial f_3}{\partial x}\right)\underline e_2+\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)\underline e_3$$
 
-Note that since divergence and curl have been expressed as a combination of partial derivatives, showing that they really are differential operators. When working in cartesian coordinates, $\underline\nabla$ can be thought of as the differential operator defined by:$$\Huge \underline e_1\frac{\partial }{\partial x}+\underline e_2\frac{\partial }{\partial y}+\underline e_3\frac{\partial }{\partial z}$$The proof for each is as follows:![[Differential operators 2024-10-29 21.06.48.excalidraw]]
+Note that since divergence and curl have been expressed as a combination of partial derivatives, showing that they really are differential operators. When working in cartesian coordinates, $\underline\nabla$ can be thought of as the differential operator defined by:$$\Huge \underline e_1\frac{\partial }{\partial x}+\underline e_2\frac{\partial }{\partial y}+\underline e_3\frac{\partial }{\partial z}$$The proof for each is as follows:![[divergence and curl proof|100%]]
+Note that if a vector field is independent of a coordinate, the dependent coordinates will not appear in the curl. For $\Re^3$, if $\underline e_3$ is not present in the vector field, $\underline e_1$ and $\underline e_2$ will not appear in the curl. In general, divergence and curl will not be constant in space.
+
+If $f:\Re^3\mapsto\Re$ is a scalar field and $\underline f:\Re^3\mapsto\Re^3$ is a vector field, both with continuous second derivatives:
+> $\underline \nabla\cdot(\underline \nabla\times \underline f)=0$
+> $\underline \nabla\times(\nabla f)=0$
+
+Proven as follows:
+> $$ \underline\nabla \cdot(\underline\nabla\times\underline f)=\frac{\partial }{\partial x}\left(\frac{\partial f_3}{\partial y}-\frac{\partial f_2}{\partial z}\right)+\frac{\partial }{\partial y}\left(\frac{\partial f_1}{\partial z}-\frac{\partial f_3}{\partial x}\right)+\frac{\partial }{\partial z}\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)=0$$
+> One can see that each second order partial derivative will cancel with another, given that these partial derivatives commute, which is guaranteed by the requirement of a continuous second derivative.
