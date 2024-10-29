@@ -7,7 +7,8 @@ To visualise functions $f:\mathbb{C}\mapsto \mathbb{C}$, $4$ dimensions are requ
  > The map $z^n$ injectively takes a ray of angle $\theta$ to a ray of angle $n\theta\mod2\pi$, also the map $z^n$ injectively takes the wedge bounded by rays of angles $\theta_1,\theta_2$ to the wedge bounded by $n\theta_1\mod2\pi,n\theta_2\mod2\pi$.
  > We can define $n$ different $n$-th roots which are inverses to the map $z^n$, written in the form:$$\Huge z^{\frac{1}{n}}=|z|^{\frac{1}{n}}e^{i\left(\frac{\arg z+2\pi k}{n}\right)}$$
 
-## Exponential and trig functions:
+# Exponential and trig functions:
+
 Define the complex exponential function $\exp:\mathbb{C}\mapsto\mathbb{C}$:$$\Huge \exp(z)=e^x(\cos y+i\sin y),\,\,z=x+iy$$For $x,y\in\Re$. We have the following properties:
 > $e^z\neq0$ for all $z\in \mathbb{C}$
 > $e^{z_1+z_2}=e^{z_1}e^{z_2}$
@@ -17,4 +18,9 @@ Define the complex exponential function $\exp:\mathbb{C}\mapsto\mathbb{C}$:$$\Hu
 
 The proofs for which are trivial other than the third statement. $z=2\pi ik\implies e^x=e^0=1$ and we have $e^z=e^x(\cos y+i\sin y)$ with $y=2\pi k$. Now $\cos(2\pi k)=1$ and $\sin(2\pi k)=0$, leaving $e^z=1\times(1+0)=1$. Note that this function is $2\pi i$ periodic, $\exp(z+2\pi i k)=\exp(z)$ for $k\in \mathbb{Z}$. Because $e^z=e^xe^{iy}$, we see that a segment of the line $x=c$ goes to a segment on the circle $|e^z|=r=e^c$. If such segment is of length $\geq 2\pi$, this maps to the full circle.
 
-A line segment from $z=c$
+A line segment from $z=a$ to $z=a+ib$ under the map $e^z$ becomes a portion of the circle given by $r=e^a$ from $\theta=0$ to $\theta=\max{2\pi, b}$. A line segment from $z=-a+ib$ to $z=a+ib$ becomes a ray of angle $\theta=b$ (without the origin) from $e^{-a}$ to $e^a$. More formally:
+> The map $e^z$ injectively takes a segment of length $2\pi$ which is open at one end and close at the other from the line $x=c$ to the entire circle of radius $e^c$. If the above segment is closed, or its size is larger than $2\pi$ the image is no longer injective.
+> The map $e^z$ injectively takes the line $y=c$ to the ray of angle $c\mod2\pi$ without the origin.
+> The map $e^z$ injectively takes the set $\{z\in\mathbb{C}:\theta<\Im(z)\leq\theta+2\pi\}$ to $\mathbb{C}^*=\mathbb{C}\setminus\{0\}$
+
+Now, being familiar with the map $e^z$ we define the following complex trig functions:$$\Huge \sin(z):=\frac{1}{2i}(e^{iz}-e^{-iz}),\,\,\cos(z):=\frac{1}{2}(e^{iz}+e^{-iz})$$$$\Huge \sinh(z):=\frac{1}{2}()$$
