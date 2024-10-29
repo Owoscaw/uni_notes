@@ -16,3 +16,5 @@ Define the complex exponential function $\exp:\mathbb{C}\mapsto\mathbb{C}$:$$\Hu
 > $|e^z|=e^{\Re(z)}$
 
 The proofs for which are trivial other than the third statement. $z=2\pi ik\implies e^x=e^0=1$ and we have $e^z=e^x(\cos y+i\sin y)$ with $y=2\pi k$. Now $\cos(2\pi k)=1$ and $\sin(2\pi k)=0$, leaving $e^z=1\times(1+0)=1$. Note that this function is $2\pi i$ periodic, $\exp(z+2\pi i k)=\exp(z)$ for $k\in \mathbb{Z}$. Because $e^z=e^xe^{iy}$, we see that a segment of the line $x=c$ goes to a segment on the circle $|e^z|=r=e^c$. If such segment is of length $\geq 2\pi$, this maps to the full circle.
+
+A line segment from $z=c$
