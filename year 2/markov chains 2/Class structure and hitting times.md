@@ -38,4 +38,11 @@ We aim to find the probability of ending up broke starting from state $1$. Let $
 
 # Birth-death chains:
 
-Consider a similar, but different, example:![[Markov Chain class structure 2024-10-29 16.34.46.excalidraw]]
+Consider a similar, but different, example:![[Markov Chain class structure 2024-10-29 16.34.46.excalidraw|100%]]
+Here we have $r_i+q_i=1$ for $i\geq1$. We then get the transition probabilities $P_{00}=1,P_{i\,i+1}=r_i,P_{i\,i-1}=q_i$. This chain can be interpreted as a population of $i$ individuals. Then $h_i$ is the probability that a population goes extinct if it starts with $i$ individuals, we then have:$$\Huge h_0=1,\,\,h_i=r_ih_{i+1}+q_ih_{i-1}$$Now we have a recurrence relation with non-constant coefficients. To solve this, we change variables:$$\Huge (r_i+q_i)h_i=r_ih_{i+1}+q_ih_{i-1}\implies r_i(h_i-h_{i+1})=q_i(h_{i+1}-h_i)$$So let $u_i=h_{i-1}-h_i,r_iu_{i+1}=q_iu_i$. We then see that $u_{i+1}=\frac{q_i}{r_i}u_i$, which becomes:$$\Huge u_{i+1}=\gamma_iu_1,\,\,\gamma_i=\prod_{j=1}^i\frac{q_j}{r_j}$$Also, $u_1+u_2+\dots+u_i=h_0-h_i=1-h_i$. Therefore:$$\Huge h_i=1-(u_1+u_2+\dots+u_i)=1-u_1(\gamma_0+\gamma_1+\dots+\gamma_i)$$With $\gamma_0=1$ and any $u_1$. Determining $u_1$ uses the minimal non negative solution:
+> $\sum_{i=0}^\infty\gamma_i\to\infty\implies u_1=0$ since we require $h_i\in[0,1]$
+> The other case, where the sum converges. Note that $h_i\geq0$ requires that $u_1\leq\left(\sum_{i=0}^{\infty}\gamma_i\right)^{-1}$, then minimality requires that these are equal. So we have:$$\Huge h_i=\frac{\sum_{k=i}^{\infty}\gamma_k}{\sum_{k=0}^\infty\gamma_k}$$
+
+# Stopping times:
+
+A random variable $T:\Omega\mapsto\{\}$
