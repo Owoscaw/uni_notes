@@ -45,4 +45,16 @@ Here we have $r_i+q_i=1$ for $i\geq1$. We then get the transition probabilities 
 
 # Stopping times:
 
-A random variable $T:\Omega\mapsto\{\}$
+A random variable $T:\Omega\mapsto\{0,1,2\dots\}\cup\{\infty\}$ is a stopping time for $(X_n)_{n\in\mathbb{N}}$ if $\{T=k\}$ depends only on $X_0,X_1,\dots,X_k$ for all $k=0,1,\dots$. That is, $\{T=k\}$ can be written as an event only involving these random variables $X_1,\dots,X_k$. For example, $H^A$ is a stopping time, as it can be written as $\{H^A=k\}=\{X_0,X_1,\dots,X_{k-1}\notin A,X_k\in A\}$.
+
+# Passage times and strong Markov:
+
+The first passage time to $j,T_j$ is:$$\Huge T_j:=\inf\{n\geq1:X_n=j\}$$This is a stopping time since $\{T_j=k\}=\{X_1,\dots,X_{k-1}\neq j,X_k=j\}$.
+
+The Markov Property dictates that, depending on $\{X_n=i\}$, the future $(X_{n+m})_{m\geq0}$ is $\text{Markov}(\delta_i,P)$ and is independent of the past. The strong Markov Property dictates the same is true for stopping times. 
+
+Let $(X_n)_{n\geq0}$ be $\text{Markov}(\lambda,P)$ and let $T$ be a stopping time for $(X_n)_{n\geq0}$. Conditionally on $\{T,\infty\}$ and $\{X_T=i\}$ we have that $(X_{T+n})_{n\geq0}$ is $\text{Markov}(\delta_i,P)$ and independent of $X_0,X_1,\dots,X_T$.
+
+ To prove this, we aim to decompose and event according to the value of a stopping time. We aim to show for any event $B$ determined by $X_0,X_1,\dots,X_T$ and any $n\geq0$ we have:$$\small \mathbb{P}[\{X_T=j_0,X_{T+1}=j_1,\dots,X_{T+n}=j_n\}\cap B|T<\infty,X_T=i]=\mathbb{P}_i[X_0=j_0,\dots, X_n=j_n]\mathbb{P}[B|T<\infty,X_t=i]$$Note that if $B=\Omega$, the above states that $(X_{T+n})_{n\geq0}$ is $\text{Markov}(\delta_i,P)$ as $\mathbb{P}[\Omega|T<\infty,X_T=i]=1$. $B\cap\{T=m\}$ is determined by $X_0,X_1,\dots,X_m$. We then have $$\mathbb{P}[\{X_T=j_0,\dots,X_{T+n}=j_n\}\cap B\cap\{T=m\}\cap\{X_T=i\}]=\mathbb{P}[\{X_m=j_0,\dots,X_{m+n}\}\cap\dots]$$Then by the Markov Property:$$\Huge =\mathbb{P}_i[X_0=j_0,\dots,X_n=j_n]\mathbb{P}[B\cap\{T=m\}\cap\{X_T=i\}]$$Note that $\{T<\infty\}=\bigcup_{m=0}^\infty\{T=m\}$, a disjoint union of events. So by countable additivity we have:$$\small \mathbb{P}[\{X_T=j_0,\dots,X_{T+n}=j_n\}\cap B\cap\{T<\infty\}\cap\{X_T=i\}]=\mathbb{P}_i[X_0=j_0,\dots,X_n=j_n]\mathbb{P}[B\cap\{T<\infty\}\cap\{X_T=i\}]$$As required.
+
+Let $A$ be an event and write $1_A$ for the random variable:$$\Huge 1_A(\omega)=\begin{cases}1&\omega\in A\\0&\omega\notin A\end{cases}$$This is the indicator of $A$. Then write:$$\Huge T_j^{(n)}=\inf\{m>T_j^{(n-1)}:X_m=j\},\,\,T_j^{(0)}=0$$For the $n$th passage time to $j$. Now consider $i\neq j$ and:$$\Huge \sum_{m=0}^{T_j^{(n)}}1_{\{X_m=i\}}$$For $(X_n)_{n\geq0}$ with $\text{Markov}(\delta_j,P)$. 
