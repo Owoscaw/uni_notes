@@ -17,18 +17,22 @@ print("REF: t="+str(lv.t))
 lve = LotkaVolterra()     # LV for Euler method
 lve.K = 1
 
+data = [[0.2, 0, 0], [0.1, 0, 0], [0.05, 0, 0], [0.02, 0, 0], [0.01, 0 , 0]]
+
 # Scan a range of integration time steps
-for dt in [0.2, 0.1, 0.05, 0.02, 0.01] :
-  lv.reset(V0=[0.1,0.1], dt=dt)            # Solve LV using RK4
+for dt in data :
+  lv.reset(V0=[0.1,0.1], dt=dt[0])            # Solve LV using RK4
   lv.iterate(tmax,0.1)
   V = lv.V
-  print("RK4 : dt="+str(dt)+": Error =", np.sqrt((V_ref-V).dot(V_ref-V))) 
+  dt[1] = np.sqrt((V_ref - V).dot(V_ref-V))
+  print("RK4 : dt="+str(dt[0])+": Error =", dt[1]) 
   #print("t="+str(lv.t))
-  lve = LotkaVolterra(V0=[0.1,0.1], dt=dt) # Solve LV using Euler
+  lve = LotkaVolterra(V0=[0.1,0.1], dt=dt[0]) # Solve LV using Euler
   lve.K = 1               
   lve.iterate(tmax,0.1)
   V = lve.V
   # Compare the errors using V_ref as reference solution
-  print("Euler dt="+str(dt)+": Error =", np.sqrt((V_ref-V).dot(V_ref-V))) 
+  dt[2] = np.sqrt((V_ref-V).dot(V_ref-V))
+  print("Euler dt="+str(dt[0])+": Error =", dt[2]) 
   #print("t="+str(lv.t))
   print("")
