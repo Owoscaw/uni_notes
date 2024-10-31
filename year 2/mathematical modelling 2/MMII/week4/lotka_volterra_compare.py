@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt 
 import numpy as np
-from ode_rk4 import ODE_RK4
+from code.ode_rk4 import ODE_RK4
 from lotka_volterra import LotkaVolterra
 from lotka_volterra_rk4 import LotkaVolterraRK4
 
