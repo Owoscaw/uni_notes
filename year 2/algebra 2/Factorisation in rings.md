@@ -23,4 +23,22 @@ Note that $2x+2$ is irreducible in $\mathbb{Q}[x]$, however is not irreducible i
 
 # Gauss' Lemma:
 
-A non-constant polynomial $f(x)=a_0+a_1x+\dots+a_nx^n$ in $\mathbb{Z}[x]$ is irreducible in $\mathbb{Z}[x]$ if and only if it is irreducible in $\mathbb{Q}[x]$ and $\gcd(a_0,a_1,\dots,a_n)=1$
+A non-constant polynomial $f(x)=a_0+a_1x+\dots+a_nx^n$ in $\mathbb{Z}[x]$ is irreducible in $\mathbb{Z}[x]$ if and only if it is irreducible in $\mathbb{Q}[x]$ and $\gcd(a_0,a_1,\dots,a_n)=1$.
+
+Assume $f(x)$ irreducible in $\mathbb{Q}[x]$ and $\gcd(a_0,\dots,a_n)=1$. Assume $f(x)=g(x)h(x)$ for $g,h\in \mathbb{Z}[x]$. By the assumption, we have either $\deg(g)=0$ or $\deg(h)=0$. Otherwise there would be a factorization in $\mathbb{Q}[x]$. Without loss of generality assume $\deg(g)=0,g(x)=a$ for some $a\in \mathbb{Z}$. Since $\gcd(a_0,\dots,a_n)=1$ we have that $a=\pm1$. Therefore $g(x)\in \mathbb{Z}[x]^X$, making $f(x)$ irreducible in $\mathbb{Z}[x]$. The other direction of implication is omitted.
+
+Let $f(x)=a_0+\dots+a_nx^n\in \mathbb{Z}[x]$ and $\gcd(a_0,\dots,a_n)=1$. Then $f(x)$ is irreducible in $\mathbb{Q}[x]$ if and only if $f(x)$ is irreducible in $\mathbb{Z}[x]$. This comes directly from the above lemma.
+
+Let $f(x)=x^n+\dots+a_0\in \mathbb{Z}[x]$ be a monic polynomial. If $f(x)$ factors in $\mathbb{Q}[x]$ then it factors in $\mathbb{Z}[x]$ to monic polynomials. Since $f(x)$ is monic, we have that $\gcd(a_0,\dots,1)=1$. By Gauss' lemma we have that $f(x)$ factors in $\mathbb{Z}[x]$ with $f(x)=g(x)h(x)=(b_mx^m+\dots+b_0)(c_lx^l+\dots+c_0)$ with $b_i,c_j\in \mathbb{Z}$. We have $b_mx^m\times c_lx^l=x^n$, so $b_mc_l=1$. Since these are integer coefficients, we must have $b_m=c_l=\pm1$. Then $f(x)=(-g(x))(-h(x))$ with $g,h$ monic.
+
+# Eisenstein's criterion:
+
+Let $f(x)=a_0+\dots+a_nx^n\in \mathbb{Z}[x]$ and $p\in \mathbb{Z}$ such that $p|a_0,\dots,p|a_{n-1},p\not{|}a_n$ and $p^2\not{|}a_0$ then $f(x)$ is irreducible in $\mathbb{Q}[x]$.
+
+Let $d=\gcd(a_0,\dots,a_n)$ and set $b_i=\frac{a_i}{d}$ for $i=0,\dots,n$. We then define:$$\Huge F(x)=\frac{1}{d}f(x)=b_0+\dots+b_nx^n$$We now have $\gcd(b_0,\dots,b_n)=1$. Since $p\not{|}a_n$ we have $p\not{|}d$ so we get the same conditions on $F(x)$ as we did on $f(x)$, that is $p|b_0,\dots,p|b_{n-1},p\not{|}b_n$ and $p^2\not{|}b_0$. Note that $\frac{1}{d}\in \mathbb{Q}[x]^X$, so $f(x)$ irreducible in $\mathbb{Q}[x]$ if and only if $F(x)$ irreducible in $\mathbb{Q}[x]$.
+
+Assume $F(x)$ is not irreducible in $\mathbb{Q}[x]$. By Gauss' lemma $F(x)$ is therefore not reducible in $\mathbb{Z}[x]$, that is $F(x)=g(x)h(x)=(\alpha_0+\dots+\alpha_mx^m)(\beta_0+\dots+\beta_kx^k)$ with $\alpha_i,\beta_j\in \mathbb{Z}$. Note $\deg(g),\deg(h)\geq1$ since if one function were constant, it would be a common factor of $F$. Take a reduction $\mod p$:$$\Huge \bar F(x)=\bar g(x)\bar h(x)\in\left(\frac{\mathbb{Z}}{p}\right)[x]$$Since $p$ divides every coefficient in $F(x)$ except for the leading term, we have:$$\Huge \bar F(x)=\bar b_nx^n$$Note $\deg(\bar g)=\deg(g)$ and $\deg(\bar h)=\deg(h)$ since $\bar\alpha_m\bar\beta_k=\bar b_n\neq\bar0$. This implies  $\bar\alpha_m,\bar\beta_k\neq0$. Moreover $\bar\alpha_0\bar\beta_0=\bar b_0=\bar 0\implies p|\alpha_0\beta_0$, so $p$ divides either $\alpha_0$ or $\beta_0$. Without loss of generality assume $p|\alpha_0$. It is enough to show that $p|\beta_0$ since in this case, $p^2$ will divide $\alpha_0\beta_0$. Assuming that $p|\alpha_0$ but $p\not{|}\beta_0$ we have that $b_1=\alpha_0\beta_1+\alpha_1\beta_0$, which implies $\alpha_1\beta_0=b_1-\alpha_0\beta_1$. Since $p|b_1$ and $p|\alpha_0$ we have that $p|\alpha_1\beta_0$, and since $p\not{|}\beta_0$ we have that $p|\alpha_1$. One can show that this holds for every coefficient in $\bar g(x)$ up to $\alpha_{m-1}$. So we have:$$\Huge \bar g(x)=\bar\alpha_mx^m,\,\,\bar g(x)\bar h(x)=\bar\alpha_m\bar\beta_0x^m+\dots=\bar F(x)=\bar b_nx^n$$Which implies $\bar \alpha_m\bar \beta_0=\bar 0\implies \bar \beta_0=\bar 0\implies p|\beta_0$, a contradiction. Therefore the assumption that $F(x)$ is not irreducible in $\mathbb{Q}[x]$ is false, that is $F(x)$ is irreducible in $\mathbb{Q}[x]$. Since we had the same conditions on $F(x)$ as $f(x)$, we can conclude that $f(x)$ is irreducible in $\mathbb{Q}[x]$.
+
+# Unique factorization:
+
+Let $F$ be a [[Rings, subrings, and fields#Fields|field]], $f(x)\in F[x]$ with $\deg(f)\geq1$. Then $f(x)$ can be factorized uniquely into a product of irreducible polynomials, up to the order of factors and units. That is to say:$$\Huge x^2-1=(x+1)(x-1)=(x-1)(x+1)=\frac{1}{2}(x+1)2(x-1)$$Are the same factorisation.
