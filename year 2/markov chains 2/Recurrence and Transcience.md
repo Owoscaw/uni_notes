@@ -1,1 +1,13 @@
 A state $i\in I$ is called recurrent if:$$\Huge \mathbb{P}_i[X_n=i\text{ for infinitely many }n]=1$$And transient if:$$\Huge \mathbb{P}_i[X_n=i\text{ for infinitely many }n]=0$$The event $X_n=i$ for infinitely many $n$ can be thought of as:$$\Huge \bigcap_{k\geq0}\{X_n=i\text{ at least }k\text{ times}\}$$
+The following dichotomy holds:
+> $\mathbb{P}_i[T_i<\infty]=1$, then $i$ is recurrent and $\sum_{n=0}^\infty P_{ii}^{(n)}=\infty$
+> $\mathbb{P}_i[T_i<\infty]<1$, then $i$ is transient and $\sum_{n=0}^\infty P_{ii}^{(n)}<\infty$
+
+Where $T_i$ is the first [[Class structure, hitting times, and stopping times#Passage times and strong Markov|passage time]] of $i$. Note that this means every state is either recurrent or transient, since $\mathbb{P}_i[T_i<\infty]\in[0,1]$ and the dichotomy defines the state on $[0,1]$. We define:$$\Huge T_i^{(r)}=\inf\{n>T_i^{(r-1)}:X_n=i\}$$As the $r$th passage time to $i$ and $T_i^{(0)}=0$.
+
+Consider $(X_n(\omega))_{n\geq0}$ with $I=\{a,b,c\}$, the sequence of realized states on a $3$ state Markov Chain. Take for example $(X_n(\omega))_{n\geq0}=(a,a,c,b,a,b,b,c,a,b,b,\dots)$, we ask the first passage time to $a$ and the $3$rd passage time to $b$. We see that $T_a^{(1)}=1$ and $T_b^{(3)}=6$.
+
+## Excursion length:
+Define:$$\Huge S_i^{(r)}=\begin{cases}T_i^{(r)}-T_i^{(r-1)}&T_i^{(r-1)}<\infty\\0&\text{otherwise}\end{cases}$$As the $r$th excursion length:![[Recurrence and Transcience 2024-11-05 16.38.28.excalidraw]]For $r=2,3,\dots$ conditional on $\{T_i^{r-1}<\infty\}$, the excursion length $S_i^{(r)}$ is independent of $X_0,X_1,\dots,X_{T_i^{r-1}}$ and:$$\Huge \mathbb{P}[S_i^{(r)}=n|T_i^{(r-1)}<\infty]=\mathbb{P}_i[T_i=n]$$To prove this, we aim to use the [[Class structure, hitting times, and stopping times#Passage times and strong Markov|SMP]]. Set $T=T_i^{(r-1)}$, the Strong Markov Property states that conditioned on $\{T<\infty\}$ and $\{X_T=i\}$, $(X_{T+n})_{n\geq0}$ is $\text{Markov}(\delta_{i},P)$ and independent of $X_0,X_1,\dots,X_T$. So if $\{T<\infty\}$ occurs, $S_i^{(r)}$ is non-zero and $S_i^{(r)}=\inf\{n>0:X_{T+n}=i\}$, equivalent to the first passage time from $(X_{T+n})_{n\geq0}$ to $i$. So by SMP we get the claim, as $(X_{T+n})_{n\geq0}$ is $\text{Markov}(\delta_i,P)$.
+
+Define:$$\Huge V_i=\sum_{n=0}^\infty1_{\{X_n=i\}}$$As the number of times $i$ is visited. Using the [[Random variables#Indicator random variables|result]] $\mathbb{E}[1_A]=\mathbb{P}[A]$ we see:$$\Huge \mathbb{E}_iV_i=\mathbb{E}_i\sum_{n=0}^\infty1_{\{X_n=i\}}=\sum_{n=0}^\infty\mathbb{E}_i[1_{\{X_n=i\}}]=\sum_{n=0}^\infty\mathbb{P}_i[X_n=i]=\sum_{n=0}^\infty P_{ii}^{(n)}$$
