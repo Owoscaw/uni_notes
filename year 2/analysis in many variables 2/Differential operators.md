@@ -58,3 +58,18 @@ $$Since both sides of each formula are coordinate independent, we prove them in 
 
 If $u,v:\Re^3\mapsto\Re$ are scalar fields, we show that $(\underline \nabla u)\times(\underline \nabla v)=\underline \nabla\times(u\underline \nabla v)$:$$\Huge 
 \underline \nabla\times(u\underline \nabla v)=u(\underline \nabla\times(\underline \nabla v))+(\underline \nabla u)\times\underline \nabla v=0+\underline \nabla u\times\underline \nabla v$$Here we used the fact that the curl of a gradient is $0$ and the fourth product rule.
+
+# Divergence and Curl in [[Curvilinear coordinates]]:#
+
+In orthogonal curvilinear coordinates $(u,v,w)$:
+>$$\Huge \underline \nabla\cdot\underline f=\frac{1}{h_uh_vh_w}\left(\frac{\partial }{\partial u}\left(h_vh_wf_u\right)+\frac{\partial }{\partial v}(h_uh_wf_v)+\frac{\partial }{\partial w}(h_uh_vf_w)\right)$$$$\Huge \underline \nabla\times\underline f=\frac{1}{h_uh_vh_w}\begin{vmatrix}h_u\underline e_u&h_v\underline e_v&h_w\underline e_w\\\frac{\partial }{\partial u}&\frac{\partial }{\partial v}&\frac{\partial }{\partial w}\\h_uf_u&h_vf_v&h_wf_w\end{vmatrix}$$
+
+To show this, consider:$$\Huge\begin{align}
+\underline \nabla u&=\frac{1}{h_u}\frac{\partial u}{\partial u}\underline e_u+\frac{1}{h_v}\frac{\partial u}{\partial v}\underline e_v+\frac{1}{h_w}\frac{\partial u}{\partial w}\underline e_w\\
+&=\frac{1}{h_u}(1)\underline e_u+0+0=\frac{1}{h_u}\underline e_u\implies\underline e_u=h_u\underline \nabla u
+\end{align}$$This holds for $v,w$ as well. It is sufficient to show that for the $u$ component:$$\Huge \begin{align}
+\underline \nabla\cdot(f_u\underline e_u)&=\underline \nabla\cdot(f_u\underline e_v\times\underline e_w)\\
+&=\underline \nabla\cdot(f_u(h_v\underline \nabla v)\times(h_w\underline \nabla w))\\&=\underline \nabla\cdot(f_uh_vh_w\underline \nabla v\times\underline \nabla w)\\&=(\underline \nabla (f_uh_vh_w))\cdot(\underline \nabla v\times\underline \nabla w)+f_uh_vh_w\underline \nabla\cdot(\underline \nabla v\times\underline \nabla w)\\&=(\underline \nabla(f_uh_uh_w))\cdot\frac{\underline e_v\times\underline e_w}{h_vh_w}+0\\&=\frac{1}{h_vh_w}\underline e_u\cdot\underline \nabla(f_uh_vh_w)=\frac{1}{h_uh_vh_w}\frac{\partial }{\partial u}(f_uh_vh_w)
+\end{align}$$So we get the expected result for the first component. The proofs for the other two are analogous and therefore omitted. For the curl, we take the same approach:$$\Huge\begin{align}
+\underline \nabla\times(f_u\underline e_u)&=\underline \nabla\times(f_uh_u\underline \nabla u)\\&=f_uh_u\underline \nabla\times(\underline \nabla u)+\underline \nabla(f_uh_u)\times(\underline \nabla u)\\&=0+\underline \nabla(f_uh_u)\times(\underline{\nabla}u)\\&=\underline{\nabla}(f_uh_u)\times\left(\frac{1}{h_u}\underline e_u\right)\\&=\frac{1}{h_u}\underline{\nabla}(f_uh_u)\times(\underline e_v\times\underline e_w)\\&=\frac{1}{h_u}\underline e_v(\underline e_w\cdot\underline{\nabla}(f_uh_u))-\frac{1}{h_u}\underline e_w(\underline e_v\cdot\underline{\nabla}(f_uh_u))\\&=\frac{1}{h_uh_w}\frac{\partial }{\partial w}(f_uh_u)\underline e_v-\frac{1}{h_uh_v}\frac{\partial }{\partial v}(f_uh_u)\underline e_w
+\end{align}$$Where we have used the [[Vector Product|vector triple product]] on line 6. The proofs for the other component are analogous and therefore omitted.
