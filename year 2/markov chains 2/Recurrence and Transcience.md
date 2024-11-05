@@ -1,0 +1,1 @@
+A state $i\in I$ is called recurrent if:$$\Huge \mathbb{P}_i[X_n=i\text{ for infinitely many }n]=1$$And transient if:$$\Huge \mathbb{P}_i[X_n=i\text{ for infinitely many }n]=0$$The event $X_n=i$ for infinitely many $n$ can be thought of as:$$\Huge \bigcap_{k\geq0}\{X_n=i\text{ at least }k\text{ times}\}$$
