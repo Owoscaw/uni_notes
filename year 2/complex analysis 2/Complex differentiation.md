@@ -53,9 +53,19 @@ We can write any complex valued function as:$$\Huge f(z)=f(x+iy)=u(x,y)+iv(x,y)$
 
 Let $f=u+iv$ be complex differentiable at $z_0=x_0+iy_0$. Then the real partial derivatives $u_x,u_y,v_x,v_y$ exist at $(x_0,y_0)$ and satisfy:$$\Huge u_x(x_0,y_0)=v_y(x_0,y_0),\,\,u_y(x_0,y_0)=-v_x(x_0,y_0)$$Furthermore, the derivative of $f$ at $z_0$:$$\Huge f'(z_0)=u_x(z_0)+iv_x(z_0)=v_y(z_0)-iu_y(z_0)$$This theorem gives a condition when $f$ is not complex differentiable, when the equations do not hold. One can show that $f$ is complex differentiable if and only if $u,v$ are real differentiable at $(x_0,y_0)$ and the equations hold.
 
-Let $f=u+iv$ be defined on an open subset $U$ of $\mathbb{C}$. Assume the partial derivatives of $u,v$ wrt to $x,y$ exist, are continuous, and satisfy the Cauchy-Riemann equations at $z_0\in U$. Then $f$ is complex differentiable at $z_0$. The proof of this theorem is beyond the scope of these notes.
+Let $f=u+iv$ be defined on an open subset $U$ of $\mathbb{C}$. Assume the partial derivatives of $u,v$ wrt to $x,y$ exist, are continuous, and satisfy the Cauchy-Riemann equations at $z_0\in U$. Then $f$ is complex differentiable at $z_0$. The proof is as follows:![[C-R proof]]
 
 Take $f(z)=e^z=e^xe^{iy}$ for example. Here, $u(x,y)=e^x\cos(y),\,\,v(x,y)=e^x\sin(y)$ with $u,v\in C^1$. We then check the C-R equations:$$\ u_x(x,y)=e^x\cos(y),\,\,u_y(x,y)=-e^x\sin(y),\,\,v_y(x,y)=e^x\cos(y),\,\,v_x(x,y)=e^x\sin(y)$$So these equations are satisfied. Moreover we can find its derivative:$$\Huge f'(z)=u_x(x,y)+iv_x(x,y)=e^x\cos(y)+ie^x\sin(y)=e^xe^{iy}=e^z$$So we have that the derivative of $f(z)=e^z$ is $f'(z)=e^z$.
 
 ## Holomorphicity:
 A function $f:U\mapsto\mathbb{C}$ defined on an open subset $U$ of $\mathbb{C}$ is holomorphic on $U$ if it is complex differentiable at every point in $U$. We say that $f$ is holomorphic at $z_0$ if it is holomorphic on an [[Metric spaces#Open and closed sets|open ball]] $B_\epsilon(z_0)$ for some $\epsilon>0$. We call functions that are holomorphic on $\mathbb{C}$ entire functions.
+
+We have shown that $e^z$ is holomorphic on $\mathbb{C}$, that is it is an entire function. One can build $\cos,\sin,\cosh,\sinh$ from linear combinations and compositions of $e^z$, making these functions entire as well. Note that some functions may be differentiable on a given set, but not holomorphic anywhere as no open ball can be found contained fully within the set.
+
+Being differentiable on an open set if not enough to be called holomorphic. Consider the set $U=(-1,0)\cup(0,1)$. $U$ is an open set since it is a union of two open sets. Consider the function $f(x)=\begin{cases}-1&x\in(-1,0)\\1&x\in(0,1)\end{cases}$, which is differentiable with $f'(x)=0$ however $f$ is not a constant function.
+
+# Paths and connectedness:
+
+A path or curve from $z\in \mathbb{C}$ to $w\in\mathbb{C}$ is a continuous function $\gamma:[0,1]\mapsto\mathbb{C}$ with $\gamma(0)=z$ and $\gamma(1)=w$. We call the path closed if $z=w$. A path is called continuously differentiable ($C^1$) if its real and imaginary parts are continuously differentiable on $[0,1]$:$$\Huge \gamma'(t)=(\Re(\gamma(t)))'+i(\Im(\gamma(t)))'$$We call a subset $U\subseteq\mathbb{C}$ is $C^1$ path connected if for every pair of points $z,w\in U$ there exists a $C^1$ path from $z$ to $w$ such that $\gamma(t)\in U$ for all $t\in[0,1]$. In general paths can be defined from an interval $[a,b]$, for instant let $\gamma_1:[a,b]\mapsto X$ then define $\gamma:[0,1]\mapsto X$ as:$$\Huge \gamma(t)=\gamma_1\left(\frac{t-a}{b-a}\right)$$Conversely for $\gamma:[0,1]\mapsto X$ define $\gamma_1:[a,b]\mapsto X$:$$\Huge \gamma_1(t)=\gamma((b-a)t+a)$$Note that in general, path connected means the existence of a path between any two points. Also all open balls are path connected. We can then define a domain.
+
+A domain $D$ is an open path connected subset of $\mathbb{C}$. For example, all open balls , $\mathbb{C}^*$, and $\mathbb{H}_R$ (the right hand side of $\mathbb{C}$) are all domains.
