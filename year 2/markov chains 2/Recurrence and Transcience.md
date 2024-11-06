@@ -15,14 +15,23 @@ For $r=0,1,2,\dots$:$$\Huge\mathbb{P}_i[V_i>r]=(\mathbb{P}_i[T_i<\infty])^r$$Pro
 \mathbb{P}_i[V_i>r+1]&=\mathbb{P}_i[T_i^{(r+1)}<\infty]\\&=\mathbb{P}_i[T_i^{(r)}<\infty,S_i^{(r+1)}<\infty]\\&=\mathbb{P}_i[S_i^{(r+1)}<\infty|T_i^{(r)}<\infty]\mathbb{P}_i[T_i^{(r)}<\infty]\\&=\mathbb{P}_i[S_i^{(r+1)}<\infty|T_i^{(r)}<\infty](\mathbb{P}_i[T_i<\infty])^r\\&=(\mathbb{P}_i[T_i<\infty])^r\sum_{n=0}^\infty\mathbb{P}_i[S_i^{(r+1)}=n|T_i^{(r)}<\infty]\\&=(\mathbb{P}_i[T_i<\infty])^r\sum_{n=0}^\infty\mathbb{P}_i[T_i=n]\\&=\mathbb{P}_i[T_i<\infty](\mathbb{P}_i[T_i<\infty])^r\\&=(\mathbb{P}_i[T_i<\infty])^{r+1}
 \end{align}$$We have advanced the induction by one step, proving the theorem. We can now prove the dichotomy discussed previously:
 
-## Part 1:
+## Recurrence/Transience proof:
 Suppose $\mathbb{P}_i[T_i<\infty]=1$. Then $\mathbb{P}_i[\text{visit }i\text{ infinitely many times}]=\mathbb{P}_i[V_i=\infty]$:$$\Huge\begin{align}
 \mathbb{P}_i[V_i=\infty]&=\lim_{r\to\infty}\mathbb{P}_i[V_i>r]\\&=\lim_{r\to\infty}(\mathbb{P}_i[T_i<\infty])^r\\&=\lim_{r\to\infty}1^r\\&=1
-\end{align}$$So we have that $i$ is recurrent and $\sum_{n=0}^\infty P^{(n)}_{ii}=\mathbb{E}_i[V_i]=\infty$.
-
-## Part 2:
-Suppose $\mathbb{P}_i[T_i<\infty]<1$:$$\Huge\begin{align}
+\end{align}$$So we have that $i$ is recurrent and $\sum_{n=0}^\infty P^{(n)}_{ii}=\mathbb{E}_i[V_i]=\infty$. Suppose $\mathbb{P}_i[T_i<\infty]<1$:$$\Huge\begin{align}
 \sum_{n=0}^\infty P^{(n)}_{ii}&=\mathbb{E}_i[V_i]\\
 &=\sum_{n=0}^\infty\mathbb{P}_i[V_i>n]\\
 &=\sum_{n=0}^\infty(\mathbb{P}_i[T_i<\infty])^n\\&=\frac{1}{1-\mathbb{P}_i[T_i<\infty]}<\infty
 \end{align}$$Since $\mathbb{P}_i[T_i<\infty]$ was assumed to be less than $1$, so the fraction can never reach infinity. Therefore we have $\mathbb{P}_i[V_i=\infty]=0$ and state $i$ is transient.
+
+Let $C$ be a [[Class structure, hitting times, and stopping times#Communicating class definition|communicating]] class of a Markov Chain, then either:
+> All states in $C$ are recurrent
+> All states in $C$ are transient
+
+Let $i,j\in C$ and suppose that $i$ is transient, that is $\sum_{n=0}^\infty P_{ii}^{(n)}<\infty$. We know that there exists $k,l$ such that $P_{ij}^{(k)}>0$ and $P_{ji}^{(l)}>0$ since $i\leftrightarrow j$. So for $r\geq0$ we have that:$$\Huge \begin{align}P_{ii}^{(k+l+r)}&\geq P_{ij}^{(k)}P_{jj}^{(r)}P_{ji}^{(l)}\\
+P_{jj}^{(r)}&\leq\frac{1}{P_{ij}^{(k)}P_{ji}^{(l)}}P_{ii}^{(k+l+r)}\\
+\sum_{r=0}^\infty P_{jj}^{(r)}&\leq\frac{1}{P_{ij}^{(k)}P_{ji}^{(l)}}\sum_{r=0}^\infty P_{ii}^{(k+l+r)}\\
+&\leq\frac{1}{P_{ij}^{(k)}P_{ji}^{(l)}}\sum_{r=0}^\infty P_{ii}^{(r)}<\infty
+\end{align}$$Therefore $j$ is transient. This also motivates the notion that every recurrent class is closed.
+
+We propose that every finite closed class is recurrent. 
