@@ -33,11 +33,11 @@ def print_result(r):
    print("  doubling time =", r[3])
 
    
-fname_uk = "data_UK_tot.txt"
+fname_uk = "year 2/mathematical modelling 2/MMII/week5/code/data_UK_tot.txt"
 fatalities_uk = read_data(fname_uk)[1]
 print_result( fit(fatalities_uk, dmin=35, dmax=65, country="UK") )
 
-fname_brazil = "data_BR_tot.txt"
+fname_brazil = "year 2/mathematical modelling 2/MMII/week5/code/data_BR_tot.txt"
 fatalities_brazil = read_data(fname_brazil)[1]
 print_result( fit(fatalities_brazil, dmin=35, dmax=65, country="Brazil") )
 
