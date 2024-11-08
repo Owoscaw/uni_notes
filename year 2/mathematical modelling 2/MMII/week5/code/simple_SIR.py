@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 tmax=150
 d = 7
-Rpar = 3 # R is used below for the recovered population
+Rpar = 0.9 # R is used below for the recovered population
 K= Rpar/d
 Kd=0.01
 S = [66e6]

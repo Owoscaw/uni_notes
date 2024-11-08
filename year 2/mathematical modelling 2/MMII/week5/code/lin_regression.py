@@ -13,7 +13,7 @@ def fit(data, dmin, dmax, country):
     days = np.linspace(dmin, dmax - 1, dmax - dmin)
     
     #Fitting data using a linear function
-    popt, pcov = scipy.optimize.curve_fit(linFunc, days, np.log(relevant_data), p0=[1,1])
+    popt, pcov = scipy.optimize.curve_fit(linFunc, days, np.log(relevant_data))
     logA, Lambda = popt
 
     #Plotting actual data
