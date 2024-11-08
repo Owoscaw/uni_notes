@@ -5,4 +5,8 @@ from covid19_base import *
 class Covid(Covid_base):
 
     def step(self): # Perform a single integration step
-        super().step()
+        #super().step()
+
+        DI = np.convolve(self.DI, self.Pi)[self.pad+self.d]
+        print(DI)
+

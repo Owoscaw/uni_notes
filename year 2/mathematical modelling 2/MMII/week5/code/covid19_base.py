@@ -16,7 +16,7 @@ def mk_gamma(t, mu, var_coef, t_pad=0, inv = True):
     if(t_pad> 0): # add pad to Pi
        Pi = np.pad(Pi, (t_pad,0) ,'constant')
     if(t_pad< 0): # truncate
-       Pi = Pi[-t_pad:] 
+       Pi = Pi[-t_pad:]     
     Pi = Pi/sum(Pi) # normalise
     if(inv):
        return(Pi[::-1]) 
@@ -157,6 +157,7 @@ class Covid_base :
         DI = 0
         for n in range(1,len(self.Pi)):
             DI += self.DI[self.pad+self.d-n]*self.Pi[n]
+        print(DI)
         self.DI[self.d+self.pad] = self.Rpar*DI*self.S[self.d]/self.Pop
 
         Drd = 0
