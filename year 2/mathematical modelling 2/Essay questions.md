@@ -10,7 +10,7 @@ T_{i+1}&=S_{i+1}+I_{i+1}+R_{i+1}+F_{i+1}\\
 \end{align}$$
 # Question 2
 
-We can conclude that most of the population will recover 
+As $R$ is decreased, we see that the infected population peaks later on in the model and to a lesser degree.
 
 # Question 3
 
