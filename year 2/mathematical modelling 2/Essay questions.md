@@ -40,3 +40,9 @@ R_\text{UK}&\approx\exp(0.29(6.5+1))\approx8.80\\
 R_\text{Brazil}&\approx\exp(0.0793(6.5+1))\approx1.81
 \end{align}$$
 # Question 5
+
+See week 5 folder
+
+# Question 6
+
+The difference in the fatality profiles for the UK and Brazil may come from the fact that Brazil saw its first infections earlier on than the UK. This would have caused the peak in infected population (and therefore fatalities) to start to reach it's peak and therefore slow down for Brazil around the same time that the UK began to see exponential growth in the infected population (and therefore fatalities). This would appear as the black line beginning to curve down for Brazil while the black line would remain straight and increasing for the UK.
