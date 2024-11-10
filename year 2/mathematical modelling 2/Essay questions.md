@@ -21,7 +21,8 @@ Assuming $d<0$ and both $P_{\text{Inc}}(d),P_{R}(d)$ are zero for $d\notin[0,N]$
 Since both $P_\text{Inc}(d)$ and $P_R(d)$ are only non-zero on the interval $d\in[0,N]$ we require $n\leq N,d-n\leq N$, as for any value greater than $N$ one of the terms in the sum will be zero:$$\Huge\begin{align}
 n\leq N&\implies N+n\leq2N\\d-n\leq N&\implies d\leq N+n\leq2N
 \end{align}$$So take $d=2N$ as the greatest value of $d$ for which $P_r(d)$ is non-zero. This corresponds to:$$\Huge P_r(2N)=\sum_{n=0}^{2N}P_\text{Inc}(n)P_R(2N-n)$$This sum only has one non-zero term, when $n=N$. Note that each term in the sum is positive, since they follow a gamma distribution, therefore for all $d$ we have $P_r(d)\geq0$. We know that $P_r(d)=0$ for $d\notin[0,2N]$:$$\Huge\begin{align}
-\sum_{d=0}^\infty P_r(d)&=
+\sum_{d=0}^\infty P_r(d)&=\sum_{d=0}^\infty\sum_{n=0}^dP_{\text{Inc}}(n)P_R(d-n)\\
+&=\sum_{d=0}^{2N}\sum_{n=0}^dP_\text{Inc}(n)P_R(d-n)
 \end{align}$$
 
 # Question 4
