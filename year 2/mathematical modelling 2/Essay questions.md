@@ -38,7 +38,7 @@ R&=\frac{A\exp(\lambda i+\lambda)-A\exp(\lambda i)}{A\exp(\lambda i-\lambda d)-A
 &=\frac{\exp(\lambda(d+1))}{1}=\exp(\lambda(d+1))
 \end{align}$$
 The program estimates $\lambda_\text{UK}\approx0.294$ and $\lambda_\text{Brazil}\approx0.0793$. Taking $d=6.5$ we get:$$\Huge\begin{align}
-R_\text{UK}&\approx\exp(0.29(6.5+1))\approx8.80\\
+R_\text{UK}&\approx\exp(0.294(6.5+1))\approx9.07\\
 R_\text{Brazil}&\approx\exp(0.0793(6.5+1))\approx1.81
 \end{align}$$
 # Question 5
