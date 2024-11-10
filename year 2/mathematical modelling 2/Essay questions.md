@@ -12,6 +12,8 @@ T_{i+1}&=S_{i+1}+I_{i+1}+R_{i+1}+F_{i+1}\\
 
 As $R$ is decreased from $3$ to $2$ we see that the infected population peaks later on in the model and to a lesser degree. At $R=1,0.9$ we see that the infected population peaks very early on and to a much lesser degree than $R=3,2$.
 
+With $R=1,0.9$, each infected person does not infect 
+
 # Question 3
 
 Assuming $d<0$ and both $P_{\text{Inc}}(d),P_{R}(d)$ are zero for $d\notin[0,N]$ we have:$$\Huge P_r(d)=\sum_{n=0}^dP_{\text{Inc}}(n)P_R(d-n)$$Here, $n$ would need to range from $0$ to $d<0$, so the term $P_\text{Inc}(n)$ will be zero for every value in the sum, making the whole expression $0$. 
