@@ -16,3 +16,7 @@ C^{(i)}t+D^{(i)}&\text{for }\lambda^{(i)}=0\\
 &+\sum_{i:\lambda^{(i)}=0}\underline v^{(i)}(C^{(i)}t+D^{(i)})\\
 &+\sum_{i:\lambda^{(i)}<0}\underline v^{(i)}(\alpha^{(i)}\cosh(t\sqrt{-\lambda^{(i)}})+\beta^{(i)}\sinh(t\sqrt{-\lambda^{(i)}}))
 \end{align}$$
+
+# Non-Canonical kinetic terms:
+
+More generally, we can restrict to Lagrangians with form:$$\Huge L=\frac{1}{2}\left(\sum_{i,j=1}^NB_{ij}(\underline q)\underline{\dot q}_i\underline{\dot q}_j\right)-V(\underline q)$$We then expand to second order in $\underline q$ and $\underline{\dot q}$:$$\Huge L_\text{Approx}=\frac{1}{2}\left(\sum_{i,j=1}^NB_{ij}(0)\underline{\dot q}_i\underline{\dot q}_j\right)-\frac{1}{2}\sum_{i,j=1}^NA_{ij}\underline q_i\underline q_j-V(0)$$The corresponding Euler-Lagrange equations then become, through the same reasoning as canonical terms:$$\Huge B\underline{\ddot q}+A\underline q=0$$Assuming that $B$ has an inverse. Left multiplying by $B^{-1}$ gives:$$\Huge B^{-1}B\underline{\ddot q}+B^{-1}A\underline q=\underline{\ddot q}+C\underline q=0$$With $C=B^{-1}A$

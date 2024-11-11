@@ -41,4 +41,21 @@ Assume $F(x)$ is not irreducible in $\mathbb{Q}[x]$. By Gauss' lemma $F(x)$ is t
 
 # Unique factorization:
 
-Let $F$ be a [[Rings, subrings, and fields#Fields|field]], $f(x)\in F[x]$ with $\deg(f)\geq1$. Then $f(x)$ can be factorized uniquely into a product of irreducible polynomials, up to the order of factors and units. That is to say:$$\Huge x^2-1=(x+1)(x-1)=(x-1)(x+1)=\frac{1}{2}(x+1)2(x-1)$$Are the same factorisation.
+Let $F$ be a [[Rings, subrings, and fields#Fields|field]], $f(x)\in F[x]$ with $\deg(f)\geq1$. Then $f(x)$ can be factorized uniquely into a product of irreducible polynomials, up to the order of factors and units. That is to say:$$\Huge x^2-1=(x+1)(x-1)=(x-1)(x+1)=\frac{1}{2}(x+1)2(x-1)$$Are the same factorisation. To prove this, we must first show that a factorisation exists, and then prove such factorisation is unique. We do this by induction on $\deg(f)$:
+
+Base case, $\deg(f)=1$. It is trivial that all degree $1$ polynomials over a field are irreducible. Assume we have a factorisation into irreducible elements for all $f(x)\in F[x]$ with $\deg(f)<n$ for some $n\in \mathbb{N}$. Now let $\deg(f)=n$, if $f(x)$ is irreducible then we are done. However if $f(x)$ is not irreducible, then $f(x)=g(x)h(x)$ for some $g,h\in F[x]$ such that $1\leq\deg(g)<n$ and $1\leq\deg(h)<n$. By the assumption, $g,h$ have factorisations into irreducible elements, therefore $f(x)=g(x)h(x)$ has a factorisation into irreducible elements. Therefore a factorisation into irreducible elements exists for every $f(x)\in F[x]$. We now show that such a factorisation is unique.
+
+We claim that if $p(x)\in F[x]$ is irreducible and divides $a(x)b(x)$ for some $a,b\in F[x]$ then $p(x)$ divides either $a(x)$ or $b(x)$. If $p(x)\not{|}a(x)$ then $\text{Monic}\gcd(p(x),a(x))=1$ and by the properties of $\gcd$ we have that there exists $A,B\in F[x]$ such that:$$\Huge A(x)p(x)+B(x)a(x)=1$$Hence $A(x)p(x)b(x)+B(x)a(x)b(x)=b(x)$. However since $p(x)|B(x)a(x)b(x)$ by assumption, and clearly $p(x)|A(x)p(x)b(x)$ we have $p(x)|b(x)$. The proof for $p(x)|a(x)$ is analogous, so we have the claim.
+
+Now we can prove uniqueness of the factorisation. Suppose that $f(x)=p_1p_2\dots p_m=q_1q_2\dots q_n$ where each $p,q$ are irreducible polynomials in $F[x]$. Then $p_1$ divides $q_1q_2\dots q_n$ so by the above claim $p_1|q_i$ for some $i$, that is to say $q_i=u_1p_1$ for some $u_1\in F[x]$. However since $p_1,q_i$ are irreducible we have that $u_1$ must be a unit, therefore:$$\Huge p_1p_2\dots p_m=q_1\dots q_i\dots q_n=q_1\dots q_{i-1}u_1p_1q_{i+1}\dots q_n$$Which implies $p_2\dots p_m=q_1\dots q_{i-1}u_1q_{i+1}\dots q_n$. This argument can be repeated until all factors cancel out and we see that $m=n$ and each $q_i=p_ju_j$ for some $p_j$ and some unit $u_j$, thus the two factorisations are the same up to re ordering and multiplication by units. So we have the proof as required.
+
+## Prime definition:
+Let $R$ be a commutative ring. An element $x\in R$ is called prime if the following hold:
+> $x$ is non zero and not a unit
+> If $x|ab$ for $a,b\in R$ then $x|a$ or $x|b$
+
+Note that in $\mathbb{Z}$, an element $p$ is prime if and only if it is irreducible. Similarly, in $F[x]$ with $F$ a field a polynomial $f(x)$ is irreducible if and only if it is prime. 
+
+Let $R$ be an [[Integral domains, units, and polynomial rings#Polynomials over a field|integral domain]] and $x\in R$ a prime element. Then $x$ is irreducible. Assume we have a factorisation $x=ab$ with $a,b\in R$. We must show that either $a$ or $b$ is a unit. By definition it is known that $x$ divides either $a$ or $b$, so without loss of generality assume $x|a$. Therefore there exists some $r\in R$ such that $a=rx$, but then $x=ab=rxb\implies x(1-rb)=1$. Since $R$ is an integral domain and $x\neq 0$ we get that $rb=1$, that is $b$ is a unit. The proof is analogous for $x|b$.
+
+# Unique factorisation domains
