@@ -58,4 +58,8 @@ Note that in $\mathbb{Z}$, an element $p$ is prime if and only if it is irreduci
 
 Let $R$ be an [[Integral domains, units, and polynomial rings#Polynomials over a field|integral domain]] and $x\in R$ a prime element. Then $x$ is irreducible. Assume we have a factorisation $x=ab$ with $a,b\in R$. We must show that either $a$ or $b$ is a unit. By definition it is known that $x$ divides either $a$ or $b$, so without loss of generality assume $x|a$. Therefore there exists some $r\in R$ such that $a=rx$, but then $x=ab=rxb\implies x(1-rb)=1$. Since $R$ is an integral domain and $x\neq 0$ we get that $rb=1$, that is $b$ is a unit. The proof is analogous for $x|b$.
 
-# Unique factorisation domains
+# Unique factorisation domains:
+
+An integral domain $R$ is called a Unique Factorisation Domain (UFD) if every non-zero, non-unit, element of $R$ can be written uniquely as a product of irreducible elements up to multiplication by units or rearranging of factors. Some examples of UFDs are $\mathbb{Z}$ and $F[x]$ with $F$ a field.
+
+Another example of a UFD is $\mathbb{Z}[i]$, the Gaussian integers written as $\mathbb{Z}[i]=\{a+bi:a,b\in \mathbb{Z}\}$.
