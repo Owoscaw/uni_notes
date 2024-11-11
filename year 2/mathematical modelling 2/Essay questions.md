@@ -20,12 +20,13 @@ Assuming $d<0$ and both $P_{\text{Inc}}(d),P_{R}(d)$ are zero for $d\notin[0,N]$
 
 Since both $P_\text{Inc}(d)$ and $P_R(d)$ are only non-zero on the interval $d\in[0,N]$ we require $n\leq N,d-n\leq N$, as for any value greater than $N$ one of the terms in the sum will be zero:$$\Huge\begin{align}
 n\leq N&\implies N+n\leq2N\\d-n\leq N&\implies d\leq N+n\leq2N
-\end{align}$$So take $d=2N$ as the greatest value of $d$ for which $P_r(d)$ is non-zero. This corresponds to:$$\Huge P_r(2N)=\sum_{n=0}^{2N}P_\text{Inc}(n)P_R(2N-n)$$This sum only has one non-zero term, when $n=N$. Note that each term in the sum is positive, since they follow a gamma distribution, therefore for all $d$ we have $P_r(d)\geq0$. We know that $P_r(d)=0$ for $d\notin[0,2N]$:$$\Huge\begin{align}
+\end{align}$$So take $d=2N$ as the greatest value of $d$ for which $P_r(d)$ is non-zero. This corresponds to:$$\Huge P_r(2N)=\sum_{n=0}^{2N}P_\text{Inc}(n)P_R(2N-n)$$This sum only has one non-zero term, when $n=N$. Note that each term in the sum is positive, since they follow a gamma distribution, therefore for all $d$ we have $P_r(d)\geq0$. We know that $P_r(d)=0$ for $d\notin[0,2N]$ and $P_\text{Inc}\sim\text{Gamma}(5.1,0.86),P_R\sim\text{Gamma}(18.8,0.45)$:$$\Huge\begin{align}
 \sum_{d=0}^\infty P_r(d)&=\sum_{d=0}^\infty\sum_{n=0}^dP_{\text{Inc}}(n)P_R(d-n)\\
-&=\sum_{d=0}^{2N}\sum_{n=0}^dP_\text{Inc}(n)P_R(d-n)\\
-&=\sum_{d=0}^{2N}\sum_{n=0}^d\frac{0.86^{5.1}n^{5.1-1}e^{-0.86n}}{\Gamma(5.1)}\frac{0.45^{18.8}(d-n)^{18.8-1}e^{-0.45(d-n)}}{\Gamma(18.8)}\\
-&=\frac{0.86^{5.1}0.45^{18.8}}{\Gamma(5.1)\Gamma(18.8)}\sum_{d=0}^{2N}\sum_{n=0}^dn^{4.1}(d-n)^{17.8}e^{-0.86-0.45(d-n)}
-\end{align}$$
+&=\lim_{d\to\infty}\sum_{n=0}^d\left(\sum_{d=0}^\infty P_\text{Inc}(n)P_R(d-n)\right)\\
+&=\sum_{i,j=0}^\infty P_\text{Inc}(i)P_R(j-i)\\
+&=\sum_{i=0}^\infty P_\text{Inc}(i)\sum_{j=0}^\infty P_R(j)\\
+&=1\times1=1
+\end{align}$$Where we have use the fact that the sums can be interchanged due to every term being positive and that $P_\text{Inc}$ and $P_R$ follow a gamma distribution (so the sum over all their values is 0).
 
 # Question 4
 
