@@ -19,4 +19,11 @@ C^{(i)}t+D^{(i)}&\text{for }\lambda^{(i)}=0\\
 
 # Non-Canonical kinetic terms:
 
-More generally, we can restrict to Lagrangians with form:$$\Huge L=\frac{1}{2}\left(\sum_{i,j=1}^NB_{ij}(\underline q)\underline{\dot q}_i\underline{\dot q}_j\right)-V(\underline q)$$We then expand to second order in $\underline q$ and $\underline{\dot q}$:$$\Huge L_\text{Approx}=\frac{1}{2}\left(\sum_{i,j=1}^NB_{ij}(0)\underline{\dot q}_i\underline{\dot q}_j\right)-\frac{1}{2}\sum_{i,j=1}^NA_{ij}\underline q_i\underline q_j-V(0)$$The corresponding Euler-Lagrange equations then become, through the same reasoning as canonical terms:$$\Huge B\underline{\ddot q}+A\underline q=0$$Assuming that $B$ has an inverse. Left multiplying by $B^{-1}$ gives:$$\Huge B^{-1}B\underline{\ddot q}+B^{-1}A\underline q=\underline{\ddot q}+C\underline q=0$$With $C=B^{-1}A$
+More generally, we can restrict to Lagrangians with form:$$\Huge L=\frac{1}{2}\left(\sum_{i,j=1}^N\underline{\dot q}_iB_{ij}(\underline q)\underline{\dot q}_j\right)-V(\underline q)$$We then expand to second order in $\underline q$ about $\underline q=0$, since $B_{ij}$ is what we aim to approximate:$$\Huge L_\text{Approx}=\frac{1}{2}\left(\sum_{i,j=1}^N\underline{\dot q}_iB_{ij}(0)\underline{\dot q}_j\right)-\frac{1}{2}\sum_{i,j=1}^N\underline q_iA_{ij}\underline q_j-V(0)$$The corresponding Euler-Lagrange equations then become, through the same reasoning as canonical terms:$$\Huge\begin{align}
+0&=\frac{d }{dt}\left(\frac{\partial L}{\partial \underline{\dot q}_k}\right)-\frac{\partial L}{\partial \underline q_k}\\
+&=\frac{d }{dt}\left(\frac{1}{2}\sum_{i,j=1}^N\delta_{ik}B_{ij}(0)\underline{\dot q}_j+\frac{1}{2}\sum_{i,j=1}^N\underline{\dot q}_iB_{ij}(0)\delta_{jk}\right)\\
+&+\left(\frac{1}{2}\sum_{i,j=1}^N\delta_{ik}A_{ij}\underline q_j+\frac{1}{2}\sum_{i,j=1}^N\underline q_iA_{ij}\delta_{jk}\right)\\
+&=\frac{d }{dt}\left(\sum_{i=1}^NB_{ij}\underline{\dot q}_j\right)+\sum_{i=1}^NA_{ij}\underline{\dot q_j}\\
+&=\frac{d }{dt}(B\underline{\dot q})+A\underline q\\
+&=B\underline{\ddot q}+A\underline q=0
+\end{align}$$Assuming that $B$ has an inverse. Left multiplying by $B^{-1}$ gives:$$\Huge B^{-1}B\underline{\ddot q}+B^{-1}A\underline q=\underline{\ddot q}+C\underline q=0$$With $C=B^{-1}A$

@@ -1,0 +1,15 @@
+
+Assume the existence of an [[Calculus of variations#Action principle|action]] $S[u,u_x,u_t]$ acting on one spatial and one temporal dimension. Here $u(x,t)\in\Re$ can be thought of as a map between $x,t$ and the reals, that is $u:\Re^2\mapsto\Re$. $u_x$ and $u_t$ are the [[Partial derivatives|partial derivatives]] of $u$ w.r.t. each variable. The action can be written as:$$\Huge S=\int L(u(x,t),u_x(x,t),u_t(x,t),x,t)dt\,dx$$Note that $x,t$ do not vary, they are not [[Calculus of variations#Configuration space and generalised coordinates|generalised coordinates]]. In the context of field theory:$$\frac{\partial }{\partial t}(f(u,u_x,u_t,x,t))=\lim_{\epsilon\to0}\frac{f(u(x,t+\epsilon),u_x(x,t+\epsilon),(u_t(x,t+\epsilon),x,t+\epsilon)-f(u,u_x,u_t,x,t)}{\epsilon}$$
+# Euler-Lagrange equations for fields:
+
+We claim that the transformation in the path $u_s\rightarrow u_s+\delta u$ causes the change in the action principle to be quadratic in $\delta u$, that is $\delta S=\mathcal{O}((\delta u)^2)$:$$\large\begin{align}
+S=\int L(u,u_x,u_t,x,t)dt\,dx\rightarrow S'=\int L(u+\delta u,u_x+\delta u_x,u_t+\delta u_t,x,t)dt\,dx
+\end{align}$$Now we [[Taylor series#Taylor's theorem|Taylor expand]] in $\delta u$:$$\large\begin{align}
+S'&=S+\int\left(\frac{\partial L}{\partial u}\delta u+\frac{\partial L}{\partial u_x}\delta u_x+\frac{\partial L}{\partial u_t}\delta u_t\right)dt\,dx+\mathcal{O}((\delta u)^2)\\&=S+\int\left(\frac{\partial L}{\partial u}\delta u+\frac{\partial L}{\partial u_x}\frac{\partial }{\partial x}\left(\delta u\right)+\frac{\partial L}{\partial u_t}\frac{\partial }{\partial t}(\delta u)\right)dt\,dx+\mathcal{O}((\delta u)^2)\\
+&=S+\int\frac{\partial L}{\partial u}\delta u-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)\delta u-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\delta u+\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)\delta u\\
+&+\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\delta u\,\,dt\,dx\\
+&=S+\int\delta u\left(\frac{\partial L}{\partial u}-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\right)dt\,dx+\int\delta u\frac{\partial L}{\partial u_x}dt\\
+&+\int\delta u\frac{\partial L}{\partial u_t}dx\\
+&=S+\int\delta u\left(\frac{\partial L}{\partial u}-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\right)dt\,dx\\
+\delta S&=S'-S=\int
+\end{align}$$
