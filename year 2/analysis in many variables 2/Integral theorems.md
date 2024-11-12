@@ -12,3 +12,7 @@ A vector field $f:\Re^n\mapsto\Re^n$ is called conservative if it can be written
 
 ## Path independence:
 A vector field is conservative if and only if it has path independent line integrals between any pair of points:![[path independence proof]]Here we have used the [[year 1/analysis 1/term 2/Integration#MVT for integrals|MVT]] for integrals. The proof is analogous for other components of $g$.
+
+# Divergence theorem:
+
+If $\underline f:\Re^3\mapsto\Re^3$ is a $C^1$ vector field and $S$ is a closed surface with outwards normal $\underline{\hat{n}}$, bounding a region $V$, then:$$\Huge \oint_S\underline f\cdot\underline{\hat{n}}\,dS=\int_V(\underline{\nabla}\cdot\underline f)dV$$This generalises to $V\subset\Re^n$ with boundary $S$ on $n-1$ dimension hypersurface. For $n=1$ we have $V=[a,b],S=\{a,b\}$, $\underline f=f(x)\underline e_1$, $\underline{\nabla}\cdot\underline f=f'(x)$, and $\underline{\hat{n}}=\begin{cases}-\underline e_1&x=a\\-\underline e_1&x=b\end{cases}$. Then this reduces to $f(b)-f(a)$, the fundamental theorem of calculus. The proof of this theorem involves subdividing $V$ into a disjoint union of smaller domains $V_i$ for $i\in\{1,\dots,m\}$ where each boundary $S_i$ have unit normal $\underline{\hat{n}}_i$. Then each interior segment of $S_i$ is shared by a neighboring subdomain $V_j$, with equal and opposite $\underline{\hat{n}}_j$. So we write:$$\Huge \oint_S\underline f\cdot\underline{\hat{n}}\,dS=\sum_{i=1}^m\oint_{S_i}\underline f\cdot\underline{\hat{n}}_i\,dS_i$$
