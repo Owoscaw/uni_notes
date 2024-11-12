@@ -30,3 +30,10 @@ If $\underline f:\Re^3\mapsto\Re^3$ is a $C^1$ vector field and $C$ is an orient
 The surface $S$ is sometimes called a capping surface of $C$. Stokes' theorem dictates that the flux is the same through every possible surface, $S$, sharing the boundary $C$.
 
 Example:![[stokes' example]]
+## Green's theorem:
+If $\underline f:\Re^2\mapsto\Re^2$ is a $C^1$ vector field and $C$ is a closed curve in the plane oriented anti-clockwise, then:$$\Huge \oint_C\underline f\cdot\hat{\underline t}\,dl=\int_A\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)dx\,dy$$Where $A$ is the area enclosed by $C$. This is a direct corollary of Stokes' theorem.
+
+
+If $\underline f:\Re^3\mapsto\Re^3$ is a $C^1$ vector field with $\underline{\nabla}\times\underline f=\underline 0$ throughout some simply-connected region $V\subset\Re^3$ then $\underline f$ is conservative in $V$. A domain is simply connected if any curve can be shrunk to a point in the domain.
+
+To prove this, recall that $\underline f=\underline{\nabla}g$ if and only if $\underline f$ has path independent line integrals. Consider two arbitrary curves $C_1,C_2$ between two arbitrary points $\underline x_a,\underline x_b\in V$. Define the closed curve $C=C_1-C_2$. Since $V$ is simply connected, there exists a capping surface $S\subset V$ for $C$. Stokes' theorem implies that $\oint_C\underline f\cdot\hat{\underline t}\,dl=0$, which implies $\int_{C_1}\underline f\cdot\hat{\underline t}\,dl=\int_{C_2}\underline f\cdot\hat{\underline t}\,dl$, that is path independence holds, implying that $\underline f$ is conservative.
