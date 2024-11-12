@@ -31,4 +31,22 @@ f((a+bi)(c+di))&=f((ac-bd)+(ad+bc)i)\\
 # Isomorphism:
 
 We say that two rings $R$ and $S$ are isomorphic if there exists a [[Functions, Domain and Range#Bijectivity|bijective]] ring-homomorphism $f:R\mapsto S$ between $R$ and $S$. If such a map $f$ exists, we write:$$\Huge R\cong S$$
-A ring homomorphism $f:R\mapsto S$ is [[Functions, Domain and Range#Injectivity|injective]] if and only if 
+A ring homomorphism $f:R\mapsto S$ is [[Functions, Domain and Range#Injectivity|injective]] if and only if $\ker(f)=\{0\}$. To prove this, recall injectivity implies $f(x)=f(y)\implies x=y$. Assume $f$ is injective and let $x\in\ker(f)$, that is $f(x)=0\implies f(x)=f(0)\implies x=0$, therefore $\ker(f)=\{0\}$. Assume $\ker(f)=\{0\}$ and consider $x,y\in R$ with $f(x)=f(y)$, this implies $f(x)-f(y)=0=f(x)+f(-y)=f(x-y)=0\implies x-y\in\ker(f)\implies x-y=0\implies x=y$, so we have injectivity and the proof is complete.
+
+Note that $f:\mathbb{C}\mapsto S$ with $S$ as above we can see that $f(a+bi)=0\implies \begin{pmatrix}a&-b\\b&a\end{pmatrix}=\begin{pmatrix}0&0\\0&0\end{pmatrix}\implies a=b=0$, so $\ker(f)=\{0\}$, one can also show that $f$ is surjective and conclude that $\mathbb{C}\cong S$.
+
+# Ring products:
+
+Let $R$ and $S$ be rings. We define the product of $R$ and $S$ as:$$\Huge R\times S=\{(r,s):r\in R,s\in S\}$$We then have:
+> $(r_1,s_1)+(r_2,s_2)=(r_1+r_2,s_1+s_2)$
+> $(r_1,s_1)\cdot(r_2,s_2)=(r_1\cdot r_2,s_1\cdot s_2)$
+
+These satisfy the properties required to be a ring with the identity for $R\times S$ as $(1_R,1_S)$. We then define two ring homomorphisms:$$\Huge\begin{align}
+P_1:R\times S\mapsto R,\,\,(r,s)\mapsto r\\
+P_2:R\times S\mapsto S,\,\,(r,s)\mapsto s
+\end{align}$$
+Note $\ker P_1=\{(r,s)\in R\times S:P_1(r,s)=0\}$ and $\ker P_2=\{(r,s)\in R\times S:P_2(r,s)=0\}$, here $P_1$ is invariant for any $s\in S$ and $P_2$ is invariant for any $r\in R$, therefore $\ker P_1=\{(0,s):s\in S\},\ker P_2=\{(r,0):r\in R\}$.
+
+# Ideals:
+
+Let $R$ be a ring. A subset $I\subseteq R$ is called an ideal, $I$, of $R$ if it is closed under addition and for every $r\in R$ and $x\in I$ we have $r\cdot x\in I$ and $x\cdot r\in I$. Note that if $x\in I$, $0\cdot x=x\cdot 0\in I$, so $0\in I$ by default. Moreover $-1\cdot x\in I\implies -x\in I$
