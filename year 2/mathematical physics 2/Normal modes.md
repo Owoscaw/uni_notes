@@ -16,6 +16,8 @@ C^{(i)}t+D^{(i)}&\text{for }\lambda^{(i)}=0\\
 &+\sum_{i:\lambda^{(i)}=0}\underline v^{(i)}(C^{(i)}t+D^{(i)})\\
 &+\sum_{i:\lambda^{(i)}<0}\underline v^{(i)}(\alpha^{(i)}\cosh(t\sqrt{-\lambda^{(i)}})+\beta^{(i)}\sinh(t\sqrt{-\lambda^{(i)}}))
 \end{align}$$
+Consider two pendula of equal mass and equal length, a distance $d$ apart with a spring with spring constant $k$ connecting them:
+
 
 # Non-Canonical kinetic terms:
 
