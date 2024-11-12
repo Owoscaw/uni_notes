@@ -23,3 +23,10 @@ Then each interior segment of $S_i$ is shared by a neighboring subdomain $V_j$, 
 &=\lim_{m\to\infty}\sum_{i=1}^m\left(\frac{1}{|V_i|}\oint_{S_i}\underline f\cdot\underline{\hat{n}}_idS\right)|V_i|\\
 &=\int_V(\underline{\nabla}\cdot\underline f)dV
 \end{align}$$For this to work, we require $\underline f\in C^1$. This theorem applies even when $S$ is not connected, i.e. two concentric spheres. Suppose that $S$ is the boundary of $V$ and can be written as $S=S_0\cup S_1$, then:$$\Huge \oint_{S_0}\underline f\cdot\underline{\hat{n}}_0\,dS+\oint_{S_1}\underline f\cdot\underline{\hat{n}}_1\,dS=\int_V(\underline{\nabla}\cdot\underline f)dV$$This theorem plays a large role in converting between differentiation and integration when considering conservation laws.
+
+# Stokes' theorem:
+
+If $\underline f:\Re^3\mapsto\Re^3$ is a $C^1$ vector field and $C$ is an oriented closed curve bounding a surface $S$, then:$$\Huge \oint_C\underline f\cdot\hat{\underline t}\,dl=\int_S(\underline{\nabla}\times\underline f)dS$$Where $\underline{\hat{n}}$ is chosen such that $\hat{\underline t}\times\underline{\hat{n}}$ on $C$ is outward:![[stokes]]
+The surface $S$ is sometimes called a capping surface of $C$. Stokes' theorem dictates that the flux is the same through every possible surface, $S$, sharing the boundary $C$.
+
+Example:![[stokes' example]]
