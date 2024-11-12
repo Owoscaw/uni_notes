@@ -80,4 +80,14 @@ We say that a real differentiable map $f:D\mapsto\mathbb{C}$ on a domain $D\subs
 
 Let $f$ be a holomorphic map at $z_0$. If $f'(z_0)\neq0$ then $f$ is conformal at $z_0$. To prove this, let $\gamma:[0,1]\mapsto D$ be a $C^1$ path such that $\gamma(t_0)=z_0$ for some $t_0\in[0,1]$. The tangent vector to $\gamma$ at $z_0=\gamma(t_0)$ is given by $\gamma'(t_0)$. Then $f\circ\gamma:[0,1]\mapsto\mathbb{C}$ is a differentiable curve such that $f(\gamma(t_0))=f(z_0)$. By the chain rule we have:$$\Huge (f(\gamma(t)))'\vert_{t=t_0}=f'(\gamma(t_0))\gamma'(t_0)=f'(z_0)\gamma'(t_0)$$This implies that the tangent vector of $f\circ\gamma$ at $t_0$ is the tangent vector $\gamma'(t_0)$ scaled by $|f'(z_0)|\neq0$ and rotated by $\text{Arg}(f'(z_0))$. Since the scaling and rotation do not depend on $\gamma$ (uniform in $\gamma$), the angle between curves remains fixed as well as the orientation. This has a corollary where any conformal map will map orthogonal grids in the $(x,y)$ plane to orthogonal grids.
 
-Let $D$ be a domain. If $f$ is conformal at $z_0\in D$ then $f$ is complex differentiable at $z_0$ and $f'(z_0)\neq0$. Therefore if $f$ is conformal on $D$, then $f$ is holomorphic on $D$ and $f'(z)\neq0$ for all $z\in D$. That is, $f$ is conformal on $D$ if and only if $f$ is holomorphic with $f'(z)\neq0$ for all $z\in D$
+Let $D$ be a domain. If $f$ is conformal at $z_0\in D$ then $f$ is complex differentiable at $z_0$ and $f'(z_0)\neq0$. Therefore if $f$ is conformal on $D$, then $f$ is holomorphic on $D$ and $f'(z)\neq0$ for all $z\in D$. That is, $f$ is conformal on $D$ if and only if $f$ is holomorphic with $f'(z)\neq0$ for all $z\in D$.
+
+## Biholomorphic:
+Let $D$ and $D'$ be domains. We say that the map $f:D\mapsto D'$ is biholomorphic if $f$ is holomorphic, a bijection, and the inverse $f^{-1}:D'\mapsto D$ is also holomorphic. A biholomorphic map $f$ is called a biholomorphism. When such an $f$ exists, we call $D,D'$ biholomorphic and write $f:D\tilde{\rightarrow}D'$.
+
+The map $f(z)=az+b$ for $a\in\mathbb{C}^*$ and $b\in\mathbb{C}$ is a biholomorphism. Since $a\neq0$ we can write it's inverse as $f^{-1}(z)=\frac{1}{a}-\frac{b}{a}$, $f(z)$ is also holomorphic. So the existence of this inverse with the holomorphicity of $f(z)$ makes the map biholomorphic.
+
+The map $f(z)=e^z$ is not a biholomorphism between $\mathbb{C}$ and $\mathbb{C}^*$ since despite it being holomorphic, it is not injective. Note that restricting the domain to $\{z\in\mathbb{C}:-\pi<\Im(z)<\pi\}$ we see that $e^z$ becomes bijective, with an inverse function of $\text{Log}$. However $\text{Log}$ is not continuous on this set, so we still do not have biholomorphism. Further restricting the domain to $\{z\in\mathbb{C}:-\pi<\Im(z)<\pi\}=\mathbb{C}\setminus\Re_{\leq0}$, the inverse becomes continuous and holomorphic, so the map $e^z$ becomes biholomorphic on this set.
+
+## Automorphisms:
+Let $D\subset\mathbb{C}$ be a domain. The set of all biholomorphic maps $f:D\tilde{\rightarrow}D$ from $D$ to itself forms a group under composition. This is called the automorphism group of $D$, denoted as $\text{Aut}(D)$. 

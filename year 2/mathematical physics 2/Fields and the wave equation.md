@@ -11,5 +11,6 @@ S'&=S+\int\left(\frac{\partial L}{\partial u}\delta u+\frac{\partial L}{\partial
 &=S+\int\delta u\left(\frac{\partial L}{\partial u}-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\right)dt\,dx+\int\delta u\frac{\partial L}{\partial u_x}dt\\
 &+\int\delta u\frac{\partial L}{\partial u_t}dx\\
 &=S+\int\delta u\left(\frac{\partial L}{\partial u}-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\right)dt\,dx\\
-\delta S&=S'-S=\int
-\end{align}$$
+\delta S&=S'-S=\int\delta u\left(\frac{\partial L}{\partial u}-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial u_t}\right)\right)dt\,dx+\mathcal{O}((\delta u)^2)\\
+&=\int\delta u(0)dt\,dx+\mathcal{O}((\delta u)^2)=\mathcal{O}((\delta u)^2)
+\end{align}$$So we have the Euler-Lagrange equations:$$\Huge \frac{\partial L}{\partial u}-\frac{\partial }{\partial x}\left(\frac{\partial L}{\partial u_x}\right)-\frac{\partial }{\partial t}\left(\frac{\partial L}{\partial t}\right)=0$$Note that this applies for a continuous $u_x,u_t$ instead of the discrete coordinates for [[Lagrangians for classical mechanics|classical Lagrangians]].
