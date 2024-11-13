@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 tmax=150
 d = 7
-Rpar = 2 # R is used below for the recovered population
+Rpar = 0.9 # R is used below for the recovered population
 K= Rpar/d
 Kd=0.01
 S = [66e6]
@@ -20,10 +20,10 @@ for i in range(tmax):
   F.append(F[-1]+Kd*DI[-d])
   DI.append(DeltaI)
 
-plt.semilogy(I,"r*", label="I")
-plt.semilogy(R,"b*", label="R")
-plt.semilogy(F,"k*", label="F")
-plt.xlabel("i", fontsize=22)
+plt.semilogy(I,"r*", label="Infected")
+plt.semilogy(R,"b*", label="Recovered")
+plt.semilogy(F,"k*", label="Fatalities")
+plt.xlabel("days", fontsize=22)
 plt.ylabel("I/R/F", fontsize=22)
 plt.legend(loc='upper left')
 plt.tight_layout(rect=[0, 0, 0.99, 1], pad=0.5)

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 tmax=150
 d = 7
-Rpar = 3 # R is used below for the recovered population
+Rpar = 0.9 # R is used below for the recovered population
 K= Rpar/d
 Kd=0.01
 S = [66e6]
@@ -20,12 +20,13 @@ for i in range(tmax):
   F.append(F[-1]+Kd*DI[-d])
   DI.append(DeltaI)
 
-plt.plot(I,"r*", label="I")
-plt.plot(R,"b*", label="R")
-plt.plot(F,"k*", label="F")
-plt.xlabel("i", fontsize=22)
+plt.plot(I,"r*", label="Infected")
+plt.plot(R,"b*", label="Recovered")
+plt.plot(F,"k*", label="Fatalities")
+plt.xlabel("days", fontsize=22)
 plt.ylabel("I/R/F", fontsize=22)
 plt.legend(loc='upper left')
 plt.tight_layout(rect=[0, 0, 0.99, 1], pad=0.5)
+plt.savefig("SIR_R{}_tmax{}.pdf".format(Rpar, tmax))
 plt.show()
 print("I={} R={} F={}".format(I[-1],R[-1], F[-1]))
