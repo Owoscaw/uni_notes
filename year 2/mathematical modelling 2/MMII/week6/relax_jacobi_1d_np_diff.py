@@ -6,15 +6,18 @@ import time
 class RelaxDiffusion(RelaxJacobi1D_np):
     """ A class to relax to static solutions of the diffusion equation. """
     def F(self, v):
-    # TODO : return v[i+1]+v[i-1]-2*v[i] excluding the 2 end points as an array
-      return() 
+       
+       result = np.roll(v, 1) + np.roll(v, -1) - 2*v
+       return result[1:-1]
+      
+    
 
     def boundary(self):
       """ Enforce the boundary conditions. 
           Left: 1 (large pool). Right 0 (empty pool)
       """
       self.v[0] = 1
-      self.v[-1] = 0;
+      self.v[-1] = 0
       
 t_start = time.time()    
 Np=200

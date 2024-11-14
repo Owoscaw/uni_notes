@@ -12,7 +12,7 @@ class diffusion_tube(gs1d.RelaxGS1D):
 
     def F(self, v, i):
 
-        return (v[i] + self.D[i-1]*v[i-1] + self.D[i+1]*v[i+1] - 2*self.D[i]*v[i])
+        return (self.D[i-1]*v[i-1] + self.D[i+1]*v[i+1] - 2*self.D[i]*v[i])
     
     def boundary(self):
         self.v[0] = 1
@@ -21,8 +21,11 @@ class diffusion_tube(gs1d.RelaxGS1D):
 if __name__ == "__main__":
     Np = 200
     relax = diffusion_tube(np.zeros([Np]) ,1.,2.)
+    relaxConstant = diffusion_tube(np.zeros([Np]), 1., 1.)
     n = relax.relax(1e-9 ,0.5)
+    nConst = relaxConstant.relax(1e-9, 0.5)
     print("No of iterations: ",n)
-    relax.plot()
+    relax.plot("b-")
+    relaxConstant.plot("r-")
     plt.savefig("diff -tube.pdf")
     plt.show()
