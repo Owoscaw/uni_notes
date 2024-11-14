@@ -83,7 +83,9 @@ class RelaxJacobi1D:
 
       : param style: format for the plot function.
     """
-    plt.plot(self.l_x, self.l_f, style);
+    plt.plot(self.l_x, self.l_f, style)
+    plt.xlabel("index i")
+    plt.ylabel("value of v")
 
 
 # Tests follow; only run when not importing the module.
@@ -106,12 +108,12 @@ if __name__ == "__main__":
           Left: 1 (large pool). Right 0 (empty pool)
       """
       self.v[0] = 1
-      self.v[-1] = 0;
+      self.v[-1] = 0
       
   t_start = time.time()    
   Np=200
   relax = RelaxDiffusion(np.zeros([Np]))
-  n = relax.relax(err=1e-5,nu=0.5)
+  n = relax.relax(err=1e-5,nu=0.25)
   t_end = time.time()    
   print("Durtation (s): ",t_end-t_start)
   print("No of iterations: ",n) 
