@@ -22,10 +22,9 @@ class RelaxGS1D(rj1d.RelaxJacobi1D):
     dvmax = 0
     for i in range(1, self.Np-1):
       dv = nu*self.F(self.v, i)
+      self.v[i] += dv
       if(np.fabs(dv) > dvmax) : dvmax = np.fabs(dv)
-      w[i] = self.v[i] + dv
       
-    self.v = w      
     return(dvmax)
 
 
