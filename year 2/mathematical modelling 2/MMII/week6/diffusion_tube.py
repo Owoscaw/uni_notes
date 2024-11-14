@@ -11,7 +11,8 @@ class diffusion_tube(gs1d.RelaxGS1D):
         self.D = np.linspace(dMin, dMax, len(v0))
 
     def F(self, v, i):
-        return self.D
+
+        return (v[i] + self.D[i-1]*v[i-1] + self.D[i+1]*v[i+1] - 2*self.D[i]*v[i])
     
     def boundary(self):
         self.v[0] = 1
