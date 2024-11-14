@@ -185,16 +185,16 @@ class Covid_base :
         plt.semilogy(d,t_data,fmt, label=label)
 
     def plot(self, data_c=False, data_f=True):
-        self.plot_data(self.I[:self.d], "r-", label="I")
-        self.plot_data(self.R[:self.d], "b-", label="R")
-        self.plot_data(self.F[:self.d], "k-", label="F")
+        self.plot_data(self.I[:self.d], "r-", label="Infected")
+        self.plot_data(self.R[:self.d], "b-", label="Recovered")
+        self.plot_data(self.F[:self.d], "k-", label="Fatalities")
 
         if(data_c):
           plt.semilogy(self.data[1][:self.d], "r*", label="I data") 
         if(data_f):
-          plt.semilogy(self.data[1][:self.d], "k*", label="F data") 
+          plt.semilogy(self.data[1][:self.d], "k*", label="Fatalities data") 
         
-        plt.xlabel("i", fontsize=22)
+        plt.xlabel("days", fontsize=22)
         plt.ylabel("I/R/F", fontsize=22)
         plt.legend(loc='upper left')
         plt.title("{}: R={}, I0={}".format(self.country, self.Rpar, self.I[0]))
