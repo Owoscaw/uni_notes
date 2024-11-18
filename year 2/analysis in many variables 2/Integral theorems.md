@@ -30,6 +30,25 @@ If $\underline f:\Re^3\mapsto\Re^3$ is a $C^1$ vector field and $C$ is an orient
 The surface $S$ is sometimes called a capping surface of $C$. Stokes' theorem dictates that the flux is the same through every possible surface, $S$, sharing the boundary $C$.
 
 Example:![[stokes' example]]
+## Proof:
+To prove Stokes' theorem we must show the following lemmas.
+
+Let $C$ be a curve in the plane with unit normal $\underline{\hat{n}}$ with diameter $d(C)$, closed area $|A|$, and containing the point $\underline x$. Then for any vector field $\underline f:\Re^3\mapsto\Re^3$:$$\Huge \underline{\hat{n}}\cdot(\underline{\nabla}\times\underline f)\vert_{\underline x}=\lim_{d(C)\to 0}\frac{1}{|A|}\oint_C\underline f\cdot\hat{\underline t}\,dl$$Where $C$ is oriented such that $\hat{\underline t}=\underline{\hat{n}}\times\underline{\hat{n}}_C$:![[pill lemma]]To prove this, we can "extrude" $C$ by a small distance $h$ in the $\underline{\hat{n}}$ direction to form a surface with normal $\underline{\hat{n}}_S$:![[pill lemma 2]]Then by definition of curl:$$\Huge\begin{align}
+\underline{\hat{n}}\cdot(\underline{\nabla}\times f)\vert_{\underline x}&=\underline{\hat{n}}\cdot\left(\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}_S\times\underline f\,dS\right)\\
+&=\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline{\hat{n}}\cdot(\underline{\hat{n}}_S\times\underline f)dS\\
+&=\lim_{|A|,h\to0}\frac{1}{h|A|}\oint_S\underline f\cdot(\underline{\hat{n}}\times\underline{\hat{n}}_S)dS\\
+&=\lim_{|A|,h\to0}\frac{1}{h|A|}\oint_{\tilde S}\underline f\cdot(\underline{\hat{n}}\times\underline{\hat{n}}_C)d\tilde S
+\end{align}$$Now we parametrise $\tilde S$ by $\tilde{\underline x}(t,v)=\underline x_C(t)+v\underline{\hat{n}}$ for $v\in[0,h]$ and $t\in[t_0,t_1]$. We must now calculate the Jacobian:$$\Huge \left|\frac{\partial \underline{\tilde x}}{\partial t}\times\frac{\partial \underline{\tilde x}}{\partial v}\right|=\left|\frac{d \underline x_C}{dt}\times\underline{\hat{n}}\right|=\left|\frac{d \underline x_C}{dt}\right||\underline{\hat{n}}|=\left|\frac{d \underline x_C}{dt}\right|$$So we get the following:$$\Huge\begin{align}
+\int_{\tilde S}\underline f\cdot(\underline{\hat{n}}\times\underline{\hat{n}}_C)d\tilde S&=\int_{t_0}^{t_1}\int_0^h\underline f\cdot(\underline{\hat{n}}\times\underline{\hat{n}}_C)\left|\frac{d \underline x_C}{dt}\right|dv\,dt\\
+&=\int_{t_0}^{t_1}(\underline{\hat{n}}\times\underline{\hat{n}}_C)\cdot\left(\int_0^h\underline f\,dv\right)\left|\frac{d \underline x_C}{dt}\right|dt\\
+&=h\int_{t_0}^{t_1}(\underline{\hat{n}}\times\underline{\hat{n}}_C)\cdot\underline f(t,v_*(t))\left|\frac{d \underline x_C}{dt}\right|dt
+\end{align}$$When taking the limit as $h\to0$ we have that $v_*(t)\to0$ for all $t$, so we get:$$\large \underline{\hat{n}}\cdot(\underline{\nabla}\times\underline f)\vert_{\underline x}=\lim_{|A|\to0}\frac{1}{|A|}\int_{t_0}^{t_1}(\underline{\hat{n}}\times\underline{\hat{n}}_C)\cdot \underline f(t,0)\left|\frac{d \underline x_C}{dt}\right|dt=\lim_{|A|\to 0}\frac{1}{|A|}\oint_C\underline f\cdot\underline{\hat t}\,dl$$As required. This proof used the [[year 1/analysis 1/term 2/Integration#MVT for integrals|MVT]] for integrals and the fact that $\underline{\hat t}$ is tangent to the curve $C$. We can now prove Stokes' theorem. First we subdivide $S$ into a disjoint union of small regions $S_i$ for $i\in\{1,\dots,m\}$ whose bounding curve have unit tangent vectors $\underline{\hat t}_i$:![[Integral theorems 2024-11-18 12.43.25.excalidraw]]We see that each interior boundary segment is shared by four neighbouring regions with equal and opposite tangents except for along the boundary. So we write:$$\Huge\begin{align}
+\oint_C\underline f\cdot\underline{\hat{t}}\,dl&=\sum_{i=1}^n \oint_{S_i}\underline f\cdot \underline{\hat{t}}_idl\\
+&=\sum_{i=1}^n\left(\frac{1}{|A_i|}\oint_{S_i}\underline f\cdot\underline{\hat{t}}_idl\right)|A_i|\\
+&=\lim_{m\to\infty}\sum_{i=1}^m\left(\frac{1}{|A_i|}\oint_{S_i}\underline f\cdot\underline{\hat{t}}_idl\right)|A_i|=\int_S(\underline{\nabla}\times\underline f)\cdot\underline{\hat{n}}\,dS
+\end{align}$$Where we used the lemma on the last line. So we have Stokes' theorem as required. Note that there is a much more general form of Stokes' theorem in differential calculus written as:$$\Huge \int_\Omega d\omega=\int_{\partial \Omega}\omega$$Where $\Omega$ is a manifold, $\partial\Omega$ is its boundary, $d$ is the exterior derivative, and $\omega$ is the differential form. Divergence theorem and Stokes' theorem are special cases of  this formula.
+
+
 ## Green's theorem:
 If $\underline f:\Re^2\mapsto\Re^2$ is a $C^1$ vector field and $C$ is a closed curve in the plane oriented anti-clockwise, then:$$\Huge \oint_C\underline f\cdot\hat{\underline t}\,dl=\int_A\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)dx\,dy$$Where $A$ is the area enclosed by $C$. This is a direct corollary of Stokes' theorem.
 
