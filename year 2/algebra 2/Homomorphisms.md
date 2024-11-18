@@ -46,7 +46,3 @@ P_1:R\times S\mapsto R,\,\,(r,s)\mapsto r\\
 P_2:R\times S\mapsto S,\,\,(r,s)\mapsto s
 \end{align}$$
 Note $\ker P_1=\{(r,s)\in R\times S:P_1(r,s)=0\}$ and $\ker P_2=\{(r,s)\in R\times S:P_2(r,s)=0\}$, here $P_1$ is invariant for any $s\in S$ and $P_2$ is invariant for any $r\in R$, therefore $\ker P_1=\{(0,s):s\in S\},\ker P_2=\{(r,0):r\in R\}$.
-
-# Ideals:
-
-Let $R$ be a ring. A subset $I\subseteq R$ is called an ideal, $I$, of $R$ if it is closed under addition and for every $r\in R$ and $x\in I$ we have $r\cdot x\in I$ and $x\cdot r\in I$. Note that if $x\in I$, $0\cdot x=x\cdot 0\in I$, so $0\in I$ by default. Moreover $-1\cdot x\in I\implies -x\in I$
