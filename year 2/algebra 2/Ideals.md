@@ -40,4 +40,4 @@ We can now define:$$\Huge R/I=\{x+I:x\in R\}=\{\bar x:x\in R\}$$This is the coll
 > Addition: $(x+I)+(y+I):=x+y+I$
 > Multiplication: $(x+I)(y+I):=xy+I$
 
-To show that these [[Rings, subrings, and fields#Binary operations|binary operations]] are well defined, assume $x+I=x'+I$ and $y+I=y'+I$. Now we aim to show that $x+y+I=x'+y'+I$. We have that $x-x'\in I$ and $y-y'\in I$. This implies that $x-x'+y-y'\in I\implies x+y-(x'+y')\in I\implies x+y+I=x'+y'+I$
+To show that these [[Rings, subrings, and fields#Binary operations|binary operations]] are well defined, assume $x+I=x'+I$ and $y+I=y'+I$. Now we aim to show that $x+y+I=x'+y'+I$. We have that $x-x'\in I$ and $y-y'\in I$. This implies that $x-x'+y-y'\in I\implies x+y-(x'+y')\in I\implies x+y+I=x'+y'+I$.
