@@ -40,4 +40,26 @@ We can now define:$$\Huge R/I=\{x+I:x\in R\}=\{\bar x:x\in R\}$$This is the coll
 > Addition: $(x+I)+(y+I):=x+y+I$
 > Multiplication: $(x+I)(y+I):=xy+I$
 
-To show that these [[Rings, subrings, and fields#Binary operations|binary operations]] are well defined, assume $x+I=x'+I$ and $y+I=y'+I$. Now we aim to show that $x+y+I=x'+y'+I$. We have that $x-x'\in I$ and $y-y'\in I$. This implies that $x-x'+y-y'\in I\implies x+y-(x'+y')\in I\implies x+y+I=x'+y'+I$.
+To show that these [[Rings, subrings, and fields#Binary operations|binary operations]] are well defined, assume $x+I=x'+I$ and $y+I=y'+I$. Now we aim to show that $x+y+I=x'+y'+I$. We have that $x-x'\in I$ and $y-y'\in I$. This implies that $x-x'+y-y'\in I\implies x+y-(x'+y')\in I\implies x+y+I=x'+y'+I$. So addition is well defined. 
+
+We now aim to show that if $x+I=x'+I$ and $y+I=y'+I$ then $xy+I=x'y'+I$. Since $x-x'\in R$ we have that $(x-x')y\in I$ and similarly since $y-y'\in I$ we have $x'(y-y')\in I$. Since the ideal is closed under addition we also have $(x-x')y+x'(y-y')=xy-x'y'\in I$. This is equivalent to saying $xy+I=x'y'+I$, so we have that multiplication is also well defined.
+
+Hence on $R/I$ we have two well defined binary operations. The zero element is $0+I$ since $(x+I)+(0+I)=(x+0)+I=x+I$. The additive inverse of $x\in R/I$ is therefore $-(x+I)$ since $-(x+I)+(x+I)=(x-x)+I=0+I$. $1+I$ is the multiplicative identity since $(x+I)(1+I)=(x\cdot 1)+I=x+I$. One can also show associativity for both operations. Therefore $R/I$ is a ring.
+
+Let $R$ be a ring and $I$ an ideal in $R$. Then the ring $R/I$ is called the quotient of $R$ by $I$, or $R\mod I$. It's elements $x+I=\bar x$ are called cosets, equivalence classes, or residue classes mod $I$. For example, if $I=R$ then there exists only one coset since $x+R=y+R$ as $x-y\in R$ always, that is $R/R=\{\bar 0\}$. Take $I=\{0\}$, then $R/I=R$ since for any two $x+I,y+I\in R/I$ $x-y=0\implies x=y$, so $x$ can be any element in $R$. Note that if $R$ is commutative, so is $R/I$.
+
+Take $R=\mathbb{Q}[x]$ and $I=(x^2+x+1)=(g(x))$. Then $R/I=\{\bar p(x):p(x)\in \mathbb{Q}[x]\}=\{\bar r(x):\deg(r)\leq1\}$. Let $p(x)\in\mathbb{Q}[x]$, then $p(x)=q(x)g(x)+r(x)$ with $\deg(r)<\deg(g)=2$. Then $p(x)-r(x)=q(x)g(x)\in(g(x))=I$, therefore the equivalence class of $p$ and $r$ are identical. That is to say $\bar p(x)=\bar r(x)$. Note that if $r_1(x),r_2(x)$ are polynomials with degree less than or equal to $1$ and if $\bar r_1(x)=\bar r_2(x)$ then $r_1(x)-r_2(x)\in I\implies r_1(x)-r_2(x)=q(x)g(x)=0\implies r_1(x)=r_2(x)$. Take $p(x)=x^4-3x^2+2$, we aim to find $r(x)$ with $\deg(r)\leq1$ such that $p(x)=q(x)g(x)+r(x)$. Since $x^2+x+1\in I$ we have that $x^2+x+1-0\in I\implies\overline{x^2+x+1}=\bar 0\implies \bar x^2=\overline{-x-1}$. Now $\bar p(x)=\overline{x^4-3x^2+2}=\bar x^4+\overline{-3x^2+2}$. Notice $\bar x^4=\bar{(x^2)}^2=\overline{(-x-1)}^2$, expanding this gives $\bar x^2+\overline{2x}+\bar 1=\bar{-x}-\bar 1+\overline{2x}+\bar 1=\bar x$. Therefore $\bar p(x)=\bar x-3\overline{(-x-1)}+\bar 2=\overline{4x+5}$.
+
+We can define the following ring homomorphism: $\pi:R\mapsto R/I$ with $x\mapsto\bar x$. This is indeed a ring homomorphism since:
+> $\pi(1)=\bar 1$
+> $\pi(x+y)=\overline(x+y)=\bar x+\bar y=\pi(x)+\pi(y)$
+> $\pi(xy)=\overline{xy}=\bar x\cdot\bar y=\pi(x)\pi(y)$
+
+We then aim to find the kernel of this map:$$\Huge\begin{align}
+\ker\pi&=\{x\in R:\pi(x)=\bar 0\}\\
+&= \{x\in R:\bar x=\bar 0\}\\
+&=I
+\end{align}$$
+# First Isomorphism Theorem:
+
+Let $\varphi:R\mapsto S$ be a ring homomorphism. Then the map defined as:$$\Huge\bar\varphi:R/\ker\varphi\mapsto\text{Im}(\varphi),\,\,\bar x\mapsto\varphi(x)$$Is a well defined ring homomorphism:$$\Huge R/\ker\varphi\cong\text{Im}(\varphi)$$To prove that this is well defined, let $x,x'\in R$ such that $\bar x=\bar x'$. Now we aim to show $\varphi(x)=\varphi(x')$. To do this, consider $\bar x=\bar x'\implies x-x'\in\ker\varphi\implies\varphi(x-x')=0\implies\varphi(x)-\varphi(x')=0\implies\varphi(x)=\varphi(x')$
