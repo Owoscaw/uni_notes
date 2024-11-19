@@ -1,0 +1,4 @@
+The vector $\underline c=\underline a+\underline b$ is written as $c_i=a_i+b_i$ in index notation, where it is understood that the equation holds for $i\in\{1,\dots,n\}$. An index that appears once in each term is called a free index. An index that appears exactly twice in the same term is called a dummy index, and always implies summation.
+# Scalar products:
+
+In index notation, the scalar product is written as:$$\Huge \underline a\cdot\underline b=a_jb_j$$Where the repeated index implies a summation from $j=1$ to $j=n$. This form of the scalar product is called the Einstein summation convention. Here, $j$ is a dummy index. For example:$$\Huge (\underline a\cdot \underline b)(\underline c\cdot \underline d)=a_jb_jc_kd_k=\left(\sum_{j=0}^na_jb_j\right)\left(\sum_{k=0}^nc_kd_k\right)$$
