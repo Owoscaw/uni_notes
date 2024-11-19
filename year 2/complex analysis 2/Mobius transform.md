@@ -53,4 +53,19 @@ Let $T\in GL_2(\mathbb{C})$ and $D\subseteq\mathbb{C}$ be an open set. Then $M_T
 
 Mobius transformations map circles and lines in $\hat{\mathbb{C}}$ to circles and lines in $\hat{\mathbb{C}}$, where we consider any line to pass through infinity. Sometimes we use the term circline to refer to circles and lines. We can then say that Mobius transformations take circlines to circlines. Moreover a circline will be taken to a line if and only if it contains the point mapped to $\infty$.
 
-For example, we aim to find the images of $\mathbb{D}$ and $\mathbb{H}$ under the Cayley map defined as $f(z)=\frac{z-i}{z+i}$:![[Mobius transform 2024-11-15 16.52.06.excalidraw]]
+For example, we aim to find the images of $\mathbb{D}$, the unit disc,  $\mathbb{H}$, the upper half plan, and $\Omega=\left\{z\in \mathbb{C}:0<\text{Arg}(z)<\frac{\pi}{2}\right\}$ under the Cayley map defined as $f(z)=\frac{z-i}{z+i}$:![[cayley maps]]
+
+## Balls under the mobius transformation:
+The map $f(z)=\frac{1}{z}$ takes a circle that does not pass through the origin to a circle. Moreover, if $B$ is an open balls whose closure doesn't contain the origin, then $f(B)$ is once again an open balls. Consequently, if $D\subseteq\mathbb{C}$ is a set, then for any $z_0\in\mathbb{D}\setminus\{0\}$ for which there exists $\epsilon>0$ with $B_\epsilon(z_0)\subseteq D$ we have that there exists $\delta>0$ such that $B_\delta(f(z_0))\subseteq f(D)$. That is, $f$ takes any non-zero interior point of $D$ to an interior point of $f(D)$.
+
+The second claim follows from the first, so it is sufficient to only prove the first. Consider $|z-a|^2=r^2\iff(z-a)(\overline{z-a})=r^2\iff z\bar z-a\bar z-\bar a z+a\bar a=r^2\iff \bar z-a\bar z-\bar az+(|a|^2-r^2)=0$, if $z\neq0$ then we define $w=\frac{1}{z}$ and dividing the above equation by $z\bar z>0$ we get:$$\Huge 1-a\frac{1}{z}-\bar a\frac{1}{\bar z}+(|a|^2-r^2)\frac{1}{|z|^2}=0$$Or, substituting $w$:$$\Huge (|a|^2-r^2)w\bar w-aw-\bar aw+1=0$$Since $z\neq0$ is not on $|z-a|=r$ we can divide by $|a|^2=r^2$ to get:$$\Huge w\bar w-\frac{a}{|a|^2-r^2}w-\overline{\frac{a}{|a|^2-r^2}}\bar w+\frac{1}{|a|^2-r^2}=0$$This is of the same form as before $w$ was introduced with $a'=\overline{\frac{a}{|a|^2-r^2}}$ and $|a'|^2-(r')^2=\frac{1}{|a|^2-r^2}$. So we get:$$\Huge \left|w-\frac{\bar a}{|a|^2-r^2}\right|=\frac{r}{||a|^2-r^2|}$$This is indeed a circle, so we have shown the first claim and therefore the second, proving the entire lemma. Similarly the open ball of radius $r$ centered at $a$ given by $|z-a|<r$ is equivalent to the open ball of radius $\frac{r}{||a|^2-r^2|}$ centered at $\frac{\bar a}{|a|^2-r^2}$.
+
+When $D$ is open, we know that a Mobius transformation takes $D\setminus\left\{-\frac{d}{c}\right\}$ to an open set. It is trivial for shifts, rotations, and scaling. We have just shown that this also holds for inversion, so we can conclude that any Mobius transformation takes an open ball to an open ball.
+
+We ask what happens when the circle does pass through $-\frac{d}{c}$, that is $0$ for $f(z)=\frac{1}{z}$. Again consider $|z-a|=r$ with $0\in\partial B_r(a)\implies r=|a|$. We showed that for any $z\neq0$ the above is equivalent to $(|a|^2-r^2)w\bar w-aw-\bar a\bar w+1=0$ with $w=\frac{1}{z}$. Since $|a|=r$ this becomes $-aw-\bar a\bar w+1=0$, equivalent to $aw+\bar a\bar w=2\Re(aw)$. Now letting $w=x+iy$ and $a=\alpha+i\beta$ we get $2\Re(aw)=\alpha x-\beta y\implies \alpha x-\beta y=\frac{1}{2}$, a line. 
+
+This motivates the following lemma. Given $\gamma,\beta\in\Re$ and $\alpha\in\mathbb{C}$, the equation:$$\Huge \gamma z\bar z-\alpha\bar z-\bar\alpha z+\beta=0$$Describes a circle if $\gamma\neq0$ and $|\alpha|^2-\beta\gamma>0$ or a line if $\gamma=0$ and $\alpha\neq0$. Conversely, any line or circle can be written in this form.
+
+# Circlines under Mobius transformations:
+
+We propose that Mobius transformations map circles and lines in $\hat{\mathbb{C}}$ to circles and lines in $\hat{\mathbb{C}}$, where we consider any line fo pass through infinity. Again shifting, rotating, and scaling are trivial, so we investigate inversion. 
