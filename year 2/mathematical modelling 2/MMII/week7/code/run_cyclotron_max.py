@@ -16,7 +16,7 @@ dV = 2e6 # 2MV
 
 ode = CyclotronRK4([x0, y0, vx0, vy0], dt, t0, B, dV) 
 
-ode.iterate(tmax)
+ode.iterate_max()
 
 plt.axes().set_aspect('equal') # Ensure same unit along x and y
 plt.xlabel("x", fontsize=22) # Set horizontal label 
