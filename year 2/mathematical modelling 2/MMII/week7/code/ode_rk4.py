@@ -100,7 +100,7 @@ class ODE_RK4:
         ly = self.t_list
       else:
         ly = list(map (lambda v : v[i-1] , self.V_list))
-      plt.plot(lx, ly, style);
+      plt.plot(lx, ly, style)
 
 
 # Tests for this module; only run when not importing the module.

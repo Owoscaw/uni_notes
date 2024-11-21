@@ -40,11 +40,12 @@ class CyclotronRK4(ode_rk4.ODE_RK4):
       Ey = 0
       if(r < self.r_D):
         Bz = self.B
-       
-      eq1 =                   # TO DO: equation for dx/dt
-      eq2 =                   # TO DO: equation for dy/dt
-      eq3 =                   # TO DO: equation for dvx/dt
-      eq4 =                   # TO DO: equation for dvy/dt
+
+      
+      eq1 = vx
+      eq2 = vy
+      eq3 = self.qom*(Ex+Bz*vy)
+      eq4 = self.qom*(Ey-Bz*vx)
       return(np.array([eq1, eq2, eq3, eq4]))
 
 

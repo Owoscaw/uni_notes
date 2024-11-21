@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import sys
 
 x_off = -0.02        # To better center the spiral
-x0= -__XXX__ +x_off  # Initial x position
+x0= -4.56901e-2 +x_off  # Initial x position
 y0=0.0               # Initial y position
 vx0=0.0              # Initial speed along the x axis
-vy0= __VVV__         # Initial speed along the y axis
+vy0= 4.377518e6         # Initial speed along the y axis
 dt = 1e-11           # Time step in second. Much smaller than the frequency
 t0 = 0
 tmax = 5e-7
@@ -23,6 +23,6 @@ plt.xlabel("x", fontsize=22) # Set horizontal label
 plt.ylabel("y", fontsize=22) # Set vertical label   
 ode.plot(2, 1, "b-")         # Plot y(x) in blue
 ode.draw_Ds()                # Draw the 2 Ds on toip of the trajectory
-plt.savefig("cyclotron.pdf")
+#plt.savefig("cyclotron.pdf")
 plt.show()
 
