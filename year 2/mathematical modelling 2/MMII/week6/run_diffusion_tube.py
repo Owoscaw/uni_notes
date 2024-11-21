@@ -11,7 +11,7 @@ def avT(diff):
     """
 
     Tav = sum(diff.v)/len(diff.v)
-    Var = sum((diff.v - Tav)**2/len(diff.v))
+    Var = sum((diff.v - Tav)**2)/len(diff.v)
     return(Tav, Var)  
 
 # We create an array of 500 nodes to solve the diffusion equation 
