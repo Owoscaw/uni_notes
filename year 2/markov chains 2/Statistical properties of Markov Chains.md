@@ -39,3 +39,22 @@ The proof of the first statement is trivial. For the third, irreducibility impli
 If $P$ is irreducible, $\lambda$ is an invariant measure on $P$, and $\lambda_k=1$ then we have:
 > $\lambda_i\geq \gamma_i^k$ for all $i\in I$
 > If $P$ is recurrent then $\lambda=\gamma^k$
+
+The proof for the first statement is omitted. For the second, we make use of the fact that we know $\gamma^k$ is invariant. Let $\mu=\lambda-\gamma^k$, then by the first statement $\mu_j\geq0$ for all $j\in I$. Also $\mu_k=0$ since $\mu_k=\lambda_k-\gamma^k_k=1-1=0$. However since $\mu$ is invariant, we have $0=\mu_k=\sum_{j\in I}\mu_jP_{jk}^{(n)}\geq\mu_iP_{ik}^{(m)}$ for any $i\in I,m\in\mathbb{N}$. Now irreducibility implies that for all $i\in I$ there exists $m$ such that $P_{ik}^{(m)}>0$. Therefore we can say that $\mu_i=0$ for all $i\in I$. Therefore $\lambda_i=\gamma_i^k$ for all $i\in I$, that is $\lambda=\gamma^k$
+
+For uniqueness, suppose that there exists two distinct statistical distributions $\bar\lambda,\tilde\lambda$. Choose some $k\in I$, then:$$\Huge \frac{\bar\lambda}{\bar\lambda_k}=\frac{\tilde\lambda}{\tilde\lambda_k}=\gamma^k\implies \bar\lambda=\left(\frac{\bar\lambda_k}{\tilde\lambda_k}\right)\tilde\lambda$$Then we sum over all $i\in I$:$$\Huge 1=\sum_{i\in I}\bar\lambda_i=\left(\frac{\bar \lambda_k}{\tilde\lambda_k}\right)\sum_{i\in I}\tilde\lambda_i=\frac{\bar\lambda_k}{\tilde\lambda_k}\implies\bar\lambda=\tilde\lambda$$So we have that any method of finding invariant distributions works and is exhaustive.
+
+# Recurrence with invariant distributions:
+
+Recurrence can be broken down into two types, positive and null recurrent:
+> A state $i\in I$ is positive recurrent if $m_i=\mathbb{E}_i[T_i]=\sum_{j\in I}\gamma_j^i<\infty$
+> A state $i\in I$ is null recurrent otherwise.
+
+For example, a symmetric simple random walk on $\mathbb{Z}$ has $\mathbb{P}_i[T_i<\infty]=1$ so every state is recurrent. However we see that $\mathbb{E}_i[T_i]=\infty$, so each state is null recurrent. This Markov chain is recurrent and irreducible. Since this is a stationary distribution, $\pi$ satisfies $\pi_i=\frac{1}{2}\pi_{i+1}+\frac{1}{2}\pi_{i-1}$. Notice that $\pi_i=1$ is a solution, however this does not have finite total mass as $\sum_{n=-\infty}^\infty1=\infty$. Therefore there are no invariant distributions of this Markov chain, making it null recurrent.
+
+Suppose that $P$ is irreducible. Then the following are equivalent:
+> Every state $i\in I$ is positive recurrent
+> Some state $i\in I$ is positive recurrent
+> $P$ has an invariant distribution $\pi$
+
+When any and all of these hold, $\pi_i=\frac{1}{m_i}$. The first statement improves the second. For a state $k\in I$ that is positive recurrent, we can show that $P$ is recurrent, then $m_k<\infty$ which implies $\frac{\gamma^k}{m_k}$ is an invariant distribution. Now assuming the third statement is true, we have $\pi_k>0$ for some $k$. Then $\frac{\pi}{\pi_k}\geq\gamma^k$, hence for all $j\in I$ we have $\pi_j>0$. So $m_k\leq\sum_{j\in I}\frac{\pi_j}{\pi_k}=\frac{1}{\pi_k}<\infty$ for all $k\in I$. That is, every state is positive recurrent.
