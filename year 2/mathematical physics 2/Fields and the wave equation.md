@@ -38,5 +38,5 @@ u_{tt}&=\frac{\partial }{\partial t}(u_t)=c\frac{\partial }{\partial t}\left(\fr
 Let $u(x,0)=\varphi(x)=f(x)+g(x)$ and $u_t(x,0)=\psi(x)=-cf'(x)+cg'(x)$. We have two equations, and two unknowns. To solve for $f,g$ notice that from the second condition we have:$$\huge -f(x)+g(x)=\frac{1}{c}\int_{-\infty}^x\psi(s)ds+d$$Now we can cancel terms with the first condition:$$\Huge\begin{align}
 2g(x)&=\varphi(x)+d+\frac{1}{c}\int_{-\infty}^x\psi(s)ds\\
 2f(x)&=\varphi(x)-d-\frac{1}{c}\int_{-\infty}^x\psi(s)ds
-\end{align}$$Now we can substitute these into the original equation:$$\large u(x,t)=f(x-ct)+g(x+ct)=\frac{1}{2}\left(\varphi(x-ct)+\varphi(x+ct)+\int_{x-ct}^{x+ct}\psi(s)ds\right)$$
+\end{align}$$Now we can substitute these into the original equation:$$\large u(x,t)=f(x-ct)+g(x+ct)=\frac{1}{2}\left(\varphi(x-ct)+\varphi(x+ct)+\frac{1}{c}\int_{x-ct}^{x+ct}\psi(s)ds\right)$$
  
