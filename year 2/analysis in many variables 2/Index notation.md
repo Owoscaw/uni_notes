@@ -37,3 +37,20 @@ In $\Re^3$ we can write $\underline a\times\underline b$ in index notation using
 &=b_ic_ja_j-c_ib_ja_j\\
 &=(a_jc_j)b_i-(a_jb_j)c_i=(\underline a\cdot\underline c)b_i-(\underline a\cdot \underline b)c_i
 \end{align}$$
+# Derivatives:
+
+In index notation, we can write derivatives of scalar and vector fields:
+> $\underline{\nabla}g$, the [[Differential operators|gradient]] of the scalar field $g$:$$\Huge (\underline{\nabla}g)_i=\frac{\partial g}{\partial x_i}$$
+> $\underline{\nabla}\cdot\underline f$, the [[Differential operators#Differentiating vector fields|divergence]] of the vector field $\underline f$:$$\Huge \underline{\nabla}\cdot\underline f=\frac{\partial f_j}{\partial x_j}$$
+> $\underline{\nabla}\times\underline f$, the [[Differential operators#Differentiating vector fields|curl]] of the vector field $\underline f$:$$\Huge (\underline{\nabla}\times\underline f)_i=\epsilon_{ijk}\frac{\partial f_k}{\partial x_j}$$
+
+Using this notation, we can verify $\underline{\nabla}\cdot(\underline{\nabla}\times\underline f)=0$:$$\Huge\begin{align}
+\underline{\nabla}\cdot(\underline{\nabla}\times\underline f)&=\frac{\partial }{\partial x_j}(\underline{\nabla}\times\underline f)_j\\
+&=\frac{\partial }{\partial x_j}\epsilon_{jkl}\frac{\partial f_l}{\partial x_k}\\
+&=\epsilon_{jkl}\frac{\partial^2f_l}{\partial x_j\partial x_k}\\
+&=\epsilon_{kjl}\frac{\partial^2 f_l}{\partial x_j\partial x_k}\\
+&=-\epsilon_{jkl}\frac{\partial^2f_l}{\partial x_j\partial x_k}=-\underline{\nabla}\cdot(\underline{\nabla}\times\underline f)
+\end{align}$$Since the expression is equal to its additive inverse, it must be equal to zero. One can also prove other [[Differential operators#Product rules|product rules]] for vector and scalar fields using index notation to give a neater and simpler proof. Note that the operator $(\underline g\cdot\underline{\nabla})\underline f$ has $i$th cartesian component $g_j\frac{\partial f_i}{\partial x_j}$ and can be defined as:$$\Huge (\underline g\cdot\underline{\nabla})\underline f=\lim_{d(S)\to0}\frac{1}{|V|}\oint_S\underline f(\underline g\cdot\underline{\hat{n}})dS$$
+> $\underline{\nabla}\times(\underline f\times\underline g)=(\underline g\cdot\underline{\nabla})\underline f-(\underline f\cdot\underline{\nabla})\underline g+\underline f(\underline{\nabla}\cdot\underline g)-\underline g(\underline{\nabla}\cdot\underline f)$
+> $\underline{\nabla}(\underline f\cdot\underline g)=(\underline g\cdot\underline{\nabla})\underline f+(\underline f\cdot\underline{\nabla})\underline g+\underline f\times(\underline{\nabla}\times\underline g)+\underline g\times(\underline{\nabla}\times\underline f)$
+
