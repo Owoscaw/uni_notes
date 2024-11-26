@@ -50,11 +50,18 @@ Recurrence can be broken down into two types, positive and null recurrent:
 > A state $i\in I$ is positive recurrent if $m_i=\mathbb{E}_i[T_i]=\sum_{j\in I}\gamma_j^i<\infty$
 > A state $i\in I$ is null recurrent otherwise.
 
-For example, a symmetric simple random walk on $\mathbb{Z}$ has $\mathbb{P}_i[T_i<\infty]=1$ so every state is recurrent. However we see that $\mathbb{E}_i[T_i]=\infty$, so each state is null recurrent. This Markov chain is recurrent and irreducible. Since this is a stationary distribution, $\pi$ satisfies $\pi_i=\frac{1}{2}\pi_{i+1}+\frac{1}{2}\pi_{i-1}$. Notice that $\pi_i=1$ is a solution, however this does not have finite total mass as $\sum_{n=-\infty}^\infty1=\infty$. Therefore there are no invariant distributions of this Markov chain, making it null recurrent.
+Note that a random variable can be finite with probability $1$ but can still have infinite expectation. Take for example $\mathbb{P}[Y=2^i]=2^{-i}$, then $\mathbb{E}[Y]=\sum_{i=1}^\infty2^{i-i}=\infty$ but $\mathbb{P}[Y<\infty]=1$.
 
 Suppose that $P$ is irreducible. Then the following are equivalent:
 > Every state $i\in I$ is positive recurrent
 > Some state $i\in I$ is positive recurrent
 > $P$ has an invariant distribution $\pi$
 
-When any and all of these hold, $\pi_i=\frac{1}{m_i}$. The first statement improves the second. For a state $k\in I$ that is positive recurrent, we can show that $P$ is recurrent, then $m_k<\infty$ which implies $\frac{\gamma^k}{m_k}$ is an invariant distribution. Now assuming the third statement is true, we have $\pi_k>0$ for some $k$. Then $\frac{\pi}{\pi_k}\geq\gamma^k$, hence for all $j\in I$ we have $\pi_j>0$. So $m_k\leq\sum_{j\in I}\frac{\pi_j}{\pi_k}=\frac{1}{\pi_k}<\infty$ for all $k\in I$. That is, every state is positive recurrent.
+When any and all of these hold, $\pi_i=\frac{1}{m_i}$. The first statement improves the second. For a state $k\in I$ that is positive recurrent, we can show that $P$ is recurrent, then $m_k<\infty$ which implies $\frac{\gamma^k}{m_k}$ is an invariant distribution. Now assuming the third statement is true, we have $\pi_k>0$ for some $k$. Then $\frac{\pi}{\pi_k}\geq\gamma^k$, hence for all $j\in I$ we have $\pi_j>0$. So $m_k\leq\sum_{j\in I}\frac{\pi_j}{\pi_k}=\frac{1}{\pi_k}<\infty$ for all $k\in I$. That is, every state is positive recurrent. 
+
+For example, a symmetric ($p=q=\frac{1}{2}$) simple random walk on $\mathbb{Z}$ has $\mathbb{P}_i[T_i<\infty]=1$ so every state is recurrent and the chain is irreducible. We aim to find a stationary measure or distribution $\pi$. We notice that $\pi_i=\frac{1}{2}\pi_{i-1}+\frac{1}{2}\pi_{i+1}$ for every $i\in I$, $\pi_i=1$ is a solution to this equation and is therefore a stationary measure (not distribution, as $\sum_{i\in I}\pi_i\neq1$). Since $\pi_i=1$, any stationary measure is therefore a multiple of $\pi$ by recurrence, therefore any invariant measure cannot be normalised to have sum $1$, there must not exist any invariant distribution. Therefore this chain is null recurrent.
+
+Take the following chain as example:![[Statistical properties of Markov Chains 2024-11-26 16.27.43.excalidraw]]
+# Detailed balance:
+
+We call $\lambda$ and $P$ in detailed balance if:$$\Huge \lambda_iP_{ij}=\lambda_jP_{ji}$$For all $i,j\in I$. We propose that if $\lambda$ and $P$ are in detailed balance then $\lambda P=\lambda$. To prove this, observe:$$\Huge(\lambda P)_i=\sum_{j\in I}\lambda_jP_{ji}=\sum_{j\in I}\lambda_iP_{ij}=\lambda_i\implies\lambda P=\lambda$$
