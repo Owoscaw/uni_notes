@@ -56,3 +56,19 @@ Using this notation, we can verify $\underline{\nabla}\cdot(\underline{\nabla}\t
 
 # Second derivatives:
 
+Allowing for two derivatives to be taken, we get the following possibilities:
+![[second derivative operators]]
+Recall that $\underline{\nabla}\times(\underline{\nabla}g)=\underline 0,\underline{\nabla}\cdot(\underline{\nabla}\times\underline f)=0$, so only three of the second derivative operators are non-trivial. These are the following:
+> $\underline{\nabla}\cdot(\underline{\nabla}g):\Re^3\mapsto\Re$. This is also known as the Laplacian of the scalar field $g$ and is often written as $\nabla^2g$ or $\Delta g$. Scalar fields that satisfy $\nabla^2g=0$ are called harmonic functions. Every [[Complex differentiation#Cauchy-Riemann equations|complex differentiable]] function is a harmonic function as by differentiating the Cauchy-Riemann equations we see that $u_{xx}=v_{xy}=\frac{\partial }{\partial y}v_x=-u_{yy}\implies\nabla^2u=0$, and similarly $\nabla^2v=0$.
+> $\underline{\nabla}(\underline{\nabla}\cdot\underline f):\Re^3\mapsto\Re^3$. This has $i$th component given by:$$\Huge (\underline{\nabla}(\underline{\nabla}\cdot\underline f))_i=\frac{\partial }{\partial x_i}\left(\frac{\partial f_j}{\partial x_j}\right)$$
+> $\underline{\nabla}\times(\underline{\nabla}\times\underline f):\Re^3\mapsto\Re^3$. This has $i$th component given by, assuming continuous second derivatives, using the first and second operators, and defining the vector Laplacian $(\underline{\nabla}^2\underline f)_i=\nabla^2f_i$:$$\Huge\begin{align} (\underline{\nabla}\times(\underline{\nabla}\times\underline f))_i&=\epsilon_{ijk}\frac{\partial }{\partial x_j}(\underline{\nabla}\times\underline f)_k\\
+ &=\epsilon_{ijk}\epsilon_{klm}\frac{\partial }{\partial x_j}\frac{\partial f_m}{\partial x_l}\\
+ &=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})\frac{\partial }{\partial x_j}\frac{\partial f_m}{\partial x_l}\\
+ &=\delta_{il}\delta_{jm}\frac{\partial }{\partial x_j}\frac{\partial f_m}{\partial x_l}-\delta_{im}\delta_{jl}\frac{\partial }{\partial x_j}\frac{\partial f_m}{\partial x_l}\\
+ &=\frac{\partial }{\partial x_j}\frac{\partial f_i}{\partial x_i}-\frac{\partial }{\partial x_j}\frac{\partial f_i}{\partial x_j}\\
+ &=\frac{\partial }{\partial x_i}\frac{\partial f_j}{\partial x_j}-\frac{\partial ^2f_i}{\partial x_j\partial x_j}\\
+ &=(\underline{\nabla}(\underline{\nabla}\cdot\underline f))_i-\nabla^2f_i=(\underline{\nabla}(\underline{\nabla}\cdot\underline f))_i-(\underline{\nabla}^2\underline f)_i
+ \end{align}$$We can then write the identity $\underline{\nabla}\times(\underline{\nabla}\times\underline f)=\underline{\nabla}(\underline{\nabla}\cdot\underline f)-\underline{\nabla}^2\underline f$.
+
+Take the vector field $\underline f(\underline x)=x\underline e_1+xy\underline e_2+y^3\underline e_3$, we aim to verify the above identity:![[second derivative identity example]]
+In orthogonal [[Curvilinear coordinates|curvilinear coordinates]] $(u,v,w)$, the scalar Laplacian is given by:$$\large \nabla^2g=\frac{1}{h_uh_vh_w}\left(\frac{\partial }{\partial u}\left(\frac{h_vh_w}{h_u}\frac{\partial g}{\partial u}\right)+\frac{\partial }{\partial v}\left(\frac{h_uh_w}{h_v}\frac{\partial g}{\partial v}\right)+\frac{\partial }{\partial w}\left(\frac{h_uh_v}{h_w}\frac{\partial g}{\partial w}\right)\right)$$One can prove this by letting $\underline f=\underline{\nabla}g$ and computing $\underline{\nabla}\cdot\underline f=\underline{\nabla}\cdot(\underline{\nabla}g)$. Note that in non-cartesian systems:$$\Huge (\underline{\nabla}^2\underline f)\cdot\underline e_u\neq\nabla^2f_u$$To find the correct expression, one must compute:$$\Huge \underline{\nabla}^2\underline f=\underline{\nabla}(\underline{\nabla}\cdot\underline f)-\underline{\nabla}\times(\underline{\nabla}\times\underline f)$$In curvilinear coordinates
