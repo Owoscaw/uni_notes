@@ -54,3 +54,5 @@ Using this notation, we can verify $\underline{\nabla}\cdot(\underline{\nabla}\t
 > $\underline{\nabla}\times(\underline f\times\underline g)=(\underline g\cdot\underline{\nabla})\underline f-(\underline f\cdot\underline{\nabla})\underline g+\underline f(\underline{\nabla}\cdot\underline g)-\underline g(\underline{\nabla}\cdot\underline f)$
 > $\underline{\nabla}(\underline f\cdot\underline g)=(\underline g\cdot\underline{\nabla})\underline f+(\underline f\cdot\underline{\nabla})\underline g+\underline f\times(\underline{\nabla}\times\underline g)+\underline g\times(\underline{\nabla}\times\underline f)$
 
+# Second derivatives:
+
