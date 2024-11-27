@@ -104,4 +104,4 @@ T_{tx}&=-\tau u_xu_t\\
 u_x&=-k|A|\sin(k(x-ct)+\theta)\\
 u_t&=kc|A|\sin(k(x-ct)+\theta)\\
 T_{tx}&=\tau k^2|A|^2c\sin^2(k(x-ct)+\theta)\geq0
-\end{align}$$This motivates the notion of an average energy flow:$$\Huge \frac{kc}{2\pi}\int^{\frac{2\pi}{kc}}_0T_{tx}\,dt=\frac{1}{2}\tau ck^2|A|^2>0$$With left moving monochromatic waves, we get the opposite direction inequalities.
+\end{align}$$This motivates the notion of an average energy flow:$$\Huge \frac{kc}{2\pi}\int^{\frac{2\pi}{kc}}_0T_{tx}\,dt=\frac{1}{2}\tau ck^2|A|^2>0$$With left moving monochromatic waves, we get the opposite direction inequalities. 
