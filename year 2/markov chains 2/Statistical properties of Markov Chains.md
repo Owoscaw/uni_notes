@@ -61,7 +61,7 @@ When any and all of these hold, $\pi_i=\frac{1}{m_i}$. The first statement impro
 
 For example, a symmetric ($p=q=\frac{1}{2}$) simple random walk on $\mathbb{Z}$ has $\mathbb{P}_i[T_i<\infty]=1$ so every state is recurrent and the chain is irreducible. We aim to find a stationary measure or distribution $\pi$. We notice that $\pi_i=\frac{1}{2}\pi_{i-1}+\frac{1}{2}\pi_{i+1}$ for every $i\in I$, $\pi_i=1$ is a solution to this equation and is therefore a stationary measure (not distribution, as $\sum_{i\in I}\pi_i\neq1$). Since $\pi_i=1$, any stationary measure is therefore a multiple of $\pi$ by recurrence, therefore any invariant measure cannot be normalised to have sum $1$, there must not exist any invariant distribution. Therefore this chain is null recurrent.
 
-Take the following chain as example:![[Statistical properties of Markov Chains 2024-11-26 16.27.43.excalidraw]]
+Take the following chain as example:![[3 state stationary dist]]
 # Detailed balance:
 
 We call $\lambda$ and $P$ in detailed balance if:$$\Huge \lambda_iP_{ij}=\lambda_jP_{ji}$$For all $i,j\in I$. We propose that if $\lambda$ and $P$ are in detailed balance then $\lambda P=\lambda$. To prove this, observe:$$\Huge(\lambda P)_i=\sum_{j\in I}\lambda_jP_{ji}=\sum_{j\in I}\lambda_iP_{ij}=\lambda_i\implies\lambda P=\lambda$$
