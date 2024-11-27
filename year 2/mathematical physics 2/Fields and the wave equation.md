@@ -105,3 +105,41 @@ u_x&=-k|A|\sin(k(x-ct)+\theta)\\
 u_t&=kc|A|\sin(k(x-ct)+\theta)\\
 T_{tx}&=\tau k^2|A|^2c\sin^2(k(x-ct)+\theta)\geq0
 \end{align}$$This motivates the notion of an average energy flow:$$\Huge \frac{kc}{2\pi}\int^{\frac{2\pi}{kc}}_0T_{tx}\,dt=\frac{1}{2}\tau ck^2|A|^2>0$$With left moving monochromatic waves, we get the opposite direction inequalities. 
+
+# Boundaries:
+
+Previously we considered the one dimensional string across the whole real line. We now restrict this to a string from $x=-\infty$ to $x=0$. We assume that no energy is transferred from the string to the boundary, that is there is no energy flux to the boundary:$$\Huge\lim_{x\to0^-}T_{tx}(x,t)=\lim_{x\to0^-}(-\tau u_xu_t)=0$$This can be satisfied by letting:
+>$\lim_{x\to 0^-}u_t(x,t)=0$
+>$\lim_{x\to0^-}u_x(x,t)=0$
+
+## Dirichlet's boundary condition:
+We consider $\lim_{x\to0^-}u_t(x,t)=0$, that is $u_t(0,t)=0$ as we only consider smooth functions. Imposing this condition makes D'Alembert's solution:$$\Huge u(x,t)=f(x-ct)+h(-x-ct)$$With $h(\zeta)=g(-\zeta)$ and $u_t(0,t)=0\implies u(0,t)$ is constant. For convenience, we choose this constant to be $0$:$$\Huge u(0,t)=f(-ct)+h(-ct)=0\implies f(\zeta)=-h(\zeta)$$Allowing us to write D'Alembert's solution as:$$\Huge u(x,t)=f(x-ct)-f(-x-ct)$$That is, $f$ is an odd function for constant time, $u(x,t)=-u(-x,t)$:![[dirichlet]]
+## Neumann's (free) boundary condition:
+We consider $\lim_{x\to0^-}u_x(x,t)=u_x(0,t)=0$. We write D'Alembert's solution in the same form but now consider the condition on $u_x$:$$\Huge u_x(0,t)=f'(-ct)-h'(-ct)=0$$Therefore $f(\zeta)=h(\zeta)+\text{constant}$, we choose said constant to be $0$. Now the displacement becomes:$$\Huge u(x,t)=f(x-ct)+f(-x-ct)$$So we have $u(x,t)=u(-x,t)$, $u$ is an even function:![[neumann]]
+
+# Junctions:
+
+The natural extension of boundaries are junctions. Instead of not letting any energy flow through the boundary, we impose a junction condition to allow some energy transfer. This will result in the wave propagating past the junction as well as reflecting at the junction. This can be modelled by a spring between $u(0,t)$ and $(0,0)$. We then require:
+> $\lim_{x\to0^-}u(x,t)=\lim_{x\to0^+}u(x,t)$
+> The total energy of the string is conserved at $x=0$. Considering a small interval $(-\epsilon,\epsilon)$ around $x=0$:$$\Huge \lim_{\epsilon\to0}E_{(-\epsilon,\epsilon)}=\frac{1}{2}\kappa(u(0,t))^2$$
+
+![[junction]]
+
+By definition of energy flux we know:$$\Huge \frac{d }{dt}\left(\lim_{\epsilon\to0}E_{(-\epsilon,\epsilon)}\right)=\lim_{x\to0^-}T_{tx}(x,t)-\lim_{x\to0^+}T_{tx}(x,t)$$Our solution then takes form:$$\Huge u(x,t)=\begin{cases}\Re((e^{ipx}+Re^{-ipx})e^{-ipct})&x\leq0\\\Re(Te^{ipx}e^{-ipct})&x>0\end{cases}$$Notice the two cases for the reflected and transmitted wave. Continuity condition implies:$$\Huge\begin{align}
+\lim_{x\to0^-}u(x,t)&=\lim_{x\to0}\Re((e^{ipx}+Re^{-ipx})e^{-ipct})\\
+&=\Re((1+R)e^{-ipct})\\
+&=\Re(Te^{-ipct})\\
+&=\lim_{x\to0}\Re(Te^{ipx}e^{-ipct})=\lim_{x\to0^+}u(x,t)
+\end{align}$$This must hold for all time, so $u_t$ must also be continuous. That is to say:$$\Huge T=1+R\implies\lim_{x\to0^-}u_t(x,t)=\lim_{x\to0^+}u_t(x,t)$$Using this, we can simplify the second junction condition by taking the time derivative of energy:$$\Huge\begin{align} 
+\frac{d }{dt}\left(\lim_{\epsilon\to0}E_{(-\epsilon,\epsilon)}\right)&=\frac{d}{dt}\left(\frac{1}{2}\kappa(u(0,t))^2\right)=\kappa u(0,t)u_t(0,t)\\
+\implies\kappa u(0,t)u_t(0,t)&=-\tau u_t(0,t)\left(\lim_{x\to0^-}u_x(x,t)-\lim_{x\to0^+}u_x(x,t)\right)\\
+\implies\kappa u(0,t)&=-\tau\left(\lim_{x\to0^-}u_x(x,t)-\lim_{x\to0^+}u_x(x,t)\right)\\
+\implies\kappa\Re(Te^{-ipct})&=\tau\left(\Re(ipTe^{-ipct})-\Re(ip(1-R)e^{-ipct})\right)\\
+&=\tau\Re(ip(T+R-1)e^{-ipct})\\
+\implies\kappa T&=\tau ip(T+R-1)\\
+\implies R&=\frac{\kappa}{2ip\tau-\kappa},\,\,T=\frac{2ip\tau}{2ip\tau-\kappa}
+\end{align}$$Now we have solved for the parameters that determine the reflected and transmitted waves. To make sure that this answer is reasonable, we take some limits on the parameters:
+> Taking $\kappa\to0$ we would expect the wave to propagate through the junction with no energy loss. That is, there is no reflected wave and the full wave is transmitted:$$\Huge R=\frac{0}{2ip\tau-0}=0,\,\,T=\frac{2ip\tau}{2ip\tau-0}=1$$As expected.
+> Taking $\kappa\to\infty$ we would expect no transmitted wave and the full reflected wave:$$\Huge R=\frac{\infty}{2ip\tau-\infty}=-1,\,\,T=\frac{2ip\tau}{2ip\tau-\infty}=0$$So we see that no wave is transmitted, and the entire wave is reflected at the junction with opposite orientation. This is equivalent to [[Fields and the wave equation#Dirichlet's boundary condition|Dirichlet's boundary condition]].
+> We can now consider the limits of energy flux, given by $\frac{1}{2}\tau cp^2$. The limiting cases here are $p=0$, the wave carries no energy, and $p\to\infty$. We first take $p=0$:$$\Huge R=\frac{\kappa}{0-\kappa}=-1,\,\,T=\frac{0}{0-\kappa}=0$$The wave is fully reflected with opposite orientation. This is equivalent to Dirichlet's boundary condition as relative to the wave, the spring may as well be a boundary.
+> Now we take $p\to\infty$:$$\Huge R=\frac{\kappa}{\infty-\kappa}=0,\,\,T=\frac{\infty}{\infty-\kappa}=1$$The wave is fully transmitted through the junction. Relative to the very energetic wave, the spring may as well not be there as it takes so little (relative) energy to excite.
