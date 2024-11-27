@@ -1,1 +1,10 @@
 Suppose that a [[Definitions of Markov Chains|Markov chain]] with [[Definitions of Markov Chains#Stochastic matrices|stochastic matrix]] $P$ is [[Class structure, hitting times, and stopping times#Periodicity|aperiodic]] and irreducible and $\pi$ is an [[Statistical properties of Markov Chains#Invariance|invariant distribution]] for $P$. Then $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$ and for all $j\in I$:$$\Huge \lim_{n\to\infty}\mathbb{P}[X_n=j]=\pi_j$$Taking $\lambda=\delta_i$ then this theorem states that $P_{ij}^{(n)}\to\pi_j$. Take the following as example:![[conv to eq example]]
+# Ergodic theorem:
+
+Suppose that $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$ and is irreducible, where $V_i(n)=\sum_{m=0}^{n-1}1_{\{X_m=i\}}$:
+> $\mathbb{P}\left[\frac{1}{N}V_i(N)\to_{N\to\infty}\frac{1}{\mathbb{E}_i[T_i]}\right]=1$
+> If the chain is [[Statistical properties of Markov Chains#Recurrence with invariant distributions|positive recurrent]] and $f:I\mapsto\Re$ is bounded then:$$\Huge \mathbb{P}\left[\frac{1}{N}\sum_{m=0}^{N-1}f(X_m)\to_{N\to\infty}\mathbb{E}_\pi[f]\right]=1$$Where $\pi$ is the unique stationary distribution of $P$ and $\mathbb{E}_\pi[f]=\sum_{j\in I}f(j)\pi_j$.
+
+We call the left hand side of these limits sample averages and the right hand side of these limits equilibrium averages. Then the ergodic theorem states that sample averages tend to equilibrium averages with probability $1$.
+
+For example, suppose that each $(X_n)_{n\geq0}$ are identically distributed with $\mathbb{P}[X_n=H]=\mathbb{P}[X_n=T]=\frac{1}{2}$. This is a positive recurrent Markov chain on $\{H,T\}$. The ergodic theorem dictates that the fraction of $H$ tosses tends to $\frac{1}{2}$ with probability $1$. Suppose that £2 were awarded for $H$ and £1 was lost for $T$. Then $\frac{1}{N}\sum_{m=0}^{N-1}f(X_m)$ is the average earning in $N$ tosses with $f(H)=2,f(T)=-1$. Then the ergodic theorem dictates that this tends to $\mathbb{E}_\pi[f]$:$$\Huge \mathbb{E}_\pi[f]=\pi_Hf(H)+\pi_Tf(T)=\frac{1}{2}(2)-\frac{1}{2}=\frac{1}{2}$$So over $N$ tosses, the expected profit is £$\frac{N}{2}$.
