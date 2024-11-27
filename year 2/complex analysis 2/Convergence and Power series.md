@@ -31,3 +31,7 @@ Let $f_n:X\mapsto\mathbb{C}$ be a sequence of functions such that $|f_n(x)|\leq 
 # Integrations:
 
 Assume a sequence of functions $f_n:[a,b]\mapsto\Re$ converge uniformly on an interval $[a,b]$ to some function $f$ and that each $f_n$ are continuous. Then for any $c\in[a,b]$ we have:$$\Huge \lim_{n\to\infty}\int_a^cf_n(x)dx=\int_a^cf(x)dx$$In particular if $\sum_{n=1}^\infty f_n(x)$ converges uniformly on an interval $[a,b]$ and if $f_n$ are continuous for all $n\in\mathbb{N}$ then for any value $c\in[a,b]$:$$\Huge \int_a^c\left(\sum_{n=1}^\infty f_n(x)\right)dx=\sum_{n=1}^\infty\int_c^af_n(x)dx$$
+# Local uniform convergence:
+
+Let $(f_n)_{n\in\mathbb{N}}$ be sequence of functions defined on a metric space $X$. We say that $f_n$ converges locally uniformly on $X$ to the limit function $f$ if for every $x\in X$ there exists an open set $U_x\subset X$ containing $x$ on which $(f_n)_{n\in \mathbb{N}}$ converges uniformly to $f$. This is the notion of uniform convergence for open sets since it allows to avoid the boundary. Take $f_n(z)=z^n$ for example:![[local uniform example]]
+Let $(f_n)_{n\in\mathbb{N}}$ be a sequence of continuous functions which converge locally uniformly on $X$ to a limit function $f$. Then $f$ is continuous on $X$. To prove this, let $x_0\in X$. By assumption there exists $U_{x_0}$ open with $x_0\in U_{x_0}$ such that $(f_n)_{n\in\mathbb{N}}$ converges uniformly to $f$ on $U_{x_0}$. Since each $f_n$ are continuous and convergence is uniform on $U_{x_0}$, $f$ must be continuous on $U_{x_0}$.
