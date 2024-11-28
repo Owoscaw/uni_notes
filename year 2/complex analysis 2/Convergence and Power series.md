@@ -34,4 +34,19 @@ Assume a sequence of functions $f_n:[a,b]\mapsto\Re$ converge uniformly on an in
 # Local uniform convergence:
 
 Let $(f_n)_{n\in\mathbb{N}}$ be sequence of functions defined on a metric space $X$. We say that $f_n$ converges locally uniformly on $X$ to the limit function $f$ if for every $x\in X$ there exists an open set $U_x\subset X$ containing $x$ on which $(f_n)_{n\in \mathbb{N}}$ converges uniformly to $f$. This is the notion of uniform convergence for open sets since it allows to avoid the boundary. Take $f_n(z)=z^n$ for example:![[local uniform example]]
-Let $(f_n)_{n\in\mathbb{N}}$ be a sequence of continuous functions which converge locally uniformly on $X$ to a limit function $f$. Then $f$ is continuous on $X$. To prove this, let $x_0\in X$. By assumption there exists $U_{x_0}$ open with $x_0\in U_{x_0}$ such that $(f_n)_{n\in\mathbb{N}}$ converges uniformly to $f$ on $U_{x_0}$. Since each $f_n$ are continuous and convergence is uniform on $U_{x_0}$, $f$ must be continuous on $U_{x_0}$.
+Let $(f_n)_{n\in\mathbb{N}}$ be a sequence of continuous functions which converge locally uniformly on $X$ to a limit function $f$. Then $f$ is continuous on $X$. To prove this, let $x_0\in X$. By assumption there exists $U_{x_0}$ open with $x_0\in U_{x_0}$ such that $(f_n)_{n\in\mathbb{N}}$ converges uniformly to $f$ on $U_{x_0}$. Since each $f_n$ are continuous and convergence is uniform on $U_{x_0}$, $f$ must be continuous on $U_{x_0}$. Consequently, $f$ is uniform continuous at $x_0$. Since $x_0$ was arbitrary, $f$ must be continuous on $X$.
+
+## Local $M$-test:
+Let $X$ be a metric space and let $f_n:X\mapsto\mathbb{C}$ be a sequence of continuous functions such that for any $x_0\in X$, there is an open $U_{x_0}\subset X$ containing $x_0$ and constant $M_n(U_{x_0})>0$ such that $|f_n(x)|\leq M_n(U_{x_0})$ for all $x\in U_{x_0}$, and $\sum_{n=1}^\infty M_n(U_{x_0})<\infty$. Then $\sum_{n=1}^\infty f_n$ converges locally uniformly to a continuous function on $X$. 
+
+To prove this, consider $x_0\in X$. Then there exists an open set $U_{x_0}\subset X$ and a sequence $(M_n(U_{x_0}))_{n\in\mathbb{N}}$ such that $M_n(U_{x_0})>0$ and $\sum_{n=1}^\infty M_n(U_{x_0})<\infty$. Then there exists for all $x\in U_{x_0}$ such that $|f_n(x)|\leq M_n(U_{x_0})$. This implies that by the Weierstrass $M$-test $\sum_{n=1}^\infty f_n(x)$ converges uniformly on $U_{x_0}$. Moreover as $f_n(x)$ are each continuous, so the sum must also be continuous on $U_{x_0}$. By definition $\sum_{n=1}^\infty f_n(x)$ converges locally uniformly on $X$. Also since $\sum_{n=1}^\infty f_n(x)$ is continuous at every $x_0$, it is continuous. Example:![[local M test]]
+# Power series:
+
+A complex [[Power series|power series]] is an expression of the form:$$\Huge \sum_{n=0}^\infty a_n(z-c)^n$$Where $(a_n)_{n\in\mathbb{N}}$ is a sequence of complex numbers and $c\in\mathbb{C}$.
+
+For any sequence of complex numbers $(a_n)_{n\in\mathbb{C}}$ we can define $S(z)$ as the above sum. Then there exists $R\in\Re_{\geq0}\cup\{\infty\}$ such that:
+>$S(z)$ converges only for $z=c$ when $R=0$. In such case $S(c)=a_0$
+>$S(z)$ converges absolutely for all $|z-c|<R$ when $R>0$. If $R=+\infty$ this condition holds for any $z$.
+>$S(z)$ diverges for $|z-c|>R$ when $R>0$. If $R=\pm\infty$ this condition never holds.
+
+$R$ is called the radius of convergence of a power series and $B_R(c)$ is called the disc of convergence. This can be found by:$$\Huge R=\frac{1}{\limsup_{n\to\infty}\sqrt[n]{|a_n|}}$$When the limit exists, $\sup$ is not needed. When the following limit exists, we have the formula:$$\Huge R=\lim_{n\to\infty}\frac{|a_n|}{|a_{n+1}|}$$ 
