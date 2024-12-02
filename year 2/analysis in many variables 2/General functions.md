@@ -10,6 +10,11 @@ If $\underline f:\Re^n\mapsto\Re^m$ is differentiable, then the derivative $M$ i
 &\iff\lim_{h\to 0}\frac{1}{h}(\underline f(\underline x+h\underline e_j)-\underline f(\underline x))-\lim_{h\to 0}M\underline e_j=0\\
 &\iff\frac{\partial \underline f}{\partial x_j}(\underline x)-M\underline e_j=0\\
 &\iff M_{ij}=\frac{\partial f_i}{\partial x_j}
-\end{align}$$For $i\in\{1,\dots,n\}$ and $j\in\{1,\dots,m\}$
+\end{align}$$For $i\in\{1,\dots,n\}$ and $j\in\{1,\dots,m\}$. For a scalar field, the derivative matrix becomes:$$\Huge J_f=(\underline{\nabla}f)^T$$Where [[Differential operators|$\underline{\nabla}$]] represents the gradient operator. 
 
+We can use the derivative matrix to find a linear approximation near $\underline x=(2,-1,3)$ for $\underline f:\Re^3\mapsto\Re^2$ given by $\underline f(x,y,z)=\begin{pmatrix}xy^2-x^2z\\3xy+z^3\end{pmatrix}$:$$\Huge\begin{align}
+J_{\underline f}&=\begin{pmatrix}\frac{\partial \underline f}{\partial x}&\frac{\partial \underline f}{\partial y}&\frac{\partial \underline f}{\partial z}\end{pmatrix}=\begin{pmatrix}y^2-2xz&2xy&-x^2\\3y&3x&3z^2\end{pmatrix}\\
+\underline f(\underline x+\underline h)&\simeq\underline f(\underline x)+J_{\underline f}(\underline x)\underline h\\
+&=\underline f(2,-1,3)+\begin{pmatrix}-10-11h_1-4h_2-4h_3\\21-3h_1+6h_2+27h_3\end{pmatrix}
+\end{align}$$This is called the linearisation of $\underline f$ around the point $\underline x$.
 
