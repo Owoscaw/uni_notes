@@ -5,4 +5,4 @@ Consider a continuous function $f:[a,b]\mapsto\mathbb{C}$ where $[a,b]\subset\Re
 >$$\Huge\int_a^bf_1(t)+f_2(t)dt=\int_a^bf_1(t)dt+\int_a^bf_2(t)dt$$
 >$$\Huge \int_a^bcf(t)dt=c\int_a^bf(t)dt$$
 
-These can be proven by using the definition of the integral and linearity on $\Re$.
+These can be proven by using the definition of the integral and linearity on $\Re$. 
