@@ -17,3 +17,5 @@ By definition, the sum of each row in $P$ will be $1$, so we have that $P$ is st
 &=\tilde P_{ij}\min\{\pi_i,\pi_j\}\\
 &=\tilde P_{ji}\min\{\pi_j,\pi_i\}=\pi_jP_{ji}
 \end{align}$$So we have that $\pi$ is indeed the invariant distribution of $P$. Irreducibility of $\tilde P$ implies irreducibility of $P$. This concludes the proof.
+
+A substitution code is a function from one alphabet to another. Markov chains can be used to break such substitutions. To do this, take $I=\{\text{substitution codes}\}$ and, given a message, design $\pi$ such that the correct decoding $f$ is the most likely by far.
