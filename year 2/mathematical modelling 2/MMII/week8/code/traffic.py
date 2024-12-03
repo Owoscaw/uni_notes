@@ -110,7 +110,7 @@ class Road:
         return -1
     
     def getFlowRate(self):
-        return self.flow / self.iterations
+        return (self.flow / self.iterations, self.actualdensity)
     
 
 def simulate(density, vmax, road_len, p_slowdown, N, Nrelax, filename):
@@ -146,13 +146,16 @@ def flow_density(dmin, dmax, Nd, vmax, road_len, p_slowdown, filename):
     """
 
     densityVals = np.linspace(dmin, dmax, Nd)
+    realDensityVals = []
     flowVals = []
 
     for density in densityVals:
         roadSim = simulate(density, vmax, road_len, p_slowdown, 200, 100, filename)
-        flowVals.append(roadSim.getFlowRate())
+        flow, realDensity = roadSim.getFlowRate()
+        flowVals.append(flow)
+        realDensityVals.append(realDensity)
 
-    plt.plot(densityVals, flowVals, "b*")
+    plt.plot(realDensityVals, flowVals, "b*")
     plt.xlabel("Density")
     plt.ylabel("Flow rate")
     plt.title("Traffic flow against density, vmax={}".format(vmax))
