@@ -8,3 +8,5 @@ Suppose that $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$ and is irreducible, 
 We call the left hand side of these limits sample averages and the right hand side of these limits equilibrium averages. Then the ergodic theorem states that sample averages tend to equilibrium averages with probability $1$.
 
 For example, suppose that each $(X_n)_{n\geq0}$ are identically distributed with $\mathbb{P}[X_n=H]=\mathbb{P}[X_n=T]=\frac{1}{2}$. This is a positive recurrent Markov chain on $\{H,T\}$. The ergodic theorem dictates that the fraction of $H$ tosses tends to $\frac{1}{2}$ with probability $1$. Suppose that £2 were awarded for $H$ and £1 was lost for $T$. Then $\frac{1}{N}\sum_{m=0}^{N-1}f(X_m)$ is the average earning in $N$ tosses with $f(H)=2,f(T)=-1$. Then the ergodic theorem dictates that this tends to $\mathbb{E}_\pi[f]$:$$\Huge \mathbb{E}_\pi[f]=\pi_Hf(H)+\pi_Tf(T)=\frac{1}{2}(2)-\frac{1}{2}=\frac{1}{2}$$So over $N$ tosses, the expected profit is £$\frac{N}{2}$.
+
+Often it is easier to understand $(X_n)_{n\geq0}$, so we can compute $\frac{1}{N}\sum_{m=0}^{N-1}f(X_m)$ to find an approximation for $\mathbb{E}_\pi[f]$
