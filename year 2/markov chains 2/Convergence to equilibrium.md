@@ -19,3 +19,21 @@ By definition, the sum of each row in $P$ will be $1$, so we have that $P$ is st
 \end{align}$$So we have that $\pi$ is indeed the invariant distribution of $P$. Irreducibility of $\tilde P$ implies irreducibility of $P$. This concludes the proof.
 
 A substitution code is a function from one alphabet to another. Markov chains can be used to break such substitutions. To do this, take $I=\{\text{substitution codes}\}$ and, given a message, design $\pi$ such that the correct decoding $f$ is the most likely by far.
+
+# Convergence proof:
+
+Suppose that $P$ is irreducible and aperiodic such that $P$ has stationary distribution $\pi$. If $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$ then for all $j\in I$ we have:$$\Huge\lim_{n\to\infty}\mathbb{P}[X_n=j]=\pi_j$$Assume the existence of two independent Markov chains $X_n$ and $Y_n$ such that $X_n$ is $\text{Markov}(\lambda,P)$ and $Y_n$ is $\text{Markov}(\pi,P)$ where $\pi$ is the invariant distribution of $P$. Suppose at some $n\geq0$ we have $X_n=Y_n$, then by the memorylessness of Markov chains we must have that the distribution of $X_n$ and $Y_n$ are the same. Since $Y_n$ has a stationary distribution, $X_n$ must therefore have a stationary distribution, it is therefore sufficient to show that $X_n=Y_n$ for some $n\geq0$.
+
+Formally, let $(X_n)_{n\geq0}$ and $(Y_n)_{n\geq0}$ be $\text{Markov}(\lambda,P),\text{Markov}(\pi,P)$ respectively such that each chain is independent from one another. Let $b\in I$ and set $T=\inf\{n\geq1:X_n=Y_n=b\}$ as a [[Class structure, hitting times, and stopping times#Stopping times|stopping time]] equivalent to the [[Class structure, hitting times, and stopping times#Passage times and strong Markov|first passage time]] of the pair $(X_n,Y_n)_{n\geq0}$ to state $b$. 
+
+It is sufficient to show that if $\mathbb{P}[T<\infty]=1$ and $(Z_n)_{n\geq}$ defined as:$$\Huge Z_n=\begin{cases}X_n&n<T\\Y_n&n\geq T\end{cases}$$Is $\text{Markov}(\lambda,P)$, we then get the result. 
+
+Observe:$$\Huge\begin{align}
+\mathbb{P}[Z_n=j]&=\mathbb{P}[Z_n=j,T>n]+\mathbb{P}[Z_n=j,T\leq n]\\
+&=\mathbb{P}[X_n=j,T>n]+\mathbb{P}[Y_n=j,T\leq n]\\
+|\mathbb{P}[Z_n=j]-\pi_j|&=|\mathbb{P}[Z_n=j]-\mathbb{P}[Y_n=j]|\\
+&=|\mathbb{P}[X_n=j,T>n]+\mathbb{P}[Y_n=j,T\leq n]-\mathbb{P}[Y_n=j]|\\
+&=|\mathbb{P}[X_n=j,T>n]-\mathbb{P}[Y_n=j,T<n]|\\
+&\leq \mathbb{P}[X_n=j,T>n]+\mathbb{P}[Y_n=j,T>n]\\
+&\leq2\mathbb{P}[T>n]
+\end{align}$$Now notice that $\lim_{n\to\infty}\mathbb{P}[T>n]=\lim_{n\to\infty}\mathbb{P}\left[\bigcap_{k=0}^n\{T>k\}\right]=\mathbb{P}[T=\infty]=0$, so taking the limit of the above we get:$$\Huge \lim_{n\to\infty}|\mathbb{P}[Z_n=j]-\pi_j|\leq\lim_{n\to\infty}2\mathbb{P}[T>n]=0$$So we have that:$$\Huge\lim_{n\to\infty}\mathbb{P}[Z_n=j]=\pi_j$$As required.
