@@ -17,3 +17,37 @@ One can prove the following properties of the Poisson bracket:
 > $\{\alpha f+\beta h,g\}=\alpha\{f,g\}+\beta\{h,g\}$ and $\{f,\alpha g+\beta h\}=\alpha\{f,g\}+\beta\{f,h\}$ bilinear on both terms
 > $\{f,gh\}=\{f,g\}h+\{f,h\}g$, Leibniz identity
 > $\{\{f,g\},h\}+\{\{h,f\},g\}+\{\{g,h\},f\}=0$, Jacobi identity
+
+# Hamiltonian flows:
+
+We define $\mathcal{F}=\{f:P\mapsto\Re\}$, the set of all functions from a Phase space to the real line. We also define the Hamiltonian flow operator $\Phi_f^{(\epsilon)}:\mathcal{F}\mapsto\mathcal{F}$:$$\Huge\Phi_{f}^{(\epsilon)}(g)=g+\epsilon\{g,f\}+\mathcal{O}(\epsilon^2)$$Note that when we take $g=\underline q_i$ or $g=p_i$:$$\Huge\begin{align}
+\Phi_f^{(\epsilon)}(\underline q_i)&=\underline q_i+\epsilon\{\underline q_i,f\}+\mathcal{O}(\epsilon^2)\\
+\Phi_f^{(\epsilon)}(p_i)&=p_i+\epsilon\{p_i,f\}+\mathcal{O}(\epsilon^2)
+\end{align}$$These can be simplified since:$$\Huge\begin{align}
+\{\underline q_i,f(\underline q,p)\}&=\sum_{k=1}^n\left(\frac{\partial \underline q_i}{\partial \underline q_k}\frac{\partial f}{\partial p_k}-\frac{\partial \underline q_i}{\partial p_k}\frac{\partial f}{\partial \underline q_k}\right)=\frac{\partial f}{\partial p_i}\\
+\{p_i,f(\underline q,p)\}&=-\frac{\partial f}{\partial \underline q_i}
+\end{align}$$So we get:$$\Huge\begin{align}
+\Phi_f^{(\epsilon)}(\underline q_i)&=\underline q_i+\epsilon\frac{\partial f}{\partial p_i}+\mathcal{O}(\epsilon^2)\\
+\Phi_f^{(\epsilon)}(p_i)&=p_i-\epsilon\frac{\partial f}{\partial \underline q_i}+\mathcal{O}(\epsilon^2)
+\end{align}$$One can interpret the Hamiltonian flow through Taylor expansion in $\epsilon$:$$\large\begin{align}
+\Phi_f^{(\epsilon)}(g)&=g(\underline q_1+\{\underline q_1,f\},\dots,\underline q_n+\{\underline q_n,f\},p_1+\{p_1,f\},\dots,p_n+\{p_n,f\})\\
+&=g(\underline q,p)+\epsilon\sum_{i=1}^n\left(\frac{\partial g}{\partial \underline q_i}\{\underline q_i,f\}+\frac{\partial f}{\partial p_i}\{p_i,f\}\right)\\
+&=g(\underline q,p)+\epsilon\sum_{i=1}^n\left(\frac{\partial g}{\partial \underline q_i}\frac{\partial f}{\partial p_i}-\frac{\partial g}{\partial p_i}\frac{\partial f}{\partial \underline q_i}\right)\\
+&=g(\underline q,p)+\epsilon\{g,f\}+\mathcal{O}(\epsilon^2)
+\end{align}$$So we observe that these different methods of interpreting $\Phi$ result in the same outcome.
+
+Take for example a particle moving in one dimension. In this case, $P$ is parametrised by $\{x(t),\dot x(t)\}$:$$\Huge\begin{align}
+\Phi_p^{(\epsilon)}(f)&=f+\epsilon\{f,p\}\\
+&=f-\epsilon\{p,f\}\\
+&=f+\epsilon\frac{\partial f}{\partial x}\\
+\Phi_p^{(\epsilon)}(x)&=x+\epsilon\frac{\partial x}{\partial x}\\
+&=x+\epsilon
+\end{align}$$We can illustrate this as such:![[constant shift]]
+
+We aim to prove that the [[Symmetries, Noether's theorem, and conservation laws#Noether's theorem|Noether charge]] for a transformation generates said transformation. Assume we have $\underline q_i\rightarrow\underline q_i+\epsilon a_i(\underline q)$ and define:$$\Huge Q(\underline q,\dot{\underline q})=\left(\sum_{i=1}^na_i\frac{\partial L}{\partial \dot{\underline q}}\right)-F(\underline q)$$We can formalise this in Hamiltonian variables:$$\Huge Q(\underline q,p)=\left(\sum_{i=1}^na_i(\underline q)p_i\right)-F(\underline q)$$Now we aim to show that this charge generates the given transformation. To do this, observe the Hamiltonian flow over $Q$ on the coordinates $\underline q_i$:$$\Huge\begin{align}
+\Phi_Q^{(\epsilon)}(\underline q_i)&=\underline q_i+\epsilon\{\underline q_i,Q\}\\
+&=\underline q_i+\epsilon\left(\sum_{k=1}^n\{\underline q_i,a_kp_k\}+\{\underline q_i,F(\underline q)\}\right)\\
+&=\underline q_i+\epsilon\left(\sum_{k=1}^np_k\{\underline q_i,a_k\}+a_k\{\underline q_i,p_k\}+0\right)\\
+&=\underline q_i+\epsilon\left(\sum_{k=1}^n0+a_k\delta_{ik}\right)\\
+&=\underline q_i+\epsilon(a_i)
+\end{align}$$So we get the correct transformation as required.
