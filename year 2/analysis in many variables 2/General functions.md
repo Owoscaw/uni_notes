@@ -18,3 +18,33 @@ J_{\underline f}&=\begin{pmatrix}\frac{\partial \underline f}{\partial x}&\frac{
 &=\underline f(2,-1,3)+\begin{pmatrix}-10-11h_1-4h_2-4h_3\\21-3h_1+6h_2+27h_3\end{pmatrix}
 \end{align}$$This is called the linearisation of $\underline f$ around the point $\underline x$.
 
+# Continuous differentiability:
+
+The existance of $J_{\underline f}$ does not imply that $\underline f$ is differentiable. We show this in an example:
+
+The scalar field $f:\Re^2\to\Re$ with $f(x,y)=x^{\frac{1}{3}}y^{\frac{1}{3}}$ is not differentiable at $(0,0)$. We consider whether $J_{\underline f}$ exists at $(0,0)$ using the limit definition:$$\Huge \frac{\partial f}{\partial x}(0,0)=\lim_{h\to 0}\frac{f(h,0)-f(0,0)}{h}=\lim_{h\to0}\frac{h^{\frac{1}{3}}\cdot0-0}{h}=0$$And, varying the $y$ coordinate gives:$$\Huge \frac{\partial f}{\partial y}(0,0)=\lim_{h\to0}\frac{f(0,h)-f(0,0)}{h}=\lim_{h\to0}\frac{h^{\frac{1}{3}}\cdot0-0}{h}=0$$So we have that $J_{f}(0,0)=(0,0)$ indeed exists. To disprove differentiability we need to find some sequence $\underline h\to\underline 0$ where the remainder does not vanish at a fast enough rate. We try a diagonal path to the origin defined as $\underline h=h(\underline e_1+\underline e_2)$, this becomes:$$\Huge\begin{align}
+\lim_{\underline h\to\underline 0}\frac{\underline R(\underline h)}{\underline h}&=\lim_{\underline h\to\underline 0}\frac{1}{|\underline h|}(f(h_1,h_2)-f(0,0)-J_{\underline f}\underline h)\\
+&=\lim_{ h\to 0}\frac{1}{\sqrt{2}|h|}(h^{\frac{1}{3}}h^{\frac{1}{3}}-0-(0,0)\underline h)\\
+&=\lim_{h\to 0}\frac{1}{\sqrt{2}|h|}(h^{\frac{2}{3}}-0)\\
+&=\lim_{h\to0}\frac{h^\frac{2}{3}}{\sqrt{2}|h|}\to\infty
+\end{align}$$Such limit does not exists, so $f$ is not differentiable at $(0,0)$.
+
+A function $\underline f:\Re^n\mapsto\Re^m$ is called continuously differentiable ($C^1$) at $\underline x\in\Re^n$ if all of its partial derivatives $\frac{\partial f_i}{\partial f_j}$ exists and are continuous at $\underline x$.
+
+If $\underline f:\Re^n\mapsto\Re^m$ is $C^1$ near $\underline x\in\Re^n$, then $\underline f$ is differentiable at $\underline x$. We prove this in the case where $f:\Re^2\mapsto\Re$ as the method is analogous:
+
+Differentiability at $\underline x$ requires:$$\Huge\begin{align}
+f(\underline x+\underline h)&\simeq f(\underline x)+\begin{pmatrix}\frac{\partial f}{\partial x}(\underline x)&\frac{\partial f}{\partial y}(\underline x)\end{pmatrix}\begin{pmatrix}h_1\\h_2\end{pmatrix}\\
+&\simeq f(\underline x)+h_1\frac{\partial f}{\partial x}(\underline x)+h_2\frac{\partial f}{\partial y}(\underline x)
+\end{align}$$The existence of such derivatives at $\underline x$ implies that $f(\underline x+h_1\underline e_1)\simeq f(\underline x)+h_1\frac{\partial f}{\partial x}(\underline x)$ and similarly for $f(x+h_2\underline e_2)$. This implies that:$$\Huge\begin{align}
+f(\underline x+\underline h)&\simeq f(\underline x+h_1\underline e_1)+h_2\frac{\partial f}{\partial y}(\underline x+h_1\underline e_1)\\
+&\simeq f(\underline x)+h_1\frac{\partial f}{\partial x}+h_2\frac{\partial f}{\partial y}(\underline x+h_1\underline e_1)
+\end{align}$$For this to be equal to the differentiability requirement we require that:$$\Huge h_1\to0\implies\frac{\partial f}{\partial y}(\underline x+h_1\underline e_1)\to\frac{\partial f}{\partial y}(\underline x)$$Which requires $\frac{\partial f}{\partial y}$ to be continuous.
+
+We illustrate with the previous example. Consider that $f(x,y)=x^{\frac{1}{3}}y^{\frac{1}{3}}$ is not $C^1$ at $(0,0)$. We saw previously that $J_f=(0,0)$ so for $x,y\neq0,0$ consider:$$\Huge J_f(x,y)=\begin{pmatrix}\frac{\partial f}{\partial x}&\frac{\partial f}{\partial y}\end{pmatrix}=\begin{pmatrix}\frac{1}{3}x^{-\frac{2}{3}}y^{\frac{1}{3}}&\frac{1}{3}x^{\frac{1}{3}}y^{-\frac{2}{3}}\end{pmatrix}\implies\text{continuous}$$Notice at $(0,y)$:$$\Huge \frac{\partial f}{\partial x}(0,y)=\lim_{h\to0}\frac{f(h,y)-f(0,y)}{h}=\lim_{h\to0}\frac{h^\frac{1}{3}y^\frac{1}{3}-0}{h}=y^{\frac{1}{3}}\lim_{h\to0}h^{-\frac{2}{3}}\to\infty$$One can show that the limit at $(x,0)$ does not exists as well. Therefore $J_f$ does not exists for $x=0$ or $y=0$. There is no open neighborhood around $(0,0)$ where $J_f$ exists, so $f$ is not $C^1$ by definition.
+
+We ask where $f(x,y)=y|x-2|$ is continuously differentiable. For $x>2$ observe:$$\Huge f(x,y)=y(x-2)\implies\frac{\partial f}{\partial x}=y,\,\,\frac{\partial f}{\partial y}=x-2$$And for $x<2$:$$\Huge f(x,y)=-y(x-2)\implies\frac{\partial f}{\partial x}=y,\,\,\frac{\partial f}{\partial y}=2-x$$For $x=2$ we use the limit definition:$$\large \frac{\partial f}{\partial x}(2,y)=\lim_{h\to0}\frac{f(2+h,y)-f(2,y)}{h}=\lim_{h\to0}\frac{y|h|-0}{h}=y\lim_{h\to0}\frac{|h|}{h}\to\text{DNE}$$This limit does not exist for $y\neq0$ so $J_f$ does not exist for $\{x=2,y\neq0\}$:![[continuously diff]]
+By the above theorem, $f$ is differentiable everywhere except $x=2$. For $(2,y)$ with $y\neq0$ $J_f$ does not exist, so $f$ cannot be differentiable. For $(2,0)$ we have $J_f=(0,0)$ so we must check the remainder term:$$\Huge\begin{align}
+\lim_{\underline h\to\underline 0}\frac{R(\underline h)}{|\underline h|}&=\lim_{\underline h\to\underline 0}\frac{1}{|\underline h|}\left(f(2+h_1,h_2)-f(2,0)-\begin{pmatrix}0&0\end{pmatrix}\begin{pmatrix}h_1\\h_2\end{pmatrix}\right)\\\\
+&=\lim_{\underline h\to\underline 0}\frac{h_2|h_1|}{\sqrt{h_1^2+h_2^2}}\leq\lim_{\underline h\to\underline 0}\frac{|\underline h|^2}{|\underline h|}=\lim_{\underline h\to\underline 0}|\underline h|=0
+\end{align}$$And since all terms are positive, we get that the limit is $0$ by the squeezing theorem and that $f$ is indeed differentiable at this sole point along $x=2$.
