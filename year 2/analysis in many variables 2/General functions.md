@@ -47,4 +47,47 @@ We ask where $f(x,y)=y|x-2|$ is continuously differentiable. For $x>2$ observe:$
 By the above theorem, $f$ is differentiable everywhere except $x=2$. For $(2,y)$ with $y\neq0$ $J_f$ does not exist, so $f$ cannot be differentiable. For $(2,0)$ we have $J_f=(0,0)$ so we must check the remainder term:$$\Huge\begin{align}
 \lim_{\underline h\to\underline 0}\frac{R(\underline h)}{|\underline h|}&=\lim_{\underline h\to\underline 0}\frac{1}{|\underline h|}\left(f(2+h_1,h_2)-f(2,0)-\begin{pmatrix}0&0\end{pmatrix}\begin{pmatrix}h_1\\h_2\end{pmatrix}\right)\\\\
 &=\lim_{\underline h\to\underline 0}\frac{h_2|h_1|}{\sqrt{h_1^2+h_2^2}}\leq\lim_{\underline h\to\underline 0}\frac{|\underline h|^2}{|\underline h|}=\lim_{\underline h\to\underline 0}|\underline h|=0
-\end{align}$$And since all terms are positive, we get that the limit is $0$ by the squeezing theorem and that $f$ is indeed differentiable at this sole point along $x=2$.
+\end{align}$$And since all terms are positive, we get that the limit is $0$ by the squeezing theorem and that $f$ is indeed differentiable at $\{x\neq0\}\cup\{(2,0)\}$.
+
+# Chain rule:
+
+
+If $\underline g:\Re^k\mapsto\Re^n$ is differentiable at $\underline x\in\Re^k$ and $\underline f:\Re^n\mapsto\Re^m$ is differentiable at $\underline g(\underline x)\in\Re^n$ then:$$\Huge J_{\underline f\circ\underline g}(\underline x)=J_{\underline f}(\underline g(\underline x))J_{\underline g}(\underline x)$$Which is a product of two matrices. Note if $n=m=k=1$ this reduces to:$$\Huge (f\circ g)'(x)=f'(g(x))g'(x)$$The one dimensional chain rule:
+![[domains]]
+
+The proof of this follows for any $\underline h\in\Re^k$ that:$$\Huge\begin{align}\\
+(\underline f\circ\underline g)(\underline x+\underline h)&=\underline f(\underline g(\underline x+\underline h))\\
+&=\underline f(\underline g(\underline x)+J_{\underline g}(\underline x)\underline h+\underline R_{\underline g}(\underline h))\\
+&=\underline f(\underline g(\underline x))+J_{\underline f}(\underline g(\underline x))\underline {\tilde h}+R_{\underline f}(\underline {\tilde h})\\
+&=\underline f(\underline g(\underline x))+J_{\underline f}(\underline g(\underline x))J_{\underline g}(\underline x)\underline h+J_{\underline f}(\underline g(\underline x))\underline R_{\underline g}(\underline g)+\underline R_{\underline f}(\underline {\tilde h})
+\end{align}$$
+Where the two terms on the right vanish since $\underline R_\underline g(\underline g)\to0$ and $\underline R_\underline f(\underline {\tilde h})\to 0$ when $\underline h\to0$. So we have that the composition has a derivative equal to the one proposed.
+
+Take the example of $\underline f(u,v)=\begin{pmatrix}u^2+v^2\\uv\end{pmatrix}$ and $\underline g(x,y)=\begin{pmatrix}2x-y\\y-x\end{pmatrix}$. We aim to find $J_{\underline f\circ\underline g}(x,y)$ with such vector fields. We have that $g:\Re^2\mapsto\Re^2$ and $f:\Re^2\mapsto\Re^2$ so $m=n=k=2$ and we can find such composition. First we compute individual derivative matrices:$$\Huge\begin{align}
+J_\underline g(x,y)&=\begin{pmatrix}\frac{\partial g_1}{\partial x}&\frac{\partial g_1}{\partial y}\\\frac{\partial g_2}{\partial x}&\frac{\partial g_2}{\partial y}\end{pmatrix}=\begin{pmatrix}2&-1\\-1&1\end{pmatrix}\\
+J_\underline f(u,v)&=\begin{pmatrix}\frac{\partial f_1}{\partial u}&\frac{\partial f_1}{\partial v}\\\frac{\partial f_2}{\partial u}&\frac{\partial f_2}{\partial v}\end{pmatrix}=\begin{pmatrix}2u&2v\\v&u\end{pmatrix}
+\end{align}$$So the chain rule give the composition:$$\Huge\begin{align}
+J_{\underline f\circ\underline g}(x,y)&=J_\underline f(\underline g(x,y))J_\underline g(x,y)=\begin{pmatrix}2g_1&2g_2\\g_2&g_1\end{pmatrix}\begin{pmatrix}2&-1\\-1&1\end{pmatrix}\\
+&=\begin{pmatrix}4g_1-2g_2&-2g_1+2g_2\\-g_1+2g_2&g_1-g_2\end{pmatrix}\\
+&=\begin{pmatrix}10x-6y&-6x+4y\\-4x+3y&3x-2y\end{pmatrix}
+\end{align}$$One can check that the upper left component matches:$$\Huge\begin{align}
+\underline f\circ\underline g(x,y)&=\begin{pmatrix}(2x-y)^2+(y-x)^2\\(2x-y)(y-x)\end{pmatrix}\\
+\frac{\partial }{\partial x}(\underline f\circ\underline g)_{11}&=2(2)(2x-y)-2(y-x)\\
+&=10x-6y
+\end{align}$$Which indeed matches the computed matrix.
+
+We can use this theorem to obtain the chain rule formula used in the proof of [[Integral theorems#Fundamental theorem of line integrals|the fundamental theorem of line integrals]]:$$\Huge \frac{d f}{dt}=\frac{\partial f}{\partial x}\frac{d x}{dt}+\frac{\partial f}{\partial y}\frac{d y}{dt}+\frac{\partial f}{\partial z}\frac{d z}{dt}$$Where $\underline x(t):\Re\mapsto\Re^3$ is a parametrised curve and $f(\underline x):\Re^3\mapsto\Re$ is a scalar field. We have $k=m=1$ and $n=3$, so the composition maps from $\Re\mapsto\Re^3\mapsto\Re$, that is $f \circ\underline x:\Re\mapsto\Re$. The matrix then has a single component:$$\Huge
+\begin{align} J_{f\circ\underline x}&=\begin{pmatrix}\frac{d (f\circ\underline x)}{dt}\end{pmatrix}=J_\underline f(\underline x(t))J_\underline x(t)=\\
+&=\begin{pmatrix}\frac{\partial f}{\partial x}&\frac{\partial f}{\partial y}&\frac{\partial f}{\partial z}\end{pmatrix}_{\underline x(t)}\begin{pmatrix}\frac{d x}{dt}\\\frac{d y}{dt}\\\frac{d z}{dt}\end{pmatrix}\\
+&=\frac{d f}{dt}
+\end{align}$$Where $J_f(\underline x(t))\in M_{1\times 3}(\Re)$ and $J_\underline x(t)\in M_{3\times 1}(\Re)$.
+
+We can also use this theorem to obtain the chain rule formula used in the proof of [[Surface and volume integrals#Changing variables|independent surface integral parametrisations]]. Where we used:$$\Huge\begin{align}
+\frac{\partial \underline x}{\partial u}&=\frac{\partial \underline x}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial \underline x}{\partial \nu}\frac{\partial \nu}{\partial u}\\
+\frac{\partial \underline x}{\partial v}&=\frac{\partial \underline x}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial \underline x}{\partial \nu}\frac{\partial \nu}{\partial v}
+\end{align}$$Where $\underline x(\mu,\nu):\Re^2\mapsto\Re^3$ is a parametrisation of a surface, related to some alternative parametrisation $\underline x(u,v)$ by a change of coordinates that maps $(\mu,\nu)=\underline g(u,v):\Re^2\mapsto\Re^2$. Here, $n=k=2$ and $m=3$ which makes $J_{\underline x\circ\underline g}(u,v)\in M_{3\times 2}$ given by:$$\Huge\begin{align}
+J_{\underline x\circ\underline g}(u,v)&=\begin{pmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\\\frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}\end{pmatrix}=J_\underline x(\underline g(u,v))J_\underline g(u,v)\\
+&=\begin{pmatrix}\frac{\partial x}{\partial \mu}&\frac{\partial x}{\partial \nu}\\\frac{\partial y}{\partial \mu}&\frac{\partial y}{\partial \nu}\\\frac{\partial z}{\partial \mu}&\frac{\partial z}{\partial \nu}\end{pmatrix}\begin{pmatrix}\frac{\partial \mu}{\partial u}&\frac{\partial u}{\partial v}\\\frac{\partial \nu}{\partial u}&\frac{\partial \nu}{\partial v}\end{pmatrix}\\
+&=\begin{pmatrix}\frac{\partial x}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial x}{\partial \nu}\frac{\partial \nu}{\partial u}&\frac{\partial x}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial x}{\partial \nu}\frac{\partial \nu}{\partial v}\\\frac{\partial y}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial y}{\partial \nu}\frac{\partial \nu}{\partial u}&\frac{\partial y}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial y}{\partial \nu}\frac{\partial \nu}{\partial v}\\\frac{\partial z}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial z}{\partial \nu}\frac{\partial \nu}{\partial u}&\frac{\partial z}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial z}{\partial \nu}\frac{\partial \nu}{\partial v}\end{pmatrix}\\
+&=\begin{pmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\\\frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}\end{pmatrix}=\begin{pmatrix}\frac{\partial \underline x}{\partial u}&\frac{\partial \underline x}{\partial v}\end{pmatrix}
+\end{align}$$And we get the correct component of $J_{\underline x\circ\underline g}(u,v)_{11}$ as required. 
