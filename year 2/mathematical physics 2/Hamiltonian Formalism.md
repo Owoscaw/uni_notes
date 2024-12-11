@@ -51,3 +51,42 @@ We aim to prove that the [[Symmetries, Noether's theorem, and conservation laws#
 &=\underline q_i+\epsilon\left(\sum_{k=1}^n0+a_k\delta_{ik}\right)\\
 &=\underline q_i+\epsilon(a_i)
 \end{align}$$So we get the correct transformation as required.
+
+# Hamilton's equations:
+
+We define the Hamiltonian as the equivalent to [[Symmetries, Noether's theorem, and conservation laws#Energy conservation|energy]] in classical mechanics:$$\Huge H(\underline q,p)=\left(\sum_{i=1}^np_i\underline{\dot q}_i(\underline q,p)\right)-L(\underline q,\underline{\dot q}(\underline q,p))$$We aim to extend the notion of a Noether charge generating a transformation to the Hamiltonian, we propose:$$\Huge\begin{align}
+\underline q_i(t+\epsilon)&=\Phi_H^{(\epsilon)}(\underline q_i)\\
+p_i(t+\epsilon)&=\Phi_H^{(\epsilon)}(p_i)
+\end{align}$$Taking the Taylor expansion of each gives:$$\Huge\begin{align}
+\underline q_i(t+\epsilon)&=\underline q_i(t)+\epsilon\underline{\dot q}_i(t)+\mathcal{O}(\epsilon^2)\\
+\Phi_H^{(\epsilon)}(\underline q_i)&=\underline q_i(t)+\epsilon\{\underline q_i,H\}+\mathcal{O}(\epsilon^2)\\
+&\implies\underline{\dot q}_i=\{\underline q_i,H\}
+\end{align}$$Similarly one can show that:$$\Huge \dot p_i=\{p_i,H\}$$Note that in the Hamiltonian formalism, there is ambiguity when taking a partial derivative with respect to $\underline q$, since the generalised momenta also depend on this coordinate. To clarify this we say:$$\Huge\begin{align}\\
+\frac{\partial f(\underline q),\underline{\dot q}(\underline q,p)}{\partial \underline q}\vert_p&=\lim_{h\to0}\frac{f(\underline q+h,\underline{\dot q}(\underline q+h,p))-f(\underline q,\underline{\dot q}(\underline q,p))}{h}\\
+\frac{\partial f(\underline q,\underline{\dot q}(\underline q,p))}{\partial \underline q}\vert_{\underline{\dot q}}&=\lim_{h\to0}\frac{f(\underline q+h),\underline{\dot q}(\underline q,p))-f(\underline q,\underline{\dot q}(\underline q,p))}{h}
+\end{align}$$Now we can prove the statement $\underline p_i=\{p_i,H\}$:$$\Huge\begin{align}
+\frac{\partial H}{\partial \underline q_i}\vert_{p_i}&=\frac{\partial }{\partial \underline q_i}\left(\left(\sum_kp_k\underline{\dot q}_k(\underline q,p)\right)-L(\underline q,\underline{\dot q}(\underline q,p))\right)\vert_{p_i}\\
+&=\sum_{k=1}^np_k\frac{\partial \underline{\dot q}_k}{\partial \underline q_i}\vert_p-\frac{\partial L}{\partial \underline q_i}\vert_{\underline{\dot q}}-\sum_{k=1}^n\frac{\partial L}{\partial \underline{\dot q}_k}\vert_{\underline q}\frac{\partial \underline{\dot q}_k}{\partial \underline q_i}\vert_p\\
+&=\left(\sum_{k=1}^n\left(p_k-\frac{\partial L}{\partial \underline{\dot q}_k}\vert_{\underline q}\right)\frac{\partial \underline{\dot q}_k}{\partial \underline q_i}\vert_p\right)-\frac{\partial L}{\partial \underline q_i}\vert_{\underline{\dot q}}\\
+&=\left(\sum_{k=1}^n\left(p_k-p_k\right)\frac{\partial \underline{\dot q}_k}{\partial \underline q_i}\vert_p\right)-\frac{\partial L}{\partial \underline q_i}\vert_{\underline{\dot q}}\\
+&=0-\frac{d }{dt}\left(\frac{\partial L}{\partial \underline{\dot q}_i}\vert_{\underline q}\right)\\
+&=-\dot p_i=\{p_i,H\}
+\end{align}$$Where we have used the chain rule on the Lagrangian, as required. We now prove the other half:$$\Huge\begin{align}
+\frac{\partial H}{\partial p_i}\vert_{\underline q}&=\frac{\partial }{\partial p_i}\left(\left(\sum_{k=1}^np_k\underline{\dot q}_k\right)-L(\underline q,\underline{\dot q}(\underline q,p))\right)\vert_{\underline q}\\
+&=\left(\sum_{k=1}^n\frac{\partial p_k}{\partial p_i}\vert_{\underline q}\underline{\dot q}_k+p_k\frac{\partial\underline{\dot q}_k}{\partial p_i}\vert_{\underline q}\right)-\sum_{k=1}^n\frac{\partial L}{\partial \underline{\dot q}_k}\vert_{\underline q}\frac{\partial \underline{\dot q}_k}{\partial p_i}\vert_{\underline q}\\
+&=\sum_{k=1}^n\left(\underline{\dot q}_k\frac{\partial p_k}{\partial p_i}\vert_{\underline q}+\left(p_k-\frac{\partial L}{\partial \underline{\dot q}_k}\vert_{\underline q}\right)\frac{\partial \underline{\dot q}_k}{\partial p_i}\vert_{\underline q}\right)\\
+&=\sum_{k=1}^n\left(\delta_{ik}\underline{\dot q}_k+(p_k-p_k)\frac{\partial \underline{\dot q}_k}{\partial p_i}\vert_{\underline q}\right)\\
+&=\underline{\dot q_i}
+\end{align}$$Again using the chain rule on the Lagrangian, as required. These are known as Hamilton's equations:$$\Huge\begin{align}
+\underline{\dot q}_i&=\{\underline q_i,H\}=\frac{\partial H}{\partial p_i}\\
+\dot p_i&=\{p_i,H\}=-\frac{\partial H}{\partial \underline q_i}\\
+\frac{d H}{dt}&=-\frac{\partial L}{\partial t}
+\end{align}$$This has a corollary where we say:$$\Huge \frac{d }{dt}(f(\underline q,p,t))=\frac{\partial f}{\partial t}+\{f,H\}$$Proven as follows:$$\Huge\begin{align}
+\frac{d f}{dt}&=\frac{\partial f}{\partial t}+\sum_{k=1}^n\left(\frac{\partial f}{\partial \underline q_k}\underline{\dot q}_k+\frac{\partial f}{\partial p_k}\dot p_k\right)\\
+&=\frac{\partial f}{\partial t}+\sum_{k=1}^n\left(\frac{\partial f}{\partial \underline q_k}\frac{\partial H}{\partial p_k}-\frac{\partial f}{\partial p_k}\frac{\partial H}{\partial \underline q_k}\right)\\
+&=\frac{\partial f}{\partial t}+\{f,H\}
+\end{align}$$We can now prove that energy is conserved:$$\Huge\begin{align}
+\frac{d E}{dt}=\frac{d H}{dt}&=\frac{\partial H}{\partial t}+\{H,H\}\\
+&=\frac{\partial H}{\partial t}+0=\frac{\partial E}{\partial t}
+\end{align}$$Since the Poisson bracket is anti-symmetric, $\{H,H\}=0$. We can then say that some quantity $Q(\underline q,p)$ that does not explicitly depend on time is conserved if and only if $\{Q,H\}=0$. That is:$$\Huge \Phi_Q^{(\epsilon)}(H)=H+\mathcal{O}(\epsilon^2)$$
+Example:![[Hamiltonian Formalism 2024-12-11 16.58.54.excalidraw]]
