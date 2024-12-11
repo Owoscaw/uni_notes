@@ -89,4 +89,4 @@ p_i(t+\epsilon)&=\Phi_H^{(\epsilon)}(p_i)
 \frac{d E}{dt}=\frac{d H}{dt}&=\frac{\partial H}{\partial t}+\{H,H\}\\
 &=\frac{\partial H}{\partial t}+0=\frac{\partial E}{\partial t}
 \end{align}$$Since the Poisson bracket is anti-symmetric, $\{H,H\}=0$. We can then say that some quantity $Q(\underline q,p)$ that does not explicitly depend on time is conserved if and only if $\{Q,H\}=0$. That is:$$\Huge \Phi_Q^{(\epsilon)}(H)=H+\mathcal{O}(\epsilon^2)$$
-Example:![[Hamiltonian Formalism 2024-12-11 16.58.54.excalidraw]]
+![[Hamiltonian Formalism 2024-12-11 16.58.54.excalidraw]]
