@@ -12,7 +12,7 @@ Let $f$ and $g$ be regulated functions on $[a,g]$ then:
 To prove linearity, let $(f_n)$ be a sequence of step function converging uniformly to $f$, similarly for $(g_n)\to f$ and assume $f_n,g_n$ are defined on the same partition. Then $cf_n\to cf$ uniformly, and $\lim_{n\to \infty}I(cf_n)=I(cf)$. Then we get $I(cf_n)=\sum_{k=0}^{N-1}cf_n(x_k^*)(x_{k+1}-x_k)=cI(f_n)$, hence $\lim_{n\to \infty}I(cf_n)=\lim_{n\to \infty}cI(f_n)=c\lim_{n\to \infty}I(f_n)=cI(f)$.
 
 Since $m,M$ are well defined, $f$ is bounded on $[a,b]$ and we have $m\leq f(x)\leq M$ for all $x\in[a,b]$. Therefore we get:$$\Huge m(b-a)=\int_a^bmdx\leq\int_a^bf(x)dx\leq\int_a^bMdx=M(b-a)$$
-$|f(x)|\geq f(x)$ and $|f(x)|\geq-f(x)$ implies that $\int_a^b|f(x)|dx\geq\int_a^bf(x)dx$ and $\int_a^b|f(x)|dx\geq-\int_a^bf(x)$, which implies the statement as required.
+$|f(x)|\geq f(x)$ and $|f(x)|\geq-f(x)$ implies that $\int_a^b|f(x)|dx\geq\int_a^bf(x)dx$ and $\int_a^b|f(x)|dx\geq-\int_a^bf(x)$, which implies the statement as required. This is visualsed on $\Re^2$ as such:![[bounded integrals]]
 
 Let $f(x)$ be a continuous function on $[a,b]$ such that $f(x)\geq0$ for all $x\in[a,b]$ and $f(c)>0$ for some $c\in[a,b]$, then:$$\Huge \int_a^bf(x)dx>0$$Since by continuity there exists a non-trivial interval $[\alpha,\beta]$ containing $c$ such that $f(x)\geq \frac{C}{2}$ where $C=f(c)>0$. Choose $\epsilon=\frac{C}{2}>0$, now there exists $\delta>0$ such that $|f(x)-C|<\frac{C}{2}$ for all $x:|x-c|<\delta$. Now $\int_a^bf(x)dx=\int_a^\alpha f(x)dx+\int_\alpha^\beta f(x)dx+\int_\beta^bf(x)dx\geq0+\frac{C}{2}(\beta-\alpha)+0>0$, as required.
 ## Additivity:
