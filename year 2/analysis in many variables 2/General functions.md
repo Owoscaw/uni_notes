@@ -91,3 +91,54 @@ J_{\underline x\circ\underline g}(u,v)&=\begin{pmatrix}\frac{\partial x}{\partia
 &=\begin{pmatrix}\frac{\partial x}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial x}{\partial \nu}\frac{\partial \nu}{\partial u}&\frac{\partial x}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial x}{\partial \nu}\frac{\partial \nu}{\partial v}\\\frac{\partial y}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial y}{\partial \nu}\frac{\partial \nu}{\partial u}&\frac{\partial y}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial y}{\partial \nu}\frac{\partial \nu}{\partial v}\\\frac{\partial z}{\partial \mu}\frac{\partial \mu}{\partial u}+\frac{\partial z}{\partial \nu}\frac{\partial \nu}{\partial u}&\frac{\partial z}{\partial \mu}\frac{\partial \mu}{\partial v}+\frac{\partial z}{\partial \nu}\frac{\partial \nu}{\partial v}\end{pmatrix}\\
 &=\begin{pmatrix}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}\\\frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}\end{pmatrix}=\begin{pmatrix}\frac{\partial \underline x}{\partial u}&\frac{\partial \underline x}{\partial v}\end{pmatrix}
 \end{align}$$And we get the correct component of $J_{\underline x\circ\underline g}(u,v)_{11}$ as required. 
+
+# Inverse functions:
+
+A function $\underline f:\Re^n\mapsto\Re^n$ has an inverse $\underline f^{-1}$ if and only if for all $\underline x\in\Re^n$ we have:
+>$(\underline f^{-1}\circ\underline f)(\underline x)=\underline x$
+>$(\underline f\circ\underline f^{-1})(\underline x)=\underline x$
+
+Take $\underline f(x,y)=\begin{pmatrix}x-y\\x+2y\end{pmatrix}$ for example:$$\Huge \underline f=\begin{pmatrix}1&-1\\1&2\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}\implies\underline f^{-1}=\begin{pmatrix}1&-1\\1&2\end{pmatrix}^{-1}\begin{pmatrix}x\\y\end{pmatrix}$$Note that the matrix here is the derivative matrix $J_{\underline f}$ so we have that:$$\Huge J_{\underline f^{-1}}=(J_{\underline f})^{-1}$$We propose that this holds even for non-linear functions. That is to say if $\underline f:\Re^n\mapsto\Re^n$ has an inverse and both $\underline f$ and it's inverse are differentiable then:$$\Huge J_{\underline f^{-1}}(\underline y)=(J_{\underline f})^{-1}(\underline x)$$Where $\underline y=\underline f(\underline x)$. To prove this, observe:$$\Huge\begin{align}
+(\underline f^{-1}\circ\underline f)(\underline x)=\underline x&\implies J_{\underline f^{-1}\circ\underline f}(\underline x)=I_n\\
+&\implies J_{\underline f^{-1}}(\underline f(\underline x))J_{\underline f}(\underline x)=I_n\\
+&\implies J_{\underline f^{-1}}(\underline y)J_{\underline f}(\underline x)=I_n\\
+(\underline f\circ\underline f^{-1})(\underline y)=\underline y&\implies J_{\underline f\circ\underline f^{-1}}(\underline y)=I_n\\
+&\implies J_{\underline f}(\underline f^{-1}(\underline y))J_{\underline f^{-1}}(\underline y)=I_n\\
+&\implies J_{\underline f}(\underline x)J_{\underline f^{-1}}(\underline y)=I_n\\
+\implies (J_{\underline f})^{-1}(\underline x)|&=J_{\underline f^{-1}}(\underline y)
+\end{align}$$
+We can use this to find the linearisation of $\underline f^{-1}$ around the point $\underline y=f(2,1)$ when:$$\Huge\begin{align}
+\underline f(u,v)&=\begin{pmatrix}u^2+v^2\\uv\end{pmatrix}\\
+\implies J_{\underline f}&=\begin{pmatrix}\frac{\partial f_1}{\partial u}&\frac{\partial f_1}{\partial v}\\\frac{\partial f_2}{\partial u}&\frac{\partial f_2}{\partial v}\end{pmatrix}=\begin{pmatrix}2u&2v\\v&u\end{pmatrix}\\
+\implies J_{\underline f^{-1}}(\underline y)&=(J_{\underline f})^{-1}(2,1)\\
+&=\frac{1}{2(u^2-v^2)}\begin{pmatrix}u&-2v\\-v&2u\end{pmatrix}\vert_{(2,1)}\\
+&=\frac{1}{6}\begin{pmatrix}2&-2\\-1&4\end{pmatrix}
+\end{align}$$This allows for the reconstruction of the linearisation of $\underline f^{-1}$ even though the full nonlinear function is unknown:$$\Huge\begin{align}
+\underline f^{-1}(\underline y+\underline h)&\approx\underline f^{-1}(\underline y)+J_{\underline f^{-1}}(\underline y)\underline h\\
+&\approx\begin{pmatrix}2\\1\end{pmatrix}+(J_{\underline f})^{-1}
+\underline h\\
+&\approx\begin{pmatrix}2\\1\end{pmatrix}+\frac{1}{6}\begin{pmatrix}2&-2\\-1&4\end{pmatrix}\begin{pmatrix}h_1\\h_2\end{pmatrix}
+\end{align}$$
+
+## Inverse function theorem (diffeomorphisms):
+Let $\underline f:\Re^n\mapsto\Re^n$ be a $C^1$ function. Then $\underline f$ has a local differentiable inverse near $\underline y=\underline f(\underline x)$ if and only if it has an invertible derivative matrix $J_{\underline f}(\underline x)$ at the point $\underline x$. This can be proven by showing that the remainder terms tend to zero faster than linear order.
+
+A function $\underline f:\Re^n\mapsto\Re^n$ satisfying this condition is called a local diffeomorphism. A diffeomorphism is called orientation preserving if $\det(J_{\underline f}(\underline x))>0$ and orientation reversing if $\det(J_{\underline f}(\underline x))<0$.
+
+We can ask where the function $\underline f(r,\theta)=\begin{pmatrix}r\cos\theta\\r\sin\theta\end{pmatrix}$ for $r\in[0,\infty),\theta\in[0,2\pi]$ is a local diffeomorphism:$$\Huge\begin{align}
+J_{\underline f}(r,\theta)&=\begin{pmatrix}\frac{\partial f_1}{\partial r}&\frac{\partial f_1}{\partial \theta}\\\frac{\partial f_2}{\partial r}&\frac{\partial f_2}{\partial \theta}\end{pmatrix}=\begin{pmatrix}\cos\theta&-r\sin\theta\\\sin\theta&r\cos\theta\end{pmatrix}\\
+&\implies\det(J_{\underline f}(r,\theta))=r\cos^2\theta+r\sin^2\theta=r
+\end{align}$$So this function is a diffeomorphism for $r>0$ but not at $r=0$. The function is also said to be orientation preserving for $r\neq0$:![[orientation preservation]]Note that one can see $\underline f$ fails to be bijective at $r=0$ as every point in the domain is mapped to $f_1=f_2=0$. The inverse function is given by:$$\Huge \underline f^{-1}(f_1,f_2)=\begin{pmatrix}\sqrt{f_1^2+f_2^2}\\\arctan(f_2/f_1)\end{pmatrix}$$One can check that the partial derivatives agree.
+
+# Implicit functions:
+
+Given a $C^1$ function $\underline F:\Re^{n+m}\mapsto\Re^m$, let $\underline x\in\Re^n$ and $\underline y\in\Re^m$. Solutions to the system of $m$ equations $\underline F(\underline x,\underline y)=\underline 0$ near a solution point $(\underline x,\underline y)=(\underline x_{\underline a},\underline y_{\underline a})=\underline a\in\Re^{n+m}$ can be written as an implicit function $\underline y=\underline y(\underline x)$ if:$$\Huge \begin{vmatrix}\frac{\partial \underline F}{\partial y_1}(\underline a)&\frac{\partial \underline F}{\partial y_2}(\underline a)&\dots&\frac{\partial \underline F}{\partial y_m}(\underline a)\end{vmatrix}\neq0$$Since $\underline F$ is differentiable, we have that near $\underline a$ the linearisation holds:$$\Huge\underline F(\underline x,\underline y)\simeq\underline F(\underline a)+J_{\underline F}(\underline a)\begin{pmatrix}\underline x-\underline x_a\\\underline y-\underline y_a\end{pmatrix}$$By definition we have $\underline F(\underline a)=\underline 0$ so:$$\begin{align}\\
+\large J_{\underline F}(\underline a)\begin{pmatrix}\underline x-\underline x_a\\\underline y-\underline y_a\end{pmatrix}\simeq\underline 0&\implies\begin{pmatrix}\frac{\partial \underline F}{\partial x_1}&\dots&\frac{\partial \underline F}{\partial x_n}&\frac{\partial \underline F}{\partial y_1}&\dots&\frac{\partial \underline F}{\partial y+m}\end{pmatrix}_{\underline a}\begin{pmatrix}\underline x-\underline x_a\\\underline y-\underline y_a\end{pmatrix}\simeq\underline 0\\
+&\iff\begin{pmatrix}\frac{\partial \underline F}{\partial x_1}&\dots&\frac{\partial \underline F}{\partial x_n}\end{pmatrix}_{\underline a}(\underline x-\underline x_a)+\begin{pmatrix}\frac{\partial \underline F}{\partial y_1}&\dots&\frac{\partial \underline F}{\partial y_m}\end{pmatrix}_{\underline a}(\underline y-\underline y_a)\\
+&\iff\underline y\simeq\underline y_a-\begin{pmatrix}\frac{\partial \underline F}{\partial y_1}&\dots&\frac{\partial \underline F}{\partial y_m}\end{pmatrix}_{\underline a}^{-1}\begin{pmatrix}\frac{\partial \underline F}{\partial x_1}&\dots&\frac{\partial \underline F}{\partial x_n}\end{pmatrix}_{\underline a}(\underline x-\underline x_a)
+\end{align}$$The right hand side is a function only of $\underline x$, and is well defined is the associated $y$ matrix is invertible. Note that this reduces to the single variable derivative formula:$$\Huge y'=-\frac{\frac{\partial f}{\partial x}}{\frac{\partial f}{\partial y}}$$For $n=m=1$.
+
+Take the following simultaneous equations satisfied by $(u,v,w)$:$$\Huge\begin{align}
+uv^2+v^2w^3+u^5w^4-1&=0\\
+u^2w+u^2v^2+v^2w^5+1&=0
+\end{align}$$As example. We ask if $u,v$ can be expressed as a function of $w$ near $\underline a=(u,v,w)=(1,1,-1)$. We have two equations and two dependent variables implying $m=2$. We have one independent variable $w$ so $n=1$. Therefore $\underline x=\begin{pmatrix}w\end{pmatrix}$ and $\underline y=\begin{pmatrix}u\\w\end{pmatrix}$ with:$$\large \underline F(\underline x,\underline y)=\begin{pmatrix}uv^2+v^2w^3+u^5w^4-1\\u^2w+u^2v^3+v^4w^5+1\end{pmatrix},\,\,\underline F(1,1,-1)=\begin{pmatrix}1-1+1-1\\-1+1-1+1\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}$$So the theorem applies.
