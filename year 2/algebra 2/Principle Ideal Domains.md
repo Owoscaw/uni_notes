@@ -38,3 +38,27 @@ For example, we can construct $\mathbb{F}_{27}$ as $\mathbb{F}_{3^3}$. To do thi
 
 # The Chinese Remainder Theorem:
 
+Let $R$ be a PID and $a,b\in R$ be two coprime elements (that is, no irreducible element divides both $a$ and $b$). Then $(a,b)=(1)$ and thus $ax+by=1$ for some $x,y\in R$. In particular, any $\gcd(a,b)$ is a unit. 
+
+To prove this, observe that since $R$ is a PID, we have that $(a,b)=(r)$ for some $r\in R$. Therefore $r$ divides both $a$ and $b$, so must be a unit (as $a,b$ are coprime). Now since $r$ is a unit we have $(r)=R=(1)$. We can now state the Chinese Remainder Theorem (CRT):
+
+Let $R$ be a PID. If $a_1,\dots,a_k\in R$ are pairwise coprime elements, then the map given by:$$\Huge\begin{align}
+\varphi:R/(a_1\dots a_k)&\rightarrow\,R/(a_1)\times\dots\times R/(a_k)\\
+r+(a_1\dots a_k)&\mapsto(r+(a_1),\dots,r+(a_k))
+\end{align}$$Is an isomorphism.
+
+To prove this, let $\psi:R\rightarrow R/(a_1)\times\dots\times R/(a_k)$ be a map given by $\psi(r)=(\bar r,\dots,\bar r)$. Note that this is trivially a homomorphism. We prove that this is surjective and $\ker(\psi)=(a_1a_1\dots a_k)$, then by the [[Ideals#First Isomorphism Theorem|FIT]] we have the theorem as required:
+
+We first show that $\psi$ is surjective. For each $i=1,\dots,k$ the elements $a_i$ and each $a_1\dots a_{i-1}a_{i+1}\dots a_k$ are coprime (otherwise there would exist some $p\in R$ that divides both terms, contradicting the assumption that each element $a_n$ are pairwise coprime). Therefore by the above lemma there exists $x_i,y_i\in R$ such that:$$\Huge a_ix_i+(a_1\dots a_{i-1}a_{i+1}\dots a_k)y_i=1$$Now set $e_i=1-a_ix_i$, then we have that if $i=j$ then $e_i=1\mod(a_j)$ and $e_i=0\mod(a_j)$ otherwise. For any element $(r_1+(a_1),\dots,r_k+(a_K))\in R/(a_1)\times\dots\times R/(a_k)$ we have that:$$\Huge \psi\left(\sum_{i=1}^kr_ie_i\right)=(r_1+(a_1),\dots,r_k+(a_k))$$, so $\varphi$ is indeed surjective. We now show injectivity:$$\Huge\begin{align}
+\ker\psi&=\{r:r\in(a_i),i=1,\dots,k\}\\
+&=\{r:a_i|r,i=1,\dots,k\}\\
+&=\{r:a_1\dots a_k|r\}\\
+&=(a_1\dots a_k)
+\end{align}$$Where we have used the fact that each $a_i$ are coprime and $R$ is a UFD. So we have the CRT as required.
+
+Take for example $F[x]$ with $F$ a field. If $f(x)\in F[x]$ is a product of two coprime factors $g(x),h(x)$, then the CRT states that the map:$$\Huge\begin{align}
+F[x]/(f(x))&\rightarrow F[x]/(g(x))\times F[x]/(h(x))\\
+p(x)+(f(x))&\mapsto(p(x)+(g(x)),p(x)+(h(x)))=(\bar p(x),\bar p(x))
+\end{align}$$Is an isomorphism. 
+
+We can also use the CRT to understand the structure of $\mathbb{Z}[i]/(13)$. We use the fact that $\mathbb{Z}[i]$ is a PID, and that $13=(3+2i)(3-2i)$. Firstly we must prove that $3+2i$ and $3-2i$ are coprime. Suppose $x=a+bi|3+2i$ and $3-2i$, we then apply the norm map to get $N(a+bi)=a^2+b^2|N(3+2i)=N(3-2i)=13$. Therefore we have that $N(x)=1$ or $13$, since $13$ is prime. However $N(x)=13$ implies that $x=w(3+2i)$ or $x=w(3-2i)$ with $w\in\mathbb{Z}[i]^X=\{1,-1,i,-i\}$. However since $(3+2i)/(3-2i)=(3+2i)^2/13\notin\mathbb{Z}[i]$, implying that if $a+bi|3+2i$ and $a+bi|3-2i$ then $N(a+bi)=1$, and thus $a+bi\in\mathbb{Z}[i]^X$, so we have that $3+2i$ and $3-2i$ are indeed coprime and we can apply the CRT to state:$$\Huge \mathbb{Z}[i]/(13)\cong\mathbb{Z}[i]/(3+2i)\times\mathbb{Z}[i]/(3-2i)$$Note that one can also prove that $3\pm2i$ are irreducible, making $(3\pm2i)$ maximal ideals, and the rings $\mathbb{Z}[i]/(3+2i),\mathbb{Z}[i]/(3-2i)$ are fields.
