@@ -22,4 +22,19 @@ Also $(\mathbb{Z}/2)[x]/(x^2+x+1)$ has basis $\{1,\bar x\}$ and so is of dimensi
 
 # Finite fields:
 
-For any given prime $p\in\mathbb{Z}$ and $n\in\mathbb{N}$ there exists an irreducible polynomial $f(x)\in(\mathbb{Z}/p)[x]$ of degree $n$
+For any given prime $p\in\mathbb{Z}$ and $n\in\mathbb{N}$ there exists an irreducible polynomial $f(x)\in(\mathbb{Z}/p)[x]$ of degree $n$. Therefore we construct the field $(\mathbb{Z}/p)[x]/(f(x))$. This field will therefore have $p^n$ elements and any two such fields will be isomorphic, so we can denote the unique field (up to isomorphisms) with $p^n$ elements as $\mathbb{F}_{p^n}$.
+
+Note that $\mathbb{F}_p$ is $\mathbb{Z}/p$ for prime $p$ but $\mathbb{F}_{p^n}$ is not $\mathbb{Z}/p^n$ for $n>1$ as this is not a field for $n>1$ since $\bar p^{n-1}\bar p=\bar p^n=\bar 0$ however $\bar p^{n-1}\neq\bar 0$ so we have a zero divisor that is not itself $\bar 0$, so $\mathbb{Z}/p^n$ fails to be an integral domain.
+
+For example, we can construct $\mathbb{F}_{27}$ as $\mathbb{F}_{3^3}$. To do this, we must find an irreducible polynomial in $(\mathbb{Z}/3)[x]$ of degree $3$. Such a polynomial is given by $f(x)=x^3+x^2+x+\bar 2\in(\mathbb{Z}/3)[x]$. Note that this is indeed irreducible as it is of degree $3$ and has no roots in $\mathbb{Z}/3$ (one can check by finding $f(\bar 0),f(\bar 1),f(\bar 3)$). So by the above theorem we have:$$\Huge \mathbb{F}_{27}\cong(\mathbb{Z}/3)[x]/(f(x))$$Every element in this field can be written as $\overline{a_0+a_1x+a_2x^2}$ with each $a_i\in\mathbb{Z}/3$. Noting that $\overline{x^3+x^2+x+2}=\bar 0$ we can multiply two such elements:$$\Huge\begin{align}
+(\bar 2x^2-\bar x+\bar 2)(\bar x^2+\bar x+\bar 1)&=\overline{ 2x^4}+\bar x^3+\bar x+\bar 2\\
+&=\overline{2x^4}-(\bar x^2+\bar x+\bar 2)+\bar x+\bar 2\\
+&=\overline{2x^4}-\bar x^2\\
+&=\overline{2x}(-\bar x^2-\bar x-\bar 2)-\bar x^2\\
+&=\bar x^3+\overline{2x}\\
+&=-\bar x^2-\bar x-\bar 2+\overline{2x}\\
+&=\overline{2x^2}+\bar x+\bar 1\in\mathbb{F}_{27}
+\end{align}$$
+
+# The Chinese Remainder Theorem:
+
