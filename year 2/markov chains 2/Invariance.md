@@ -1,7 +1,6 @@
-
 # Measures:
 
-A measure is a row vector with non-negative values. Distributions are a special case of measures with entries that sum to $1$. If $P$ is a [[Definitions of Markov Chains#Stochastic matrices|stochastic matrix]], a measure $\lambda$ is called invariant if $\lambda P=\lambda$. An invariant measure is also called stationary or equilibrium.
+A measure is a row vector with non-negative values. Distributions are a special case of measures with entries that sum to $1$. If $P$ is a [[Definition and Properties#Stochastic matrices|stochastic matrix]], a measure $\lambda$ is called invariant if $\lambda P=\lambda$. An invariant measure is also called stationary or equilibrium.
 
 If $\lambda$ is a measure and $\sum_{i\in I}\lambda_i<\infty$ then:$$\Huge \Pi_i=\frac{\lambda_i}{\sum_{j\in I}\lambda_j}$$Defines a distribution. Note that if $\lambda$ is invariant, $\Pi$ is invariant. If $|I|<\infty$ it is always possible to define a distribution. We ask for the following example, if there exist any stationary distribution(s):![[stationary dist]]
 # Invariance:
@@ -20,7 +19,7 @@ Suppose that $|I|<\infty$ and that there exists an $i\in I$ such that for all $j
 
 # Invariant 
 
-We define a new measure $\gamma^k$ for $k\in I$ with:$$\Huge \gamma^k_i=\mathbb{E}_k\left[\sum_{n=0}^{T_k-1}1_{\{X_n=i\}}\right]$$That is, the expected number of visits to state $i$ before returning to $k$. Here, $T_k$ is the first [[Class structure, hitting times, and stopping times#Passage times and strong Markov|passage time]] to state $k$. Let $P$ be a stochastic matrix representing an irreducible Markov chain:
+We define a new measure $\gamma^k$ for $k\in I$ with:$$\Huge \gamma^k_i=\mathbb{E}_k\left[\sum_{n=0}^{T_k-1}1_{\{X_n=i\}}\right]$$That is, the expected number of visits to state $i$ before returning to $k$. Here, $T_k$ is the first [[Class structure#Passage times and strong Markov|passage time]] to state $k$. Let $P$ be a stochastic matrix representing an irreducible Markov chain:
 > $\gamma_k^k=1$
 > $\gamma^kP=\gamma^k$
 > $0<\gamma^k_i<\infty$ for all $i\in I$
