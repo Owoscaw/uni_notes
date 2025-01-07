@@ -1,6 +1,7 @@
 import ode_rk4
 import numpy as np
 import matplotlib.pyplot as plt
+import copy
 
 class CyclotronRK4(ode_rk4.ODE_RK4):
   """A class to compute the trajectory of an electron in an 

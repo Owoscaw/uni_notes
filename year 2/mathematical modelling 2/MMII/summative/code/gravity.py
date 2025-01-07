@@ -62,14 +62,15 @@ class Gravity(ODE_RK4):
 
         d_curr = self.dist_2_reference()
 
-        self.d_butlast = copy.copy(self.d_last)
-        self.d_last = copy.copy(d_curr)
-        self.t_last = copy.copy(self.t)
-
         if (self.d_last < d_curr) and (self.d_last < self.d_butlast):
 
             self.d_min.append([self.t, d_curr])
             return True
+        
+        self.d_butlast = self.d_last
+        self.d_last = d_curr
+        self.t_last = self.t
+        
         return False
         
     def min_min(self,t_after=0):
