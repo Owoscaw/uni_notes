@@ -41,15 +41,15 @@ class Spacecraft(gr.Gravity):
             : param dt : integration time step
         """
 
-        self.Fr = Fr
+        self.F_r = Fr
         self.F_theta = Ftheta
         self.t_thrust = t_thrust
         
         z0 = -1000
         v_z0 = 0
         phi0 = -2000/self.r_0
-        v_phi0 = np.sqrt((self.G*self.M_E)/((self.r_0 - 1000)**3)) - self.omega_0
-        self.reset([z0, v_z0, phi0, v_phi0], dt, 0)
+        v_phi0 = np.sqrt((self.G*self.M_E)/((self.r_0 + z0)**3)) - self.omega_0
+        self.reset([z0, v_z0, phi0, v_phi0], dt)
         self.iterate(tmax)
 
         return self.min_min()
@@ -73,8 +73,12 @@ if __name__ == '__main__':
         print("dmin={}, tmin={} Fuel={}"\
         .format(dmin,tmin,(abs(Fr)+abs(Ftheta))*t_thrust))
         s.plot(1,3,'{}-'.format(param[3]))
-        plt.xlabel('phi',fontsize=20)
-        plt.ylabel('z',fontsize=20)
+        plt.xlabel(r'$\phi$',fontsize=15)
+        plt.ylabel(r'$z$',fontsize=15)
+        plt.plot([0],[0], '{}-'.format(param[3]), label=r'''$F_r=$ %s,  $F_\theta=$ %s,  $t_\text{thrust}=$ %s,
+                  $t_\text{min}\approx$ %s,  $d_\text{min}\approx$ %s'''%(param[0], param[1], param[2], round(tmin, 2), round(dmin, 2)))
+        plt.legend(fontsize=10, loc="lower left")
+        plt.title("Spacecraft orbits")
         plt.plot([0],[0],'r+')
 
     plt.show()
