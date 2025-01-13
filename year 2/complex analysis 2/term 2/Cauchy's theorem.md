@@ -1,0 +1,2 @@
+
+We aim to determine whether it is true that for [[Complex differentiation#Holomorphicity|holomorphic]] function $f$ on a domain $D$ then the [[Complex integration#Contour integrals|contour integral]] $\int_\gamma f(z)dz=0$ for all [[Complex integration#Contours|closed contours]] in $D$.
