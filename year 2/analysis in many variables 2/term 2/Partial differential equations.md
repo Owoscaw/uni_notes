@@ -1,0 +1,3 @@
+A partial differential equation (PDE) involves many variables and their [[Partial derivatives|partial derivatives]]. One such PDE is the heat equation:$$\Huge \frac{\partial u}{\partial t}=D\left(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right)$$This equation describes heat by a scalar function $u(x,y,t)$, the dependent variable. The behavior of the dependent variable is based on the independent variables: $x$, $y$, and $t$. These differ from ordinary [[First order differential equations|differential equations]], as PDEs involve many independent variables. The order of an ODE is the highest order derivative that appears in the equation.
+
+A PDE is linear if it is linear in the dependent variable, and nonlinear otherwise.
