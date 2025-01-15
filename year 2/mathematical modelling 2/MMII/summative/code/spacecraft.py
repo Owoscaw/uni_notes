@@ -73,12 +73,13 @@ if __name__ == '__main__':
         print("dmin={}, tmin={} Fuel={}"\
         .format(dmin,tmin,(abs(Fr)+abs(Ftheta))*t_thrust))
         s.plot(1,3,'{}-'.format(param[3]))
-        plt.xlabel(r'$\phi$',fontsize=15)
-        plt.ylabel(r'$z$',fontsize=15)
         plt.plot([0],[0], '{}-'.format(param[3]), label=r'''$F_r=$ %s,  $F_\theta=$ %s,  $t_\text{thrust}=$ %s,
-                  $t_\text{min}\approx$ %s,  $d_\text{min}\approx$ %s'''%(param[0], param[1], param[2], round(tmin, 2), round(dmin, 2)))
-        plt.legend(fontsize=10, loc="lower left")
-        plt.title("Spacecraft orbits")
-        plt.plot([0],[0],'r+')
+            $t_\text{min}\approx$ %s,  $d_\text{min}\approx$ %s'''%(param[0], param[1], param[2], round(tmin, 2), round(dmin, 2)))
+    
+    plt.legend(fontsize=10, loc="lower left")
+    plt.title("Spacecraft orbits")
+    plt.plot([0],[0],'r+')
 
+    plt.xlabel(r'$\phi$',fontsize=15)
+    plt.ylabel(r'$z$',fontsize=15)
     plt.show()

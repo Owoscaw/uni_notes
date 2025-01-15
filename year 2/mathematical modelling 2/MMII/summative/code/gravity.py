@@ -75,6 +75,9 @@ class Gravity(ODE_RK4):
         
     def min_min(self,t_after=0):
 
+        if len(self.d_min) == 0:
+            return ["Error:", "No minima found!"]
+
         possible_d_min = [mini for mini in self.d_min if mini[0] > t_after]
         sorted_d_mins = sorted(possible_d_min, key=lambda mini: mini[1])
         return sorted_d_mins[0]
