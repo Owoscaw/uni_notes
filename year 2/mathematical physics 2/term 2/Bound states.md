@@ -29,11 +29,5 @@ With this, the total amplitude becomes:$$\Huge \psi(x,t)=C(e^{ikr_1}+e^{ikr_2})e
 I(x)&=C^2|e^{ikr_1}+e^{ikr_2}|^2\\
 &=2C^2(1+\cos(k(r_1-r_2)))\\
 &=4C^2\cos^2\left(\frac{k}{2}(r_1-r_2)\right)
-\end{align}$$We see constructive interference at $k(r_1-r_2)=2n\pi$ and destructive interference at $k(r_1-r_2)=(2n+1)\pi$ for some $n\in\mathbb{Z}$. The two right triangles seen above give $r_1$ and $r_2$ as functions of $x$:$$\Huge r_1^2=L^2+\left(x-\frac{a}{2}\right)^2,\,\,r_2^2=L^2+\left(x+\frac{a}{2}\right)^2$$We can use a [[Taylor series]] on $a$ since in reality, this slit will be miniscule. We then get:$$\Huge r_1=\sqrt{L^2+x^2}-\frac{ax}{2\sqrt{L^2+x^2}}+\mathcal{O}(a^2)$$And a similar expression for $r_2$. Subtracting the two and assuming $x<<L$ we get the simple expression $r_2-r_1=\frac{ax}{L}$. Using this in the intensity equation gives:$$\Huge I(x)\approx4C^2\cos^2\left(\frac{ka}{2L}x\right)$$This can be shown as follows:
-```desmos-graph
-left=-5; right=5;
-top=5; bottom=-5;
----
-y=4(\cos(\frac{x}{2}))^2
-```
-
+\end{align}$$We see constructive interference at $k(r_1-r_2)=2n\pi$ and destructive interference at $k(r_1-r_2)=(2n+1)\pi$ for some $n\in\mathbb{Z}$. The two right triangles seen above give $r_1$ and $r_2$ as functions of $x$:$$\Huge r_1^2=L^2+\left(x-\frac{a}{2}\right)^2,\,\,r_2^2=L^2+\left(x+\frac{a}{2}\right)^2$$We can use a [[Taylor series]] on $a$ since in reality, this slit will be miniscule. We then get:$$\Huge r_1=\sqrt{L^2+x^2}-\frac{ax}{2\sqrt{L^2+x^2}}+\mathcal{O}(a^2)$$And a similar expression for $r_2$. Subtracting the two and assuming $x<<L$ we get the simple expression $r_2-r_1=\frac{ax}{L}$. Using this in the intensity equation gives:$$\Huge I(x)\approx4C^2\cos^2\left(\frac{ka}{2L}x\right)$$Note that for a non-infinitesimal width slit, $r$ will be a function of $x$ and $s$, the point along the slit the wave comes from. This looks like:$$\Huge \psi(x,t)=\int_{\text{position }s\text{ at slit}}C(r)e^{ikr(s,x)-i\omega t}ds$$
+In the real world, electrons arrive at one at a time (characteristic of particles) and produce an interference pattern $I=I_1+I_2+2\sqrt{I_1I_2}\cos\delta$ (characteristic of waves). This suggests that $\psi(x)$ is related to the probability of electron detection.

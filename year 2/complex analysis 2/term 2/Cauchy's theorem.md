@@ -5,4 +5,9 @@ Recall that $\int_{|z|=1}\frac{1}{z}dz=2\pi i\neq0$, and that $|z|=1$ defines a 
 
 # Starlike domains:
 
-A [[Complex differentiation#Paths and connectedness|domain]] $D$ is called starlike if there exists a central point $a_0\in D$ such that for all $b\in D$ the straight line connecting $b$ and $a_0$ is fully contained within $D$. Note that $\mathbb{C}$ is starlike with $a_0=0$, and any [[Metric spaces#Open and closed sets|ball]] ($B_r(a)$) is starlike with $a_0=a$.
+A [[Complex differentiation#Paths and connectedness|domain]] $D$ is called starlike if there exists a central point $a_0\in D$ such that for all $b\in D$ the straight line connecting $b$ and $a_0$ is fully contained within $D$. Note that $\mathbb{C}$ is starlike with $a_0=0$, and any [[Metric spaces#Open and closed sets|ball]] ($B_r(a)$) is starlike with $a_0=a$. Note that $a_0$ does not need to be unique.
+
+# Cauchy's Integral Theorem:
+
+Let $f:D\mapsto\mathbb{C}$ be holomorphic on a starlike domain $D$. Then for any closed contour $\gamma\subset D$ we have:$$\Huge\int_\gamma f(z)dz=0$$
+Note that the same statement holds if $f$ is holomorphic on some $D\setminus S$ where $S$ is a finite set of points at which $D$ is continuous.
