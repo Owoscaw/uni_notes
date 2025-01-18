@@ -24,3 +24,21 @@ An important set of physical models have solutions in the form:$$\Huge u(x,t)=\s
 # Linearity operator:
 
 We define the linear operator $L$ that acts on scalar functions as:$$\Huge L=\frac{\partial }{\partial t}-D\frac{\partial^2}{\partial x^2}$$A special cases of the heat equation is given by $Lu$. Linearity demands:$$\Huge L\left(\sum_{n=0}^\infty u_n\right)=\sum_{n=0}^\infty Lu_n$$
+
+# Elliptic, parabolic, and hyperbolic equations:
+
+Consider general second order linear PDEs:$$\Huge \sum_{i,j=1}^nA_{ij}\partial_i\partial_ju+\sum_{i=1}^nB_i\partial_iu+Cu+D=0$$Where $\partial_i=\frac{\partial }{\partial x_i},\partial_i\partial_j=\frac{\partial^2}{\partial x_ix_j}$. PDEs are classified by the highest order coefficients $A_{ij}$. Since $\partial_i\partial_j=\partial_j\partial_i$ we can write $A_{ij}$ as a symmetrical matrix, meaning it has $n$ real [[Eigenvalues, Eigenvectors, and Diagonalisation|eigenvalues]]. Let $a$ be the number of eigenvalues that are $0$, and let $b$ be the number of positive eigenvalues.
+
+## Classification:
+> Elliptic equations are such that $a=0$, $b=0\text{ or }n$
+> Parabolic equations are such that $a>0, b\leq n-1$. This means that $\det A=0$.
+> Hyperbolic equations are such that $a=0,b=1\text{ or }n-1$
+
+Take for example the following PDE:$$\Huge 3\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+4\frac{\partial^2u}{\partial z^2}+4\frac{\partial^2u}{\partial y\partial t}=0$$Here we have $A=\begin{pmatrix}3&0&0\\0&1&2\\0&2&4\end{pmatrix}$. This has eigenvalues $\lambda=0,3,5$ so $a=1$, making this PDE parabolic.
+
+## Elliptic PDEs:
+The main example of an elliptic PDE is Poisson's equation:$$\Huge \nabla^2u=f(x)$$Where $\nabla^2$ is the [[Index notation#Second derivatives|Laplacian]]. One specific solution is given by:$$\Huge f(\underline x)=Q\delta(x,y)+Q\delta(x-x_c,x-y_c)$$Where $\delta(x,y)$ is the Dirac delta function. In this case the equation describes a static electric field with two point charges of value $Q$. A solution to this equation in $\Re^2$ is given by:$$\Huge u(x,y)=\int_\Re G(x,y,x',y')f(x,y)dx'dy'$$Where $G(x,y,x',y')=\frac{1}{2\pi}\ln(|\Gamma|)$  and $$\Huge |\Gamma|=\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}$$This function $G$ is called Green's function.
+
+## Parabolic PDEs:
+The heat equation is an example of a parabolic PDE:$$\Huge \frac{\partial u}{\partial t}=D\nabla^2u$$This is parabolic with $A=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I$. Writing this equation in the form:$$\Huge \frac{\partial u}{\partial t}-\nabla^2u=0\implies A=\begin{pmatrix}0&0&0\\0&-1&0\\0&0&-1\end{pmatrix}\implies\det A=0$$
+ 
