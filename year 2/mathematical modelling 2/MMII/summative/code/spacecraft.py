@@ -20,6 +20,7 @@ class Spacecraft(gr.Gravity):
 
         z = v[0]; vz = v[1]; phi = v[2]; vphi = v[3]
 
+        # Turns off F_r, F_theta after self.t_thrust
         if t > self.t_thrust: 
             self.F_r = 0
             self.F_theta = 0
@@ -41,14 +42,17 @@ class Spacecraft(gr.Gravity):
             : param dt : integration time step
         """
 
+        # Saving parameters for use in F
         self.F_r = Fr
         self.F_theta = Ftheta
         self.t_thrust = t_thrust
         
+        # Initial conditions
         z0 = -1000
         v_z0 = 0
         phi0 = -2000/self.r_0
         v_phi0 = np.sqrt((self.G*self.M_E)/((self.r_0 + z0)**3)) - self.omega_0
+
         self.reset([z0, v_z0, phi0, v_phi0], dt)
         self.iterate(tmax)
 
@@ -56,14 +60,17 @@ class Spacecraft(gr.Gravity):
       
 
 if __name__ == '__main__':
-    # [[Fr, Ftheta, t_thrust, colour]]
+    # [[Fr, Ftheta, t_thrust, colour], ...]
     params = [[50, 100, 100, "b"], [25, 50, 200, "g"], [10, 20, 500, "r"]]
 
+    # Iterating over each set of parameters
     for param in params:
         dt = 0.1
         gdt = 1
         s = Spacecraft([0,0,0,0],dt,0,4e5,4000.) # initial condition set later
         tmax= 4000
+
+        # Unpacking parameters
         Fr = param[0]
         Ftheta = param[1]
         t_thrust = param[2]
@@ -72,7 +79,11 @@ if __name__ == '__main__':
         print("Fr={} Ftheta={} t_thrust={}".format(Fr,Ftheta,t_thrust))
         print("dmin={}, tmin={} Fuel={}"\
         .format(dmin,tmin,(abs(Fr)+abs(Ftheta))*t_thrust))
+
+        # Plotting z against phi
         s.plot(1,3,'{}-'.format(param[3]))
+
+        # Plotting origin, using this to label each trajectory too
         plt.plot([0],[0], '{}-'.format(param[3]), label=r'''$F_r=$ %s,  $F_\theta=$ %s,  $t_\text{thrust}=$ %s,
             $t_\text{min}\approx$ %s,  $d_\text{min}\approx$ %s'''%(param[0], param[1], param[2], round(tmin, 2), round(dmin, 2)))
     

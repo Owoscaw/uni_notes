@@ -77,7 +77,7 @@ class ODE_RK4:
         : param fig_dt : interval between data point for figures (use dt if < 0)
       """
        
-      if(fig_dt < 0) : fig_dt = self.dt*0.99 # save all data
+      if fig_dt < 0 : fig_dt = self.dt*0.99 # save all data
       
       next_fig_t = self.t*(1-1e-15) # ensure we save the initial values
 

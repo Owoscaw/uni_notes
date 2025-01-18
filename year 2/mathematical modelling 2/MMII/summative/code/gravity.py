@@ -44,9 +44,13 @@ class Gravity(ODE_RK4):
 
         z = v[0]; vz = v[1]; phi = v[2]; vphi = v[3]
 
+        # v_z
         eq1 = vz
+        # \dot v_z
         eq2 = -(self.G*self.M_E)/((self.r_0 + z)**2)+(self.r_0 + z)*(self.omega_0+vphi)**2 + self.F_r/self.m
+        # v_\phi
         eq3 = vphi
+        # \dot v_\phi
         eq4 = (self.F_theta - 2*self.m*vz*(self.omega_0 + vphi))/(self.m*(self.r_0 + z))
         
         return np.array([eq1, eq2, eq3, eq4])
@@ -55,30 +59,54 @@ class Gravity(ODE_RK4):
 
 
     def dist_2_reference(self):
+        """Returns distance between spacecraft and reference trajectory
+        """
 
         return np.sqrt(self.V[0]**2 + 2*self.r_0*(self.r_0 + self.V[0])*(1 - np.cos(self.V[2])))
 
     def post_integration_step(self):
+        """ Function performed after every step of integration, returns nothing.
+            More detailed description seen in parent class.
 
+            This function checks for a minima by comparing the previous distances
+            found at each time function is called.
+        """
+
+        # Current distance
         d_curr = self.dist_2_reference()
 
+        """ If statement checks for minima by checking if previous
+            distance was smaller than the one before that and the
+            current distance
+        """
         if (self.d_last < d_curr) and (self.d_last < self.d_butlast):
 
+            # Result appended to list for storage
             self.d_min.append([self.t, d_curr])
-            return True
+            return None
         
+
         self.d_butlast = self.d_last
         self.d_last = d_curr
+
+        # Keeping track of last time minima was checked
         self.t_last = self.t
         
-        return False
+        return None
         
     def min_min(self,t_after=0):
+        """ t_after : time after which to search for minima
+
+            Function returns the smallest minima found after t_after
+        """
 
         if len(self.d_min) == 0:
             return ["Error:", "No minima found!"]
 
+        # Filtering out minima that occur after parameter t_after
         possible_d_min = [mini for mini in self.d_min if mini[0] > t_after]
+
+        # Sorting according to d_min (second element in list)
         sorted_d_mins = sorted(possible_d_min, key=lambda mini: mini[1])
         return sorted_d_mins[0]
   
