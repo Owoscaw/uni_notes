@@ -21,4 +21,24 @@ Suppose that $X$ is a metric space and $x\in N\subseteq X$. We then call $N$ a n
 
 A neighbourhood $N$ of a point $x$ can therefore be open, closed, neither, or both. $N$ only has to include "wiggle room" for $x$.
 
-We now prove that open balls are open and closed balls are closed
+We now prove that open balls are open and closed balls are closed:
+> Let $B(x;r)$ be an open ball with $x\in X$ and $r>0$ and suppose $y\in B(x;r)$. We aim to find an open ball around $y$ with $B(x;r)$, so let $s=d(x,y)$. We then know that $s<r$ so we set $\epsilon=r-s>0$. Now we claim that $B(y;\epsilon)\subset B(x;r)$. To show this, consider $z\in B(y;\epsilon)$. Then we have that:$$\Huge\begin{align}d(z,x)&\leq d(z,y)+d(y,x)\\&<\epsilon+s\\&=(r-s)+s=r\end{align}$$So $z\in B(y;\epsilon)$ and we have that $y\in B(y;\epsilon)\subset B(x;r)$ as required.
+> Now let $D(x;r)$ be a closed ball. To show that it is a closed set, we must show that $X\setminus D(x;r)$ is open. If $X\setminus D(x;r)=\emptyset$ then the proof is trivial. So assume this is not true, then we have some $y\in X\setminus D(x;r)$ with $s=d(x,y)>r$. Then we set $\epsilon=s-r>0$ and claim that $B(y;\epsilon)\subset X\setminus D(x;r)$. Let $z\in B(y;\epsilon)$, then:$$\Huge\begin{align}d(z,x)&\geq d(x,y)-d(y,z)\\&>s-\epsilon\\&=s-(s-r)=r\end{align}$$So $z\notin D(x;r)$ and we have that $y\in B(y;\epsilon)\subset X\setminus D(x;r)$ as required. Therefore $X\setminus D(x;r)$ is open, making $D(x;r)$ closed.
+
+Let $X$ be a metric space:
+> $X$ and $\emptyset$ are both open and closed
+> An arbitrary union of open sets is open
+> A finite intersection of open sets is open
+> A finite union of closed sets is closed
+> An arbitrary intersection of closed sets is closed
+
+Proofs:
+> For $x\in X$ we have $x\in B(x;1)\subseteq X$. Also since there is no $x$ in $\emptyset$, both are therefore open. Notice $X\setminus X=\emptyset$ and $X\setminus\emptyset=X$, so both have open complements and are therefore closed.
+> Let $U_i\subset X$ be open for all $i\in I$. Then if $x\in \bigcup_{i\in I}U_i$ we have $x\in U_{i_0}$ for some $i_0\in I$. Therefore we have some $\epsilon>0$ such that $a\in B(x;\epsilon)\subseteq U_{i_0}\subseteq\bigcup_{i\in I}U_i$. Hence $\bigcup_{i\in I}U_i$ is open.
+> Let $U_i\subset X$ be open for $1,\dots,n$. Then if $x\in\bigcap_{i=1}^nU_i$ we have $x\in U_i$ for $i=1,\dots,n$. Therefore for each $i$ there is some $\epsilon_i>0$ such that $x\in B(x;\epsilon_i)\subseteq U_i$. Let $\epsilon=\min\{\epsilon_1,\dots,\epsilon_n\}>0$. Then for $i=1,\dots,n$ we have $x\in B(x;\epsilon)\subseteq B(x;\epsilon_i)\subseteq U_i$. Hence $x\in B(x;\epsilon)\subseteq\bigcap_{i=1}^nU_i$ as required.
+> Let $V_i\subset X$ be closed for $i=1,\dots,n$. Then by definition $X\setminus V_i\subseteq X$ is open for $i=1,\dots,n$ so by the above proof we know that $X\setminus(\bigcup_{i=1}^nV_i)=\bigcap_{i=1}^n(X\setminus V_i)$ is open, so $\bigcup_{i=1}^nV_i$ is closed as required.
+> This proof is similar the the above.
+
+
+
+
