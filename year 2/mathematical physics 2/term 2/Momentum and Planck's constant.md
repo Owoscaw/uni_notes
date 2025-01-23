@@ -21,3 +21,25 @@ Since we defined the momentum operator, we also define the position operator:$$\
 &=-i\hbar x\frac{\partial \psi}{\partial x}+i\hbar x\frac{\partial \psi}{\partial x}+i\hbar\,\psi(x)\\
 &=i\hbar\,\psi(x)
 \end{align}$$Since the wave function was general, we can write this result as the equivalence:$$\Huge [\hat x,\hat p]=i\hbar$$This is known as the canonical commutation relation.
+
+# Momentum expectation:
+
+We saw the [[Wave function#Expectation values|expectation of position]] previously, so we now propose that the expectation of momentum is given by:$$\Huge \langle p\rangle=\int_{-\infty}^\infty\overline{\psi(x,t)}\hat p\,\psi(x,t)dx=-i\hbar\int_{-\infty}^\infty\overline{\psi(x,t)}\frac{\partial }{\partial x}\psi(x,t)dx$$We require that $\langle p\rangle\in\Re$. Suppose that $\hbar$ is complex, we then compute the conjugate of $\langle p\rangle$:$$\Huge\begin{align}
+\overline{\langle p\rangle}&=i\hbar\int_{-\infty}^\infty\psi(x,t)\frac{\partial }{\partial x}\overline{\psi(x,t)}dx\\
+&=i\hbar[|\psi(x,t)|^2]_{-\infty}^\infty-i\hbar\int_{-\infty}^\infty\frac{\partial }{\partial x}\psi(x,t)\overline{\psi(x,t)}dx\\
+&=0-i\hbar\int_{-\infty}^\infty\overline{\psi(x,t)}\frac{\partial }{\partial x}\psi(x,t)dx\\
+&=\frac{\bar\hbar}{\hbar}\langle p\rangle
+\end{align}$$Therefore $\langle p\rangle$ is real if and only if $\hbar$ is real, since in this case $\bar\hbar=\hbar$, making $\overline{\langle p\rangle}=\langle p\rangle$, so $\langle p\rangle$ must therefore be real. Note that we require $|\psi(x,t)|^2$ to vanish at $x\to\pm\infty$ so that it is normalisable. We can also compute more general expectation values for functions of momentum:$$\Huge\begin{align}
+\langle f(p)\rangle&=\int_{-\infty}^\infty\overline{\psi(x,t)}f(\hat p)\psi(x,t)dx\\
+&=\int_{-\infty}^\infty\overline{\psi(x,t)}f\left(-i\hbar\frac{\partial }{\partial x}\right)\psi(x,t)dx
+\end{align}$$
+## Gaussian example:
+
+Consider the [[Wave function#Gaussian wave function|Gaussian wave function]]. We showed that $\langle x\rangle=0$ and $\langle x^2\rangle=\Delta^2$ and therefore $\Delta x=\Delta$. Consider the momentum operator acting on this function:$$\Huge\begin{align}
+\hat p\psi(x)&=\frac{i\hbar}{2\Delta^2}x\,\psi(x)\\
+\hat p^2\psi(x)&=\frac{\hbar^2}{2\Delta^2}\psi(x)-\frac{\hbar^2}{4\Delta^4}x^2\psi(x)
+\end{align}$$Note that these results are simply a polynomial in $x$ multiplied by $\psi(x)$. We can therefore use the results applied to position to get:$$\Huge \langle p\rangle=\frac{i\hbar}{2\Delta^2}\int_{-\infty}^\infty x|\psi(x,t)|^2dx=\frac{i\hbar}{2\Delta^2}\langle x\rangle=0$$And similarly we get:$$\Huge\begin{align}
+\langle p^2\rangle&=\frac{\hbar^2}{2\Delta^2}\int_{-\infty}^\infty|\psi(x,t)|^2dx-\frac{\hbar^2}{4\Delta^4}\int_{-\infty}^\infty x^2|\psi(x,t)|^2dx\\
+&=\frac{\hbar^2}{2\Delta^2}\cdot 1-\frac{\hbar^2}{4\Delta^4}\langle x^2\rangle\\
+&=\frac{\hbar^2}{4\Delta^2}
+\end{align}$$So we see that $\Delta p=\sqrt{\langle p^2\rangle-\langle p\rangle}^2=\frac{\hbar}{2\Delta}$. Note that the product of $\Delta x$ and $\Delta p$ becomes invariant of $\Delta$:$$\Huge\Delta x\Delta p=\Delta\cdot\frac{\hbar}{2\Delta}=\frac{\hbar}{2}$$This means that an attempt to localise the particle by reducing $\Delta x$ has to result in an increase in $\Delta p$, the momentum uncertainty.
