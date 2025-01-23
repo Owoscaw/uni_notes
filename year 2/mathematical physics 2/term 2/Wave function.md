@@ -30,4 +30,8 @@ Consider a particle confined to the region $0<x<L$:$$\Huge V(x)=\begin{cases}0&0
 \end{align}$$We can then find the uncertainty:$$\Huge\Delta x=\sqrt{\frac{3L^2}{10}-\left(\frac{L}{2}\right)^2}=\frac{L}{\sqrt{20}}$$
 # Phases:
 
-Note that if we multiply the wave function by a position dependent phase, the probability density is unchanged due to the use of the complex norm:$$\Huge \psi(x)\rightarrow e^{i\theta}\psi(x),\,\,P(x)\rightarrow P(x)$$That is to say, measurements of position cannot differentiate between the wave function $\psi(x)$ and $e^{i\theta}\psi(x)$
+Note that if we multiply the wave function by a position dependent phase, the probability density is unchanged due to the use of the complex norm:$$\Huge \psi(x)\rightarrow e^{i\theta}\psi(x),\,\,P(x)\rightarrow P(x)$$That is to say, measurements of position cannot differentiate between the wave function $\psi(x)$ and $e^{i\theta}\psi(x)$.
+
+# Wave function collapse:
+
+Suppose that a particle has wave function $\psi(x,t)$ for $t<t_0$. Then at $t=t_0$ the position of the particle is measured to be $x=x_0$. Another measurement immediately after the first will find the particle at $x=x_0$ with probability $1$. This suggests the act of measuring the particle "collapsed" the wave function to one tightly localised around $x=x_0$.
