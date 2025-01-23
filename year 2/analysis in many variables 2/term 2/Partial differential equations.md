@@ -37,8 +37,19 @@ Consider general second order linear PDEs:$$\Huge \sum_{i,j=1}^nA_{ij}\partial_i
 Take for example the following PDE:$$\Huge 3\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+4\frac{\partial^2u}{\partial z^2}+4\frac{\partial^2u}{\partial y\partial t}=0$$Here we have $A=\begin{pmatrix}3&0&0\\0&1&2\\0&2&4\end{pmatrix}$. This has eigenvalues $\lambda=0,3,5$ so $a=1$, making this PDE parabolic.
 
 ## Elliptic PDEs:
-The main example of an elliptic PDE is Poisson's equation:$$\Huge \nabla^2u=f(x)$$Where $\nabla^2$ is the [[Index notation#Second derivatives|Laplacian]]. One specific solution is given by:$$\Huge f(\underline x)=Q\delta(x,y)+Q\delta(x-x_c,x-y_c)$$Where $\delta(x,y)$ is the Dirac delta function. In this case the equation describes a static electric field with two point charges of value $Q$. A solution to this equation in $\Re^2$ is given by:$$\Huge u(x,y)=\int_\Re G(x,y,x',y')f(x,y)dx'dy'$$Where $G(x,y,x',y')=\frac{1}{2\pi}\ln(|r|)$  and $$\Huge |r|=\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}$$This function $G$ is called Green's function.
+The main example of an elliptic PDE is Poisson's equation:$$\Huge \nabla^2u=f(x)$$Where $\nabla^2$ is the [[Index notation#Second derivatives|Laplacian]]. One specific solution is given by:$$\Huge f(\underline x)=Q\delta(x,y)+Q\delta(x-x_c,x-y_c)$$Where $\delta(x,y)$ is the Dirac delta function. In this case the equation describes a static electric field with two point charges of value $Q$. A solution to this equation in $\Re^2$ is given by:$$\Huge u(x,y)=\int_\Re G(x,y,x',y')f(x,y)dx'dy'$$Where $G(x,y,x',y')=\frac{1}{2\pi}\ln(|r|)$  and $$\Huge |r|=\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}$$This function $G$ is called Green's function. Elliptic PDEs tend to be smooth, globally responsive, and time independent.
 
 ## Parabolic PDEs:
-The heat equation is an example of a parabolic PDE:$$\Huge \frac{\partial u}{\partial t}=D\nabla^2u$$This is parabolic with $A=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I$. Writing this equation in the form:$$\Huge \frac{\partial u}{\partial t}-\nabla^2u=0\implies A=\begin{pmatrix}0&0&0\\0&-1&0\\0&0&-1\end{pmatrix}\implies\det A=0$$
- 
+The heat equation is an example of a parabolic PDE:$$\Huge \frac{\partial u}{\partial t}=D\nabla^2u$$This is parabolic with $A=\begin{pmatrix}1&0\\0&1\end{pmatrix}=I$. Writing this equation in the form:$$\Huge \frac{\partial u}{\partial t}-\nabla^2u=0\implies A=\begin{pmatrix}0&0&0\\0&-1&0\\0&0&-1\end{pmatrix}\implies\det A=0$$Parabolic PDEs tend to be smooth, globally responsive, and time dependent.
+
+## Hyperbolic PDEs:
+The wave equation is an example of a hyperbolic PDE:$$\Huge \frac{\partial^2u}{\partial t^2}=c^2\nabla^2u$$A solution to the wave equation is given by:$$\Huge u(x,t)=f(x-ct)+g(x+ct)$$For arbitrary functions $f,g$. To verify this, we can use the chain rule and set $z=x-ct$ and $z^*=x+ct$:$$\Huge\begin{align}
+\frac{\partial u}{\partial t}&=\frac{df}{dz}\frac{\partial z}{\partial t}+\frac{dg}{dz^*}\frac{\partial z^*}{\partial t}=c\left(-\frac{df}{dz}+\frac{dg}{dz^*}\right)\\
+\frac{\partial u}{\partial x}&=\frac{df}{dz}\frac{\partial z}{\partial x}+\frac{dg}{dz^*}\frac{\partial z^*}{\partial x}=\frac{df}{dz}+\frac{dg}{dz^*}\\
+\frac{\partial^2u}{\partial t^2}&=c^2\left(\frac{d^2f}{dz^2}+\frac{d^2g}{d(z^*)^2}\right)\\
+\frac{\partial^2u}{\partial x^2}&=\frac{d^2f}{dz^2}+\frac{d^2g}{d(z^*)^2}
+\end{align}$$So we see that this solution satisfies the wave equation. Note that $f,g$ were totally arbitrary and can be any function. These solutions are called travelling waves. Note that "weak solutions" may exist that solve the wave equation, but are not very differentiable. Hyperbolic PDEs tend to be time dependent, and solutions travel in characteristic directions at finite speeds. Solutions may be discontinuous.
+
+# Non-linear PDEs:
+
+Non-linear PDEs can also be classified into Elliptic, Parabolic, or Hyperbolic. However solution methodologies like superposition do not apply to non-linear PDEs.
