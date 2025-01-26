@@ -28,3 +28,9 @@ Let $H$ be a subgroup of the finite group $G$. Then:$$\Huge |H|||G|$$That is, th
 Let $H<G$. Then for any $g\in G$ call $g\circ H=\{g\circ h:h\in H\}$ the left coset of $g$ with respect to $H$ in $G$. We propose that all left cosets with respect to the subgroup $H<G$ have the same cardinality. Moreover, this cardinality is $|H|$. 
 
 Any coset has the form $g\circ H$ for some $g\in G$. For this $g$ consider the map:$$\Huge \beta_g:H\rightarrow g\circ H,\,\,g\mapsto g\circ h$$We check if this is a bijection. First we check injectivity. If $g\circ h_1=g\circ h_2$ then by composition on the left by $g^{-1}$ we find $g^{-1}\circ(g\circ h_1)=g^{-1}\circ(g\circ h_2)$. Using associativity and $g^{-1}\circ g=e$ we have that $h_1=h_2$, so the map is injective. Surjectivity is obvious from the definition of the coset since each $x\in g\circ H$ has form $x=g\circ h$ for some $h\in H$. Therefore we can write $x=\beta_g(h)$, proving bijectivity. Therefore we must have that the cardinality of all left cosets is $|H|$.
+
+We also define the right coset as follows. Let $H<G$. Then for any $g\in G$ call $H\circ g=\{h\circ g:h\in H\}$ the right coset of $g$ with respect to $H$.
+
+# Normal subgroups:
+
+A subgroup $H$ of a group $G$ is called normal in $G$ if $gH=Hg$ for any $g\in G$. We denote this as $H$
