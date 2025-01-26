@@ -13,4 +13,17 @@ Let $f:U\rightarrow\mathbb{C}$ be holomorphic on an open set $U$ and $B_r(a)\sub
 Also there exist real functions that cannot be represented by a power series, for example:$$\Huge f(x)=\begin{cases}e^{-1/x}&x>0\\0&x\leq0\end{cases}$$The derivative of this at $0$ for all $n$ is $0$, so we get that $f(x)=0$ but this is not true for $x>0$.
 
 When using CIF for derivatives, one may need to use partial fraction decomposition to find a suitable form:![[CIF deriv example]]
+## Holomorphic power series
 If $f:U\rightarrow\mathbb{C}$ is holomorphic on an open set $U$, then $f$ has derivatives of all orders and each derivative is itself holomorphic. To prove this, choose some $a\in U$ and some $r>0$ such that $B_r(a)\subset U$. Then by Cauchy-Taylor theorem we have that $f(z)$ can be represented by a power series for all $z\in B_r(a)$. Then by the [[Convergence and Power series#Differentiation and Integration of Power series|differentiation of power series]] we can differentiate the power series on $B_r(a)$:$$\Huge f'(z)=\sum_{n=1}^\infty nc_n(z-a)^{n-1}$$This is itself a power series, so can be further differentiated infinitely. This shows that each derivative of $f$ exists and is holomorphic.
+
+# Morera's theorem:
+
+Let $f:D\rightarrow\mathbb{C}$ be continuous on a domain $D$. If $\int_\gamma f(z)dz=0$ for all closed [[Complex integration#Contours|contours]] $\gamma$ then $f$ is holomorphic on $D$. To prove this, let $f$ be continuous on $D$ and assume that $\int_\gamma f(z)dz=0\forall\gamma\subset D$ such that $\gamma$ is closed. Then the [[Complex integration#Complex Fundamental Theorem of Calculus|converse FTC]] states that there exists a holomorphic $F:D\rightarrow\mathbb{C}$ such that $F'(z)=f(z)$. By the [[Holomorphic functions#Holomorphic power series|above]] corollary, $F'=f$  must be holomorphic, proving the statement as required.
+
+# Liouville's theorem:
+
+Every bounded entire function is constant. To prove this, assume $f$ is entire and there exists some $M$ with $|f(z)|\leq M$ for all $z\in\mathbb{C}$. Now fix some $\omega\in\mathbb{C}$, to prove the theorem we will show that $f(\omega)=f(0)$. Choose some $\rho$ such that $0<|\omega|<\rho$, then by [[Cauchy's theorem#Cauchy's Integral Theorem|CIF]]:$$\Huge
+\begin{align}
+|f(\omega)-f(0)|&=\left|\frac{1}{2\pi i}\int_{|z|=\rho}\frac{f(z)}{z-\omega}dz-\frac{1}{2\pi i}\int_{|z|=\rho}\frac{f(z)}{z}dz\right|\\
+&=\frac{1}{2\pi}
+\end{align}$$
