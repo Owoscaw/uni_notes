@@ -25,5 +25,8 @@ Let $f:D\rightarrow\mathbb{C}$ be continuous on a domain $D$. If $\int_\gamma f(
 Every bounded entire function is constant. To prove this, assume $f$ is entire and there exists some $M$ with $|f(z)|\leq M$ for all $z\in\mathbb{C}$. Now fix some $\omega\in\mathbb{C}$, to prove the theorem we will show that $f(\omega)=f(0)$. Choose some $\rho$ such that $0<|\omega|<\rho$, then by [[Cauchy's theorem#Cauchy's Integral Theorem|CIF]]:$$\Huge
 \begin{align}
 |f(\omega)-f(0)|&=\left|\frac{1}{2\pi i}\int_{|z|=\rho}\frac{f(z)}{z-\omega}dz-\frac{1}{2\pi i}\int_{|z|=\rho}\frac{f(z)}{z}dz\right|\\
-&=\frac{1}{2\pi}
-\end{align}$$
+&=\frac{1}{2\pi}\left|\int_{|z|=\rho}f(z)\left(\frac{1}{z-\omega}-\frac{1}{z}\right)dz\right|\\
+&=\frac{1}{2\pi}\left|\int_{|z|=\rho}f(z)\frac{\omega}{(z-\omega)z}dz\right|\\
+&=\frac{|\omega|}{2\pi}\left|\int_{|z|=\rho}f(z)\frac{1}{(z-\omega)z}dz\right|\\
+&\leq\frac{|\omega|}{2\pi}\cdot2\pi\rho\cdot\sup_{|z|=\rho}\frac{|f(z)|}{|z(z-\omega)|}
+\end{align}$$By the estimation lemma. We then have:$$\Huge |f(\omega)-f(0)|\leq|\omega|\sup_{|z|=\rho}\frac{|f(z)|}{|z(z-\omega)|}$$
