@@ -34,3 +34,7 @@ Every bounded entire function is constant. To prove this, assume $f$ is entire a
 &\leq M|\omega|\rho\sup_{|z|=\rho}\frac{1}{|z(z-\omega)|}\\
 &\leq M|\omega|\sup_{|z|=\rho}\frac{1}{\rho-|\omega|}=\frac{M|\omega|}{\rho-|\omega|}\to0 
 \end{align}$$Where we notice that $|z|=\rho$ along the contour and use the reverse triangle inequality on the denominator. As $\rho\to\infty$ we see that this tends to $0$, we can do this as the contour and $\omega$ were arbitrary. This leaves us with:$$\Huge |f(\omega)-f(0)|=0\implies f(\omega)=f(0)$$Since $\omega$ was arbitrary we have that this function is constant, and since the function was arbitrary we have proven the theorem as required.
+
+# Fundamental theorem of algebra:
+
+Every non-constant polynomial with complex coefficients has a root in $\mathbb{C}$. This is proven by contradiction, so assume that a polynomial $P$ has no roots in $\mathbb{C}$ so $|P(z)|\neq0\forall z\in\mathbb{C}$. Then we set $f(z)=1/P(z)$ which will be holomorphic on $\mathbb{C}$. Note that $|P(z)|\to\infty$ as $|z|\to\infty$. Therefore there must exist some $R>0$ such that when $|z|>R$ we have $|P(z)|>1$. Then on this region $|f(z)|<1$, that is $f$ is bounded. 
