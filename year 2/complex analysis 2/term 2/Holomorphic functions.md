@@ -29,4 +29,8 @@ Every bounded entire function is constant. To prove this, assume $f$ is entire a
 &=\frac{1}{2\pi}\left|\int_{|z|=\rho}f(z)\frac{\omega}{(z-\omega)z}dz\right|\\
 &=\frac{|\omega|}{2\pi}\left|\int_{|z|=\rho}f(z)\frac{1}{(z-\omega)z}dz\right|\\
 &\leq\frac{|\omega|}{2\pi}\cdot2\pi\rho\cdot\sup_{|z|=\rho}\frac{|f(z)|}{|z(z-\omega)|}
-\end{align}$$By the estimation lemma. We then have:$$\Huge |f(\omega)-f(0)|\leq|\omega|\sup_{|z|=\rho}\frac{|f(z)|}{|z(z-\omega)|}$$
+\end{align}$$By the estimation lemma. We then have:$$\Huge\begin{align}
+|f(\omega)-f(0)|&\leq|\omega|\rho\sup_{|z|=\rho}\frac{|f(z)|}{|z(z-\omega)|}\\
+&\leq M|\omega|\rho\sup_{|z|=\rho}\frac{1}{|z(z-\omega)|}\\
+&\leq M|\omega|\sup_{|z|=\rho}\frac{1}{\rho-|\omega|}=\frac{M|\omega|}{\rho-|\omega|}\to0 
+\end{align}$$Where we notice that $|z|=\rho$ along the contour and use the reverse triangle inequality on the denominator. As $\rho\to\infty$ we see that this tends to $0$, we can do this as the contour and $\omega$ were arbitrary. This leaves us with:$$\Huge |f(\omega)-f(0)|=0\implies f(\omega)=f(0)$$Since $\omega$ was arbitrary we have that this function is constant, and since the function was arbitrary we have proven the theorem as required.
