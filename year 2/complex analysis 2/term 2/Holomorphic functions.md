@@ -59,3 +59,14 @@ We can now extend this theorem to any domain. Let $D$ be a domain and $f:D\right
 For example take $f(z)=z^2+2z-3$. We ask if it attains its maximal value on $\overline{B_1(0)}$ and if so, what value does it take?![[MMT example]]
 # Analytic continuation:
 
+Given a holomorphic function $f:B_r(a)\rightarrow\mathbb{C}$ we ask when can we find a holomorphic function $g$ on some domain $D$ with $B_r(a)\subset D$ such that $f(z)=g(z)$ for $z\in B_r(a)$. Assume $\exists z_0\in B_r(a):f(z_0)\neq0$ and suppose that $f(a)=0$. By Cauchy-Taylor we have:$$\Huge f(z)=\sum_{n=0}^\infty c_n(z-a)^n\text{ on }B_r(a)$$Let $m=\min\{n\geq0:c_n\neq0\}$, then:$$\Huge f(z)=(z-a)^m\sum_{n=m}^\infty c_n(z-a)^{n-m}=(z-a)^m\sum_{k=0}^\infty c_{m+k}(z-a)^k$$By the ratio test, the sum converges when:$$\Huge\lim_{k\to\infty}\left|\frac{c_{m+k+1}(z-a)^{k+1}}{c_{m+k}(z-a)^k}\right|<1$$Which is the same limit as:$$\Huge\lim_{n\to\infty}\left|\frac{c_{n+1}}{c_n}\right||z-a|<1$$
+## Order of a zero:
+This motivates the definition of the order of a zero. We say that $f:B_r(a)\rightarrow\mathbb{C}$ has a zero at $z=a$ if $f(a)=0$. For $m>0$ we say that this is a zero of order $m$ if there exist a holomorphic function $h:B_r(a)\rightarrow\mathbb{C}$ such that $f(z)$ can be written in the form:$$\Huge f(z)=(z-a)^mh(z)$$ Also $h(a)\neq0$.
+
+One can show that $f$ has a zero of order $m$ at $z=a$ if and only if:$$\Huge f(a)=f'(a)=f''(a)=\dots=f^{(m-1)}(a)=0$$But $f^{(m)}(a)\neq0$.
+
+Take for example $f(z)=(e^z-1)z$. Then $f'(z)=e^z-1+e^zz=ze^z+e^z-1$ and $f''(z)=ze^z+2e^z$. $f$ has zeroes at $z=0$ and $z=2\pi ni$. $f'(0)=0$ and $f''(0)=z$ so we have that the order of $z=0$ is $2$. Alternatively we can replace $e^z$ with its power series to get $f(z)=z\sum_{n=1}^\infty\frac{z^n}{n!}=\sum_{n=1}^\infty\frac{z^{n+1}}{n!}=z^2\sum_{k=0}^\infty\frac{z^k}{(k+1)!}$ so by our above definition the zero $z=0$ has order $2$.
+
+## Principle of isolated zeros (PIZ):
+Let $f:B_r(a)\rightarrow\mathbb{C}$ be holomorphic and not identically zero. If $f(a)=0$ then there exists $0<\rho\leq r$ such that:$$\Huge f(z)\neq0\,\forall z\in B_\rho(a)\setminus\{a\}$$That is, there exists a small neighbourhood that is not zero around a given zero
+ 
