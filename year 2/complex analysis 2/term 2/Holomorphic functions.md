@@ -39,7 +39,7 @@ Every bounded entire function is constant. To prove this, assume $f$ is entire a
 
 Every non-constant polynomial with complex coefficients has a root in $\mathbb{C}$. This is proven by contradiction, so assume that a polynomial $P$ has no roots in $\mathbb{C}$ so $|P(z)|\neq0\forall z\in\mathbb{C}$. Then we set $f(z)=1/P(z)$ which will be holomorphic on $\mathbb{C}$. Note that $|P(z)|\to\infty$ as $|z|\to\infty$. Therefore there must exist some $R>0$ such that when $|z|>R$ we have $|P(z)|>1$. Then on this region $|f(z)|<1$, that is $f$ is bounded. Now by the [[Metric spaces#Extreme Value Theorem|EVT]] we have that $f$ must be bounded on the compact set $\overline B_R(0)$, which is the complement of the set where we have also shown that $f$ is bounded. Therefore we can conclude that $f(z)=1/P(z)$ is bounded on the whole plane, making $P(z)$ bounded on the whole plane. Now by Liouville's theorem we have that $P(z)$ must be a constant polynomial, a contradiction. Therefore the assumption that $P(z)$ has no roots in $\mathbb{C}$ is false, proving the theorem as required.
 
-# The Maximum Modulus principle:
+# The Maximum Modulus principle (MMT):
 ## Local version:
 Let $B=B_r(a)$ and $f:B\rightarrow\mathbb{C}$ be holomorphic. If for every $z\in B$ we have $|f(z)|\leq|f(a)|$ then $f$ is constant on $B$.
 
@@ -53,4 +53,9 @@ We first show that $|f(z)|$ must be constant. To do this, fix any $\omega\in B_r
 
 We now use this to prove the theorem. Since $|f(z)|=c$ for some $c\in\mathbb{C}$ and all $z\in B$, take $c=0$ to show that $|f(z)|=0\implies f(z)=0=\text{constant}$. So assume $c\neq0$, allowing us to write $f(z)\overline{f(z)}=c^2$ and so $\overline{f(z)}=\frac{c^2}{\overline{f(z)}}$. This means that both $f$ and $\bar f$ are holomorphic. Applying the [[Complex differentiation#Cauchy-Riemann equations|C-R equations]] shows that $u_x=v_x=0\implies f'(z)=u_x+iv_x=0$, which implies that $f$ is constant, completing the proof.
 
+## General version:
 We can now extend this theorem to any domain. Let $D$ be a domain and $f:D\rightarrow\mathbb{C}$ holomorphic. If there exists some $a\in D$ such that $|f(z)|\leq|f(a)|$ for all $z\in D$, then $f$ is constant. Let $U_1$ be the set of points on $D$ where $f(z)=f(a)$, then $U_1\neq\emptyset$. Given $z\in U_1$, there must exists a disc $B_r(z)\in D$ since $D$ is an open set. Choose some $\omega\in B_r(z)$, then since $|f(\omega)|\leq|f(a)|=|f(z)|$ and $z$ is the center of $B_r(z)$ we can apply the local version of the Maximum Modulus Principle. This states that $f$ is constant on $B_r(z)$, implying that $|f(\omega)|=|f(z)|$ and so $B_r(z)\subset U_1$. This makes $U_1$ open. Now let $U_2=D\setminus U_1$ and write $U_2=f^{-1}(\mathbb{C}\setminus\{f(a)\})$, which must be open since $f$ is holomorphic and $\mathbb{C}\setminus\{f(a)\}$ is open. Since $D$ is a domain, it is path connected, which means that $U_2$ must be empty. This means that $U_1=D$, so we have $f(z)=f(a)$ for all $z\in D$, proving the theorem.
+
+For example take $f(z)=z^2+2z-3$. We ask if it attains its maximal value on $\overline{B_1(0)}$ and if so, what value does it take?![[MMT example]]
+# Analytic continuation:
+
