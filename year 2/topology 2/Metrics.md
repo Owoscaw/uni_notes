@@ -39,6 +39,5 @@ Proofs:
 > Let $V_i\subset X$ be closed for $i=1,\dots,n$. Then by definition $X\setminus V_i\subseteq X$ is open for $i=1,\dots,n$ so by the above proof we know that $X\setminus(\bigcup_{i=1}^nV_i)=\bigcap_{i=1}^n(X\setminus V_i)$ is open, so $\bigcup_{i=1}^nV_i$ is closed as required.
 > This proof is similar the the above.
 
-
-
+# Continuity:
 
