@@ -41,3 +41,4 @@ Proofs:
 
 # Continuity:
 
+Let $(X,d)$ be a metric space. A sequence in $X$ is a function $a:\mathbb{N}\rightarrow X$, we write $(a_n)$ for the sequence where $a_n=a(n)$.
