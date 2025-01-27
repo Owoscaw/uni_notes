@@ -18,3 +18,7 @@ Finally, the problem requires a start point called the initial condition. That i
 
 We make the following assumptions that are justified later:
 > Our solution can be written in separable form:$$\Huge u(x,t)=\sum_{n=0}^\infty c_n(t)y_n(x),\,\,h(x,t)=\sum_{n=0}^\infty h_n(t)y_n(x)$$Which makes the model:$$\Huge \sum_{n=0}^\infty\frac{dc_n}{dt}y_n(x)=\sum_{n=0}^\infty c_n(t)Ly_n(x)+\sum_{n=0}^\infty h_n(t)y_n(x)$$
+> The functions $y_n(x)$ satisfy:$$\Huge Ly_n(x)=-\lambda_ny_n(x)$$Where $L$ is acting as a spatial operator only. This allows the sums to be written in the form:$$\Huge \sum_{n=0}^\infty\left(\frac{d c_n}{dt}+\lambda_nc_n(t)-h_n(t)\right)y_n(x)=0$$
+> Each $y_n(x)$ are linearly independent, the sum can only be zero when each individual term is zero
+
+So for each $n$ we require that:$$\Huge\frac{d c_n(t)}{dt}+\lambda_nc_n(t)-h_n(t)=0$$Which can always be solved for $c_n(t)$, as $h_n(t)$ is always known. We solve this using the [[First order differential equations#Test for exactness|integrating factor]] method to get the solution:$$\Huge c_n(t)=e^{-\lambda_nt}\left(a_n+\int_1^te^{\lambda_nt'}h_n(t')dt'\right)$$The homogenous solution is given by the term with constants $a_n$, while the inhomogeneous solution is given by the integral term.
