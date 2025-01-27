@@ -23,6 +23,9 @@ A permutation $\beta$ of $\{1,2,3\}$ given by $\beta(1)=3,\beta(2)=1,\beta(3)=2$
 ## k-cycles, transposition:
 Specific permutations in $S_n$ are cycles of length $k$ ($k$-cycles) for $1\leq k\leq n$, which are bijections for a given subset $\{i_1,\dots,i_k\}$ of size $k$ of $\{1,\dots,n\}$ as follows:$$\Huge \sigma(i_1)=i_2,\,\,\sigma(i_2)=i_3,\dots,\sigma(i_{k-1})=i_k,\,\,\sigma(i_k)=i_1$$Where all other elements in $\{1,\dots,n\}\setminus\{i_1,\dots,i_k\}$ are left fixed. We write such a $k$-cycle as:$$\Huge\begin{pmatrix}i_1&i_2&\dots&i_k\\i_2&i_3&\dots&i_1\end{pmatrix}$$Or as $(i_1\,i_2\,\dots\,i_k)$. Cycles of length $2$ (of the form $(i_1\,i_2)$) are called transpositions. One can show that the permutation $(i_1\,\dots\,i_k)$ has order $k$.
 
+## Orbits:
+A permutation $\sigma$ of $X$ determines in a natural way, a partition of $X$ into disjoint subsets, called the orbits of $\sigma$. This is done with an equivalence relation defined as:$$\Huge a\sim b\iff b=\sigma^n(a)$$for some $n\in\mathbb{Z}$. Equivalence classes are disjoint.
+
 # Permutation multiplication:
 
 Two cycles are called disjoint if their members do not intersect. For example $(1\,3\,5)$ and $(2\,4)$ are disjoint cycles, whereas $(1\,3\,5)$ and $(1\,2\,4)$ are not.
@@ -83,3 +86,4 @@ Let $n\geq2$. Then we define $D_n$ as the group with two generators $r,s$ subjec
 
 We write:$$\Huge D_n=\langle r,s:r^n=e,\,s^2=e,\,srs^{-1}=r^{-1}\rangle$$
 Each element in $D_n$ can be written as $r^js^k$ with $0\leq j<n$ and $0\leq k\leq 1$. To prove this, notice that any $\sigma\in \langle r,s\rangle$ has the form $r^{a_1}s^{b_1}\dots r^{a_k}s^{b_k}$ for each $a_i,b_j\in\mathbb{Z}$. We claim that $sr^a=r^{-a}s$, which follows from the fact $srs^{-1}=r^{-1}\implies sr=r^{-1}s$ then $(srs^{-1})^a=s^ar^as^{-a}$. If $a=2m-1$ then $s^ar^as^{-a}=s^{2m-1}r^as^{1-2m}=(s^2)^ms^{-1}r^as^1(s^2)^{-m}=s^{-1}r^as$, if $a=2m$ then $s^ar^as^{-a}=s^{2m}r^as^{-2m}=(s^2)^mr^a(s^2)^{-m}=r^a$. Therefore $(srs^{-1})^a=sr^as^{-1}=r^{-a}$, which implies $sr^a=r^{-a}s$ as required. Now each power of each generator can be shifted to the left or right to make $\sigma$ of form $r^js^k$ as required. 
+
