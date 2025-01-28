@@ -71,3 +71,13 @@ Take for example $f(z)=(e^z-1)z$. Then $f'(z)=e^z-1+e^zz=ze^z+e^z-1$ and $f''(z)
 Let $f:B_r(a)\rightarrow\mathbb{C}$ be holomorphic and not identically zero. If $f(a)=0$ then there exists $0<\rho\leq r$ such that:$$\Huge f(z)\neq0\,\forall z\in B_\rho(a)\setminus\{a\}$$That is, there exists a small neighbourhood that is not zero around a given zero.
 
 To prove this, assume $f(a)=0$. Then there exists $k>0$ and a holomorphic $h:B_r(a)\rightarrow\mathbb{C}$ such that $\forall z\in B_r(a)$ we have that $f(z)=(z-a)^kh(z)$ and $h(a)\neq0$. By continuity, we can find some $0<\rho\leq r$ such that $h(z)\neq0$ for all $z\in B_\rho(a)$. Note that $(z-a)^k\neq0$ on $B_\rho(a)\setminus\{a\}$. Therefore $f(z)$, which is the product of these terms, must not be zero on $B_\rho(a)\setminus\{a\}$.
+
+## Uniqueness of Analytic Continuation:
+Let $D',D$ be two domains such that $D'\subset D$. Then suppose that $f:D'\rightarrow\mathbb{C}$ is holomorphic. Then there exists at most one $g:D\rightarrow\mathbb{C}$ such that $g$ is holomorphic that satisfies:$$\Huge f(z)=g(z)\,\forall z\in D'$$We call such $g$ the analytic continuation of $f$ from $D'$ to $D$. For example, the function $g(z)=\frac{1}{1-z}$ is the analytic continuation of $\sum_{n=0}^\infty z^n$ from $B_1(0)$ to $\mathbb{C}\setminus\{1\}$.
+
+This has a corollary where for two holomorphic functions $f,g$ on a domain $D$, if we have $f(z)=g(z)$ for all $z\in B_r(a)$ we then have $f(z)=g(z)$ for all $z\in D$.
+
+To prove the uniqueness of analytic continuation, assume $g_1,g_2$ are both analytic continuations of the same function. Let $h(z)=g_1(z)-g_2(z)$. We then define the sets:$$\Huge\begin{align}
+D_0&=\{\omega\in D:\exists r>0:h(z)=0\forall z\in B_r(\omega)\}\\
+D_1&=\{\omega\in D:h^{(n)}(\omega)\neq0\text{ for some }n\geq0\}
+\end{align}$$The proof involves showing that $D_0$ is open and nonempty, $D_1$ is open, then that $D=D_0\cup D_1$ is a disjoint union.
