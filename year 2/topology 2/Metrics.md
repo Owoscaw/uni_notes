@@ -41,4 +41,20 @@ Proofs:
 
 # Continuity:
 
-Let $(X,d)$ be a metric space. A sequence in $X$ is a function $a:\mathbb{N}\rightarrow X$, we write $(a_n)$ for the sequence where $a_n=a(n)$.
+Let $(X,d)$ be a metric space. A sequence in $X$ is a function $a:\mathbb{N}\rightarrow X$, we write $(a_n)$ for the sequence where $a_n=a(n)$. Let $a\in X$, then the sequence $(a_n)_{n\in\mathbb{N}}$ converges to $a$ if for all $\epsilon>0$ there exists $n_0\in\mathbb{N}$ with $d(a,a_n)<\epsilon$ for all $n\geq n_0$. We write:$$\Huge \lim_{n\to\infty}a_n=a,\,\,a_n\to a$$
+Suppose that $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, $a\in X$, and $f:X\rightarrow Y$ is a function. Then the following are equivalent:
+> For all $\epsilon>0$ there exists $\delta>0$ such that:$$\Huge d_X(a,x)<\delta\implies d_Y(f(a),f(x))<\epsilon$$
+> For any sequence $(a_n)$ with $a_n\to^{d_X}a$ we have $f(a_n)\to^{d_Y}f(a)$
+> For all open $U\subseteq Y$ with $f(a)\in U$ we have that $f^{-1}(U)$ is a neighbourhood of $a$
+
+We prove the implications one after another.
+
+Assume the first statement holds and we have a sequence $(a_n)\in X$ such that $a_n\to^{d_X}a$. We then aim to show that $f(a_n)\to^{d_Y}f(a)$, that is for all $\epsilon>0$ there is some $n_0\in\mathbb{N}$ such that for $n\geq n_0$ we have $d_Y(f(a_n),f(a))<\epsilon$. So let $\epsilon>0$ be given, then the firsts statement implies that some $\delta>0$ exists that satisfies $d_X(a_n,a)<\delta$ then $d_Y(f(a_n),f(a))<\epsilon$. But also since $a_n\to^{d_X}a$ there exists some $n_0\in\mathbb{N}$ such that for all $n\geq n_0$ we have $d_X(a_n,a)<\delta$. Therefore for $n\geq n_0$ we have $d_Y(f(a_n),f(a))<\epsilon$ as required.
+
+Assume that the third statement does not hold. Then there exists some open $U$ with $f(a)\in U\subseteq X$ such that $f^{-1}(U)$ is not a neighbourhood of $a$. This means that for such $U$, there is no open set $V$ with $a\in V\subseteq f^{-1}(U)$. For all $n$, let $a_n\in B_X(a;1/n)\setminus\,f^{-1}(U)$. Since $d_X(a_n,a)<1/n$, this sequence converges to $a$. Also since $U$ is open there must exist some $\epsilon>0$ such that $B_Y(f(a),\epsilon)\subseteq U$. Hence since $f(a_n)\notin U$ we must have $d_Y(f(a_n),f(a))\geq\epsilon$ for all $n$, a contradiction. Therefore the second sequence implies the third.
+
+Assume the third statement holds and let $\epsilon>0$. Then $B_Y(f(a);\epsilon)$ is open, so we have $f^{-1}(B_Y(f(a);\epsilon))$ is a neighbourhood of $a$. Then for some $\delta>0$ we have $a\in B_X(a;\delta)\subseteq f^{-1}(B_Y(f(a);\epsilon))$. This means that if $d_X(a,x)<\delta$ so $x\in B_X(a;\delta)$ then $x\in f^{-1}(B_Y(f(a);\epsilon))$. So $f(x)\in B_Y(f(a);\epsilon)$ and $d_Y(f(a),f(x))<\epsilon$ as required.
+
+If a function $f$ as above satisfies the first statement, we call $f$ continuous at a point $a\in X$. If $f:X\rightarrow Y$ is continuous at all points $a\in X$ we call $f$ continuous.
+
+A function $f:X\rightarrow Y$ is continuous if and only if $f^{-1}(U)$ is open for all open $U\subseteq Y$. To prove this, consider any open set $U\subseteq Y$. Since $f$ is continuous, for any $a\in f^{-1}(U)\subseteq X$ we have that $f^{-1}(U)$ is a neighbourhood of $a$. It follows that there is some $\epsilon>0$ such that $a\in B_X(a;\epsilon)\subseteq f^{-1}(U)$, which means that $f^{-1}(U)$ is open as required. This proves the forward implication. To prove the converse, consider any point $a\in X$ and any open set $U$ with $f(a)\in U\subseteq Y$, that is $a\in f^{-1}(U)$. Our assumption that $f^{-1}(U)$ is open means that there exists some $\epsilon>0$ such that $a\in B_X(a;\epsilon)\subseteq f^{-1}(U)$, satisfying the third statement. This means that $f$ is indeed continuous.
