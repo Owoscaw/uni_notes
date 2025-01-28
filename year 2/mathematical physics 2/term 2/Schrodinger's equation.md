@@ -15,7 +15,7 @@ To determine if the constant is real or complex, we look at the conservation of 
 0&=-\frac{\hbar^2}{2m\alpha^*}\int\left(\frac{\partial^2}{\partial x^2}\psi^*\right)\psi dx-\frac{\hbar^2}{2m\alpha}\int\psi^*\left(\frac{\partial^2}{\partial x^2}\psi\right)dx\\
 &=-\frac{\hbar^2}{2m}\left(\frac{1}{\alpha^*}+\frac{1}{\alpha}\right)\int\psi^*\frac{\partial^2}{\partial x^2}\psi dx\\
 &=\frac{\alpha+\alpha^*}{|\alpha|^2}\int\psi^*\hat H\psi dx
-\end{align}$$In order for this to hold true, we must have $\alpha=-\alpha^*$. This means that $\alpha$ is an imaginary number. These observations suggest that $\alpha=i\hbar$, allowing us to write the specific form of $\hat H$ explictley as:$$\Huge i\hbar\frac{\partial \psi(x,t)}{\partial t}=\hat H\psi=-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi(x,t)+V(x)\psi(x,t)$$This is the Schrodinger equation. This is first order in $t$, second order in $x$ and linear in $\psi$.
+\end{align}$$In order for this to hold true, we must have $\alpha=-\alpha^*$. This means that $\alpha$ is an imaginary number. These observations suggest that $\alpha=i\hbar$, allowing us to write the specific form of $\hat H$ explicitly as:$$\Huge i\hbar\frac{\partial \psi(x,t)}{\partial t}=\hat H\psi=-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\psi(x,t)+V(x)\psi(x,t)$$This is the Schrodinger equation. This is first order in $t$, second order in $x$ and linear in $\psi$.
 
 As this is linear in $\psi$, the principle of superposition holds. That is, given two solutions $\psi_1,\psi_2$, any linear combination $a_1\psi_1(x,t)+a_2\psi_2(x,t)$ is also a solution with constants $a_1,a_2\in\mathbb{C}$.
 
