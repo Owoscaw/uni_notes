@@ -68,5 +68,6 @@ One can show that $f$ has a zero of order $m$ at $z=a$ if and only if:$$\Huge f(
 Take for example $f(z)=(e^z-1)z$. Then $f'(z)=e^z-1+e^zz=ze^z+e^z-1$ and $f''(z)=ze^z+2e^z$. $f$ has zeroes at $z=0$ and $z=2\pi ni$. $f'(0)=0$ and $f''(0)=z$ so we have that the order of $z=0$ is $2$. Alternatively we can replace $e^z$ with its power series to get $f(z)=z\sum_{n=1}^\infty\frac{z^n}{n!}=\sum_{n=1}^\infty\frac{z^{n+1}}{n!}=z^2\sum_{k=0}^\infty\frac{z^k}{(k+1)!}$ so by our above definition the zero $z=0$ has order $2$.
 
 ## Principle of isolated zeros (PIZ):
-Let $f:B_r(a)\rightarrow\mathbb{C}$ be holomorphic and not identically zero. If $f(a)=0$ then there exists $0<\rho\leq r$ such that:$$\Huge f(z)\neq0\,\forall z\in B_\rho(a)\setminus\{a\}$$That is, there exists a small neighbourhood that is not zero around a given zero
- 
+Let $f:B_r(a)\rightarrow\mathbb{C}$ be holomorphic and not identically zero. If $f(a)=0$ then there exists $0<\rho\leq r$ such that:$$\Huge f(z)\neq0\,\forall z\in B_\rho(a)\setminus\{a\}$$That is, there exists a small neighbourhood that is not zero around a given zero.
+
+To prove this, assume $f(a)=0$. Then there exists $k>0$ and a holomorphic $h:B_r(a)\rightarrow\mathbb{C}$ such that $\forall z\in B_r(a)$ we have that $f(z)=(z-a)^kh(z)$ and $h(a)\neq0$. By continuity, we can find some $0<\rho\leq r$ such that $h(z)\neq0$ for all $z\in B_\rho(a)$. Note that $(z-a)^k\neq0$ on $B_\rho(a)\setminus\{a\}$. Therefore $f(z)$, which is the product of these terms, must not be zero on $B_\rho(a)\setminus\{a\}$.
