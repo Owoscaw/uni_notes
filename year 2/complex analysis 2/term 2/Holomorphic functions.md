@@ -81,3 +81,12 @@ To prove the uniqueness of analytic continuation, assume $g_1,g_2$ are both anal
 D_0&=\{\omega\in D:\exists r>0:h(z)=0\forall z\in B_r(\omega)\}\\
 D_1&=\{\omega\in D:h^{(n)}(\omega)\neq0\text{ for some }n\geq0\}
 \end{align}$$The proof involves showing that $D_0$ is open and nonempty, $D_1$ is open, then that $D=D_0\cup D_1$ is a disjoint union.
+
+## Isolated points and Identity theorem:
+Given a set $S\subset\mathbb{C}$ we say that a point $\omega\in S$ is:
+> An isolated point of $S$ if there exists $\epsilon>0$ such that $B_\epsilon(\omega)\cap S=\{\omega\}$
+> A non-isolated point of $S$ if for every $\epsilon>0$ there exists $z\neq\omega\in S$ such that $B_\epsilon(\omega)\cap S$ contains $z$
+
+Let $f,g:D\rightarrow\mathbb{C}$ be holomorphic on a domain $D$. If $\exists\omega\in D$ such that $\omega$ is a non-isolated point of $S=\{z\in D:f(z)=g(z)\}$ then $f(z)=g(z)$ on $D$.
+
+For example let $f:\mathbb{C}\rightarrow\mathbb{C}$ be holomorphic and assume $f\left(\frac{1}{n}\right)=\sin\left(\frac{1}{n}\right)$ for all $n\geq1$. We aim to identify the function $f$. Since $f$ was assumed to be continuous, and by the sequential definition of continuity we can write:$$\Huge f(0)=f\left(\lim_{n\to\infty}\frac{1}{n}\right)=\lim_{n\to\infty}f\left(\frac{1}{n}\right)=\lim_{n\to\infty}\sin\left(\frac{1}{n}\right)=\sin(0)=0$$Then $S=\{z\in\mathbb{C}:f(z)=\sin z\}\subset\{0\}\cup\{\frac{1}{n}:n\geq1\}$ and the point $z=0$ is a non-isolated point of $S$. Therefore $f(z)=\sin(z)$ on $\mathbb{C}$.
