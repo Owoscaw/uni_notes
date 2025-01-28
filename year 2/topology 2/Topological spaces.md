@@ -22,4 +22,9 @@ Let $X,\tau$ be a topological space. Then $X,\emptyset$ are closed. Furthermore,
 We ask how we should define a topological subspace. That is, given $(X,\tau)$, if $A\subseteq X$ we ask how to set up a topological space $(A,\tau_A)$. For any set $B\subseteq A$, if $B\in\tau$ we would want $B\in\tau_A$. Also we must have $A\in\tau_A$ even if $A\notin\tau$. The solution then comes from saying that $B\in\tau_A$ if and only if $B=A\cap U$ for some $U\in\tau$.
 
 ## Topological subspaces:
-Let $(X,\tau)$ be a topological space, $A\subset X$, then$$\Huge \tau_A=\{A\cap U:U\in\tau\}$$is a topology, called the induced/subspace topology on $A$.
+Let $(X,\tau)$ be a topological space, $A\subset X$, then$$\Huge \tau_A=\{A\cap U:U\in\tau\}$$is a topology, called the induced/subspace topology on $A$. This is indeed a topology since:
+> $\emptyset=A\cap\emptyset\in\tau_A$ and $A=A\cap X\in\tau_A$
+> Since $\bigcup_{i\in I}U_i\in\tau$ we know $\bigcup_{i\in I}(A\cap U_i)=A\cap\bigcup_{i\in I}U_i\in\tau_A$
+> $(A\cap U_1)\cap(A\cap U_2)=A\cap(U_1\cap U_2)\in\tau_A$
+
+We propose that the metrics $d_p$ for $p\in[1,\infty)$ as well as $d_\infty$ all induce the same topology on $\Re^n$.
