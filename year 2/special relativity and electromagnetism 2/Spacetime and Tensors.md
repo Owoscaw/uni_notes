@@ -1,0 +1,10 @@
+# Minkowski space:
+
+Consider two events $A,B$ with spacetime coordinates $(t_A,x_A,y_A,z_A),(t_B,x_B,y_B,z_B)$ respectively. The separation between each coordinate is given by $\Delta t=t_B-t_A,\Delta x=x_B-x_A,\dots$. The invariant interval is then defined as:$$\Huge s(A,B)^2=c^2(\Delta t)^2-(\Delta x)^2-(\Delta y)^2-(\Delta z)^2$$This is similar to the definition of distance, however not in Euclidean space. If $s(A,B)^2=0$, the two events can be connected by the [[False Paradoxes#Spacetime diagrams|worldline]] of a photon:![[lightlike]]In this case, we call the events "light-like" separated. The vector from $A$ to $B$ given by $\underline v=(v^0,v^1,v^2,v^3)$. If $\underline v$ is light-like, it obeys the inner product defined by the invariant interval:$$\Huge |\underline v|^2=\underline v\cdot\underline v=(v^0)^2-(v^1)^2-(v^2)^2-(v^3)^2=s(\underline v,\underline v)=0$$Sometimes this vector is written as $v=(v^0,\underline v)$ where $\underline v$ is the regular Euclidean $3$-vector:$$\Huge s(v,v)=v\cdot v=(v^0)^2-\underline v\cdot\underline  v$$With the regular [[Inner product spaces|inner product]] in $\Re^3$.
+
+We can now define the Minkowski space as the four dimensional space [[Topological spaces|topologically]] identical to $\Re^4$. The Minkowski space is however not metrically similar to $\Re^4$ as we use the inner product defined above. This forms an [[Inner product spaces|inner product space]] with the inner product defined above.
+
+More generally for $v=(v^0,\underline v)$ and $w=(w^0,\underline w)$ the inner product between the two is:$$\Huge v\cdot w=v^0\cdot w^0-\underline w\cdot\underline v=v^0w^0-\sum_{i=1}^3v^iw^i$$
+For a light-like vector $v$, we call it future pointing if $v^0>0$ and past pointing if $v^0<0$.
+
+If $s^2(A,B)>0$ then we call $A$ and $B$ time-like separated, in which case $B$ is inside the [[False Paradoxes#Spacetime diagrams|lightcone]] of $A$. Similarly if $s^2(A,B)<0$ then we call $A$ and $B$ space-like separated, in which case $B$ is outside the lightcone of $A$:![[Spacetime and Tensors 2025-01-29 11.53.11.excalidraw]]
