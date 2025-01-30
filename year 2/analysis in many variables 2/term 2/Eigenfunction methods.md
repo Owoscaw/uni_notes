@@ -40,3 +40,42 @@ Consider the space of all well behaved functions on $a\leq x\leq b$. We define t
 
 ## Weighting functions:
 Sometimes the inner product definition includes a real, positive, weighting function defined as:$$\Huge \langle u,v\rangle=\int_a^b p(x)u(x)\overline{v(x)}dx$$Which corresponds to the eigenvalue problem:$$\Huge Ly_i(x)=\lambda_ip(x)y_i(x)$$
+## Adjoint operators:
+The [[Determinants and Adjoints#Adjoints|adjoint]] matrix $A^*$ of a matrix $A$ is defined by:$$\Huge (Au)\cdot v=u\cdot(A^*v)\text{ or }A^{-1}=\frac{1}{\det A}A^*$$Where $\underline x=A^{-1}\underline v$ is the solution to $A\underline x=\underline v$. We can extend this notion to function spaces by defining the adjoint operator:$$\Huge \langle Ly,w\rangle=\langle y,L^*w\rangle$$for functions $y,w$ defined on $x\in[a,b]$.
+
+Take for example $Ly=\frac{d^2y}{dx^2},y(a)=0,y'(b)-3y(b)=0$. We then aim to find a function $L^*w$ and boundary conditions such that:$$\Huge\int_a^bwy''dx=\int_a^byL^*wdx$$Which we can solve through integration by parts:$$\Huge\begin{align}
+\int_a^bwy''dx&=[wy']_a^b-\int_a^bw'y'dx\\
+&=[wy'-w'y]_a^b+\int_a^bw''ydx\\
+&=[wy'-w'y]_a^b+\langle y,L^*w\rangle
+\end{align}$$Where we have $L^*=\frac{d^2}{dx^2}$. To ensure that this remains an adjoint, we require that the boundary terms vanish. That is, $[wy'-w'y']_a^b=0$:$$\Huge\begin{align}
+[wy'-w'y']_a^b&=w(b)y'(b)-w'(b)y(b)-w(a)y'(a)+w'(a)y(a)\\
+&=y(b)(3w(b)-w'(b))-w(a)y'(a)+w'(a)\cdot0\\
+&=y(b)(3w(b)-w'(b))-w(a)y'(a)
+\end{align}$$These terms must vanish for all $y(b),y'(a)$ so we can infer the following conditions on $w$:
+>$3w(b)-w'(b)=0$
+>$w(a)=0$
+
+This together with $L^*=\frac{d^2}{dx^2}=L$ forms the solution.
+
+Note that if $L=L^*$ and $BC=BC^*$ the problem is self adjoint. If $BC\neq BC^*$, the operator can still be called self adjoint.
+
+# Eigenfunction properties:
+
+Eigenfunctions of the adjoint problem have the same eigenvalues to the original problem, that is:$$\Huge Ly=\lambda y\implies\exists w:L^*w=\lambda w$$This simply follows from the definition:$$\Huge \langle Ly,w\rangle=\lambda \langle y,w\rangle=\langle y,L^*w\rangle=\langle y,\lambda w\rangle\implies Lw=\lambda w$$
+
+We propose that eigenfunctions corresponding to different eigenvalues are orthogonal. That is if $Ly_j=\lambda_jy_j$ and $Ly_k=\lambda_ky_k$ then for $\lambda_j\neq\lambda_k$ we have $\langle y_j,w_k\rangle=0$:$$\Huge\begin{align}
+\lambda_j \langle y_j,w_k\rangle&=\langle \lambda_jy_j,w_k\rangle\\
+&=\langle Ly_j,w_k\rangle\\
+&=\langle y_j,L^*w_k\rangle\\
+&=\langle y_j,\lambda_kw_k\rangle\\
+&=\lambda_k\langle y_j,w_k\rangle
+\end{align}$$However $\lambda_j\neq\lambda_k$ so we must have $\langle y_j,w_k\rangle=0$ as required.
+
+## Inhomogeneous problems in terms of an operator:
+We aim to construct a solution to the following Boundary Value Problem (BVP):$$\Huge Lu=f(x),\,\,BC_i[u]=0$$with linear, homogeneous, separated boundary conditions represented by the second condition. Consider $h(x,t)$ and the assumed decomposition using the eigenfunction:$$\Huge\begin{align}
+\sum_{n=0}^\infty h_n(t)y_n(x)&=h(x,t)\\
+\sum_{n=0}^\infty h_n(t)\frac{Ly_n(x)}{\lambda_n}&=h(x,t)\\
+L\sum_{n=0}^\infty h_n(t)\frac{y_n(x)}{\lambda_n}&=h(x,t)\\
+\implies u=\sum_{n=0}^\infty h_n(t)\frac{y_n(x)}{\lambda_n}&,\,\,f=h(x,t)
+\end{align}$$Which is solved by the eigenvalue problem:$$\Huge Lu=f$$
+ 
