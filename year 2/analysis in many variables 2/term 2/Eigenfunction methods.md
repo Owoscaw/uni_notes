@@ -39,4 +39,4 @@ We now focus on the solutions to:$$\Huge Ly_n=\lambda_ny_n$$We aim to show that 
 Consider the space of all well behaved functions on $a\leq x\leq b$. We define the inner product on this space for functions $u(x),v(x)$:$$\Huge \langle u,v\rangle=\int_a^bu(x)\overline{v(x)}dx$$The norm of a function is then $||u||=\sqrt{\langle u,u\rangle}$.
 
 ## Weighting functions:
-Sometimes the inner product definition includes a real weighting function
+Sometimes the inner product definition includes a real, positive, weighting function defined as:$$\Huge \langle u,v\rangle=\int_a^b p(x)u(x)\overline{v(x)}dx$$Which corresponds to the eigenvalue problem:$$\Huge Ly_i(x)=\lambda_ip(x)y_i(x)$$
