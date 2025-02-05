@@ -77,5 +77,29 @@ We aim to construct a solution to the following Boundary Value Problem (BVP):$$\
 \sum_{n=0}^\infty h_n(t)\frac{Ly_n(x)}{\lambda_n}&=h(x,t)\\
 L\sum_{n=0}^\infty h_n(t)\frac{y_n(x)}{\lambda_n}&=h(x,t)\\
 \implies u=\sum_{n=0}^\infty h_n(t)\frac{y_n(x)}{\lambda_n}&,\,\,f=h(x,t)
-\end{align}$$Which is solved by the eigenvalue problem:$$\Huge Lu=f$$
+\end{align}$$Which is solved by the eigenvalue problem:$$\Huge Lu=f$$Note that this can be problematic if some $\lambda_n=0$. To solve this eigenvalue problem we use the following steps:
+> Solve the eigenvalue problem $Ly=\lambda y$ with $BC_1(a)=0,BC_2(b)=0$
+> Solve the adjoint problem $L^*w=\lambda w$ with $BC_1^*(a)=0,BC_2^*(b)=0$
+> Assume a solution in the form:$$\Huge y=\sum_{n=0}^\infty c_ny_n(x)$$To determine the constants $c_n$ we apply the inner product to $Ly=f$:$$\Huge\begin{align}
+Ly&=f(x)\\
+\implies\langle Ly,w_k\rangle&=\langle f,w_k\rangle\\
+\langle y,L^*w_k\rangle&=\langle f,w_k\rangle\\
+\langle y,\lambda_kw_k\rangle&=\langle f,w_k\rangle\\
+\implies\lambda_k \langle \sum c_ny_n,w_k\rangle&=\langle f,w_k\rangle \\
+\lambda_kc_k \langle y_k,w_k\rangle&=\langle f,w_k\rangle\\
+\implies c_k&=\frac{\langle f,w_k\rangle}{\lambda_k \langle y_k,w_k\rangle}
+\end{align}$$Where we have used the assumed series solution and the orthogonality of $y_n,w_k$. 
+
+Note that if the problem is fully self adjoint then $w_k=y_k$ and we have:$$\Huge \lambda_kc_k \langle y_k,y_k\rangle=\langle f,y_k\rangle$$In some sense, this generalises the Fourier series for any operator $L$.
+
+# Simple solutions:
+
+Take for example the second order constant coefficient differential equation:$$\Huge Ly=ay''+by'+cy=\lambda y$$We try $y=e^{mx}$, which reduces the equation to:$$\Huge am^2+bm+(c-\lambda)=0$$Which has solutions $m_+,m_-$. This implies that the solution takes form:$$\Huge y=A_1e^{m_+x}+A_2e^{m_-x}$$Then $BC_1$ relates $A_1,A_2$ and $BC_2$ can be used to determine a formula for $\lambda$. We can also normalise $\langle y,y\rangle=1$ to determine specific $A_1,A_2$.
+
+## Cauchy-Euler:
+Take the Cauchy-Euler equation defined as:$$\Huge Ly=ax^2y''+bxy'+cy=\lambda y$$We try $y=x^m$ which reduces the equation to:$$\Huge am(m-1)+bm+(c-\lambda)=0$$Which has solutions $m_+,m_-$. This implies that the solution takes form:$$\Huge y=A_1x^{m_+x}+A_2x^{m_-x}$$Then the same steps are taken to determine $A_1,A_2,\lambda$.
+
+# Inhomogeneous boundary conditions:
+
+Consider the following:$$\Huge Lu=f,\,\,B_1u=\gamma_1,\,\,B_2u=\gamma_2$$
  
