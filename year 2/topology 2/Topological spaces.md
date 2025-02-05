@@ -27,4 +27,7 @@ Let $(X,\tau)$ be a topological space, $A\subset X$, then$$\Huge \tau_A=\{A\cap 
 > Since $\bigcup_{i\in I}U_i\in\tau$ we know $\bigcup_{i\in I}(A\cap U_i)=A\cap\bigcup_{i\in I}U_i\in\tau_A$
 > $(A\cap U_1)\cap(A\cap U_2)=A\cap(U_1\cap U_2)\in\tau_A$
 
-We propose that the metrics $d_p$ for $p\in[1,\infty)$ as well as $d_\infty$ all induce the same topology on $\Re^n$.
+We propose that the metrics $d_p$ for $p\in[1,\infty)$ as well as $d_\infty$ all induce the same topology on $\Re^n$. This is known as the standard topology on $\Re^n$
+
+## Hausdorff topologies:
+A topological space $X$ is called Hausdorff if whenever $x,y\in X$ with $x\neq y$ there exists open sets $U,V\subseteq X$ with $x\in U,y\in V$ and $U\cap V=\emptyset$.
