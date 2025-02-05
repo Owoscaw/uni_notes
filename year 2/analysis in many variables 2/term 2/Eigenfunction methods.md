@@ -101,5 +101,33 @@ Take the Cauchy-Euler equation defined as:$$\Huge Ly=ax^2y''+bxy'+cy=\lambda y$$
 
 # Inhomogeneous boundary conditions:
 
-Consider the following:$$\Huge Lu=f,\,\,B_1u=\gamma_1,\,\,B_2u=\gamma_2$$
- 
+Consider the following:$$\Huge Lu=f,\,\,B_1u=\gamma_1,\,\,B_2u=\gamma_2$$This makes the derivation of $L^*$ and adjoint boundary conditions not-so straightforward. To deal with this we can decompose the problem:$$\Huge Lu_1=f(x),\,\,B_1u_1=0,\,\,B_2u_1=0$$And:$$\Huge Lu_2=0,\,\,B_1u_2=\gamma_1,\,\,B_2u_2=\gamma_2$$Then by linearity we have $u=u_1+u_2$. Previous methods then apply to each problem.
+
+## Incorporated method:
+Another method to solving these types of problems is the incorporated method. When using the adjoint identity:$$\Huge \langle Ly,w\rangle=\langle y,L^*w\rangle+[BC_i^*]_a^b$$we do not require each $BC_i$ evaluated at the boundary to vanish.
+
+Take for example $y''=f(x)$ with $0\leq x\leq 1$ and $y(0)=\alpha,y(1)=\beta$. The method then follows:
+> Solve the eigenproblem $y''=\lambda y$ with $y(0)=0$ and $y(1)=0$. This has solution $y_k(x)=\sin(k\pi x)$ with $\lambda_k=-k^2\pi^2$.
+> Follow the method for determining coefficients:$$\Huge\begin{align}
+y''&=f(x)\\
+\implies\int_0^1w_ky''\,dx&=\int_0^1w_kf\,dx\\
+[y'w_k-yw_k']_0^1+\int_0^1w_k''y\,dx&=\int_0^1w_kf\,dx\\
+[y'w_k-yw_k']_0^1+\lambda_k\int_0^1w_ky\,dx&=\int_0^1w_kf\,dx\\
+[y'w_k-yw_k']_0^1-k^2\pi^2c_k\int_0^1\sin^2(k\pi x)\,dx&=\int_0^1w_kf\,dx
+\end{align}$$Where we have used the assumed series solution and the fact that this problem is self adjoint ($y_k=w_k$). Now we have that $\int_0^1\sin^2(k\pi x)dx=1/2$. This reduces the equation to:$$\large
+\begin{align}[y'w_k-yw_k']_0^1&=-k\pi\cos(k\pi)y(1)+k\pi\cos(0)y(0)\\
+\implies-\beta k\pi(-1)^k+\alpha k\pi-\frac{1}{2}k^2\pi^2c_k&=\int_0^1f(x)\sin(k\pi x)dx
+\end{align}$$If $f(x)$ is known we can then solve for $c_k$, giving the solution in terms of a series.
+
+# Linear algebra connection:
+
+The [[Vector Product|dot product]] is analogous to our notion of inner product between functions, as well as the norm. The same is true for orthogonal vectors and orthogonal functions as well as the eigenvalue problem given by $A\underline v=\lambda\underline v$ and the eigenfunction product given by $Ly=\lambda y$. In the latter case, the matrix $A$ is analogous to the differential operator $L$.
+
+In linear algebra, a matrix of size $n\times n$ has at most $n$ complex eigenvalues, whereas if the differential operator $L$ is order $n$, there are still infinite eigenvalues.
+
+# Sturm-Liouville theory:
+
+The Sturm-Liouville theory of second order concerns weighted boundary value problems of the form:$$\Huge Ly=\lambda r(x)y$$Where $r(x)\geq0$ and $L$ is of the form:$$\Huge Ly=-\frac{d }{dx}\left(p(x)\frac{d y}{dx}\right)+q(x)y,\,\,a\leq x\leq b$$The functions $p,q,r$ are assumed to have real values. One can show that $L$ is self adjoint, the problem is fully self adjoint if the boundary conditions take form:$$\Huge\begin{align}
+\alpha_1y(a)+\alpha_2y'(a)&=0\\
+\alpha_3 y(b)+\alpha_2y'(b)&=0
+\end{align}$$Note that the definition of the inner product with a weighting function is slightly different:$$\Huge \langle y,w\rangle=\int_a^br(x)yw\,dx$$
