@@ -90,3 +90,27 @@ Given a set $S\subset\mathbb{C}$ we say that a point $\omega\in S$ is:
 Let $f,g:D\rightarrow\mathbb{C}$ be holomorphic on a domain $D$. If $\exists\omega\in D$ such that $\omega$ is a non-isolated point of $S=\{z\in D:f(z)=g(z)\}$ then $f(z)=g(z)$ on $D$.
 
 For example let $f:\mathbb{C}\rightarrow\mathbb{C}$ be holomorphic and assume $f\left(\frac{1}{n}\right)=\sin\left(\frac{1}{n}\right)$ for all $n\geq1$. We aim to identify the function $f$. Since $f$ was assumed to be continuous, and by the sequential definition of continuity we can write:$$\Huge f(0)=f\left(\lim_{n\to\infty}\frac{1}{n}\right)=\lim_{n\to\infty}f\left(\frac{1}{n}\right)=\lim_{n\to\infty}\sin\left(\frac{1}{n}\right)=\sin(0)=0$$Then $S=\{z\in\mathbb{C}:f(z)=\sin z\}\subset\{0\}\cup\{\frac{1}{n}:n\geq1\}$ and the point $z=0$ is a non-isolated point of $S$. Therefore $f(z)=\sin(z)$ on $\mathbb{C}$.
+
+We now prove the identity theorem. Let $\omega\in D$ be the non-isolated point in $S=\{z\in D:f(z)=g(z)\}$. Let $h(z)=f(z)-g(z)$ so that $h$ is holomorphic on $D$ and $h(\omega)=0$. By the principle of isolated zeros, there exists a ball $B_\rho(\omega)$ such that $h\neq0$ on $B_\rho(\omega)\setminus\{\omega\}$. Since $\omega$ is a non-isolated point, there must exist some $z\in B_\rho(\omega)$ such that $z\in S$, a contradiction. Therefore $h(z)=0$ for all $z\in D$, proving the theorem as required.
+
+# Harmonic functions:
+
+A real valued function $u:D\rightarrow\Re$ on some domain $D$ is called harmonic if $u(x,y)$ has continuous second order partial derivatives that satisfy:$$\Huge u_{xx}+u_{yy}=0$$for all $\underline x\in D$. This is known as Laplace's equation.
+
+Let $f:D\rightarrow\mathbb{C}$ be holomorphic on a domain $D$. Then writing $f=u+iv$ we have:$$\Huge u_{xx}+u_{yy}=0,\,\,v_{xx}+v_{yy}=0$$That is, the real and imaginary parts of $f$ are harmonic. We have seen that all holomorphic functions have partial derivatives of all orders and each are continuous. Since these are continuous, we have $f_{xy}=f_{yx}$. Using the [[Complex differentiation#Cauchy-Riemann equations|Cauchy-Riemann equations]] we can obtain:$$\Huge\begin{align}
+u_{xx}=v_{yx}&,\,\,u_{yy}=-v_{xy}=-(v_{yx})=-u_{xx}\\
+v_{yy}=-u_{xy}&,\,\,v_{xx}=-u_{yx}=-(u_{xy})=-v_{yy}
+\end{align}$$So we see that the real and imaginary parts of $f$ are each harmonic, making the function $f$ harmonic.
+
+## Harmonic conjugates:
+Let $u:D\rightarrow\Re$ be harmonic on a starlike domain $D$. Then there exists harmonic $v:D\rightarrow\Re$ such that $f=u+iv$ is holomorphic on $D$. Such function $v$ is called the harmonic conjugate of $u$, which is unique up to a real constant. To prove this, we need the following proposition:
+
+Let $f:D\rightarrow\mathbb{C}$ be holomorphic on a starlike domain $D$. Then $f$ has a holomorphic anti-derivative on $D$. The proof is by [[Cauchy's theorem]], which states $\int_\gamma fdz=0$ for all closed $\gamma\subset D$. By the converse FTOC, there exists a holomorphic antiderivative as required.
+
+To prove the existence of the harmonic conjugate, consider the function:$$\Huge g(z)=A(x,y)+iB(x,y)$$with $A=u_x,B=-u_y$. Assuming $u$ is harmonic, we now verify the C-R equations for $g$: $$\Huge\begin{align}
+A_x&=u_{xx}=-u_{yy}=B_y\\
+A_y&=u_{xy}=-(-u_{yx})=-B_x
+\end{align}$$therefore $g$ is holomorphic. By the above proposition, $g$ has a holomorphic antiderivative $F:D\rightarrow\mathbb{C}$ such that $F'(z)=g(z)$ for all $z\in D$. Let $F=A+iB$, then $F'=A_x-iA_y=g$. This is only true when $A_x=u_x$ and $A_y=u_y$, which implies $A=u+c$ for some real $c$. Now let $f=u+iB=(A-C)+iB=F-c$, so we have the proof as required. One can also show that such $f$ is unique.
+
+## The Dirichlet problem:
+Let $D$ be a domain in $\mathbb{C}$. Let $g:\partial D\rightarrow\Re$ be continuous. The Dirichlet problem aims to find a continuous function $\mu:\bar D\rightarrow\Re$ such that $\mu$ is harmonic on $D$ and matches $g$ on $\partial D$.
