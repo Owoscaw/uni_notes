@@ -113,4 +113,7 @@ A_y&=u_{xy}=-(-u_{yx})=-B_x
 \end{align}$$therefore $g$ is holomorphic. By the above proposition, $g$ has a holomorphic antiderivative $F:D\rightarrow\mathbb{C}$ such that $F'(z)=g(z)$ for all $z\in D$. Let $F=A+iB$, then $F'=A_x-iA_y=g$. This is only true when $A_x=u_x$ and $A_y=u_y$, which implies $A=u+c$ for some real $c$. Now let $f=u+iB=(A-C)+iB=F-c$, so we have the proof as required. One can also show that such $f$ is unique.
 
 ## The Dirichlet problem:
-Let $D$ be a domain in $\mathbb{C}$. Let $g:\partial D\rightarrow\Re$ be continuous. The Dirichlet problem aims to find a continuous function $\mu:\bar D\rightarrow\Re$ such that $\mu$ is harmonic on $D$ and matches $g$ on $\partial D$.
+Let $D$ be a domain in $\mathbb{C}$. Let $g:\partial D\rightarrow\Re$ be continuous. The Dirichlet problem aims to find a continuous function $\mu:\bar D\rightarrow\Re$ such that $\mu$ is harmonic on $D$ and matches $g$ on $\partial D$:![[year 2/complex analysis 2/term 2/drawings/dirichlet]]
+For example, let $D=\{x+iy\in\mathbb{C}:2<y<5\}$ and $g(x,y)=\begin{cases}4&y=2\\13&y=5\end{cases}$. Then we have $\bar D=\{x+iy\in\mathbb{C}:2\leq y\leq 5\}$ and $\partial D=\{x+iy\in\mathbb{C}:y=2\text{ or }y=5\}$. We notice that $g$ does not depend on $x$, so we expect $\mu_x=0\implies\mu_{xx}=0\implies\mu_{yy}=-\mu_{xx}=0$. This is only possible if $\mu_y=a$, so we expect $\mu=ay+b$ for constants $a,b$. We can use the definition of $g$ and to find that $a=3$ and $b=-2$, so we get that $\mu=3y-2$.
+
+Suppose that $f=u+iv$ is holomorphic on $D$. Suppose that $\mu$ is harmonic on $f(D)$, then $\tilde\mu=\mu\circ f=\mu(\Re(f),\Im(f))$ is harmonic on $D$.
