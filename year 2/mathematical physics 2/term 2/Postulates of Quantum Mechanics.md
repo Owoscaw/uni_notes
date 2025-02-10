@@ -6,3 +6,5 @@
 >The possible outcomes of a measurement (of an operator $\hat A$) are given by the [[Eigenvalues, Eigenvectors, and Diagonalisation|eigenvalues]] of $\hat A$. How these values are assigned depends on whether the spectrum of eigenvalues is [[Hilbert space#Discrete spectra|discrete]] or [[Hilbert space#Continuous spectra|continuous]].
 >If a measurement of $\hat A$ has an outcome $a_n\text{ or }a_k$, the wave function collapses to $\phi_n(x)\text{ or }\phi_k(x)$ for the discrete or continuous case respectively.
 >$\psi(x,t)$ evolves according to the [[Schrodinger's equation|Schrodinger equation]]:$$\Huge i\hbar\frac{\partial }{\partial t}\psi(x,t)=\hat H\psi(x,t)$$
+
+Note that typically, each eigenfunction $\phi_n(x)$ evolves with time.
