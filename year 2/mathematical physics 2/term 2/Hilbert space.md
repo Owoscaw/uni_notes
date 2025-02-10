@@ -22,7 +22,11 @@ For a Hermitian operator $A$ that is an eigenstate ($A\psi_a(x)=a\psi_a(x)$) we 
 
 We propose that eigenvalues of a Hermitian operator are real, and that distinct eigenvalues correspond to orthogonal eigenfunctions. 
 
+The spectrum of all eigenvalues of a Hermitian operator can either each be discrete or continuous.
+
 ## Discrete spectra:
+When the spectrum of eigenvalues is discrete, the following is true:$$\Huge \hat A\phi_n(x)=a_n\phi_n(x)$$where $\hat A$ is the Hermitian operator, and $\phi_n(x)$ is the $n$th eigenfunction with corresponding $n$th eigenvalue $a_n$, for $n\in\mathbb{Z}$.
+
 When a wave function is not an eigenfunction of some operator, it can be decomposed into a linear combination of basis eigenfunctions. We have:$$\Huge\begin{align}
 \langle \phi_m,\phi_n\rangle&=\delta_{mn}\\
 \psi(x)&=\sum_nc_n\phi_n(x)\\
@@ -32,7 +36,7 @@ When a wave function is not an eigenfunction of some operator, it can be decompo
 Returning to the particle in a box example we have that the basis is formed by $\phi_n$ as before and:$$\Huge\hat H=\frac{\hat p^2}{2m}=-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}$$We then see that:$$\Huge \hat H\phi_n(x)=E_n\phi_n(x)=\frac{\hbar^2}{2m}\left(\frac{n\pi}{L}\right)^2\phi_n(x)$$So we see that there is a discrete spectrum of eigenfunctions for this operator. Here, $|c_n|^2$ is the probability that the measurement of energy is given by $E_n$.
 
 ## Continuous spectra:
-We have the similar equations to the discrete case given as follows:$$\large\begin{align}
+When the spectrum of eigenvalues is continuous, the following is true:$$\Huge \hat A\phi_k(x)=a_k\phi_k(x)$$where $k\in\Re$. We have the similar equations to the discrete case given as follows:$$\large\begin{align}
 \langle \phi_a,\phi_{a'}\rangle&=\delta(a-a')\\
 \psi(x)&=\int_\Re c(a)\phi_a(x)da\\
 \langle \phi_a,\psi\rangle=\int_\Re c(a')\langle \phi_a,\phi_{a'}\rangle da'&=\int_\Re c(a')\delta(a-a')da'=c(a)\\
