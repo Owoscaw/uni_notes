@@ -145,4 +145,36 @@ Assume we have the operator:$$\Huge Ly=a_2(x)y''(x)+a_1(x)y'(x)+a_0(x)y(x)$$If $
 Now we have:$$\Huge \hat Ly=-\frac{d }{dx}(py')+qy$$and we are solving the eigenfunction problem:$$\Huge \hat Ly=\mu f$$
 ## SL properties:
 > Orthogonality:$$\Huge \int_a^by_k(x)y_j(x)r(x)dx=0$$
-> Eigenvalues are real, as $p,q,r$ are real. We can use $L=\bar L$
+> Eigenvalues are real, as $p,q,r$ are real. We can use $L=\bar L$ with $Ly_K=\lambda_ky_k$ to show this:$$\Huge\begin{align}
+L\bar y_k&=\bar\lambda_k\bar y_k\\
+\langle y_k,L\bar y_k\rangle&=\bar\lambda_k \langle y_k,r\bar y_k\rangle\\
+&=\langle Ly_k,\bar y_k\rangle\\
+&=\lambda_k \langle ry_k,\bar y_k\rangle\\
+&=\lambda_k \langle y_k,r\bar y_k\rangle\\
+\implies\lambda_k&=\bar\lambda_k
+\end{align}$$So each $\lambda_k$ is real. Moreover if $0\leq x\leq b$ is finite, then the eigenvalues are discrete and countable with $\lim_{k\to\infty}\lambda_k=\infty$.
+>Eigenfunctions are complete, that is the $\{y_k\}$ form a complete set. For any $f(x)$ with $\int_\Re f^2r\,dx<\infty$ (square integrable functions) we can write $f(x)=\sum_{n=0}^\infty c_ny_n(x)$. We take the inner product with $r(x)y_k(x)$:$$\Huge\begin{align}
+\langle ry_k,f\rangle&=\langle ry_k,\sum c_jy_j\rangle\\
+&=\sum c_k \langle ry_k,y_j\rangle\\
+&=c_j \langle ry_j,y_j\rangle
+\end{align}$$by orthogonality. This set of functions $y_k$ can represent the $h(x,t)$ in the PDE model.
+
+## Regular SL problems:
+Assume:
+>$p(x),r(x)>0$ on $a\leq x\leq b$
+>$q(x)\geq0$
+>BCs have $\alpha_1\alpha_2\leq0,\alpha_3\alpha_4\geq0$
+
+We can then show that $\lambda_k\geq0$ using the fact that $\langle y_k,Ly_k-\lambda_kry_k\rangle=0$:$$\Huge\begin{align}
+\langle y_k,Ly_k-\lambda_kry_k\rangle&=-\int_a^by(py')'dx+\int_a^byqydx-\int_a^by\lambda rydx\\
+&=\int_a^by(py')'dx+\int_a^bqy^2dx-\lambda\int_a^bry^2dx\\
+&=[-pyy']_a^b+\int_a^bp(y')^2dx+\int_a^bqy^2dx-\lambda\int_a^bry^2dx\\
+&=0\\
+\implies\lambda&=\frac{\left[\int_a^bp(y')^2+qy^2dx-[pyy']_a^b\right]}{\int_a^bry^2dx}\geq0
+\end{align}$$This shows that without a forcing function $h(x,t)$ we have $c_n(t)=e^{-\lambda_nt}$ then since $\lambda\geq0$ we see that each mode exponentially decays with time.
+
+# Fredholm alternative:
+
+The Fredholm alternative holds that either the homogenous adjoint problem $L^*w=0$ has a non-trivial solution, or the inhomogeneous boundary value problem $Ly=f(x)$ with relevant boundary conditions has a unique solution.
+
+If we have a non-trivial solution to $L^*w=0$, then 
