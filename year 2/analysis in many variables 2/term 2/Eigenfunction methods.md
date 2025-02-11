@@ -127,7 +127,22 @@ In linear algebra, a matrix of size $n\times n$ has at most $n$ complex eigenval
 
 # Sturm-Liouville theory:
 
-The Sturm-Liouville theory of second order concerns weighted boundary value problems of the form:$$\Huge Ly=\lambda r(x)y$$Where $r(x)\geq0$ and $L$ is of the form:$$\Huge Ly=-\frac{d }{dx}\left(p(x)\frac{d y}{dx}\right)+q(x)y,\,\,a\leq x\leq b$$The functions $p,q,r$ are assumed to have real values. One can show that $L$ is self adjoint, the problem is fully self adjoint if the boundary conditions take form:$$\Huge\begin{align}
+The Sturm-Liouville (SL) theory of second order concerns weighted boundary value problems of the form:$$\Huge Ly=\lambda r(x)y$$Where $r(x)\geq0$ and $L$ is of the form:$$\Huge Ly=-\frac{d }{dx}\left(p(x)\frac{d y}{dx}\right)+q(x)y,\,\,a\leq x\leq b$$The functions $p,q,r$ are assumed to have real values. One can show that $L$ is self adjoint, the problem is fully self adjoint if the boundary conditions take form:$$\Huge\begin{align}
 \alpha_1y(a)+\alpha_2y'(a)&=0\\
 \alpha_3 y(b)+\alpha_2y'(b)&=0
 \end{align}$$Note that the definition of the inner product with a weighting function is slightly different:$$\Huge \langle y,w\rangle=\int_a^br(x)yw\,dx$$
+## Inhomogeneous SL problems:
+Since the SL operator is self adjoint, the eigenfunction expansion is straightforward:$$\Huge\begin{align}
+Ly&=f(x)\\
+\langle Ly,y_k\rangle&=\langle f,y_k\rangle\\
+\langle y,Ly_k\rangle&=\langle f,y_k\rangle\\
+\implies \langle y,\lambda_kry_k\rangle&=\langle f,y_k\rangle\\
+\implies\lambda_kc_k \langle y_k,ry_k\rangle&=\langle f,y_k\rangle
+\end{align}$$where we have assumed a series solution in the last implication. This solution has associated coefficient formula:$$\Huge y(x)=\sum_{k=0}^\infty c_ky_k(x),\,\,c_k=\frac{\langle f,y_k\rangle}{\lambda_k \langle y_k,ry_k\rangle }$$
+## Transforming an operator to SL form:
+Assume we have the operator:$$\Huge Ly=a_2(x)y''(x)+a_1(x)y'(x)+a_0(x)y(x)$$If $a_2(x)\neq0$ it is possible to convert $L$ to SL form. To do this, we use the integrating factor method:$$\Huge \mu a_2y''+\mu a_1y'+\mu a_0y\rightarrow-\frac{d }{dx}(p'y)+qy$$---
+
+Now we have:$$\Huge \hat Ly=-\frac{d }{dx}(py')+qy$$and we are solving the eigenfunction problem:$$\Huge \hat Ly=\mu f$$
+## SL properties:
+> Orthogonality:$$\Huge \int_a^by_k(x)y_j(x)r(x)dx=0$$
+> Eigenvalues are real, as $p,q,r$ are real. We can use $L=\bar L$
