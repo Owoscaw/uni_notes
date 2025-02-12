@@ -39,4 +39,4 @@ Suppose $\gamma$ is a simple closed contour. Then $\mathbb{C}\setminus\gamma$ ca
 
 Given a simple closed contour, we can give $\gamma$ an orientation such that:$$\Huge I(\gamma,\omega)=\begin{cases}1&\omega\in D_\gamma^{\text{int}}\\0&\omega\in D_\gamma^{\text{ext}}\end{cases}$$
 ## Cauchy's theorem for simple closed contours
-Let $\gamma$ be a simple closed contour and let $f$ be holomorphic on $D_\gamma^{\text{int}}\cup\gamma$. Then for any $\omega\in D_\gamma^{\text{int}}$
+Let $\gamma$ be a simple closed contour and let $f$ be holomorphic on $D_\gamma^{\text{int}}\cup\gamma$. Then for any $\omega\in D_\gamma^{\text{int}}$:$$\Huge \int_\gamma f(z)dz=0$$and:$$\Huge \int_\gamma\frac{f(z)}{z-\omega}dz=2\pi if(\omega)$$for some $\omega\in D_\gamma^{\text{int}}$.
