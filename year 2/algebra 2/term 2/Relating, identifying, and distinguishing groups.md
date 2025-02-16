@@ -47,3 +47,20 @@ Note that for two subsets $E_1,E_2$ of a group $G$ we write:$$\Huge E_1\circ E_2
 > $hk=kh\,\,\forall h\in H,\forall k\in K$
 
 Then we have:$$\Huge G\cong H\times K$$
+# Groups as permutation groups:
+
+The group of rotational symmetries of the unit cube in $\Re^3$ is isomorphic to [[Families of groups#Permutation groups|$S_4$]].
+
+# Cayley's Theorem:
+
+Each group $G$ is isomorphic to a subgroup of some permutation group $S_X$. In fact, such $X$ can be taken to be the set $G$.
+
+To prove this, assign a permutation of $G$ to each $g\in G$ by "left translation":$$\Huge L_g:G\rightarrow G,\,\,h\mapsto g\circ h$$for all $h\in G$. We must first check that $L_g$ is a bijection, so assume $L_g(h_1)=L_g(h_2)$ for $h_1,h_2\in G$. Then we have $gh_1=gh_2\implies h_1=h_2$ by applying $g^{-1}$ from the left. So we have injectivity, we move on to show surjectivity. Assume $k\in G$ and write $L_g(h)=k$ for some $h\in G$. Then we have $gh=k$ and putting $h=g^{-1}k$ we have surjectivity. Now write:$$\Huge G'=\{L_g\in S_G:g\in G\}\subset S_G$$We must then show that $G'<S_G$ with the binary operation induced from $S_G$:
+>$G'\neq\emptyset$ as we have $L_e=e_{S_G}$
+>$G'$ is closed under composition of bijections as for $L_g,L_h\in G'$ for $g,h\in G$ we have, for all $a\in G$, $L_g\circ L_h(a)=L_g(ha)=g(ha)=(gh)a=L_{gh}(a)$
+>$G'$ is closed under inverses as $L_g\circ L_{g^{-1}}(a)=L_g(g^{-1}a)=g(g^{-1}a)=a$ for all $a\in G$
+
+So we have that:$$\Huge\begin{align}
+\psi:G&\rightarrow G'\\
+g&\mapsto L_g
+\end{align}$$is a group homomorphism. We claim that $\psi$ is indeed an isomorphism of groups. $\psi$ is trivially surjective so we only show injectivity. Assume $\psi(g)=\psi(h)$, then $L_g(a)=L_h(a)$ for all $a\in G$. Now we have $ga=ha$, taking $a=e$ we get injectivity, showing that $\psi$ is a group isomorphism as required.
