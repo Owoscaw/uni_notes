@@ -20,3 +20,22 @@ To prove this, observe that for $m\in\mathbb{Z}$ we have:$$\Huge\begin{align}
 \int_{|z-a|=\rho}\frac{f(z)}{(z-a)^{m+1}}dz&=\int_{|z-a|=\rho}\sum_{n=-\infty}^\infty c_n(z-a)^{n-m-1}dz\\
 &=\sum_{n=-\infty}^\infty c_n\int_{|z-a|=\rho}(z-a)^{n-m-1}dz
 \end{align}$$where summation and integration have been interchanged as the sum converges absolutely on $|z-a|=\rho$. By the usual application of [[Cauchy's theorem]] and [[Cauchy's theorem#Cauchy's Integral Theorem|CIF]] we get:$$\Huge \int_{|z-a|=\rho}(z-a)^{n-m-1}dz=\begin{cases}2\pi i&n=m\\0&n\neq m\end{cases}$$therefore every element of the sum is zero except for the case where $n=m$:$$\Huge \int_{|z-a|=\rho}\frac{f(z)}{(z-a)^{m+1}}dz=2\pi i c_m$$this shows that the integral does not depend on $\rho$ and that coefficient are unique to the Laurent series.
+
+## Holomorphic functions on annuli:
+Let $f:A\rightarrow\mathbb{C}$ be holomorphic on some annulus $A=A_{r,R}(a)$. Then there exist unique $c_n\in\mathbb{C}$ such that:$$\Huge f(z)=\sum_{n=-\infty}^\infty c_n(z-a)^n$$for $z\in A$. The annulus of convergence of this Laurent series then contains $A$. This is called the Laurent series of $f$ on $A$.
+
+The strategy for proof is to show that $f$ has a Laurent series on $A_{\rho_1,\rho_2}(a)$ where $r<\rho_1<\rho_2<R$. Assume that there exists another Laurent series on a larger annulus $A_{\rho_1',\rho_2'}(a)$ where $r<\rho_1'<\rho_1<\rho_2<\rho_2'<R$, then by [[Holomorphic functions#Analytic continuation|Analytic continuation]] we must have that the Laurent series are identical. Consider the contours defined by:$$\Huge\begin{align}
+\gamma_1(t)&=a+\rho_1e^{-2\pi t}\\
+\gamma_2(t)&=a+\rho_2e^{2\pi t}
+	\end{align}$$![[annuli]]Fix some $\omega\in A_{\rho_1,\rho_2}(a)$. We will then show that $f$ has Laurent series at $\omega$. By the general CIF theorem, we have:$$\Huge 2\pi iI(\Gamma;\omega)f(\omega)=\int_\Gamma\frac{f(z)}{z-\omega}dz$$For such $\omega$, the winding number is $1$ for the larger contour and $0$ for the smaller contour, so $I(\Gamma;\omega)=1$. That is to say:$$\Huge f(\omega)=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\omega}dz=\frac{1}{2\pi i}\int_{\gamma_1}\frac{f(z)}{z-\omega}+\frac{1}{2\pi i}\int_{\gamma_2}\frac{f(z)}{z-\omega}dz$$One can show that:$$\Huge \frac{1}{z-\omega}=\frac{1}{z-a}\sum_{n=0}^\infty\left(\frac{\omega-a}{z-a}\right)^n$$which is valid since $\left|\frac{\omega-a}{z-a}\right|=\frac{|\omega-a|}{\rho_2}<1$. Then following the proof of the [[Cauchy's theorem#Cauchy's Integral Theorem|C-T]] theorem we can show that:$$\Huge f_2(z)=\sum_{n=0}^\infty c_n(z-a)^n$$The problem then arises from the fact that on $\gamma_1$ we have $\left|\frac{\omega-a}{z-a}\right|=\frac{|\omega-a|}{\rho_1}>1$. Note that:$$\Huge \frac{1}{z-\omega}=-\frac{1}{\omega-z}=-\frac{1}{\omega-a+a-z}=-\frac{1}{\omega-a}\frac{1}{1-\frac{z-a}{\omega-a}}$$therefore:$$\Huge\begin{align} 
+f_1(\omega)&=\frac{1}{2\pi i}\int_{\gamma_1}\frac{f(z)}{z-\omega}dz\\
+&=\frac{1}{2\pi i}\int_{\gamma_1}f(z)\left(-\frac{1}{\omega-a}\right)\sum_{m=0}^\infty\left(\frac{z-a}{\omega-a}\right)^ndz\\
+&=\sum_{m=0}^\infty\left(-\frac{1}{2\pi i}\int_{\gamma_1}f(z)(z-a)^mdz\right)(\omega-a)^{-(m+1)}\\
+&=\sum_{n=-\infty}^{-1}\left(-\frac{1}{2\pi i}\int_{\gamma_1}\frac{f(z)}{(z-a)^{n+1}}dz\right)(\omega-a)^n\\
+&=\sum_{n=-\infty}^{-1}c_n(\omega-a)^n
+\end{align}$$This shows that the function can be written as a Laurent series.
+
+# Classification of Isolated singularities:
+
+We say that a holomorphic function $f:B_R^*(a)\rightarrow\mathbb{C}$ has an isolated singularity at $z=a$. Given such a function, exactly one of the following is true:
+> $f$ has a removable singularity at $z=a$ if the principal part is empty, that is $c_n=0$ for $n<0$.
