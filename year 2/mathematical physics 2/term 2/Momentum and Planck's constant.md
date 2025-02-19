@@ -45,3 +45,30 @@ Consider the [[Wave function#Gaussian wave function|Gaussian wave function]]. We
 \end{align}$$So we see that $\Delta p=\sqrt{\langle p^2\rangle-\langle p\rangle}^2=\frac{\hbar}{2\Delta}$. Note that the product of $\Delta x$ and $\Delta p$ becomes invariant of $\Delta$:$$\Huge\Delta x\Delta p=\Delta\cdot\frac{\hbar}{2\Delta}=\frac{\hbar}{2}$$This means that an attempt to localise the particle by reducing $\Delta x$ has to result in an increase in $\Delta p$, the momentum uncertainty.
 
 # Energy:
+
+Given the wave function $\psi$ of a particle moving through a potential $V(x)$ we ask how we can determine the possible outcomes of energy measurement and their associated probabilities. To do this we must construct an orthonormal basis of eigenfunctions of [[Schrodinger's equation#Hamiltonian operator|$\hat H$]]. We therefore assume the following:
+> There is a discrete set of eigenvalues.
+> There is a unique eigenfunction $\phi_j(x)$ that solves:$$\Huge \hat H\phi_j(x)=E_j\phi_j(x)$$for each eigenvalue $E_j$.
+
+We choose the basis to be orthonormal and expand the wave function over the basis:$$\Huge \psi(x)=\sum_jc_j\phi_j(x)$$which means that the probability to measure $E_j$ is $|c_j|^2$. We can therefore compute energy expectation by summing over the weighted probabilities of possible energy outcomes:$$\Huge \langle H\rangle=\sum_j|c_j|^2E_j$$
+Suppose that $V(x)\geq V_0$ is bounded below. Then we propose that $\langle H\rangle\geq V_0$. The energy expectation value is given by:$$\Huge\begin{align}
+\langle H\rangle&=\langle \psi,\hat H\psi\rangle\\
+&=\frac{1}{2m}\langle \psi,\hat p^2\psi\rangle+\langle \psi,V(x)\psi\rangle\\
+&=\frac{1}{2m}\langle \hat p\psi,\hat p\psi\rangle+\langle \psi,V(x)\psi\rangle
+\end{align}$$for the first term we see that$$\Huge \langle \hat p\psi,\hat p\psi\rangle=\int_{-\infty}^\infty|\hat p\psi(x)|^2dx=\int_{-\infty}^\infty|-i\psi'(x)|^2dx\geq0$$therefore we say$$\Huge \langle H\rangle\geq \langle \psi,V(x)\psi\rangle=\int_{-\infty }^\infty V(x)|\psi(x)|^2dx\geq V_0\int_{-\infty}^\infty|\psi(x)|^2dx=V_0$$where $V_0$ is the absolute minimum value of the potential function $V(x)$. To rule out equality we see that $\langle \hat p\psi,\hat p\psi\rangle=0$ implies that $\psi(x)$ is a constant, as this is determined by integrating over the spatial derivative of $\psi$. Therefore $\langle H\rangle>V_0$.
+
+If $\psi(x)$ is a normalised eigenfunction of $H$ with corresponding eigenvalue $E$ then $E>V_0$, which is a consequence of $\langle H\rangle=\langle \psi,H\psi\rangle=E \langle \psi,\psi\rangle=E>0$. The smallest eigenvalue $E>V_0$ is sometimes called the zero-point energy.
+
+## Non-degeneracy:
+We propose that the spectrum of the Hamiltonian is non-degenerate. 
+
+Consider a pair of square normalisable eigenfunctions with the same eigenvalue. We prove that $\psi_1(x)\propto\psi_2(x)$, which implies that there exists a unique normalised eigenfunction for each eigenvalue $E$. Expending the equations $\hat H\psi_1(x)=E\psi_1(x),\hat H\psi_2(x)=E\psi_2(x)$ gives:$$\Huge\begin{align}
+-\frac{\hbar }{2m}\partial_x^2\psi_1(x)+V(x)\psi_1(x)&=E\psi_1(x)\\
+-\frac{\hbar}{2m}\partial_x^2\psi_2(x)+V(x)\psi_2(x)&=E\psi_2(x)
+\end{align}$$Multiplying the top equation by $\psi_2(x)$ and the bottom by $\psi_1(x)$ then subtracting we see that:$$\Huge 0=\psi_1\partial_x^2\psi_2-\psi_2\partial_x^2\psi_1=\partial_x(\psi_1\partial_x\psi_2-\psi_2\partial_x\psi_1)$$where the contributions proportional to $V(x),E$ vanish. Therefore we have:$$\Huge \psi_1\partial_x\psi_2-\psi_2\partial_x\psi_1=c\in\mathbb{C}$$Evaluating this at infinity shows that $c=0$, as we require the wave functions to vanish at infinity. Therefore we have:$$\Huge\begin{align}
+\psi_1\partial_x\psi_2-\psi_2\partial_x\psi_1&=0\\
+\implies\frac{\partial_x\psi_1}{\psi_1}-\frac{\partial_x\psi_2}{\psi_2}&=\\
+\implies\partial_x(\log\psi_1-\log\psi_2)&=0\\
+\implies\log\frac{\psi_1}{\psi_2}&=A\\
+\implies\psi_1=e^A\psi_2&=B\psi_2
+\end{align}$$for some constant $B\in\mathbb{C}$. Therefore we have that $\psi_1(x)$ and $\psi_2(x)$ are the same eigenfunction, and the set of eigenfunctions/values are non-degenerate.
