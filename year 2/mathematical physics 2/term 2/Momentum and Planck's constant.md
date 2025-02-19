@@ -43,3 +43,5 @@ Consider the [[Wave function#Gaussian wave function|Gaussian wave function]]. We
 &=\frac{\hbar^2}{2\Delta^2}\cdot 1-\frac{\hbar^2}{4\Delta^4}\langle x^2\rangle\\
 &=\frac{\hbar^2}{4\Delta^2}
 \end{align}$$So we see that $\Delta p=\sqrt{\langle p^2\rangle-\langle p\rangle}^2=\frac{\hbar}{2\Delta}$. Note that the product of $\Delta x$ and $\Delta p$ becomes invariant of $\Delta$:$$\Huge\Delta x\Delta p=\Delta\cdot\frac{\hbar}{2\Delta}=\frac{\hbar}{2}$$This means that an attempt to localise the particle by reducing $\Delta x$ has to result in an increase in $\Delta p$, the momentum uncertainty.
+
+# Energy:

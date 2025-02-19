@@ -39,3 +39,21 @@ f_1(\omega)&=\frac{1}{2\pi i}\int_{\gamma_1}\frac{f(z)}{z-\omega}dz\\
 
 We say that a holomorphic function $f:B_R^*(a)\rightarrow\mathbb{C}$ has an isolated singularity at $z=a$. Given such a function, exactly one of the following is true:
 > $f$ has a removable singularity at $z=a$ if the principal part is empty, that is $c_n=0$ for $n<0$.
+> $f$ has a pole of order $k>0$ if $c_{-k}\neq0$ and $c_n=0$ for all $n<-k$, so $f(z)=\sum_{n=-k}^\infty c_n(z-a)^n$ there are finitely many non-zero terms in the principal part.
+> $f$ has an essential singularity at $z=a$ if $c_{-n}\neq0$ for infinitely many $n>0$. That is, the principal part contains infinitely many non-zero terms.
+
+Take for example $f(z)=\frac{1}{z^2}+2+z$. This clearly has a pole of order $2$ at $z=0$, as the largest negative power in the Laurent series is $-2$.
+
+Take for example $f(z)=\frac{e^z-1}{z^2}=\sum_{n=1}^\infty\frac{z^{n-2}}{n!}=\sum_{m=-1}^\infty\frac{z^m}{(m+2)!}$. This clearly has a pole of order $1$ at $z=0$.
+
+Take for example $f(z)=e^{1/z}=\sum_{n=0}^\infty\frac{(1/z)^n}{n!}=\sum_{n=0}^\infty\frac{z^{-n}}{n!}=\sum_{m=-\infty}^0\frac{z^m}{(-m)!}$. This has an essential singularity, there are infinitely many negative power of $z$ in the Laurent series.
+
+# Removable singularities:
+
+Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic. Then $f$ has a removable singularity at $z=a$ if and only if $f$ can be extended to a holomorphic function on $B_R(a)$.
+
+To prove this, assume $f$ can be extended to a holomorphic function $\tilde f$ on $B_R(a)$. By Cauchy-Taylor theorem $\tilde f$ has a convergent Taylor series on $B_R(a)$. In particular this power series matches $f$ on $B_R^*(a)$. This must be the Laurent series of $f$ by uniqueness. Now assume that $f$ has a removable singularity. Therefore on $B_R^*(a)$ $f$ can be written as $f(z)=\sum_{n=0}^\infty c_n(z-a)^n$, however power series converge on discs of convergence, so we must have that $\tilde f$ is equivalent to this power series, completing the proof.
+
+Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic. Then $f$ has a removable singularity at $z=a$ if and only if $\lim_{z\to a}(z-a)f(z)=0$.
+
+Assume that $f$ has a removable singularity at $z=a$. Then it can be extended to $\tilde f:B_R(a)\rightarrow\mathbb{C}$, which is continuous at $z=a$. Then:$$\large \lim_{z\to a}(z-a)f(z)=\lim_{z\to a}(z-a)\tilde f(z)=\lim_{z\to a}(z-a)\cdot\lim_{z\to a}\tilde f(z)=0\cdot\lim_{z\to a}\tilde f(z)=0$$Now assume $\lim_{z\to a}(z-a)f(z)=0$. Since $f$ is holomorphic on the annulus $B_R^*(a)$ it must have a Laurent series $f(z)=\sum_{n=-\infty}^\infty c_n(z-a)^n$ with $c_n=\frac{1}{2\pi i}\int_{|z-a|=\rho}\frac{f(z)}{(z-a)^{n+1}}dz$, which is true for any $0<\rho<R$. We aim to show that $c_n=0$ for all $n\leq-1$, that is $f$ has a power series on $B_R(a)$, which is equivalent to having a removable singularity. We have:$$\large 0\leq|c_n|=\left|\frac{1}{2\pi i}\int_{|z-a|=\rho}\frac{f(z)}{(z-a)^{n+1}}dz\right|\leq\frac{1}{2\pi}\cdot L(|z-a|=\rho)\cdot\sup_{|z-a|=\rho}\left|\frac{f(z)}{(z-a)^{n+1}}\right|$$by the estimation lemma. This is equivalent, since the contour is circular, to:$$\Huge 0\leq|c_n|\leq\rho\sup_{|z-a|=\rho}\frac{|(z-a)f(z)|}{|z-a|^{n+2}}=\frac{1}{\rho^{n+1}}\sup_{|z-a|=\rho}|(z-a)f(z)|$$Then letting $\rho\to0$ we can see that the rightmost term tends to $0$ for $n\leq-1$. That is to say, $c_n=0$ for all $n\leq-1$, which means that:$$\Huge f(z)=\sum_{n=0}^\infty c_n(z-a)^n$$and has a removable singularity at $z=a$.
