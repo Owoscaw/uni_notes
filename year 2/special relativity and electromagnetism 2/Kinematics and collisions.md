@@ -1,7 +1,7 @@
 # 4-velocity and 4-momentum:
 
 Consider the [[False Paradoxes#Spacetime diagrams|worldline]] of a particle. We then let $dx^\mu=(cdt,d\underline x)$ be the infinitesimal 4-vector between two events on the worldline of said particle:
-![[Kinematics and collisions 2025-02-12 11.10.29.excalidraw]]
+![[tensor worldine]]
 
 To find the change in [[Lorentz transformations#Time dilation and length contraction|proper time]] $d\tau$, we must examine the length of the invariant interval:$$\Huge d\tau=\frac{\sqrt{ds^2}}{c}=\frac{1}{c}\sqrt{c^2dt^2-|d\underline x|^2}=dt\sqrt{1-\frac{|\underline v|^2}{c}}=\frac{dt}{\gamma}$$where $\gamma$ is the usual [[Lorentz transformations#Lorentz boosts|Lorentz factor]]. We can then proceed to find the change in proper time between events at time $t_1,t_2$:$$\Huge \Delta\tau=\int_{t_1}^{t_2}d\tau=\int_{t_1}^{t_2}\frac{dt}{\gamma}\leq t_2-t_1=\Delta t$$we consider the trajectory of the particle to be parametrised by proper time, $\tau$. 
 
@@ -33,3 +33,14 @@ Let the total $4$-momentum of a set of particles be given by $p^\mu=(E/c,\underl
 A relativistic collision is called elastic if the masses of all particles are conserved, and inelastic otherwise. The equivalence between energy and mass allows the masses of particles to change by conversion between mass and energy. This is equivalent to conservation of kinetic energy in classical mechanics.
 
 For example, take two particles with mass $m$ that both travel at speed $v=4c/5$ as measured in the frame of a laboratory. They collide head on and fuse to form a particle of mass $M$. We then aim to calculate the ratio $M/m$.![[particle collisions]]
+
+Consider the collision of two particles each of mass $m$ with the aim of creating more particles such that the total mass of the particles after the collision is $M$. The threshold energy is the minimal energy required to do this, with the threshold kinetic energy being the minimal kinetic energy required. If we collide the particles in the center of mass frame, the total momentum of all the particles must be zero and the particles are all created at rest (this will require the least amount of energy). By conservation, the threshold energy $E$ and threshold kinetic energy $T$ are:$$\Huge E=Mc^2,\,\,T=E-2mc^2=c^2(M-2m)$$This is obvious as the initial kinetic energy has to make up the difference in mass. $T$ is therefore a linear function of $M$.
+
+Consider the same situation, however with one of the particles at rest. Let $p_1^\mu=(E_1/c,\underline p_1)$ be the $4$-momentum of the particle that is initially moving. Then the total energy is given by $E=E_1+mc^2$ and the total $4$-momentum is given by $p^\mu=((E_1+mc^2)/c,\underline p_1)$. In the center of mass frame the total $4$-momentum is $p'^\mu=(E'/c,\underline 0)$. By the invariance of the scalar product:$$\Huge p'^\mu p'_\mu=E'^2/c^2=p^\mu\,p_\mu=(E_1+mc^2)^2/c^2-|\underline p_1|^2$$At the threshold $E'=Mc^2$ and the above becomes:$$\Huge E_1^2+2E_1mc^2+m^2c^2-c^2|\underline p_1|^2=M^2c^4$$Using the energy-momentum for the first particle, $c^2|\underline p_1|^2=E_1^2-m^2c^4$, we have:$$\Huge 2E_1mc^2+2m^2c^4=M^2c^4\implies E_1=\frac{M^2c^2}{2m}-mc^2$$so the threshold energy is:$$\Huge E=E_1+mc^2=\frac{M^2c^2}{2m}$$and the threshold kinetic energy is:$$\Huge\begin{align}
+T&=E-2mc^2\\
+&=\frac{M^2c^2}{2m}-2mc^2\\
+&=\frac{(M^2-4m^2)c^2}{2m}\\
+&=c^2(M-2m)\left(\frac{M+2m}{2m}\right)>(M-2m)c^2
+\end{align}$$This shows that more energy is required when colliding in any frame other than the center of mass frame, because the final particles cannot all be at rest due to conversation of momentum. The threshold kinetic energy is now quadratic in $M$, rather than linear. This is why particle accelerators have two particle beams that fire at one another.
+
+Take for example, the threshold kinetic energy for the production of an additional proton anti-proton pair when two protons are collided:![[proton collision]]
