@@ -19,3 +19,17 @@ p^0=m\gamma c&=mc\left(1-\frac{v^2}{c^2}\right)^{-1/2}\\
 &=\frac{1}{c}\left(mc^2+\frac{1}{2}mv^2+\dots\right)\\
 &=\frac{1}{c}E+\mathcal{O}(v^3)
 \end{align}$$where we notice that $\frac{1}{2}mv^2$ is the expression for kinetic energy. Therefore we have $p^\mu=(E/C,\underline p)$ with:$$\Huge E=\gamma mc^2$$Note that at rest $(\gamma=1)$ we get Einstein's famous formula $E=mc^2$. Kinetic energy is given by:$$\Huge T=E-mc^2=\gamma mc^2-mc^2=(\gamma-1)mc^2$$
+Energy can be written in terms of $3$-momentum to get:$$\Huge p\cdot p=m^2c^2=E^2/c^2-|\underline p|^2$$which rearranges to the relativistic energy momentum relation given by:$$\Huge E^2=m^2c^4+c^2|\underline p|^2$$
+For the massless particle (photon), we take $m\to0$ to see that $\gamma\to\infty$ which implies that $v=c$. That is, the photon must travel at the speed of light. 
+
+We can generalise Newton's law of motion so that is applies to relativistic particles:$$\Huge \frac{dp^\mu}{d\tau}=F^\mu$$where the force $F^\mu$ is a [[Spacetime and Tensors#Tensors|contravariant]] $4$-vector. In a given frame one can define the $3$-force $\underline f$ as:$$\Huge \underline f=\frac{d \underline p}{dt}$$For this to be consistent with the generalised force we must have $\underline F=\gamma\underline f$.
+
+# Particle collisions:
+
+We now consider the collision of particles in the absence of any external forces, that is we take $F^\mu=0$. Then the conservation of $4$-momentum dictates:$$\Huge \frac{dp^\mu}{d\tau}=(0,\underline 0)$$
+Note that energy and momentum may be different when measured in different inertial frames. The transformation properties that we have derived ensure that if total energy and momentum are conserved in one frame, they are conserved in all inertial frames.
+
+Let the total $4$-momentum of a set of particles be given by $p^\mu=(E/c,\underline p)$ in the frame $\mathcal{R}$. The frame $\mathcal{R}'$ moves with a velocity $\underline v$ with respect to $\mathcal{R}$. Such a frame is called the center of mass frame if the total $4$-momentum in this frame takes form $p'^\mu=(E'/c,\underline 0)$. That is, under the transformation, the total $3$-momentum vanishes. Using the earlier formula for a Lorentz boost in any direction, we can easily check that velocity for the center of mass frame relative to $\mathcal{R}$ is:$$\Huge \underline v=\frac{c^2}{E}\underline p$$
+A relativistic collision is called elastic if the masses of all particles are conserved, and inelastic otherwise. The equivalence between energy and mass allows the masses of particles to change by conversion between mass and energy. This is equivalent to conservation of kinetic energy in classical mechanics.
+
+For example, take two particles with mass $m$ that both travel at speed $v=4c/5$ as measured in the frame of a laboratory. They collide head on and fuse to form a particle of mass $M$. We then aim to calculate the ratio $M/m$.![[particle collisions]]
