@@ -78,3 +78,12 @@ Proofs:
 
 Take for example $f(z)=\tan z/z$. We aim to classify the zeros and isolated singularities of this function:![[poole example]]
 Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic. Then $f$ has a pole at $z=a$ if and only if:$$\Huge \lim_{z\to a}|f(z)|=\infty$$
+To prove this, assume $f$ has a pole at $z=a$. Then $f(z)=g(z)/(z-a)^k$ where $g$ is holomorphic at $z=a$:$$\Huge \lim_{z-\infty}|f(z)|=\lim_{n\to \infty}\frac{|g(z)|}{(z-a)^k}=\infty$$
+Assume $\lim_{|z-a|=0}$. There must exists some $r>0$ $f(z)\neq0$ on $B_R3*$ such that $h(z)=1/f(a)$ is holomorphic on $B_r^*(a)$. Note that through the ]]
+
+#  Castorati Weierstrass:
+
+Let $f:B_r(a)$ be holomorphic with essential singularity at $z=a$. Then for every $\omega\in G$ and every $0<r\leq R$ and every $\epsilon>0$ there exists some $z\in B_r^*(a)$ such that:$$\Huge f(z)\in B_\epsilon(\omega)$$We argue this by contradiction, so assume the statement is false. Assume there exists some $\omega\in\mathbb{C}$, $0<r\leq R$, and $\epsilon>0$ such that $z=B_r*A(a)$ and $f(z)\neq B_\epsilon(omega)$ . Therefore:$$\Huge\begin{align}
+|f(z)-\omega|\geq\epsilon>0\\
+
+\end{align}$$Now let $g(z)=\frac{1}{f(x)-\omega}$. Note that this is holomorphic in $B_r(a)$. $g$ is bounded here as $\left|\frac{}{}\right|$ 
