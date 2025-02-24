@@ -59,3 +59,22 @@ Assume that $f$ has a removable singularity at $z=a$. Then it can be extended to
 
 # Riemann Extension theorem:
 
+Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic and bounded, then $f$ has a removable singularity. The proof comes from the limit $\lim_{z\to a}(z-a)f(z)=0$, which is equivalent to a removable singularity at $a$, proven above. We assume $\exists M>0$ such that $|f(z)|\leq M$ on $B_R^*(a)$, that is $f$ is bounded. Then:$$\Huge\begin{align} 
+\lim_{z\to a}0&\leq\lim_{z\to a}|(z-a)f(z)|\lim_{z\to a}\leq M|z-a|\\
+0&\leq\lim_{z\to a}|(z-a)f(z)|\leq0
+\end{align}$$Therefore the limit is $0$, so $f$ has a removable singularity.
+
+# Poles:
+
+Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic, then the following are equivalent:
+1. $f$ has a pole of order $k$ at $z=a$
+2. $f(z)=\frac{g(z)}{(z-a)^k}$ where $g$ is holomorphic on $B_R(a)$ and $g(a)\neq0$
+3. There exists some $0<r\leq R$ and $h:B_r(a)\rightarrow\mathbb{C}$ holomorphic such that $h$ has a zero of order $k$ at $z=a$ where $f(z)=1/h(z)$ on $B_r^*(a)$
+
+Proofs:
+> $1\implies 2$: Assume $f$ has a pole of order $k$ at $z=a$, then $f(z)=\sum_{n=-k}^\infty c_n(z-a)^n$ with $c_{-k}\neq0$. Let $g(z)=(z-a)^kf(z)=\sum_{-k}^\infty c_n(z-a)^{n+k}$, rewriting $m=n+k$ shows that $g(z)=\sum_{m=0}^\infty c_{m+k}(z-a)^m$, which is a power series and is holomorphic on $B_R(a)$. Thus $g$ is the extension of $f$ from $B_R^*(a)$ to $B_R(a)$ and $f$ must therefore have a removable singularity.
+> $2\implies 3$: Assume $g$ is holomorphic on $B_R(a)$ and $g(a)\neq0$. So there exists some $0<r\leq R$ such that $g(z)\neq0$ on $B_r(a)$ by the [[Holomorphic functions#Principle of isolated zeros (PIZ)|principle of isolates zeros]]. In particular $h(z)=\frac{(z-a)^k}{g(z)}$ is therefore a quotient of two holomorphic functions with $g(z)\neq0$ on $B_r(a)$. We now have $1/h(z)=f(z)$ as required.
+> $3\implies 1$: trivial.
+
+Take for example $f(z)=\tan z/z$. We aim to classify the zeros and isolated singularities of this function:![[poole example]]
+Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic. Then $f$ has a pole at $z=a$ if and only if:$$\Huge \lim_{z\to a}|f(z)|=\infty$$
