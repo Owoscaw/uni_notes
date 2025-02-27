@@ -81,9 +81,12 @@ Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic. Then $f$ has a pole at $z=
 To prove this, assume $f$ has a pole at $z=a$. Then $f(z)=g(z)/(z-a)^k$ where $g$ is holomorphic at $z=a$:$$\Huge \lim_{z-\infty}|f(z)|=\lim_{n\to \infty}\frac{|g(z)|}{(z-a)^k}=\infty$$
 Assume $\lim_{|z-a|=0}$. There must exists some $r>0$ $f(z)\neq0$ on $B_R3*$ such that $h(z)=1/f(a)$ is holomorphic on $B_r^*(a)$. Note that through the ]]
 
-#  Castorati Weierstrass:
+# Casorati Weierstrass:
 
-Let $f:B_r(a)$ be holomorphic with essential singularity at $z=a$. Then for every $\omega\in G$ and every $0<r\leq R$ and every $\epsilon>0$ there exists some $z\in B_r^*(a)$ such that:$$\Huge f(z)\in B_\epsilon(\omega)$$We argue this by contradiction, so assume the statement is false. Assume there exists some $\omega\in\mathbb{C}$, $0<r\leq R$, and $\epsilon>0$ such that $z=B_r*A(a)$ and $f(z)\neq B_\epsilon(omega)$ . Therefore:$$\Huge\begin{align}
+Let $f:B_r(a)$ be holomorphic with essential singularity at $z=a$. Then for every $\omega\in G$ and every $0<r\leq R$ and every $\epsilon>0$ there exists some $z\in B_r^*(a)$ such that:$$\Huge f(z)\in B_\epsilon(\omega)$$We argue this by contradiction, so assume the statement is false. Assume there exists some $\omega\in\mathbb{C}$, $0<r\leq R$, and $\epsilon>0$ such that $z=B_r*A(a)$ and $f(z)\neq B_\epsilon(\omega)$ . Therefore:$$\Huge\begin{align}
 |f(z)-\omega|\geq\epsilon>0\\
 
-\end{align}$$Now let $g(z)=\frac{1}{f(x)-\omega}$. Note that this is holomorphic in $B_r(a)$. $g$ is bounded here as $\left|\frac{}{}\right|$ 
+\end{align}$$Now let $g(z)=\frac{1}{f(x)-\omega}$, which is holomorphic in $B_r(a)$. $g$ is bounded here as $\left|\frac{1}{f(z)-\omega}\right|\leq 1/\epsilon$. By the Riemann extension theorem we have that $g$ has a removable singularity at $z=a$ and hence can be extended to some holomorphic function on $B_r(a)$. Now we have for $z\in B_r^*(a)$:$$\Huge f(z)=\omega+\frac{1}{g(z)}=\frac{\omega g(z)+1}{g(z)}$$So if $g(a)\neq0$ we have that $g$ has a removable singularity at $a$. If $g(a)=0$ however, the function $h(z)=1/f(z)$ is holomorphic at $z=a$ and has a zero at $z=a$, therefore $f$ has a pole at $z=a$. This is a contradiction so we have the proof as required.
+
+## Big Picard theorem:
+This theorem is an extension of the above, the proof of which is beyond the scope of these notes. Let $f:B_R^*(a)\rightarrow\mathbb{C}$ be holomorphic with an essential singularity at $z=a$. Then there is some $b\in\mathbb{C}$ such that for all $r$ with $0<r<R$:$$\Huge f(B_r^*(a))\supset\mathbb{C}\setminus\{b\}$$
