@@ -32,4 +32,20 @@ Let $\varphi:G\rightarrow S_X$ be a group action. Then for any $x\in X$ define:
 > $G(x):=\{\varphi(g)(x):g\in G\}$, the orbit of $x$ inside of $X$
 > $G_x:=\{g\in G:\varphi(g)(x)=x\}$, the stabiliser of $x$ in $G$
 
-We propose that for any $x\in X$, the stabiliser subgroup $G_x$ is a subgroup of $G$.
+We propose that for any $x\in X$, the stabiliser subgroup $G_x$ is a subgroup of $G$. $G_x$ is non empty, so there exists some $\varphi(e)\in S_X$ that fixes every element in $X$, including $x\in X$, that implies $\varphi(e)\in G_X$. $G_x$ is closed under compositions: let $g,h\in G_X$, then $\varphi(g)(x)=x$ and $\varphi(h)(x)=x$. Now since $\varphi$ is a group action, $\varphi(gh)(x)=\varphi(g)\circ\varphi(h)(x)=\varphi(g)(x)=x$. $G_X$ is closed under inverses: Let $g\in G_X$, then $\varphi(g^{-1})(x)=\varphi(g^{-1})(\varphi(g)(x))=\varphi(g^{-1}g)(x)=\varphi(e)(x)=x$. Therefore we have the proof as required.
+
+Take $G=\mathbb{Z}$ acting on $\Re$ with $n\in\mathbb{Z}\mapsto L_n\in S_\Re$. Given $x\in\Re$ we aim to find its orbit under $G$:$$\Huge\begin{align}
+G(x)&=\{\psi(g)(x):g\in G\}\\
+&=\{\psi(n)(x):n\in\mathbb{Z}\}\\
+&=\{n+x:n\in\mathbb{Z}\}
+\end{align}$$This is $x$ together with all of its integer shifts. We now aim to find the stabiliser of $x$ in $G$:$$\Huge\begin{align}
+G_x&=\{n\in\mathbb{Z}:n+x=x\}\\
+&=\{0\}
+\end{align}$$Consider a different homomorphism now, defined as $\varphi:\mathbb{Z}\rightarrow\Re$ with $n\mapsto M_n$ ($M_n(x)=(-1)^nx$):$$\Huge\begin{align}
+G(x)&=\{M_n(x):n\in\mathbb{Z}\}\\
+&=\{(-1)^nx:n\in\mathbb{Z}\}\\
+&=\{x,-x\}\\
+G_x&=\{n\in\mathbb{Z}:M_n(x)=x\}\\
+&=\{n\in\mathbb{Z}:(-1)^nx=x\}\\
+&=\{2m:m\in\mathbb{Z}\}=2\mathbb{Z}
+\end{align}$$For $x\neq0$. Note that if $x=0$ we have that $G(x)=\{0\}$ and $G_x=\mathbb{Z}$.
