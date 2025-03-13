@@ -81,3 +81,25 @@ g&\mapsto\varphi(g)
 # Conjugacy classes as orbits:
 
 The conjugacy class of an element $g\in G$ is defined as:$$\Huge \text{ccl}_G(g)=\{hgh^{-1}:h\in G\}$$That is, the set of all elements in $G$ that are conjugate to $g$. The orbit under conjugation of $g\in G$ is simply the conjugacy class of $g$.
+
+Let $S_3$ act on itself by conjugation, we then ask what are the orbits and stabilisers of the following:
+
+| Conjucacy class | $\{e\}$ | $\{(1\,2),(2\,3),(3\,1)\}$                                                                          | $\{(1\,2\,3),(3\,2\,1)\}$                                                     |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Stabiliser      | $G$     | $G_{(1\,2)}=\langle (1\,2)\rangle, G_{(2\,3)}=\langle(2\,3)\rangle,G_{(3\,1)}=\langle(3\,1)\rangle$ | $G_{(1\,2\,3)}=\langle(1\,2\,3)\rangle,G_{(3\,2\,1)}=\langle(3\,2\,1)\rangle$ |
+
+Let $D_5$ be the $5$th dihedral group act on itself by conjugacy. Again we ask its orbits and stabilisers. Recall:$$\Huge\begin{align}
+D_5&=\langle r,s:r^5=e,s^2=e,srs^{-1}=r^{-1}\rangle\\
+&=\{r^is^j:0\leq i\leq 4,0\leq j\leq 1\}
+\end{align}$$Then we have two cases for a conjugacy class, $r_i$ and $r^is$:$$\Huge\begin{align}
+\text{ccl}_{D_5}(r^i)&=\{r^k(r^i)(r^k)^{-1}:0\leq k\leq 4\}\\
+&\,\,\,\,\cup\{r^ks(r^i)(r^ks)^{-1}:0\leq k\leq 4\}\\
+&=\{r^{k+i-k}:0\leq k\leq 4\}\\
+&\,\,\,\,\cup\{r^kr^{-i}ss^{-1}r^{-k}:0\leq k\leq 4\}\\
+&=\{r^i\}\cup\{r^{-i}\}=\{r^i,r^{-i}\}\\
+\text{ccl}_{D_5}(r^is)&=\{r^k(r^is)r^{-k}:0\leq k\leq 4\}\\
+&\,\,\,\,\cup\{r^ks(r^is)(r^ks)^{-1}:0\leq k\leq 4\}\\
+&=\{r^{k+i+k}s:0\leq k\leq 4\}\\
+&\,\,\,\,\cup\{r^kr^{k-i}s:0\leq k\leq 4\}\\
+&=\{r^js:0\leq j\leq 4\}
+\end{align}$$Note that the conjugacy class of $r^is$ is independent of $i$.
