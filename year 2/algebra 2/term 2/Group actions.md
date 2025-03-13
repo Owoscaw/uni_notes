@@ -103,3 +103,29 @@ D_5&=\langle r,s:r^5=e,s^2=e,srs^{-1}=r^{-1}\rangle\\
 &\,\,\,\,\cup\{r^kr^{k-i}s:0\leq k\leq 4\}\\
 &=\{r^js:0\leq j\leq 4\}
 \end{align}$$Note that the conjugacy class of $r^is$ is independent of $i$.
+
+# Orbit-Stabiliser Theorem:
+
+Suppose $G$ acts on $X$. Then for any $x\in X$ there is a bijection:$$\Huge\begin{align}
+\beta:G(x)&\rightarrow\{\text{left cosets of }G_x\text{ in }G\}\\
+g(x)&\mapsto gG_x
+\end{align}$$This is proven by noticing that for $g,h\in G$ and any $x\in X$ we have:$$\Huge\begin{align}
+g(x)=h(x)&\iff g^{-1}g(x)=g^{-1}h(x)\\
+&\iff x=g^{-1}h(x)\\
+&\iff g^{-1}h\in G_x\\
+&\iff g^{-1}hG_x=G_x\\
+&\iff hG_x=gG_x
+\end{align}$$So we have that $g(x)=h(x)\iff hG_x=gG_x$. We also need to check that the map $\beta$ is well defined and indeed a bijection. To show that it is well defined notice that if $g(x)=h(x)$ we get $g(x)\mapsto gG_x$ and $h(x)=g(x)\mapsto hG_x$, however we have shown that in this case, $hG_x=gG_x$, proving that $\beta$ is indeed well defined. Now if $gG_x=hG_x$ then we get injectivity from noticing that these sets arise from the same orbit element (as $g(x)=h(x)$). Now let $C$ be a left coset with respect to $H=G$. We then write $C=gG_X$ for some $g\in G$. This is the image of $g(x)$ under $\beta$, proving surjectivity. Therefore $\beta$ is both well defined and bijective, proving the theorem.
+
+If $G$ is finite and acts on a finite set $X$, then for any $x\in X$ we have:$$\Huge |G(x)|\cdot|G_x|=|G|$$That is, the size of its orbit $G(x)$ is complementary to the size of its stabiliser $G_x$. To prove this, fix some $x\in X$ and observe that:$$\Huge |G(x)|=|\{\text{left cosets wrt }G_x\}|$$as per the definition of $\beta$ in the orbit stabiliser theorem. All cosets have the same size, so we get:$$\Huge |G_x|=|eG_x|=|gG_x|\,\,\forall g\in G$$Therefore we must have:$$\Huge |G(x)|=\frac{|G|}{|G_x|}\iff|G|=|G(x)||G_x|$$
+If the finite group $G$ acts on the finite set $X$, then the orbit lengths divide the group order, that is:$$\Huge |G(x)|\text{ divides }|G|\text{ for any }x\in X$$The proof of which is trivial. 
+
+Suppose that $x$ lies in the $G$ orbit of $y$, then $G_x,G_y$ are conjugate to each other:$$\Huge G_x=hG_yh^{-1}\,\text{ for some }h\in G$$To prove this, let $x=h(y)$ for some $h\in G$. Then:$$\Huge\begin{align}
+G_x&=\{g\in G:g(x)=x\}\\
+&=\{g\in G:g(h(y))=h(y)\}\\
+&=\{g\in G:h^{-1}g(h(y))=h^{-1}h(y)=y\}\\
+&=\{h(h^{-1}gh)h^{-1}\in G:h^{-1}gh(y)=y\}
+\end{align}$$Note that when $g$ runs through $G$, so will $h^{-1}gh$. We therefore write $g'=h^{-1}gh$ and continue:$$\Huge\begin{align}
+G_x&=\{hg'h^{-1}:g'(y)=y\}\\
+&=h\{g'\in G:g'(y)=y\}h^{-1}=hG_yh^{-1}
+\end{align}$$as required.
