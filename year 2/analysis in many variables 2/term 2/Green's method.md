@@ -17,4 +17,4 @@ y(x)&=\int_0^1g(x,\xi)f(\xi)d\xi\\
 \frac{dy}{dx}&=-\int_0^x\xi f(\xi)d\xi+(1-x)xf(x)+\int_x^1(1-\xi)f(\xi)d\xi-(1-x)xf(x)\\
 &=-\int_0^x\xi f(\xi)d\xi+\int_x^1(1-\xi)f(\xi)d\xi\\
 \frac{d^2y}{dx^2}&=-xf(x)-(1-x)f(x)=-f(x)
-\end{align}$$So this indeed solves the differential equation.
+\end{align}$$So this indeed solves the differential equation. Note that it would be easier to differentiate $g(x,\xi)$ directly with:$$\Huge \frac{d y}{dx}=\int_0^1\frac{\partial g}{\partial x}(x,\xi)f(\xi)d\xi,\,\,\frac{d^2y}{dx^2}=\int_0^1\frac{\partial^2g}{\partial x^2}(x,\xi)f(\xi)d\xi$$however this would require a function $\delta(x,\xi)$ that satisfies:$$\Huge\int_0^1\delta(x,\xi)f(\xi)d\xi=-f(x)$$and $$\Huge \frac{\partial^2 g}{\partial x^2}=-\delta(x,\xi)$$This is known as green's equation.
