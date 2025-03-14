@@ -35,3 +35,11 @@ We require the delta function to satisfy:$$\Huge \int_{a_0}^{a_1}\delta(x)f(x)dx
 \lim_{n\to\infty}\int_{a_0}^{a_1}f_n(x)f(x)dx&=\lim_{n\to\infty}\int_{-1/n}^{1/n}\frac{n}{2}f(x)dx\\
 &=\lim_{n\to\infty}\frac{F(1/n)-F(-1/n)}{2/n}
 \end{align}$$where $F(x)=\int_0^xf(s)ds$ is the antiderivative of $f$. Set $s=1/n$ and write:$$\Huge \lim_{n\to\infty}\frac{F(1/n)-F(-1/n)}{2/n}=\lim_{s\to0}\frac{F(s)-F(-s)}{2s}=F'(0)=f(0)$$using the fundamental theorem of calculus. We have shown that in the limiting case, $f_n(x)$ satisfies this "sifting" property.
+
+## Point heat source:
+Consider the heat conduction BVP with a point heat source of unit strength at the center of the rod:$$\Huge -y''(x)=\delta(x-1/2),\,\,0<x<1,\,\,y(0)=y(1)=0$$Now since $\delta(x-1/2)=0$ for $x\neq1/2$ we have:$$\Huge -y''(x)=0,\,\,0<x<1/2,\,\,1/2<x<1$$So we can derive conditions by integrating across $x=1/2$:$$\Huge\int_{1/2-}^{1/2+}-y''(x)dx=\int_{1/2-}^{1/2+}\delta(x-1/2)dx$$Then by the sifting property we see that this simplifies to:$$\Huge [-y'(x)]_{1/2-}^{1/2+}=1\implies y'(1/2+)-y'(1/2-)=-1$$Which defines a jump condition on $y'$. We also require that $y$ is continuous at $x=1/2$:$$\Huge [y]_{1/2-}^{1/2+}=0$$This implies the solution:$$\Huge y=\begin{cases}ax+b&0<x<1/2\\cx+d&1/2<x<1\end{cases}$$for constants $a,b,c,d$. We can then find these constants:$$\Huge\begin{align}
+y(0)=0&\implies b=0\\
+y(1)=0&\implies c=-d
+\end{align}$$Then from the conditions at the jump we get:$$\Huge\begin{align}
+a=1/2,\,\,c=-1/2
+\end{align}$$Which makes the solution:$$\Huge y(x)=\begin{cases}x/2&0<x<1/2\\-x/2+1/2&1/2<x<1\end{cases}$$
