@@ -17,4 +17,15 @@ y(x)&=\int_0^1g(x,\xi)f(\xi)d\xi\\
 \frac{dy}{dx}&=-\int_0^x\xi f(\xi)d\xi+(1-x)xf(x)+\int_x^1(1-\xi)f(\xi)d\xi-(1-x)xf(x)\\
 &=-\int_0^x\xi f(\xi)d\xi+\int_x^1(1-\xi)f(\xi)d\xi\\
 \frac{d^2y}{dx^2}&=-xf(x)-(1-x)f(x)=-f(x)
-\end{align}$$So this indeed solves the differential equation. Note that it would be easier to differentiate $g(x,\xi)$ directly with:$$\Huge \frac{d y}{dx}=\int_0^1\frac{\partial g}{\partial x}(x,\xi)f(\xi)d\xi,\,\,\frac{d^2y}{dx^2}=\int_0^1\frac{\partial^2g}{\partial x^2}(x,\xi)f(\xi)d\xi$$however this would require a function $\delta(x,\xi)$ that satisfies:$$\Huge\int_0^1\delta(x,\xi)f(\xi)d\xi=-f(x)$$and $$\Huge \frac{\partial^2 g}{\partial x^2}=-\delta(x,\xi)$$This is known as green's equation.
+\end{align}$$So this indeed solves the differential equation. Note that it would be easier to differentiate $g(x,\xi)$ directly with:$$\Huge \frac{d y}{dx}=\int_0^1\frac{\partial g}{\partial x}(x,\xi)f(\xi)d\xi,\,\,\frac{d^2y}{dx^2}=\int_0^1\frac{\partial^2g}{\partial x^2}(x,\xi)f(\xi)d\xi$$however this would require a function $\delta(x,\xi)$ that satisfies:$$\Huge\int_0^1\delta(x,\xi)f(\xi)d\xi=-f(x)$$and $$\Huge \frac{\partial^2 g}{\partial x^2}=-\delta(x,\xi)$$This is known as green's equation. Greens function satisfies the following:
+> If $x\neq\xi$ then $Lg=-\frac{\partial g}{\partial x^2}=0$
+> Boundary conditions
+> $g$ is continuous on $x\in[0,1]$
+> $g$ is differentiable everywhere except $x=\xi$, where the derivative jumps from $1-\xi$ to $-\xi$. We are interested in the second derivative, which will be zero everywhere other than $x=\xi$. There exists no such function, however fuck that.
+
+# Green's function via delta function:
+
+We are looking for a function $\delta(x-a)$ such that $\delta(x-a)=0$ for all $x\neq a$. This must also satisfy:$$\Huge \int_{a_0}^{a_1}\delta(x-a)f(x)dx=f(a)\text{ if }a\in[a_0,a_1]$$There is no "classical" function that has these properties, however there are some cool approximations:
+
+## Approximating the delta function:
+Assume some sequence of functions $f_n(x)$ such that:$$\Huge \int_{a_0}^{a_1}f_n(x)dx=1\,\,\forall n>n_0:\lim_{n\to\infty}f_n(x)=0\,\,\forall x\neq0$$We propose that:$$\Huge f_n(x)=\begin{cases}0&|x|>1/n\\n/2&|x|\leq1/n\end{cases}$$This clearly satisfies the property that $f_n(x)=0$ everywhere except $x=0$ (in the limiting case).
