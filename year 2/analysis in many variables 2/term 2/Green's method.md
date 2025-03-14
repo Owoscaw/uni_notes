@@ -29,3 +29,9 @@ We are looking for a function $\delta(x-a)$ such that $\delta(x-a)=0$ for all $x
 
 ## Approximating the delta function:
 Assume some sequence of functions $f_n(x)$ such that:$$\Huge \int_{a_0}^{a_1}f_n(x)dx=1\,\,\forall n>n_0:\lim_{n\to\infty}f_n(x)=0\,\,\forall x\neq0$$We propose that:$$\Huge f_n(x)=\begin{cases}0&|x|>1/n\\n/2&|x|\leq1/n\end{cases}$$This clearly satisfies the property that $f_n(x)=0$ everywhere except $x=0$ (in the limiting case).
+
+## Properties of the delta function:
+We require the delta function to satisfy:$$\Huge \int_{a_0}^{a_1}\delta(x)f(x)dx=\begin{cases}f(0)&0\in[a_0,a_1]\\0&\text{otherwise}\end{cases}$$Consider:$$\Huge \lim_{n\to\infty}\int_{a_0}^{a_1}f_n(x)f(x)dx$$with the function described above. This becomes:$$\Huge\begin{align}
+\lim_{n\to\infty}\int_{a_0}^{a_1}f_n(x)f(x)dx&=\lim_{n\to\infty}\int_{-1/n}^{1/n}\frac{n}{2}f(x)dx\\
+&=\lim_{n\to\infty}\frac{F(1/n)-F(-1/n)}{2/n}
+\end{align}$$where $F(x)=\int_0^xf(s)ds$ is the antiderivative of $f$. Set $s=1/n$ and write:$$\Huge \lim_{n\to\infty}\frac{F(1/n)-F(-1/n)}{2/n}=\lim_{s\to0}\frac{F(s)-F(-s)}{2s}=F'(0)=f(0)$$using the fundamental theorem of calculus. We have shown that in the limiting case, $f_n(x)$ satisfies this "sifting" property.
