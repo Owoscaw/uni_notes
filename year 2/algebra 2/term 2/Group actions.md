@@ -129,3 +129,4 @@ G_x&=\{g\in G:g(x)=x\}\\
 G_x&=\{hg'h^{-1}:g'(y)=y\}\\
 &=h\{g'\in G:g'(y)=y\}h^{-1}=hG_yh^{-1}
 \end{align}$$as required.
+
