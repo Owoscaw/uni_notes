@@ -32,3 +32,13 @@ In order to determine the size of a conjugacy class in $S_n$ we need the followi
 &\frac{(n-\sum_{i=1}^{r-1}m_i)(n-\sum_{i=1}^{r-1}m_i-1)\dots(n-\sum_{i=1}^rm_i+1)}{m_r}
 \end{align}$$
 >If $x\in S_n$ is of general cycle shape $[m_1,\dots,m_1,m_2,\dots,m_2,\dots,m_r,\dots m_r]$ where each $m_i$ is repeated $s_i$ times and $m_1<m_2<\dots<m_r$ then the number of elements for that cycle shape is given by:$$\Huge \gamma(n;m_1,\dots,m_1,m_2,\dots,m_2,\dots,m_r,\dots,m_r)$$
+
+Let $x\in A_n$ with $n\geq 2$, then:
+> If $x$ commutes with some odd permutation, then:$$\Huge\text{ccl}_{A_n}(x)=\text{ccl}_{S_n}(x)$$
+> If $x$ does not commute with any odd permutation then:$$\Huge \text{ccl}_{S_n}(x)=\text{ccl}_{A_n}(x)\cup\text{ccl}_{A_n}((1\,2)x(1\,2))$$that is, the conjugacy class in $S_n$ splits into two conjugacy classes in $A_n$ of equal size with representatives $x$ and $(1\,2)x(1\,2)$.
+
+Prove as follows:
+1. Assume $x$ commutes with some $g\in S_n$ with $g$ odd, then $gxg^{-1}=x$. We need to show that for any $y\in\text{ccl}_{S_n}(x)$ we have that $y\in\text{ccl}_{A_n}(x)$. Such $y$ has form $y=hxh^{-1}$ for some $h\in S_n$. Now either $h$ or $hg$ is an even permutation and hence in $A_n$, both of which conjugate $x$ into $y$:$$\Huge (hg)x(hg)^{-1}=hgxg^{-1}h^{-1}=hxh^{-1}=y$$Similar for $h$, proving the first statement.
+2. Assume that $x$ does not commute with any odd permutation in $S_n$. Then the stabiliser of $x$ in $S_n$ is the same as the stabiliser of $x$ in $A_n$, that is $(S_n)_x=\{g\in S_n:gxg^{-1}=x\}$. By assumption this is equal to the set of even $g$ such that $gxg^{-1}=x$, equivalent to the stabiliser of $x$ in $A_n$. Then the orbit-stabiliser theorem gives that:$$\Huge |\text{ccl}_{A_n}(x)|=\frac{|A_n|}{|(A_n)_x|}=\frac{1}{2}\frac{|S_n|}{|(S_n)_x|}=\frac{1}{2}|\text{ccl}_{S_n}(x)|$$as required.
+
+Let $H$ be a subgroup of $G$, then we have that $H$ is normal in $G$ if and only if $H$ is a union of conjugacy classes of $G$.
