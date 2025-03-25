@@ -38,3 +38,16 @@ Take for example:
 
 # Components and path-connectedness:
 
+Let $X$ be a topological subspace, $Z\subseteq X$ be connected, and $Y\subseteq X$ with $Z\subseteq Y\subseteq\bar Z$. Then $Y$ is connected, in particular the closure of a connected set is connected. Proof:
+> Let $A,A'$ be complementary open sets of $Y$. Since $Y$ has the induced topology from $X$, there are open sets $U,U'$ in $X$ such that $A=U\cap Y$ and $A'=U'\cap Y$. Now $Z\subseteq Y$ so we have:$$\Huge\begin{align}
+Z=Y\cap Z&=(A\cup A')\cap Z\\
+&=(A\cap Z)\cup(A'\cap Z)\\
+&=((U\cap Y)\cap Z)\cup((U'\cap Y)\cap Z)\\
+&=(U\cap(Y\cap Z))\cup(U'\cap(U\cap Z))\\
+&=(U\cap Z)\cup(U'\cap Z)
+\end{align}$$However since $Z\subseteq Y$ we must have:$$\Huge (U\cap Z)\cup(U'\cap Z)\subseteq (U\cap Y)\cup(U'\cap Y)=A\cap A'=\emptyset$$So we have that $U\cap Z$ and $U'\cap Z$ are complementary open subsets of $Z$. Since $Z$ is connected, it has no separation and these subsets must be trivial. WLOG we assume $U\cap Z=Z$ and $U'\cap Z=\emptyset$. It follows that $Z\subseteq X\setminus U'$, which is closed, and $Y\subseteq \bar Z\subseteq X\setminus U'$. Therefore $A'=Y\cap U'=\emptyset$ and $A=Y\cap U=Y$. Therefore $Y$ has no separation and is therefore connected.
+
+Let $\mathcal{A}=\{A_i:i\in I\}$ be a collection of subsets of $X$ such that $\bigcup_{i\in I}A_i=X$. Assume each $A_i$ is connected and for each $i,j\in I$ we have $A_i\cap A_j=\emptyset$. Then $X$ is connected. Proof:
+ > Let $U,V$ be complementary open sets for $X$. If we fix some $i_0\in I$ then $U\cap A_{i_0}$ and $V\cap A_{i_0}$ are complementary open sets for $A_{i_0}$. Since this is connected, we assume WLOG that $U\cap A_{i_0}=A_{i_0}$ and $V\cap A_{i_0}=\emptyset$. Similarly for any $i\in I$ we have that $U\cap A_i$ and $V\cap A_i$ must be trivial. Note that $(U\cap A_i)\cap A_{i_0}=(U\cap A_{i_0})\cap A_i=A_{i_0}\cap A_i\neq\emptyset$ and hence $U\cap A_i\neq\emptyset$ so we must have $U\cap A_i=A_i$. We now know that every $A_i\subseteq U$, so $X=\bigcup_{i\in I}A_i\subseteq U\subseteq X$. We can therefore conclude that $X=U,V=\emptyset$ and therefore $X$ is connected.
+
+If $X$ and $Y$ are connected, then [[Limits, Bases, and Products#Product topologies|$X\times Y$]] is connected.
