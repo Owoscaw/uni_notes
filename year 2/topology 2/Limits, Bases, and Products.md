@@ -89,3 +89,14 @@ Then if $X\times Y$ is the given product topology:
 > Projection maps $\pi_X,\pi_Y$ are continuous
 > Projection maps $\pi_X,\pi_Y$ map open sets to open sets
 > The product topology is the smallest topology for which both projections are continuous
+
+Proof:
+1. Note that for $U\subseteq X,\pi_X^{-1}(U)=U\times Y$ so $Y$ must be open. Therefore if $U\subseteq X$ is open then $\pi_X^{-1}(U)\in\mathcal{B}_{X\times Y}\subseteq \tau_{X\times Y}$, showing that $\pi_X$ is continuous. The same argument applies to $\pi_Y$.
+2. Trivial
+3. Let $\tau$ be a topology on $X\times Y$ for which both $\pi_X$ and $\pi_Y$. If $U\subseteq X$ and $V\subseteq Y$ are open, then:$$\Huge U\times V=(U\times Y)\cap(X\times V)=\pi_X^{-1}(U)\cap\pi_Y^{-1}(V)$$By assumption these are open sets, so the intersection is also open. $U\times V\in\tau\implies \mathcal{B}_{X\times Y}\subseteq\tau$ and so unions of such sets are also in $\tau$, so therefore $\tau_{X\times Y}\subseteq\tau$.
+
+Let $X,Y,Z$ be topological spaces. A function $f:Z\rightarrow X\times Y$ is continuous if and only if both $\pi_X\circ f:Z\rightarrow X$ and $\pi_Y\circ f:Z\rightarrow Y$ are continuous. Take the following for example: Let $f:X\rightarrow\Re^n$ be a function and let $\pi_i$ be a projection onto the $i$th coordinate. We then have $n$ coordinate functions $f_i:X\rightarrow\Re$ with $f_i=\pi_i\circ f$ and $f$ is continuous if and only if each of these $f_i$ are continuous.
+
+Let $X,Y$ be non-empty topological spaces and give $X\times Y$ the product topology. Then $X\times Y$ is Hausdorff if and only if $X,Y$ are each Hausdorff:
+> Let $(p,q)$ and $(p',q')$ be two distinct points in $X\times Y$. Then either $p\neq p'$ or $q\neq q'$, assume the former WLOG. Since $X$ is Hausdorff by assumption there exists some $U,U'$ open in $X$ with $p\in U,p'\in U'$ and $U\cup U'=\emptyset$. Then $(p,q)\in U\times Y$ and $(p',q')\in U'\times Y$. Both sets are open and disjoint in $X\times Y$ and so this is indeed Hausdorff.
+> We demonstrate that $X$ is Hausdorff, the same argument applies for $Y$. Let $p$ and $p'$ be distinct points in $X$, and choose some $q$ in $Y$. Then since $X\times Y$ is Hausdorff there exist distinct sets $A,A'$ in $X\times Y$ with $(p,q)\in A,(p',q)\in A'$. Since we have the product topology on $X\times Y$, these open sets are a union of basis elements, that is there exist open sets $U,U'$ in $X$ and $V,V'$ in $Y$ such that $U\times V,U'\times V'\in\mathcal{B}_{X\times Y}$ and $(p,q)\in U\times V\subset A$ and $(p',q)\in U'\times V'\subset A'$. We have that $U\times V$ and $U'\times V'$ are disjoint, but $U\times\{q\}\subseteq U\times V$ and $U'\times\{q\}\subseteq U'\times V'$, therefore $(U\times\{q\})\cup(U'\times\{q\})=\emptyset$. It also follows that $U\cup U'=\emptyset$ and since $p\in U$ and $p'\in U'$ we have that $X\times Y$ is Hausdorff.

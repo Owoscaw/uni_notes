@@ -113,7 +113,7 @@ Previously we considered the one dimensional string across the whole real line. 
 >$\lim_{x\to0^-}u_x(x,t)=0$
 
 ## Dirichlet's boundary condition:
-We consider $\lim_{x\to0^-}u_t(x,t)=0$, that is $u_t(0,t)=0$ as we only consider smooth functions. Imposing this condition makes D'Alembert's solution:$$\Huge u(x,t)=f(x-ct)+h(-x-ct)$$With $h(\zeta)=g(-\zeta)$ and $u_t(0,t)=0\implies u(0,t)$ is constant. For convenience, we choose this constant to be $0$:$$\Huge u(0,t)=f(-ct)+h(-ct)=0\implies f(\zeta)=-h(\zeta)$$Allowing us to write D'Alembert's solution as:$$\Huge u(x,t)=f(x-ct)-f(-x-ct)$$That is, $f$ is an odd function for constant time, $u(x,t)=-u(-x,t)$:![[year 2/term 1/drawings/dirichlet]]
+We consider $\lim_{x\to0^-}u_t(x,t)=0$, that is $u_t(0,t)=0$ as we only consider smooth functions. Imposing this condition makes D'Alembert's solution:$$\Huge u(x,t)=f(x-ct)+h(-x-ct)$$With $h(\zeta)=g(-\zeta)$ and $u_t(0,t)=0\implies u(0,t)$ is constant. For convenience, we choose this constant to be $0$:$$\Huge u(0,t)=f(-ct)+h(-ct)=0\implies f(\zeta)=-h(\zeta)$$Allowing us to write D'Alembert's solution as:$$\Huge u(x,t)=f(x-ct)-f(-x-ct)$$That is, $f$ is an odd function for constant time, $u(x,t)=-u(-x,t)$:![[year 2/mathematical physics 2/term 1/drawings/dirichlet]]
 ## Neumann's (free) boundary condition:
 We consider $\lim_{x\to0^-}u_x(x,t)=u_x(0,t)=0$. We write D'Alembert's solution in the same form but now consider the condition on $u_x$:$$\Huge u_x(0,t)=f'(-ct)-h'(-ct)=0$$Therefore $f(\zeta)=h(\zeta)+\text{constant}$, we choose said constant to be $0$. Now the displacement becomes:$$\Huge u(x,t)=f(x-ct)+f(-x-ct)$$So we have $u(x,t)=u(-x,t)$, $u$ is an even function:![[neumann]]
 
