@@ -49,5 +49,24 @@ Z=Y\cap Z&=(A\cup A')\cap Z\\
 
 Let $\mathcal{A}=\{A_i:i\in I\}$ be a collection of subsets of $X$ such that $\bigcup_{i\in I}A_i=X$. Assume each $A_i$ is connected and for each $i,j\in I$ we have $A_i\cap A_j=\emptyset$. Then $X$ is connected. Proof:
  > Let $U,V$ be complementary open sets for $X$. If we fix some $i_0\in I$ then $U\cap A_{i_0}$ and $V\cap A_{i_0}$ are complementary open sets for $A_{i_0}$. Since this is connected, we assume WLOG that $U\cap A_{i_0}=A_{i_0}$ and $V\cap A_{i_0}=\emptyset$. Similarly for any $i\in I$ we have that $U\cap A_i$ and $V\cap A_i$ must be trivial. Note that $(U\cap A_i)\cap A_{i_0}=(U\cap A_{i_0})\cap A_i=A_{i_0}\cap A_i\neq\emptyset$ and hence $U\cap A_i\neq\emptyset$ so we must have $U\cap A_i=A_i$. We now know that every $A_i\subseteq U$, so $X=\bigcup_{i\in I}A_i\subseteq U\subseteq X$. We can therefore conclude that $X=U,V=\emptyset$ and therefore $X$ is connected.
+ 
+If $X$ and $Y$ are connected, then [[Limits, Bases, and Products#Product topologies|$X\times Y$]] is connected. Proof:
+> Choose any $p\in X,q\in Y$. Then $\{p\}\times Y\cong Y$ and $X\times\{q\}\cong X$. So both $\{p\}\times Y$ and $X\times\{q\}$ are connected and since they intersect at $(p,q)$ their union $(\{p\}\times Y)\cup(X\times\{q\})$ is connected. Now fix $p$ but let $q$ vary over $Y$ which gives the whole product space:$$\Huge \bigcup_{q\in Y}(\{p\}\times Y)\cup(X\times \{q\})=X\times Y$$Which is a union of connected sets in which every pair intersects in $\{p\}\times Y$, so the whole product topology is also connected.
 
-If $X$ and $Y$ are connected, then [[Limits, Bases, and Products#Product topologies|$X\times Y$]] is connected.
+Take the following as examples:
+> $\Re^n$ is connected as $\Re$ is connected, and $\Re^n$ is simply a repeated product of $\Re$
+> $B^n=\{x\in\Re^n:d_2(0,x)<1\}$ is connected, as this set is homeomorphic to $\Re^n$
+> $D^n=\{x\in\Re^n:d_2(0,x)\leq1\}$ is connected, as $D^n=\overline{B^n}$ and the closure of a connected set is also connected
+> $S^n=\{x\in\Re^{n+1}:d_2(0,x)=1\}$ is connected for $n\geq1$. To prove this, we write the set as the union $S^n=U^n\cup L^n$ where $U^n=S^n\cap\{x\in\Re^{n+1}:x_1\geq0\}$ and $L^n=S^n\cap\{x\in\Re^{n+1}:x_1\leq0\}$. We then claim that both $U^n,L^n$ are homeomorphic to $D^n$. The obvious homeomorphism to use is:$$\Huge\begin{align}
+h&:U^n\rightarrow D^n\\
+h(x_1,x_2,\dots,x_{n+1})&=(x_2,\dots,x_{n+1})\\
+h^{-1}&:D^n\rightarrow U^n\\
+h^{-1}(x_2,\dots,x_{n+1})&=(\sqrt{1-x_2^2-\dots-x_{n+1}^2},x_2,\dots,x_{n+1})
+\end{align}$$with the negative square root for $L^n$. Since $D^n$ is connected and this is a homeomorphism, both $U^n,L^n$ are connected and:$$\Huge U^n\cap L^n=\{(0,x_2,\dots,x_{n+1}:x_2^2+\dots+x_{n+1}^2=1\}\neq\emptyset$$So as $S^n$ is the union of two connected sets with non-empty intersection, $S^n$ itself is connected.
+
+A component of a topological space $X$ is a maximal connected subset of $X$. We then have:
+> Each point $p$ of $X$ is in a unique component
+> If $C_1,C_2$ are different components, then $C_1\cap C_2=\emptyset$
+> $X$ is the union of its components
+> Each component is closed in $X$
+
