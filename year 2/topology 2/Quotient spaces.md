@@ -7,4 +7,26 @@ The topology on $X/\sim$ is the largest such that $\pi$ is continuous. To prove 
 
 Suppose that $X$ is a space with equivalence relation $\sim$ and $Y$ is some other space. Then a map $f:X/\sim\rightarrow Y$ is continuous if and only if $f\circ\pi:X\rightarrow Y$ is continuous. Note that both $f,\pi$ are continuous, so $f\circ\pi$ is also continuous. To prove the converse, let $U\subseteq Y$ be open, then if $f\circ\pi$ is continuous we have $\pi^{-1}(f^{-1}(U))=(f\circ\pi)^{-1}(U)$ is open in $X$. Now by the definition of the topology on $X/\sim$ we have $f^{-1}(U)$ is open in $X/\sim$ as required.
 
-Consider $\Re$ with its standard topology and the equivalence relation defined by $x\sim y\iff x-y\in\mathbb{Z}$. Then $\Re/\sim$ is [[Topological spaces#Homeomorphisms|homeomorphic]] to the circle $S^1$. This is the same as coiling an infinite rope into a circle. We start the proof by defining the map $\exp:\Re\rightarrow S^1\subseteq\mathbb{C}$ by $\exp(t)=e^{2\pi it}$. We look for a corresponding map $\overline\exp:\Re/\sim\rightarrow S^1$ defined as $\overline\exp([t])=\exp(t)$. We must first check that this is well defined:$$ [s]=[t]\iff s-t=k\in\mathbb{Z}\iff\overline\exp([s])=e^{2\pi is}=e^{2\pi i(k+t)}=e^{2\pi ik}e^{2\pi it}=e^{2\pi it}=\overline\exp([t])$$ 
+Consider $\Re$ with its standard topology and the equivalence relation defined by $x\sim y\iff x-y\in\mathbb{Z}$. Then $\Re/\sim$ is [[Topological spaces#Homeomorphisms|homeomorphic]] to the circle $S^1$. This is the same as coiling an infinite rope into a circle. We start the proof by defining the map $\exp:\Re\rightarrow S^1\subseteq\mathbb{C}$ by $\exp(t)=e^{2\pi it}$. We look for a corresponding map $\overline\exp:\Re/\sim\rightarrow S^1$ defined as $\overline\exp([t])=\exp(t)$. We must first check that this is well defined:$$ [s]=[t]\iff s-t=k\in\mathbb{Z}\iff\overline\exp([s])=e^{2\pi is}=e^{2\pi i(k+t)}=e^{2\pi ik}e^{2\pi it}=e^{2\pi it}=\overline\exp([t])$$so we see this map is well defined and bijective. So we know that the maps:$$\Huge\begin{align}
+\Re\rightarrow^{\pi}&\Re/\sim\rightarrow^{\overline\exp}S^1\\
+\Re&\rightarrow^{\exp}S^1
+\end{align}$$are the same, that is $\overline\exp\circ\pi=\exp$. We have that $\overline\exp$ is a continuous bijection and since $S^1$ belongs to $\Re^2$ which is a metric space and therefore Hausdorff, so $S^1$ is Hausdorff. Notice that all of $\Re$ is not necessary to make $\Re/\sim$, that is $\pi([-a,a])=\Re/\sim$ and since $[-a,a]$ is compact and $\pi$ is continuous we have that $\Re/\sim$ is compact. Now we have a Hausdorff space $S^1$ and a compact space $\Re/\sim$ with a continuous bijection between them, so this map ($\overline\exp$) is a homeomorphism as required.
+
+If $A\subseteq X$ then define the equivalence relation $\sim$ by $x\sim y$ if and only if $x=y$ or $x,y\in A$. Then we define $X/A$ to be $X/\sim$.
+
+The $n$-sphere $S^n$ is homeomorphic to $D^n/S^{n-1}$. Note that the closed $n$-ball $D^n$ lives in $\Re^n$ with $S^{n-1}$ is its boundary. In the quotient space, this is reduced to a point. First notice that any point in $D^n$ can be written as $t\cdot\varphi$ where $0\leq t\leq 1$ and $\varphi$ is a point in $S^{n-1}\subseteq\Re^n$. We then define:$$\Huge\begin{align}
+f&:D^n\rightarrow S^n\subseteq\Re^{n+1}\\
+f(t\cdot\varphi)&=(\cos(\pi t),\varphi\sin(\pi t))\in\Re\times\Re^n=\Re^{n+1}
+\end{align}$$so we have that:$$\Huge\begin{align}
+f(0\cdot\varphi)&=(1,\underline 0)\\
+f(1/2\cdot\varphi)&=(0,\varphi)\\
+f(1\cdot\varphi)&=(-1,\underline 0)
+\end{align}$$where $\underline 0,\varphi$ are vectors in $\Re^n$. Now we aim to find a map $\bar f:D^n/S^{n-1}\rightarrow S^n$, defined by $\bar f([t\cdot\varphi])=f(t\cdot\varphi)$. We now show that it is both well defined and injective as follows, assume $t_1\cdot\varphi_1\neq t_2\cdot\varphi_2$:$$\large\begin{align}
+[t_1\cdot\varphi_1]=[t_2\cdot\varphi_2]\iff t_1\cdot\varphi_1,t_2\cdot\varphi_2\in S^{n-1}&\iff t_1=1=t_2\\
+&\iff f(t_1\cdot\varphi_1)=(-1,\underline 0)=f(t_2\cdot\varphi_2)\\
+&\iff \bar f([t_1\cdot\varphi_1])=\bar f([t_2\cdot\varphi_2])
+\end{align}$$It is also easy to see that $f$ is surjective (and therefore $\bar f$). We know that:$$\Huge\begin{align}
+D^n\rightarrow^\pi D^n/S^{n-1}&\rightarrow^{\bar f}S^n\\
+D^n\rightarrow^fS^n&
+\end{align}$$are the same maps, that is $\bar f\circ\pi=f$ and since $f$ is continuous, so is $\bar f$. $S^n$ is Hausdorff as it belongs to $\Re^{n+1}$. $D^n\subseteq\Re^n$ is closed and bounded and therefore is compact, so $D^n/S^{n-1}$ is compact as $\pi$ is continuous. We have the required conditions to call $\bar f$ a homeomorphism.
+ 
