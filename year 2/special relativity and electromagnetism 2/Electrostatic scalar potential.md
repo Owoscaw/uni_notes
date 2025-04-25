@@ -11,4 +11,8 @@ As an example, take a point charge $q$ at the origin, that is $\rho=q\delta(r)$:
 &=-k(3r^{-3}-3r^{-3})=0
 \end{align}$$as required. This solves the equation for any $k$ at $r\neq0$ however we must find the correct value for this constant so that the solution correctly handles the Dirac delta function at the origin. To do this we must integrate the Poisson equation over the volume $V$ bounded by a [[Electromagnetism#Vector calculus and Dirac delta|Gaussian surface]] that is a sphere of radius $r$ at the origin:$$\Huge\begin{align}
 \int_V\underline{\nabla}\cdot\underline{\nabla}\phi\,dV=-\frac{q}{\epsilon_0}\int_V\delta(r)\,dV=-\frac{q}{\epsilon_0}=\int_S\underline{\nabla}\phi\cdot\underline{dS}
-\end{align}$$Now $\partial_i\phi=k\partial_ir^{-1}=-kx_ir^{-1}$
+\end{align}$$Now $\partial_i\phi=k\partial_ir^{-1}=-kx_ir^{-1}r^{-2}=-kx_ir^{-3}$ hence $\underline{\nabla}\phi=-kr^{-2}\underline{\hat{r}}$ which makes the integral:$$\large -\frac{q}{\epsilon_0}=-k\int_Sr^{-2}\underline{\hat{r}}\cdot\underline{dS}=-kr^{-2}\int_SdS=-kr^{-2}4\pi r^2=-4\pi k\implies k=\frac{q}{4\pi\epsilon_0}$$This makes the scalar potential for a point charge $q$ at the origin:$$\Huge\phi=\frac{q}{4\pi\epsilon_0r}$$with the electric field:$$\Huge \underline E=-\underline{\nabla}\phi=\frac{q\underline{\hat{r}}}{4\pi\epsilon_0r^2}$$
+
+# Scalar potential of a [[Electrostatics#Electric dipoles|dipole]]:
+
+As the Poisson equation $\nabla^2\phi=-\rho/\epsilon_0$ is linear in both $\rho$ and $\phi$.
