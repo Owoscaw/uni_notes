@@ -15,4 +15,17 @@ As an example, take a point charge $q$ at the origin, that is $\rho=q\delta(r)$:
 
 # Scalar potential of a [[Electrostatics#Electric dipoles|dipole]]:
 
-As the Poisson equation $\nabla^2\phi=-\rho/\epsilon_0$ is linear in both $\rho$ and $\phi$.
+As the Poisson equation $\nabla^2\phi=-\rho/\epsilon_0$ is linear in both $\rho$ and $\phi$ then the scalar potential of the sum of two charge densities is simply the sum of their individual scalar potentials. As an example, we can apply this to calculate the scalar potential of a dipole with dipole moment $\underline p$. For a charge $q$ at the origin and a charge $-q$ at $r=-h$ the scalar potential is:$$\Huge\begin{align}
+\phi&=\frac{q}{4\pi\epsilon_0r}-\frac{q}{4\pi\epsilon_0|\underline r+\underline h|}\\
+&=\frac{q}{4\pi\epsilon_0}(r^{-1}-|\underline r+\underline h|^{-1})\\
+&=\frac{q}{4\pi\epsilon_0}(r^{-1}-(r^{-1}+\underline h\cdot\underline{\nabla}r^{-1}+\mathcal{O}(h)))\\
+&=\frac{q}{4\pi\epsilon_0}(\underline h\cdot\underline{\hat{r}}r^{-2}+\mathcal{O}(h))
+\end{align}$$Now taking the limit as $h\to0$ with the dipole moment $\underline p=q\underline h$ fixed gives the scalar potential of the dipole:$$\Huge \phi=\frac{\underline p\cdot\underline{\hat{r}}}{4\pi\epsilon_0r^2}=\frac{\underline p\cdot\underline r}{4\pi\epsilon_0r^{3}}$$Note that this scalar potential is not spherically symmetric.
+
+# Multi-pole expansion:
+
+Given an arbitrary charge density $\rho(\underline r)$ which we assume is localised around the origin so that it vanishes outside of some region $V$, it is possible to write a formal expression for the scalar potential in terms of a [[Surface and volume integrals#Volume integrals|volume integral]] over the region $V$. To do this, we first define [[Green's method#Green's function via delta function|Green's function]] $G(\underline r,\underline r')$ of the [[Index notation#Second derivatives|Laplacian]] to be the solution to:$$\Huge \nabla^2G(\underline r,\underline r')=\delta(\underline r-\underline r')$$Note that the Laplacian only differentiates with respect to coordinates associated with $\underline r$, not $\underline r'$ so this vector can be thought of as a parameter. If the Green's function is known, then the Poisson equation for the scalar potential with arbitrary source $$\Huge \nabla^2\phi(\underline r)=-\frac{\rho(\underline r)}{\epsilon_0}$$is solved by:$$\Huge \phi(\underline r)=-\frac{1}{\epsilon_0}\int_VG(\underline r,\underline r')\rho(\underline r')dV'$$where $dV'$ represents integration over the $\underline r'$ coordinate. This is proven as follows:$$\Huge\begin{align}
+\nabla^2\phi(\underline r)&=-\frac{1}{\epsilon_0}\int_V\nabla^2G(\underline r,\underline r')\rho(\underline r')dV'\\
+&=-\frac{1}{\epsilon_0}\int_V\delta(\underline r-\underline r')\rho(\underline r')dV'\\
+&=-\frac{1}{\epsilon_0}(\rho(\underline r))
+\end{align}$$which is the Poisson equation exactly. Here we used the fact that the Laplacian is independent of $\underline r'$ and so can be moved inside the integrand, as well as the definition of Green's function and the properties of the delta function.
