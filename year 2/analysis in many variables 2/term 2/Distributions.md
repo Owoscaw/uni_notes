@@ -27,3 +27,47 @@ Take the delta distribution for example. Linearity is obvious, for continuity we
 Assume $f(x)$ is locally integrable, then there is a natural definition of its distribution:$$\Huge \langle f,\phi\rangle=\int_\Re f(x)\phi(x)dx$$We first check that this satisfies continuity. Let $X>0$ be the compact support of $\phi$, then define:$$\Huge C(X)=\int_{-X}^X|f(x)|dx$$This is assumed to be finite as $f$ is locally integrable. Now let $N=0$ and we have:$$\large |\langle f,\phi\rangle|=\left|\int_{-X}^Xf(x)\phi(x)dx\right|\leq\int_{-X}^X|f(x)||\phi(x)|dx\leq\max_{-X<x<X}|\phi(x)|\int_{-X}^X|f(x)|dx$$where we have used the compact support of $\phi$ and the [[Complex integration#Estimation lemma and contour length|estimation lemma]] to show that $|\langle f,\phi\rangle|\leq C\max_{-X<x<X}|\phi(x)|$, satisfying continuity with $C$ defined above and $N=0$. One can also show that this distribution is well defined and linear, making all locally integrable functions distributions.
 
 Take for example the Heaviside step function:$$\Huge \langle H,\phi\rangle=\int_\Re H(x)\phi(x)dx=\int_0^\infty\phi(x)dx=\int_0^X\phi(x)dx$$for a test function $\phi(x)$ with compact support on $[-X,X]$. We now see:$$\Huge |\langle H,\phi\rangle|=\left|\int_0^X\phi(x)dx\right|\leq\int_0^X|\phi(x)|dx\leq X\max_{0\leq x\leq X}|\phi(x)|$$so we have continuity with $N=0$ and $C=X$.
+
+All distributions that are induced by integrable $f$ are called regular distributions, otherwise they are called singular. Singular distributions $\langle u,\phi\rangle$ are induced by functions $u$ that are not well defined outside the integral definition, like the delta distribution.
+
+# Operations on distributions:
+
+## Linear combinations:
+Let $u_1,u_2,u$ be distributions, $f_1,f_2,f$ be locally integrable functions, and $\alpha_1,\alpha_2\in\Re$. Then we have:$$\Huge\begin{align}
+\langle \alpha_1f_1+\alpha_2f_2,\phi\rangle&=\int_\Re(\alpha_1f_1+\alpha_2f_2)\phi\,dx\\
+&=\alpha_1\int_\Re f_1\phi\,dx+\alpha_2\int_\Re f_2\phi\,dx\\
+&=\alpha_1\langle f_1,\phi\rangle+\alpha_2\langle f_2,\phi\rangle
+\end{align}$$This is well defined as $f_1,f_2$ are integrable and induce regular distributions. We ask if the linear combination of $\alpha_1u_1+\alpha_2u_2$ is also well defined. Obviously, the distribution induced by this linear combination has the same form as above, however we must check continuity, that is:$$\Huge |\langle \alpha_1u_1+\alpha_2u_2,\phi\rangle|\leq C\sum_{m\leq N}\max_{-X\leq x\leq X}\left|\frac{d^m\phi}{dx^m}\right|$$for some $C>0,N\geq0$ where $\phi$ is a test function supported on $[-X,X]$. As $\alpha_1\langle u_1,\phi\rangle,\alpha_2\langle u_2,\phi\rangle$ are singular distributions themselves, we know that:$$\Huge\begin{align}
+|\alpha_1\langle u_1,\phi\rangle|&\leq C_1\sum_{m\leq N_1}\max_{-X\leq x\leq X}\left|\frac{d^m\phi}{dx^m}\right|\\
+|\alpha_2\langle u_2,\phi\rangle|&\leq C_2\sum_{m\leq N_2}\max_{-X\leq x\leq X}\left|\frac{d^m\phi}{dx^m}\right|
+\end{align}$$for some $C_1,C_2>0$ and $N_1,N_2\geq0$. Now let $\alpha_\text{max}=\max(\alpha_1,\alpha_2),C_\text{max}=\max(C_1,C_2),N_\text{max}=\max(N_1,N_2)$:$$\Huge\begin{align}
+|\langle \alpha_1u_2+\alpha_2u_2,\phi\rangle|&=|\alpha_1\langle u_1,\phi\rangle+\alpha_2\langle u_2,\phi\rangle|\\
+&\leq|\alpha_1||\langle u_1,\phi\rangle|+|\alpha_2||\langle u_2,\phi\rangle|\\
+&\leq2|\alpha_\text{max}|C_\text{max}\sum_{m\leq N_\text{max}}\max_{-X\leq x\leq X}\left|\frac{d^m\phi}{dx^m}\right|
+\end{align}$$which satisfies the definition of continuity with $C=2|\alpha_\text{max}|C_\text{max}$ and $N=N_\text{max}$.
+
+## Distributional derivatives:
+For a general distribution $u$ we defined the notion of the weak derivative:$$\Huge \langle u',\phi\rangle=-\langle u,\phi'\rangle\,\,\forall\phi\in C_0^\infty(\Re)$$We see that $u':\phi\rightarrow-\langle u,\phi'\rangle$ is also a distribution as $u$ itself is a distribution and $\phi'\in C_0^\infty(\Re)$ by definition. Using this we can check that the derivative of the Heaviside function is indeed the delta function:$$\Huge\begin{align}
+\langle H',\phi\rangle&=-\langle H,\phi'\rangle\\
+&=-\int_\Re H(x)\phi'(x)dx\\
+&=-\int_0^\infty\phi'(x)dx\\
+&=\phi(0)-\phi(\infty)\\
+&=\phi(0)
+\end{align}$$where we have used the fact that $\phi$ is a test function and therefore must vanish at infinity by compact support. So we have that $\langle H',\phi\rangle=\phi(0)$, which is the definition of the delta function. So we have that the Heaviside function is indeed the weak derivative (at least) of the delta function.
+
+## Translations:
+For a distribution $u$ and $a\in\Re$ we have:$$\Huge \langle u(x-a),\phi(x)\rangle=\langle u(x),\phi(x+a)\rangle$$which is proven by taking $y=x-a$ and noticing that $\langle ,\rangle$ is translation invariant.
+
+## Multiplication:
+Let $a(x)$ be infinitely differentiable, then:$$\Huge \langle au,\phi\rangle=\langle u,a\phi\rangle$$Trivial.
+
+## Convergence:
+Let $u_1,u_2,\dots$ be a sequence of distributions. Convergence of $u_j\to u$ as $j\to\infty$ means that:$$\Huge \lim_{j\to\infty}\langle u_j,\phi\rangle=\langle u,\phi\rangle$$Similarly if $u(\alpha)$ is a family of distributions dependent on $\alpha$ and $u(\alpha)\to u(\alpha_0)$ as $\alpha\to\alpha_0$ then we have:$$\Huge \lim_{\alpha\to\alpha_0}\langle u(\alpha),\phi\rangle=\langle u(\alpha_0),\phi\rangle$$
+
+# Distributed solutions:
+
+Consider an equation:$$\Huge Lu=a_2(x)u''+a_1(x)u'+a_0(x)u=f$$A distributed solution to this equation is defined as:$$\Huge\begin{align}
+\langle Lu,\phi\rangle&=\langle a_2u'',\phi\rangle+\langle a_1u',\phi\rangle+\langle a_0u,\phi\rangle\\
+&=\langle u,(a_2\phi)''\rangle-\langle u,(a_1\phi)'\rangle+\langle u,a_0\phi\rangle\\
+&=\langle u,L^*\phi\rangle
+\end{align}$$where $L^*$ is the formal [[Eigenfunction methods#Adjoint operators|adjoint operator]]. In this case we call $u$ a distributed solution to $Lu=f$ if $\langle u,L^*\phi\rangle=\langle f,\phi\rangle$ for all $\phi\in C_0^\infty(\Re)$
