@@ -77,3 +77,5 @@ Take for example the differential equation:$$\Huge Lu=u''+u=0$$We show that $u=\
 &=\int_\Re\frac{d^2\cos x}{dx^2}\phi+\cos x\,\phi\,dx\\
 &=\int_\Re\phi(-\cos x+\cos x)dx=0
 \end{align}$$where we used integration by parts twice on the $\cos x\,\phi''$ term. So $u=\cos x$ indeed fits the description of a distributed solution.
+
+This definition is not trivial when considering [[Green's method]]. In this case we solve:$$\Huge \langle Lg,\phi\rangle=\langle \delta(x-\xi),\phi\rangle$$which has distributed solution:$$\Huge \langle g(x,\xi),L^*\phi\rangle=\phi(\xi)$$
