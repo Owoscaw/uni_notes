@@ -70,4 +70,10 @@ Consider an equation:$$\Huge Lu=a_2(x)u''+a_1(x)u'+a_0(x)u=f$$A distributed solu
 \langle Lu,\phi\rangle&=\langle a_2u'',\phi\rangle+\langle a_1u',\phi\rangle+\langle a_0u,\phi\rangle\\
 &=\langle u,(a_2\phi)''\rangle-\langle u,(a_1\phi)'\rangle+\langle u,a_0\phi\rangle\\
 &=\langle u,L^*\phi\rangle
-\end{align}$$where $L^*$ is the formal [[Eigenfunction methods#Adjoint operators|adjoint operator]]. In this case we call $u$ a distributed solution to $Lu=f$ if $\langle u,L^*\phi\rangle=\langle f,\phi\rangle$ for all $\phi\in C_0^\infty(\Re)$
+\end{align}$$where $L^*$ is the formal [[Eigenfunction methods#Adjoint operators|adjoint operator]]. In this case we call $u$ a distributed solution to $Lu=f$ if $\langle u,L^*\phi\rangle=\langle f,\phi\rangle$ for all $\phi\in C_0^\infty(\Re)$.
+
+Take for example the differential equation:$$\Huge Lu=u''+u=0$$We show that $u=\cos x$ is a distributed solution in the following manner:$$\Huge\begin{align}
+\langle u,L^*\phi\rangle&=\langle \cos x,\phi''+\phi\rangle\\
+&=\int_\Re\frac{d^2\cos x}{dx^2}\phi+\cos x\,\phi\,dx\\
+&=\int_\Re\phi(-\cos x+\cos x)dx=0
+\end{align}$$where we used integration by parts twice on the $\cos x\,\phi''$ term. So $u=\cos x$ indeed fits the description of a distributed solution.
