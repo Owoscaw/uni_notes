@@ -2,7 +2,7 @@ There are several generalisations of the [[year 1/analysis 1/term 2/Integration#
 
 # Fundamental theorem of line integrals:
 
-If $f:\Re^n\mapsto\Re$ is a $C^1$ scalar field and $C$ is an oriented curve with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$:$$\Huge \int_C\underline{\nabla}f\cdot\hat{\underline t}dl=f(\underline x(t_1))-f(\underline x(t_2))$$We prove this for $n=3$:$$\Huge\begin{align} \int_C\underline{\nabla}f\cdot\hat{\underline t}dl&=\int_{t_0}^{t_1}\underline{\nabla}f\cdot\frac{d \underline x}{dt}dt\\
+If $f:\Re^n\mapsto\Re$ is a $C^1$ scalar field and $C$ is an oriented curve with parametrisation $\underline x(t)$ for $t\in[t_0,t_1]$:$$\Huge \int_C\underline{\nabla}f\cdot\hat{\underline t}dl=f(\underline x(t_1))-f(\underline x(t_0))$$We prove this for $n=3$:$$\Huge\begin{align} \int_C\underline{\nabla}f\cdot\hat{\underline t}dl&=\int_{t_0}^{t_1}\underline{\nabla}f\cdot\frac{d \underline x}{dt}dt\\
 &=\int_{t_0}^{t_1}\left(\frac{\partial f}{\partial x}\frac{d x}{dt}+\frac{\partial f}{\partial y}\frac{d y}{dt}+\frac{\partial f}{\partial z}\frac{d z}{dt}\right)dt\\
 &=\int_{t_0}^{t_1}\frac{d f}{dt}dt\\
 &=f(t_1)-f(t_0)=f(\underline x(t_1))-f(\underline x(t_0))
