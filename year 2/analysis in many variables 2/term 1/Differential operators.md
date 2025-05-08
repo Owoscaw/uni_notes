@@ -1,4 +1,4 @@
-	
+		
 The gradient of a [[Line integrals#Line integrals of Scalar Fields|scalar field]] $f:\Re^3\mapsto\Re$ is given by the operator:$$\Huge \underline\nabla f|_{\underline x}=\lim_{d(S)\to 0}\frac{1}{|V|}\oint_Sf\cdot \hat{\underline n}\,dS$$Where $S$ is a closed surface around $\underline x$ with outward normal vector $\hat{\underline n}$, enclosed volume $|V|$, and diameter $d(S)$ given by:$$\Huge d(S)=\sup_{\underline x,\underline y\in S}|\underline x- \underline y|$$![[scalar field grad.png]]
 Note that $\underline\nabla f$ is a vector field $\Re^3\mapsto\Re^3$ and that $\underline\nabla f$ points in the direction of fastest increase in $f$, $|\underline\nabla f|$ represents how fast $f$ is increasing. To ensure this limit exists, $f$ is assume to have continuous [[Partial derivatives|partial derivatives]], that is $f$ is continuously differentiable, $f\in C^1$.
 
