@@ -32,3 +32,34 @@ Let $S=\{a_1,\dots,a_m\}$ be the set of poles of $f$ inside $\gamma$. So $f$ is 
 \implies\int_\gamma f(z)dz&=\sum_{j=1}^m\int_\gamma f_j(z)dz\\
 &=2\pi i\sum_{j=1}^m\text{Res}_{z=a_j}(f)
 \end{align}$$Concluding the proof.
+
+# Real series calculation:
+
+We now have the tools required to take any integral on the complex plane. We consider two scenarios, one where $f$ has no poles on $\Re$ and one where $f$ has a pole at $z=0$ (for example):![[year 2/complex analysis 2/term 2/drawings/integration]]
+For the pole-less function we have two methods:
+> $$\Huge \int_{-R}^Rf(x)dx=\int_{L_R}f(z)dz=\int_{\gamma_R}fdz-\int_{C_r}fdz$$
+> $$\large \int_{-R}^Rg(x)\sin(x)dx=\Im\left(\int_{L_R}g(z)e^{-z}dz\right)=\Im\left(\int_{\gamma_R}g(z)e^{iz}dz-\int_{C_R}g(z)e^{iz}dz\right)$$
+
+And for the pole-full function:$$\large\begin{align}
+\int_\epsilon^{R}g(x)\sin(x)dx&=\frac{1}{2i}\left(\int_{L_1}g(z)e^{iz}dz+\int_{L_2}g(z)e^{iz}dz\right)\\
+&=\frac{1}{2i}\left(\int_{\gamma_R}g(z)e^{iz}dz-\int_{C_R}g(z)e^{iz}dz+\int_{C_\epsilon}g(z)e^{iz}dz\right)
+\end{align}$$
+## Squares lemma:
+For $N\geq0$ let $S_N$ be the square in $\mathbb{C}$ with vertices $(1+i)(N+1/2),(-1+i)(N+1/2),(-1-i)(N+1/2),(1-i)(N+1/2)$, then there exist real constants $C,D>0$ independent of $N$ such that:$$\Huge |\cot(\pi z)|=\frac{|\cos(\pi z)|}{|\sin(\pi z)|}\leq C,\,\,|\csc(\pi z)|=\frac{1}{|\sin(\pi z)|}\leq D$$![[square lemma]]On the vertical sides we have $z=\pm(N+1/2)+iy$ with $|y|\leq N+1/2$ so we have:$$ |\csc(\pi z)|=\frac{1}{|\sin(\pi(\pm(N+1/2)+iy)|}=\frac{1}{|\sin(\pm\pi(N+1/2)+i\pi y)|}=\frac{1}{|\cos(i\pi y)|}=\frac{1}{\cosh(\pi y)}\leq1$$as $\cosh(y)\geq1$ on the reals. Similarly we have:$$ |\cot(\pi z)|=\frac{|\cos(\pm\pi(N+1/2)+i\pi y)|}{|\sin(\pm\pi(N+1/2)+i\pi y)|}=\frac{|\pm\sin(i\pi y)|}{|\pm\cos(i\pi y)|}=\frac{|e^{-\pi y}-e^{\pi y}|}{|e^{-\pi y}+e^{\pi y}|}=\frac{|1-e^{-2\pi y}|}{|1+e^{-2\pi y}|}\leq 1$$Now on the horizontal sides we have $z=x+iy$ with $|y|\geq1/2$ so:$$\Huge |\csc(\pi z)|=\frac{1}{1/2|e^{i\pi z}-e^{-i\pi z}|}$$now notice that $|e^{i\pi z}|=|e^{i\pi x}e^{-\pi y}|=e^{\pi y}$ so by the reverse triangle inequality:$$\Huge|\csc(\pi z)|\leq\frac{1}{1/2||e^{i\pi(x+iy)}|-|e^{i\pi(x+iy)}||}=\frac{1}{1/2|e^{-\pi y}-e^{\pi y}|}$$This upper bound becomes $\frac{1}{1/2(e^{\pi y}-e^{i\pi y})}$ for $y\geq0$ and $\frac{1}{1/2(e^{-\pi y}-e^{\pi y})}$ if $y\leq 0$ so the upper bound can be written as $\frac{1}{\sinh(\pi|y|)}$. Now we have $|y|\geq1/2$ and as $\sinh$ is an increasing function we have:$$\Huge |\csc(\pi z)|\leq\frac{1}{\sinh(\pi|y|)}\leq\frac{1}{\sinh(\pi/2)}$$for the horizontal sides. Similarly:$$\large \begin{align}
+\cot(\pi z)&=\frac{\cos(\pi z)}{\sin(\pi z)}=\cos(\pi z)\csc(\pi z)\\
+|\cos(\pi z)|&=\frac{1}{2}|e^{i\pi z}+e^{-i\pi z}|\leq\frac{1}{2}(|e^{i\pi z}|+|e^{-i\pi z}|)=\frac{1}{2}(e^{-\pi y}+e^{\pi y})=\cosh(\pi y)\\
+|\cot(\pi z)|&=|\cos(\pi z)||\csc(\pi z)|\leq\frac{\cosh(\pi|y|)}{\sinh(\pi|y|)}=\coth(\pi|y|)\leq\coth(\pi/2)
+\end{align}$$So we have the result as required.
+
+## Basel problem:
+Now we can solve the classical problem:$$\Huge \sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}$$Euler solved this (of course) ages ago, however we offer a modern proof using complex analysis. To do this, we will calculate $\int_{S_N}f(z)dz$ with $f(z)=\frac{\cot(\pi z)}{z^2}$ and take $S_N$ to be the path described in the above squares lemma.
+
+The singularities of $f(z)=\frac{\cot(\pi z)}{z^2}=\frac{\cos(\pi z)}{z^2\sin(\pi z)}$ occur precisely at the zeros of the denominator. For $z^2$ these occur at $z=0$ and $\sin(\pi z)$ they occur at $z=n$. The numerator is never zero at these points, so all poles are simple apart from $z=0$ as this is clearly a zero of the denominator of order $3$ so must be a pole of $f$ of order $3$. We must therefore find the residue of these poles:$$\Huge \text{Res}_{z=n}(f)=\frac{\cos(\pi z)/z^2}{\frac{d}{dz}(\sin(\pi z))}\vert_{z=n}=\frac{\cos(\pi n)/n^2}{\pi\cos(\pi n)}=\frac{1}{\pi n^2}$$We cannot use this method for $z=0$ as $f$ has a pole of order $3$ here. Because of this, the principal part of $f$'s Laurent series must have form $c_{-3}z^{-3}+c_{-2}z^{-2}+c_{-1}z^{-1}$ for some $c\in\mathbb{C}$ with $c_{-3}\neq0$. Now we write $g(z)=z^3f(z)$ and notice that $g$ is simply a power series (no principal part) and so must extend to a holomorphic function at $z=0$ (this is a removable singularity of $g$). Then clearly $c_{-3}$ is the value of $g$ at $z=0$, that is $c_{-3}=g(0)$. Moreover $c_{-2}=g'(0)$ and:$$\Huge \text{Res}_{z=0}(f)=c_{-1}=\frac{g''(0)}{2}$$To find this, we simply verify that the Taylor series of $\sin(\pi z)$ on $\mathbb{C}$ is given by:$$\Huge \sin(\pi z)=\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}(\pi z)^{2n+1}=\sum_{n=0}^\infty\frac{(-1)^n\pi^{2n+1}}{(2n+1)!}z^{2n+1}$$and hence:$$\Huge \begin{align}
+z^3f(z)&=\frac{z\cos(\pi z)}{\sin(\pi z)}\\
+&=\frac{\cos(\pi z)}{\sum_{n=0}^\infty\frac{(-1)^n\pi^{2n+1}}{(2n+1)!}z^{2n}}\\
+&=\frac{\cos(\pi z)}{\pi+\sum_{n=1}^\infty\frac{(-1)^n\pi^{2n+1}}{(2n+1)!}z^{2n}}\\
+&=\frac{\cos(\pi z)}{\pi+h(z)}
+\end{align}$$where $h(z)=\sum_{n=1}^\infty a_nz^n$ is a holomorphic power series converging on $\mathbb{C}$ with:$$\Huge h(0)=a_0=0,\,\,h'(0)=a_1=0,\,\,h''(0)=2a_2=-2\frac{\pi^3}{6}=-\frac{\pi^3}{3}$$Now:$$\Huge g'(z)=\frac{d}{dz}(z^3f(z))=\frac{-\pi\sin(\pi z)}{\pi+h(z)}+\frac{-h'(z)\cos(\pi z)}{(\pi+h(z))^2}$$so we have:$$\large g''(0)=\frac{-\pi^2\cos(0)}{\pi+h(0)}+\frac{-h''(0)\cos(0)}{(\pi+h(0))^2}=-\pi+\frac{\pi^3/3}{\pi^2}=-\pi+\pi/3=-\frac{2\pi}{3}$$Therefore $\text{Res}_{z=0}(f)=c_{-1}=g''(0)/2=-\pi/3$. Now we can return to the integral, for sufficiently large $N$, the poles lying inside $S_N$ are precisely $z=0$ and $z=n\neq0$ for $-N\leq n\leq N$. Therefore by Cauchy's residue theorem:$$\Huge \frac{1}{2\pi i}\int_{S_N}f(z)dz=-\frac{\pi}{3}+\frac{1}{\pi}\sum_{n_{n\neq0}=-N}^N\frac{1}{n^2}=-\frac{\pi}{3}+\frac{2}{\pi}\sum_{n=1}^N\frac{1}{n^2}$$The length of $S_N$ is $4(2N+1)=8N+4$. Now for $z\in S_N$ and sufficiently large $N$ we meet the requirements for the Squares lemma and there exists $C>0$ independent of $N$ such that:$$\large \sup_{z\in S_N}|f(z)|=\sup_{z\in S_N}\left|\frac{\cot(\pi z)}{z^2}\right|\leq C\sup_{z\in S_N}\frac{1}{|z|^2}=\frac{C}{(N+1/2)^2}=\frac{C}{N^2+N+1/4}$$Then by the estimation lemma we have:$$\Huge \left|\int_{S_N}f(z)dz\right|=\left|\int_{S_N}\frac{\cot(\pi z)}{z^2}dz\right|\leq\frac{C(8N+4)}{N^2+N+1/4}=\frac{C(8+4/N)}{N+1+1/4N}$$this clearly tends to $0$ as $N\to\infty$. Moreover we know that $\sum_{n=1}^N\frac{1}{n^2}$ converges thus by letting $N\to\infty$:$$\Huge \sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi}{2}\lim_{N\to \infty}\left(\frac{1}{2\pi i}\int_{S_N}f(z)dz+\frac{\pi}{3}\right)=\frac{\pi}{2}\cdot\frac{\pi}{3}=\frac{\pi^2}{6}$$as required.
+
+# Argument principle and Rouche's theorem:
+
