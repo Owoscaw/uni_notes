@@ -82,3 +82,10 @@ Now we can state and prove the Argument Principle. Let $\gamma$ be a simple clos
 \end{align}$$where $b_j$ are the zeros of $f$ and $c_j$ are the poles of $f$ and we get equality from the third to fourth line by the lemma proven above.
 
 Take for example $f(z)=\frac{(z-3)^3(z-1)^7z^3}{(z-i)^4(z+4)^5(z-3i)^7}$ and $\gamma(\theta)=\frac{7}{2}e^{i\theta}$ for $\theta\in[0,2\pi]$. Then:$$\Huge \frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{g(z)}dz=(3+7+3)-(4+7)=13-11=2$$
+We now see where the name "argument principle" comes from. Imagine any $\gamma,f$ that satisfy the conditions for the principle:![[arg princ]]Clearly, $0\notin\Gamma_f$ so we ask how many times $\Gamma_f$ winds around $0$:$$\Huge\begin{align}
+I(\Gamma_f;0)&=\frac{1}{2\pi i}\int_{\Gamma_f}\frac{1}{z}dz\\
+&=\frac{1}{2\pi i}\int_a^b\frac{1}{\Gamma_f(t)}\Gamma_f'(t)dt\\
+&=\frac{1}{2\pi i}\int_a^b\frac{1}{f(\gamma(t))}(f'(\gamma(t))\gamma'(t))dt\\
+&=\frac{1}{2\pi i}\int_a^b\frac{f'(\gamma(t))}{f(\gamma(t))}\gamma'(t)dt\\
+&=\frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{f(z)}dz=z_f-p_f
+\end{align}$$
