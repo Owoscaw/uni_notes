@@ -74,6 +74,7 @@ Note that if $f$ is meromorphic then $f'/f$ is meromorphic and the poles of $h=f
 > the poles of $f'$:
 > > Assume $z=a$ is a "new pole" (doesn't come from a  pole of $f$). This means that $f$ does not have a pole at $a$ and is therefore holomorphic at $a$. Now $f$ can be written as a power series and we write $f'(z)=\sum_{n=1}^\infty nc_n(z-a)^{n-1}$ which is just a power series and cannot have a pole. This is a contradiction, so $z=a$ cannot be a "new pole". Therefore, poles of $f$ must also be poles of $f'$, and all poles must come from the zeros or poles of $f$ (and are all therefore simple).
 
+## Argument Principle:
 Now we can state and prove the Argument Principle. Let $\gamma$ be a simple closed contour, positively oriented, and suppose $f$ is meromorphic on and inside the contour ($\gamma\cup D_\gamma^\text{int}$) with no zeros or poles on $\gamma$. Now we define $z_f$ as the number of zeros $f$ has in $D_\gamma^\text{int}$ and $p_f$ as the number of poles in $D_\gamma^\text{int}$ (counted with multiplicities!). Then we have:$$\Huge \frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{f(z)}dz=z_f-p_f$$Proven as follows: By Cauchy's residue theorem:$$\Huge\begin{align}
 \frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{f(z)}dz&=\sum_{j=1}^n\text{Res}_{z=a_j}\left(\frac{f'}{f}\right)\\
 &=\sum_{j=1}^m\text{Res}_{z=b_j}\left(\frac{f'}{f}\right)+\sum_{j=1}^k\text{Res}_{z=c_j}\left(\frac{f'}{f}\right)\\
@@ -88,4 +89,6 @@ I(\Gamma_f;0)&=\frac{1}{2\pi i}\int_{\Gamma_f}\frac{1}{z}dz\\
 &=\frac{1}{2\pi i}\int_a^b\frac{1}{f(\gamma(t))}(f'(\gamma(t))\gamma'(t))dt\\
 &=\frac{1}{2\pi i}\int_a^b\frac{f'(\gamma(t))}{f(\gamma(t))}\gamma'(t)dt\\
 &=\frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{f(z)}dz=z_f-p_f
-\end{align}$$
+\end{align}$$So we see that the winding number of $\Gamma_f$ around $0$ is simply equal to the number of zeros inside $\gamma$ minus the number of poles inside $\gamma$.
+
+## Rouche's theorem:
