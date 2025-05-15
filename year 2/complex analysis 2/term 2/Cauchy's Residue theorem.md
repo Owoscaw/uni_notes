@@ -94,4 +94,4 @@ I(\Gamma_f;0)&=\frac{1}{2\pi i}\int_{\Gamma_f}\frac{1}{z}dz\\
 ## Rouche's theorem:
 Let $\gamma$ be a simple closed contour, and let $f,g$ be holomorphic functions on $D_\gamma^\text{int}\cup\gamma$. Suppose that:$$\Huge |f(z)-g(z)|<|g(z)|,\,\,\forall z\in\gamma$$Then $f(z)$ and $g(z)$ have the same number of zeros (counting multiplicities!) inside $\gamma$. This is proven as follows:
 
-Since both $f,g$ are holomorphic
+Since both $f,g$ are holomorphic on $D_\gamma^\text{int}$, they have no poles on $\gamma$ and we set $h(z)=\frac{f(z)}{g(z)}$. Observe that 
