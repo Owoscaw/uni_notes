@@ -63,3 +63,22 @@ z^3f(z)&=\frac{z\cos(\pi z)}{\sin(\pi z)}\\
 
 # Argument principle and Rouche's theorem:
 
+Let $f$ be meromorphic on a domain $D$ with a zero or pole of order $k>0$ at $a\in D$. Then the function $\frac{f'(z)}{f(z)}$ has a simple pole at $a$ and:$$\Huge \text{Res}_{z=a}\left(\frac{f'}{f}\right)=\begin{cases}k&\text{if }f\text{ has a zero at }z=a\\-k&\text{if }f\text{ has a pole at }z=a\end{cases}$$To prove this, assume $f$ has a zero of order $k>0$ at $a$. Then we can write:$$\Huge f(z)=(z-a)^kg(z),\,\,g(a)\neq0$$by definition of the [[Holomorphic functions#Order of a zero|order of a zero]]. Therefore:$$\Huge \frac{f'(z)}{f(z)}=\frac{k(z-a)^{k-1}g(z)+(z-a)^kg'(z)}{(z-a)^kg(z)}=\frac{k}{z-a}+\frac{g'(z)}{g(z)}$$Note that since $g(z)$ is holomorphic and $g(a)\neq0$ we have that $\frac{g'(z)}{g(z)}$ is also holomorphic at $z=a$. This means that $g$ can be written as a power series and that $f$ can be written as a Laurent series with $\frac{k}{z-a}$ as the principle part and $\frac{g'(z)}{g(z)}$ as the analytic part. Clearly $f$ therefore has a pole of order $1$ at $z=a$ and by definition, $c_{-1}=k$ and we have $\text{Res}_{z=a}(f'/f)=k$ as required.
+
+Now assume that $f$ has a pole of order $k>0$ at $a$. Then we can write:$$\Huge f(z)=\frac{g(z)}{(z-a)^k}$$for some holomorphic $g$ such that $g(a)\neq0$. In this case:$$\Huge \frac{f'(z)}{f(z)}=\frac{-kg(z)/(z-a)^{k+1}+g'(z)/(z-a)^k}{g(z)/(z-a)^k}=-\frac{k}{z-a}+\frac{g'(z)}{g(z)}$$Now by the same argument we have that $c_{-1}=k$ and $\text{Res}_{z=a}(f'/f)=-k$, completing the proof.
+
+Take for example $f(z)=e^z/z$, which has no zeros and a pole of order $1$ at $z=0$. Here we have:$$\Huge f'(z)=\frac{e^z}{z}-\frac{e^z}{z^2},\,\,\frac{f'(z)}{f(z)}=\frac{(z-1)e^z/z^2}{e^z/z}=\frac{z-1}{z}=-\frac{1}{z}+1$$which clearly has a pole of order $1$ at $z=0$ and $\text{Res}_{z=0}(f'/f)=-1$
+
+Note that if $f$ is meromorphic then $f'/f$ is meromorphic and the poles of $h=f'/f$ are at either:
+> the zeros or poles of $f$ 
+> the poles of $f'$:
+> > Assume $z=a$ is a "new pole" (doesn't come from a  pole of $f$). This means that $f$ does not have a pole at $a$ and is therefore holomorphic at $a$. Now $f$ can be written as a power series and we write $f'(z)=\sum_{n=1}^\infty nc_n(z-a)^{n-1}$ which is just a power series and cannot have a pole. This is a contradiction, so $z=a$ cannot be a "new pole". Therefore, poles of $f$ must also be poles of $f'$, and all poles must come from the zeros or poles of $f$ (and are all therefore simple).
+
+Now we can state and prove the Argument Principle. Let $\gamma$ be a simple closed contour, positively oriented, and suppose $f$ is meromorphic on and inside the contour ($\gamma\cup D_\gamma^\text{int}$) with no zeros or poles on $\gamma$. Now we define $z_f$ as the number of zeros $f$ has in $D_\gamma^\text{int}$ and $p_f$ as the number of poles in $D_\gamma^\text{int}$ (counted with multiplicities!). Then we have:$$\Huge \frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{f(z)}dz=z_f-p_f$$Proven as follows: By Cauchy's residue theorem:$$\Huge\begin{align}
+\frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{f(z)}dz&=\sum_{j=1}^n\text{Res}_{z=a_j}\left(\frac{f'}{f}\right)\\
+&=\sum_{j=1}^m\text{Res}_{z=b_j}\left(\frac{f'}{f}\right)+\sum_{j=1}^k\text{Res}_{z=c_j}\left(\frac{f'}{f}\right)\\
+&=\sum\text{orders of zeros}+\sum\text{orders of poles}\\
+&=z_f-p_f
+\end{align}$$where $b_j$ are the zeros of $f$ and $c_j$ are the poles of $f$ and we get equality from the third to fourth line by the lemma proven above.
+
+Take for example $f(z)=\frac{(z-3)^3(z-1)^7z^3}{(z-i)^4(z+4)^5(z-3i)^7}$ and $\gamma(\theta)=\frac{7}{2}e^{i\theta}$ for $\theta\in[0,2\pi]$. Then:$$\Huge \frac{1}{2\pi i}\int_\gamma\frac{f'(z)}{g(z)}dz=(3+7+3)-(4+7)=13-11=2$$
