@@ -82,7 +82,7 @@ Let $f$ be a holomorphic map at $z_0$. If $f'(z_0)\neq0$ then $f$ is conformal a
 
 Let $D$ be a domain. If $f$ is conformal at $z_0\in D$ then $f$ is complex differentiable at $z_0$ and $f'(z_0)\neq0$. Therefore if $f$ is conformal on $D$, then $f$ is holomorphic on $D$ and $f'(z)\neq0$ for all $z\in D$. That is, $f$ is conformal on $D$ if and only if $f$ is holomorphic with $f'(z)\neq0$ for all $z\in D$.
 
-## Biholomorphic:
+## Biholomorphicity:
 Let $D$ and $D'$ be domains. We say that the map $f:D\mapsto D'$ is biholomorphic if $f$ is holomorphic, a bijection, and the inverse $f^{-1}:D'\mapsto D$ is also holomorphic. A biholomorphic map $f$ is called a biholomorphism. When such an $f$ exists, we call $D,D'$ biholomorphic and write $f:D\tilde{\rightarrow}D'$.
 
 The map $f(z)=az+b$ for $a\in\mathbb{C}^*$ and $b\in\mathbb{C}$ is a biholomorphism. Since $a\neq0$ we can write it's inverse as $f^{-1}(z)=\frac{1}{a}-\frac{b}{a}$, $f(z)$ is also holomorphic. So the existence of this inverse with the holomorphicity of $f(z)$ makes the map biholomorphic.
