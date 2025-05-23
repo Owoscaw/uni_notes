@@ -30,7 +30,8 @@ Let $X$ be a topological space, then the following form a tautology:
 
 Proofs:
 1. The first and second statements are equivalent as if there is a clopen subset $A\subseteq X$ with $A\neq\emptyset,X$ then $A$ and $X\setminus A$ form a separation. Also if $U,V$ is a separation of $X$ then $U,V$ are both clopen and non-empty. Therefore the first and second statements are equivalent.
-2. The first and third statements are equivalent as for connected $X$ and continuous, surjective $f:X\rightarrow Y$ where $Y$ has at least two elements and the discrete topology it is trivial that $Y$ is not connected, however by continuity preserves connectedness $Y$ is connected. This is a contradiction, so no such $f$ exists. Suppose there exists a separation $U,V$. Let $Y$ be the set $\{0,1\}$ with the discrete topology and define:$$\Huge f(x)=\begin{cases}0&x\in U\\1&x\in V\end{cases}$$then $f$ is surjective and continuous, so the first and third statements are equivalent.
+2. The first and third statements are equivalent as for connected $X$ and continuous, surjective $f:X\rightarrow Y$ where $Y$ has at least two elements and the discrete topology it is trivial that $Y$ is not connected, however by continuity preserves connectedness $Y$ is connected. This is a contradiction, so no such $f$ exists. 
+3. Suppose there exists a separation $U,V$. Let $Y$ be the set $\{0,1\}$ with the discrete topology and define:$$\Huge f(x)=\begin{cases}0&x\in U\\1&x\in V\end{cases}$$then $f$ is surjective and continuous, so the first and third statements are equivalent.
 
 Take for example:
 >$GL_n(\Re)$ is not connected as the function $\det:GL_n(\Re)\rightarrow\Re\setminus\{0\}$ is continuous and surjective so by the above we must have that if $GL_n(\Re)$ is connected, so is $\Re\setminus\{0\}$. However this has a separation, $(-\infty,0),(0,\infty)$ and therefore $GL_n(\Re)$ is not connected.
