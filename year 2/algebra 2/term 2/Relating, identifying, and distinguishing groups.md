@@ -12,7 +12,7 @@ g_1g_2N&=h_1n_1h_2n_2N\\
 &=h_1h_2\tilde n_1n_2N\\
 &=h_1h_2N
 \end{align}$$So the operation is well defined.
-
+ 
 # First Isomorphism Theorem for groups:
 
 Let $\varphi:G\rightarrow G'$ be a group homomorphism. Then:$$\Huge G/\ker\varphi\cong\text{im }\varphi$$To prove this, let $\bar\varphi:G/\ker\varphi\rightarrow\,G'$ with $g\cdot\ker\varphi\mapsto\varphi\,g$. We must check that this is well defined, a homeomorphism, and a bijection.
