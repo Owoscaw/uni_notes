@@ -1,7 +1,5 @@
 Suppose that a [[Definition and Properties|Markov chain]] with [[Definition and Properties#Stochastic matrices|stochastic matrix]] $P$ is [[Class structure#Periodicity|aperiodic]] and irreducible and $\pi$ is an [[Invariance#Invariance|invariant distribution]] for $P$. Then $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$ and for all $j\in I$:$$\Huge \lim_{n\to\infty}\mathbb{P}[X_n=j]=\pi_j$$Taking $\lambda=\delta_i$ then this theorem states that $P_{ij}^{(n)}\to\pi_j$. Take the following as example:![[conv to eq example]]
-# Ergodic theorem:
 
-S
 # Convergence proof:
 
 Suppose that $P$ is irreducible and aperiodic such that $P$ has stationary distribution $\pi$. If $(X_n)_{n\geq0}$ is $\text{Markov}(\lambda,P)$ then for all $j\in I$ we have:$$\Huge\lim_{n\to\infty}\mathbb{P}[X_n=j]=\pi_j$$Assume the existence of two independent Markov chains $X_n$ and $Y_n$ such that $X_n$ is $\text{Markov}(\lambda,P)$ and $Y_n$ is $\text{Markov}(\pi,P)$ where $\pi$ is the invariant distribution of $P$. Suppose at some $n\geq0$ we have $X_n=Y_n$, then by the memorylessness of Markov chains we must have that the distribution of $X_n$ and $Y_n$ are the same. Since $Y_n$ has a stationary distribution, $X_n$ must therefore have a stationary distribution, it is therefore sufficient to show that $X_n=Y_n$ for some $n\geq0$.
