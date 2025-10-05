@@ -1,0 +1,1 @@
+The aim of fluid dynamics is to provide a mathematical description of fluid flow and other continuous media. 
