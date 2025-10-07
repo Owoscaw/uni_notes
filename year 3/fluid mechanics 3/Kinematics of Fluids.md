@@ -33,3 +33,14 @@ As an example, consider the flow defined by $\underline e=\underline e_x+t\under
 The key difference between particle paths and streaklines is that particle paths describe a single particle over time, whereas a streakline describes the position of many particles at a single given time.
 
 # Streamlines
+
+A streamline is a line parallel to the velocity vector $\underline u(\underline x,t)$ at a fixed time $t=t_0$. It is often used to visualise the velocity field at a given time, as a streamline can be draw through any fixed point $\underline x_0$. A streamline is a curve $\underline x(s)$ that satisfies:
+$$\Huge \frac{d\underline x}{ds}=\underline u(\underline x(s),t_0)$$
+where $t_0$ is fixed and $s$ is a parameter that varies through the streamline. To obtain the streamline passing through $\underline x_0$ we must also specify the condition $\underline x(0)=\underline x_0$. As an example, consider the flow described previously ($\underline u=\underline e_x+t\underline e_y$). Then the ODEs become:$$\Huge\begin{align}
+\frac{d x}{ds}&=1,\,\,x(0)=x_0\\
+\frac{d y}{ds}&=t_0,\,\,y(0)=y_0
+\end{align}$$Integrating the first expression gives $x=s+x_0$, and the second gives $y=t_0s+t_0$. Once again we can eliminate the parametrising variable $s$ to give the explicit equation for the streamlines:$$\Huge y=t_0(x-x_0)+y_0$$Note that the pattern of streamlines changes over time, as $\underline u$ depends on $t$ (unsteady flow). Note that for steady flows, streamlines, particle paths, and streaklines all coincide.
+
+## Streamlines as boundaries:
+As streamlines are defined to be parallel to the velocity, there must be no flow normal to a streamline. This condition is known as the no normal flow condition and is formally written as:$$\Huge \underline u\cdot\underline{\hat{n}}=0$$
+Boundaries are impermeable to fluid flow, so the no normal flow condition must apply along the boundary, making the boundary itself a streamline.
