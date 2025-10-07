@@ -21,3 +21,15 @@ A particle path is the path $\underline x(t)$ of a fluid particle over time. To 
 \end{align}$$Which has solution:$$\Huge \underline x(\underline a,t)=\begin{pmatrix}ae^t\\be^{-t}\end{pmatrix}$$Note that at $\underline x=\underline 0$ we have that $\underline u=\underline 0$, this is known as a stagnation point.
 
 The material curve is a line that moves with the flow. It can be thought of as the line that threads many fluid particles together. This motivates the definition of a material surface as a surface that moves with the flow.
+
+# Streaklines:
+
+A streakline is a curve comprised of all fluid elements that have passed through a given point in the past. To determine a streakline at a given time, we must find the particles that have previously passed through some given point $\underline a$. Naming the release time $\tau$ we must solve:$$\Huge \frac{d \underline x}{dt}=\underline u(\underline x,t),\,\,\underline x(\tau)=\underline a$$
+As an example, consider the flow defined by $\underline e=\underline e_x+t\underline e_y$ and aim to find the streakline at a fixed time $t_0$ of particles that are released from $\underline a$ since time $t=0$. The [[Linear Differential Equations|ODEs]] to solve are therefore:$$\Huge\begin{align}
+\frac{d x}{dt}&=1,\,\,x(\tau)=a\\
+\frac{d y}{dt}&=1,\,\,y(\tau)=b
+\end{align}$$Integrating and fixing $t=t_0$ gives:$$\Huge \underline x(\underline a,t,\tau)|_{t=t_0}=(t_0-\tau=a)\underline e_x+\left(\frac{t_0^2}{2}-\frac{\tau^2}{2}+b\right)\underline e_y$$Note that since $t_0$ is fixed, the streakline is parametrised by $\tau$. Sometimes, $\tau$ can be eliminated entirely to get the explicit equation of the streakline at time $t_0$. We have that $x=t_0-\tau+a$, so we can write the equation as:$$\Huge y=\frac{t_0^2}{2}+b-\frac{1}{2}(t_0+a-x)^2$$Note that this equation describes the streakline of all particles that pass through $\underline a$, so restricting $\tau\in[0,t_0]$ we get $x\in[a,t_0+a]$. This gives the required streakline.
+
+The key difference between particle paths and streaklines is that particle paths describe a single particle over time, whereas a streakline describes the position of many particles at a single given time.
+
+# Streamlines
