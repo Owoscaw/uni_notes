@@ -11,3 +11,15 @@ This leads to the conclusion that electrons travel as waves when not observed, d
 
 # The Delayed-Choice Quantum Eraser:
 
+# Discrete bound energy spectra:
+
+Recall the definition of the [[Schrodinger's equation#Hamiltonian operator|Hamiltonian operator]] $H=p^2/2m+U(x)$ for some potential $U$. The [[Hamiltonian Formalism]] dictates $\dot p=-\frac{\partial H}{\partial x},\dot x=\frac{\partial H}{\partial p}$, we then have $\dot x=p/m,p=\dot xm$. Taking the time derivative of the second expression we see $m\ddot x=-\frac{\partial U}{\partial x}$, Newton's law. For any potential, we can prove the conservation law $\frac{d H}{dt}=0$:$$\Huge\begin{align}
+\frac{d H}{dt}&=\frac{\partial H}{\partial t}+\frac{d x}{dt}\frac{\partial H}{\partial x}+\frac{d p}{dt}\frac{\partial H}{\partial p}\\
+&=0+\frac{\partial H}{\partial p}\frac{\partial H}{\partial x}-\frac{\partial H}{\partial p}\frac{\partial H}{\partial x}=0
+\end{align}$$This can also be proven using a [[Hamiltonian Formalism#Poisson bracket|Poisson bracket]]:$$\Huge\begin{align}
+\frac{d A}{dt}&=\frac{\partial A}{\partial t}+\frac{d x}{dt}\frac{\partial A}{\partial x}+\frac{d p}{dt}\frac{\partial A}{\partial p}\\
+&=\frac{\partial A}{\partial t}+\{A,H\}\\
+\implies\frac{d H}{dt}&=\frac{\partial H}{\partial t}+\{H,H\}=0
+\end{align}$$This is not the case in Quantum Mechanics, energy can only take discrete values, not any continuous value. Two variables are canonical conjugate if their Poisson bracket is $1$, in QM we have $\{x,p\}=1$ as our canonical conjugate variables.
+
+Making a measurement of $x=x_0$ collapses the wave function and causes an infinite probability spike at $x=x_0$, that is $\psi(x)=\delta(x-x_0)$. Then we see that the [[Fourier transform]] of the wave function $\psi$ takes form:$$\Huge \tilde\psi(p)=\frac{1}{2L}\int_{-L}^{L}e^{ipx_0/\hbar}\delta(x-x_0)dx=$$
