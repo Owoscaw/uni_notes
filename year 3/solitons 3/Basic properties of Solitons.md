@@ -21,4 +21,4 @@ The ball and box model is a simplified model for a soliton equation that is much
 > Continue until every ball has been moved
 > Once complete, a time step has been completed
 
-In general, $n$ balls in a row move to the right with speed $n$. This is the equivalent to the speed being proportional to the height of the soliton in the KdV equation.
+In general, $n$ balls in a row move to the right with speed $n$. This is the equivalent to the speed being proportional to the height of the soliton in the KdV equation. Note that while the solitons in this model satisfy all properties to be a soliton, they undergo a phase shift depending on which soliton was bigger (bigger moves forward, smaller moves back).
