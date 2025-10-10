@@ -24,3 +24,20 @@ Again as we are considering an infinitesimal string segment, we can assume that 
 &\approx T(x,t)\left(\frac{\partial u}{\partial x}\left(x+\Delta x,t\right)-\frac{\partial u}{\partial x}(x,t)\right)\\
 &\approx T(x,t)\frac{\partial^2u}{\partial x^2}(x,t)\Delta x
 \end{align}$$That is to say, in the limiting case:$$\Huge \frac{\partial^2u}{\partial t^2}(x,t)=\frac{T(x,t)}{\rho(x)}\frac{\partial^2u}{\partial x^2}(x,t)$$This is known as the wave equation. Usually, we ignore where the PDE came from, and will only focus on the analysis of the PDE. This involves proving solutions exist, how many solutions exist and when, and finding unique solutions.
+
+# Prerequisite information:
+
+A set $U\subseteq\Re^n$ is open if for all $\underline x\in U,\exists\epsilon>0:B_\epsilon(\underline x)\subset U$ where $B_r(\underline x)=\{\underline y\in\Re^n:|\underline y-\underline x|<r\}$. A set $V\subseteq\Re^n$ is closed if its complement $\Re^n\setminus V$ is open.
+
+A set $V\subseteq\Re^n$ is closed if and only if for every convergent sequence $(\underline x_n)\in V$ with $\underline x_n\to\underline x\in\Re^n$ we have that $\underline x\in V$. That is, the limit of every convergent sequence in $V$ belongs to $V$.
+
+Let $\Omega\subseteq\Re^n$. A point $\underline x\in\Re^n$ is a limit point of $\Omega$ if $\forall\epsilon>0$ the open ball $B_\epsilon(\underline x)$ contains a point of $\Omega$ that is not $\underline x$. That is, $\Omega\cap(B_\epsilon(\underline x)\setminus\{\underline x\})\neq\emptyset$. The closure of $\Omega$ is then the set $\Omega$ together with its limit points. 
+
+The boundary of $\Omega,\partial\Omega$ is then defined as $\partial\Omega=\bar\Omega\cap\overline{(\Re^n\setminus\Omega)}$.
+
+PDEs are often defined on open and bounded sets with smooth boundary, that is the boundary can be locally parametrised by a continuously differentiable function.
+
+Properties of the closure and boundary:
+> The closure of a set is closed
+> A set is closed if and only if it equals its closure (contains all its limit points)
+> The closure of a set is the smallest closed set containing the set
