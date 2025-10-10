@@ -14,4 +14,6 @@ Note that this notion of symmetries is not entirely accurate in quantum mechanic
 
 Symmetries imply conservation laws through [[Symmetries, Noether's theorem, and conservation laws#Noether's theorem|Noether's theorem]]. The Standard Model of particle physics has an important symmetry that implies baryon number must be conserved, which implies protons cannot decay into any lighter particles. Without such restriction, protons could decay into positrons, which immediately fucks us up.
 
-We now discuss the properties of groups, and how they can act on actions.
+We now discuss the properties of groups, and how they can act.
+
+Take for example $U(1)$, the group of complex numbers of unit modulus under multiplication. For $\varphi\in[0,2\pi]$ we can write any group element as $g=e^{i\varphi}$. It is not true that this group is isomorphic to $[0,2\pi]$ as $\varphi=0$ and $\varphi=2\pi$ correspond to the same group element.
