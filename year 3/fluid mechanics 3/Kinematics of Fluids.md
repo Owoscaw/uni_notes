@@ -9,7 +9,7 @@ Small $\delta V$ are known as fluid elements and exhibit the same properties as 
 
 # Fluid motion:
 
-Consider a funnel:![[Kinematics of Fluids 2025-10-06 10.29.15.excalidraw]]Here, we expect $|\underline u_1|<|\underline u_2|$, so the fluid must be accelerating. However, we see that water is pumped in and flows out at a steady rate, so cannot be accelerating. This is a matter of perspective and leads to two descriptions of velocity:
+Consider a funnel:![[Lagrangian vs Eulerian]]Here, we expect $|\underline u_1|<|\underline u_2|$, so the fluid must be accelerating. However, we see that water is pumped in and flows out at a steady rate, so cannot be accelerating. This is a matter of perspective and leads to two descriptions of velocity:
 > Eulerian: A fixed point $\underline x$ is chosen and we ask the velocity of the fluid at particle $\underline x$ at a given time $t$. (Bear)
 > Lagrangian: A particle at fixed point $\underline a$ is chosen and is tracked. We ask what is the velocity of the fluid particle that started at $\underline a$ at a given time $t$. (Fish)
 

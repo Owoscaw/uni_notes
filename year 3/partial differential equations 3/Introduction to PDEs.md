@@ -4,7 +4,7 @@ PDEs are equations that describe the change of a given quantity that depends on 
 # The vibration of a string:
 
 PDEs are often approximations or models of real world phenomena. As a first example, we look at the vibrational behavior (displacement from equilibrium over time) while neglecting effects due to gravity. Consider an infinitesimal segment of the string:
-![[Introduction to PDEs 2025-10-06 09.22.22.excalidraw]]
+![[wave equation derivation]]
 As we are considering an infinitesimal string segment, $\Delta x$ is considered an infinitesimal change in $x$. Here, $u(x,t)$ is the displacement of the string, $T(x,t)$ is the tension, and $\theta(x,t)$ is the angle made between the tension in the string and the horizontal line passing through $(x,u(x,t))$. Then we have:$$\Huge \tan(\theta(x,t))=\frac{\partial u}{\partial x}(x,t)$$
 We assume that the vibration is only in the direction of the vertical axis and that all functions involved are differentially continuous.
 
