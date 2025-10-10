@@ -46,6 +46,7 @@ Properties of the closure and boundary:
 ## Derivatives
 The Jacobi (or Jacobian) matrix of a given differentiable function $\underline f:\Re^n\rightarrow\Re^n$ is defined as:$$\Huge D\underline f=\begin{pmatrix}\frac{\partial f_1}{\partial x_1}&\dots&\frac{\partial f_1}{\partial x_n}\\\vdots&\ddots&\vdots\\\frac{\partial f_m}{\partial x_1}&\dots&\frac{\partial f_m}{\partial x_n}\end{pmatrix}$$Hence $\underline{\nabla}\underline f=(D\underline f)^T$.
 The Laplacian of a function is:$$\Huge\Delta u=ux_nx_n=\frac{\partial^2u}{\partial x_1^2}+\dots+\frac{\partial^2u}{\partial x_n^2}$$
+Let $\underline \alpha=(\alpha_1,\dots,\alpha_n)$ be a vector of non-negative integers and let $|\underline \alpha|_1=\alpha_1+\dots+\alpha_n$. If $u:\Re^n\rightarrow\Re$, we define $D^\alpha u$ as:$$\Huge D^\alpha u=\frac{\partial^{|\underline \alpha|}u}{\partial x_1^{\alpha_1}\dots\partial x_n^{\alpha_n}}=\partial_{x_1}^{\alpha_1}\dots\partial_{x_n}^{\alpha_n}u$$
 ## Function spaces
 $C^k(f)$
 !!!

@@ -24,3 +24,4 @@ Give a point $P$ of a surface $S$. Intersecting the surface with a plane $E$ tha
 > The arithmetic mean $\frac{\kappa_1(P)+\kappa_2(P)}{2}$ is the Mean curvature $H(P)$ of the surface $S$ at $P$
 
 Note that for $S=\text{Euclidean plane}$ we have $K(P)=H(P)=0$ for all $P\in S$ and for $S=\text{Sphere of radius }r$ we have $K(P)=1/r^2,H(P)=1/r$
+
