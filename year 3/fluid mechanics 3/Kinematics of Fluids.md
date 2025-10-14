@@ -44,3 +44,26 @@ where $t_0$ is fixed and $s$ is a parameter that varies through the streamline. 
 ## Streamlines as boundaries:
 As streamlines are defined to be parallel to the velocity, there must be no flow normal to a streamline. This condition is known as the no normal flow condition and is formally written as:$$\Huge \underline u\cdot\underline{\hat{n}}=0$$
 Boundaries are impermeable to fluid flow, so the no normal flow condition must apply along the boundary, making the boundary itself a streamline.
+
+# The material derivative:
+
+Suppose that we have a quantity $\alpha(\underline x,t)$. Fixing position we would like to see how it changes in time. In this case, all the information we have is:$$\Huge \frac{d \alpha}{dt}=\frac{\partial \alpha}{\partial t}$$since $\underline x$ is fixed. If we follow a fluid particle instead of fixing $\underline x$ we can use the chain rule alongside the equation that determines [[Kinematics of Fluids#Particle paths|particle paths]]:$$\Huge\begin{align}
+\frac{d \alpha}{dt}&=\frac{d }{dt}(\alpha(\underline x(t),t))\\
+&=\frac{\partial \alpha}{\partial t}\frac{d t}{dt}+\frac{\partial \alpha}{\partial \underline x}\cdot\frac{d \underline x}{dt}\\
+&=\left(\frac{\partial }{\partial t}+\underline u\cdot\underline{\nabla}\right)\alpha
+\end{align}$$This type of derivative is called the material derivative. The first term on the operator acting on $\alpha$ represents the time derivative from the fixed $\underline x$ point of view, whereas the second term represents the change due to the fluid particle being carried to a new position along the gradient of $\alpha$. We write this as:$$\Huge \frac{D}{Dt}=\frac{\partial }{\partial t}+\underline u\cdot\underline{\nabla}$$The key ideas for the material derivative are:
+> $D/Dt$ is applied in the Eulerian reference frame
+> It is the rate of change following the particle on its journey (Lagrangian reference frame)
+> This is a bridge between Eulerian and Lagrangian physics
+
+# Conservation of mass:
+
+Consider a mass $m$ of fluid inside a fixed fluid volume $V$ with surface $S$. The mass is the integral of the density:$$\Huge m=\int_V\rho\,dV$$Although volume is fixed, the mass can change as fluid particles enter and leave the volume:![[Kinematics of Fluids 2025-10-14 02.23.11.excalidraw]]The mass that leaves $V$ through $S$ per unit time is the integral of all the mass leaving $V$ outward through each $dS$:$$\Huge\begin{align}
+-\frac{d m}{dt}&=-\frac{d }{dt}\int_V\rho\,dV\\
+&=\int_S\rho(\underline u\cdot\underline{\hat{n}})dS\\
+&=\int\rho\underline u\cdot d\underline S
+\end{align}$$As volume is fixed, we can differentiate under the integral (Leibniz' integral rule) at step 1 and use the [[Integral theorems#Divergence theorem|divergence theorem]] on step 3 to get:$$\Huge \int_V\left(\frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline u)\right)dV=0$$This is true for any volume $V$, so the integrand itself must be zero. Additionally if we use the product rule for the divergence:$$\Huge \underline{\nabla}\cdot(\rho\underline u)=\underline u\cdot\underline{\nabla}\rho+\rho\underline{\nabla}\cdot\underline u$$we can write the integrand using the material derivative to get the continuity equation:$$\Huge \frac{D\rho}{Dt}+\rho\underline{\nabla}\cdot\underline u=0$$
+These are essentially two methods to get the same result. We fixed the volume and let mass vary, the Eulerian approach. The Lagrangian approach is to fix mass and vary the surface by making it a fluid element. No fluid will enter or leave the fluid element, however the shape (and therefore the surface) will instead deform with the flow. 
+
+## Incompressibility:
+An approximation we can make for a large class of fluids is that the density of a fluid element doesn't change as it moves (incompressible flow). This condition ($D\rho/Dt=0$) reduces the above equation to:$$\Huge \underline{\nabla}\cdot\underline u=0$$That is to say, the velocity is divergence free.

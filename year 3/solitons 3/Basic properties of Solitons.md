@@ -1,6 +1,22 @@
 
 # The KdV equation:
 
+The nonlinear partial differential equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$
+is known as the Korteweg-De Vries equation and was the first to initially capture the behavior of solitons. The real field $u(x,t)$ represents the height of a wave in space and time. This equation is first order in $t$, so the solution is determined by an initial condition $u(x,0)$.
+
+With the initial condition $u(x,0)=\frac{2}{\cosh^2(x)}$ we can explore the properties of the KdV equation:
+> Dropping the nonlinear term $6uu_x$ gives the linearised KdV equation:$$\Huge u_t+u_{xxx}=0$$Here, the initial localised wave disperses and $u\to0$ as $t\to+\infty$
+> Dropping the dispersive $u_{xxx}$ gives the dispersionless KdV equation:$$\Huge u_t+6uu_x=0$$Here, the nonlinearity causes the wave to "pile up" and break after finite time
+> Keeping all of the terms causes the previous two effects to cancel each other out, and we see the "travelling wave" behavior.
+
+A more generalised class of initial conditions is given by:$$\Huge u(x,0)=\frac{N(N+1)}{\cosh^2(x)},\,\,N>0$$Numerical experiments show that:
+> $N\in\mathbb{Z}$ causes the initial wave to split into $N$ solitons moving to the right with no dispersion
+> $N\notin\mathbb{Z}$ causes the initial wave to split into $\lceil N\rceil$ solitons moving to the right plus dispersing waves
+> 
+
+In either case, the different solitons move at different speeds, with the following behavior:
+> $\text{speed}\propto\text{height}$
+> $\text{width}\propto\text{height}^{-1/2}$
 # Soliton properties:
 
 From the KdV equation with initial state $u(x,t=0)=\frac{N(N+1)}{\cosh^2(x)}$ we see that if $N$ is an integer, $N$ solitons are initially released. If $N$ is not an integer, some solitons disperse over time. More generally:

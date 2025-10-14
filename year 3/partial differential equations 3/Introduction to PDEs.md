@@ -48,8 +48,9 @@ The Jacobi (or Jacobian) matrix of a given differentiable function $\underline f
 The Laplacian of a function is:$$\Huge\Delta u=ux_nx_n=\frac{\partial^2u}{\partial x_1^2}+\dots+\frac{\partial^2u}{\partial x_n^2}$$
 Let $\underline \alpha=(\alpha_1,\dots,\alpha_n)$ be a vector of non-negative integers and let $|\underline \alpha|_1=\alpha_1+\dots+\alpha_n$. If $u:\Re^n\rightarrow\Re$, we define $D^\alpha u$ as:$$\Huge D^\alpha u=\frac{\partial^{|\underline \alpha|}u}{\partial x_1^{\alpha_1}\dots\partial x_n^{\alpha_n}}=\partial_{x_1}^{\alpha_1}\dots\partial_{x_n}^{\alpha_n}u$$
 ## Function spaces
-$C^k(f)$
-!!!
+Let $\Omega\subset\Re^n$ be open. A function $f:\Omega\rightarrow\Re$ is [[General functions#Continuous differentiability|continuously differentiable]] if it is (you guessed it) continuous, differentiable, and has continuous partial derivatives. Let $k\in\mathbb{N}$. $f$ is called $k$-times continuously differentiable if all its partial derivatives up to order $k$ exist and are continuous. We then define the function spaces:
+> $C(\Omega)=\{f:\Omega\rightarrow\Re:f\text{ continuous}\}$
+> $C^k(\Omega)=\{f:\Omega\rightarrow\Re:f\text{ is }k\text{-times continuously differentiable}\}$
 # PDEs:
 
 A Partial Differential Equation is an equation whose unknown is a function and which includes the function and its partial derivatives. The order of a PDE is a positive integer $k$ where the PDE has form:$$\Huge F(\underline x,u(\underline x),Du(\underline x),\dots,D^ku(\underline x))=0$$for $\underline x\in\Omega\subseteq\Re^n$ open, where $F:\Omega\times\Re\times\Re^n\times\dots\times\Re^{n^k}\rightarrow\Re$ is given and $u:\Omega\rightarrow\Re$ is the unknown. PDEs of this form are referred to as scalar PDEs. That is, the order of a PDE is the highest order of any partial derivative appearing in the equation.
@@ -60,3 +61,35 @@ Additional information is also needed to solve a PDE. Take for example the gener
 > Dirichlet boundary conditions give information about the function on the boundary, for example $u|_{\partial\Omega}=0$
 > Neumann boundary conditions give information about the function's derivative(s) on the boundary, for example $\underline{\nabla}u\cdot\underline{\hat{n}}|_{\partial\Omega}=0$
 > Robin boundary conditions are a mixture of the two
+
+# Classification of PDEs:
+
+A linear PDE of order $k$ is a PDE of the form:$$\Huge \sum_{|\underline \alpha|_1\leq k}a_{\underline \alpha}(\underline x)D^{\underline \alpha}u(\underline x)=f(\underline x),\,\,\underline x\in\Omega$$where $a_{\underline \alpha},f:\Omega\rightarrow\Re$ are given functions and $u:\Omega\rightarrow\Re$ is the unknown. That is, a PDE is linear if the coefficients of $u$ and its partial derivatives (and the "source term") in the equation do not depend on $u$ and its derivative. 
+
+###### For example, the PDE:
+$$\Huge \partial_tu(\underline x,t)-\Delta_{\underline x}u(\underline x,t)=0,\,\,(\underline x,t)\in\Re^3\times(0,\infty)$$where for any $u\in C^2(\Omega)$ with $\Omega\in\Re^n$:$$\Huge \Delta u(\underline x)=\partial^2_{x_1}u(\underline x)+\dots+\partial^2_{x_n}u(\underline x)$$is a linear PDE with:$$\Huge a_{\underline \alpha}=\begin{cases}1,&\underline \alpha=(0,0,0,1)\\-1,&\underline \alpha=(2,0,0,0)\text{ or }(0,2,0,0)\text{ or }(0,0,2,0)\\0&\text{otherwise}\end{cases}$$and $f=0$.
+
+The reason why we call this equation linear is that their behavior is similar to that of $A\underline x=\underline b$, a linear transformation on $\Re^n$. If we define $\mathcal{L}:C^k(\Omega)\rightarrow C(\Omega)$ by:$$\Huge \mathcal{L}(u)(\underline x)=\sum_{|\underline \alpha|_1\leq k}a_{\underline \alpha}(\underline x)D^{\underline \alpha}u(\underline x)$$then $\mathcal{L}$ is a linear operator from the vector space $C^k(\Omega)$ to the vector space $C(\Omega)$.
+
+## General form of first-order linear PDE:
+The general form of a first-order linear PDE for a function $u:\Omega\subseteq\Re^n\rightarrow\Re$ is:$$\Huge \underline a(\underline x)\cdot\nabla u(\underline x)+a_0(\underline x)u(\underline x)=f(\underline x)$$with $\underline a:\Omega\rightarrow\Re^n$ and $a_0,f:\Omega\rightarrow\Re$. 
+
+## Semi-linear PDEs:
+A semi-linear PDE of order $k$ is a PDE of the form:$$\Huge \sum_{|\underline \alpha|_1=k}a_{\underline \alpha}(\underline x)D^{\underline \alpha}u(\underline x)+a_0(\underline x,u(\underline x),Du(\underline x),\dots,D^{k-1}u(\underline x))=0$$for some functions $a_{\underline \alpha}:\Omega\rightarrow\Re,a_0:\Omega\times\Re\times\Re^n\times\dots\times\Re^{n^{k-1}}\rightarrow\Re$. That is, a PDE is semi-linear if the highest order derivatives appear linearly and the coefficients of the highest order derivatives are only functions of the independent variables.
+
+A famous example for a system of semi-linear PDEs is the Navier-Stokes equation. For given $\Omega\subseteq\Re^n$:$$\large\begin{cases}\partial_tv(\underline x,t)-\nu\Delta_{\underline x}v(\underline x,t)+(\nabla_{\underline x}v(\underline x,t))v(\underline x,t)+\nabla_{\underline x}p(\underline x,t)=0,&(\underline x,t)\in\Omega\times(0,\infty)\\\text{div}_{\underline x}v(\underline x,t)=0&(\underline x,t)\in\Omega\times(0,\infty)\end{cases}$$with $\text{div}\,u=\sum_{i=1}^n\partial_{x_i}u_i$ when $u=(u_1,\dots,u_n)$ and where:
+> $v:(0,\infty)\times\Omega\rightarrow\Re^n$ is the unknown velocity field of a given liquid 
+> $p:(0,\infty)\times\Omega\rightarrow\Re$ is the unknown pressure
+> $\nu\geq0$ is the given viscosity constant of the fluid
+
+This system is semi-linear due to the term $(\nabla v)v$.
+
+## General form of first-order semilinear PDEs:
+The general form of a first-order semi-linear PDE for a function $u:\Omega\subseteq\Re^n\rightarrow\Re$ is:$$\Huge \underline a(\underline x)\cdot\nabla u(\underline x)+a_0(\underline x,u(\underline x))=0$$with $\underline a:\Omega\rightarrow\Re^n$ and $a_0:\Omega\times\Re\rightarrow\Re$.
+
+## Quasi-linear PDEs:
+A quasi-linear PDE is a PDE of form:$$ \sum_{|\underline \alpha|_1=k}a_{\underline \alpha}(\underline x,u(\underline x),Du(\underline x),\dots,D^{k-1}u(\underline x))D^{\underline \alpha}u(\underline x)+a_0(\underline x,u(\underline x),Du(\underline x),\dots,D^{k-1}u(\underline x))=0$$for some functions $a_{\underline \alpha},a_0:\Omega\times\Re\times\Re^n\times\dots\times\Re^{n^{k-1}}\rightarrow\Re$. That is, a PDE is quasilinear if the highest order derivatives appear linearly and the coefficients of the highest order derivatives are only functions of the lower order derivatives and the independent variables. The Navier-Stokes equations above become quasi-linear when we take $\nu=0$.
+
+The general form of a first order quasilinear PDE for a function $u:\Omega\subseteq\Re^n\rightarrow\Re$ is:$$\Huge \underline a(\underline x,u(\underline x))\cdot\nabla u(\underline x)+a_0(\underline x,u(\underline x))=0$$with $\underline a:\Omega\times\Re\rightarrow\Re^n$ and $a_0:\Omega\times\Re\rightarrow\Re$.
+
+Any PDE that is neither of the above classifications is called fully nonlinear.
