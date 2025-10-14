@@ -6,4 +6,22 @@
 &=\lim_{n\to\infty}\sum_{k=0}^n\frac{(i\varphi)^k}{n^k}\frac{n!}{(n-k)!k!}\\
 &=\lim_{n\to\infty}\sum_{k=0}^n\frac{(i\varphi)^k}{k!}=e^{i\varphi}
 \end{align}$$where we have used the fact that the term $\frac{n!}{(n-k)!n^k}$ will tend to one in the limiting case.
-2. 
+2. We now aim to generalise the above notions to matrices, particularly $M_n(\mathbb{C})$. To do this we must recall [[Index notation|Einstein's summation notation]] as well as the Hermitian conjugate $(A^\dagger)_{ij}=(\bar A)_{ji}$.  We can write the trace and determinant of a matrix using index notation:$$\Huge\begin{align}
+\det A&=\epsilon_{i_1i_2,\dots,i_n}A_{1i_1}A_{2i_2}\dots A_{ni_n}\\
+\text{Tr }A&=A_{ii}
+\end{align}$$where $\epsilon$ is the Levi-Civita symbol, a completely antisymmetric tensor. We can then define the general unitary groups:$$\Huge\begin{align}
+U(n)&=\{g\in M_n(\mathbb{C}):g^\dagger g=gg^\dagger=\mathbb{1}\}\\
+SU(n)&=\{g\in U(n):\det g=1\}
+\end{align}$$Focusing on $SU(2)$ we can check if this is indeed a group wrt matrix multiplication:$$\Huge\begin{align}
+e&=\mathbb{1}\implies g\mathbb{1}=\mathbb{1}g=g,\,\,\forall g\in SU(2)\\
+\mathbb{1}\mathbb{1}^\dagger&=\mathbb{1}^\dagger\mathbb{1}=\mathbb{1}\implies e\in\ SU(2)\\
+g,g'\in SU(2)&\implies(gg')^\dagger gg'=g'^\dagger g^\dagger gg'=g'^\dagger\mathbb{1}g'=\mathbb{1}\\
+\det(gg')&=\det g\deg g'=1\times1=1\\
+g\in SU(2)&\implies (g^{-1})^\dagger g^{-1}=(g^\dagger)^\dagger g^{-1}=gg^{-1}=1\\
+\det(g^{-1})&=\frac{1}{\det g}=1
+\end{align}$$And as matrix multiplication is associative, we have that $SU(2)$ is indeed a group. Note that we can think of $U(2)$ as the group of transformations $U$ on $\mathbb{C}^2$, $\underline z\rightarrow U\underline z=\underline w$, which will leave the inner product $|\underline z|$ invariant:$$\Huge |\underline z|=\begin{pmatrix}\bar z_1&\bar z_2\end{pmatrix}\mathbb{1}\begin{pmatrix}z_1\\z_2\end{pmatrix}=\underline z^\dagger\cdot\underline z$$so when we apply the transformation:$$\Huge \begin{align}
+\underline z&\rightarrow U\underline z\\
+\underline z^\dagger&\rightarrow(U\underline z)^\dagger=\underline z^\dagger U^\dagger\\
+\underline z^\dagger\underline z&\rightarrow \underline z^\dagger U^\dagger U\underline z=\underline z^\dagger\underline z
+\end{align}$$so we see that the inner product is indeed unchanged. We can also take the notion of parametrisation we saw in $U(1)$ to $U(2)$
+ 
