@@ -20,3 +20,17 @@ Some properties of the inner product are as follows:
 > $\langle V\vert V\rangle\geq0$ non negative norms
 > $\langle V\vert V\rangle=0\implies\vert V\rangle=\vert⊘\rangle$
 > $\vert X\rangle=a\vert W\rangle+b\vert Z\rangle\implies\langle V\vert X\rangle=a\langle V\vert W\rangle+b\langle V\vert Z\rangle$ and $\langle X\vert V\rangle=a^*\langle W\vert V\rangle+b^*\langle Z\vert V\rangle$
+
+Initially, our state $\vert \psi\rangle$ is in superposition, $\vert \psi\rangle=c_1\vert 1\rangle+c_2\vert 2\rangle+\dots$, and say we measure $\vert \psi\rangle\rightarrow\vert 1\rangle$ with probability $|c_1|^2$. Once measured, $\vert \psi\rangle=\vert 1\rangle$, and subsequent measurements will always yield $\vert \psi\rangle\rightarrow\vert 1\rangle$ with probability $|1|^2=1$. 
+
+Taking adjoints defines a dual Hilbert space $\mathcal{H}^*$ with $\dim\mathcal{H}^*=\dim\mathcal{H}$:$$\Huge \vert \psi\rangle=\sum_{i=1}^nc_i\vert i\rangle\implies\langle \psi\vert=\sum_{i=1}^nc_i^*\langle i\vert$$A physical state $\vert \psi\rangle$ has $\langle \psi\vert \psi\rangle=1$.
+
+# Orthonormal basis expansion:
+
+We aim to expand the state $\vert \psi\rangle=\sum_{i=1}^nc_i\vert i\rangle$ with $\langle i\vert i\rangle=1$ and $\langle i\vert j\rangle=\delta_{ij}$. Firstly, we can recover the $c_i$ coefficients from the state using the following method:$$\Huge \langle j\vert \psi\rangle=\sum_{i=1}^nc_i\langle j\vert i\rangle=\sum_{i=1}^nc_i\delta_{ij}=c_j$$We can also take the inner product of $\vert \psi\rangle$ with $\vert⊘\rangle=\sum_{i=1}^nd_i\vert i\rangle$:$$\Huge\begin{align}
+\langle⊘\vert \psi\rangle&=\left(\sum_{i=1}^nd_i^*\langle i\vert\right)\left(\sum_{j=1}^nc_j\vert j\rangle\right)\\
+&=\sum_{i=1}^n\sum_{j=1}^n\langle i\vert j\rangle d_i^*
+c_j\\
+&=\sum_{i=1}^n\sum_{j=1}^n\delta_{ij}d_i^*c_j=\sum_{i=1}^nd_i^*c_i
+\end{align}$$Therefore it makes sense to think of states as column vectors and adjoints as row vectors, as this behaves similarly to the vector [[Inner product spaces#Complex inner products|inner product]].
+ 
