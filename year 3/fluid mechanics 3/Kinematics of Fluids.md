@@ -67,3 +67,11 @@ These are essentially two methods to get the same result. We fixed the volume an
 
 ## Incompressibility:
 An approximation we can make for a large class of fluids is that the density of a fluid element doesn't change as it moves (incompressible flow). This condition ($D\rho/Dt=0$) reduces the above equation to:$$\Huge \underline{\nabla}\cdot\underline u=0$$That is to say, the velocity is divergence free.
+
+# The stream function:
+
+If $u$ is both incompressible and two-dimensional we can encode velocity and streamlines inside a single scalar function. We define our velocity $\underline u=\begin{pmatrix}u\\v\end{pmatrix}$ where $u(x,y),v(x,y)$, and consider:$$\Huge \underline F=\begin{pmatrix}-v\\u\end{pmatrix}$$We can show that $\underline F$ is a conservative vector field by finding its integral over a closed curve. Let the closed curve $C$ enclose a region $R$:$$\Huge\begin{align}
+\oint_C\underline F\cdot d\underline x&=\oint_C(-v\,dx+u\,dy)\\
+&=\iint_R\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right)dx\,dy\\
+&=\iint_R\underline{\nabla}\cdot\underline u\,dx\,dy=0
+\end{align}$$where we used [[Integral theorems#Green's theorem|Green's theorem]] and the fact that $\underline u$ is incompressible (divergence free). We know that conservative vector fields can be written as the gradient of a scalar field. Therefore there exists some $\psi=\psi(x,y)$ such that $\nabla\psi=\underline F$. Such scalar $\psi$ can therefore encode the velocity field, known as the stream function. Equivalently, we write:$$\Huge \underline u=\underline{\nabla}\times(\psi\underline{\hat e}_z)$$
