@@ -1,0 +1,1 @@
+Classical theoretical physics describe a system by defining [[Calculus of variations#Configuration space and generalised coordinates|generalised coordinates]] and their derivatives with respect to time, which uniquely describes the configuration of a system. The action $S[q_i,\dot q_i]$ then encodes the dynamics.

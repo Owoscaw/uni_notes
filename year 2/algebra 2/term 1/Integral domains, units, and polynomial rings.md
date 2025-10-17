@@ -1,0 +1,34 @@
+A [[Rings, subrings, and fields|ring]] $R$ which is commutative has at least two elements, and does not have any [[Rings, subrings, and fields#Fields|zero divisors]] other than $0$. This ring is then called an integral domain.
+
+Let $R$ be an integral domain. Then the ring $R[x]_n=\{a_0+a_1x+\dots+a_nx^n:a_i\in R\}$ is also an integral domain. Let $f(x)\in R[x]_n,g(x)\in R[x]_m$, with $m\geq n$ then we have:$$\Huge f(x)+g(x)=(a_0+b_0)+(a_1+b_1)x+\dots+(a_n+b_n)x^n+\dots+b_mx^m$$$$\Huge f(x)g(x)=c_0+c_1x+\dots+c_nx^{m+n}$$Where:$$\Huge c_k=\sum_{j=0}^ka_kb_{k-j}$$So we have that $R[x]$ is a commutative ring.
+
+
+# Units:
+
+Let $R$ be a ring. An element $a\in R$ is called a unit in $R$ if there exists $b\in R$ such that $a\cdot b=b\cdot a=1$ and $b$ is unique. We can then write $b=a^{-1}$ as the multiplicative inverse of $a$. The set of units in $R$ is denoted as $R^X$. Note that for any $R$ we have $1\in R$ since $1\cdot 1=1$.
+
+We claim that $(R^X,\cdot)$ is a group. $R^X$ is closed with respect to multiplication since for $a,c\in R^X$ then $a\cdot c\in R$. This is because $(a\cdot c)\cdot(c^{-1}\cdot a^{-1})=a\cdot(c\cdot c^{-1})\cdot a^{-1}=a\cdot 1\cdot a^{-1}=a\cdot a^{-1}=1$. For every $a\in R^X$, we have that $a^{-1}\in R^X$. Associativity comes from associativity of multiplication on $R$.
+
+## Examples:
+>If $F$ is a [[Rings, subrings, and fields#Fields|field]], every non-zero element of $F$ has a multiplicative inverse. Therefore:$$\Huge F^X=F\setminus\{0\}$$Consider the units of $\mathbb{Z}$. In order for $a,b\in \mathbb{Z}$ to satisfy $a\cdot b=1$ we must have $a=b=1$ or $a=b=-1$. Therefore we conclude:$$\Huge \mathbb{Z}^X=\{\pm 1\}$$Consider a field $F$ and define $R=F[x]$. To find the units of $R$ we need $f(x),g(x)\in F[x]$ to satisfy $f(x)\cdot g(x)=1$. This implies $\deg(f)=\deg(g)=0$ so we must have $f(x)=a_0$ and $g(x)=b_0$ such that $a_0\cdot b_0=1$ and $a_0,b_0\in F$. Therefore we can say:$$\Huge R^X=F^X$$Consider $R=M_n(\Re)$, we require a multiplicative inverse so the answer is trivial:$$\Huge R^X=\{A\in M_n(\Re):\det A\neq0\}$$
+
+## Units in the integers modulo $n$:
+For $a,b\in \mathbb{Z}$ we write $\gcd(a,b)$ for the greatest common divisor of $a$ and $b$. By definition we have that $\gcd(a,b)\geq 1$. We write $a|b$ for $a$ divides $b$, that is $\exists k\in \mathbb{Z}:b=k\cdot a$. An element $[a]\in \mathbb{Z}/n$ is a unit if and only if $\gcd(a,n)=1$.
+
+Define $d:=\gcd(a,n)\geq1$. Assume $[a]$ is a unit of $\mathbb{Z}/n$. Then there exists an inverse $[b]$ such that $[a]\cdot[b]=[1]$, that is to say $[a\cdot b]=[1]$. By definition we have $a\cdot b=1\mod n\implies n|a\cdot b-1\implies a\cdot b=k\cdot n+1$ for some $k\in \mathbb{Z}$. Now $d|a\cdot b\implies d|1\implies d=1$. So we have the forwards implication. Assume $d=1$. By the Euclidean algorithm, there exists $x,y\in \mathbb{Z}$ such that $1=x\cdot a+y\cdot n\implies x\cdot a=1\mod n\implies [x\cdot a]=[1]\implies[x]\cdot[a]=[1]$, therefore $[a]$ has a multiplicative inverse and is therefore a unit of $\mathbb{Z}/n$. The proof is now completed:$$\Huge (\mathbb{Z}/n)^X=\{[a]\in \mathbb{Z}/n:\gcd(a,n)=1\}$$We propose that $\mathbb{Z}/p$ is a field if and only if $p$ is a prime number. Assume $p$ is prime, then $p$ only has two divisors, $p$ and $1$. The units of $\mathbb{Z}/p$ are such that $[a]\in \mathbb{Z}/p$ satisfies $\gcd(a,p)=1$. Since the only divisor of $p$ less than $p$ itself is $1$, this condition is satisfied for every element in $\mathbb{Z}/p=\{[0],[1],\dots,[p-1]\}$ other than $[0]$. Therefore $(\mathbb{Z}/p)^X=\{[1],\dots,[p-1]\}$, which is a field. Assume that $\mathbb{Z}/p$ is a field. Therefore every $[0]\neq[a]\in \mathbb{Z}/p$ is a unit, implying $\gcd(a,p)=1$. This is true for $[a]=[1],\dots,[p-1]$, implying that $p$ is only divisible by itself and $1$, meaning that $p$ is indeed a prime number, completing the proof.
+
+We then propose that $\mathbb{Z}/n$ is an integral domain if and only if $\mathbb{Z}/n$ is a field (and therefore $n$ is prime). Assume that $\mathbb{Z}/n$ is a field, then the statement is trivial since every field is an integral domain. Assume that $\mathbb{Z}/n$ is an integral domain. Note that $|\mathbb{Z}/n|=n<\infty$, and since any finite integral domain is a field we complete the proof.
+
+# Polynomials over a field:
+
+Let $F$ be a field. Then $F[x]$ has elements of the form $f(x)=a_0+a_1x+\dots+a_nx^n$:$$\Huge F[x]=\{a_0+a_1x+\dots+a_nx^n:a_i\in F\}$$For $i\in\{0,\dots,n\}$. Then we define:$$\Huge \deg(f):=\begin{cases}\max_i\{i:a_i\neq0\}&f\neq0\\-\infty&f=0\end{cases}$$We use $-\infty$ for the zero polynomial because this allows the definitions:
+>$\deg(f\cdot g)=\deg(f)+\deg(g)$
+>$\deg(f+g)\leq\max\{\deg f,\deg g\}$ when $\deg f=\deg g$
+>$\deg(f+g)=\max\{\deg f,\deg g\}$ when $\deg f\neq\deg g$
+
+We have a division algorithm in $F[x]$. Let $f,g\in F[x]$ with $g(x)\neq0$. Then there exists a unique $q,r\in F$ such that:$$\Huge f(x)=q(x)g(x)+r(x)$$Here, $q(x)$ can be thought of the quotient, and $r(x)$ can be thought of as the remainder. We also have $\deg r<\deg g$. If the $\deg g>\deg f$, then we take $q(x)=0$ and $r(x)=f(x)$. The other case, where $\deg g\leq\deg f$ goes as follows. Let $f(x)=a_0+a_1x+\dots+a_mx^m$ and $g(x)=b_0+b_1x+\dots+b_nx^n$ with $a_m,b_n\neq0$ and $m\neq n$. Define $d:=m-n\geq0$. We prove the existence of $q$ and $r$ by induction on $d$:
+
+Base case, $d=0$. Set $q(x)=\frac{a_m}{b_n}$, where $\frac{\cdot}{b_n}$ represents multiplication of $am$ by the multiplicative inverse of $b_n$. This is possible since we are working over a field. Set $r(x)=f(x)-q(x)g(x)$, then $\deg r<\deg g$ and $f(x)=q(x)g(x)+r(x)$, and we have the proposition as required.
+
+Induction, assuming the existence of such $q,r\in F$ for $d<k$. Define $f_1(x):=f(x)-\frac{a_m}{b_n}x^{m-n}g(x)$. Note that $\deg f_1<\deg f$. Now by the induction hypothesis, there exists $q_1,r\in F[x]$ such that:$$\Huge f_1(x)=q_1(x)g(x)+r(x)$$With $\deg r<\deg g$. Now we have:$$\large f(x)=q_1(x)g(x)+r(x)+\frac{a_m}{b_n}x^{m-n}g(x)=\left(q_1(x)+\frac{a_m}{b_n}x^{m-n}\right)g(x)+r(x)$$So we have $q(x)=q_1(x)+\frac{a_m}{b_n}x^{m-n}$. Therefore both of these functions must exist. We now prove the uniqueness of such functions. Suppose that $f(x)=q(x)g(x)+r(x)=Q(x)g(x)+R(x)$ with $\deg r<\deg g,\deg R<\deg g$. Note $R(x)-r(x)=(q(x)-Q(x))g(x)$, with $\deg(R-r)<\deg g$. We also have $\deg(R-r)=\deg(q-Q)+\deg g$, however since $\deg(R-r)<\deg g$ we must have $\deg(q-Q)<0$. Therefore $q(x)-Q(x)$ must be the zero polynomial, that is $q(x)=Q(x)$, which also means that $r(x)=R(x)$. Therefore such functions exists, and are unique.
+

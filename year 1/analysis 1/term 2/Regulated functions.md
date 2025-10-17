@@ -1,0 +1,38 @@
+
+# Step functions:
+
+A function on a closed interval $[a,b]$ is called a step function if there exists a partition:$$\Huge a=x_0<x_1<\dots<x_{N-1}<x_N=b$$of $[a,b]$ such that $f$ is constant on each subinterval $(x_k,x_{k+1})$ for $k=0,\dots,N-1$. Note each $f(x_k)$ is arbitrary in value. We then immediately get the following properties:
+> Let $f,g$ be two step functions on $[a,b]$ and $c\in\Re$, then $cf$ and $f+g$ are also step functions. Therefore step functions form a vector space
+> The product $fg(x)=f(x)g(x)$ is also a step function
+> The absolute value $|f|(x)=|f(x)|$ is also a step function
+
+# Regulated functions:
+
+Let $f$ be a function on a closed interval $[a,b]$. $f$ is a regulated function if there exists a sequence of step functions $f_n$ converging [[Sequences of functions, uniform convergence, and Limit theorems#Uniform convergence preserves continuity|uniformly]] to $f$. That is for all $\epsilon>0$ there exists $N\in \mathbb{N}:|f_n(x)-f(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
+
+Let $f$ be a function on a compact interval $[a,b]$. Then $f$ is regulated if and only if for all $\epsilon>0$ there exists a step function $g$ on $[a,b]$ such that $|f(x)-g(x)|<\epsilon$ for all $x\in[a,b]$. Assume that $f$ is regulated, then there is a sequence $(g_n)_{n\in \mathbb{N}}$ of step functions converging uniformly to $f$. Given $\epsilon>0$ then there is $N$ that satisfies the definition for a regulated function, taking $g=g_n$. So we get the forwards implication. For $n\in \mathbb{N}$ take $\epsilon=\frac{1}{n}$, and take $g_n=g$ where $g$ satisfies $|f(x)-g(x)|<\epsilon$. Given $\epsilon>0$ take $N$ with $\frac{1}{N}<\epsilon$. Then for $n\geq N$ we have $\frac{1}{n}\leq \frac{1}{N}<\epsilon$ and we get the statement as required.
+
+## Continuous functions are regulated:
+Let $f$ be a continuous function on $[a,b]$. Then $f$ is regulated. Since $f$ is continuous on $[a,b]$, it is uniformly continuous on the same interval. For all $\epsilon>0$ there exists $\delta>0$ such that for all $x,y\in[a,b]$ we have that $|x-y|<\delta\implies|f(x)-f(y)|<\epsilon$. So take $\epsilon>0$ and use $\delta>0$ from uniform continuity and let $a=x_0<x_1,\dots<x_{N-1}<x_N=b$ be a partition of $[a,b]$ with $x_{k+1}-x_k<\delta$. Take $x^*_k=(x_k,x_{k+1})$ and define $g(x)=f(x_k^*)$ for $x\in[x_k,x_{k+1})$ such that $g$ is a step function. We need to show $|g(x)-f(x)|<\epsilon$ for all $x\in[a,b]$. Fix $x\in[a,b]$, if $x=n$ then $|g(b)-f(b)|=0<\epsilon$, otherwise $x\in[x_k,x_{k+1})$ for some $k$. Now $|g(x)-f(x)|=|f(x_k^*)-f(x)|<\epsilon$ since $|x_k^*-x|<\delta$ as they are both in the same interval and $x_{k-1}-x_k<\delta$. We then get that $f$ is regulated.
+
+## Lipschitz continuous functions are regulated:
+Assume $f:[a,b]\mapsto\Re$ is is lipschitz continuous with lipschitz constant $M$, that is $|f(x)-f(y)|\leq M|x-y|$ for all $x,y\in[a,b]$. Let $n\in \mathbb{N}$. Consider the equidistant partition $a=x_0<x_1<\dots<x_{n-1}<x_n=b$ given by $x_k=a+(b-a)\frac{k}{n}$. Then $x_{k+1}-x_k=a+(b-a)\frac{k+1}{n}-a-(b-a)\frac{k}{n}=\frac{b-a}{n}$. We then define $$\Huge f_n(x)=\begin{cases}f(x_k^*)&\text{if }x\in[x_k,x_{k+1})\\f(x_{k-1}^*)&\text{if }x=b\end{cases}$$Where $x_k^*\in[x_k,x_{k+1})$. Note that if $x\in[x_k,x_{k+1})$ then $|f(x)-f_n(x)|=|f(x)-f(x_k^*)|\leq M|x-x_k^*|<\frac{b-a}{n}M$. Given $\epsilon>0$ choose $N\geq\frac{b-a}{\epsilon} M$, then for $n\geq N$ we have that $\frac{1}{n}\leq\frac{\epsilon}{(b-a)M}$. Therefore all lipschitz continuous functions are regulated.
+
+## Regulated functions can have infinitely many discontinuities:
+Let $(a_k)_{k\in \mathbb{N}}$ be a convergent sequence with $a_k\to a\in\Re$ as $k\to \infty$. Define $f:[0,1]\mapsto\Re$ by $f(x)=a_k$ if $x\in\left(\frac{1}{k+1},\frac{1}{k}\right]$ and $f(0)=a$. We propose that despite having infinitely many discontinuities between each $x=a_k$, $f$ is still a regulated function. Define:$$\Huge f_n(x)=\begin{cases}f(x)&\text{if } x≥1\\a_n&\text{if } x∈[0,1)\end{cases}$$Then looking at the difference: $$\Huge|f_n(x)−f(x)|=\begin{cases}0&\text{if } x\geq1\\|a−a_k|&\text{if } x\in(\frac{1}{k+1},\frac{1}{k}]\end{cases}$$Given $\epsilon>0$, there exists $N:|a-a_k|<\epsilon$ for all $k\geq N$. Then $|f_n(x)-f(x)|<\epsilon$ for all $n\geq N$ and $x\in[0,1]$, giving uniform convergence to $f$. Therefore $f$ is a regulated function despite it's infinitely many discontinuities.
+
+## Monotone functions are regulated:
+Let $f$ be a monotone function on $[a,b]$. Then $f$ is regulated. Assume $f$ is monotonically increasing, then $M=f(b)$ is the maximum of $f$ and $m=f(a)$ is the minimum of $f$. Let $y_k=m+k\frac{M-m}{n}$ for $n\in \mathbb{N}$ and $k=0,\dots,n$, note that $y_0=m$ and $y_n=M$. For the partition points use $x_k=\sup\{x\in[a,b]:f(x)<y_k\}$. On the interval $[x_k,x_{k+1})$ we have $f(x)\in[y_k,y_{k+1})$. Define the step function $f_n$ with partition $x_0<x_1<\dots<x_n$ such that $f_n(x)=y_k^*$ for $x\in[x_k,x_{k+1})$ and $y_k^*\in[y_k,y_{k+1})$ and $f_n(x)=M$ for $x=b$. Now we show that $f_n$ converges to $f$, showing that indeed $f$ is a regulated function:$$\Huge |f_n(x)-f(x)|\leq\frac{M-m}{n}$$Since $y_k^*,f(x)\in[y_k,y_{k+1})$. Now observe as $n\to \infty$, the RHS term tends to $0$ so given $\epsilon>0$ choose $N>\frac{1}{(M-m)\epsilon}$ and we get uniform convergence to $f$. Therefore all monotonically increasing functions are regulated. Similarly, we know that if $f$ is regulated, $\lambda f$ is regulated. Choose $\lambda=-1$, making $f$ monotonically decreasing, so we get that any monotone function is regulated.
+
+# Further properties of regulated functions:
+
+Let $f$ be a regulated function on $[a,b]$. Given a sequence of step functions, $f_n$, converging uniformly to $f$, there exists a constant $C$ such that $|f(x)|\leq C$ and $|f_n(x)|\leq C$ for all $x\in[a,b]$. Take $\epsilon=1,N\in \mathbb{N}$, then $|f(x)-f_n(x)|<1$ for all $x\in[a,b]$ and all $n\geq N$. There is then $M$ with $|f_N(x)|\leq M$ for all $x\in[a,b]$. Note that a step function takes finitely many values, now $|f(x)|\leq|f(x)-f_N(x)|+|f_N(x)|\leq1+M$. If $n\geq N$, then $|f_n(x)|\leq|f_n(x)-f(x)|+|f(x)|\leq1+1+M=2+M$. Note each $f_n$ with $n<N$ has $M_n$ with $|f_n(x)|\leq M_n$, so take $C=\max\{M_1,\dots,M_{n-1},2+M\}$. This satisfies both inequalities, which gives us a bound for any step function as well as any sequence of function convergent to one.
+
+Let $f:[a,b]\mapsto\Re$ be a function. Then $f$ is regulated if and only if for all points $c\in[a,b]$, the left-sided and the right-sided limites exist.
+ 
+## Regulated COLT proof:
+> Let $(f_n)\to f,(g_n)\to g$ with $f_n,g_n$ step functions. Given $\epsilon>0$ there exists $N\in \mathbb{N}$ with $|f(x)-f_n(x)|<\epsilon$ and $|g(x)-g_n(x)|<\epsilon$ for all $x\in[a,b]$ and $n\geq N$. Then: 
+> $cf$ is regulated: $|cf(x)-cf_n(x)|<|c|\epsilon$ for all $x\in[a,b]$ and $n\geq N$.
+> $f+g$ is regulated: $|f(x)+g(x)-(f_n(x)+g_n(x))|<|f(x)-f_n(x)|+|g(x)-g_n(x)|<\epsilon+\epsilon$.
+> $|f|$ is regulated: $||f(x)|-|f_n(x)||\leq|f(x)-f_n(x)|< \epsilon$
+> $fg$ is regulated: $|f(x)g(x)-f_n(x)g_n(x)|\leq|f(x)g(x)-f_n(x)g(x)|+|f_n(x)g(x)-f_n(x)g_n(x)|=|g(x)||f(x)-f_n(x)|+|f_n(x)||g(x)-g_n(x)|$ By the above property, there exists a $C$ with $C\geq|g(x)|$ and $C\geq|f_n(x)|$, so we have $|fg-f_ng_n|\leq2C \epsilon$

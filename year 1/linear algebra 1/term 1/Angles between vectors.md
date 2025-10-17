@@ -1,0 +1,37 @@
+For two vectors in the [[Vector space definitions|vector space]], $\Re^2$, the angle between them can be found through the use of the [[Scalar Product|scalar product]]. This angle is derived by consider the vectors using [[Polar coordinates in R2|polar coordinates]]:
+
+$$\Huge let\,\, \underline u,\underline v\in\Re^2,\,where\,\,\underline u,\underline v\neq\underline 0$$
+$$\Large \underline u=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix},\,\underline v=\begin{pmatrix}r_2cos\,\beta\\r_2sin\,\beta\end{pmatrix}$$
+$$\Large |\underline u|=r_1,\,|\underline v|=r_2,\,where\,\,r_1,r_2\gt0$$
+$$\Large arg(\underline u)=\alpha,\,arg(\underline v)=\beta,\,where\,\,\alpha,\beta\in[0,2\pi)$$
+Using the scalar product:
+$$\large \underline u\cdot\underline v=\begin{pmatrix}r_1cos\,\alpha\\r_1sin\,\alpha\end{pmatrix}\cdot\begin{pmatrix}r_2cos\,\beta\\r_2sin\,\beta\end{pmatrix}=r_1r_2cos\,\alpha\,cos\,\beta+r_1r_2sin\,\alpha\,sin\,\beta$$
+$$\large \underline u\cdot\underline v=r_1r_2\left(cos\,\alpha\,cos\,\beta+sin\,\alpha\,sin\,\beta\right)=r_1r_2(cos(\alpha-\beta))$$
+Here, $\alpha -\beta$ is the angle between $\underline u$ and $\underline v$, so:
+$$\Huge \underline u\cdot\underline v=|\underline u||\underline v|\,cos\,\theta$$
+$$\Huge \forall\underline u,\underline v\in\Re^2,\,and\,\,\theta\in[0,2\pi)$$
+
+# Cauchy-Schwarz inequality:
+
+Given $\underline u, \underline v \in \Re^n$:
+$$\Huge |\underline u\cdot\underline v|\leq|\underline u||\underline v|$$
+This comes from the fact that $cos\,\theta$ has a range of $-1\leq cos\,\theta\leq1$, and $0\leq|cos\,\theta|\leq1$.
+
+# Generalisation to $\Re^n$:
+
+If $\underline u, \underline v \in\Re^n$, and that $\underline u, \underline v \neq \underline 0$, the angle that $\underline u$ makes with $\underline v$, $\theta \in[0,\pi]$ is defined to be:
+$$\Huge cos\,\theta=\frac{\underline u\cdot\underline v}{|\underline u||\underline v|}$$
+Vectors are perpendicular when they make an angle of $\frac{\pi}{2}$:
+$$\Huge \underline u\cdot\underline v=0$$
+# Vector product method:
+
+For two vectors, $\underline u, \underline v\in\Re^3$, the [[Vector Product|vector product]] can be used to find the angle between them. Consider the angle $\underline u$ makes with $\underline v$, $\theta\in[0,\pi]$:
+$$\Huge |\underline u\times\underline v|=|\underline u||\underline v|sin\,\theta$$
+This can be shown through the following:
+$$\small |\underline u\times\underline v|=\left|\begin{pmatrix}u_1\\u_2\\u_3\end{pmatrix}\times\begin{pmatrix}v_1\\v_2\\v_3\end{pmatrix}\right|^2=\left|\begin{pmatrix}u_2v_3-u_3v_2\\u_3v_1-u_1v_3\\u_1v_2-u_2v_1\end{pmatrix}\right|^2=(u_2v_3-u_3v_2)^2+(u_3v_1-u_1v_3)^2+(u_1v_2-u_2v_1)^2$$
+$$\large=(u_1^2+u_2^2+u_3^2)(v_1^2+v_2^2+v_3^2)-(u_1v_1+u_2v_2+u_3v_3)^2=|\underline u|^2|\underline v|^2-(\underline u\cdot\underline v)^2$$
+$$=|\underline u|^2|\underline v|^2-(|\underline u||\underline v|cos\,\theta)^2=|\underline u|^2|\underline v|^2-|\underline u|^2|\underline v|^2cos^2\theta=|\underline u|^2|\underline v|^2(1-cos^2\theta)=|\underline u|^2|\underline v|^2sin^2\theta$$
+So we have:
+$$\Large |\underline u\times\underline v|^2=|\underline u|^2|\underline v|^2sin^2\theta$$
+Taking positive square roots:
+$$\Huge |\underline u\times\underline v|=|\underline u||\underline v|sin\,\theta$$
