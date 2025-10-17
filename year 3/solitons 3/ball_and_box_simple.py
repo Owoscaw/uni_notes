@@ -5,7 +5,7 @@ import tkinter as tk
 class BallAndBox():
     __size = 0
     __window = None
-    __resolution = 50
+    __resolution = 10
     __cells = []
 
     def __init__(self, resolution):
@@ -104,5 +104,5 @@ class BallAndBox():
 # run_simulation(test, 5)
 
 
-test = BallAndBox(50)
+test = BallAndBox(25)
 test.populate()
