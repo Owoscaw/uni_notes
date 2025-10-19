@@ -23,5 +23,5 @@ g\in SU(2)&\implies (g^{-1})^\dagger g^{-1}=(g^\dagger)^\dagger g^{-1}=gg^{-1}=1
 \underline z&\rightarrow U\underline z\\
 \underline z^\dagger&\rightarrow(U\underline z)^\dagger=\underline z^\dagger U^\dagger\\
 \underline z^\dagger\underline z&\rightarrow \underline z^\dagger U^\dagger U\underline z=\underline z^\dagger\underline z
-\end{align}$$so we see that the inner product is indeed unchanged. We can also take the notion of parametrisation we saw in $U(1)$ to $U(2)$
+\end{align}$$so we see that the inner product is indeed unchanged. We can also take the notion of parametrisation we saw in $U(1)$ to $U(2)$. For any invertible matrix in $M_2(\mathbb{C})$ we can write:$$\Huge g=\begin{pmatrix}a & b \\ c & d\end{pmatrix}\implies g^{-1}=\frac{1}{\det g}\begin{pmatrix}d & -b \\ -c & a\end{pmatrix}$$Now as $g\in SU(2)$ we have $\det g=1$ and $g^{-1}=g^\dagger$, so:$$\Huge \begin{pmatrix}d & -b \\ -c & a\end{pmatrix}=\begin{pmatrix}\bar a & \bar c \\ \bar b & \bar d\end{pmatrix}$$So the most general matrix in $SU(2)$ can be written as:$$\Huge g=\begin{pmatrix}a & b \\ -\bar b & \bar  a\end{pmatrix}$$now $\det g=1\implies|a|^2+|b|^2=1$. As these are complex numbers, we write $a=x_1+ix_2,b=x_3+ix_4$, so we have:$$\Huge SU(2)=\{\underline{x}\in\Re^4:x_1^2+x_2^2+x_3^2+x_4^2=1\}$$This is the defining equation of the three sphere.
  

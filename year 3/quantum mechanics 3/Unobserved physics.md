@@ -1,3 +1,4 @@
+
 # Young's Slits:
 
 Young's double slit experiment is the go-to example when explaining quantum mechanics in layman's terms, the setup is as follows:![[yet another double slit experiment]]
@@ -11,6 +12,11 @@ This leads to the conclusion that electrons travel as waves when not observed, d
 
 # The Delayed-Choice Quantum Eraser:
 
+Consider a laser firing photons at a double slit setup with a nonlinear crystal (SPDC) as the screen. This produces entangled signal/idler photons. The signal then travels to the screen, using beam splitters the idler is routed either along which-path arms to $A,B$ (no recombination) or along paths where beams are recombined to get detected at $C,D$:![[Unobserved physics 2025-10-18 16.11.14.excalidraw]]Here, the crystal performs spontaneous parametric down-conversion (SPDC). The result of this is that each incident photon is converted into a pair of lower energy photons (signal and idler). The signal photon travels toward a detection screen, and the idler photon is routed by mirrors and beam splitters to one of four detectors ($A,B,C,D$) located very far away. If it lands in detector $C,D$ then the photons are recombined and information about the original slit is erased. However if the photons land in $A,B$, the idler photon may travel a much longer path. The final beam splitter can be inserted after the signal photon has already been detected. In any case, the coincidence counts respect:
+> Interference is observed only when idler information is erased
+> Interference is always present in the joint two photon state, but is only visible when the data is sorted according to idler outcomes. If we take the interference pattern from $C$ (signal photons) and add it to $D$ (signal photons), we get the same pattern at $A$
+
+We can therefore conclude that for electrons, the slit that they pass through is meaningless in the sense that an observed wave pattern means that the information of which slit the electron passed through has been lost and cannot be recovered.
 # Discrete bound energy spectra:
 
 Recall the definition of the [[Schrodinger's equation#Hamiltonian operator|Hamiltonian operator]] $H=p^2/2m+U(x)$ for some potential $U$. The [[Hamiltonian Formalism]] dictates $\dot p=-\frac{\partial H}{\partial x},\dot x=\frac{\partial H}{\partial p}$, we then have $\dot x=p/m,p=\dot xm$. Taking the time derivative of the second expression we see $m\ddot x=-\frac{\partial U}{\partial x}$, Newton's law. For any potential, we can prove the conservation law $\frac{d H}{dt}=0$:$$\Huge\begin{align}
