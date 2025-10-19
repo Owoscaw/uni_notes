@@ -27,3 +27,32 @@ Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth curve and $[a,b]\subset I
 
 # Reparametrisations and unit speed curves:
 
+Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth regular curve. A parameter change for $\underline{\alpha}$ is a map $h:J\rightarrow I$ where $J\subset\Re$ is an open interval such that:
+> $h$ is smooth
+> $h'(t)\neq0$ for all $t\in J$
+> $h(J)=I$
+
+Moreover, we call $\tilde{\underline{\alpha}}=\underline{\alpha}\circ h:J\rightarrow\Re^n$ a reparametrisation of $\underline{\alpha}$. The reparametrisation is orientation preserving if $h'>0$ and orientation reversing if $h'<0$. We aim to show that every smooth regular curve has a unit speed reparametrisation.
+
+Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth regular curve, $u_0\in I$, and $l:I\rightarrow\Re$ defined by:$$\Huge l(u)=\int_{u_0}^u||\underline{\alpha}'(t)||dt$$Let $J=l(I)\subset\Re$, then the curve $\underline{\alpha}\circ l^{-1}:J\rightarrow\Re^n$ is unit speed. Note that unit speed curves are also called arc length parametrised curves, and constant speed curves are also called proportional to arc length parametrised curves. To prove this, we first show that $l:I\rightarrow J\subset\Re$ is invertible. Note that:$$\Huge l'(u)=||\underline{\alpha}'(u)||>0$$as $\underline{\alpha}$ is a regular curve. Therefore $l$ is strictly increasing and must be bijective, so $l^{-1}:J\rightarrow I$ exists:$$\Huge (l^{-1})'(s)=\frac{1}{l'(l^{-1}(s))}=\frac{1}{||\underline{\alpha}'(l^{-1}(s))||}$$Now let $\underline{\beta}=\underline{\alpha}\circ l^{-1}$, so by the chain rule we have:$$\Huge \underline{\beta}'(s)=(\underline{\alpha}'\circ l^{-1})(s)\cdot(l^{-1})'(s)=\frac{\underline{\alpha'}(l^{-1}(s))}{||\underline{\alpha'}(l^{-1}(s))||}$$which implies $||\underline{\beta}'(s)||=1$ and $\underline{\beta}$ is a unit speed curve.
+
+Note that curve regularity is essential in the proof, since if $\underline{\alpha}'(u)=0$ for some $u\in I$ then there will be a division by $0$. Note that length is invariant under reparametrisation. 
+
+Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth regular curve and $\tilde{\underline{\alpha}}=\underline{\alpha}\circ h:J\rightarrow\Re^n$ be a reparametrisation of $\underline{\alpha}$ with parameter change $h:J\rightarrow I$. Let $[a,b]\subset I$ and $[c,d]=h^{-1}([a,b])$. Then we have:$$\Huge L(\underline{\alpha}|_{[a,b]})=L(\tilde{\underline{\alpha}}|_{[c,d]})$$
+
+# Plane curves:
+
+We aim to introduce the notion of curvature for smooth plane curves. The basic approach is to compare the curve at a point to a fitted circle and to define the curvature as the reciprocal of the radius of said circle. Singular points must be avoided as there is no reasonable definition of curvature at singular points.
+
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve. Then the unit normal vector of $\underline{\alpha}$ at $u$ is obtained by anti-clockwise rotation of the unit tangent vector $\underline{t}(u)$ of $\underline{\alpha}$ at $u$ by $\pi/2$. That is, if $\underline{t}(u)=(x,y)$ then:$$\Huge \underline{\hat{n}}(u)=\underline{t}(u)\begin{pmatrix}\cos\pi/2 & \sin\pi/2 \\ -\sin\pi/2 & \cos\pi/2\end{pmatrix}=(x,y)\begin{pmatrix}0 & 1 \\ -1 & 0\end{pmatrix}=(-y,x)$$
+Note that for unit speed curves, the change of the unit tangent vector $\underline{t}'(s)=\underline{\alpha}''(s)$ of $\underline{\alpha}$ at $s\in I$ is parallel to the unit normal vector $\underline{\hat{n}}(s)$. Formally, we let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth unit speed plane curve. Then the vector $\underline{t}'(s)$ is parallel to $\underline{\hat{n}}(s)$. We have that $\underline{t}(s)=\underline{\alpha}'(s)$, so the proof is an immediate consequence of the fact:$$\Huge\underline{\alpha}'(s)\cdot\underline{\alpha}'(s)=||\underline{\alpha}'(s)||=1$$differentiating wrt $s$ gives:$$\Huge \underline{\alpha}''(s)\cdot\underline{\alpha}'(s)+\underline{\alpha}'(s)\cdot\underline{\alpha}''(s)=2\underline{t}'(s)\cdot\underline{t}(s)=0$$which implies that $\underline{t}'(s)$ is perpendicular to $\underline{t}(s)$ and therefore must be parallel to $\underline{\hat{n}}(s)$. Since for a unit speed plane curve $\underline{\alpha}$, $\underline{t}'(s)$ is proportional to $\underline{\hat{n}}(s)$, we define the curvature of $\underline{\alpha}$ at $s$ as the proportionality factor.
+
+For a straight line in $\Re^2$ we have $\underline{t}'(s)=0$ and the proportionality factor is $0$, which is expected as we want straight lines to have no curvature.
+
+The signed curvature $\kappa(s)$ of a unit speed plane curve $\underline{\alpha}:I\rightarrow\Re^2$ at $s\in I$ is defined by:$$\Huge \underline{t}'(s)=\kappa(s)\underline{\hat{n}}(s)$$For a given unit speed plane curve $\underline{\alpha}:I\rightarrow\Re^2$ we can compute $\kappa(s)$ for $s\in I$:$$\Huge\begin{align*}
+\underline{t'}(s)\cdot\underline{\hat{n}}(s)&=\kappa(s)\underline{\hat{n}}(s)\cdot\underline{\hat{n}}(s)=\kappa(s)||\underline{\hat{n}}(s)||^2=\kappa(s)
+\end{align*}$$Writing $\alpha(s)=(x(s),y(s))$ we have $\underline{t}(s)=(x'(s),y'(s))$ and $\underline{\hat{n}}(s)=(-y'(s),x'(s))$, so the curvature becomes:$$\Huge\begin{align*}
+\kappa(s)&=\underline{t}'(s)\cdot\underline{\hat{n}}(s)\\
+&=(x''(s),y''(s))\cdot(-y'(s),x'(s))\\
+&=-y'(s)x''(s)+x'(s)y''(s)
+\end{align*}$$
