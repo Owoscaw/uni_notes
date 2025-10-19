@@ -56,3 +56,40 @@ The signed curvature $\kappa(s)$ of a unit speed plane curve $\underline{\alpha}
 &=(x''(s),y''(s))\cdot(-y'(s),x'(s))\\
 &=-y'(s)x''(s)+x'(s)y''(s)
 \end{align*}$$
+Take for example a circle of radius $r>0$. We assume that it is centered at the origin, then a unit speed parametrisation is given by:$$\Huge \underline{\alpha}(s)=\left(r\cos\left(\frac{s}{r}\right),r\sin\left(\frac{s}{r}\right)\right)=(x(s),y(s))$$Then we have:$$\Huge\begin{align*}
+(x'(s),y'(s))&=\left(-\sin\left(\frac{s}{r}\right),\cos\left(\frac{s}{r}\right)\right)\\
+(x''(s),y''(s))&=\left(-\frac{1}{r}\cos\left(\frac{s}{r}\right),-\frac{1}{r}\sin(\frac{s}{r})\right)
+\end{align*}$$We can now compute the curvature:$$\Huge\kappa(s)=-\left(\cos\frac{s}{r}\right)\left(-\frac{1}{r}\cos(\frac{s}{r})\right)+\left(-\sin\left(\frac{s}{r}\right)\right)\left(-\frac{1}{r}\sin\left(\frac{s}{r}\right)\right)=\frac{1}{r}$$fitting the requirement that a circle of radius $r$ should have curvature $1/r$. One can check that if we reverse the parametrisation, the curvature comes out to be $-1/r$. This reflects a general fact that reversing a parametrisation causes the curvature to change sign. In general, if a curve turns to the left, then $\kappa>0$, and if a curve turns to the right then $\kappa<0$.
+
+General smooth regular plane curves $\underline{\alpha}:I\rightarrow\Re^2$ are usually not arc length parametrised, it is desirable to have an explicit formula for curvature without the need for reparametrisation:
+
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve with $\underline{\alpha}(u)=(x(u),y(u))$:$$\Huge \kappa=\frac{x'y''-x''y''}{((x')^2+(y')^2)^{3/2}}$$To prove this, we first consider:$$\Huge s=l(u)=\int_{u_0}^u||\underline{\alpha}'(t)||dt$$then we have $u=l^{-1}(s)$, and $\underline{\beta}=\underline{\alpha}\circ l^{-1}$ is an arc length reparametrisation of $\underline{\alpha}$ with tangent vector $\underline{t}$ and unit normal $\underline{\hat{n}}$. The curvature of $\underline{\alpha}$ at $u$ agrees with the curvature of $\underline{\beta}$ at $s$. Since $\underline{\beta}$ is unit speed:$$\Huge\begin{align*}
+\underline{t}(s)=\underline{\beta}'(s)&=(\underline{\alpha}\circ l^{-1})'(s)\\
+&=\underline{\alpha}'(l^{-1}(s))(l^{-1})(s)\\
+&=\frac{\underline{\alpha}'(l^{-1}(s))}{||\underline{\alpha}'(l^{-1}(s))||}\\
+&=\frac{\underline{\alpha}'(u)}{||\underline{\alpha}'(u)||}
+\end{align*}$$Since $\underline{\alpha}(u)=(x(u),y(u))$, we have that $\underline{\alpha}'(u)=(x'(u),y'(u))$ and therefore:$$\Huge \underline{t}(s)=\frac{(x'(u),y'(u))}{||\underline{\alpha}'(u)||},\,\,\underline{\hat{n}}(s)=\frac{(-y'(u),x'(u))}{||\underline{\alpha}'(u)||}$$with $||\underline{\alpha}'(u)||=\sqrt{(x'(u))^2+(y'(u))^2}$. We must now calculate $\underline{t}'(s)$, so by the chain rule and the fact that $\frac{du}{ds}(s)=(l^{-1})'(s)=\frac{1}{||\underline{\alpha}'(u)||}$:$$\Huge \frac{d\underline{t}}{ds}(s)=\frac{d\underline{t}}{du}(u)\cdot\frac{du}{ds}(s)=\frac{1}{||\underline{\alpha}'(u)||}\cdot\frac{d}{du}\left(\frac{(x'(u),y'(u))}{\sqrt{(x'(u))^2+(y'(u))^2}}\right)$$We continue omitting the argument $u$:$$\large\begin{align*}
+\frac{d}{du}\left(\frac{(x',y')}{\sqrt{(x')^2+(y')^2}}\right)&=\frac{\sqrt{(x')^2+(y')^2}(x'',y'')-\frac{x'x''+y'y''}{\sqrt{(x')^2+(y')^2}}(x',y')}{(x')^2+(y')^2}\\
+&=\frac{((x')^2+(y')^2)(x'',y'')-(x'x''+y'y'')(x',y')}{||\underline{\alpha}'||^3}\\
+&=\frac{x'y''-x''y'}{||\underline{\alpha}||^3}(-y',x')\\
+&=\frac{x'y''-x''y'}{||\underline{\alpha}'||^2}\underline{\hat{n}}(s)=\underline{t}'(s)
+\end{align*}$$Using this in the curvature formula gives:$$\Huge\begin{align*}
+\kappa(s)&=\underline{t}'(s)\cdot\underline{\hat{n}}(s)\\
+&=\frac{x'(u)y''(u)-x''(u)y'(u)}{||\underline{\alpha}'(u)||^3}||\underline{\hat{n}}(s)||^2\\
+&=\frac{x'(u)y''(u)-x''(u)y'(u)}{((x'(u))^2+(y'(u))^2)^{3/2}}
+\end{align*}$$
+
+Take for example an ellipse. We define an ellipse as the set:$$\Huge \varepsilon_{a,b}=\left\{(x,y)\in\Re^2:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\right\}$$for fixed $a,b>0$. Note that $a=b=r$ describes the circle of radius $r>0$ centered at the origin. A parametrisation of $\varepsilon_{[a,b]}$ is given by:$$\Huge \underline{\alpha}:\Re\rightarrow\Re^2,\,\,\underline{\alpha}(u)=(a\cos u,b\sin u)$$This is obviously a regular curve as $\underline{\alpha}'(u)=(-a\sin u,b\cos u)\neq0$ for all $u\in\Re$. Note that in the regular case $a\neq b$ there is no closed expression for the arc length, as choosing $u_0=0$, the elliptic integral:$$\Huge l(u)=\int_0^u||\underline{\alpha}'(u)||du=\int_0^u\sqrt{a^2\sin^2u+b^2\cos^2u}\,du$$cannot be expressed in a closed form in terms of elementary functions. Therefore we cannot simply reparametrise an ellipse and calculate its curvature, however we can use the formula we just derived with:$$\Huge\begin{align*}
+\underline{\alpha}'(u)&=(x',y')=(-a\sin u,b\cos u)\\
+||\underline{\alpha}'(u)||&=\sqrt{a^2\sin^2u+b^2\cos^2u}\\
+\underline{\alpha}''(u)&=(-a\cos u,-b\sin u)
+\end{align*}$$so we have:$$\Huge\begin{align*}
+\kappa(u)&=\frac{x'y''-x''y'}{((x')^2+(y')^2)^{3/2}}\\
+&=\frac{(-a\sin u)(-b\sin u)-(-a\cos u)(b\cos u)}{(a^2\sin^2u+b^2\cos^2u)^{3/2}}\\
+&=\frac{ab}{(a^2\sin^2u+b^2\cos^2u)^{3/2}}
+\end{align*}$$
+
+A geometric interpretation of curvature is that $|\kappa(u)|$ is the reciprocal of the radius of a circle approximating a small neighbourhood $\underline{\alpha}([u-\epsilon,u+\epsilon])$ as best as possible. The sign of $\kappa(u)$ is determined whether this approximating circle lies to the left or to the right of the curve at $\underline{\alpha}(u)$. We call such circle the curvature circle at $\underline{\alpha}(u)$.
+
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve, $\kappa:I\rightarrow\Re$ be its curvature function, and $\underline{\hat{n}}:I\rightarrow\Re^2$ be its unit normal. Assume $\kappa(u)\neq0$, then the radius of curvature is given by $r(u)=1/|\kappa(u)|$ and:$$\Huge \underline{e}(u)=\underline{\alpha}(u)+\frac{1}{\kappa(u)}\underline{\hat{n}}(u)\in\Re^2$$is called the center of curvature of $\underline{\alpha}$ at $\underline{\alpha}(u)$. The corresponding curvature circle of $\underline{\alpha}$ at $\underline{\alpha}(u)$ is given by:$$\Huge \{P\in\Re^2:||P-\underline{e}(u)||=r(u)\}$$![[Regular curves in Rn 2025-10-19 16.51.36.excalidraw]]
+ 
