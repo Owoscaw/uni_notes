@@ -19,3 +19,11 @@ Consider the closed interval $[a,b]$. We aim to find the length of the curve bet
 A curve $\underline \alpha:I\rightarrow\Re^n$ is said to be rectifiable on $[a,b]$ if for any partition of the interval, the supremum:$$\large L(\underline \alpha|_{[a,b]})=\sup\left\{\sum_{i=0}^m||\underline \alpha(u_{i+1})-\underline \alpha(u_i)||:m\in\mathbb{N},\,a=u_1<\dots<u_m=b\right\}$$if finite. In which case, $L(\underline \alpha|_{[a,b]})$ is the arclength of $\underline \alpha$ between $\underline \alpha(a)$ and $\underline \alpha(b)$.
 
 An example of a non-rectifiable curve is the Von-Koch snowflake, defined iteratively as follows:![[Regular curves in Rn 2025-10-10 14.50.37.excalidraw]]Iterating infinitely many times forms the Von-Koch snowflake. The sum of all of these "cones" at each iteration follows the formula $(4/3)^k$, which obviously blows up as $k\to\infty$, therefore the supremum of $L$ is not finite and the curve is not rectifiable.
+
+Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth curve and $[a,b]\subset I$. Then the length of $\underline{\alpha}([a,b])$ is given by:$$\Huge L(\underline{\alpha}|_{[a,b]})=\int_a^b||\underline{\alpha}'(u)||du$$Proof is given heuristically:$$\Huge\begin{align*}
+\sum_{i=0}^{m-1}||\underline{\alpha}(u_{i+1})-\underline{\alpha}(u_i)||&=\sum_{i=0}^{m-1}\left|\left|\frac{\underline{\alpha}(u_{i+1})-\underline{\alpha}(u_i)}{u_{i+1}-u_i}\right|\right|(u_{i+1}-u_i)\\
+&=_{m\to\infty}\int_a^b||\underline{\alpha}'(u)||du
+\end{align*}$$
+
+# Reparametrisations and unit speed curves:
+
