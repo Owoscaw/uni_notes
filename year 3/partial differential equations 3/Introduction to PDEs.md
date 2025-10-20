@@ -93,3 +93,13 @@ A quasi-linear PDE is a PDE of form:$$ \sum_{|\underline \alpha|_1=k}a_{\underli
 The general form of a first order quasilinear PDE for a function $u:\Omega\subseteq\Re^n\rightarrow\Re$ is:$$\Huge \underline a(\underline x,u(\underline x))\cdot\nabla u(\underline x)+a_0(\underline x,u(\underline x))=0$$with $\underline a:\Omega\times\Re\rightarrow\Re^n$ and $a_0:\Omega\times\Re\rightarrow\Re$.
 
 Any PDE that is neither of the above classifications is called fully nonlinear.
+
+# Well posedness of PDEs:
+
+Many PDEs do not have explicit solutions, even ones with simple linear structure. A PDE together with initial/boundary conditions is called well posed:
+> The PDE has a solution (existence)
+> The solution is unique (uniqueness)
+> The solution depends continuously on the data in the given problem (stability)
+
+If any of these conditions fail, the PDE is called "ill posed". For example consider the PDE:$$\Huge \begin{cases}-\Delta u(\underline{x})&\underline{x}\in\Omega\subset\Re^n \\
+\underline{\nabla}u(\underline{x})\cdot\underline{\hat{n}}(\underline{x})&\underline{x}\in\partial\Omega\end{cases}$$\\\(
