@@ -102,4 +102,22 @@ Many PDEs do not have explicit solutions, even ones with simple linear structure
 > The solution depends continuously on the data in the given problem (stability)
 
 If any of these conditions fail, the PDE is called "ill posed". For example consider the PDE:$$\Huge \begin{cases}-\Delta u(\underline{x})&\underline{x}\in\Omega\subset\Re^n \\
-\underline{\nabla}u(\underline{x})\cdot\underline{\hat{n}}(\underline{x})&\underline{x}\in\partial\Omega\end{cases}$$\\\(
+\underline{\nabla}u(\underline{x})\cdot\underline{\hat{n}}(\underline{x})&\underline{x}\in\partial\Omega\end{cases}$$In general, there is not an explicit expression for a solution. However if there were a $C^2(\bar\Omega)$ solution to the above then:$$\Huge\begin{align*}
+\text{Vol}(\Omega)=\int_\Omega d\underline{x}&=\int_\Omega(-\Delta u(\underline{x}))d\underline{x}\\
+&=-\int_\Omega\text{div}(\underline{\nabla}u(\underline{x}))d\underline{x}\\
+&=\int_{\partial\Omega}\underline{\nabla}u(\underline{y})\cdot\underline{\hat{n}}(\underline{y})dS(\underline{y})=0
+\end{align*}$$Therefore the region occupies no space, so there is no $C^2(\bar\Omega)$ solution, and the equation is ill posed.
+
+We say that a solution to a PDE of order $k$ is a classical solution if it is a $C^k$ function which satisfies the PDE at any point.
+
+Take for example the one-dimensional Eikonal equation:$$\Huge \begin{cases}|u'(x)|=1&x\in(a,b) \\
+u(x)=0&x=a,b\end{cases}$$which is a fully non-linear PDE on $\Re$. Suppose that this does have a classical solution, that is $u\in C^1((a,b))$ and $|u'(x)|=1$. Then the intermediate value theorem dictates that we must have $u'=\pm1$ which is incompatible with the boundary condition $u(a)=u(b)=0$. Solutions can be found if we expand to a wider notion of solutions, namely piecewise $C^1$ functions. In this case, we can find infinitely many solutions by creating piecewise $C^1$ functions that swap from being a straight line with gradient $1$ and $-1$:$$\Huge u_1(x)=\begin{cases}x-a&a<x<\frac{a+b}{2} \\
+b-x&\frac{a+b}{2}<x<b\end{cases},\,\,u_2(x)=\begin{cases}x-a&a<x<\frac{3a+b}{4} \\
+\frac{a+b}{2}-x&\frac{3a+b}{4}<x<\frac{a+b}{2} \\
+x-\frac{a+b}{2}&\frac{a+b}{2}<x<\frac{a+3b}{4} \\
+b-x&\frac{a+3b}{4}<x<b\end{cases}$$Therefore the PDE is ill posed due to lack of unique solution.
+
+An example of an ill posed PDE due to lack of continuous dependence on data is the following one-parameter family of PDEs parametrised by $\epsilon>0$:$$\Huge \begin{cases}\partial^2_{xx}u^\epsilon(x,t)+\partial^2_{tt}u^\epsilon(x,t)=0&(x,t)\in\Re\times(0,\infty) \\
+u^\epsilon(x,0)=0&x\in\Re \\
+\partial_tu^\epsilon(x,0)=g^\epsilon(x)&x\in\Re\end{cases}$$where:$$\Huge g^\epsilon(x)=\begin{cases}0&\epsilon=0 \\
+\epsilon\sin \frac{x}{\epsilon}&\epsilon>0\end{cases}$$Note that the notation $u^\epsilon$ is solely to emphasise dependence on $\epsilon$. We can then interpret $u^\epsilon(x,0)=0,\partial_tu^\epsilon(x,0)=g^\epsilon(x)$ as initial conditions. There exists a unique solution for this equation for any $\epsilon\geq0$, however notice that:$$\Huge ||g^\epsilon-g^0||_{L^\infty(\Re)}=\sup_{x\in\Re}|g^\epsilon(x)-g^0(x)|=\sup_{x\in\Re}|\epsilon\sin \frac{x}{\epsilon}|=\epsilon$$So consequently:$$\Huge ||g^\epsilon-g^0||_{L^\infty(\Re)}\to_{\epsilon\to 0}0$$That is, the initial data converges to $g^0$ uniformly in $\epsilon$
