@@ -84,4 +84,6 @@ Take two points on a streamline and draw a curve, $C$, between them. We then ask
 -t_x\end{pmatrix}ds\\
 &=\int_C\frac{\underline{\nabla}\psi\cdot\underline{t}}{|\underline{t}|}ds\\
 &=\int_C\underline{\nabla}\psi\cdot d\underline{x}=\psi(\underline{x_2})-\psi(\underline{x_1})
-\end{align*}$$which is path independent. Therefore we conclude that the flux (clockwise about $\underline{x_1}$) across any line between two points $\underline{x_1}$ and $\underline{x_2}$ is given by $\psi(\underline{x_2})-\psi(\underline{x_1})$
+\end{align*}$$which is path independent. Therefore we conclude that the flux (clockwise about $\underline{x_1}$) across any line between two points $\underline{x_1}$ and $\underline{x_2}$ is given by $\psi(\underline{x_2})-\psi(\underline{x_1})$.
+
+# Local analysis of the flow:
