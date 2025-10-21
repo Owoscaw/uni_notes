@@ -100,3 +100,4 @@ The decomposition into the action of the flow, $\pmb E,\pmb\Omega$ is the fluid 
 
 # Vorticity:
 
+We introduced vorticity as the curl of the velocity field:$$\Huge\underline{\omega}=\underline{\nabla}\times\underline{u}$$and observed that it describes local rotation of fluid elements. If $\underline{\omega}=\underline{0}$ everywhere, the flow is called irrotational. Take for example $\underline{u}(\underline{x},t)=k(-y,x,0)$. We can write this in cylindrical coordinates as $\underline{u}(\underline{x},t)=kr\hat{\underline{e}_\theta}$, which implies solid body rotation. It is therefore trivial to calculate vorticity: $\underline{\omega}=\underline{\nabla}\times\underline{u}=(0,0,2k)$, we have rotation flow and vorticity (these do not always coincide).
