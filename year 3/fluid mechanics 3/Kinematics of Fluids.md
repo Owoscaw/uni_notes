@@ -99,3 +99,4 @@ To get a better physical understanding of fluid flow, we ask what an arbitrary f
 The decomposition into the action of the flow, $\pmb E,\pmb\Omega$ is the fluid equivalent of rigid body dynamics, where the motion of a body is described in terms of of translation and rotation. Notice the third term represents stretching/compression, which is needed for fluid dynamics.
 
 # Vorticity:
+
