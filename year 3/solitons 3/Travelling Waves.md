@@ -12,7 +12,7 @@ Recall the KdV equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$on $x\in\Re$ with boundary 
 f=\frac{1}{2}v\text{ sech}^2\theta\implies\int\frac{df}{f\sqrt{v-2f}}&=-\frac{2}{\sqrt{v}}\int d\theta\\
 &=-\frac{2\theta}{\sqrt v}\\
 \implies\theta&=\pm\frac{\sqrt v}{2}(x-x_0-vt)
-\end{align*}$$where $x_0$ is the integration constant introduced after integrating both sides wrt $f$. Substituting our expression for $f$ back in gives:$$\Huge u(x,t)=f(x-vt)=\frac{v}{2}\text{ sech}^2\left(\frac{\sqrt v}{2}(x-x_0-vt)\right)$$Note that we could have chosen different boundary conditions such that when we were reducing our ODE, each constant derivative would not be forced to $0$. In such case, the solutions describe the KdV equation defined on a circle.
+\end{align*}$$where $x_0$ is the integration constant. On the first line, there is a slight abuse of notation, as the $\pm(x-vt)$ comes from the fact that we are actually performing the integral:$$\Huge \int\frac{df}{f\sqrt{v-2v}}=\pm\int df(x-vt)=\pm(x-vt)$$ Substituting our expression for $f$ back in gives:$$\Huge u(x,t)=f(x-vt)=\frac{v}{2}\text{ sech}^2\left(\frac{\sqrt v}{2}(x-x_0-vt)\right)$$Note that we could have chosen different boundary conditions such that when we were reducing our ODE, each constant derivative would not be forced to $0$. In such case, the solutions describe the KdV equation defined on a circle.
 
 # The sine-Gordon equation:
 
