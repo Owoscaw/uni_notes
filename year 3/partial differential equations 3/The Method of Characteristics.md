@@ -31,3 +31,51 @@ z(0)=\rho_0(\underline{X}_0)\end{cases}$$the initial condition comes from the fa
 
 # General setting:
 
+We consider the general quasi-linear equation:$$\Huge\begin{cases}\underline{a}(\underline{x},u(\underline{x}))\cdot\underline{\nabla}_xu(\underline{x})=b(\underline{x},u(\underline{x})&x\in\Omega \\
+u(\underline{x})=u_0(\underline{x})&x\in\Gamma\end{cases}$$where $\Omega\subseteq\Re^n$ is an open set and $\Gamma\subset\bar\Omega$ is an $n-1$ dimensional parametrised hypersurface in $\Re^n$. This is known as the Cauchy problem. $\Gamma$ is called a Cauchy curve, and $u_0$ is called the Cauchy data. $\underline{a}$ is called the leading vector field and $b$ is called the source term. We further assume that the Cauchy curve is parametrised by:$$\Huge\underline{s}=(s_1,\dots,s_{n-1})\rightarrow\underline{x}_0(s_1,\dots,s_{n-1})=\underline{x}_0(\underline{s})\in\Gamma$$where $\underline{s}=(s_1,\dots,s_{n-1})\in I\subseteq\Re^{n-1}$. The method of characteristics then consists of the steps:
+> Solve the $n-1$ parameter family of ODEs for $\underline{X}(\tau,\underline s)$ and $z(\tau,\underline{s})=u(\underline{X}(\tau,\underline{s}))$:$$\Huge\begin{cases}\partial_\tau\underline{X}(\tau,\underline{s})=\underline{a}(\underline{X}(\tau,\underline{s}),z(\tau,\underline{s})) \\
+\partial_\tau z(\tau,\underline{s})=b(\underline{X}(\tau,\underline{s}),z(\tau,\underline{s})\end{cases}$$with boundary conditions:$$\Huge\begin{cases}\underline{X}(0,\underline{s})=\underline{x}_0(\underline{s})&\underline{s}\in I \\
+z(0,\underline{s})=u_0(\underline{x}_0(\underline{s}))&\underline{s}\in I\end{cases}$$where $\underline{X}(\tau,\underline{s})$ are called the characteristics of the equation. This is motivated from the fact that if we found such $\underline{X}(\tau,\underline{s})$:$$\large\partial_\tau u(\underline{X}(\tau,\underline{s}))=\underline{\nabla}u(\underline{X}(\tau,\underline{s}))\cdot\partial_\tau\underline{X}(\tau,\underline{s})=a(\underline{X}(\tau,\underline{s}),u(\underline{X}(\tau,\underline{s}))\cdot\underline{\nabla}u(\underline{X}(\tau,\underline{s})))$$from which we infer that:$$\Huge z(\tau,\underline{s})=u(\underline{X}(\tau,\underline{s}))$$satisfies:$$\Huge\partial_\tau z(\tau,\underline{s})=b(\underline{X}(\tau,\underline{s}),u(\underline{X}(\tau,\underline{s})))$$Here, $\underline{X}(0,\underline{s})$ and $z(0,\underline{s})$ capture the boundary conditions. $z(\tau,\underline{s})$ stipulates the value of $u$ on $\underline{X}(\tau,\underline{s})$.
+>Reverse the flow, $(\tau,\underline{s})\rightarrow\underline{X}(\tau,\underline{s})$. That is, we find $\tau(\underline{x}),\underline{s}(\underline{x})$ such that:$$\Huge\underline{X}(\tau(\underline{x}_0),\underline{s}(\underline{x}))=\underline{x}$$
+>The solution then becomes:$$\Huge u(\underline{x})=z(\tau(\underline{x}),\underline{s}(\underline{x}))$$
+
+
+## Transport equation example:
+Take for example the transport equation:$$\Huge\begin{cases}\partial_tu(x,t)+c\partial_xu(x,t)=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$The characteristics are then as follows:
+> Leading vector field $\underline{a}(x,t,u)=(c,1)$
+> Source term $b(x,t,u)=0$
+> Domain $\Omega=\Re\times(0,\infty)$
+> Boundary $\Gamma=\{(x,0):x\in\Re\}$ parametrised by $s\to (x_0(s),t_0(s))=(s,0)$ for $s\in\Re$
+
+Now we follow our methodology:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=c \\
+\partial_\tau T(\tau,s)=1 \\
+\partial_\tau z(\tau,s)=0\end{cases}$$and:$$\Huge\begin{cases}X(0,s)=s \\
+T(0,s)=0 \\
+z(0,s)=u(x_0(s),t_0(s))=u_0(s)\end{cases}$$which is easily solved:$$\Huge\begin{align*}
+X(\tau,\underline{s})&=c\tau+X(0,s)=s+c\tau\\
+T(\tau,\underline{s})&=\tau+T(0,s)=\tau\\
+z(\tau,\underline{s})&=z(0,\tau)=u_0(s)
+\end{align*}$$We now reverse the flow:$$\Huge\begin{align*}
+x&=s+c\tau\\
+t&=\tau\\
+\implies\tau&=t\\
+s&=x-ct
+\end{align*}$$Then we can write the solution:$$\Huge u(x,t)=z(\tau(x,t),s(x,t))=u_0(x-ct)$$
+## More complex example:
+Take the Cauchy problem:$$\Huge\begin{cases}(t+u(x,t))\partial_xu(x,t)+t\partial_tu(x,t)=x-t&(x,t)\in\Re\times(0,\infty) \\
+u(x,1)=1+x&x\in\Re\end{cases}$$Here, the characteristics are:
+> Leading vector field $\underline{a}(x,t,u)=(t+u,t)$
+> Source term $b(x,t,u)=x-t$
+> Domain $\Omega=\Re\times(0,\infty)$
+> Boundary $\Gamma=\{(x,1):x\in\Re\}$ parametrised by $\underline s\to (x_0(s),t_0(s))=(s,1)$
+
+Following the methodology:$$\Huge\begin{align*}
+\partial_\tau X(\tau,s)&=T(\tau,s)+z(\tau,s)\\
+\partial_\tau T(\tau,s)&=T(\tau,s)\\
+\partial\tau z(\tau,s)&=X(\tau,s)-T(\tau,s)
+\end{align*}$$with, for $s\in\Re$:$$\Huge\begin{align*}
+X(0,s)&=x_0(s)=s\\
+T(0,s)&=t_0(s)=1\\
+z(0,s)&=u(x_0(s),t_0(s))=u(s,1)=u_0(s)
+\end{align*}$$
