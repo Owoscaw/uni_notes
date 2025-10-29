@@ -35,9 +35,9 @@ We consider the general quasi-linear equation:$$\Huge\begin{cases}\underline{a}(
 u(\underline{x})=u_0(\underline{x})&x\in\Gamma\end{cases}$$where $\Omega\subseteq\Re^n$ is an open set and $\Gamma\subset\bar\Omega$ is an $n-1$ dimensional parametrised hypersurface in $\Re^n$. This is known as the Cauchy problem. $\Gamma$ is called a Cauchy curve, and $u_0$ is called the Cauchy data. $\underline{a}$ is called the leading vector field and $b$ is called the source term. We further assume that the Cauchy curve is parametrised by:$$\Huge\underline{s}=(s_1,\dots,s_{n-1})\rightarrow\underline{x}_0(s_1,\dots,s_{n-1})=\underline{x}_0(\underline{s})\in\Gamma$$where $\underline{s}=(s_1,\dots,s_{n-1})\in I\subseteq\Re^{n-1}$. The method of characteristics then consists of the steps:
 > Solve the $n-1$ parameter family of ODEs for $\underline{X}(\tau,\underline s)$ and $z(\tau,\underline{s})=u(\underline{X}(\tau,\underline{s}))$:$$\Huge\begin{cases}\partial_\tau\underline{X}(\tau,\underline{s})=\underline{a}(\underline{X}(\tau,\underline{s}),z(\tau,\underline{s})) \\
 \partial_\tau z(\tau,\underline{s})=b(\underline{X}(\tau,\underline{s}),z(\tau,\underline{s})\end{cases}$$with boundary conditions:$$\Huge\begin{cases}\underline{X}(0,\underline{s})=\underline{x}_0(\underline{s})&\underline{s}\in I \\
-z(0,\underline{s})=u_0(\underline{x}_0(\underline{s}))&\underline{s}\in I\end{cases}$$where $\underline{X}(\tau,\underline{s})$ are called the characteristics of the equation. This is motivated from the fact that if we found such $\underline{X}(\tau,\underline{s})$:$$\large\partial_\tau u(\underline{X}(\tau,\underline{s}))=\underline{\nabla}u(\underline{X}(\tau,\underline{s}))\cdot\partial_\tau\underline{X}(\tau,\underline{s})=a(\underline{X}(\tau,\underline{s}),u(\underline{X}(\tau,\underline{s}))\cdot\underline{\nabla}u(\underline{X}(\tau,\underline{s})))$$from which we infer that:$$\Huge z(\tau,\underline{s})=u(\underline{X}(\tau,\underline{s}))$$satisfies:$$\Huge\partial_\tau z(\tau,\underline{s})=b(\underline{X}(\tau,\underline{s}),u(\underline{X}(\tau,\underline{s})))$$Here, $\underline{X}(0,\underline{s})$ and $z(0,\underline{s})$ capture the boundary conditions. $z(\tau,\underline{s})$ stipulates the value of $u$ on $\underline{X}(\tau,\underline{s})$.
->Reverse the flow, $(\tau,\underline{s})\rightarrow\underline{X}(\tau,\underline{s})$. That is, we find $\tau(\underline{x}),\underline{s}(\underline{x})$ such that:$$\Huge\underline{X}(\tau(\underline{x}_0),\underline{s}(\underline{x}))=\underline{x}$$
->The solution then becomes:$$\Huge u(\underline{x})=z(\tau(\underline{x}),\underline{s}(\underline{x}))$$
+z(0,\underline{s})=u_0(\underline{x}_0(\underline{s}))&\underline{s}\in I\end{cases}$$where $\underline{X}(\tau,\underline{s})$ are called the characteristics of the equation. Here, $\tau$ represents the parameter "intrinsic time" of the characteristics, and $\underline s$ represents a general point on the boundary. This is motivated from the fact that if we found such $\underline{X}(\tau,\underline{s})$:$$\large\partial_\tau u(\underline{X}(\tau,\underline{s}))=\underline{\nabla}u(\underline{X}(\tau,\underline{s}))\cdot\partial_\tau\underline{X}(\tau,\underline{s})=a(\underline{X}(\tau,\underline{s}),u(\underline{X}(\tau,\underline{s}))\cdot\underline{\nabla}u(\underline{X}(\tau,\underline{s})))$$from which we infer that:$$\Huge z(\tau,\underline{s})=u(\underline{X}(\tau,\underline{s}))$$satisfies:$$\Huge\partial_\tau z(\tau,\underline{s})=b(\underline{X}(\tau,\underline{s}),u(\underline{X}(\tau,\underline{s})))$$Here, $\underline{X}(0,\underline{s})$ and $z(0,\underline{s})$ capture the boundary conditions. $z(\tau,\underline{s})$ stipulates the value of $u$ on $\underline{X}(\tau,\underline{s})$.
+>Reverse the flow, $(\tau,\underline{s})\rightarrow\underline{X}(\tau,\underline{s})$. That is, we find $\tau(\underline{x}),\underline{s}(\underline{x})$ such that:$$\Huge\underline{X}(\tau(\underline{x}_0),\underline{s}(\underline{x}))=\underline{x}$$Here, $\tau(x),s(x)$ represent the evolved time and the boundary starting point respectively.
+>The solution then becomes:$$\Huge u(\underline{x})=u(\underline{X}(\tau(x),s(x)))=z(\tau(\underline{x}),\underline{s}(\underline{x}))$$
 
 
 ## Transport equation example:
@@ -77,5 +77,29 @@ Following the methodology:$$\Huge\begin{align*}
 \end{align*}$$with, for $s\in\Re$:$$\Huge\begin{align*}
 X(0,s)&=x_0(s)=s\\
 T(0,s)&=t_0(s)=1\\
-z(0,s)&=u(x_0(s),t_0(s))=u(s,1)=u_0(s)
+z(0,s)&=u(x_0(s),t_0(s))=u(s,1)=1+s
+\end{align*}$$Solving for $T$ gives:$$\Huge T(\tau,s)=T(0,s)e^{\tau}=e^\tau$$so we can write:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=e^\tau+z(\tau,s)&X(0,s)=s \\
+\partial_\tau z(\tau,s)=X(\tau,s)-e^\tau&z(0,s)=1+s\end{cases}$$we can see that:$$\Huge\begin{cases}\partial_\tau(X(\tau,s)+z(\tau,s))=X(\tau,s)+z(\tau,s) \\
+\partial_\tau(X(\tau,s)-z(\tau,s))=-(X(\tau,s)-z(\tau,s)+2e^\tau\end{cases}$$$$\Huge\begin{cases}X(0,s)+z(0,s)=1+2s \\
+X(0,s)-z(0,s)=-1\end{cases}$$From this we can find $(X+z)(\tau,s)$ and $(X-z)(\tau,s)$ and consequently:$$\Huge\begin{align*}
+X(\tau,s)&=(1+s)e^\tau-e^{-\tau}\\
+z(\tau,s)&=se^\tau+e^{-\tau}\\
+T(\tau,s)&=e^\tau
+\end{align*}$$We have solved the system of ODEs, now we must reverse the flow:$$\Huge\begin{align*}
+\tau&=\log(T)\\
+X(\tau,s)&=(1+s)T-\frac{1}{T}\\
+\implies s&=\frac{X+\frac{1}{T}}{T}-1
+\end{align*}$$Finally we can write the solution:$$\Huge\begin{align*}
+u(x,t)&=z(\tau(x,t),s(x,t))\\
+&=s(x,t)e^{\tau(x,t)}+e^{-\tau(x,t)}\\
+&=\left(x+\frac{1}{t}-t\right)+\frac{1}{t}=x+\frac{2}{t}-t
 \end{align*}$$
+## Review of the method:
+This is all fine and dandy, however we ask:
+> Does the method hold?
+> How long do the characteristics last?
+> Can all points be reached using characteristics?
+> How many characteristics start at the same point?
+> Can characteristics cross?
+> Are characteristics stable wrt to the boundary variable?
+

@@ -107,3 +107,25 @@ Vorticity is a local property, and is not a good measure of overall system behav
 \Gamma=\oint_C\underline{u}\cdot d\underline{x}&=\oint_C\frac{k}{r}\hat{\underline{e}}_\theta\cdot(dr\,\hat{\underline{e}_r}+r\,d\theta\,\hat{\underline{e}}_\theta+dz\,\hat{\underline{e}}_z)\\
 &=\int_{0}^{2\pi}\frac{k}{R}R\,d\theta=2\pi k
 \end{align*}$$Note that this is independent of $R$ and $\underline{\omega}=\underline{0}$ along $C$, however $\Gamma\neq0$. Note the singularity at $r=0$, we integrated over an infinite spike and got a finite result. Let $R\to\infty$, circulation remains $2\pi k$ as it is independent of $R$:$$\Huge\Gamma=\int_S\underline{\omega}\cdot d\underline{s}=\int_0^\infty\int_0^{2\pi}\omega_z(r,\theta)r\,dr\,d\theta=2\pi k$$so we can define the vorticity of this flow in terms of a delta function:$$\Huge\underline{\omega}=2\pi k\,\delta(r)\hat{\underline{e}}_z$$If $\Gamma$ is known, then an approximation of the behavior of the flow itself can be made using a well chosen line vortex. This can be useful for building a flow around singularities.
+
+## Vortex tubes:
+We now consider our vortexes to have some thickness to them. To do this, we can draw some curve inside a fluid, and ask how the circulation inside it is conserved throughout the flow. We now take our curve, and consider the vorticity at each point. Consider the line parallel to the vorticity at each point, that is the set of lines parallel to $\underline{\omega}(\underline{x},t)$ for some fixed $t$, at every point $\underline{x}$. These are called vortex lines, or vortex filaments. Taking the "bundle" of lines that pass through $C$, we form a vortex tube.
+
+Consider the rigid body planar rotation from earlier, with:$$\Huge \underline{u}(\underline{x})=zr\hat{\underline{e}}_\theta$$The vorticity is:$$\Huge\underline{\omega}=\frac{1}{r}\begin{vmatrix}\hat{\underline{e}}_r & r\hat{\underline{e}}_\theta & \hat{\underline{e}}_z \\ \partial_r & \partial_\theta&\partial_z \\ 0 & zr^2 & 0\end{vmatrix}=-r\hat{\underline{e}}_r+2z\hat{\underline{e}}_z$$Drawing a curve $C$ allows us to follow the vortex lines, forming the vortex tube:![[Kinematics of Fluids 2025-10-29 00.40.21.excalidraw]]
+The circulation around $C$ turns out to be the same for all closed curves around the tube, allowing the definition of the vortex tube's strength by the circulation $\Gamma$. To confirm this, consider the following:![[Kinematics of Fluids 2025-10-29 00.46.35.excalidraw]]
+We can then consider the difference between the two circulations about each curve:$$\Huge\begin{align*}
+\Gamma_2-\Gamma_1&=\int_{S_2}\underline{\omega}\cdot d\underline{S}-\int_{S_1}\underline{\omega}\cdot d\underline{S}\\
+&=\int_{S_2}\underline{\omega}\cdot\underline{\hat{n}}\,dS+\int_{S_1}\underline{\omega}\cdot\underline{\hat{n}}
+\,dS+0\\
+&=\int_{S_1}\underline{\omega}\cdot\underline{\hat{n}}\,dS+\int_{S_2}\underline{\omega}\cdot\underline{\hat{n}}\,dS+\int_{S_3}\underline{\omega}\cdot\underline{\hat{n}}\,dS\\
+&=\int_{S_1+S_2+S_3}\underline{\omega}\cdot\underline{\hat{n}}\,dS\\
+&=\int_V\underline{\nabla}\cdot\underline{\omega}\,dV=0
+\end{align*}$$where we have used the fact that $\underline{\hat{n}}$ is perpendicular to $\underline{\omega}$ on $S_3$ to introduce the $S_3$ integral as being $0$ and used the divergence theorem on the second-to-last line. We see that the arbitrarily chosen circulations are the same, and so will be the same for any curve chosen along the vortex tube.
+
+The fact that vortex tubes have conserved strength means that a narrowing tube will have increasing vorticity.
+
+# Potential flows:
+
+We saw that requiring $\underline{\nabla}\times\underline{u}=0$ causes $\underline{u}$ to be a conservative vector field. We can then introduce the velocity potential as:$$\Huge \underline{u}=\underline{\nabla}\phi$$Note that this differs from the [[Kinematics of Fluids#The stream function|stream function]] in the fact that this only requires irrotationality, not incompressibility. Note that if we require both irrotationality and incompressibility, then we have:$$\Huge \underline{\nabla}\cdot\underline{u}=\underline{\nabla}\cdot\underline{\nabla}\phi=\underline{\nabla}^2\phi=0$$which is simply Laplace's equation. Such flows are known as potential flows. Since Laplace's equation is linear, we can use the principle of superposition to construct any flow.
+
+We are missing one key step to solving for these potential flows, boundary conditions.
