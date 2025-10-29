@@ -128,4 +128,11 @@ The fact that vortex tubes have conserved strength means that a narrowing tube w
 
 We saw that requiring $\underline{\nabla}\times\underline{u}=0$ causes $\underline{u}$ to be a conservative vector field. We can then introduce the velocity potential as:$$\Huge \underline{u}=\underline{\nabla}\phi$$Note that this differs from the [[Kinematics of Fluids#The stream function|stream function]] in the fact that this only requires irrotationality, not incompressibility. Note that if we require both irrotationality and incompressibility, then we have:$$\Huge \underline{\nabla}\cdot\underline{u}=\underline{\nabla}\cdot\underline{\nabla}\phi=\underline{\nabla}^2\phi=0$$which is simply Laplace's equation. Such flows are known as potential flows. Since Laplace's equation is linear, we can use the principle of superposition to construct any flow.
 
-We are missing one key step to solving for these potential flows, boundary conditions.
+We are missing one key step to solving for these potential flows, boundary conditions. On a stationary, solid wall, we would require no fluid flow through the wall, that is $\underline{u}\cdot\underline{\hat{n}}=0$. However for a solid body moving with velocity $U$, we would want the velocity of the fluid at the surface of the body to match, $\underline{u}\cdot\underline{\hat{n}}=\underline{U}\cdot\underline{\hat{n}}$. Since $\underline{u}=\underline{\nabla}\phi$:$$\Huge \underline{\nabla}\phi\cdot\underline{\hat{n}}=\underline{U}\cdot\underline{\hat{n}}$$which is exactly Neumann boundary conditions on the potential.
+
+## Solutions to Laplace's equation:
+As long as we have compatible boundary conditions, Laplace's equation can be solved using separation of variables in any coordinate system. We choose $2$-d polar coordinates, that is $\phi(r,\theta)=R(r)\Theta(\theta)$:$$\Huge\begin{align*}
+\underline{\nabla}^2\phi&=\frac{1}{r}\frac{\partial }{\partial r}\left(r\frac{\partial \phi}{\partial r}\right)+\frac{1}{r^2}\frac{\partial^2\phi}{\partial \theta^2}=0\\
+\implies&\frac{\Theta}{r}\frac{d}{dr}\left(r \frac{dR}{dr}\right)+\frac{R}{r^2}\frac{d^2\Theta}{d\theta^2}=0\\
+\implies&\frac{r}{R}(rR')'=-\frac{\Theta''}{\Theta}=\lambda
+\end{align*}$$for some constant $\lambda\in\Re$.
