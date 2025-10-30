@@ -120,3 +120,42 @@ Given an open interval $I\subset\Re$ and a smooth function $\kappa:I\rightarrow\
 
 Returning to the geometric description of $|\kappa(u)|$ of $\underline{\alpha}$ as the reciprocal of the radius of a best-approximating circle of a small neighbourhood $\underline{\alpha}([u-\epsilon,u+\epsilon])$ of the curve and its center given as above, we can see that the centers of curvature $e(u)$ define a new curve under change of parameter. We call this new curve the evolute of $\underline{\alpha}$.
 
+Let $\alpha:I\rightarrow\Re^2$ be a smooth regular plane curve with corresponding curvature function $\kappa:I\rightarrow\Re$. Assume that $\underline{\alpha}$ has no inflection points. Then the curve $e:I\rightarrow\Re^2$ given by:$$\Huge e(u)=\underline{\alpha}(u)+\frac{1}{\kappa(u)}\underline{n}(u)$$is the evolute of $\underline{\alpha}$. 
+
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth unit speed plane curve and $\kappa:I\rightarrow\Re$ be its curvature function. Then we have:$$\Huge\begin{align*}
+\underline{t}'(s)&=\kappa(s)\underline{n}(s)\\
+\underline{n}'(s)&=-\kappa(s)\underline{t}(s)
+\end{align*}$$The first equation is proven trivially, as it is the definition of curvature, for the second:$$\Huge\begin{align*}
+\underline{n}'(s)&=\underline{t}'(s)\begin{pmatrix}0 & 1\\
+-1 & 0\end{pmatrix}\\
+&=\kappa(s)\underline{n}(s)\begin{pmatrix}0 & 1\\
+-1 & 0\end{pmatrix}\\
+&=\kappa(s)\underline{t}(s)\begin{pmatrix}0 & 1\\
+-1 & 0\end{pmatrix}^2\\
+&=-\kappa(s)\underline{t}(s)
+\end{align*}$$Geometrically, we can think of $\underline{t}(s),\underline{n}(s)$ as being a "frame" of two orthonormal basis vectors moving along $\underline{\alpha}(s)$. The equations above then define the relationship between these two vectors.
+
+Such a frame also exists for non unit speed smooth regular plane curves, however the equations above no longer hold without taking the speed of the curve ($||\underline{\alpha}'(u)||$) into account. Note that the trace of the evolute does not change under reparametrisation, so we assume WLOG that $\underline{\alpha}:I\rightarrow\Re^2$ is unit speed:$$\Huge \begin{align*}
+e'(s)&=\underline{\alpha}'(s)-\frac{\kappa'(s)}{\kappa^2(s)}\underline{n}(s)+\frac{1}{\kappa(s)}\underline{n}'(s)\\
+&=\underline{t}(s)-\frac{\kappa'(s)}{\kappa^2(s)}\underline{n}(s)-\frac{1}{\kappa(s)}\kappa(s)\underline{t}(s)\\
+&=-\frac{\kappa'(s)}{\kappa^2(s)}\underline{n}(s)\\
+\implies||e'(s)||&=\frac{|\kappa'(s)|}{\kappa^2(s)}
+\end{align*}$$Which suggests:
+> $e:I\rightarrow\Re^2$ is not arc length parametrised in general
+> Since $e'(s)=0$ if and only if $\kappa'(s)=0$, the evolute is regular if and only if $\underline{\alpha}$ has no vertices, and $e(s)$ is singular if and only if $\underline{\alpha}(s)$ is a vertex
+> If $e$ is regular, then its tangent $e'(s)$ is parallel to the unit normal vector $\underline{n}(s)$
+
+Take for example the ellipse $\underline{\alpha}:[0,2\pi]\rightarrow\Re^2$ given by $\underline{\alpha}(u)=(a\cos u,b\sin u)$ with $a,b>0$:$$\Huge\begin{align*}
+\underline{\alpha}'(u)&=(-a\sin u,b\cos u)\\
+\implies||\underline{\alpha}'(u)||&=\sqrt{a^2\sin^2u+b^2\cos^2u}\\
+\implies\underline{n}(u)&=\frac{1}{||\underline{\alpha}'(u)||}\underline{\alpha}'(u)\begin{pmatrix}0 & -1\\
+1 & 0\end{pmatrix}\\
+&=\frac{(-b\cos u,-a\sin u)}{\sqrt{a^2\sin^2u+b^2\cos^2u}}
+\end{align*}$$Recalling the curvature function of the ellipse allows us to find the evolute:$$\large\begin{align*}
+e(u)&=\underline{\alpha}(u)+\frac{1}{\kappa(u)}\underline{n}(u)\\
+&=(a\cos u,b\sin u)+\frac{a^2\sin^2u+b^2\cos^2u}{ab}(-b\cos u,-a\sin u)\\
+&=\left(\left(a-\frac{a^2\sin^2u+b^2\cos^2u}{a}\right)\cos u,\left(b-\frac{a^2\sin^2u+b^2\cos^2u}{b}\right)\sin u\right)\\
+&=(a^2-b^2)\left(\frac{1}{a}\cos^3u,-\frac{1}{b}\sin^3u\right)
+\end{align*}$$![[Regular curves in Rn 2025-10-30 17.36.30.excalidraw]]
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve and $\underline{t}:I\rightarrow\Re^2$ be its unit tangent vector, $u_0\in I$ and $l(u)=\int_{u_0}^u||\underline{\alpha'(t)}||dt$. Then the curve $\underline{\beta}:I\rightarrow\Re^2$ given by:$$\Huge\underline{\beta}(u)=\underline{\alpha}(u)-l(u)\underline{t}(u)$$is called the involute of $\underline{\alpha}$. Note that the definition of the involute depends on $u_0\in I$. We propose that $\underline{\alpha}$ is the evolute of the involute $\underline{\beta}$. Proof omitted.
+
