@@ -103,3 +103,34 @@ This is all fine and dandy, however we ask:
 > Can characteristics cross?
 > Are characteristics stable wrt to the boundary variable?
 
+# Review of ODE theory:
+
+Let $A\subseteq\Re^n$ and let $\underline{f}:A\rightarrow\Re^m$. We say that $\underline{f}$ is Lipschitz continuous on $A$ if there exists $L>0$ such that for any $\underline{x},\underline{y}\in A$ we have:$$\Huge |\underline{f}(\underline{x})-\underline{f}(\underline{y})|_{\Re^m}\leq L|\underline{x}-\underline{y}|_{\Re^n}$$We say that $\underline{f}$ is locally Lipschitz on $A$ if for any $\underline{x_0}\in A$, there exists an open set $U_{\underline{x}_0}$ such that $\underline{f}$ is Lipschitz on $A\cap U_{\underline{x}_0}$. That is, for any $\underline{x}_0\in A$ there exists an open set $U_{\underline{x}_0}$ and $L(U_{\underline{x}_0})>0$ such that for any $\underline{x},\underline{y}\in A\cap U_{\underline{x}_0}$:$$\Huge |\underline{f}(\underline{x})-\underline{f}(\underline{y})|_{\Re^m}\leq L(U_{\underline{x}_0})|\underline{x}-\underline{y}|_{\Re^n}$$Note that this condition is weaker than the general Lipschitz condition. Writing $\underline{f}=(f_1,\dots,f_m)$ we have that:
+> $\underline{f}$ is Lipschitz on $A$ if and only if $f_i:\Re^n\rightarrow\Re$ is Lipschitz on $A$ for any $i=1,\dots,m$.
+> $\underline{f}$ is locally Lipschitz on $A$ if and only if $f_i:\Re^n\rightarrow\Re$ is locally Lipschitz on $A$ for any $i=1,\dots,m$
+
+For example, $f:\Re\rightarrow\Re$ given by $f(x)=|x|$ is Lipschitz. For any $x,y\in\Re$:$$\Huge|f(x)-f(y)|=||x|-|y||\leq|x-y|=L|x-y|,\,\,L=1$$Also, $f:\Re\rightarrow\Re$ given by $f(x)=x^2$ is not Lipschitz, but locally Lipschitz on $\Re$:$$\large |f(x)-f(y)|=|x^2-y^2|=|x-y||x+y|\leq(|x|+|y|)|x-y|\leq2R|x-y|$$for $x,y\in B_R(0)$ for any $R\in\Re$.
+
+Let $U\subseteq\Re^n$ be an open set such that for any $\underline{x},\underline{y}\in U$ and any $\theta\in[0,1]$. We have that:$$\Huge\theta\underline{x}+(1-\theta)\underline{y}\in U$$That is, if $\underline{x},\underline{y}\in U$ then so is the straight line between them. Sets that allow this are called convex sets. $\underline{f}:U\rightarrow\Re^m$ be differentiable, then:
+>If $$\Huge L=\sup_{x\in U}\max_{i,j}|D\underline{f}(\underline{x})_{ij}|<\infty$$then $\underline{f}$ is Lipschitz on $U$ and:$$\Huge |\underline{f}(\underline{x})-\underline{f}(\underline{y})|\leq\sqrt{nm}L|\underline{x}-\underline{y}|_{\Re^n}$$
+>If for every $\underline{x}_0\in U$ there exists an open ball $B_\epsilon(\underline{x}_0)\subseteq U$ such that:$$\Huge L(B_\epsilon(\underline{x}_0))=\sup_{x\in B_\epsilon(\underline{x}_0)}\max_{i,j}|D\underline{f}(\underline{x})_{ij}|<\infty$$then $\underline{f}$ is locally Lipschitz on $U$.
+
+We can prove the above statements: Given $x,y\in U$ define $g:[0,1]\rightarrow\Re$ by:$$\Huge g(t)=f(tx+(1-t)y)$$Using the MVT we can find $t_0\in[0,1]$ such that:$$\Huge |g(1)-g(0)|=|g'(t_0)|=|Df(t_0x+(1-t_0)y)(x-y)|\leq\sqrt{n}L|x-y|_{\Re^n}$$Hence $|f(x)-f(y)|=|g(1)-g(0)|$ fits the definition of Lipschitz. The same is true of the local case.
+
+Let $U\subseteq\Re^n$ be open and convex. If $\underline{f}:U\rightarrow\Re^m$ is continuously differentiable, then $\underline{f}$ is locally Lipschitz.
+
+## Cauchy-Lipschitz/Picard-Lindelöf theorem:
+Consider the system of ODEs:$$\Huge\begin{cases}\frac{d\underline{X}}{d\tau}(\tau)=\underline{f}(\tau,\underline{X}(\tau)) \\
+\underline{X}(t_0)=\underline{X}_0\end{cases}$$where $\underline{f}:\Re\times\Re^n\rightarrow\Re^n$, $t_0\in\Re$, and $\underline{X}_0\in\Re^n$ are given. Assume that there exists $\delta>0$ and $M>0$ such that $\underline{f}$ is continuous in its first variable on $[t_0-\delta,t_0+\delta]\times\overline{B_M(\underline{X}_0)}$ and that there exists $L(\underline{X}_0)$ such that:$$\Huge|\underline{f}(\tau, \underline{X})-\underline{f}(\tau,\underline{Y})|\leq L(\underline{X}_0)|\underline{X}-\underline{Y}|$$for all $(\tau,\underline{X})\in[t_0-\delta,t_0+\delta]\times\overline{B_M(\underline{X}_0)}$. Then there exists $\epsilon>0$ and a unique continuously differentiable function $\underline{X}:(t_0-\delta,t_0+\delta)\rightarrow\Re^n$ that solves the system of ODEs.
+
+This problem is equivalent to finding a continuous map $\underline{X}:(t_0-\epsilon,t_0+\epsilon)\rightarrow\Re^n$ such that:$$\Huge \underline{X}(t)=\underline{X}_0+\int_{t_0}^t\underline{f}(\tau,\underline{X}(\tau))d\tau$$We can also define an operator on functions from $(t_0-\delta,t_0+\delta)\rightarrow\Re^n$ to the same space by:$$\Huge T(g)(t)=\underline{X}_0+\int_{t_0}^t\underline{f}(\tau,g(\tau))d\tau$$then we want to find $\underline{X}$ such that:$$\Huge \underline{X}=T(\underline{X})$$Note that:$$\Huge |T(h)-T(g)|\leq\int_{t_0}^t|f(\tau,h(\tau))-f(\tau,g(\tau))|d\tau$$so we can define a sequence:$$\Huge\begin{align*}
+\underline{X}_1(t)&=\underline{X_0}\\
+\underline{X}_{n+1}(t)&=T(\underline{X}_n)(t)
+\end{align*}$$Then for small enough $\epsilon>0$ we will get that:$$\Huge \underline{X}_n\to X,\,\,T(\underline{X}_n)\to T(\underline{X})$$
+
+For example, consider the ODE $\frac{dx}{dt}=x^{1/2}$ with $x(0)=0$. Here, $x=0$ is a solution. Assuming $x(t)\neq0$ in a small neighbourhood of $(-\epsilon,\epsilon)\setminus\{0\}$ we can separate the equation:$$\Huge\begin{align*}
+\frac{dx}{\sqrt{x}}&=dt\\
+\implies 2\sqrt{x}&=t+c\\
+\implies x(t)&=\frac{(t+c)^2}{4}\\
+x(0)=0\implies x(t)&=\frac{t^2}{4}
+\end{align*}$$
