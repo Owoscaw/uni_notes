@@ -10,5 +10,8 @@ We define the total energy:$$\Huge E=\int_\Re\varepsilon\,dx$$And ask if it is c
 \frac{\partial \varepsilon}{\partial t}&=u_tu_{tt}+u_xu_{xt}+\sin u\,u_t\\
 &=u_t(u_{tt}+\sin u)+u_xu_{xt}\\
 &=u_t(u_{xx})+u_xu_{xt}\\
-&=\frac{\partial }{\partial x}()
-\end{align*}$$
+&=\frac{\partial }{\partial x}(u_tu_x)=\frac{\partial }{\partial x}(-j)
+\end{align*}$$Since boundary conditions for the sine-Gordon field imply $u_tu_x\to0$ as $x\to\pm\infty$ we deduce that energy is conserved:$$\Huge \frac{d}{dt}E=\frac{d}{dt}\int_\Re\varepsilon\,dx=\int_\Re \frac{\partial }{\partial x}(-j)dx=[-j]_{-\infty}^\infty=0$$
+# Conserved quantities for [[Basic properties of Solitons#The KdV equation|KdV]]:
+
+Recall the KdV field equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$
