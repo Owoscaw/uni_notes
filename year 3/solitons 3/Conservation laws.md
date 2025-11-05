@@ -31,3 +31,9 @@ Recall the KdV field equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$which can be rewritte
 > Is there a systematic way to find them?
 
 # The Gardner transform:
+
+Suppose that the KdV field $u(x,t)$ can be expressed in terms of another function:$$\Huge u=\lambda-v^2-v_x$$where $\lambda\in\Re$ is a parameter. Substituting this into the KdV equation:$$\Huge\begin{align*}
+0&=(\lambda-v^2-v_x)_t+6(\lambda-v^2-v_x)(\lambda-v^2-v_x)_x+(\lambda-v^2-v_x)_{xxx}\\
+&=\dots\\
+&=-\left(2v+\frac{\partial }{\partial x}\right)(v_t+6(\lambda-v^2)v_x+v_{xxx})
+\end{align*}$$That is, if $v$ solves:$$\Huge u_t+6(\lambda-v^2)v_x+v_{xxx}=0$$then $u$ solves the KdV equation.
