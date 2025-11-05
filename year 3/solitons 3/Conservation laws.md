@@ -36,4 +36,4 @@ Suppose that the KdV field $u(x,t)$ can be expressed in terms of another functio
 0&=(\lambda-v^2-v_x)_t+6(\lambda-v^2-v_x)(\lambda-v^2-v_x)_x+(\lambda-v^2-v_x)_{xxx}\\
 &=\dots\\
 &=-\left(2v+\frac{\partial }{\partial x}\right)(v_t+6(\lambda-v^2)v_x+v_{xxx})
-\end{align*}$$That is, if $v$ solves:$$\Huge u_t+6(\lambda-v^2)v_x+v_{xxx}=0$$then $u$ solves the KdV equation.
+\end{align*}$$That is, if $v$ solves:$$\Huge u_t+6(\lambda-v^2)v_x+v_{xxx}=0$$then $u$ solves the KdV equation. For $\lambda=0$ this reduces to the "wrong sign" KdV equation and:$$\Huge u=-v^2-v_x$$is known as the Miura transform, found by Miura in 1968. Gardner's idea was to change Miura's transform by setting:$$\Huge v=\epsilon w+\frac{1}{2\epsilon},\,\,\lambda=\frac{1}{4\epsilon^2}$$
