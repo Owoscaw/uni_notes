@@ -14,4 +14,10 @@ We define the total energy:$$\Huge E=\int_\Re\varepsilon\,dx$$And ask if it is c
 \end{align*}$$Since boundary conditions for the sine-Gordon field imply $u_tu_x\to0$ as $x\to\pm\infty$ we deduce that energy is conserved:$$\Huge \frac{d}{dt}E=\frac{d}{dt}\int_\Re\varepsilon\,dx=\int_\Re \frac{\partial }{\partial x}(-j)dx=[-j]_{-\infty}^\infty=0$$
 # Conserved quantities for [[Basic properties of Solitons#The KdV equation|KdV]]:
 
-Recall the KdV field equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$which can be rewritten as:$$\Huge \frac{\partial }{\partial t}(u)+\frac{\partial }{\partial x}(3u^2+u_{xx})=0$$Boundary conditions for the KdV equation force $u,u_x,u_{xx},\dots\to0$ as $x\to\pm\infty$, so we deduce that:$$\Huge Q_1=\int_\Re u\,dx$$is conserved. This is because we have written the equation of motion in the exact form of a continuity equation with $\rho$
+Recall the KdV field equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$which can be rewritten as:$$\Huge \frac{\partial }{\partial t}(u)+\frac{\partial }{\partial x}(3u^2+u_{xx})=0$$Boundary conditions for the KdV equation force $u,u_x,u_{xx},\dots\to0$ as $x\to\pm\infty$, so we deduce that:$$\Huge Q_1=\int_\Re u\,dx$$is conserved. This is because we have written the equation of motion in the exact form of a continuity equation with $\rho=u,j=3u^2+u_{xx}$. Next we ask if $\rho=u^2$ is conserved:$$\Huge \begin{align*}
+(u^2)_t&=2uu_t\\
+&=-12u^2u_x-2uu_{xxx}\\
+&=-4(u^3)_x-2uu_{xxx}\\
+&=(-4u^2-2uu_{xx})_x+2u_xu_{xx}\\
+&=(-4u^3-2uu_x+u_x^2)_x
+\end{align*}$$Therefore:$$\Huge Q_2=\int_\Re u^2dx$$is conserved with $\rho=u^2,j=4u^3+2uu_x-u_x^2$.
