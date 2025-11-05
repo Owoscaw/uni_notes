@@ -20,4 +20,10 @@ Recall the KdV field equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$which can be rewritte
 &=-4(u^3)_x-2uu_{xxx}\\
 &=(-4u^2-2uu_{xx})_x+2u_xu_{xx}\\
 &=(-4u^3-2uu_x+u_x^2)_x
-\end{align*}$$Therefore:$$\Huge Q_2=\int_\Re u^2dx$$is conserved with $\rho=u^2,j=4u^3+2uu_x-u_x^2$.
+\end{align*}$$Therefore:$$\Huge Q_2=\int_\Re u^2dx$$is conserved with $\rho=u^2,j=4u^3+2uu_x-u_x^2$. We now ask the same of $u^3$:$$\Huge\begin{align*}
+(u^3)_t&=3u^2u_t\\
+&=-18u^3u_x-3u^2u_{xxx}\\
+\text{up to total }x\text{-derivative}&=6uu_xu_{xx}\\
+&=-u_tu_{xx}-u_{xxx}u_{xx}\\
+\text{up to total }x\text{-derivative}&=u_{tx}u_x=\frac{1}{2}(u_x^2)_t
+\end{align*}$$So we rearrange to find a third conserved charge:$$\Huge Q_3=\int_\Re u^3-\frac{1}{2}u_x^2\,dx$$Here, $Q_1,Q_2,$
