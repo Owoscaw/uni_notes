@@ -6,4 +6,9 @@ The standard method for constructing a conserved charge involves finding functio
 
 # Conserved quantities for [[Travelling Waves#The sine-Gordon equation|sine-Gordon]]:
 
-We define the total energy:$$\Huge E=\int_\Re\varepsilon\,dx$$And ask if it is conserved for the sine-Gordon field, where the energy density is:$$\Huge \varepsilon=\frac{1}{2}u_t^2+\frac{1}{2}u_x^2+(1-\cos u)$$Here, $\varepsilon$ plays the role of $\rho$
+We define the total energy:$$\Huge E=\int_\Re\varepsilon\,dx$$And ask if it is conserved for the sine-Gordon field, where the energy density is:$$\Huge \varepsilon=\frac{1}{2}u_t^2+\frac{1}{2}u_x^2+(1-\cos u)$$Here, $\varepsilon$ plays the role of $\rho$. We therefore aim to find a current density function that obeys a continuity equation with the limit condition above. The equation of motion for the sine-Gordon field is:$$\Huge u_{tt}-u_{xx}+\sin u=0$$We can then compute:$$\Huge\begin{align*}
+\frac{\partial \varepsilon}{\partial t}&=u_tu_{tt}+u_xu_{xt}+\sin u\,u_t\\
+&=u_t(u_{tt}+\sin u)+u_xu_{xt}\\
+&=u_t(u_{xx})+u_xu_{xt}\\
+&=\frac{\partial }{\partial x}()
+\end{align*}$$
