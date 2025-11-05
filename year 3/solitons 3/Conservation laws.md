@@ -26,4 +26,8 @@ Recall the KdV field equation:$$\Huge u_t+6uu_x+u_{xxx}=0$$which can be rewritte
 \text{up to total }x\text{-derivative}&=6uu_xu_{xx}\\
 &=-u_tu_{xx}-u_{xxx}u_{xx}\\
 \text{up to total }x\text{-derivative}&=u_{tx}u_x=\frac{1}{2}(u_x^2)_t
-\end{align*}$$So we rearrange to find a third conserved charge:$$\Huge Q_3=\int_\Re u^3-\frac{1}{2}u_x^2\,dx$$Here, $Q_1,Q_2,$
+\end{align*}$$So we rearrange to find a third conserved charge:$$\Huge Q_3=\int_\Re u^3-\frac{1}{2}u_x^2\,dx$$Here, $Q_1,Q_2,Q_3$ are interpreted as the mass, momentum, and energy of the wave respectively. Surprisingly, some old mathematicians found $8$ more conserved charges all of the form:$$\Huge Q_n=\int_\Re(u^n+\dots)dx$$This begs the questions:
+> Are there infinitely many conserved charges?
+> Is there a systematic way to find them?
+
+# The Gardner transform:
