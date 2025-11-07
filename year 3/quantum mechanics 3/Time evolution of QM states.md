@@ -1,0 +1,22 @@
+
+# Schrodinger equation motivation:
+
+The time evolution of quantum mechanical states is governed by the Schrodinger equation. Central to this evolution is the Hamiltonian operator $\hat H$, which encapsulates the total energy of the system. In QM this plays a crucial role as it dictates the dynamics and temporal progression of QM states.
+
+One can find motivation for the equation through symmetries and their generators. [[QM linear algebra#Linear operators|Recall]] the operator $\hat R_{\Lambda_2}=e^{i\phi\hat\tau_2}$ that represented a rotational symmetry of the system. We noted that expectation values of $\hat\tau_2$ would not change under rotation because of this symmetry. Now consider the same situation for shifts in time. We would like the system to not lose energy, that is we expect the expectation of the energy to stay the same. We can write this in terms of a single unitary evolution operator for the wave function $\psi$:$$\Huge |\psi(t)\rangle=e^{-i\frac{\bar Ht}{\hbar}}|\psi_0\rangle$$where $\psi_0$ is the wave function at $t=0$ and $\hat H$ is the Hamiltonian. In this way we can motivate the form of time-evolution by a direct link with energy conservation. It is useful to compute the time derivative:$$\Huge \frac{d}{dt}|\psi(t)\rangle=-i\frac{\hat H}{\hbar}e^{-i\frac{\hat Ht}{\hbar}}|\psi(t)\rangle$$Which then defines the Schrodinger equation:$$\Huge i\hbar \frac{d}{dt}|\psi(t)\rangle=\hat H |\psi(t)\rangle$$which is a more useful way of describing time evolution. 
+
+# Time evolution and the importance of the $\hat H$ eigenbasis:
+
+Given a particular form for $\hat H$, we ask for the best way of solving for the time evolution of a wave function $|\psi\rangle$. Firstly, we aim to represent $|\psi(t)\rangle$ in terms of the eigenbasis of $\bar H$. There are two common methods:
+ > In the first method we use spectral decomposition of $\bar H$ which has generic eigenvalues given by $E_\alpha$ for $\alpha=1,\dots,m$ and $\hat P_{E_\alpha}$ as the respective projection operators. In other words, $\alpha$ labels the $\mathcal{H}_\alpha$ subspaces of the original Hilbert space organised by energy eigenvalues. These are often called the "principle quantum number" of the state. Using the expansion of any operator in terms of its projection operators, we can write the unitary evolution operator as:$$\Huge \hat U_t=e^{-i\frac{\hat H}{\hbar}t}=\sum_{\alpha=1}^me^{-i\frac{E_\alpha}{\hbar}t}\hat P_{E_\alpha}$$If $|E_\alpha,j\rangle$ is an orthonormal basis of $\mathcal{H}_{E_\alpha}$ then as we have seen it takes the form:$$\Huge\begin{align*}
+\hat P_{E_\alpha}&=\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}|E_\alpha,j\ \langle E_\alpha,j|\\
+\implies |\psi(t)\rangle&=\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}e^{-i\frac{E_\alpha}{\hbar}t}|E_\alpha,j\rangle \langle E_\alpha,j|\psi_0\rangle
+\end{align*}$$That is to say, we must first express the wave function at $t=0$ as an expansion over the energy eigenstates:$$\Huge |\psi_0\rangle=\sum_{\alpha,j}c_{\alpha,j} |E_\alpha,j\rangle$$such that the coefficients are given by $c_{\alpha,h}=\langle E_\alpha,j|\psi_0\rangle$. Then we have:$$\Huge |\psi(t)\rangle=\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}e^{-i\frac{E_\alpha}{\hbar}t}c_{\alpha,j}|E_\alpha,j\rangle$$
+> The second method involves operation more directly. The initial state $|\psi(t=0)\rangle$ can be written as a linear combination of the eigenbasis:$$\Huge\begin{align*}
+|\psi_0\rangle&=\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}c_{\alpha,j}|E_\alpha,j\rangle\\
+\implies |\psi(t)\rangle&=e^{-i\frac{\hat H}{\hbar}t}\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}\\
+&=\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}c_{\alpha,j}e^{-i\frac{\hat H}{\hbar}t}|E_\alpha,j\rangle\\
+&=\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}c_{\alpha,j}e^{-i\frac{\hat H}{\hbar}t}|E_\alpha,j\rangle
+\end{align*}$$
+
+Therefore, in general, a state evolves by all its energy eigenstate components evolving with a phase given by the energy. We also observe that if the initial state $|\psi_0\rangle$ is itself an eigenvector of $\hat H$ with eigenvalue $E$, then $|\psi(t)\rangle=e^{-i\frac{E}{\hbar}t}|\psi_0\rangle$. This overall phase is not measurable so in effect the system remains constant if it happens to be an energy eigenstate. To show that the expectation of energy is constant requires more work
