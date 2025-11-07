@@ -85,6 +85,3 @@ Note that the group $SO(3)$ of rotations in $R^3$ is not a two-sphere, as there 
 Consider closed loops $\phi:[0,1]\rightarrow G$ such that $\phi(0)=\phi(1)$. For $SU(2)$ there are no non-trivial maps, any closed loop in $S^3$ can be shrunk to a point. Such spaces are called simply connected.
 
 Now consider the path from $\mathbb{1}$ to $-\mathbb{1}$ in $SU(2)$. Under $F$ this maps to a closed path in $SO(3)$ that starts and ends at $\mathbb{1}$. If this curve is continuously deformed, it will still lift to an open curve in $SU(2)$, although it may now go from $g$ to $-g$ in $SU(2)$, which means there is no way of shrinking it to a point. Therefore $SO(3)$ is not simply connected. Consider looping twice around any loop in $SO(3)$, which can be lifted to any closed curve in $SU(2)$, which we know can be shrunk to a point. We have hence shown that the fundamental group of $SO(3)$ contains a $\mathbb{Z}_2$ element. For a given manifold with non-trivial fundamental group, there is a unique way to find a covering space that is simply connected. Here, $SU(2)$ is the universal cover of $SO(3)$.
-
-# Differentiable Manifolds:
-

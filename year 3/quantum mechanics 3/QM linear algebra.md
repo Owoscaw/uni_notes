@@ -55,7 +55,7 @@ For example, consider a pair of quantum coin states $|H\rangle,|T\rangle$, repre
 1\end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\
 -1\end{pmatrix}=\frac{1}{\sqrt 2}(|H\rangle-|T\rangle)
 \end{align*}$$The operator has created superpositions of the quantum states. The following are operators commonly used in quantum computing:
-> Pauli Gates, defined using the [[Lie groups and Lie Algebras#Pauli matrices|Pauli matrices]]. These come in $3$ flavours, the Pauli-X Gate $(\hat\tau_1)$, the Pauli-Y Gate $(\hat\tau_2)$, and (you guessed it!) the Pauli-Z Gate $(\hat\tau_3)$:$$\Huge \tau_1=\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix},\,\,\tau_2=\begin{pmatrix}0 & -i \\ i & 0\end{pmatrix},\,\,\tau_3=\begin{pmatrix}1 & 0 \\ 0 & -1\end{pmatrix}$$
+> Pauli Gates, defined using the [[U(1),SU(2),SO(3)#Pauli matrices|Pauli matrices]]. These come in $3$ flavours, the Pauli-X Gate $(\hat\tau_1)$, the Pauli-Y Gate $(\hat\tau_2)$, and (you guessed it!) the Pauli-Z Gate $(\hat\tau_3)$:$$\Huge \tau_1=\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix},\,\,\tau_2=\begin{pmatrix}0 & -i \\ i & 0\end{pmatrix},\,\,\tau_3=\begin{pmatrix}1 & 0 \\ 0 & -1\end{pmatrix}$$
 > Phase Shift Gates, defined using complex exponentials. The Phase Gate $(\hat S)$ represents a $\pi/2$ phase shift, and the T Gate $(\hat T)$ represents a $\pi/4$ phase shift:$$\Huge S=\begin{align*}
 \begin{pmatrix}1 & 0\\
 0 & i\end{pmatrix},\,\,T=\begin{pmatrix}1 & 0\\
