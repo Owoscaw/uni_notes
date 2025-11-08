@@ -25,7 +25,7 @@ Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth curve and $[a,b]\subset I
 &=_{m\to\infty}\int_a^b||\underline{\alpha}'(u)||du
 \end{align*}$$
 
-# Reparametrisations and unit speed curves:
+# Reparametrisations and unit speed i:
 
 Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth regular curve. A parameter change for $\underline{\alpha}$ is a map $h:J\rightarrow I$ where $J\subset\Re$ is an open interval such that:
 > $h$ is smooth
