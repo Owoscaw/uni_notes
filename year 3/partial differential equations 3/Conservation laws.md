@@ -1,2 +1,2 @@
 
-We will now consider a special type of [[Introduction to PDEs#Quasi-linear PDEs|quasi-linear]] first order PDEs that describe conserved quantities such as mass and charge.
+We will now consider a special type of [[Introduction to PDEs#Quasi-linear PDEs|quasi-linear]] first order PDEs that describe conserved quantities such as mass and charge. The general form for scalar conservation laws for functions is:$$\Huge\partial_tu(\underline{x},t)+\text{div}_{\underline{x}}\underline{f}(u(\underline{x},t))=0$$where $u:\Re^n\times[0,\infty)\rightarrow\Re$ and $\underline{f}:\Re\rightarrow\Re^n$. Here, $\underline{f}$
