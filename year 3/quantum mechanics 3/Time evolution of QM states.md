@@ -97,3 +97,32 @@ L_3&=xp_y-yp_x
 &=\frac{\partial (yp_z-zp_y)}{\partial x}\frac{\partial(zp_x-xp_z)}{\partial p_x}+\dots\\
 &=xp_y-yp_x=L_3
 \end{align*}$$Then by symmetry we have:$$\Huge \{L_i,L_j\}=\epsilon_{ijk}L_k$$
+## Quantum equivalent and correspondence:
+Recalling the [[Momentum and Planck's constant#Commutation|canonical commutation relations]]:$$\Huge [\hat x_i,\hat p_j]=i\hbar\delta_{ij}$$we find the relation expected by the correspondence principle:$$\Huge[\hat L_i,\hat L_j]=i\hbar\epsilon_{ijk}\hat L_k$$Therefore one way to get the correct commutation relations is to simply replace the classical operators with the $\hat x,\hat p$ operators. Considering angular momentum as conserved quantities, it is natural to propose that the operators corresponding to each component $L_i$ as the rotation operators:$$\Huge\hat L_1=i\hbar\begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & -1 & 0\end{pmatrix},\,\,\hat L_2=i\hbar\begin{pmatrix}0 & 0 & 1 \\ 0 & 0 & 0 \\ -1 & 0 & 0\end{pmatrix},\,\,\hat L_3=i\hbar\begin{pmatrix}0 & 1 & 0 \\ -1 & 0 & 0 \\  0 & 0 & 0\end{pmatrix}$$One can check that these obey the commutation relation.
+
+# Intrinsic spin:
+
+Throughout our exploration of QM, we saw a close connection between:
+> The freedom to measure several non-commuting observables in a degenerate system
+> Conserved quantities
+> Symmetries
+
+Classical angular momentum corresponds to just one representation of the algebra we saw in the relation between angular momentum components. In nature, when such a symmetry is a property of the system, there is no guarantee as to what representation of that symmetry will be found. In fact, there is a smaller representation known as intrinsic spin. It is represented by the spin operator $\hat S_i$, characterised by half integer eigenvalues, and is significant for all fermions.
+
+An electron turns out to have a two-dimensional "internal spin" Hilbert space, described by the operators $\hat S_i$:$$\Huge[\hat S_i,\hat S_j]=i\hbar\epsilon_{ijk}\hat S_k$$One can calculate that the Pauli matrices satisfy this relation, given appropriate rescaling:$$\Huge S_i=\frac{\hbar}{2}\tau_i$$Note that this forces eigenvalues to be half integer multiples of $\hbar$, and that electrons cannot have zero spin. The total angular momentum of larger objects is then simply the sum of its orbital and intrinsic spin components:$$\Huge\hat J=\hat L\times\hat{\mathbb{I}}_S+\hat{\mathbb{I}}_L\times\hat S$$Thus $\hat S$ defines a suitable representation for half integer spin particles. 
+
+We then ask how such a particle behaves in a magnetic field $\underline{B}$. We expect the Hamiltonian involving the spin vector to have form:$$\Huge
+\hat H=\gamma\hat S\cdot\underline{B},\,\,\gamma=-\frac{e}{2m}\in\Re$$It is convenient to choose cartesian coordinates such that the magnetic field is lying in the $z$-direction ($B_x=B_y=0$), giving us $\hat H=\gamma B_z\hat S_z$. We can then find the expectation value for $\hat S_z$:$$\Huge \frac{d}{dt}\langle\hat S_z\rangle=-\frac{i\gamma B_z}{\hbar}\langle[\hat S_z,\hat S_z]\rangle=0$$So we expect the spin in the $z$-direction to be conserved. The spin in the other two directions does not commute with $\hat H$ so we expect them not to be conserved. We then have the commutators:$$\Huge\begin{align*}
+[\hat S_x,\hat S_z]&=i\hbar\epsilon_{xyz}\hat S_y=-i\hbar\hat S_y\\
+[\hat S_y,\hat S_z]&=i\hbar\hat S_x
+\end{align*}$$such that:$$\Huge\begin{align*}
+\frac{d}{dt}\langle\hat S_x\rangle&=\frac{iB_z\gamma}{\hbar}\langle[\hat S_z,\hat S_x]\rangle\\
+&=-B_z\gamma\langle\hat S_y\rangle\\
+\frac{d}{dt}\langle\hat S_y\rangle&=\frac{iB_z\gamma}{\hbar}\langle[\hat S_z,\hat S_y]\rangle\\
+&=B_z\gamma\langle\hat S_x\rangle
+\end{align*}$$Giving us two coupled ODEs which can be solved simultaneously by differentiating:$$\Huge\begin{align*}
+\frac{d^2}{dt^2}\langle\hat S_x\rangle&=-B_z\gamma \frac{d}{dt}\langle\hat S_y\rangle\\
+&=-B_z^2\gamma^2\langle\hat S_x\rangle\\
+\implies\langle\hat S_x\rangle&=b\cos(B_z\gamma t)+a\sin(B_z\gamma t)\\
+\implies\langle\hat S_y\rangle&=b\sin(B_z\gamma t)-b\sin(B_z\gamma t)
+\end{align*}$$for $a,b\in\Re$. Therefore we see that the spin vector resolved in the $x,y$ plane is rotating with a characteristic frequency given by $\gamma$:$$\Huge\begin{pmatrix}\langle\hat S_x\rangle \\ \langle\hat S_y\rangle\end{pmatrix}=\begin{pmatrix}\sin(B_z\gamma t) & \cos(B_z\gamma t) \\ -\cos(B_z\gamma t) & \sin(B_z\gamma t)\end{pmatrix}\begin{pmatrix}a \\ b\end{pmatrix}$$The constants here are fixed by initial conditions and the expectations transform in time by a rotation of $\pi/2-B_z\gamma t$.

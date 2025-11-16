@@ -14,7 +14,7 @@ Consider two functions $u,v$ with two differential equations $P[u]=0,Q[v]=0$ whe
 
 Then the relations are called a Backlund transformation (BT). Furthermore if $P=Q$, then the relations are called an auto-Backlund transformation (a-BT). This is useful if the relation is easier to solve than either differential equation, which can be used to generate solutions to the differential equations.
 > $P[u]=0,Q[v]=0$ are known as integrability conditions
-> $R_1[u,v]=0,R_2[u,v]=0$ can be integrated for $v,u$ if the integrability condition $P[u]=0,Q[v]=0$ respectively are statisfied
+> $R_1[u,v]=0,R_2[u,v]=0$ can be integrated for $v,u$ if the integrability condition $P[u]=0,Q[v]=0$ respectively are satisfied
 > 
 
 ## Simple example:
