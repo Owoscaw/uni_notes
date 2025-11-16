@@ -19,4 +19,6 @@ Given a particular form for $\hat H$, we ask for the best way of solving for the
 &=\sum_{\alpha=1}^m\sum_{j=1}^{\dim(\mathcal{H}_{E_\alpha})}c_{\alpha,j}e^{-i\frac{\hat H}{\hbar}t}|E_\alpha,j\rangle
 \end{align*}$$
 
-Therefore, in general, a state evolves by all its energy eigenstate components evolving with a phase given by the energy. We also observe that if the initial state $|\psi_0\rangle$ is itself an eigenvector of $\hat H$ with eigenvalue $E$, then $|\psi(t)\rangle=e^{-i\frac{E}{\hbar}t}|\psi_0\rangle$. This overall phase is not measurable so in effect the system remains constant if it happens to be an energy eigenstate. To show that the expectation of energy is constant requires more work
+Therefore, in general, a state evolves by all its energy eigenstate components evolving with a phase given by the energy. We also observe that if the initial state $|\psi_0\rangle$ is itself an eigenvector of $\hat H$ with eigenvalue $E$, then $|\psi(t)\rangle=e^{-i\frac{E}{\hbar}t}|\psi_0\rangle$. This overall phase is not measurable so in effect the system remains constant if it happens to be an energy eigenstate. To show that the expectation of energy is constant requires more work, which we do later.
+
+Take for example a quantum system characterised by the Hamiltonian and $t=0$ state:$$\Huge\bar H=\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix},\,\,|\psi(0)\rangle=\begin{pmatrix}1 \\ 0\end{pmatrix}$$We aim to determine the time evolution 
