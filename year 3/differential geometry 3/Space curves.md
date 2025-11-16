@@ -43,3 +43,17 @@ For any pair of smooth functions $\kappa,\tau:I\rightarrow\Re$ with $\kappa(s)>0
 &\,\,\,\,\,\,\,-\tau(\underline{n}_\underline{\beta}-\underline{n}_\underline{\alpha}A)\cdot(\underline{b}_\underline{\beta}-\underline{b}_\underline{\alpha}A)+\tau(\underline{b}_\underline{\beta}-\underline{b}_\underline{\alpha}A)=0
 \end{align*}$$So $f'$ is constant, and since $f(s_0)=0$ we have that $f=0$ for all $s\in I$. We can therefore conclude that $\underline{t}_\underline{\beta}=\underline{t}_\underline{\alpha}A\implies\underline{\beta}'=\underline{\alpha}'A$ which means that $\underline{\beta}-\underline{\alpha}A$ has to be a constant vector we name $\underline{z}$. So we have:$$\Huge \underline{\beta}=\underline{\alpha}A+\underline{z}=f_{A,\underline{z}}\circ\underline{\alpha}$$Proving existence and uniqueness.
 
+The local canonical form of a smooth unit speed space curve $\underline{\alpha}:I\rightarrow\Re^3$ around $s_0=0\in I$ can be found using a Taylor expansion around $s_0$:$$\Huge \underline{\alpha}(s)=\underline{\alpha}(0)+s\underline{\alpha}'(0)+\frac{s^2}{2}\underline{\alpha}''(0)+\frac{s^3}{6}\underline{\alpha}'''(0)+r(s)$$with $||r(s)||\leq Cs^4$ for some constant $C>0$ and small values of $s$. Using the Serret-Frenet formulae we obtain:$$\Huge\begin{align*}
+\underline{\alpha}'&=\underline{t}\\
+\underline{\alpha}''&=\underline{t}'=\kappa\underline{n}\\
+\underline{\alpha}'''&=\kappa'\underline{n}+\kappa\underline{n}'\\
+&=\kappa'\underline{n}+\kappa(-\kappa\underline{t}-\tau\underline{b})\\
+&=-\kappa^2\underline{t}+\kappa'\underline{n}-\kappa\tau\underline{b}
+\end{align*}$$Putting this into the Taylor expansion yields:$$\begin{align*}
+\underline{\alpha}(s)-\underline{\alpha}(0)&=s\underline{t}(0)+\frac{s^2}{2}\kappa(0)\underline{n}(0)+\frac{s^2}{6}(-\kappa^2(0)\underline{t}(0)+\kappa'(0)\underline{n}(0)-\kappa(0)\tau(0)\underline{b}(0))+r(s)\\
+&=\left(s-\frac{\kappa^2(0)}{6}\right)\underline{t}(0)+\left(\frac{\kappa(0)}{2}s^2+\frac{\kappa'(0)}{6}s^3\right)\underline{n}(0)-\left(\frac{\kappa(0)\tau(0)}{6}s^3\right)\underline{b}(0)+r(s)
+\end{align*}$$Here, we can translate and rotate the coordinate system such that the origin coincides with $\underline{\alpha}(0)$ and its standard basis vectors $\underline{e}_1,\underline{e}_2,\underline{e}_3$ coincide with $\underline{t}(0),\underline{n}(0),\underline{b}(0)$. Then the curve can be written, up to third order, as:$$\Huge\begin{align*}
+x(s)&=s-\frac{\kappa^2(0)}{6}s^3\\
+y(s)&=\frac{\kappa(0)}{2}s^2+\frac{\kappa'(0)}{6}s^3\\
+z(s)&=-\frac{\kappa(0)\tau(0)}{6}s^3
+\end{align*}$$These equations are referred to as the local canonical form of $\underline{\alpha}$ at $\underline{\alpha}(0)$.
