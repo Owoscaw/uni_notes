@@ -54,7 +54,7 @@ r=R&:\underline{\hat{n}}=\hat{\underline{e}}_r,\,\,\underline{u}\cdot\underline{
 \hat{\underline{e}}_x&:0=-\frac{1}{\rho_0}\frac{\partial p}{\partial x}\implies p\neq p(x)\\
 \hat{\underline{e}}_y&:0=-\frac{1}{\rho_0}\frac{\partial p}{\partial y}\implies p\neq p(y)\\
 \hat{\underline{e}}_z&:0=-\frac{1}{\rho_0}\frac{\partial p}{\partial z}-g\implies p(z)=-\rho_0gz+C
-\end{align*}$$Where the constant $C$ is determined by setting the pressure at the surface $z=0$ equal to atmospheric pressure $p_\text{atm}$, giving us:$$\Huge p(z)=p_\text{atm}-\rho_0gz$$This solution is known as hydrostatic equilibrium. We can also calculate the total force exerted on an object submerged in the fluid:$$\Huge\begin{align*}
+\end{align*}$$Where the constant $C$ is determined by setting the pressure at the surface $z=0$ equal to atmospheric pressure $p_\text{atm}$, giving us:$$\Huge p(z)=p_\text{atm}-\rho_0gz$$This solution is known as hydrostatic equilibrium. We can also calculate the net force exerted on an object submerged in the fluid:$$\Huge\begin{align*}
 \int_{V_\text{object}}\underline{F}_\text{pressure}dV&=\int_{S_\text{object}}-p\,d\underline{S}\\
 &=\int_{V_\text{object}}-\underline{\nabla}p\,dV\\
 &=\int_{V_\text{object}}\rho_0g\hat{\underline{e}}_z\,dV=\rho_0gV\hat{\underline{e}}_z
