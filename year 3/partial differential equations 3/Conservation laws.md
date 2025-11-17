@@ -31,9 +31,29 @@ To answer this, consider the function $h^{(t)}:\Re\rightarrow\Re$ defined by:$$\
 > $t\in[0,\infty)$ when $\partial_s(c(u_0(s)))\geq0$
 > $0\leq t<-\frac{1}{\partial_s(c(u_0(s)))}$ when $\partial_s(c(u_0(s)))<0$
 
-This leads us to the next observation, written as a lemma. Let $c,u_0\in C^1$. For any $-\infty<a<b<\infty$ we define:$$\Huge\begin{align*}
+# Local existence/characteristics for conservation laws on an interval:
+This leads us to the next observation, written as a lemma. Let $c,\in C^1, u_0\in C^1([a,b])$. For any $-\infty<a<b<\infty$ we define:$$\Huge\begin{align*}
 I_{(a,b)}&=\{s\in(a,b):\partial_sc(u_0(s))<0\}\\
 t_c^{(a,b)}&=\inf_{s\in I_{(a,b)}}\left(-\frac{1}{\partial_sc(u_0(s))}\right)=\inf_{s\in I_{(a,b)}}\left(-\frac{1}{c'(u_0(s))u_0'(s)}\right)\\
 \mathcal{D}_{(a,b)}&=\{(x,t)\in\Re\times(0,t_c^{(a,b)}):a+c(u_0(a))t<x<b+c(u_0(b))t\}
-\end{align*}$$with the convention that $t_c^{(a,b)}=\infty$ if $I_{(a,b)}$ is empty. Then $t_c^{(a,b)}>0$ and as such $\mathcal{D}_{(a,b)}\neq\emptyset$ and there exists a continuously differentiable function $u:\mathcal{D}_{(a,b)}\rightarrow\Re$ satisfying the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+c(u(x,t))\partial_xu(x,t)=0&(x,t)\in\mathcal{D_{(a,b)}} \\
-u(x,0)=u_0(x)&x\in(a,b)\end{cases}$$Furthermore, the characteristics for the conservation law are straight lines and $u$ is constant along characteristics.
+\end{align*}$$with the convention that $t_c^{(a,b)}=\infty$ if $I_{(a,b)}$ is empty. This essentially defines the domain where the function $h^{(t)}(s)$ defined above is invertible. Then $t_c^{(a,b)}>0$ and as such $\mathcal{D}_{(a,b)}\neq\emptyset$ and there exists a continuously differentiable function $u:\mathcal{D}_{(a,b)}\rightarrow\Re$ satisfying the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+c(u(x,t))\partial_xu(x,t)=0&(x,t)\in\mathcal{D_{(a,b)}} \\
+u(x,0)=u_0(x)&x\in(a,b)\end{cases}$$Moreover, $u$ satisfies the implicit equation:$$\Huge u(x,t)=u_0(x-c(u(x,t))t),\,\,(x,t)\in\mathcal{D}_{(a,b)}$$Furthermore, the characteristics for the conservation law are straight lines and $u$ is constant along characteristics. In particular, for each $s\in(a,b)$, the characteristic that passes through $(s,0)$ is the line in the $(x,t)$ plane with slope $1/c(u_0(s))$.
+
+## Proof:
+When $I_{(a,b)}\neq\emptyset$, we have that:$$\Huge t_c^{(a,b)}=\inf_{s\in I_{(a,b)}}\left(-\frac{1}{\partial_sc(u_0)(s))}\right)=1/\sup_{s\in I_{(a,b)}}(-\partial_sc(u_0(s)))$$furthermore we have:$$\Huge t_c^{(a,b)}=0\iff\sup_{s\in I_{(a,b)}}(-\partial_sc(u(s)))=\infty$$However from the condition that $c\circ u_0\in C^1([a,b])$ and as $[a,b]$ is obviously compact, we say that $\partial_s(c\circ u_0)(s)$ is bounded on $[a,b]$, which full contains $I_{(a,b)}$. This implies:$$\Huge\sup_{s\in I_{(a,b)}}(-\partial_sc(u_0(s)))\neq\infty\implies t_c^{(a,b)}>0$$
+We can now solve the PDE using the method of characteristics. The characteristics and $z(\tau,s)$ are given by:$$\Huge\begin{cases}T(\tau,s)=\tau&s\in(a,b) \\
+z(\tau,s)=z(0,s)=u_0(s) \\
+X(\tau,s)=s+c(u_0(s))\tau=s+c(u_0(s))T(\tau,s)\end{cases}$$We now invert the flow $(\tau,s)\rightarrow(X(\tau,s),T(\tau,s))$, using the fact we previously found $\tau(x,t)=t$. We find $s(x,t)$ by solving:$$\Huge x=s+c(u_0(s))t=h^{(t)}(s)$$As $c\circ u_0\in C^1([a,b])$, we can differentiate with no problems:$$\Huge \frac{d}{ds}h^{(t)}(s)=1+\partial_sc(u_0((s))t$$Now we restrict $t\in[0,t_c^{(a,b)})$:
+> If $s\notin I_{(a,b)}$ then this derivative is positive, as the partial derivative term is not negative.
+> If $s\in I_{(a,b)}$ then the partial derivative term itself is negative, however we use the fact that $t<t_c^{(a,b)}$:$$\Huge \frac{d}{ds}h^{(t)}(s)>1+\partial_sc(u_0(s))t_c^{(a,b)}\geq0$$This is because by definition, $t_c^{(a,b)}\leq-1/\partial_sc(u_0(s))$, which we use to show that the term with the critical time is $\geq-1$, making the whole expression positive or zero.
+
+Therefore we can invert $h^{(t)}(s)$ on its image:$$\Huge h^{(t)}(a,b)=(h^{(t)}(a),h^{(t)}(b))=(a+c(u_0(a))t,b+c(u_0(s))t)$$and the inverted flow becomes:$$\Huge \tau(x,t)=t,\,\,s(x,t)=(h^{(t)})^{-1}(x),\,\,(x,t)\in\mathcal{D}_{(a,b)}$$Noting that:$$\Huge D_{(\tau,s)}(X,T)=\begin{pmatrix}c(u_0(s)) & 1+\partial_sc(u_0(s))T(\tau,s) \\ 1 & 0\end{pmatrix}$$is invertible on $\mathcal{D}_{(a,b)}$ we conclude that by the inverse function theorem, that $\tau,s\in C^1$. Finally, we can define:$$\Huge u(x,t)=z(\tau(x,t),s(x,t))=u_0(s(x,t))$$as the solution to the PDE. It remains to show that this holds on the boundary:$$\large x=s(x,0)+\partial_s(c\circ u_0)(s)\cdot0=s(x,0)\implies u(x,0)=u_0(s(x,0))=u_0(x)$$
+Writing $x=s+c(u_0(s))t$, or $t=\frac{x-s}{c(u_0(s))}$, it is clear that characteristics are straight lines and $u$ is constant on these characteristics with value $u_0(s)$ if it passes through $(s,0)$. 
+
+Lastly, noting that $u(x,t)=u_0(s(x,t))$, we can write:$$\Huge\begin{align*}
+x&=s(x,t)+c(u_0(s(x,t)))t\\
+&=s(x,t)+c(u(x,t))t\\
+\implies s(x,t)&=x-c(u(x,t))t\\
+\implies u(x,t)&=u_0(x-c(u(x,t))t)
+\end{align*}$$
+Note that the only condition needed to extend this result to $\Re$ is that if $c\circ u_0$ has a bounded derivative (wrt $s$).
