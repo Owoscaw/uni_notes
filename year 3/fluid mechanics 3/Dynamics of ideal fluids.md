@@ -73,3 +73,22 @@ Another possible velocity that satisfies the boundary conditions is an axisymmet
 \hat{\underline{e}}_z&:0=\frac{1}{\rho_0}\frac{\partial p_d}{\partial z}\implies p_d=p_d(z)\\
 \hat{\underline{e}}_r&:\frac{G^2}{r}=\frac{1}{\rho_0}\frac{\partial p_d}{\partial r}\implies p_d(r)=\int\rho_0\frac{G(r)^2}{r}dr
 \end{align*}$$Making the full pressure:$$\Huge p(\underline{x})=p_\text{atm}-\rho gz+\int\rho_0\frac{G(r)^2}{r}dr$$
+# Conservation of energy:
+
+We ask what are the [[year 3/solitons 3/Conservation laws#Standard methodology|conserved quantities]] for the incompressible Euler equations. Firstly, we consider kinetic energy.
+
+## Kinetic energy:
+For a fluid region $V$, we define the kinetic energy as:$$\Huge E=\frac{1}{2}\int_V\rho_0|\underline{u}|^2dV$$Verifying that it is indeed conserved:$$\Huge\begin{align*}
+\frac{dE}{dt}&=\frac{d}{dt}\int_V\frac{1}{2}\rho_0|\underline{u}|^2dV\\
+&=\frac{1}{2}\int_V\rho_0\frac{\partial }{\partial t}(\underline{u}\cdot\underline{u})dV\\
+&=\frac{1}{2}\int_V\rho_0(2\underline{u}\cdot\underline{u}_t)dV\\
+\text{using Euler eqns}&=\int_V\rho_0\underline{u}\cdot(-(\underline{u}\cdot\underline{\nabla})\underline{u}-\frac{1}{\rho_0}\underline{\nabla}p+\underline{f})dV\\
+&=\int_V
+\rho_0\underline{u}\cdot(-(\underline{\nabla}\times\underline{u})\times\underline{u}+\frac{1}{2}\underline{\nabla}(|\underline{u}|^2-")dV\\
+&=\int_V\rho_0\underline{u}\cdot\left(-\frac{1}{2}\underline{\nabla}\left(|\underline{u}^2|\right)-\frac{1}{\rho_0}\underline{\nabla}p+\underline{f}\right)dV\\
+\text{assuming }f\text{ conservative}&=-\int_V\rho_0\underline{u}\cdot\underline{\nabla}\left(\frac{1}{2}|\underline{u}|^2+\frac{p}{\rho_0}+\Phi\right)dV\\
+\text{defining }H(x,t)&=-\int_V\rho\underline{u}\cdot\underline{\nabla}H(\underline{x},t)dV\\
+&=-\int_V\rho_0(\underline{\nabla}\cdot(H\underline{u})-H\underline{\nabla}\cdot\underline{u})dV\\
+&=-\rho_0\int_V\underline{\nabla}\cdot(H\underline{u})dV\\
+&=-\rho_0\int_SH\underline{u}\cdot d\underline{S}=0
+\end{align*}$$which holds when $\underline{u}\cdot\underline{n}_S=0$ on the surface ,$S$, of the fluid region $V$. Therefore kinetic energy is a conserved quantity. 
