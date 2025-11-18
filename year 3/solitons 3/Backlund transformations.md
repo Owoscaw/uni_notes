@@ -26,3 +26,46 @@ Take the two dimensional Laplace operator $P=Q=\partial_x^2+\partial_y^2$ and th
 $v(x,y)=2xy$ solves the Laplace equation, we can use the a-BT to find another solution, $u$, of the same equation:$$\Huge\begin{cases}u_x=v_y=2x \\
 u_y=-v_x=-2y\end{cases}\implies\begin{cases}u=x^2+f(y) \\
 f'(y)=-2y\end{cases}\implies f(y)=-y^2+C$$so we find that $u(x,y)=x^2-y^2+C$ for some constant $C$ is another solution. Note that the equations $R_1[u,v]=R_2[u,v]=0$ are simply the [[Complex differentiation#Cauchy-Riemann equations|C-R equations]] for the holomorphic function $w=u+iv$ of the complex variable $z=x+iy$. In our example, $w(z)=z^2+C$. Two functions $u,v$ that solve the Laplace equation are often called harmonic conjugates.
+
+# Backlund transformations for [[Travelling Waves#The sine-Gordon equation|sine-Gordon]]:
+
+Firstly, we rewrite the sine-Gordon equation by changing variables to [[year 3/solitons 3/Conservation laws#Relativistic field equations|light-cone]] coordinates:$$\Huge x_+=\frac{1}{2}(t+x),\,\,x_-=\frac{1}{2}(t-x)$$Recall we found the form of the derivative operator:$$\Huge\frac{\partial^2}{\partial x_+\partial x_-}=\frac{\partial^2}{\partial t^2}-\frac{\partial^2}{\partial x^2}$$making the sine-Gordon equation:$$\Huge u_{+-}=-\sin u$$We then define the BT:$$\Huge\begin{align*}
+\partial_+(u-v)&=\frac{2}{a}\sin\left(\frac{1}{2}(u+v)\right)\\
+\partial_-(u+v)&=-2a\sin\left(\frac{1}{2}(u-v)\right)
+\end{align*}$$with $a\in\Re$ a constant parameter. To check that this is valid, we differentiate the first expression wrt $x_-$ and the second wrt $x_+$:$$\Huge\begin{align*}
+\partial_-\partial_+(u-v)&=\frac{2}{a}\cos\left(\frac{1}{2}(u+v)\right)\partial_-\left(\frac{1}{2}(u+v)\right)\\
+&=-\frac{1}{a}\cos\left(\frac{1}{2}(u+v)\right)2a\sin\left(\frac{1}{2}(u-v)\right)\\
+&=-2\cos\left(\frac{1}{2}(u+v)\right)\sin\left(\frac{1}{2}(u-v)\right)\\
+&=\sin v-\sin u\\
+\partial_+\partial_-(u+v)&=-2a\cos\left(\frac{1}{2}(u-v)\right)\partial_+\left(\frac{1}{2}(u-v)\right)\\
+&=-a\cos\left(\frac{1}{2}(u-v)\right)\frac{2}{a}\sin\left(\frac{1}{2}(u+v)\right)\\
+&=-2\cos\left(\frac{1}{2}(u-v)\right)\sin\left(\frac{1}{2}(u+v)\right)\\
+&=-\sin u-\sin v
+\end{align*}$$We can then eliminate either $u,v$:$$\Huge u_{+-}=-\sin u,\,\,v_{+-}=-\sin v$$Therefore we have an a-BT for $u,v$.
+
+## sine-Gordon kink example:
+We start with the simplest solution to the sine-Gordon equation, $v=0$. This makes the BT:$$\Huge\begin{align*}
+\partial_+u&=\frac{2}{a}\sin\left(\frac{u}{2}\right)\\
+\partial_-u&=-2a\sin\left(\frac{u}{2}\right)
+\end{align*}$$which we solve through separation of variables:$$\Huge\begin{align*}
+\int\frac{du}{\sin\left(\frac{u}{2}\right)}&=\frac{2}{a}\int dx_+\\
+2\log\left(\tan\left(\frac{u}{4}\right)\right)+f(x_-)&=\frac{2}{a}x_+\\
+\int\frac{du}{\sin\left(\frac{u}{2}\right)}
+&=-2a\int dx_-\\
+2\log\left(\tan\left(\frac{u}{4}\right)\right)+g(x_+)&=-2ax_-
+\end{align*}$$Where $f,g$ are constants of integration. We find these by:$$\Huge \frac{2}{a}x_++2ax_-=f(x_-)-g(x_+)$$which we can rearrange to get all $x_+,x_-$ variables on each side of the equation, making them constant. For convenience we write such constant as $-2C$:$$\Huge\begin{align*}
+g(x_+)&=-\frac{2}{a}x_+-2C\\
+f(x_-)&=2ax_--2C\\
+\implies2\log(\tan(\frac{u}{4}))&=\frac{2}{a}x_+-2ax_-+2C\\
+\implies u&=4\arctan\left(e^{\frac{1}{a}x_+-ax_-+C}\right)
+\end{align*}$$Which is a rather non-trivial solution, found from the trivial solution $v=0$. However we are not done yet, we must convert back from light-cone coordinates to $(x,t)$ coordinates:$$\Huge\begin{align*}
+\frac{1}{a}x_+-ax_-&=\frac{1}{a}\left(\frac{1}{2}(t+x)\right)-a\left(\frac{1}{2}(t-x)\right)\\
+&=\left(\frac{1}{2a}+\frac{a}{2}\right)x+\left(\frac{1}{2a}-\frac{a}{2}\right)t\\
+&=\frac{1+a^2}{2a}\left(x-\frac{a^2-1}{a^2+1}t\right)
+\end{align*}$$Defining $v=\frac{a^2-1}{a^2+1}$ we immediately see that this is a travelling wave solution. Using this definition of $v$, one can show that $\frac{1+a^2}{2a}=\frac{\text{sign }a}{\sqrt{1-v^2}}=\epsilon\gamma$ where $\gamma=\frac{1}{\sqrt{1-v^2}}$ is the Lorentz factor. This makes the solution we found from the trivial solution:$$\Huge u(x,t)=4\arctan(e^{\epsilon\gamma(x-vt-x_0)})$$Then for the different values of $a$ we get:
+> $a<-1$ corresponds to a right moving anti-kink
+> $-1<a<0$ corresponds to a left moving anti-kink
+> $0<a<1$ corresponds to a left moving kink
+> $a>1$ corresponds to a right moving kink
+
+Therefore our BT creates either a kink or anti-kink from the "vacuum solution" $v=0$, without losing any options through the variation of $a$.
