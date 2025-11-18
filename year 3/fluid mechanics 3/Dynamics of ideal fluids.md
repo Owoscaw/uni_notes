@@ -92,3 +92,32 @@ For a fluid region $V$, we define the kinetic energy as:$$\Huge E=\frac{1}{2}\in
 &=-\rho_0\int_V\underline{\nabla}\cdot(H\underline{u})dV\\
 &=-\rho_0\int_SH\underline{u}\cdot d\underline{S}=0
 \end{align*}$$which holds when $\underline{u}\cdot\underline{n}_S=0$ on the surface ,$S$, of the fluid region $V$. Therefore kinetic energy is a conserved quantity. 
+
+# Bernoulli's principle:
+
+When $\underline{f}$ is a conservative field, the momentum equation becomes:$$\Huge\begin{align*}
+\frac{\partial u}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho_0}\underline{\nabla}p-\underline{\nabla}\Phi\\
+\frac{\partial u}{\partial t}+(\underline{\nabla}\times\underline{u})\times\underline{u}&=-\underline{\nabla}\left(\frac{p}{\rho_0}+\frac{1}{2}|\underline{u}|^2+\Phi\right)\\
+&=-\underline{\nabla}H(\underline{x},t)
+\end{align*}$$If the flow is steady ($u_t=0$), and we take the dot product with $\underline{u}$ we get:$$\Huge \underline{u}\cdot\underline{\nabla}H(\underline{x},t)=0$$where $H$ is called the "energy head". This equation says that $\underline{\nabla}H$ is constant along [[Kinematics of Fluids#Streamlines|streamlines]]. This is known as Bernoulli's principle, and has two conditions:
+> Incompressible, steady, ideal flow
+> Conservative body force $\underline{f}=-\underline{\nabla}\Phi$
+
+In such case:$$\Huge H(\underline{x},t)=\frac{1}{2}|\underline{u}|^2+\frac{p}{\rho_0}+\Phi$$is constant along streamlines. The first term is interpreted as kinetic energy, the second is interpreted as an internal "heat-like" energy, and the last is interpreted as potential.
+
+## Pitot tube example:
+A Pitot tube is used to measure airspeed on an aircraft, usually attached near the cockpit:![[Dynamics of ideal fluids 2025-11-18 13.21.58.excalidraw]]
+Then by Bernoulli's principle:$$\Huge \frac{1}{2}u_1^2+\frac{p_1}{\rho_0}=0+\frac{p_2}{\rho_0}\implies u_1=\sqrt{\frac{2(p_2-p_1)}{\rho_0}}$$so we can find airspeed by knowing the pressure inside and outside the aircraft.
+
+## Mug with a hole example:
+Recalling the mug we previously discussed, consider a hole drilled with area $a$ on the side at the base:![[Dynamics of ideal fluids 2025-11-18 13.29.12.excalidraw]]In which case we have $\underline{f}=-g\hat{\underline{e}}_z=-\underline{\nabla}\Phi\implies\Phi=gz$. Assuming that the hole is small ($a/A<<1$), then the flow will be approximately steady and we can use Bernoulli's principle. We then ask how $u$ depends on $h$. Here, the mass flux at the exit must be equal to the mass flux at the surface:$$\Huge\int_{S_a}\rho_0\underline{u}\cdot d\underline{S}=\rho_0ua=\rho_0UA=\int_{S_A}\rho_0\underline{U}\cdot d\underline{S}\implies U=\frac{a}{A}u$$Bernoulli's principle then dictates that the energy head at the surface is the same as the energy head at the exit:$$\Huge\frac{1}{2}u^2+\frac{p_\text{atm}}{\rho_0}+0=\frac{1}{2}U^2+\frac{p_\text{atm}}{\rho_0}+gh$$Combining these two conditions gives:$$\Huge\begin{align*}
+u^2-U^2&=2gh\\
+\implies u^2\left(1-\frac{a^2}{A^2}\right)&=2gh\\
+\implies u&=\sqrt\frac{2gh}{1-\frac{a^2}{A^2}}\\
+\implies u&\approx\sqrt{2gh}\,\,,\frac{a}{A}<<1
+\end{align*}$$which is analogous to the classical mechanics scenario with a ball being dropped at height $h$.
+
+## Bernoulli's principle for steady potential flows:
+If $\underline{\nabla}\times\underline{u}=0$ then we have $\underline{u}=\underline{\nabla}\phi$ and $\frac{\partial u}{\partial t}=0$, the momentum equation reduces to:$$\Huge \underline{\nabla}H=0\implies H=\text{constant}$$so we get a stronger condition, that the energy head is constant throughout space, not just along streamlines.
+### Line vortex example:
+Consider the flow defined by a [[Kinematics of Fluids#Vorticity|line vortex]]:$$\Huge \underline{u}=\frac{k}{r}\hat{\underline{e}}_\theta,\,\,r>0$$![[Dynamics of ideal fluids 2025-11-18 13.49.18.excalidraw]]Then we have:$$\Huge \frac{P(r)}{\rho_0}+\frac{1}{2}\left(\frac{k}{r}\right)^2+gh=\frac{p_\text{atm}}{\rho_0}+0+gh$$where we have used the $r\to\infty$ case for the RHS. We can then solve for $P(r)$ (pressure close to the vortex):$$\Huge P(r)=p_\text{atm}-\frac{\rho_0}{2}\left(\frac{k}{r}\right)^2$$
