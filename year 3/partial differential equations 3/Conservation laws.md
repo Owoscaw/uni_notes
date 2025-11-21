@@ -56,4 +56,4 @@ x&=s(x,t)+c(u_0(s(x,t)))t\\
 \implies s(x,t)&=x-c(u(x,t))t\\
 \implies u(x,t)&=u_0(x-c(u(x,t))t)
 \end{align*}$$
-Note that the only condition needed to extend this result to $\Re$ is that if $c\circ u_0$ has a bounded derivative (wrt $s$).
+Here, the choice of interval was arbitrary, so it natural to ask if we can extend this to $\Re$. The issue with this is that we used the compactness of the interval $[a,b]$ when we showed that $t_c^{(a,b)}>0$. We needed that $\partial_s c(u_0(s))$ will be bounded. By requiring this, we can extend to $\Re$. Moreover by requiring that the function $c\circ u_0$ itself is bounded, we can simplify $\mathcal{D}_\Re$ to $\Re\times(0,t_c)$.
