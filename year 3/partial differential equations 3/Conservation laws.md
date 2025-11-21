@@ -57,3 +57,17 @@ x&=s(x,t)+c(u_0(s(x,t)))t\\
 \implies u(x,t)&=u_0(x-c(u(x,t))t)
 \end{align*}$$
 Here, the choice of interval was arbitrary, so it natural to ask if we can extend this to $\Re$. The issue with this is that we used the compactness of the interval $[a,b]$ when we showed that $t_c^{(a,b)}>0$. We needed that $\partial_s c(u_0(s))$ will be bounded. By requiring this, we can extend to $\Re$. Moreover by requiring that the function $c\circ u_0$ itself is bounded, we can simplify $\mathcal{D}_\Re$ to $\Re\times(0,t_c)$.
+
+Note that similar theorems can be found for $(-\infty,b)$ and $(a,\infty)$ with some sort of boundedness requirement. Had we used the [[The Method of Characteristics#Local well posedness of first order quasi-linear PDEs|well-posedness]] result on some general quasi-linear equation, we would have found a solution in an open set whose boundary contains $\Gamma=\Re\times\{0\}$, while this theorem gave us an actual set.
+
+We now explore the geometric meaning of $t_c$, noticing that much of the study of the problem is related to $(c\circ u_0)(s)$ and its $s$-derivative. We proceed with some examples:
+> $c(u_0(s))$ is constant. This forces $\partial_s(c\circ u_0)(s)=0$, implying that $I=\emptyset$ and $t_c=\infty$. The characteristics are then $x=s+ct$.
+> $c(u_0(s))$ is increasing. This forces $\partial_s(c\circ u_0)(s)>0$, implying that $I=\emptyset$ and $t_c=\infty$. The characteristics are then $x=s+c(u_0(s))t$. We assume $c(u_0(s))>0$, so that $1/c(u_0(s))$ is decreasing, making the slope of the characteristics decreasing with $s$.
+> $c(u_0(s))$ is decreasing. This forces $\partial_sc(u_0(s))<0$, implying $I\neq\emptyset$ and $0<t_c<\infty$. Similarly, assuming that $c(u_0(s))>0$ we see that $1/c(u_0(s))$ increases with $s$, making the slope of the characteristics increase with $s$. This can potentially cause the crossing of characteristics.
+
+![[Conservation laws 2025-11-21 13.41.24.excalidraw]]We see that some break in the $C^1$ solution happens on this line.
+
+# Breakdown of classical solutions:
+
+Let $c,u_0\in C^1(\Re)$ and assume that the function $c\circ u_0$ is bounded with bounded derivative. Assume additionally that $I\neq\emptyset$ and that the infimum defining $t_c$ is attained by some $s_c\in I$:$$\Huge t_c=-\frac{1}{\partial_s(c(u_0(s)))|_{s=s_c}}=\min_{s\in I}\left(-\frac{1}{\partial_s(c(u_0(s)))}\right)$$Define $x_c(t)=s_c+c(u_0(s))t$ and let $u\in C^1(\Re\times(0,t_c))$ be the unique solution to:$$\Huge\begin{cases}\partial_t u(x,t)+c(u(x,t))\partial_x u(x,t)=0&(x,t)\in\Re\times(0,t_c) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$Then:$$\Huge\lim_{t\to t_c}|\partial_xu(x_c(t),t)|=\infty$$
