@@ -69,3 +69,30 @@ f(x_-)&=2ax_--2C\\
 > $a>1$ corresponds to a right moving kink
 
 Therefore our BT creates either a kink or anti-kink from the "vacuum solution" $v=0$, without losing any options through the variation of $a$.
+
+# Theorem of permutability:
+
+Consider applying a Backlund transformation twice with parameters $a_1,a_2$ in two possible orders:![[Backlund transformations 2025-11-24 13.27.21.excalidraw]]The final results $u_3,u_4$ will look like $u_0$ but with two added solitons with parameters $a_1,a_2$. The theorem of permutability then dictates:
+
+For any $u_1,u_2$, the integration constants in the second Backlund transformations, which generate $u_3,u_4$, can be arranged so that $u_3=u_4$. That is to say, $a_1,a_2$ can be made to commute:![[Backlund transformations 2025-11-24 13.29.59.excalidraw]]
+We hope to be able to get rid of all derivatives in the Backlund transformations and obtain an algebraic expression for $u_0,u_1,u_2,u_3$. First consider the $\partial_+$ parts of the transformations, on the upper branch:$$\Huge\begin{align*}
+(u_1-u_0)_+&=\frac{2}{a_1}\sin\left(\frac{u_1+u_0}{2}\right)\\
+(u_3-u_1)_+&=\frac{2}{a_2}\sin\left(\frac{u_3+u_1}{2}\right)\\
+\implies(u_3-u_0)_+&=\frac{2}{a_1}\sin\left(\frac{u_1+u_0}{2}\right)+\frac{2}{a_2}\sin\left(\frac{u_3+u_1}{2}\right)
+\end{align*}$$Then for the lower route we simply swap $a_1\leftrightarrow a_2$ and $u_1\leftrightarrow u_2$ to get:$$\Huge (u_3-u_0)_+=\frac{2}{a_2}\sin\left(\frac{u_2+u_0}{2}\right)+\frac{2}{a_1}\sin\left(\frac{u_3+u_2}{2}\right)$$Equating these two expressions gives the following algebraic relation:$$\large \frac{1}{a_1}\sin\left(\frac{u_1+u_0}{2}\right)+\frac{1}{a_2}\sin\left(\frac{u_3+u_1}{2}\right)=\frac{1}{a_2}\sin\left(\frac{u_2+u_0}{2}\right)+\frac{1}{a_1}\sin\left(\frac{u_3+u_2}{2}\right)$$
+This is very useful, as we can generate a $2$-soliton solution $u_3$ using two $1$-soliton solutions $u_1,u_2$ and the vacuum solution $u_0$. Iterating this leads to $n$-soliton solutions. This is one interpretation of a "nonlinear superposition principle".
+
+To check that our procedure is consistent, we must check the $\partial_-$ part of the transformations. Using the same method we get:$$\Huge\begin{align*}
+(u_0-u_3)_-&=2a_2\sin\left(\frac{u_3-u_1}{2}\right)-2a_1\sin\left(\frac{u_1-u_0}{2}\right)\\
+&=2a_1\sin\left(\frac{u_3-u_2}{2}\right)-2a_2\sin\left(\frac{u_2-u_0}{2}\right)
+\end{align*}$$Which gives the relation:$$\large a_2\sin\left(\frac{u_3-u_1}{2}\right)-a_1\sin\left(\frac{u_1-u_0}{2}\right)=a_1\sin\left(\frac{u_3-u_2}{2}\right)-a_2\sin\left(\frac{u_2-u_0}{2}\right)$$
+We require our relations to be equivalent, so we begin by writing the $\partial_+$ relation as:$$\large\frac{1}{a_1}\left(\sin\left(\frac{u_1+u_0}{2}\right)-\sin\left(\frac{u_3+u_2}{2}\right)\right)=\frac{1}{a_2}\left(\sin\left(\frac{u_2+u_0}{2}\right)-\sin\left(\frac{u_3+u_1}{2}\right)\right)$$Then multiplying by $a_1a_2/2$ and using the sine addition rules gives:$$\Huge a_2\sin\left(\frac{u_1+u_0-u_3-u_2}{4}\right)=a_1\sin\left(\frac{u_2+u_0-u_3-u_1}{4}\right)$$
+Similarly, we rearrange the $\partial_-$ expression to:$$\Huge a_1\sin\left(\frac{u_3-u_2+u_1-u_0}{4}\right)=a_2\sin\left(\frac{u_3-u_1+u_2-u_0}{4}\right)$$which agrees. We now aim to rearrange to find $u_3$ in terms of the other solutions. Letting $A=(u_0-u_3)/4$ and $B=(u_1-u_2)/4$ we have:$$\Huge\begin{align*}
+a_1\sin(A-B)&=a_2\sin(A+B)\\
+\implies a_1(\sin A\cos B-\sin B\cos A)&=a_2(\sin A\cos B+\sin B\cos A)
+\end{align*}$$Dividing through by $\cos A\cos B$ we have:$$\Huge\begin{align*}
+a_1(\tan A-\tan B)&=a_2(\tan A+\tan B)\\
+\implies (a_1-a_2)\tan A&=(a_1+a_2)\tan B\\
+\implies\tan\left(\frac{u_0-u_3}{4}\right)&=\frac{a_1+a_2}{a_1-a_2}\tan\left(\frac{u_1-u_2}{4}\right)\\
+\implies\tan\left(\frac{u_3-u_0}{4}\right)&=\frac{a_2+a_1}{a_2-a_1}\tan\left(\frac{u_1-u_2}{4}\right)
+\end{align*}$$

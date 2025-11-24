@@ -40,3 +40,39 @@ We summarise:
 | $\langle i\|j\rangle$      | $\langle x_i\|x_j\rangle=\delta_{ij}$         | $\langle x'\|x\rangle=\delta(x-x')$                                |
 # Momentum operator:
 
+We now move on to the momentum operator, returning to the notion of [[Hamiltonian Formalism#Hamiltonian flows|Hamiltonian flows]]. We saw that it was possible to induce a flow in the phase space with an operator $\Phi_f^{(\epsilon)}$ with:$$\Huge \Phi_f^{(\epsilon)}=g+\epsilon\{g,f\}$$where $f=f(x,p),g=g(x,p)$ are some functions on the phase space. If we choose $f(x,p)=p$ then for infinitesimal $\epsilon$ we have:$$\Huge\begin{align*}
+\Phi_f^{(\epsilon)}(g)&=g+\epsilon\{g,p\}\\
+&=g+\epsilon\partial_xg\\
+&=g(x+\epsilon,p)
+\end{align*}$$Thus in classical mechanics, momentum is the generator of translations in $x$ through its Poisson bracket. We can write this as:$$\Huge \frac{dg}{d\epsilon}=\{g,p\}=\partial_xg$$Then for non-infinitesimal $\epsilon$ we can write this as a mapping of the function $g$:$$\Huge g\rightarrow e^{\epsilon\{\cdot,p\}}g=e^{\epsilon\partial_x}g$$We can then use the correspondence principle to get the expectation values of a quantum system, where $\hat g=g(\hat x,\hat p)$:$$\Huge \frac{d\langle\hat g\rangle}{d\epsilon}=-\frac{i}{\hbar}\langle[\hat g,\hat p]\rangle=\langle\partial_x\hat g\rangle$$The expectation of an operator that is described by a function on $\hat x$ is shifted by a change in the wave function as follows:$$\Huge \langle\hat g\rangle=\langle \psi|\hat g |\psi\rangle\rightarrow \langle \psi'|\hat g |\psi'\rangle$$where $|\psi'\rangle$ is the wavefunction transformed through $\epsilon$:$$\Huge |\psi'\rangle=|\psi\rangle+\epsilon \frac{d |\psi\rangle}{d\epsilon}$$Here, we are assuming $\hat g$ is an operator with no explicit $\epsilon$-dependence. It does not change under $\epsilon$ transformations, but the transformation in the expectation value of $\hat g$ is caused by a change in the wavefunction. To find such transformation, we consider the $\epsilon$ derivative of the expectation value:$$\Huge\begin{align*}
+\frac{d}{d\epsilon}\langle\hat g\rangle&=\frac{d \langle \psi|}{d\epsilon}\hat g |\psi\rangle+ \langle \psi|\hat g \frac{d |\psi\rangle}{d\epsilon}\\
+&=\frac{i}{\hbar} \langle \psi|\hat p\hat g |\psi\rangle-\frac{i}{\hbar}\langle \psi|\hat g\hat p |\psi\rangle
+\end{align*}$$Since $\hat p$ is an observable we have $\hat p^\dagger=\hat p$ and therefore the above is satisfied by a single ODE of the wavefunction:$$\Huge\implies \frac{d |\psi\rangle}{d\epsilon}=-\frac{i}{\hbar}\hat p |\psi\rangle$$which is solved, giving a wavefunction of form:$$\Huge |\psi\rangle\rightarrow |\psi'\rangle=e^{-i\epsilon\hat p/\hbar}|\psi\rangle$$Note that $g$ is not present in this form, showing that a transformation on $|\psi\rangle$ will produce the required change in expectation for ANY operator.
+
+So far, everything is in terms of the generic operator $\hat p$, so we ask of the form of such operator. We know that:$$\Huge -\frac{i}{\hbar} \langle \psi|[\hat g,\hat p]|\psi\rangle=\langle \psi|\partial_{\hat x}\hat g |\psi\rangle$$We proceed by inserting identity operators in the $x$-eigenbasis:$$\begin{align*}
+-\frac{i}{\hbar}\int \langle \psi|\hat g |x\rangle \langle x|\hat p |\psi\rangle-\langle \psi|\hat p |x\rangle \langle x|\hat g |\psi\rangle dx&=\int \langle \psi|x\rangle \langle x|\partial_{\hat x}\hat g |\psi\rangle\\
+\implies-\frac{i}{\hbar}\int g(\langle \psi|x\rangle \langle x|\hat p |\psi\rangle-\langle \psi|\hat p |x\rangle \langle x|\psi\rangle)dx&=\int \langle \psi|x\rangle\partial_x g \langle x|\psi\rangle dx\\
+&=-\int g(\langle \psi|x\rangle\partial_x \langle x|\psi\rangle+\partial_x \langle \psi|x\rangle \langle x|\psi\rangle)dx
+\end{align*}$$where we used integration by parts and the assumption that $\psi$ vanishes at $\pm\infty$. We can solve this by inferring a differential equation that is satisfied by the wave function in the $x$ basis:$$\Huge \langle x|\hat p |\psi\rangle=-i\hbar \partial_x \langle \psi|x\rangle$$We see that the action of $\hat p$ on $|\psi\rangle$ "pulls out" the derivative operator from the braket, so $\hat p$ cannot be the derivative operator by itself. To solve this we must find an operator that pulls the derivative out of the braket. We write $\hat p$ in the general form as an operator expansion:$$\Huge\hat p=\iint p_{xx'}|x'\rangle \langle x|dx'\,dx$$We can get the coefficients $p_{xx'}$ by observing:$$\Huge p_{xx'}= \langle x|\hat p |x'\rangle=-i\hbar\partial_x \langle x|x'\rangle\implies p_{xx'}=-i\hbar\partial_x\delta(x-x')$$That is, the matrix elements of $\hat p$ are derivatives of the delta function. We can then write the operator as the double integral over these elements with multiplying operators:$$\Huge\hat p=-i\hbar\iint |x\rangle \langle x'|\partial_x\delta(x-x')dx\,dx'$$We check that this acts as we expect on the wavefunction:$$\Huge\begin{align*}
+ \langle x|\hat p |\psi\rangle&=-i\hbar\iint \langle x|x''\rangle \langle x'|\partial_{x''}\delta(x''-x') |\psi\rangle\,dx''dx'\\
+&=-i\hbar\int\partial_x\delta(x-x') \langle x'|\psi\rangle dx
+\end{align*}$$To evaluate this we must first write the delta function derivative as:$$\Huge \partial_x\delta(x-x')=\delta'(x-x')=-\partial_{x'}\delta(x-x')$$So we get:$$\Huge\begin{align*}
+\implies \langle x|\hat p |\psi\rangle&=i\hbar\int\partial_{x'}\delta(x-x') \langle x'|\psi\rangle dx'\\
+&=-i\hbar\int\delta(x-x')\partial_{x'} \langle x'|\psi\rangle dx'\\
+&=-i\hbar\partial_x \langle x|\psi\rangle
+\end{align*}$$where we used integration by parts and the general property of the delta function. 
+
+Given the factor of $i$, it is natural to be concerned about the hermiticity of $\hat p$. We saw that $p_{xx'}$ is antisymmetric:$$\Huge p_{xx'}=-p_{x'x}$$therefore $p_{x'x}$ is purely imaginary and we have $p^*_{xx'}=p_{x'x}$ and hence $\hat p=\hat p^\dagger$, the momentum operator is indeed an observable.
+
+We also wish to check the usual commutation relations involving $\hat x,\hat p$:$$\Huge\begin{align*}
+\hat x\hat p&=i\hbar\iint \hat x |x\rangle \langle x'|\partial_{x'}\delta(x-x')dx\,dx'\\
+&=-i\hbar\iint x\delta(x-x') |x\rangle\partial_{x'} \langle x'|dx\,dx'\\
+&=-i\hbar\int |x\rangle x\partial_x \langle x|dx\\
+\hat p\hat x&=i\hbar\iint |x\rangle \langle x'|\hat x\partial_{x'}\delta(x-x')dx\,dx'\\
+&=i\hbar\iint |x\rangle \langle x'|x'\partial_{x'}\delta(x-x')dx\,dx'\\
+&=-i\hbar\iint\delta(x-x') |x\rangle\partial_{x'}x' \langle x'|dx\,dx'\\
+&=-i\hbar\int |x\rangle\partial_x x \langle x|dx\\
+&=-i\hbar\int |x\rangle \langle x|dx-i\hbar\int |x\rangle x\partial_x \langle x|dx\\
+&=-i\hbar\hat{\mathbb{I}}-i\hbar\int |x\rangle x\partial_x \langle x|dx\\
+\implies [\hat x,\hat p]&=i\hbar\hat{\mathbb{I}}
+\end{align*}$$
