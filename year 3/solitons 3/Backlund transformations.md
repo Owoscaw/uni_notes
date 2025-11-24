@@ -96,3 +96,7 @@ a_1(\tan A-\tan B)&=a_2(\tan A+\tan B)\\
 \implies\tan\left(\frac{u_0-u_3}{4}\right)&=\frac{a_1+a_2}{a_1-a_2}\tan\left(\frac{u_1-u_2}{4}\right)\\
 \implies\tan\left(\frac{u_3-u_0}{4}\right)&=\frac{a_2+a_1}{a_2-a_1}\tan\left(\frac{u_1-u_2}{4}\right)
 \end{align*}$$
+
+# Two-Soliton solution:
+
+We take the vacuum solution $u_0=0$ and we know $u_1,u_2$ as kink/anti-kink solutions, so we can write the doubly transformed $u_3$ as:$$$$
