@@ -76,3 +76,36 @@ We also wish to check the usual commutation relations involving $\hat x,\hat p$:
 &=-i\hbar\hat{\mathbb{I}}-i\hbar\int |x\rangle x\partial_x \langle x|dx\\
 \implies [\hat x,\hat p]&=i\hbar\hat{\mathbb{I}}
 \end{align*}$$
+# Momentum eigenbasis:
+
+The eigenstates of the momentum operator are written as $\hat p |p\rangle=p |p\rangle$. In the $\hat p$ eigenbasis we define the identity as $\hat{\mathbb{I}}=\int_{-\infty}^\infty |p\rangle \langle p| dp$ and also $\langle p|p'\rangle=\delta(p-p')$, just like the $|x\rangle$ eigenbasis. This is because we have, by insertion of an identity:$$\Huge |p'\rangle=\int |p\rangle \langle p|p'\rangle dp\implies \langle p|p'\rangle=\delta(p-p')$$We can find the wavefunction in the $p$ eigenbasis, in terms of $x$, by computing $\langle x|p\rangle$:$$\Huge \langle x|\hat p |p\rangle=-i\hbar\frac{\partial }{\partial x}\langle x|p\rangle=\langle x|p |p\rangle=p \langle x|p\rangle$$which is a solvable differential equation. We solve to get:$$\Huge \langle x|p\rangle=c_pe^{ipx/\hbar}$$We find $c_p$ via the following:$$\Huge\begin{align*}
+\psi(x)=\langle x|\psi\rangle&=\int \langle x|p\rangle \langle p|\psi\rangle dp\\
+&=c_p\int e^{ipx/\hbar}\tilde\psi(p)dp\\
+\implies\tilde\psi(p)=\langle p|\psi\rangle&=\int \langle p|x\rangle \langle x|\psi\rangle dp\\
+&=c_p^*\int e^{-ipx/\hbar}\psi(x)dx
+\end{align*}$$This is exactly a [[Fourier transform#Properties|Fourier transform]]. We can then find $c_p$ through a second transform defining a delta function as such:$$\Huge\begin{align*}
+\psi(x)=\langle x|\psi\rangle&=\int \langle x|p\rangle \langle p|\psi\rangle dp\\
+&=\int \langle x|p\rangle\int \langle p|y\rangle \langle y|\psi\rangle dy\,dp\\
+&=\int \langle y|\psi\rangle\int \langle x|p\rangle \langle p|y\rangle dp\,dy\\
+\implies \delta(x-y)&=\int c_pc_p^*e^{ip(x-y)/\hbar}dp\\
+&=_{k=p/\hbar}|c_p|^2k\int e^{ik(x-y)}dk\\
+\implies |c_p|^2\hbar&=\frac{1}{2\pi}\implies c_p=\frac{1}{\sqrt{2\pi\hbar}}
+\end{align*}$$Making our final solution:$$\Huge \langle x|p\rangle=\frac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}$$
+We saw how to write the momentum and position operators in the $|x\rangle$ eigenbasis, and we have now seen how to write the momentum operator in its own eigenbasis:$$\Huge \langle p'|\hat p |p\rangle=p \langle p'|p\rangle=p\delta(p-p')$$We now move on to find the position operator in the $|p\rangle$ eigenbasis by inserting an identity:$$\Huge\begin{align*}
+\langle p|\hat x |p'\rangle&=\int \langle p|\hat x |x\rangle \langle x|p'\rangle dp\\
+&=\int x \langle p|x\rangle \langle x|p'\rangle dp\\
+&=i\hbar\frac{\partial }{\partial p}\int \langle p|x\rangle \langle x|p'\rangle dp\\
+&=i\hbar \frac{\partial }{\partial p}\langle p|p'\rangle\\
+\implies \hat x&=\iint i\hbar \frac{\partial }{\partial p}\delta(p-p') |p\rangle \langle p'|dp\,dp'
+\end{align*}$$
+# Angular momentum and correspondence:
+
+Recall the angular momentum algebra $\{L_i,L_j\}=\epsilon_{ijk}L_k$. The correspondence principle then dictates that we expect $[\hat L_i,\hat L_j]=i\hbar\epsilon_{ijk}\hat L_k$. Working in three dimensions we assume:$$\Huge [\hat x,\hat p_x]=i\hbar,\,\,[\hat y,\hat p_y]=i\hbar,\,\,[\hat z,\hat p_z]=i\hbar$$however $[\hat x,\hat p_y]=0$ for mismatched coordinates. This is the same scenario as classical angular momentum. Then we have:$$\Huge\begin{align*}
+\hat L_x&=\hat y\hat p_x-\hat z\hat p_y\\
+\text{assuming }x,y,z\text{ basis}&=-i\hbar\left(y\frac{\partial }{\partial z}-z\frac{\partial }{\partial y}\right)
+\end{align*}$$and similar results for $\hat L_y,\hat L_z$. Checking that this satisfies our operator definition:$$\Huge\begin{align*}
+[\hat L_x,\hat L_y]&=-\hbar^2[y\partial_z-z\partial_y,z\partial_x-x\partial_z]\\
+&=-\hbar^2[y\partial_z,z\partial_x]\\
+&=-\hbar^2(y\partial_x+yz\partial_z\partial_x-x\partial_y-yz\partial_z\partial_x+\dots)\\
+&=-\hbar^2(y\partial_x-x\partial_y)=i\hbar\hat L_z
+\end{align*}$$as required. One can check the other combinations if they realllllly want.
