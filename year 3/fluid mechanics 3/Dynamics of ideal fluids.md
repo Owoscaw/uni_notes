@@ -121,3 +121,42 @@ u^2-U^2&=2gh\\
 If $\underline{\nabla}\times\underline{u}=0$ then we have $\underline{u}=\underline{\nabla}\phi$ and $\frac{\partial u}{\partial t}=0$, the momentum equation reduces to:$$\Huge \underline{\nabla}H=0\implies H=\text{constant}$$so we get a stronger condition, that the energy head is constant throughout space, not just along streamlines.
 ### Line vortex example:
 Consider the flow defined by a [[Kinematics of Fluids#Vorticity|line vortex]]:$$\Huge \underline{u}=\frac{k}{r}\hat{\underline{e}}_\theta,\,\,r>0$$![[Dynamics of ideal fluids 2025-11-18 13.49.18.excalidraw]]Then we have:$$\Huge \frac{P(r)}{\rho_0}+\frac{1}{2}\left(\frac{k}{r}\right)^2+gh=\frac{p_\text{atm}}{\rho_0}+0+gh$$where we have used the $r\to\infty$ case for the RHS. We can then solve for $P(r)$ (pressure close to the vortex):$$\Huge P(r)=p_\text{atm}-\frac{\rho_0}{2}\left(\frac{k}{r}\right)^2$$
+# Vorticity dynamics:
+
+We have seen that it is sometimes convenient to describe flows in terms of [[Kinematics of Fluids#Vorticity|vorticity]] rather than velocity, so we aim to find a momentum equation in terms of vorticity. First we take a conservative body force $\underline{f}=-\underline{\nabla}\Phi$ and use the same vector identity we used in deriving Bernoulli's principle:$$\Huge \frac{\partial \underline{u}}{\partial t}+(\underline{\nabla}\times\underline{u})\underline{u}=-\underline{\nabla}\left(\frac{p}{\rho_0}+\frac{1}{2}|\underline{u}|^2+\Phi\right)$$As we are aiming for vorticity, it seems natural to take the curl of this, which completely eliminates the RHS and we are left with:$$\Huge \frac{\partial \underline{\omega}}{\partial t}+\underline{\nabla}\times(\underline{\omega}\times \underline{u})=0$$known as the vorticity equation, describing conservation of angular momentum. We can also write this using the vector identity:$$\Huge\begin{align*}
+\underline{\nabla}\times(\underline{\omega}\times\underline{u})&=\underline{\omega}\underline{\nabla}\cdot\underline{u}-\underline{u}\underline{\nabla}\cdot\underline{\omega}+(\underline{u}\cdot\underline{\nabla})\underline{\omega}-(\underline{\omega}\cdot\underline{\nabla})\underline{u}\\
+&=(\underline{u}\cdot\underline{\nabla})\underline{\omega}-(\underline{\omega}\cdot\underline{\nabla})\underline{u}
+\end{align*}$$as we are considering incompressible fluids. Therefore we can write:$$\Huge \frac{\partial \underline{\omega}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{\omega}=(\underline{\omega}\cdot\underline{\nabla})\underline{u}\iff\frac{D\underline{\omega}}{Dt}=(\underline{\omega}\cdot\underline{\nabla})\underline{u}$$An interesting observation here is that fluid elements with no vorticity do not gain any when they move with the fluid. Given that this holds for any conservative body force, we ask where vorticity comes from?
+
+Consider a two-dimensional time-dependent flow:$$\Huge \underline{\omega}=\omega\hat{\underline{e}}_z\implies(\underline{\omega}\cdot\underline{\nabla})=\omega\frac{\partial }{\partial z}\implies(\underline{\omega}\cdot\underline{\nabla})\underline{u}=0$$As $\underline{u}$ has no $z$-component. In the vorticity equation we are left with:$$\Huge \frac{D\omega}{Dt}=0$$That is, vorticity is conserved for each fluid particle in a two-dimensional flow and is simply advected along the particle path.
+
+## Line vortices example:
+This is exactly why we saw that line vortices in potential flow were advected by the overall flow. We can calculate the direction of motion of a given line vortex at a given position and time by considering the flow from all other vortices at this position. 
+
+This interaction leads to the self propulsion of vortex pairs, or vortices travelling along walls due to their image. As $\underline{u}$ is two-dimensional and incompressible, we have a stream function $\underline{u}=\underline{\nabla}\times\psi\hat{\underline{e}}_z$ and can write:$$\Huge\begin{align*}
+\omega&=\hat{\underline{e}}_z\cdot\underline{\omega}\\
+&=\hat{\underline{e}}_z\cdot(\underline{\nabla}\times \underline{u})\\
+&=\hat{\underline{e}}_z\cdot\underline{\nabla}\times(\underline{\nabla}\times\psi\hat{\underline{e}}_z)=-\underline{\nabla}^2\psi
+\end{align*}$$
+# Circulation dynamics:
+
+Consider a curve $C(t)$ that evolves with the flow of the fluid, we then ask how the circulation evolves in time. As $C$ evolves with the flow, it makes sense to use the time derivative that follows the flow (material derivative):$$\Huge\begin{align*}
+\frac{D\Gamma}{Dt}&=\oint_{C(t)}\frac{D}{Dt}(\underline{u}\cdot d\underline{x})\\
+&=\oint_{C(t)}\left(\frac{D\underline{u}}{Dt}\cdot d\underline{x}+\underline{u}\cdot\frac{D(d\underline{x})}{Dt}\right)
+\end{align*}$$We now use the Euler equation for a conservative body force $\underline{f}=-\underline{\nabla}\Phi$, which allows us to rewrite the first term and find:$$\Huge\begin{align*}
+\oint_{C(t)}\frac{D\underline{u}}{Dt}\cdot d\underline{x}&=\oint_{C(t)}-\underline{\nabla}\left(\frac{p}{\rho_0}+\Phi\right)\cdot d\underline{x}\\
+&=0
+\end{align*}$$as this is an integral of a continuous gradient field around a closed loop.
+
+We now observe the second term, noticing that $D(d\underline{x})/Dt$ is the rate of change of the length of a line segment:$$\Huge\begin{align*}
+\oint_{C(t)}\underline{u}\cdot\frac{D(d\underline{x})}{Dt}&=\oint_{C(t)}\underline{u}\cdot d\underline{u}\\
+&=\frac{1}{2}\oint_{C(t)}d(|\underline{u}|^2)=0
+\end{align*}$$as this is integrating an exact derivative around a curve. 
+
+Putting both terms together we arrive at Kelvin's circulation theorem. This states that in an ideal, incompressible fluid with conservative body force, the circulation around a closed material curve $C(t)$ is constant in time:$$\Huge\frac{D\Gamma}{Dt}=0$$
+## Aeroplanes:
+Aeroplane wings are designed so that air travels faster over above than below. By Bernoulli's theorem, this produces lower pressure above the wing than below, creating lift. 
+
+Since an aeroplane wing needs faster flow above than below, there must be negative circulation around its wing. Kelvin's theorem therefore implies that for an aeroplane starting from rest ($\Gamma=0$ around the wing) in ideal air, it must shed a starting vortex of opposite sign in order to conserve circulation:![[Dynamics of ideal fluids 2025-11-25 14.59.39.excalidraw]]This indeed happens in real life, although the creation of starting vortices requires the presence of viscosity.
+
+Thinking about the circulation around the wing, we get a vortex tube along the wing and another tube rotating in the opposite direction just behind it. We know that these cant just end mid air, so it makes sense that these tubes connect at the ends, forming a closed loop (like smoke rings). The connecting tube at the end of the wing is said to contain "wing tip vortices". These are visible when an aircraft passes through clouds at landing and takeoff. If air were ideal, these would extend globally.

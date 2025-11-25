@@ -99,4 +99,54 @@ a_1(\tan A-\tan B)&=a_2(\tan A+\tan B)\\
 
 # Two-Soliton solution:
 
-We take the vacuum solution $u_0=0$ and we know $u_1,u_2$ as kink/anti-kink solutions, so we can write the doubly transformed $u_3$ as:$$$$
+We take the vacuum solution $u_0=0$ and we know $u_1,u_2$ as kink/anti-kink solutions, so we can write the doubly transformed $u_3$ as:$$\Huge\tan\left(\frac{u_3}{4}\right)=\frac{a_2+a_1}{a_2-a_1}\tan\left(\frac{u_1-2}{4}\right)=\frac{a_2+a_1}{a_2-a_1}\frac{\tan\left(\frac{u_1}{4}\right)-\tan\left(\frac{u_2}{4}\right)}{1+\tan\left(\frac{u_1}{4}\right)\tan\left(\frac{u_2}{4}\right)}$$Recalling the form of the $1$ soliton solution:$$\Huge u=4\arctan\left(e^{\frac{1}{a}x_+-ax_-+C}\right)$$we introduce:$$\Huge \theta_i=\frac{x_+}{a_i}-a_ix_-+c_i=\epsilon_i\gamma_i(x-\bar x_i-v_it)$$which makes the single soliton solutions look like:$$\Huge \tan\left(\frac{u_i}{4}\right)=e^{\theta_i}$$Here, $\bar x_{1,2}$ are the centers of the two solitons at $t=0$. Using these forms, we can write the $2$-soliton solution as:$$\Huge \tan\left(\frac{u_3}{4}\right)=\mu\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}},\,\,\mu =\frac{a_2+a_1}{a_2-a_1}$$
+Note that if both solitons have the same velocity $v_1=v_2$ then:$$\Huge \frac{a_1^2-1}{a_1^2+1}=\frac{a_2^2-1}{a_2^2+1}\implies a_1=\pm a_2$$then $\mu=0$ or $\infty$, so the $2$-soliton solution breaks down.
+
+# Asymptotics of multisoliton solutions:
+
+We move on to study this $2$-soliton sine-Gordon solution, however out methodology applies for other solutions with different amount of solitons also. Our goal is to identify two solitons hidden in $u_3$ defined above that occur before and after collision. In order to keep track of solitons, we choose to follow one or the other by introducing:$$\Huge t\to \pm\infty,\,\,X_V=x-Vt$$for some appropriate constant velocity $V$. If there is a soliton moving at velocity $V$ in the original $(x,t)$ coordinates, it will appear stationary in the $(X_V,t)$ coordinates. We call such coordinates the comoving frame for this reason.
+
+We apply this to our $2$-soliton sine-Gordon solution. First we apply our coordinate change to the $\theta_i$ definition:$$\Huge\begin{align*}
+\theta_i&=\epsilon_i\gamma_i(x-Vt+Vt-v_it-\bar x_i)\\
+&=\epsilon_i\gamma_i(X_V-(v_i-V)t-\bar x_i)
+\end{align*}$$where the term $v_i-V$ is known as relative velocity.
+
+For each soliton we now have three cases for the $t\to\pm\infty$ limit:
+
+| Case    | $t\to-\infty$                  | $t\to+\infty$                  |
+| ------- | ------------------------------ | ------------------------------ |
+| $V<v_i$ | $\theta_i\to+\epsilon_i\infty$ | $\theta_i\to-\epsilon_i\infty$ |
+| $V=v_i$ | $\theta_i$ infinite            | $\theta_i$ infinite            |
+| $V>v_i$ | $\theta_i\to-\epsilon_i\infty$ | $\theta_i\to+\epsilon_i\infty$ |
+Recall that $\epsilon_i=\pm1$ and $\gamma_i>0$ does not affect the sign of $\theta_i$ in the limit. This tells us that if $V\neq v_1,v_2$ then $\theta_1,\theta_2\to\pm\infty$ as $|t|\to\infty$. This implies that:$$\Huge \tan\left(\frac{u}{4}\right)=\mu\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}}\to\pm \infty\text{ or }0$$Which implies that $u/4$ tends to an integer multiple of $\pi/2$ (and therefore $u\to2\pi n$).
+
+If instead $V=v_1$ or $v_2$ we must be more careful in the limit. Consider the case with $a_1,a_2>0$ and $a_1\neq a_2$. We take WLOG:$$\Huge a_2>a_1>0\implies v_2>v_1,\,\,\epsilon_1=\epsilon_2=1,\,\,\mu >0$$
+## $V=v_1$:
+First considering $V=v_1$, we are "riding" the slower soliton. The comoving frame exponents read:$$\Huge\begin{align*}
+\theta_1&=\gamma_1(x-v_1t-\bar x_1)=\gamma_1(X_{v_1}-\bar x_1)\\
+\theta_2&=\gamma_2(x-v_2t-\bar x_2)=\gamma_2(X_{v_1}-(v_2-v_1)t-\bar x_2)
+\end{align*}$$
+So we see that $\theta_1$ stays finite, however $\theta_2\to\mp\infty$ as $t\to\pm\infty$ with $X_{v_1}$ fixed. We now consider each limit:
+> $t\to+\infty$ causes $\theta_2\to-\infty$ and therefore $e^{\theta_2}\to0$:$$\Huge\begin{align*}
+\tan\left(\frac{u}{4}\right)&=\mu\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}}\\
+&\to \mu e^{\theta_1}\\
+&=\mu e^{\gamma_1(X_{v_1}-\bar x_1)}\\
+&=e^{\gamma_1(x-v_1t-\bar x_1+\frac{1}{\gamma_1}\log\mu)}
+\end{align*}$$This is a kink, with the center moving at velocity $v_1$ along the trajectory:$$\Huge x=v_1t+\bar x_1-\frac{1}{\gamma_1}\log\left(\frac{a_2+a_1}{a_2-a_1}\right)$$The last term here is negative and represents a backwards shift in space of the slower soliton due to the faster soliton.
+> Now we consider $t\to-\infty$. In this limit $\theta_2\to+\infty$ so $e^{\theta_2}\to+\infty$:$$\Huge\begin{align*}
+\tan\left(\frac{u}{4}\right)&=\mu\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}}\\
+&=\mu\frac{e^{\theta_1-\theta_2}-1}{e^{-\theta_2}+e^{\theta_1}}\\
+&\to-\mu e^{-\theta_1}
+\end{align*}$$Recalling that $\tan(A\pm\pi/2)=-1/\tan A$ we have:$$\Huge\begin{align*}
+\tan\left(\frac{u}{4}\pm\frac{\pi}{2}\right)&\to\mu^{-1}e^{\theta_1}\\
+&=e^{\gamma_1(x-v_1t-\bar x_1-\frac{1}{\gamma_1}\log\mu)}\\
+\implies u|_{t\to-\infty,X_{v_1}\text{ finite}}&\approx\pm2\pi+4\arctan e^{\gamma_1(x-v_1t-\bar x_1-\frac{1}{\gamma_1}\log\mu)}
+\end{align*}$$This is a kink moving with velocity $v_1$ along:$$\Huge x=v_1t+\bar x_1+\frac{1}{\gamma}\log\left(\frac{a_2+a_1}{a_2-a_1}\right)$$where the last term is positive, representing a forward shift due to the faster soliton.
+
+Comparing the trajectories at $t\to-\infty$ and $t\to+\infty$ we see that the collision with the faster soliton shifts the slower soliton by:$$\Huge \text{PHASE SHIFT}_\text{slower}=-\frac{2}{\gamma_1}\log\left(\frac{a_2+a_1}{a_2-a_1}\right)$$We conclude by saying that the slower kink emerges from collision with the same shape and velocity, but delayed by a finite phase shift.
+
+## $V=v_2$:
+Now we consider $V=v_2$, riding the faster soliton. The details are similar to the above, however we find that even though $a_2>0$ (kink-producing), the component of the two-soliton solution that moves with velocity $v_2$ is actually an anti-kink. The shifts have opposite signs:$$\Huge\text{PHASE SHIFT}_\text{faster}=+\frac{2}{\gamma_2}\log\left(\frac{a_2+a_1}{a_2-a_1}\right)$$
+We then get the following behaviour for the kink/anti-kink solution:![[Backlund transformations 2025-11-25 14.23.19.excalidraw]]
+We see that the kink/anti-kink appear to accelerate towards each other near to collision. To explore this idea, consider a kink/kink interaction:![[Backlund transformations 2025-11-25 14.30.25.excalidraw]]
+This leads to the conclusion that solitons with like topological charges repel, whereas solitons with opposite topological charges attract.
