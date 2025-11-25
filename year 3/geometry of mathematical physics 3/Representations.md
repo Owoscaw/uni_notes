@@ -54,12 +54,48 @@ Let $G$ be a compact Lie group and $r(G)$ a finite-dimensional representation on
 > Let $\langle\cdot,\cdot\rangle$ be some inner form on $V$. As $G$ is a compact group $\langle r(g)v,r(g)w\rangle$ is bounded for fixed $v,w$. This cannot diverge for $g\rightarrow\hat g$ anywhere on $G$ as $\hat g$ cannot be in $G$. But it follows from $G$ being topologically closed that any sequence of group elements $g_i\in G$ has a limit that is also in $G$. Hence there must be a maximal value of $\langle r(g)v,r(g)w\rangle$ for fixed $v,w$ that we can use as the bound.
 > Furthermore $G$ is some bounded subspace in $\Re^m$ for some $m$ for the matrix Lie groups we are using, and as such has finite volume. We can then integrate a bounded function over it and receive a finite answer. In particular we can use any realisation of $G$ as a subset $\Re^n$ to define:$$\Huge \langle v,w\rangle_G=\int_G \langle r(g)v,r(g)w\rangle dV$$Here, we are averaging over the action of the group on $\langle v,w\rangle$. We act with a group element $h$ on $v,w$:$$\large \langle r(h)v,r(h)w\rangle_G=\int_G \langle r(g)r(h)v,r(g)r(h)w\rangle dV=\int_G \langle r(gh)v,r(gh)w\rangle dV$$where we have used that $r$ is a group homomorphism. Now if $g$ sweeps the whole group, so will $gh$ for any $h\in G$. In particular, every group element $g'$ can be uniquely written as $g'=gh$ for some $g$ by taking $g=g'h^{-1}$. Hence:$$\Huge \langle r(h)v,r(h)w\rangle_G=\int_G \langle r(gh)v,r(gh)w\rangle dV=\int_G \langle v,w\rangle dV=\langle v,w\rangle _G$$
 
-## Schur's lemma:
+# Schur's lemma:
+
 Let $r$ be an irreducible representation of $G$ on a finite-dimensional complex vector space $V$, and let $T:V\rightarrow V$ be a linear map such that:$$\Huge r(g)T=Tr(g)$$for all $g\in G$. Then either:
 > $T=0$
 > $T=c\mathbb{1}$ for some complex number $c$
 
-### Proof:
+## Proof:
 First observe that $\ker T$ is an invariant subspace. If $v\in\ker T$ we have:$$\Huge 0=Tv=r(g)Tv=Tr(g)v$$so $r(g)\ker T$ as well. As we have assumed that $r$ is irreducible, $\ker T=V$ or $\ker T=\{0\}$. If $\ker T=V$ it follows that $T=0$, so the first case is realised.
 
 Now we assume that $\ker T=\{0\}$. As a complex matrix, $T$ has at least one non-zero eigenvalue. Let such value be $c$ and the associated eigenvector be $v_c$. Now consider the map $\hat T=T-c\mathbb{1}$ for which $v_c\in\ker T$. We have:$$\Huge r(g)\hat T=\hat Tr(g)$$as the identity commutes with every matrix. Now we can observe that $\ker\hat T$ is an invariant subspace and hence must be $\{0\}$ or $V$. We already know that $\ker\hat T\neq0$ so it must be that $\ker\hat T=V$, implying that $\hat T=0$ and that $T=c\mathbb{1}$.
+
+## Schur's lemma with [[Principles of QM|QM]]:
+Suppose that $\hat H$ is the Hamiltonian for a Quantum mechanical system and that $\hat H$ has a symmetry with respect to some group $G$:$$\Huge \implies \exists\hat Q(g):[\hat H,\hat Q(g)]=0,\,\,\forall g\in G$$Then we have the setup for Schur's lemma, therefore in any irreducible representation of a symmetric group, we have:$$\Huge \hat H=c\mathbb{1}$$for some $c\in \mathbb{C}$. This is equivalent to the fact that the spectrum of $\hat H$ can be decomposed into eigenspaces, corresponding to irreducible representations of symmetry groups.
+
+# Irreducible representations:
+
+## $U(1)$:
+All of the irreducible representations of $U(1)$ are unitary and $1$-dimensional. For $n\in\mathbb{Z}$ we define:$$\Huge r_n:U(1)\rightarrow GL(1,\mathbb{C}),\,\,r_n(e^{i\psi}\in U(1))=e^{in\psi}$$as the irreducible representations of $U(1)$. The proof of this involves Schur's lemma and the fact that $U(1)$ is abelian. Finding irreducible representations of abelian groups is rather trivial, we will see that for non-abelian groups, this process is much harder.
+
+## Lie algebras:
+Recall that the representation of a group $G$ is a map $R:G\rightarrow GL(V)$ that preserves group structure. The representation of a lie algebra $\pmb g$ will be a map that preserves the structure of the Lie algebra, namely the Lie bracket $[,]$.
+
+We define the Lie algebra homomorphism as a linear map $f:\pmb g\rightarrow\pmb h$ between Lie algebras such that:$$\Huge f([\gamma,\delta]_{\pmb g})=[f(\gamma),f(\delta)]_{\pmb h},\,\,\forall \gamma,\delta\in\pmb g$$The representation of a Lie algebra $\pmb g$ is then a Lie algebra homomorphism:$$\Huge \rho:\pmb g\rightarrow GL(V)$$with $V$ a finite dimensional vector space over $\Re$ or $\mathbb{C}$. Such representation is reducible if there exists some $W\subseteq V$ invariant with $W\neq\{0\}$ or $V$. That is, $\rho(\gamma)\underline{w}\in W$ for all $\underline{w}\in W,\gamma\in\pmb g$. If $\rho$ is not reducible, then it is an irreducible representation.
+
+If $g(t)$ is a path in $G$ such that $g(0)=\mathbb{1}$:![[Representations 2025-11-25 16.30.35.excalidraw]]More formally, let $R:G\rightarrow GL(V)$ be a finite dimensional representation of $G$. Then there exists an associated $\rho:\pmb g\rightarrow GL(V)$ Lie algebra representation such that:$$\Huge R(e^{t\gamma})=e^{t\rho(\gamma)},\,\,\forall \gamma\in\pmb g$$that is, $\rho(\gamma)=\frac{\partial }{\partial t}(R(e^{t\gamma}))|_{t=0}$. There are two steps to prove this:
+> First we prove that $\rho$ is linear. To do this, consider the path in $G$:$$\Huge g(t)=e^{t\gamma}\cdot e^{i\delta}$$We then consider the derivative of its representation evaluated at $t=0$:$$\Huge\begin{align*}
+\frac{\partial }{\partial t}(R(g(t)))|_{t=0}&=\frac{\partial }{\partial t}(R(e^{t\gamma}\cdot e^{t\delta}))|_{t=0}\\
+&=\frac{\partial }{\partial t}(R(e^{t\gamma})\cdot R(e^{t\delta}))|_{t=0}\\
+&=\frac{\partial }{\partial t}(R(e^{t\gamma}))|_{t=0}R(\mathbb{1})+R(\mathbb{1})\frac{\partial }{\partial t}(R(e^{t\delta}))|_{t=0}\\
+&=\rho(\gamma)+\rho (\delta)
+\end{align*}$$where we have used the fact that representations preserve group structure on the second line. We also have:$$\Huge\begin{align*}
+e^{t\delta}\cdot e^{t\delta}&=\sum_{k=0}^\infty\frac{(t\gamma)^k}{k!}\sum_{l=0}^\infty\frac{(t\delta)^l}{l!}\\
+&=(1+t\gamma+\dots)(1+t\delta+\dots)\\
+&=\sum_{n=0}^\infty\frac{(t(\gamma+\delta))^n}{n!}+\frac{t^2}{2}(\gamma\delta-\delta\gamma)+\mathcal{O}(t^3)
+\end{align*}$$Returning to our derivative calculation:$$\Huge\begin{align*}
+\frac{\partial }{\partial t}(R(g(t)))|_{t=0}&=\frac{\partial }{\partial t}(R(e^{t(\gamma+\delta)}+t^2(\dots)))|_{t=0}\\
+&=\frac{\partial }{\partial t}(R(e^{t(\gamma+\delta)}))|_{t=0}\\
+&=\rho(\gamma+\delta)
+\end{align*}$$Showing that $\rho$ is a linear map. It remains to show that $\rho$ is a Lie algebra homomorphism.
+
+### Examples:
+
+The trivial representation $\rho:\pmb g\rightarrow GL(V)$ where $V=\Re$ and $\rho(\delta)=0$ for all $\delta\in\pmb g$ is indeed an irreducible representation.
+
+The adjoint representation $\text{ad}:\pmb g\rightarrow GL(\pmb g)$ with $\text{ad}(\delta)[\gamma]=[\delta,\gamma]\in\pmb g$ for all $\gamma\in\pmb g$ is the Lie algebra version of the adjoint representation.
