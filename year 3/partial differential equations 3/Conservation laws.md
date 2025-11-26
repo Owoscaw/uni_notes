@@ -70,4 +70,14 @@ We now explore the geometric meaning of $t_c$, noticing that much of the study o
 # Breakdown of classical solutions:
 
 Let $c,u_0\in C^1(\Re)$ and assume that the function $c\circ u_0$ is bounded with bounded derivative. Assume additionally that $I\neq\emptyset$ and that the infimum defining $t_c$ is attained by some $s_c\in I$:$$\Huge t_c=-\frac{1}{\partial_s(c(u_0(s)))|_{s=s_c}}=\min_{s\in I}\left(-\frac{1}{\partial_s(c(u_0(s)))}\right)$$Define $x_c(t)=s_c+c(u_0(s))t$ and let $u\in C^1(\Re\times(0,t_c))$ be the unique solution to:$$\Huge\begin{cases}\partial_t u(x,t)+c(u(x,t))\partial_x u(x,t)=0&(x,t)\in\Re\times(0,t_c) \\
-u(x,0)=u_0(x)&x\in\Re\end{cases}$$Then:$$\Huge\lim_{t\to t_c}|\partial_xu(x_c(t),t)|=\infty$$
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$Then:$$\Huge\lim_{t\to t_c^-}|\partial_xu(x_c(t),t)|=\infty$$If in addition we have $c(u_0(s_c))\neq0$ we have that:$$\Huge\lim_{t\to t_c^-}|\partial_t u(x_c(t),t)|=\infty$$Otherwise if $c(u_0(s_c))=0$ then $\partial_tu(x_c(t),t)=0$ for all $t\in(0,t_c)$. Proof:
+> We know that in $\Re\times(0,t_c)$ we have that $u(x,t)=u_0(s(x,t))$. Consequently:$$\Huge\begin{align*}
+\partial_xu(x,t)&=u'_0(s(x,t))\cdot\partial_x s(x,t)\\
+\partial_t u(x,t)&=u'_0(s(x,t))\cdot\partial_t s(x,t)
+\end{align*}$$Now since $x=s(x,t)+c(u_0(s(x,t)))t$, we can differentiate wrt $x,t$:$$\begin{align*}
+1&=\partial_xs(x,t)+\partial_s(c\circ u_0)(s)|_{s=s(x,t)}t=\partial_xs(x,t)(1+\partial_s(c\circ u_0)(s(x,t))t)\\
+0&=\partial_ts(x,t)+c(u_0(s(x,t)))+\partial_ts(x,t)\partial_s(c\circ u_0)(s(x,t))t\\
+\implies 0&\neq1+\partial_s(c\circ u_0)(s)|_{s=s(x,t)}t\\
+\implies\partial_xs(x,t)&=\frac{1}{1+\partial_s(c\circ u_0)(s)|_{s=s(x,t)}t}\\
+\implies \partial_xu(x,t)&=\frac{u'_0(s(x,t))}{1+\partial_s(c\circ u_0)(s)|_{s=s(x,t)}t}
+\end{align*}$$Now we can follow our critical path:$$\Huge\implies \partial_xu(x_c(t),t)=\frac{u_0'(s_c)}{1+\partial_s(c\circ u_0)(s_c)t}$$We notice that as we approach critical time:$$\Huge 1+\partial_s(c\circ u_0)(s_c)t\to_{t\to t_c^-}1+\partial_s(c\circ u_0)(s_c)t_c=0$$If $u'_0(s_c)\neq0$ then:$$\Huge \lim_{t\to t_c^-}|\partial_xu(x_c(t),t)|=\infty$$Indeed we know that:$$\Huge t_c\partial_s(c\circ u_0)(s_c)=-1\implies u'_0(s_c)\neq0$$Moving on to the time derivative, notice that we can write the condition as:$$\Huge -c(u_0(s(x,t)))=\partial_ts(x,t)(1+\partial_s(c\circ u_0)(s)|_{s=s(x,t)}t)$$Which we write as:$$\Huge\partial_ts(x,t)=-\frac{c(u_0(s(x,t)))}{1+\partial_s(c\circ u_0)(s)|_{s=s(x,t)}t}$$Consequently:$$\Huge\partial_tu(x_c(t),t)=-\frac{u_0'(s_c)c(u_0(s_c))}{1+\partial_s(c\circ u_0)(s_c)t}$$And by the same argument as before, we conclude the proof.
