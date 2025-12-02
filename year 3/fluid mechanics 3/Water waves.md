@@ -67,10 +67,29 @@ Our solution for a given $k$ is therefore:$$\Huge \phi(x,z,t)=\Re(A(k)\cosh(k(z+
 ## Dispersion relation:
 Our form for $\phi$ is a periodic wave $X$ with an amplitude $Z$ that decreases exponentially with depth. By taking $k>0$ WLOG, we can interpret $k$ as the wavenumber (the spatial frequency, equal to $2\pi/\lambda$ where $\lambda$ is the wavelength). We illustrate the role of $k$ through $\phi(x,0,0)$ for different values of $k$ with $A(k)=1$:
 ```desmos-graph
-left=0; right=12.56;
-top=1; bottom=-1;
+left=-0.05; right=12.56;
+top=1.5; bottom=-1.5;
 ---
 y=\cos(x) | BLUE
 y=\cos(2x) | RED
-(0,6.28)|label:(0,2\pi)
+(6.28,0)|label:2π | BLACK
+(12.56,0)|label:4π | BLACK
+(1,0.8)|label:k=1 | BLUE
+(1,0.9)|label:k=2 | RED
 ```
+However we will see that $c,k$ are not independent, since we also need to satisfy kinematic and dynamic boundary conditions on the surface. Differentiating the dynamic condition by $t$ and then combining the conditions, we have:$$\Huge\begin{align*}
+0&=\frac{\partial^2\phi}{\partial t^2}+g\frac{\partial \eta}{\partial t}\\
+&=\frac{\partial^2\phi}{\partial t^2}+g\frac{\partial \phi}{\partial z},\,\,z=0
+\end{align*}$$Substituting our solution in gives:$$\Huge -c^2k^2\cosh(kh)X+gk\sinh(kh)X=0$$and introducing the frequency $\omega=ck$ we see that $\omega,k$ must satisfy the dispersion relation:$$\Huge \omega^2=gk\tanh(kh)$$
+This dictates the the phase speed of the wave crests, $c$, depends on their wavenumber, $k$. That is, speed depends on wavelength with:$$\Huge c^2=\frac{g\lambda}{2\pi}\tanh\left(\frac{2\pi h}{\lambda}\right)$$We can then find a solution for $\eta$ by rearranging the dynamic boundary conditions:$$\Huge\begin{align*}
+\eta(x,t)&=-\frac{1}{g}\frac{\partial \phi}{\partial t}|_{z=0}\\
+&=\Re\left(\frac{i\omega}{g}\sigma(x,0,t)\right)\\
+&=-\frac{A(k)\omega}{g}\cosh(kh)\Im(e^{i(kx-\omega t)})\\
+&=-\frac{A(k)\omega}{g}\cosh(kh)\sin(kx-\omega t)
+\end{align*}$$
+Since the frequency, $\omega$, is fixed by the dispersion relation, we can see that we still have two unknowns in the equation, $k$ and $A(k)$. We will formulate a solution summing over all possible $k$, and see that $A(k)$ is set by initial conditions. However we will now look at the consequences of the dispersion relation:$$\Huge\omega^2=gk\tanh(kh)\iff c^2=\frac{g\lambda}{2\pi}\tanh\left(\frac{2\pi h}{\lambda}\right)$$
+To see this, we aim to plot $c$ against $\lambda$. First we look at the limiting cases:
+> Deep water, with $kh>>1$. As $k\to\infty$, the dispersion relation becomes:$$\Huge \omega^2=gk\tanh(kh)\to gk$$so the wave speed $c$ tends to $\sqrt{g/k}\sim\sqrt{\lambda}$, becoming independent of $h$. This makes intuitive sense as the waves are so far away from the bottom that they do not feel the bed.
+> Shallow water, with $kh\to0$. In this limit:$$\Huge \omega^2=gk\tanh(kh)\to gk^2h$$so these waves travel at constant speed $c=\sqrt{gh}$
+
+![[Water waves 2025-12-02 18.56.06.excalidraw]]
