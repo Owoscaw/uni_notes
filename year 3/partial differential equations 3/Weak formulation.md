@@ -44,3 +44,37 @@ Assume $u$ is a weak solution that is $C^1$ in $\Re\times(0,\infty)$ and continu
 
 Let $f\in C^\infty(\Re)$. Assume that $f$ is uniformly convex, which for twice differentiable $f$, is equivalent to saying that there exists some $\lambda>0$ such that:$$\Huge f''(x)\geq\lambda>0,\,\,x\in\Re$$Let $u_0\in L^\infty(\Re)$. Then there exists a weak solution $u\in L^\infty(\Re\times[0,\infty))$ of the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+\partial_xf(u(x,t))=0&(x,t)\in\Re\times(0,\infty) \\
 u(x,0)=u_0(x), & x\in\Re\end{cases}$$
+## Example:
+Take for example the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+u(x,t)\partial_xu(x,t)=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=e^{-x^2}&x\in\Re\end{cases}$$Here we have $f(u)=u^2/2$ with $f\in C^\infty(\Re)$ and $f''(u)=1>0$. Therefore there exists a weak solution on $\Re\times[0,\infty)$, the classical solution will show that $t_c<\infty$. That is, there is a classical solution on $\Re\times[0,t_c)$ however we get a weak solution on a larger range.
+
+# Rankine-Hugoniot condition and shocks:
+
+We want to find a potential weak integral solution for a general conservation law. One possibility is to find a classical solution in two regions but somehow breaks down in the interface between the two domains. One example would be regions defined by characteristics before they meet:
+![[Weak formulation 2025-12-02 17.52.39.excalidraw]]
+
+Here, we have two domains $U_l,U_r$ where the solution behaves classically, but there is a discontinuity/breakdown along $C$, the border on which they meet. We ask what the weak solution would look like in this case.
+
+Let $U\subset\Re\times(0,\infty)$ be an open set and let $\sigma:(t_1,t_2)\rightarrow\Re$ be continuously differentiable. Define the curve $C=\{(\sigma(t),t):t\in(t_1,t_2)\}$ and let:$$\Huge\begin{align*}
+U_l&=\{(x,t)\in U:x<\sigma(t)\}\\
+U_r&=\{(x,t)\in U:x>\sigma(t)\}
+\end{align*}$$That is, $U_l\subset U$ is the region to the left of $C$ and $U_r\subset U$ is the region to the right of $C$. Let $u\in L^\infty(\Re\times[0,\infty))$ be a weak solution of the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+\partial_xf(u(x,t))=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$where $f\in C^1(\Re)$ and $u_0\in L^\infty(\Re)$. Assume that $u$ is continuously differentiable in $U_l,U_r$, $u$ is uniformly continuous in $U_l,U_r$, but discontinuous across $C$. For $(x,t)\in C$, let $u_l(x,t)$ and $u_r(x,t)$ denote the limit of $u$ as $(x,t)$ is approached from the left and from the right:$$\Huge\begin{align*}
+u_l(x,t)&=\lim_{(y,s)\to(x,t),\,\,(y,s)\in U_l}u(y,s)\\
+u_r(x,t)&=\lim_{(y,s)\to(x,t),\,\,(y,s)\in U_r}u(y,s)
+\end{align*}$$Define $[[u]]:C\rightarrow\Re$  and $[[f(u)]]:C\rightarrow\Re$ by:$$\Huge\begin{align*}
+[[u]]&=u_l-u_r=\text{jump in }u\text{ across }C\\
+[[f(u)]]&=f(u_l)-f(u_r)=\text{jump in }f(u)\text{ across }C
+\end{align*}$$Then $u$ satisfies the PDE:$$\Huge \partial_tu(x,t)+\partial_xf(u(x,t))=0$$in $U_l,U_r$ and on $C$ it satisfies the jump condition:$$\Huge [[f(u)]](\sigma(t),t)=\dot\sigma(t)[[u]](\sigma(t),t)$$This is known as the Rankine-Hugoniot condition. The curve $C$ is called a shock. Note that the fact $u$ is uniformly continuous on $U_l,U_r$ imposes that $u_l(x,t),u_r(x,t)$ exist. A simple, equivalent, condition would be that the derivatives of $u$ in each region are bounded. Proof:
+> We have that $u$ is a weak solution, so $\forall\varphi\in C_c^\infty(\Re\times[0,\infty))$ we have:$$\large\iint(u(x,t)\partial_t\varphi(x,t)+f(u(x,t))\partial_x\varphi(x,t))dx\,dt+\int u_0(x)\varphi(x,0)dx=0$$with appropriate limit conditions that I have omitted. Therefore for any $\varphi\in C_c^1(U)$ we have the above as we can decompose $U$$$\Huge U=U_l\cup U_r\cup (C\cap U)$$into adjoint sets, $C\cap U$ is a one dimensional curve, and $u\partial_t\varphi+f(u)\partial_x\varphi$ is bounded. This last condition implies:$$\Huge \iint_{C\cap U}u\partial_t\varphi+f\partial_x\varphi\,dx\,dt=0$$We therefore find that:$$\Huge\begin{align*} 0&=\iint_Uu(x,t)\partial_t\varphi(x,t)+f(u(x,t))\partial_x\varphi(x,t)dx\,dt+\int_\Re0\,dx\\
+&=\iint_{U_l}u\partial_t\varphi+f\partial_x\varphi\,dx\,dt+\iint_{U_r}u\partial_t\varphi+f\partial_x\varphi\,dx\,dt
+\end{align*}$$
+> Focusing on $U_l$, we aim to use the fact that $u\in C_1(U_l)$ to integrate by parts (in a higher dimension using [[Integral theorems#Divergence theorem|divergence theorem]]):$$\Huge\begin{align*} u\partial_t\varphi+f(u)\partial_x\varphi&=\underline{\nabla}_{(x,t)}\varphi\cdot(f(u),u)\\
+&=\text{div}_{(x,t)}((f(u),u)\varphi)-(\text{div}_{(x,t)}(f(u),u))\varphi\\
+&=\text{div}_{(x,t)}((f(u),u)\varphi)-\varphi(\partial_tu+\partial_xf(u))
+\end{align*}$$So using divergence theorem we find that:$$\Huge\begin{align*}
+I&=\iint_{U_l}u(x,t)\partial_t\varphi(x,t)+f(u(x,t))\partial_x\varphi(x,t)\,dx\,dt\\
+&=-\iint_U(\partial_tu(x,t)+\partial_xf(u(x,t)))\varphi(x,t)\,dx\,dt\\
+&+\int_{\partial U_l}(f(u(y,s)),u(y,s))\varphi(y,s)\cdot\underline{\hat{n}}(y,s)\,dL(y,s)
+\end{align*}$$where $\underline{\hat{n}}$ is outward normal along $C$ from $U_l$ (points towards $U_r$). Here, $\partial U_l=(\partial U\cap\overline U_l)\cup(C\cap U)$. Then as $\varphi\in C_c^1(U)$ we must have $\varphi|_{\partial U}=0$, which makes the integral bounds:$$\Huge \int_{\partial U_l}\dots dL(y,s)=\int_{C\cap U}\dots dL(y,s)$$
+> The curve $C$ is parametrised by $(\sigma(t),t)$ for $t\in(t_1,t_2)$, so a tangent vector is $(\dot\sigma(t),1)$. As such, the unit normal vector has form:$$\Huge\underline{\hat{n}}=\frac{\pm1}{\sqrt{1+\dot\sigma(t)^2}}(1,-\dot\sigma(t))$$

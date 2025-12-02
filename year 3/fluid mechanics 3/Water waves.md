@@ -63,3 +63,14 @@ XZ'&=\frac{\partial \eta}{\partial t},\,\,z=0
 \end{align*}$$We do not want periodicity in $Z$ so we set $\lambda=k^2$ and start by solving:$$\Huge \frac{Z''}{Z}=k^2,\,\,Z'(-h)=0$$which has general solution:$$\Huge Z(z)=A\cosh(kz)+B\sinh(kz)$$but could also be:$$\Huge Z(z)=A\cosh(k(z+h))+B\sinh(k(z+h))$$we choose this form by convention, as it makes implementing the $Z'(-h)=0$ condition easy:$$\Huge \implies B=0,\,\,Z(z)=A\cosh(k(z+h))$$
 Now the $X$ equation gives:$$\Huge X(x-ct)=\tilde C\cos(k(x-ct))+\tilde D\sin(k(x-ct))$$or equivalently:$$\Huge X(x-ct)=C\cos(k(x-ct)+\alpha)$$Since we can set $t=0$ to be any reference point we want, we can choose it to be such that $\alpha=0$ and hence:$$\Huge X(x-ct)=C\cos(k(x-ct))=C\Re(e^{ik(x-ct)})$$
 Our solution for a given $k$ is therefore:$$\Huge \phi(x,z,t)=\Re(A(k)\cosh(k(z+h))e^{ik(x-ct)})$$for a combined, real constant $A(k)$.
+
+## Dispersion relation:
+Our form for $\phi$ is a periodic wave $X$ with an amplitude $Z$ that decreases exponentially with depth. By taking $k>0$ WLOG, we can interpret $k$ as the wavenumber (the spatial frequency, equal to $2\pi/\lambda$ where $\lambda$ is the wavelength). We illustrate the role of $k$ through $\phi(x,0,0)$ for different values of $k$ with $A(k)=1$:
+```desmos-graph
+left=0; right=12.56;
+top=1; bottom=-1;
+---
+y=\cos(x) | BLUE
+y=\cos(2x) | RED
+(0,6.28)|label:(0,2\pi)
+```
