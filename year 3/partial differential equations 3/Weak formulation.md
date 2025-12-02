@@ -38,4 +38,9 @@ Assume $u$ is a weak solution that is $C^1$ in $\Re\times(0,\infty)$ and continu
 &=\int_\Re u(x,t)\varphi(x,t)|_{t=0}^{t=\infty}dx-\int_0^\infty\int_\Re\partial_tu(x,t)\varphi(x,t)dx\,dt\\
 &+\int_0^\infty f(u(x,t))\varphi(x,t)|_{t=0}^{t=\infty}dt-\int_0^\infty\int_\Re\partial_x f(u(x,t))\varphi(x,t)dx\,dt\\
 &=-\int_0^\infty\int_\Re(\partial_tu(x,t)+\partial_xf(u(x,t)))\varphi(x,t)dx\,dt
-\end{align*}$$Now using the fact that $\Re\times(0,\infty)$ is open and that $u_t+f(u)$ is continuous, we have that the above holds for any $\varphi\in C_c^\infty(\Re\times(0,\infty))$. We can therefore use the fundamental lemma of calculus of variations that:$$\Huge\partial_tu(x,t)+\partial_x f(u(x,t))=0,\,\,\forall(x,t)\in\Re\times(0,\infty)$$One can also recover boundary conditions by using the same argument for the case where $\varphi\in C_c^1(\Re\times[0,\infty))$.
+\end{align*}$$Now using the fact that $\Re\times(0,\infty)$ is open and that $u_t+f(u)$ is continuous, we have that the above holds for any $\varphi\in C_c^\infty(\Re\times(0,\infty))$. We can therefore use the fundamental lemma of calculus of variations that:$$\Huge\partial_tu(x,t)+\partial_x f(u(x,t))=0,\,\,\forall(x,t)\in\Re\times(0,\infty)$$One can also recover boundary conditions by using the same argument for the case where $\varphi\in C_c^1(\Re\times[0,\infty))$. Note that we could have chosen $C_c^\infty(\Re\times[0,\infty))$ as the test function space, and is in fact an equivalent definition.
+
+# Existence of weak solutions:
+
+Let $f\in C^\infty(\Re)$. Assume that $f$ is uniformly convex, which for twice differentiable $f$, is equivalent to saying that there exists some $\lambda>0$ such that:$$\Huge f''(x)\geq\lambda>0,\,\,x\in\Re$$Let $u_0\in L^\infty(\Re)$. Then there exists a weak solution $u\in L^\infty(\Re\times[0,\infty))$ of the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+\partial_xf(u(x,t))=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x), & x\in\Re\end{cases}$$
