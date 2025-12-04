@@ -150,3 +150,36 @@ Now we consider $V=v_2$, riding the faster soliton. The details are similar to t
 We then get the following behaviour for the kink/anti-kink solution:![[Backlund transformations 2025-11-25 14.23.19.excalidraw]]
 We see that the kink/anti-kink appear to accelerate towards each other near to collision. To explore this idea, consider a kink/kink interaction:![[Backlund transformations 2025-11-25 14.30.25.excalidraw]]
 This leads to the conclusion that solitons with like topological charges repel, whereas solitons with opposite topological charges attract.
+
+# The breather:
+
+Recall the formula for the general $2$-soliton solution:$$\Huge u=4\arctan\left(\frac{a_2+a_1}{a_2-a_1}\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}}\right)$$This is a solution to the sine-Gordon equation for any value of the Backlund parameters $a_1,a_2$. Note that while these parameters can be complex, we require that $u$ must be real as it represents a physical quantity. There are two ways to achieve this:
+> $a_1,a_2\in\Re$ is what we have considered thus far
+> $a_2=a_1^*$ is what we will consider next. We must first check that this corresponding field $u$ is real:$$\Huge\begin{align*}
+u^*&=\left(4\arctan\left(\frac{a_2+a_1}{a_2-a_1}\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}}\right)\right)^*\\
+&=4\arctan\left(\frac{a_2^*+a_1^*}{a_2^*-a_1^*}\frac{e^{\theta_1^*}-e^{\theta_2^*}}{1+e^{\theta_1^*+\theta_2^*}}\right)\\
+&=4\arctan\left(\frac{a_1+a_2}{a_1-a_2}\frac{e^{\theta_2}-e^{\theta_1}}{1+e^{\theta_2+\theta_1}}\right)\\
+&=4\arctan\left(\frac{a_2+a_1}{a_2-a_1}\frac{e^{\theta_1}-e^{\theta_2}}{1+e^{\theta_1+\theta_2}}\right)=u
+\end{align*}$$
+
+We proceed by considering the second option with some arbitrary $a_1=a_2^*=a$ with $c_1=c_2=0$:$$\Huge\begin{align*}
+a_1&=a=A+iB=|a|e^{i\varphi},\,\,\theta_1=\alpha+i\beta\\
+a_2&=\bar a=A-iB=|a|e^{-i\varphi},\,\,\theta_2=\alpha-i\beta
+\end{align*}$$where $\alpha,\beta$ are real functions of $x,t$. Then we have:$$\Huge\begin{align*}
+\tan\left(\frac{u}{4}\right)&=\frac{|a|(e^{-i\varphi}+e^{i\varphi})}{|a|(e^{-i\varphi}-e^{i\varphi})}\frac{e^{\alpha+i\beta}-e^{\alpha-i\beta}}{1+e^{2\alpha}}\\
+&=\frac{2\cos\varphi}{-2i\sin\varphi}\frac{2i\sin\beta}{2\cosh\alpha}\\
+&=-\frac{\cos\varphi}{\sin\varphi}\frac{\sin\beta}{\cosh\alpha}
+\end{align*}$$To finish the calculation, we write $\alpha,\beta$ in terms of the coordinates $x,t$ and parameters $|a|,\varphi$:$$\Huge\begin{align*}
+\alpha+i\beta&=\frac{1}{a}x^+-ax^-\\
+&=\frac{a^*}{|a|^2}x^+-ax^-\\
+&=\frac{A-iB}{|a|^2}x^+-(A+iB)x^-\\
+\implies \alpha=\Re(\theta_1)&=\frac{A}{|a|^2}x^+-Ax^-\\
+&=\frac{A}{|a|}\left(\frac{1}{|a|}x^+-|a|x^-\right)
+\end{align*}$$We can show that this is equal to the following:$$\Huge \alpha=\frac{A}{|a|}\gamma(x-vt)=\cos\varphi\cdot\gamma(x-vt)$$where $v=\frac{|a|^2-1}{|a|^2+1}$ and $\gamma=\frac{1}{\sqrt{1-v^2}}=\frac{1+|a|^2}{2|a|}$. Similarly, one can show that:$$\Huge \beta=\frac{B}{|a|}\gamma(vx-t)=\sin\varphi\cdot(vx-t)$$Substituting these in for our solution gives us the breather solution:$$\Huge \tan\left(\frac{u}{4}\right)=-\cot\varphi\cdot\frac{\sin(\sin\varphi\cdot\gamma(vx-t))}{\cosh(\cos\varphi\cdot\gamma(x-vt))}$$Remarks:
+> Here, the ratio of the prefactor and the denominator define an envelope function moving with group velocity $v$.
+> The numerator defines a carrier wave moving at phase velocity $1/v$.
+
+Considering $|a|=1$, the breather solution reduces to:$$\Huge \tan\left(\frac{u}{4}\right)=\cot\varphi\cdot\frac{\sin(\sin\varphi\cdot t)}{\cosh(\cos\varphi\cdot x)}$$and the field it defines looks like a bouncing (or breathing!) bound state of a kink and an anti-kink with time period $\tau=2\pi/|\sin\varphi|$:![[Backlund transformations 2025-12-04 17.43.53.excalidraw]]
+One can show that this breather has energy $E_\text{breather}=16\cos\varphi$. Since a static kink and a static anti-kink have energy $E_\text{kink}=E_\text{antikink}=8$, the binding energy of the kink and the anti-kink in the breather is:$$\Huge E_\text{binding}=E_\text{breather}-E_\text{kink}-E_\text{antikink}=-16(1-\cos\varphi)$$This is negative as expected, the binding lowers the energy of the solution.
+
+As $\varphi\to0$, the binding energy tends to $0$. It is immediate to see that this limit causes $\tau\sim1/|\varphi|\to\infty$. The spatial size of the breather also diverges, $x_\text{max}\sim-\log|\varphi|\to\infty$. In this limit, the kink/anti-kink becomes loosely bound, resulting in the solution:$$\Huge u=4\arctan(t\text{ sech}(x))$$which describes a kink and anti-kink starting infinitely far away from one another and doing half an oscillation. Since $\text{sech}(x)\approx2e^{-|x|}$ as $|x|\to\infty$, the kink and anti-kink do not follow linear trajectories as $t\to\pm\infty$. Instead they follow asymptotic trajectories, given by $|x|\sim-\log|t|$.
