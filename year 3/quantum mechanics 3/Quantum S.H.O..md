@@ -104,4 +104,12 @@ Coherent states are, in a sense, the most classical-like lump we can build in th
 
 This is the first important observation and makes this kind of state rather unusual. It means that we can derive the time-evolving wave-function by simply solving a single eigenvalue problem:$$\Huge \hat a |\alpha\rangle=\alpha(t)|\alpha\rangle$$with all time-dependence incorporated in its time-dependent eigenvalue $\underline{\alpha}$. This is what makes such states unique.
 
-We can find the form of these
+We can find the form of these by solving its defining equation:$$\Huge \frac{1}{\sqrt{2m\omega\hbar}}(m\omega x+\hbar\partial_x)\psi(x)=\alpha(t)\psi(x)$$The solution is relatively straightforward by setting $z=\sqrt{m\omega/\hbar x}$. We then have:$$\Huge \psi_z+z\psi=\sqrt 2\alpha\psi$$which is rewritten with an integrating factor as:$$\Huge \frac{\partial }{\partial z}(\psi e^{z^2/2})=\sqrt 2\alpha\psi e^{z^2/2}\implies\psi=Ce^{\sqrt 2\alpha z-z^2/2}$$where $C$ is a constant which can also be time dependent. We can find $C$ by imposing unit norm on the wavefunction. Recalling that $\alpha$ is a complex function of time given by $\alpha=\alpha_0e^{i\omega t}$ , the norm requirement becomes:$$\Huge\begin{align*}
+1&=\int|\psi|^2dx\\
+&=\sqrt{\frac{\hbar}{m\omega}}|C|^2\int e^{2\sqrt 2\Re(\alpha)-z^2}dz\\
+&=\sqrt{\frac{\hbar}{m\omega}}|C|^2e^{-2\Re(\alpha)^2}\int e^{(\sqrt 2\Re(\alpha)-z)^2}dz\\
+&=\sqrt{\frac{\pi\hbar}{m\omega}}|C|^2e^{-2\Re(\alpha)^2}
+\end{align*}$$Hence we see that $C$ is time dependent and:$$\Huge\begin{align*}
+\psi&=e^{\Re(\alpha)^2}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{\sqrt 2\alpha z-z^2/2+i\theta(t)}\\
+&=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-(\sqrt 2\Re(\alpha)-z)^2/2+i\theta(t)+i\sqrt 2\Im(\alpha)z}
+\end{align*}$$for some phase $\theta(t)$ which is allowed in $C$. Thus the answer becomes:$$\Huge \psi(x,t)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}(x-x_c(t))^2+i\sqrt\frac{2\hbar}{m\omega}\alpha_0x\sin(\omega t)+i\theta(t)}$$with a density profile:$$\Huge |\psi(x,t)|=\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}e^{-\frac{m\omega}{\hbar}(x-x_c(t))^2}$$This is the density profile of the displaced SHO groundstate, oscillating around the classical solution with:$$\Huge x_c(t)=\sqrt\frac{2\hbar}{m\omega}\alpha_0\cos(\omega t)$$that is with maximum displacement $x_0=\sqrt\frac{2\hbar}{m\omega}\alpha_0$. Note that if $\alpha_0=0$, then the wavefunction actually becomes the SHO groundstate.
