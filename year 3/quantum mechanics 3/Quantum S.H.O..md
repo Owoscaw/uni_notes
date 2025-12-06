@@ -92,4 +92,16 @@ c_n(0)&=\int \phi_n^*(x')\psi_0(x')dx'
 \end{align*}$$
 # Coherent states:
 
-Coherent states are, in a sense, the most classical-like lump we can build in the SHO because they are lumps that do not "wobble". They maintain their shape as they osc
+Coherent states are, in a sense, the most classical-like lump we can build in the SHO because they are lumps that do not "wobble". They maintain their shape as they oscillate in the potential. It turns out that they obey:$$\Huge \hat a |\alpha\rangle=\alpha |\alpha\rangle$$such that they are eigenstates of $\hat a$ with $\alpha$ being its complex and time-dependent eigenvalue. We will explore how such a state evolves in time. According to Schrodinger, the time evolved state is:$$\Huge |\alpha,t\rangle=e^{-i\hat Ht/\hbar}|\alpha\rangle$$But we know that $\hat H=\hbar\omega(\hat a^\dagger\hat a+1/2)$ and that:$$\Huge [\hat a,\hat a^\dagger\hat a]=[\hat a,\hat a^\dagger]\hat a+\hat a^\dagger[\hat a,\hat a]=\hat a$$Using this equation on $\hat H$ we have $\hat a\hat H=(\hat H+\hbar\omega)\hat a$, and iterating gives $\hat a\hat H^n=(\hat H+\hbar\omega)^n\hat a$. Hence we may pass $\hat a$ through the Schrodinger evolution factor as:$$\Huge\begin{align*}
+\hat ae^{-i\hat Ht/\hbar}&=e^{-i(\hat H+\hbar\omega)t/\hbar}\hat a\\
+&=e^{-i\hat Ht/\hbar}e^{-i\omega t}\hat a
+\end{align*}$$Now let us see what the $\hat a$ eigenvalue of the time-evolves state is:$$\Huge\begin{align*}
+\hat a |\alpha,t\rangle&=\hat ae^{-i\hat Ht/\hbar}|\alpha\rangle\\
+&=e^{-i\hat Ht/\hbar}e^{-i\omega t}\hat a |\alpha\rangle\\
+&=e^{-i\hat Ht/\hbar}e^{-i\omega t}\alpha |\alpha\rangle\\
+&=e^{-i\omega t}\alpha |\alpha,t\rangle
+\end{align*}$$Therefore the state evolves in time simply by acquiring a time dependent phase. This is an interesting observation as it is similar to what we see with energy eigenstates. We can encapsulate this by promoting $\alpha$ itself to a function of time:$$\Huge \alpha(t)=e^{-i\omega t}\alpha_0$$WLOG we assume $\alpha(0)=\alpha_0$ is real and we can absorb the phase on it into a redefinition of where we set $t=0$.
+
+This is the first important observation and makes this kind of state rather unusual. It means that we can derive the time-evolving wave-function by simply solving a single eigenvalue problem:$$\Huge \hat a |\alpha\rangle=\alpha(t)|\alpha\rangle$$with all time-dependence incorporated in its time-dependent eigenvalue $\underline{\alpha}$. This is what makes such states unique.
+
+We can find the form of these
