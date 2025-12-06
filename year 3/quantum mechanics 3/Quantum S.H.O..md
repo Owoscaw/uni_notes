@@ -91,3 +91,5 @@ c_n(0)&=\int \phi_n^*(x')\psi_0(x')dx'
 &=\int\delta(x-x')\psi_0(x')dx'=\psi_0(x)
 \end{align*}$$
 ## Gaussian wave-function example:
+
+We take the initial wave function:$$\Huge \psi(0)=\frac{1}{\pi^{1/4}\sigma^{1/2}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}$$As an example it is interesting to explore this initial function. According to Ehrenfest, the expectation value of the lump should oscillate in the potential, similar to the classical case. 

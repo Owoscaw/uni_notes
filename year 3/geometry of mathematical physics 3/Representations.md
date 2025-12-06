@@ -142,3 +142,27 @@ l_3v_{m-k}&=iHv_{m-k}=i(m-k)v_{d/2-k}
 > We now show that this representation is irreducible. Take any invariant subspace $V$ of $\Pi_d$. By assumption the action of $l_k$ maps any vector of $V$ to another vector of $V$. As $V$ is a complex vector space, complex linear combinations are again in $V$. This implies that if $P\in V$ we also have that any linear combination of$$\Huge l_+^n=\left(z_2\frac{\partial }{\partial z_1}\right)^nP,\,\,l_-^p=\left(z_1\frac{\partial }{\partial z_2}\right)^pP$$is also in $V$. We can hence apply a suitable power of $l_-$ to map $P$ to the single monomial $z_1^d$. Hence this monomial is in $V$, implying that any complex multiple of it is in $V$ also. We can now use $l_+$ to conclude the same for the other monomial. As these formed a basis of $\Pi_d$, it follows that $V=\Pi_d$. The Lie algebra representations $\rho_d$ are hence irreducible.
 > This implies that $r_d$ is irreducible as well. If $W\in\Pi_d$ is an invariant subspace of $r_d$, then it must be invariant under $e^{t\rho(\gamma)}$ for all $t$ and $\gamma\in\pmb{su}(2)$. So in particular under $\frac{\partial }{\partial t}e^{t\rho(\gamma)}$ and hence under $\rho_d(su(2))$. But the Lie algebra representation $\rho$ is irreducible as we already know.
 > Now we know that all irreducible representations of $SU(2)$, if there were others, the associated Lie algebra representations would have to have shown up in our analysis.
+
+# Representations of $SO(3)$:
+
+As the Lie algebra of $SO(3)$ is the same as the Lie algebra of $SU(2)$, it will have the same irreducible representations. For the groups, recall that there is a $2$ to $1$ map from $SU(2)$ to $SO(3)$ that mapped $\mathbb{1}\in SU(2)$ and $-\mathbb{1}\in SU(2)$ to $\mathbb{1}\in SO(3)$. We can hence construct representations of $SO(3)$ from representations of $SU(2)$ if $r(-\mathbb{1})=\mathbb{1}$. Therefore we look at the action of $r_d(-\mathbb{1})$ on a monomial:$$\Huge r_d(-\mathbb{1}):z_1^kz_2^{d-k}\rightarrow (-1)^dz_1^kz_1^{d-k}$$This map is the identity if and only if $d$ is an even integer. We have seen that every representation of a Lie group gives us an associated representation of its Lie algebra. The above shows that the converse is not true, the representations of $\pmb{so}(3)$ where $m$ is a half-integer cannot come from any representation of $SO(3)$. On the other hand, we can lift any finite-dimensional representation $R$ of $SO(3)$ to one of $SU(2)$. Hence we have the following theorem:
+> The $r_d$ for $d=2m,m\in\mathbb{Z}$ are all of the finite dimensional complex irreducible representations of $SO(3)$
+
+# $SO(3),SU(2)$, and spin:
+
+In physics in $\Re^3$, the half-integer $m$ is called the spin. If there is a physical object that transforms in the representation $r_d$, we say that it has spin $m=d/2$. This applies to both field theories, where $SO(3)$ acts on the components of a field, and to [[Principles of QM|quantum mechanics]], where $SO(3)$ acts on states. If $d=0$ we have a one-dimensional representation that does not transform at all, this is the spin $0$ case. 
+
+An ordinary vector in $\Re^3$ transforms in the three-dimensional representation $r_2$ of $SU(2)$, so you would call a field $\phi=(\phi_1,\phi_2,\phi_3)$ transforming like a vector in $\Re^3$ a vector field as well. Here $m=1$, so this is spin $1$.
+
+It is a fact of nature that there are particles with $1/2$ spin. One way to explain this is that in quantum mechanics, multiplying any state vector by a non-zero complex number does not change the current state. This involves the study of projective representations, which are in one-to-one correspondence with ordinary representations of the associated spin groups in $SO(n)$.
+
+The spinor representation is the $2$ of $SU(2)$, and objects transforming in this representation are called spinors of $SO(3)$. The covering group $SU(2)$ of $SO(3)$ is likewise called the spin group $\text{Spin}(3)$.
+
+We saw earlier that we can map $SU(2)$ to $SO(3)$ for the elements of form:$$\Huge g_{SU(2)}=\begin{pmatrix}e^{i\phi/2} & 0 \\ 0 & e^{-i\phi/2}\end{pmatrix},\,\,g_{SO(3)}=\begin{pmatrix}\cos\phi & \sin\phi & 0 \\ -\sin\phi & \cos\phi & 0 \\ 0 & 0 & 1\end{pmatrix}$$Let us assume we are performing a full rotation using the normal rotation group $SO(3)$ in $\Re^3$. In the corresponding $SU(2)$ matrix, this takes us from $\mathbb{1}$ to $\mathbb{-1}$, that is we do not come back to where we started from and need to let $\phi$ range from $0$ to $4\pi$ to return to $\mathbb{1}$. In this sense, a spinor needs to be rotated by two full rotations.
+
+# Representations of $SU(n)$:
+
+For more general Lie groups such as $SU(n)$, there is a richer representation theory. We already know the defining and the adjoint representations. Instead of developing a general theory, we will discuss how we can create richer representations. 
+
+Given a representation of a group $G$, it is implied that representations of any subgroup $H$ exists by simply restricting the homomorphism $r:G\rightarrow GL(V)$ to $H\subset G$. Every group $SU(n)$ for $n>2$ contains many copies of $SU(2)$ using the operators $H,L_+,L_-$. This motivates us to use the method we did to construct representations of $SU(2)$ to $SU(n)$ by writing the Lie algebra $\pmb{su}(n)$ in terms of number operators $H_i$, lowering operators and raising operators. This is called a Cartan-Weyl basis and leads to root systems, which allow us to classify certain classes of Lie algebras.
+

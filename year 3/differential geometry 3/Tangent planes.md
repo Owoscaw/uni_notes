@@ -70,3 +70,60 @@ E(u,v)&=f(v)^2\\
 F(u,v)&=0\\
 G(u,v)&=||\underline{\alpha}(v)||^2
 \end{align*}$$where $\underline{\alpha}(v)=(f(v),0,g(v))$ is the generating curve of $S$.
+
+# Lengths, angles and areas:
+
+Our first aim is to introduce the arc length of a curve $\underline{\alpha}:I\rightarrow S$ in a regular surface $S$ just using its first fundamental form $\mathbb{I}$. We obviously want that this arc length agrees with this curve viewed as a curve $\underline{\alpha}:I\rightarrow\Re^3$ in the ambient Euclidean $3$-space.
+
+## Lengths:
+Let $S\subset\Re^3$ be a regular surface, $I\subset\Re$ be an open interval and $\underline{\alpha}:I\rightarrow S$ be a smooth curve. Then we have $\underline{\alpha}'(t)\in T_{\underline{\alpha}(t)}S$ and for every interval $[a,b]\subset I$ we have:$$\Huge \begin{align*}
+L(\underline{\alpha}|_{[a,b]})&=\int_a^b\sqrt{\langle \underline{\alpha}'(t),\underline{\alpha}'(t)\rangle_{\underline{\alpha}(t)}}dt\\
+&=\int_a^b(\underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t)))^{1/2}dt
+\end{align*}$$as the definition of the arc length of $\underline{\alpha}:[a,b]\rightarrow S$.
+
+Note that if $\underline{x}:U\rightarrow S$ is a local parametrisation such that $\underline{\alpha}(I)\subset \underline{x}(U)$. Then we can consider the curve $\underline{\beta}=(u,v)$ in the parameter domain, that is $\underline{\alpha}(t)=\underline{x}(\underline{\beta}(t))=\underline{x}(u(t),v(t))$. Then:$$\Huge \underline{\alpha}'(t)=u'(t)\underline{x}_u(\underline{\beta}(t))+v'(t)\underline{x}_v(\underline{\beta}(t))$$and:$$\Huge \begin{align*}
+\underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))&=(u'(t))^2E(\underline{\beta}(t)+2u'(t)v'(t)F(\underline{\beta}(t))+(v'(t))^2G(\underline{\beta}(t)))\\
+&=\begin{pmatrix}u'(t) & v'(t)\end{pmatrix}\begin{pmatrix}E(\underline{\beta}(t)) & F(\underline{\beta}(t))\\
+F(\underline{\beta}(t)) & G(\underline{\beta}(t))\end{pmatrix}\begin{pmatrix}u'(t)\\
+v'(t)\end{pmatrix}
+\end{align*}$$
+We now move on to a more intrinsic viewpoint where we disregard any embedding of a surface into Euclidean $3$-space $\Re^3$ and just use the first fundamental form intrinsically to measure angles, lengths, and areas. More precisely, let $U\subset\Re^2$ be an open subset and $E,F,G:U\rightarrow\Re$ be smooth functions with $E,G>0$ and $EG-F^2>0$. This is sufficient to define the length of curves, as we see in the example:
+> Consider the hyperbolic plane. Let $U=\{(u,v)\in\Re^2:v>0\}\subset\Re^2$ be the upper half-plane and set:$$\Huge E(u,v)=\frac{1}{v^2},\,\,F(u,v)=0,\,\,G(u,v)=\frac{1}{v^2}$$
+> Let us assume that there exists a surface $S$ in ambient space $\Re^n$ and a global parametrisation $\underline{x}:U\rightarrow S$ such that the corresponding coefficients of its first fundamental form are $E,F,G$. Let us compute the arc length of the curve $\underline{\alpha}:[a,b]\rightarrow S$, given by $\underline{\alpha}(t)=\underline{x}(0,t)$. We then have $u'(t)=0,v'(t)=1$ and we obtain:$$\Huge ||\underline{\alpha}'(t)||^"_{\underline{\alpha}(t)}=\underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))=G(0,t)=\frac{1}{t^2}$$
+> Therefore the length of $\underline{\alpha}$ is given by:$$\Huge L(\underline{\alpha})=\int_a^b(\underline{I}_\underline{\alpha}(t)(\underline{\alpha}'(t)))^{1/2}dt=\int_a^b\frac{dt}{t}=\log\frac{b}{a}$$
+> Henceforth, we no longer distinguish between the set $U$ and its image $\underline{x}(U)$ as a possible embedding in a higher dimensional Euclidean space $\Re^n$. This $2$-dimensional space with its specified first fundamental form is called the upper half-plane model of the hyperbolic plane, denoted by $\mathbb{H}^2=\{(u,v)\in\Re^2:v>0\}$ with first fundamental form given above. 
+> For any tangent vector $\underline{w}=(w_1,w_2)\in T_{(u,v)}\mathbb{H}^2$ we then have:$$\Huge ||\underline{w}||_{(u,v)}^2=\begin{pmatrix}w_1 & w_2\end{pmatrix}\begin{pmatrix}1/v^2 & 0 \\ 0 & 1/v^2\end{pmatrix}\begin{pmatrix}w_1 \\ w_2\end{pmatrix}=\frac{w_1^2+w_2^2}{v^2}$$ 
+
+## Angles:
+We now introduce the angle between two intersecting curves $\underline{\alpha}_1,\underline{\alpha}_2:(-\epsilon,\epsilon)\rightarrow S$ in a regular surface. Assume that $\underline{\alpha}_1(0)=\underline{\alpha}_2(0)=\underline{p}\in S$. Then the angle $\underline{\theta}\in[0,\pi]$ between these two curves at $\underline{p}$ is given by:$$\Huge\cos\theta=\frac{\langle \underline{\alpha}_1'(0),\underline{\alpha}_2'(0)\rangle}{||\underline{\alpha}_1'(0)||_\underline{p}\cdot||\underline{\alpha}_2'(0)||_{\underline{p}}}$$![[Tangent planes 2025-12-06 05.12.56.excalidraw]]
+
+Take for example, the angle between coordinate curves. Let $\underline{x}:U\rightarrow S$ be a local parametrisation of a regular surface $S$ and $(u_0,v_0)\in U$. We consider the curves:$$\Huge \underline{\alpha}_1(t)=\underline{x}(u_0+t,v_0),\,\,\underline{\alpha}_2(t)=\underline{x}(u_0,v_0+t)$$with $|t|$ small enough such that $(u_0+t,v_0),(u_0,v_0+t)\in U$. Both curves intersect at $\underline{p}=\underline{x}(u_0,v_0)\in S$, that is:$$\Huge \underline{\alpha}_1(0)=\underline{\alpha}_2(0)=\underline{p}\in S$$We call the curves $\underline{\alpha}_1,\underline{\alpha}_2$ the coordinate curves of $\underline{x}$ at $\underline{p}=\underline{x}(u_0,v_0)\in S$, illustrated above. The angle $\theta=\theta(u_0,v_0)\in [0,\pi]$ between these two intersecting curves is then given by:$$\Huge\begin{align*}
+\cos\theta&=\frac{\langle \underline{\alpha}_1'(0),\underline{\alpha}_2'(0)\rangle_\underline{p}}{||\underline{\alpha}_1'(0)||_\underline{p}\cdot||\underline{\alpha}_2'(0)||_\underline{p}}\\
+&=\frac{\langle \underline{x}_u(u_0,v_0),\underline{x}_v(u_0,v_0)\rangle_\underline{p}}{||\underline{x}_u(u_0,v_0)||_\underline{p}\cdot||\underline{x}_v(u_0,v_0)||_\underline{p}}\\
+&=\frac{F(u_0,v_0)}{\sqrt{E(u_0,v_0)\cdot G(u_0,v_0)}}
+\end{align*}$$
+## Areas:
+Finally, we introduce the concept of the area of a region $R\subset S$ of a regular surface $S\subset\Re^3$. For simplicity, we assume that this region is fully contained within one of the local parametrisations. If this is not the case, area can still be defined.
+
+Let $\underline{x}:U\rightarrow S$ be a local parametrisation of a regular surface $S\subset\Re^3$ and $E,F,G:U\rightarrow\Re$ be its coefficients of the first fundamental form. Let $R=\underline{x}(R_0)$, where $R_0$ is a subset of $U$. Then the rea of $R\subset S$ is defined as:$$\Huge \text{area}(R)=\int_{R_0}\sqrt{E(u,v)G(u,v)-F(u,v)^2}du\,dv$$
+We provide a heuristic justification for this result. An infinitesimal square in $R_0$ of the form $Q_0=[u,u+\epsilon]\times[v,v+\epsilon]$ of area $\epsilon^2$ is mapped under $\underline{x}$ to a slightly curved parallelogram $\underline{x}(Q_0)$ in the surface $S$, which is approximated by its linearised image:$$\Huge Q=\{\underline{x}(u,v)+s\underline{x}_u(u,v)+t\underline{x}_v(u,v):s,t\in[0,\epsilon]\}\subset\Re^3$$The set $Q$ is again a proper parallelogram and has the area:$$\Huge\begin{align*}
+\text{area}(Q)&=\epsilon^2||\underline{x}_u(u,v)||\cdot||\underline{x}_v(u,v)||\sin\theta(u,v)\\
+&=\epsilon^2\sqrt{E(u,v)G(u,v)}\cdot\sqrt{1-\cos^2\theta(u,v)}\\
+&=\epsilon^2\sqrt{E(u,v)G(u,v)-F^2(u,v)}
+\end{align*}$$Therefore, the infinitesimal squares at $(u,v)\in U$ of area $\epsilon^2$ are mapped under $\underline{x}$ to domains in $S$ of area approximately equal to the above. Adding the areas of the images of all of these infinitesimal squares in $R_0$ up and taking $\epsilon\to 0$ gives the limit of a Riemann sum, represented by the integral.
+![[Tangent planes 2025-12-06 05.32.24.excalidraw]]
+
+This definition of area is independent of the local parametrisation $\underline{x}:U\rightarrow S$. This fact can be proven using the change of variables under integration.
+
+
+
+
+
+
+
+
+
+
+
+
+
