@@ -90,6 +90,6 @@ c_n(0)&=\int \phi_n^*(x')\psi_0(x')dx'
 \psi(x,0)&=\sum_n\int\phi_n(x)\phi_n^*(x')\psi_-(x')dx'\\
 &=\int\delta(x-x')\psi_0(x')dx'=\psi_0(x)
 \end{align*}$$
-## Gaussian wave-function example:
+# Coherent states:
 
-We take the initial wave function:$$\Huge \psi(0)=\frac{1}{\pi^{1/4}\sigma^{1/2}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}$$As an example it is interesting to explore this initial function. According to Ehrenfest, the expectation value of the lump should oscillate in the potential, similar to the classical case. 
+Coherent states are, in a sense, the most classical-like lump we can build in the SHO because they are lumps that do not "wobble". They maintain their shape as they osc
