@@ -26,3 +26,43 @@ Inspired by this new form, we substitute:$$\Huge w=2\frac{\partial }{\partial x}
 \frac{1}{2}w_{xxx}&=\frac{f_{xxxx}}{f}-4\frac{f_{xxx}f_x}{f^2}-3\frac{f_{xx}^2}{f^2}+12\frac{f_{xx}f_x^2}{f^3}-6\frac{f_x^4}{f^4}\\
 \implies0&=\frac{f_{xt}}{f}-\frac{f_xf_t}{f^2}+3\frac{f_{xx}^2}{f^2}-4\frac{f_{xx}^2}{f^2}-4\frac{f_{xxx}f_x}{f^2}+\frac{f_{xxxx}}{f}
 \end{align*}$$Multiplying through by $f^2$, we get the quadratic form of the KdV equation:$$\Huge ff_{xt}-f_xf_t+3f_{xx}^2-4f_xf_{xxx}+ff_{xxxx}=0$$
+## Hirota's bilinear operator:
+
+Hirota defined a bilinear differential operator $D$ which maps a pair of functions $(f,g)$ into a single function $D(f\cdot g)$. If we work on $C^\infty$ functions, then:$$\Huge\begin{align*}
+D:C^\infty\times C^\infty&\rightarrow C^\infty\\
+(f,g)&\rightarrow D(f\cdot g)
+\end{align*}$$For integers $m,n\geq0$, we define Hirota's bilinear differential operator $D_t^mD_x^n$ by:$$\large [D_t^mD_x^n(f\cdot g)](x,t)=\left(\frac{\partial }{\partial t}-\frac{\partial }{\partial t'}\right)^m\left(\frac{\partial }{\partial x}-\frac{\partial }{\partial x'}\right)^nf(x,t)g(x',t')|_{(x',t')=(x,t)}$$
+Let us look at some examples:
+> $m=1,n=0$:$$\Huge\begin{align*}
+[D_t(f\cdot g)](x,t)&=\left(\frac{\partial }{\partial t}-\frac{\partial }{\partial t'}\right)f(x,t)g(x',t')\\
+&=f_t(x,t)g(x',t')-f(x,t)g_{t'}(x',t')\\
+&=f_t(x,t)g(x,t)-f(x,t)g_t(x,t)
+\end{align*}$$that is, $D_t(f\cdot g)=f_tg-fg_t$ and $D_t(f,f)=0$. There is a similar result for $D_x$.
+> Now we look at $n=m=1$:$$\Huge \begin{align*}
+[D_tD_x(f\cdot g)](x,t)&=\left(\frac{\partial }{\partial t}-\frac{\partial }{\partial t'}\right)\left(\frac{\partial }{\partial x}-\frac{\partial }{\partial x'}\right)f(x,t)g(x',t')\\
+&=\left(\frac{\partial }{\partial t}-\frac{\partial }{\partial t'}\right)(f_x(x,t)g(x',t')-f(x,t)g_{x'}(x',t'))\\
+&=f_{xt}g-f_tg_x-f_xg_t+fg_{xt}
+\end{align*}$$that is, $D_tD_x(f\cdot f)=2(ff_{tx}-f_tf_x)$.
+
+This is promising, as the RHS of the last expression reproduces the first two terms in the quadratic form of the KdV equation up to a factor. We proceed to compute:$$\Huge D_x^2(f\cdot g)=f_{xx}g-2f_xg_x+fg_{xx}\implies D^2_x(f\cdot f)=2(ff_{xx}-f_x^2)$$Which allows us to find:$$\Huge D_x^4(f\cdot g)=f_{xxxx}g-4f_{xxx}g_x+6f_{xx}g_{xx}-4f_xg_{xxx}+fg_{xxxx}$$Note that this is similar to $\partial_x^4$, with alternating signs. We therefore have:$$\Huge D_x^4(f\cdot f)=2(ff_{xxxx}-4f_xf_{xxx}+3f_{xx}^2)$$and we see that the KdV equation can be written as:$$\Huge (D_tD_x+D_x^4)(f\cdot f)=0$$where the bilinear operator $D_tD_x+D_x^4$ is defined by linearity on the space of operators of Hirota's type. The above equation is known as the bilinear form of the KdV equation.
+
+Observe that we can formally factor the Hirota operator as:$$\Huge\begin{align*}
+D_tD_x+D_x^4&=(D_t+D_x^3)D_x\\
+\implies (D_tD_x+D_x^4)(f,g)&=(\partial_t-\partial_{t'}+(\partial_x-\partial_{x'})^3)f(x,t)g(x',t')
+\end{align*}$$
+# Solutions:
+
+We need two ideas to find multi-soliton solutions, a solution and a way to add a soliton. If we take $f=1$, then the KdV field is the vacuum $u=0$. If we instead take:$$\Huge f=1+e^{2\mu(x-x_0-4\mu^2t)}$$then $u$ is the one-soliton travelling wave solution of the KdV equation. Since Hirota's operator is bilinear, this suggests that multi-soliton solutions may be obtained from and $f$ which is a sum of exponentials of linear functions of $x,t$, with $1=e^0$ as the trivial case. Before continuing, we must check the Hirota formalism by rederiving this one-soliton solution.
+## The 1-soliton:
+We try:$$\Huge f=1+e^\theta,\,\,\theta=ax+bt+c$$for constants $a,b,c$. If $\theta_i=a_ix+b_it+c_i$ then we have:$$\Huge D_t^mD_x^n(e^{\theta_1}\cdot e^{\theta_2})=(b_1-b_2)^m(a_1-a_2)^ne^{\theta_1+\theta_2}$$In particular:$$\Huge\begin{align*}
+D_t^mD_x^n(e^\theta\cdot e^\theta)&=0\\
+D_t^mD_x^n(e^\theta\cdot1)&=(-1)^{m+n}D_t^mD_x^n(1\cdot e^\theta)=b^ma^ne^\theta
+\end{align*}$$Therefore the bilinear form of the KdV equation for $f=1+e^\theta$ is:$$\Huge\begin{align*}
+0&=(D_tD_x+D_x^4)(1+e^\theta\cdot1+e^\theta)\\
+&=(D_tD_x+D_x^4)((1\cdot1)+(1\cdot e^\theta)+(e^\theta\cdot 1)+(e^\theta\cdot e^\theta))\\
+&=2(D_tD_x+D_x^4)(e^\theta\cdot 1)\\
+&=2(ba+a^4)e^\theta=2a(b+a^3)e^\theta
+\end{align*}$$Given that $e^\theta$ is nonzero, there are two ways to satisfy this equation:
+> $a=0$ makes $f$ independent of $x$ and therefore $u=0$, trivial.
+> $b=-a^4$, then:$$\Huge f=1+e^{ax-a^3t+c}\implies u=2\frac{\partial^2}{\partial x^2}\log(1+e^{ax-a^3t+c})$$which is exactly the one-soliton solution with $v=a^2$ up to redefinition of constants.
+

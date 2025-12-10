@@ -111,3 +111,14 @@ This gives us reason to try a Taylor expansion $\omega(k)$ around $k_0$:$$\Huge 
 &=e^{i(k_0x-\omega(k_0)t)}\int_{-\infty}^\infty A(k)\cosh(k(z+h))e^{i(k-k_0)(x-c_gt)}dk
 \end{align*}$$The term outside the integral represents a sinusoidal wave with wavenumber $k_0$ and frequency $\omega(k_0)$. The integral term dictates that the envelope of this wave travels with speed $c_g$ in the $x$-direction, the speed of the $k_0$th mode:![[Water waves 2025-12-09 19.45.47.excalidraw]]we call $c_g$ the group velocity. Observe that the wave packet disperses as the wave modes around $k_0$ change speed. More generally, it can be shown that energy propagates at the group velocity:$$\Huge c_g(k)=\frac{d\omega}{dk}$$
 # Standing waves in a finite domain:
+
+We proceed by considering bodies of water of finite width, that is we consider a finite domain $$\Huge \{(x,z):-h<z<\eta(x,t),0<x<L\}$$![[Water waves 2025-12-10 00.33.32.excalidraw]]In such a domain, it does not make sense to find travelling wave solutions. Instead we look for standing waves of the form:$$\Huge \phi(x,z,t)=X(x)Z(z)\sin(\omega t)$$In addition to our regular system, we also impose the conditions on the walls:$$\Huge \underline{u}\cdot\underline{\hat{n}}=\pm\frac{\partial \phi}{\partial x}=0,\,\,x=0,L$$Laplace's equation separates in the same way as before, and we again find:$$\Huge Z(z)=A\cosh(k(z+h))$$however the new boundary condition imposes:$$\Huge X(x)=C\cos(kx)=C\cos\left(\frac{n\pi x}{L}\right),\,\,n\in\mathbb{Z}$$
+The dispersion relation in the infinite domain came from boundary conditions at the surface, so that still holds, however $k$ is now an integer and:$$\Huge\omega^2=\frac{gn\pi}{L}\tanh\left(\frac{n\pi h}{L}\right)$$So for a finite domain, there is a discrete spectrum of possible wave frequencies, called normal modes. Note that the lowest order mode, $n=1$, is called the fundamental mode.
+
+We can again find the free surface height, for a normal mode we have:$$\Huge \begin{align*}
+\eta(x,t)&=-\frac{1}{g}\frac{\partial \phi}{\partial t}|_{z=0}\\
+&=-\frac{1}{g}X(x)Z(0)\frac{d}{dt}(\sin(\omega t))\\
+&=-\frac{A_n\omega}{g}\cos\left(\frac{n\pi x}{L}\right)\cosh\left(\frac{n\pi h}{L}\right)\cos(\omega t)
+\end{align*}$$with $\omega$ given above and some constant $A_n$ determined by initial conditions. Similar to how we can write a general solution in an infinite domain as the integral over a continuous set of frequencies, we can write our general solution in a finite domain as a sum over the set of all normal modes.
+
+Notice that in our expression above:$$\Huge \cos\left(\frac{n\pi x}{L}\right)\cos(\omega t)=\frac{1}{2}\left(\cos\left(\frac{n\pi x}{L}-\omega t\right)+\cos\left(\frac{n\pi x}{L}+\omega t\right)\right)$$that is, the standing wave solution is simply a pair of counterpropagating travelling waves.
