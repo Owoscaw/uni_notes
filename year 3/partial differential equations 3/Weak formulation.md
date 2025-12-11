@@ -78,3 +78,15 @@ I&=\iint_{U_l}u(x,t)\partial_t\varphi(x,t)+f(u(x,t))\partial_x\varphi(x,t)\,dx\,
 &+\int_{\partial U_l}(f(u(y,s)),u(y,s))\varphi(y,s)\cdot\underline{\hat{n}}(y,s)\,dL(y,s)
 \end{align*}$$where $\underline{\hat{n}}$ is outward normal along $C$ from $U_l$ (points towards $U_r$). Here, $\partial U_l=(\partial U\cap\overline U_l)\cup(C\cap U)$. Then as $\varphi\in C_c^1(U)$ we must have $\varphi|_{\partial U}=0$, which makes the integral bounds:$$\Huge \int_{\partial U_l}\dots dL(y,s)=\int_{C\cap U}\dots dL(y,s)$$
 > The curve $C$ is parametrised by $(\sigma(t),t)$ for $t\in(t_1,t_2)$, so a tangent vector is $(\dot\sigma(t),1)$. As such, the unit normal vector has form:$$\Huge\underline{\hat{n}}=\frac{\pm1}{\sqrt{1+\dot\sigma(t)^2}}(1,-\dot\sigma(t))$$
+
+## Burgers equation example:
+Consider Burgers equation:$$\Huge\begin{cases}\partial_tu(x,t)+\partial_xf(u(x,t))=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$where:$$\Huge u_0(x)=\begin{cases}1&x\leq0 \\
+1-x&0<x\leq1 \\
+0&x>1\end{cases}$$Here we have:$$\Huge c(u_0(s))=1,\,\,\partial_sc(u_0(s))=0,\,\,I_{(-\infty,0)}=\emptyset,\,\,t_c^{(-\infty,0)}=\infty$$Implying that:$$\Huge\implies\mathcal{D}_{(-\infty,0)}=\{(x,t)\in\Re\times(0,\infty):-\infty<x<t\}$$where the characteristics are of form $x=s+c(u_0(s))t=s+t$. Considering the problem on $(0,1)$ and $(1,\infty)$ we find characteristics:$$\Huge\begin{align*}
+x_{(-\infty,0)}&=s+t\\
+x_{(0,1)}&=s(1-t)+t\\
+x_{(1,\infty)}&=s
+\end{align*}$$As long as $t\in[0,1)$ we can stitch these solutions together in a continuous way, but not $C^1$ on the joint boundaries of $\mathcal{D}_{(-\infty,0)},\mathcal{D}_{(0,1)},\mathcal{D}_{(1,\infty)}$:$$\Huge u(x,t)=\begin{cases}1&x\leq t&t\in[0,1) \\
+\frac{1-x}{1-t}&t\leq x\leq1&t\in[0,1) \\
+0&x\geq1&t\in[0,1)\end{cases}$$![[Weak formulation 2025-12-11 03.48.04.excalidraw]]So we ask how we can create a weak solution on $\Re\times(0,\infty)$. We can try this by extending the non-terminating characteristics:![[Weak formulation 2025-12-11 03.52.12.excalidraw]]We expect a discontinuity of $u$ as from the left we see $1$ and from the right $0$. We can utilise the Rankine-Hugoniot theorem as $f(u)=u^2/2$ we get:$$\Huge \frac{1^2-0^2}{2}=\dot\sigma(t)(1-0)\implies\dot\sigma(t)=\frac{1}{2}$$As our shock will start at the point characteristics begin to cross, $(-1,1)$, we have $\sigma(1)=1$. This makes $\sigma$ take form:$$\Huge \sigma(t)=1+\frac{t}{2}$$The characteristics of our new function become:![[Weak formulation 2025-12-11 03.58.08.excalidraw]]
