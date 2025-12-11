@@ -113,3 +113,61 @@ We can find the form of these by solving its defining equation:$$\Huge \frac{1}{
 \psi&=e^{\Re(\alpha)^2}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{\sqrt 2\alpha z-z^2/2+i\theta(t)}\\
 &=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-(\sqrt 2\Re(\alpha)-z)^2/2+i\theta(t)+i\sqrt 2\Im(\alpha)z}
 \end{align*}$$for some phase $\theta(t)$ which is allowed in $C$. Thus the answer becomes:$$\Huge \psi(x,t)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}(x-x_c(t))^2+i\sqrt\frac{2\hbar}{m\omega}\alpha_0x\sin(\omega t)+i\theta(t)}$$with a density profile:$$\Huge |\psi(x,t)|=\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}e^{-\frac{m\omega}{\hbar}(x-x_c(t))^2}$$This is the density profile of the displaced SHO groundstate, oscillating around the classical solution with:$$\Huge x_c(t)=\sqrt\frac{2\hbar}{m\omega}\alpha_0\cos(\omega t)$$that is with maximum displacement $x_0=\sqrt\frac{2\hbar}{m\omega}\alpha_0$. Note that if $\alpha_0=0$, then the wavefunction actually becomes the SHO groundstate.
+
+We knew that the coherent state had to be an eigenstate of $\hat a$ as we can show that such a state saturates the Heisenberg uncertainty principle. If this is the case, then any perturbation of the profile could only ever increase $\Delta x\Delta p$. It is possible to unpick these properties of $\hat a$ eigenstates without ever solving for the wavefunction profile itself. To see this we return to the starting assumption about the wavefunction, namely that it obeys:$$\Huge\hat a |\alpha\rangle=\alpha(t)|\alpha\rangle$$We can now evaluate the expectation of position for the state $|\alpha(t)\rangle$ using the relation between $\hat x,\hat a$:$$\Huge \hat x=\sqrt{\frac{\hbar}{2m\omega}}(\hat a+\hat a^\dagger),\,\,\hat p=-i\sqrt{\frac{m\omega\hbar}{2}}(\hat a-\hat a^\dagger)$$This gives:$$\Huge\begin{align*}
+\langle\hat x\rangle&=\langle \alpha(t)|\hat x |\alpha(t)\rangle\\
+&=\sqrt{\frac{\hbar}{2m\omega}}\langle \alpha(t)|\hat a+\hat a^\dagger |\alpha\rangle\\
+&=\sqrt{\frac{\hbar}{2m\omega}}\langle \alpha(t)|\alpha(t)+\alpha(t)^*|\alpha\rangle\\
+&=\sqrt{\frac{\hbar}{2m\omega}}(\alpha(t)+\alpha(t)^*)\\
+&=\sqrt{\frac{2\hbar}{m\omega}}\alpha_0\cos(\omega t)
+\end{align*}$$where we must at to the left or right with $\hat a^\dagger$ and $\hat a$ respectively, which is just that of the classical oscillator if we identify $x_0=\sqrt{\frac{2\hbar}{m\omega}}\alpha_0$. So now we calculate $\Delta x^2=\langle x^2\rangle-\langle\hat x\rangle^2$. We proceed:$$\Huge\begin{align*}
+\langle\hat x^2\rangle&=\langle \alpha(t)|\hat x |\alpha(t)\rangle\\
+&=\frac{\hbar}{2m\omega}\langle \alpha(t)|\hat a^2+\hat a^{\dagger2}+\hat a\hat a^\dagger+\hat a^\dagger\hat a |\alpha(t)\rangle\\
+&=\frac{\hbar}{2m\omega}\langle \alpha(t)|\hat a^2+\hat a^{\dagger2}+[\hat a,\hat a^\dagger]+2\hat a^\dagger\hat a |\alpha(t)\rangle\\
+&=\frac{\hbar}{2m\omega}\langle \alpha(t)|\hat a^2+\hat a^{\dagger2}+1+2\hat a^\dagger\hat a |\alpha(t)\rangle\\
+&=\frac{\hbar}{2m\omega}((\alpha(t)+\alpha(t)^*)^2+1)\\
+&=\frac{2\hbar}{m\omega}(\alpha_0^2\cos^2(\omega t)+1/4)\\
+\implies\Delta x^2&=\frac{2\hbar}{m\omega}((\alpha_0^2\cos^2(\omega t)+1/4)-\alpha_0^2\cos^2(\omega t))\\
+&=\frac{\hbar}{2m\omega}
+\end{align*}$$Hence we find that the spread in our Gaussian is constant. We see that it comes from the fact that $\hat a,\hat a^\dagger$ operators in $\hat x$ reduced trivially in the eigenstate. Now we do the same to momentum:$$\Huge\begin{align*}
+\langle\hat p\rangle&=-i\sqrt{\frac{m\omega\hbar}{2}}\langle \alpha|\hat a-\hat a^\dagger |\alpha\rangle\\
+&=-i\sqrt{\frac{m\omega\hbar}{2}}\langle \alpha|\alpha-\alpha^*|\alpha\rangle\\
+&=-2\sqrt{2m\omega\hbar}\alpha_0\sin(\omega t)
+\end{align*}$$Note that Ehrenfest dictates this obeys $\langle\hat p\rangle=m\frac{d\langle\hat x\rangle}{dt}$. We proceed:$$\Huge\begin{align*}
+\langle\hat p^2\rangle&=-\frac{m\omega\hbar}{2}\langle \alpha|(\hat a-\hat a^\dagger)^2|\alpha\rangle\\
+&=-\frac{m\omega\hbar}{2}\langle \alpha|\hat a^2+\hat a^{\dagger2}-\hat a\hat a^\dagger-\hat a^\dagger\hat a |\alpha\rangle\\
+&=-\frac{m\omega\hbar}{2}\langle \alpha|\hat a^2+\hat a^{\dagger2}-[\hat a,\hat a^\dagger]-2\hat a^\dagger\hat a |\alpha\rangle\\
+&=-\frac{m\omega\hbar}{2}\langle \alpha|\hat a^2+\hat a^{\dagger2}-1-2\hat a^\dagger\hat a |\alpha\rangle\\
+&=-\frac{m\omega\hbar}{2}\langle \alpha|(\alpha-\alpha^*)^2-1|\alpha\rangle\\
+&=2m\omega\hbar\alpha_0^2\sin^2(\omega t)+\frac{m\omega\hbar}{2}\\
+\implies\Delta p^2&=\frac{m\omega\hbar}{2}
+\end{align*}$$Hence we saturate the uncertainty principle, the defining property of a coherent state.
+
+It is tempting to think we can make the state infinitely classical by taking $m\to\infty$. However the state is not really made more classical as while $\Delta x\to0$ we have $\Delta p\to\infty$, called squeezing. The fact we can contemplate this limit is disconcerting as one imagines that a large $\Delta p$ must mean that the state will "fly off" somewhere. This is not the correct interpretation, in fact it means that the state contains all momentum eigenstates, the outcome would be very uncertain. Until that moment, the wavefunction continues to evolve in this coherent way.
+
+Another interesting expectation value is the energy. Using our above results we find:$$\Huge\begin{align*}
+\langle\hat H\rangle&=\left\langle\frac{\hat p^2}{2m}+\frac{m\omega^2}{2}\hat x^2\right\rangle\\
+&=\frac{1}{2m}\langle\hat p^2\rangle+\frac{m\omega^2}{2}\langle\hat x^2\rangle\\
+&=\omega\hbar\alpha(0)^2\sin^2(\omega t)+\frac{\omega\hbar}{4}+\hbar\omega\alpha(0)^2+\omega\hbar\alpha(0)^2\cos^2(\omega t)+\frac{\omega\hbar}{4}\\
+&=\omega\hbar\alpha(0)^2+\frac{\hbar\omega}{2}\\
+&=\frac{m\omega^2}{2}x_0^2+\frac{\hbar\omega}{2}
+\end{align*}$$That is to say, the zero-point energy plus classical energy is the expectation of the energy operator.
+
+# The $2D$ Isotropic SHO:
+Extending to two dimensions we have:$$\Huge\begin{align*}
+\hat H&=\frac{\hat p_x^2+\hat p_y^2}{2m}+\frac{1}{2}m\omega^2(\hat x^2+\hat y^2)\\
+&=\frac{\hat p_x^2}{2m}+\frac{1}{2}m\omega^2\hat x^2+\frac{\hat p_y^2}{2m}+\frac{1}{2}m\omega^2\hat y^2\\
+&=\hat H_x+\hat H_y\\
+[\hat x,\hat y]&=[\hat p_x,\hat p_y]=[\hat p_x,\hat y]=[\hat p_y,\hat x]=0\\
+[\hat x,\hat p_x]&=[\hat y,\hat p_y]=i\hbar\\
+[\hat H_x,\hat H_y]&=0
+\end{align*}$$The last equation suggests that we can diagonalise simultaneously wrt $\hat H_x,\hat H_y$, so we label the eigenbasis of $\hat H$ with two integers $n_x,n_y$ ang define the corresponding creation-annihilation operators:$$\Huge\begin{align*}
+\hat a_x&=\frac{1}{\sqrt{2\hbar m\omega}}(m\omega\hat x+ip_x)\\
+\hat a_y&=\frac{1}{\sqrt{2\hbar m\omega}}(m\omega\hat y+ip_y)\\
+[\hat a_x,\hat a_x^\dagger]&=[\hat a_y,\hat a_y^\dagger]=1\\
+[\hat a_x,\hat a_y]&=[\hat a_x^\dagger,\hat a_y]=0
+\end{align*}$$Our new ground state $|0,0\rangle$ now satisfies:$$\Huge \hat a_x |0,0\rangle=\hat a_y |0,0\rangle=0$$Our general eigenvector will have following form and corresponding eigenvalue:$$\Huge\begin{align*}
+|n_x,n_y\rangle&=\frac{1}{\sqrt{n_x!n_y!}}(\hat a_x^\dagger)^{n_x}(\hat a_y^\dagger)^{n_y}|0,0\rangle\\
+\hat H |x_n,n_y\rangle&=\hbar\omega(n_x+n_y+1)|n_x,n_y\rangle
+\end{align*}$$Showing that the $2D$ oscillator is degenerate.
+

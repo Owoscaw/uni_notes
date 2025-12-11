@@ -89,4 +89,45 @@ x_{(0,1)}&=s(1-t)+t\\
 x_{(1,\infty)}&=s
 \end{align*}$$As long as $t\in[0,1)$ we can stitch these solutions together in a continuous way, but not $C^1$ on the joint boundaries of $\mathcal{D}_{(-\infty,0)},\mathcal{D}_{(0,1)},\mathcal{D}_{(1,\infty)}$:$$\Huge u(x,t)=\begin{cases}1&x\leq t&t\in[0,1) \\
 \frac{1-x}{1-t}&t\leq x\leq1&t\in[0,1) \\
-0&x\geq1&t\in[0,1)\end{cases}$$![[Weak formulation 2025-12-11 03.48.04.excalidraw]]So we ask how we can create a weak solution on $\Re\times(0,\infty)$. We can try this by extending the non-terminating characteristics:![[Weak formulation 2025-12-11 03.52.12.excalidraw]]We expect a discontinuity of $u$ as from the left we see $1$ and from the right $0$. We can utilise the Rankine-Hugoniot theorem as $f(u)=u^2/2$ we get:$$\Huge \frac{1^2-0^2}{2}=\dot\sigma(t)(1-0)\implies\dot\sigma(t)=\frac{1}{2}$$As our shock will start at the point characteristics begin to cross, $(-1,1)$, we have $\sigma(1)=1$. This makes $\sigma$ take form:$$\Huge \sigma(t)=1+\frac{t}{2}$$The characteristics of our new function become:![[Weak formulation 2025-12-11 03.58.08.excalidraw]]
+0&x\geq1&t\in[0,1)\end{cases}$$![[Weak formulation 2025-12-11 03.48.04.excalidraw]]So we ask how we can create a weak solution on $\Re\times(0,\infty)$. We can try this by extending the non-terminating characteristics:![[Weak formulation 2025-12-11 03.52.12.excalidraw]]We expect a discontinuity of $u$ as from the left we see $1$ and from the right $0$. We can utilise the Rankine-Hugoniot theorem as $f(u)=u^2/2$ we get:$$\Huge \frac{1^2-0^2}{2}=\dot\sigma(t)(1-0)\implies\dot\sigma(t)=\frac{1}{2}$$As our shock will start at the point characteristics begin to cross, $(-1,1)$, we have $\sigma(1)=1$. This makes $\sigma$ take form:$$\Huge \sigma(t)=1+\frac{t}{2}$$The characteristics of our new function become:![[Weak formulation 2025-12-11 03.58.08.excalidraw]]with:$$\Huge u(x,t)=\begin{cases}t&t\leq x&t\in[0,1) \\
+\frac{1-x}{1-t}&t\leq x\leq 1&t\in[0,1) \\
+0&x\geq1&t\in[0,1) \\
+1&x<\frac{1+t}{2}&t\geq1 \\
+0&x>\frac{1+t}{2}&t\geq1\end{cases}$$As $u\in C^1$ in domains between connecting characteristics, including the boundary of $\mathcal{D}$, and the Rankine-Hugoniot conditions are satisfied. We have therefore found a weak solution. Note that shocks need not form at some $t>0$, they can form at $t=0$ instantaneously.
+
+# Non-uniqueness of weak integral solutions:
+
+The price for weakening the condition for existence is lack of uniqueness. Note that a conservation law where the initial datum is a piecewise constant function with one discontinuity is known as a Riemann problem.
+
+Consider the example:$$\Huge\begin{cases}\partial_tu(x,t)+u(x,t)\partial_xu(x,t)&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases},\,\,u_0(x)=\begin{cases}0&x<0 \\
+1&x>0\end{cases}$$Here, $f(u)=u^2/2,c(u)=u,c(u_0(s))=u_0(s)$ which is not in $C^1(\Re)$. Therefore we cannot use the classical solution theorem on $\Re$, however we can use it on $(-\infty,0),(0,\infty)$ as $c\circ u_0$ is bounded with a bounded derivative. We then get the following characteristics:$$\Huge\begin{align*}
+x_{(-\infty,0)}&=s\\
+x_{(0,\infty)}&=s+t
+\end{align*}$$which we combine. We are however left with a void on $t>x$ for $x>0$, which we have two ways of "filling":
+> We can extend $u$ on parallel characteristics, causing them to immediately cross. We are in the setting to try the Rankine-Hugoniot condition for a shock emerging from $(0,0)$. Here, $u_l=0,u_r=1$ and $f(u)=u^2/2$ so we find $\dot\sigma(t)=1/2$ and using the fact $\sigma(0)=0$ we find $\sigma(t)=t/2$, making our weak solution:$$\Huge u(x,t)=\begin{cases}0&x<t/2 \\
+1&x>t/2\end{cases}$$![[Weak formulation 2025-12-11 04.34.37.excalidraw]]
+> Another option would be to form a Rarefaction wave. When we have a classical solution it is:$$\Huge u(x,t)=u_0(s(x,t))=c(u_0(s(x,t)))$$where $u(x,t)$ is therefore the reciprocal of the slope of the characteristics in the $(x,t)$ plane. We can try to create artificial characteristics that connect between the rightmost characteristic of $\mathcal{D}_{(-\infty,0)}$ where $x=0$ and the leftmost on $\mathcal{D}_{(0,\infty)}$ with $x=t$ in any continuous way and set $u$ to depend only on the reciprocal slope. 
+
+## Rarefaction waves:
+We try a solution of the form:$$\Huge u(x,t)=h\left(\frac{x-0}{t}\right)$$where $h$ is a single valued function. We need $u$ to satisfy:$$\Huge\begin{align*}
+\partial_tu+u\partial_xu&=0\\
+\partial_tu(x,t)&=-\frac{x}{t^2}h'\left(\frac{x}{t}\right)\\
+\partial_xu(x,t)&=\frac{1}{t}h'\left(\frac{x}{t}\right)\\
+0=\partial_tu(x,t)-u(x,t)\partial_xu(x,t)&=\frac{h'(x/t)}{t}\left(-\frac{x}{t}+h\left(\frac{x}{t}\right)\right)
+\end{align*}$$There are two obvious options:
+> $h'(z)=0$ implies $h$ is constant, but there $u$ is also constant which does not connect between $x=0$ and $x=t$.
+> $h(z)=z$ works.
+
+We therefore define the continuous function:$$\Huge u(x,t)=\begin{cases}0&x<0 \\
+\frac{x}{t}&0\leq x\leq t \\
+1&x>1\end{cases}$$with $t>0$. Then we have $u\in C^1$ in $\mathcal{D}_{(-\infty,0)}\cup\mathcal{D}_{(0,\infty)}\cup V$ is a weak solution:![[Weak formulation 2025-12-11 04.51.24.excalidraw]]
+Note that Rarefaction waves will always be a possibility in Burger's equation with increasing piecewise constant functions $u_0$. At any point of discontinuity $x_0$ where $u_{x_0,l}=\lim_{x\to x_0^-}u_0(x)<\lim_{x\to x_0^+}u_0(x)=u_{u_0,r}$, a void will be created in the domain:$$\Huge V_{x_0}=\{(x,t)\in\Re\times(0,\infty):x_0+u_{x_0,l}t<x<x_0+u_{x_0,r}t\}$$The function:$$\Huge u(x,t)=\frac{x-x_0}{t},\,\,(x,t)\in V_{x_0}$$will solve our PDE and act as a continuous extension of our solution to $V_{x_0}$.
+
+Moreover, rarefaction waves are also possible when $c(u)=\gamma u^n$ with $\gamma>0$ and $n\in\mathbb{N}$. In this case wen considering a piecewise constant function $u_0$, we will have that at any point of discontinuity $x_0$ where:$$\Huge u_{x_0,l}^n=\lim_{x\to x_0^-}u_0(x)^n<\lim_{x\to x_0^+}u_0(x)^n=u_{x_0,r}^n$$a void will be created in the domain:$$\Huge V_{x_0}=\{(x,t)\in\Re\times(0,\infty):x_0+\gamma u_{x_0,l}^nt<x<x_0+\gamma u_{x_0,r}^nt\}$$and the function:$$\Huge u(x,t)=\left(\frac{x-x_0}{\gamma t}\right)^{1/n},\,\,(x,t)\in V_{x_0}$$will solve our PDE and act as a continuous extension of our solution to $V_{x_0}$. It is worth to note that the above is well defined as when $n$ is even we have that:$$\Huge 0\leq\gamma u_{x_0,l}^nt<x-x_0$$
+## Combinations:
+We have one more option for filling the void, mixing both techniques. We can create a rarefaction wave from one or both sides and then extend parallelly and create a shock. For any $0<\gamma<1$ we define:$$\Huge u_\alpha(x,t)=\begin{cases}0&x<\frac{\alpha t}{2} \\
+\alpha&\frac{\alpha t}{2}<x<\alpha t \\
+\frac{x}{t}&\alpha t<x<t \\
+1&x>t\end{cases}$$where we get a rarefaction wave in:$$\Huge \{(x,t)\in\Re\times(0,\infty):\alpha t<x<t\}$$and a shock curve along:$$\Huge C=\left\{\left(\frac{\alpha t}{2},t\right):t>0\right\}$$![[Weak formulation 2025-12-11 05.04.45.excalidraw]]
+# Entropy conditions
