@@ -113,8 +113,9 @@ We provide a heuristic justification for this result. An infinitesimal square in
 \end{align*}$$Therefore, the infinitesimal squares at $(u,v)\in U$ of area $\epsilon^2$ are mapped under $\underline{x}$ to domains in $S$ of area approximately equal to the above. Adding the areas of the images of all of these infinitesimal squares in $R_0$ up and taking $\epsilon\to 0$ gives the limit of a Riemann sum, represented by the integral.
 ![[Tangent planes 2025-12-06 05.32.24.excalidraw]]
 
-This definition of area is independent of the local parametrisation $\underline{x}:U\rightarrow S$. This fact can be proven using the change of variables under integration.
-
+This definition of area is independent of the local parametrisation $\underline{x}:U\rightarrow S$. This fact can be proven using the change of variables under integration. We can use this to calculate area:
+> Take for example the zone of a sphere $S(r)$ of radius $r>0$ defined by:$$\Huge \underline{x}(u,v)=r(\sin u\cos v,\sin u\sin v,\cos u)$$Choosing $0\leq u\leq\pi,0\leq v\leq2\pi$ covers the whole sphere but is technically inadmissible as this set is closed, causing a bijection in $\underline{x}$. A zone $Z\subset S(r)$ of the sphere is given by restricting the $u$ parameter to a closed interval $[u_0,u_1]\subset[0,\pi]$. This will cover a radially symmetric portion of the sphere, from the height $u_0$ to $u_1$. We can then find the first fundamental form to be:$$\Huge E=\underline{x}_u\cdot\underline{x}_u=r^2,\,\,F=0,\,\,G=r^2\sin^2u$$which implies $\sqrt{EG-F^2}=r^2\sin^2u$, so we obtain:$$\large \text{area}(Z)=\int_{u_0}^{u_1}\int_0^{2\pi}r^2\sin^2u\,dv\,du=2\pi r^2\int_{u_0}^{u_1}\sin u\,du=2\pi r^2(\cos u_1-\cos u_0)$$
+> We also look at the Hyperbolic plane, recalling the upper-half plane model given by $\mathbb{H}^2=\{(u,v):v>0\}$ with:$$\Huge E(u,v)=G(u,v)=\frac{1}{v^2},\,\,F(u,v)=0$$We aim to compute the (hyperbolic) area of the rectangle:$$\Huge R_a=[0,a]\times[0,2a]\subset\mathbb{H}^2$$for some given $a>0$. We then have $\sqrt{EG-F^2}=\frac{1}{v^2}$ and therefore:$$\Huge \text{area}_{\mathbb{H}^2}(R_a)=\int_0^a\int_0^{2a}\frac{1}{v^2}dv\,du=a\left(\frac{1}{a}-\frac{1}{2a}\right)=1/2$$This is interesting, as this area is independent of the parameter $a$, differing from Euclidean area which will clearly depend on $a$.
 
 
 

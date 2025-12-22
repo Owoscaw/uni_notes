@@ -1,0 +1,39 @@
+
+We aim to introduce the notion of a smooth map $f:S\rightarrow\Re^n$ from a [[Surfaces in R3|surface]] $S\subset\Re^3$ into $\Re^n$. The problem here is that it is not clear how we define smoothness of functions that are only defined on subsets of $\Re^3$ if they are lower dimensional and curved.
+
+# Smooths maps on surfaces:
+
+Recall that a map $f:U\rightarrow\Re^m$ with an open set $U\subset\Re^n$ is called smooth at a point $\underline{p}\in U$ if all of its component-wise partial derivatives are continuous at $\underline{p}$. It is important that $U$ is open to define this as then the curves $t\rightarrow\underline{p}+t\underline{e}_i$ lie inside $U$ for $|t|$ small enough.
+
+In the case of a surface $S\subset\Re^3$ and a map $f:S\rightarrow\Re^m$, the set $S$ is not necessarily an open subset of $\Re^3$ and it is not clear how we can define smoothness at $\underline{p}\in S$. To remedy this, note that we always have a local parametrisation $\underline{x}:U\rightarrow S$ with $\underline{p}\in\underline{x}(U)$. We can use this local parametrisation to describe a neighbourhood around $\underline{p}$ in the surface by an open set in $\Re^2$, coinciding with $U$. 
+
+Let $S\subset\Re^3$ be a regular surface and $\underline{p}\in S$. We call a map $f:S\rightarrow\Re^m$ smooth at $\underline{p}\in S$ if there exists a local parametrisation $\underline{x}:U\rightarrow S$ with $\underline{p}\in\underline{x}(\underline{q})$ and $\underline{q}\in U$ such that the composition $f\circ\underline{x}:U\rightarrow\Re^m$ is smooth at $\underline{q}$:![[Smooth maps between surfaces 2025-12-22 19.03.50.excalidraw]]
+It is natural to ask if this definition is independent of local parametrisation:
+> Let $V=\underline{x}(U)$ and $\tilde V=\tilde{\underline{x}}(\tilde U)$. We know that the [[Surfaces in R3#Change of parametrisations|change of parametrisation]] given by:$$\Huge h=\underline{x}^{-1}\circ\tilde{\underline{x}}:\tilde{\underline{x}}^{-1}(V\cap\tilde V)\rightarrow\underline{x}^{-1}(V\cap\tilde V)$$is a diffeomorphism, so we write:$$\Huge f\circ\tilde{\underline{x}}=(f\circ\underline{x})\circ h:\tilde{\underline{x}}^{-1}(V\cap\tilde V)\rightarrow\Re^m$$Note that $h$ is smooth at $\tilde{\underline{q}}$ and $f\circ\underline{x}$ is smooth at $\underline{q}=h(\tilde{\underline{q}})$ by assumption. Then $f\circ\tilde{\underline{x}}$ is also smooth at $\tilde{\underline{q}}$ as it is a composition of smooth maps.
+
+## Gauss map:
+We now introduce the Gauss map of a surface as a map that assigns a unit normal to every point on a surface. Let $S\subset\Re^3$ be a regular surface and $W\subset S$. A Gauss map of the surface $S$ is a smooth map $N:W\rightarrow\Re^3$ which assigns every point $\underline{p}\in S$ a unit normal vector $N(\underline{p})$, that is $N(\underline{p})\perp$[[Tangent planes#Definition|$T_{\underline p}S$]]. Therefore we have a map $N:W\rightarrow S^2$, where $S^2\subset\Re^3$ is the unit sphere centered at the origin.
+
+Note that if $N:W\rightarrow S^2$ is a Gauss map of $S$ then $-N:W\rightarrow S^2$ with $\underline{p}\rightarrow -N(\underline{p})$ is also a Gauss map of $S$. Such a Gauss map can always be defined in the following way, given a local parametrisation $\underline{x}:U\rightarrow S$ and $\underline{p}\in\underline{x}(U)$:$$\Huge(N\circ\underline{x})(u,v)=\frac{\underline{x}_u\times\underline{x}_v}{||\underline{x}_u\times\underline{x}_v||}(u,v)$$This is well defined as $\underline{x}_u,\underline{x}_v$ will always be linearly independent, which also makes the map smooth. Moreover, $N(\underline{p})\perp T_{\underline{p}}S$ as $\underline{x}_u,\underline{x}_v$ span the tangent plane and $N(\underline{p})$ is defined in terms of their cross product, producing a perpendicular vector.
+
+While this is well defined on $\underline{x}(U)\subset S$, we may not be able to find a smooth map on all of $S$. This problem has to do with the orientability of a surface, and we will see that a non-orientable surface like the Mobius strip does not admit a globally defined Gauss map. Take for example:
+> The graph of a function defined as the surface $S=\{(u,v,g(u,v)):(u,v)\in U\}$ with an open set $U\subset\Re^2$ and a smooth function $g:U\rightarrow\Re$. A global parametrisation of $S$ is given by $\underline{x}(u,v)=(u,v,g(u,v))$ and we have:$$\Huge\begin{align*}
+\underline{x}_u(u,v)&=\left(1,0,\frac{\partial g}{\partial u}(u,v)\right),\,\,\underline{x}_v(u,v)=\left(0,1,\frac{\partial g}{\partial v}(u,v)\right)\\
+\implies(\underline{x}_u\times\underline{x}_v)(u,v)&=\left(-\frac{\partial g}{\partial u}\left(u,v\right),-\frac{\partial g}{\partial v}(u,v),1\right)\\
+\implies N\circ\underline{x}&=\frac{1}{\sqrt{1+(\frac{\partial g}{\partial u})^2+(\frac{\partial g}{\partial v})^2}}\left(-\frac{\partial g}{\partial u},-\frac{\partial g}{\partial v},1\right)
+\end{align*}$$
+
+A surface $S\subset\Re^3$ is called non-orientable if there exists no global Gauss map $N:S\rightarrow S^2$, that is we cannot define the map $N$ to be continuous on all of $S$. If $S$ admits a global Gauss map, we call it orientable.
+
+Take for example the Mobius strip. We construct this topologically as follows: take a rectangle, twist it once and stitch the ends together. The resulting object is a Mobius strip, which we can parametrise as a [[Surfaces in R3#Ruled|ruled surface]]. Take the curve:$$\Huge \underline{\alpha}(u)=(2\sin u,2\cos u,0)$$that parametrises a horizontal circle of radius $2$ in the $(x,y)$-plane. We then take a rotating unit vector in the $(x,z)$-plane that performs a half-rotation on $[0,2\pi]$:$$\Huge u\rightarrow(-\sin(u/2),0,\cos(u/2))$$This unit vector rotates with our curve $\underline{\alpha}$ and determines the vector $\underline{w}:[0,2\pi]\rightarrow\Re^3$ with:$$\Huge \underline{w}(u)=\left(-\sin u\sin\left(\frac{u}{2}\right),-\cos u\cos\left(\frac{u}{2}\right),\cos\left(\frac{u}{2}\right)\right)$$The Mobius strip is then given by $\underline{x}:\Re\times(-1,1)\rightarrow\Re^3$ with:$$\Huge\begin{align*}
+\underline{x}(u,v)&=\alpha(u)+v\underline{w}(u)\\
+&=\left(\left(2-v\sin\left(\frac{u}{2}\right)\right)\sin u,\left(2-v\sin\left(\frac{u}{2}\right)\right)\cos u,v\cos\left(\frac{u}{2}\right)\right)
+\end{align*}$$Then there is a clear discontinuity in the Gauss map at $(0,2,0)$.
+
+## Other smooth maps:
+Moving on from the Gauss map, we can look at two other smooth maps given a ruled surface $S\subset\Re^3$:
+> The height function defined by fixing a vector $\underline{v}\subset S^2$ and defining a function $h:S\rightarrow\Re$ by:$$\Huge h(\underline{p})=\underline{p}\cdot\underline{v}$$Then $h$ is a smooth map that measures the height of $S$ in the $\underline{v}$ direction.
+> The distance squared function defined by letting $\underline{a}\in\Re^3$:$$\Huge d^2(\underline{p})=||\underline{p}-\underline{a}||^2=(\underline{p}-\underline{a})\cdot(\underline{p}-\underline{a})$$Then $d^2$ is a smooth map where $d=\sqrt{d^2}$ measures the distance between $\underline{p}\in S$ and a reference point $\underline{a}\in\Re^3$.
+
+# The derivative of smooth maps:
+
