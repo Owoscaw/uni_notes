@@ -55,3 +55,62 @@ d_\underline{p}f(\underline{x}_v(\underline{q}))&=\frac{\partial }{\partial v}(f
 We can finally move on to consider the derivative of smooth maps between surfaces. First note that if $\underline{\alpha}:(-\epsilon,\epsilon)\rightarrow S_1$ is a curve through $\underline{p}=\underline{\alpha}(0)\in S_1$ in the surface $S_1$, then $f\circ\underline{\alpha}:(-\epsilon,\epsilon)\rightarrow S_2$ is a curve through $f(\underline{p})=(f\circ\underline{\alpha})(0)\in S_2$ in the surface $S_2$. Therefore we have:$$\Huge d_\underline{p}f(\underline{\alpha}'(0))=(f\circ\underline{\alpha})'(0)\in T_{f(\underline{p})}S_2$$This shows that $d_\underline{p}f$ is actually a linear map between the tangent vector space of each surface:$$\Huge d_\underline{p}f:T_\underline{p}S_1\rightarrow T_{f(\underline{p})}S_2,,\,\underline{\alpha}'(0)\rightarrow (f\circ\underline{\alpha})'(0)$$
 
 Note that the Gauss map can be considered a smooth map between surface, and therefore acts in this way:$$\Huge d_\underline{p}N:T_\underline{p}N\rightarrow T_{N(\underline{p})}S^2$$Noting that $N(\underline{p})\perp T_\underline{p}S$ we also have $N(\underline{p})\perp T_{N(\underline{p})}S^2$, implying that $T_\underline{p}S=T_{N(\underline{p})}S^2$:$$\Huge \implies d_\underline{p}N:T_\underline{p}S\rightarrow T_\underline{p}S$$That is, $d_\underline{p}N$ is a linear map of the tangent plane $T_\underline{p}S$ onto itself:![[Smooth maps between surfaces 2025-12-22 20.57.35.excalidraw]]
+As the chain rule was fundamental in many of our proofs, it makes sense that the chain rule also holds for the derivative of maps between smooth surfaces. Let $S_1,S_2,S_3\subset\Re^3$ be regular surfaces and $f:S_1\rightarrow S_2,g:S_2\rightarrow S_3$ be smooth maps. Then the composition $g\circ f:S_1\rightarrow S_3$ is also a smooth map and for all $\underline{p}\in S_1$:$$\Huge d_\underline{p}(g\circ f)=d_{f(\underline{p})}g\circ d_{\underline{p}}f:T_\underline{p}S_1\rightarrow T_{g(f(\underline{p}))}S_3$$Proof:
+> Let $\underline{v}\in T_\underline{p}S_1$. Then there exists a smooth curve $\underline{\alpha}:(-\epsilon,\epsilon)\rightarrow S_1$ with $\underline{\alpha}(0)=\underline{p}$ and $\underline{\alpha}'(0)=\underline{v}$. Then $f\circ\underline{\alpha}:(-\epsilon,\epsilon)\rightarrow S_2$ is a smooth curve in $S_2$ and we have:$$\Huge\begin{align*}
+d_\underline{p}(g\circ f)(\underline{v})&=d_\underline{p}(g\circ f)(\underline{\alpha}'(0))\\
+&=((g\circ f)\circ\underline{\alpha})'(0)\\
+&=(g\circ(f\circ\underline{\alpha}))'(0)\\
+&=d_{f(\underline{p})}g((f\circ\underline{\alpha}))'(0)\\
+&=d_{f(\underline{p})}(d_\underline{p}f(\underline{\alpha}'(0)))\\
+&=d_{f(\underline{p})}(d_\underline{p}(\underline{v}))=(d_{f(\underline{p})}g\circ d_\underline{p}f)(\underline{v})
+\end{align*}$$Completing the proof.
+
+Take for example the sphere and ellipsoid. Let $S^2\subset\Re^3$ denote the unit sphere at the origin. For $a,b,c>0$ let:$$\Huge S=f^{-1}(1)\subset\Re^3,\,\,f(x,y,z)=(x/a)^2+(y/b)^2+(z/c)^2$$be the corresponding ellipsoid. Consider the map $F:S^2\rightarrow S$ given by $F(x,y,z)=(ax,by,cz)$, a linear map which can also be viewed as $F:\Re^3\rightarrow\Re^3$ in the ambient space. The derivative of $F$ as a map in the ambient space is also linear and we have:$$\Huge d_\underline{p}F(\underline{v})=d_\underline{p}F(v_1,v_2,v_3)=(av_1,bv_2,cv_3)$$for $\underline{v}=(v_1,v_2,v_3)\in\Re^3$. We proceed to verify the restriction of $d_\underline{p}F$ to the tangent space $T_\underline{p}S^2$ is a linear map from $T_\underline{p}S^2$ to $T_{F(\underline{p})}S$. Indeed we have for $\underline{p}=(x,y,z)\in S^2$ that $F(\underline{p})=(ax,by,cz)$ and:$$\Huge T_\underline{p}S=\underline{\nabla}f(\underline{q})^\perp=\{\underline{w}\in\Re^3:\underline{w}\cdot\underline{\nabla}f(\underline{q)}=0\}$$Since $\underline{\nabla}f=2(x/a^2,y/b^2,z/c^2)$ we have:$$\Huge \underline{\nabla}f(F(\underline{p}))=\underline{\nabla}f(ax,by,cz)=2(x/a,y/b,z/c)$$And therefore:$$\Huge\begin{align*}
+T_{F(\underline{p})}S&=\{\underline{w}\in\Re^3:\underline{w}\cdot\underline{\nabla}f(F(\underline{p}))=0\}\\
+&=\left\{(w_1,w_2,w_3)\in\Re^3:\frac{w_1x}{a}+\frac{w_2y}{b}+\frac{w_3z}{c}=0\right\}
+\end{align*}$$Now if $\underline{v}=(v_1,v_2,v_3)\in T_\underline{p}S^2$ then $\underline{v}\cdot\underline{p}=0$. Then:$$\Huge (w_1,w_2,w_3)=d_\underline{p}F(v_1,v_2,v_3)=(av_1,bv_2,cv_3)$$and we conclude:$$\Huge \underline{w}\cdot\underline{\nabla}f(F(\underline{p}))=2\left(\frac{w_1x}{a}+\frac{w_2y}{b}+\frac{w_3z}{c}\right)=2(v_1x+v_2y+v_3z)=0$$confirming that $\underline{w}\in T_{F(\underline{p})}S$.
+
+# Isometries and conformal maps:
+
+We now consider a family of maps between regular surfaces:
+> Isometries are maps that preserve the length of tangent vectors and angles between them. In this case, an isometry $f:S_1\rightarrow S_2$ preserves the intrinsic geometry of both surfaces, however they may be embedded into $\Re^3$ differently.
+> Conformal maps preserve only angles.
+
+Let us consider an example to show that intrinsic geometry is preserved. Let $S_1\subset\Re^3$ be the subset $(0,2\pi)\times\Re\times\{0\}$, clearly a regular surface. Let $S_2\subset\Re^3$ be the cylinder with the vertical line $\{(1,0,v)\in\Re^3:v\in\Re\}$ removed, that is $S_2=\{(\cos u,\sin u,v):u\in(0,2\pi),v\in\Re\}$. Let $f:S_1\rightarrow S_2$ be given by $f(u,v,0)=(\cos u,\sin u,v)$. Then for any smooth curve $\underline{\alpha}:[a,b]\rightarrow S$ with $\underline{\alpha}(t)=(u(t),v(t),0)$ we have:$$\large L(\underline{\alpha})=\int_a^b||\underline{\alpha}'(t)||_{\underline{\alpha}(t)}dt=\int_a^b||(u',v',0)||dt=\int_a^b\sqrt{(u'(t))^2+(v'(t))^2}dt$$and:$$\Huge\begin{align*}
+L(f\circ\underline{\alpha})&=\int_a^b||(f\circ\underline{\alpha})'(t)||_{f\circ\underline{\alpha}(t)}dt\\
+&=\int_a^b||(-u'\sin u,u'\cos u,v')||dt\\
+&=\int_a^b\sqrt{(u'(t))^2+(v'(t))^2}dt
+\end{align*}$$So we see that $L(\circ\underline{\alpha})=L(\underline{\alpha})$, length is preserved under $f$. We now introduce the family of maps that preserve intrinsic geometry.
+
+## Isometries:
+A smooth map $f:S_1\rightarrow S_2$ between regular surfaces $S_1,S_2\subset\Re^3$ is called a local isometry if we have:$$\Huge \langle d_\underline{p}f(\underline{v}_1),d_\underline{p}f(\underline{v}_2)\rangle_{f(\underline{p})}=\langle \underline{v}_1,\underline{v}_2\rangle_\underline{p}$$for all $\underline{p}\in S_1$ and $\underline{v}_1,\underline{v}_2\in T_\underline{p}S_1$. If $f$ is a local isometry and also a diffeomorphism, then $f$ is called an isometry and $S_1,S_2$ are isometric to each other.
+
+We can verify that our example above is an isometry using this definition. It is clear that $f$ is a diffeomorphism. Moreover for all $\underline{p}=(u,v,0)\in S_1=(0,2\pi)\times\Re\times\{0\}$ we have:$$\Huge T_\underline{p}S_1=\Re^2\times\{0\}$$Let $\underline{v}=(a,b,0)\in T_\underline{p}S_1$, then we have:$$\Huge\begin{align*}
+d_\underline{p}f(\underline{v})&=\frac{d}{dt}f(\underline{p}+t\underline{v})|_{t=0}\\
+&=\frac{d}{dt}f(u+ta,v+tb,0)|_{t=0}\\
+&=\frac{d}{dt}(\cos(u+ta),\sin(u+ta),v+tb)|_{t=0}\\
+&=(-a\sin u,a\cos u,b)\in T_{f(\underline{p})}S_2
+\end{align*}$$Therefore:$$\large\begin{align*}
+\langle d_\underline{p}f(a_1,b_1,0),d_\underline{p}f(a_2,b_2,0)\rangle_{f(\underline{p})}&=\langle (-a\sin u,a\cos u,b),(-a\sin u,a\cos u,b)\rangle_{f(\underline{p})}\\
+&=a_1a_2+b_1b_2\\
+&=(a_1,b_1,0)\cdot(a_2,b_2,0)\\
+&=\langle (a_1,b_1,0),(a_2,b_2,0)\rangle_{\underline{p}}
+\end{align*}$$So we indeed have a local isometry. Note that the map $f$ is not a bijection, so the map is not a global isometry and $S_1,S_2$ are not isometric.
+
+Let $f:S_1\rightarrow S_2$ be a smooth map between regular surfaces $S_1,S_2\subset\Re^3$ and $\underline{x}:U\rightarrow S_1$ be a local parametrisation. Then the restriction of $f$ to $\underline{x}(U)\subset S_1$ is a local isometry if and only if:$$\Huge \langle f_u,f_u\rangle_{f\circ\underline{x}}=E,\,\,\langle f_u,f_v\rangle_{f\circ\underline{x}}=F,\,\,\langle f_v,f_v\rangle_{f\circ\underline{x}}=G$$where $E,F,G$ are the coefficients of the [[Tangent planes#First fundamental form|first fundamental form]] of $S_1$ wrt $\underline{x}$. We prove this as follows:
+> Firstly we assume that $f$ is a local isometry on $\underline{x}(U)\subset S_1$. Then we have for $\underline{p}=\underline{x}(\underline{q})$:$$\Huge\begin{align*}
+d_\underline{p}f(\underline{x}_u(\underline{q}))&=\frac{\partial (f\circ\underline{x})}{\partial u}(\underline{q})=f_u(\underline{q})\\
+d_\underline{p}f(\underline{x}_v(\underline{q}))&=\frac{\partial (f\circ\underline{x})}{\partial v}(\underline{q})=f_v(\underline{q})
+\end{align*}$$
+> Now using the definition of a local isometry we obtain:$$\Huge\begin{align*}
+\langle f_u(\underline{q}),f_v(\underline{q})\rangle_{f(\underline{p})}&=\langle d_\underline{p}f(\underline{x}_u(\underline{q})),d_\underline{p}f(\underline{x}_v(\underline{q}))\rangle_{f(\underline{p})}\\
+&=\langle \underline{x}_u(\underline{q}),\underline{x}_v(\underline{q})\rangle_\underline{p}=F(\underline{q})
+\end{align*}$$with similar derivations for $E,G$. This proves the forward implication.
+> Now for the converse, assume that we have the coefficients of the first fundamental form as above. Now we let:$$\Huge \underline{w}_1=a_1\underline{x}_u(\underline{q})+b_1\underline{x}_v(\underline{q}),\,\,\underline{w}_2=a_2\underline{x}_u(\underline{q})+b_2\underline{x}_v(\underline{q})\in T_\underline{p}S_1$$Then we compute:$$\large \begin{align*}
+\langle d_\underline{p}f(\underline{w}_1),d_\underline{p}f(\underline{w}_2)\rangle_{f(\underline{p})}&=a_1a_2\langle f_u,f_u\rangle+(a_1b_2+a_2b_1)\langle f_u,f_v\rangle+b_1b_2\langle f_v,f_v\rangle\\
+&=a_1a_2 E(\underline{q})+(a_1b_2+a_2b_1)F(\underline{q})+b_1b_2G(\underline{q})\\
+&=\langle a_1\underline{x}_u(\underline{q})+b_1\underline{x}_v(\underline{q}),a_2\underline{x}_u(\underline{q})+b_2\underline{x}_v(\underline{q})\rangle_{\underline{p}}\\
+&=\langle \underline{w}_1,\underline{w}_2\rangle_\underline{p}
+\end{align*}$$ua
+f
+\
