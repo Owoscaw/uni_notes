@@ -111,6 +111,41 @@ d_\underline{p}f(\underline{x}_v(\underline{q}))&=\frac{\partial (f\circ\underli
 &=a_1a_2 E(\underline{q})+(a_1b_2+a_2b_1)F(\underline{q})+b_1b_2G(\underline{q})\\
 &=\langle a_1\underline{x}_u(\underline{q})+b_1\underline{x}_v(\underline{q}),a_2\underline{x}_u(\underline{q})+b_2\underline{x}_v(\underline{q})\rangle_{\underline{p}}\\
 &=\langle \underline{w}_1,\underline{w}_2\rangle_\underline{p}
-\end{align*}$$ua
-f
-\
+\end{align*}$$
+
+Remarks:
+>Note that if $f:S_1\rightarrow S_2$ is a diffeomorphism between $\underline{x}(U)\subset S_1$ and $f(\underline{x}(U))\subset S_2$, then one can verify that $\underline{y}=f\circ\underline{x}:U\rightarrow S_2$ is also a local parametrisation of $S_2$. In this case we have $\underline{y}_u=f_u,\underline{y}_v=f_v$ and the isometry iff statement translates to:$$\Huge E_\underline{x}=E_\underline{y},\,\,F_\underline{x}=F_\underline{y},\,\,G_\underline{x}=G_\underline{y}$$where $E_\underline{x},E_\underline{y},\dots$ are the first fundamental forms wrt to $\underline{x},\underline{y}$ respectively.
+> Since the quadratic form $\underline{I}_\underline{p}:T_\underline{p}S\rightarrow\Re$ fully determines the bilinear form $\langle \cdot,\cdot\rangle_\underline{p}:T_\underline{p}S\times T_\underline{p}S\rightarrow\Re$, one can verify that a smooth map $f:S_1\rightarrow S_2$ is an isometry through the condition:$$\Huge \underline{I}_{f(\underline{p})}^{S_2}(d_\underline{p}\underline{v})=\underline{I}_\underline{p}^{S_1}(\underline{v})$$for all $\underline{p}\in S_1,\underline{v}\in T_\underline{p}S$.
+> A natural way to define distance between two points $\underline{p}_1,\underline{p}_2\in S$ of a connected regular surface $S$ is as follows:$$\large d_S(\underline{p}_1,\underline{p}_2)=\inf\{L(\underline{\alpha}):\underline{\alpha}:[0,1]\rightarrow S\text{ is smooth},\underline\alpha(0)=\underline{p}_1,\underline{\alpha}(1)=\underline{p}_2\}$$While isometries preserve lengths of individual curves, they may not preserve distance between two points. However if we have a global isometry $f:S_1\rightarrow S_2$ between connected regular surfaces $S_1,S_2\subset\Re^3$, then we have for any pair $\underline{p}_1,\underline{p}_2\in S_1$:$$\Huge d_{S_2}(f(\underline{p}_1),f(\underline{p}_2))=d_{S_1}(\underline{p}_1,\underline{p}_2)$$
+> A global isometry preserves all geometric properties.
+
+Let us consider the example of an isometry between a helicoid and a catenoid. The helicoid $S_1$ is given by the equation $x\sin z=y\cos z$ and is globally parametrised by:$$\Huge\underline{x}_1(u,v)=(\sinh v\cos u,\sinh v\sin u,u)$$The catenoid $S_2$ is given by the equation $x^2+y^2=\cosh^2z$ and is parametrised by:$$\Huge \underline{x}_2(u,v)=(\cosh v\cos u,\cosh v\sin u,v)$$We then find the coefficients of the first fundamental forms wrt $\underline{x}_1,\underline{x}_2$ in both cases to be:$$\Huge E_1=E_2=\cosh^2v,\,\,F_1=F_2=0,\,\,G_1=G_2=\cosh^2v$$that is, both local parametrisations are [[Tangent planes#First fundamental form|isothermal]]. Moreover the map $f=\underline{x}_2\circ\underline{x}_1^{-1}:S_1\rightarrow S_2$ is a local isometry. This immediately follows from our first remark above when we restrict $S_1$ to one twist of the helicoid $S_1$ as this makes the map a diffeomorphism.
+
+## Conformal maps:
+Let $f:S_1\rightarrow S_2$ be a smooth map between regular surfaces $S_1,S_2\subset\Re^3$. The map $f$ is called conformal if there is some smooth function:$$\Huge \lambda:S_1\rightarrow(0,\infty)$$such that:$$\Huge \langle d_\underline{p}f(\underline{w}_1),d_\underline{p}f(\underline{w}_2)\rangle_{f(\underline{p})}=\lambda(\underline{p})^2\langle \underline{w}_1,\underline{w}_2\rangle_\underline{p}$$for all $\underline{p}\in S_1$ and $\underline{w}_1,\underline{w}_2\in T_\underline{p}S_1$. The function $\lambda$ is known as the conformal factor of the map. We call $f$ a conformal diffeomorphism if $f$ is both a conformal map and a diffeomorphism.
+
+Note that a conformal map $f:S_1\rightarrow S_2$ with conformal factor $\lambda(\underline{p})=1$ for all $\underline{p}\in S_1$ is a local isometry and conformal diffeomorphisms with this property become global isometries. In this sense, conformal maps and diffeomorphisms are generalisations of local and global isometries.
+
+Let $f:S_1\rightarrow S_2$ be a conformal map. Then $f$ preserves angles between tangent vectors. That is to say, for all $\underline{p}\in S_1$ and $\underline{w}_1,\underline{w}_2\in T_\underline{p}S_1$:$$\Huge \cos\angle(\underline{w}_1,\underline{w}_2)=\frac{\langle \underline{w}_1,\underline{w}_2\rangle_{\underline{p}}}{||\underline{w}_1||^2_\underline{p}\cdot||\underline{w}_2||^2_\underline{p}}=\cos\angle(d_\underline{p}f(\underline{w}_1),d_\underline{p}f(\underline{w}_2))$$Which we prove by computing:$$\Huge\begin{align*}
+\cos\angle(d_\underline{p}f(\underline{w}_1),d_\underline{p}f(\underline{w}_2))&=\frac{\langle d_\underline{p}f(\underline{w}_1),d_\underline{p}f(\underline{w}_2)\rangle_{f(\underline{p})}}{\underline{I}_{f(\underline{p})}(d_\underline{p}f(\underline{w}_1))\cdot\underline{I}_{f(\underline{p})}(d_\underline{p}f(\underline{w}_2))}\\
+&=\frac{\langle \underline{w}_1,\underline{w}_2\rangle}{\underline{I}_\underline{p}(\underline{w}_1)\cdot\underline{I}_\underline{p}(\underline{w}_2)}\\
+&=\cos\angle(\underline{w}_1,\underline{w}_2)
+\end{align*}$$as required.
+
+Take the Gauss map as an example. We consider the catenoid, $S$, we previously considered with the parametrisation $\underline{x}(u,v)=(\cosh v\cos u,\cosh v\sin u,v)$. That is:$$\Huge S=\{\underline{x}(u,v):u\in[0,2\pi],v\in\Re\}$$Recall we found that the Gauss map of $S$ has form:$$\Huge N(\underline{x}(u,v))=\frac{1}{\cosh v}(\cos u,\sin u,-\sinh v)$$Here we have $N:S\rightarrow S^2$ where $S^2$ is the unit sphere at the origin. We show that $N$ is conformal with an equivalent definition; we look for a function $\lambda$ such that:$$\Huge \langle N_u,N_u\rangle_{N\circ\underline{x}}=\lambda^2E,\,\,\langle N_u,N_v\rangle_{N\circ\underline{x}}=\lambda^2F,\,\,\langle N_v,N_v\rangle_{N\circ\underline{x}}=\lambda^2G$$where $E,F,G$ are the coefficients of the first fundamental form of the catenoid $S$. We then find, using our previous computation of these coefficients:$$\Huge\begin{align*}
+\langle N_u,N_u\rangle_\underline{x}&=\frac{1}{\cosh^2v}=\frac{1}{\cosh^4v}E\\
+\langle N_u,N_v\rangle_\underline{x}&=0=\frac{1}{\cosh^4v}F\\
+\langle N_v,N_v\rangle_\underline{x}&=\frac{1}{\cosh^4v}(\sinh^2v+1)=\frac{1}{\cosh^4v}G
+\end{align*}$$So we find that $\lambda(u,v)=\frac{1}{\cosh^2v}$ and $N:S\rightarrow S^2$ is a conformal map.
+
+Global isometries from a surface $S$ onto itself are of particular importance. It is clear that a composition of two such isometries is also an isometry and that the inverse of such isometries are also isometries. The same is true for conformal diffeomorphisms. If $f_1:S\rightarrow S$ and $f_2:S\rightarrow S$ are two conformal diffeomorphisms with conformal factors $\lambda_1,\lambda_2$ respectively, then $f_2\circ f_2:S\rightarrow S$ and $f_1^{-1}:S\rightarrow S$ are again conformal diffeomorphisms with conformal factors $\lambda_1\cdot\lambda_2$ and $\lambda_1^{-1}$ respectively.
+
+Let $S$ be a regular surface. The set of all global isometries $f:S\rightarrow S$ as the structure of a [[Basics of groups|group]], such group is known as the isometry group of a regular surface, denoted as $\text{Iso}(S)$.
+
+Take for example the isometry group of the Hyperbolic plane. Let $\mathbb{H}^2=\{z=u+iv\in\mathbb{C}:>0\}$ be the upper half complex plane model of the Hyperbolic plane with:$$\Huge \langle w_1,w_2\rangle_z=\frac{\Re(w_1\bar w_2)}{\Im^2(z)}$$for $z\in\mathbb{H}^2$ and $w_1,w_2\in T_z\mathbb{H}^2$. One can verify that the maps:$$\Huge f_A(z)=\frac{az+b}{cz+d}$$of [[Mobius transform|Mobius transformations]] corresponding to matrices $A=\begin{pmatrix}a & b \\ c & d\end{pmatrix}\in SL_2(\Re)$ are isometries of $\mathbb{H}^2$. These maps form a group as we have:$$\Huge (f_A)^{-1}=f_{A^{-1}},\,\,f_{AB}=f_A\circ f_B$$
+
+### Conformal diffeomorphisms of $\Re^2$:
+Recalling our learning from complex analysis, we saw that orientation preserving conformal maps between open sets in $\Re^2$ are [[Complex differentiation#Holomorphicity|holomorphic maps]] between the same open sets with $\Re^2$ in $\mathbb{C}$. Furthermore, orientation preserving conformal diffeomorphism are equivalent to biholomorphic maps.
+
+The set of all biholomorphic maps in $\mathbb{C}$ are linear polynomials $f(z)=az+b$ with complex numbers $a,b\in\mathbb{C}$ with $a\neq0$. The conformal factor of $f$ is then $\lambda(z)=|a|$
+
