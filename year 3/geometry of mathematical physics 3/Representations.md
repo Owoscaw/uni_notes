@@ -196,3 +196,13 @@ Continuing our example, we know that we can decompose the representations actin 
 More generally, tensor products can be decomposed into irreducible representations:$$\Huge r_{V\otimes W}(G)=\bigoplus_ir_{V_i}(G)$$whenever we know any representation of $G$ can be decomposed into irreducible representations. The change of basis relating the natural basis of the tensor product to a basis showing the decomposition on the RHS of the above equation is a well-known problem, and the coefficients appearing in the change of basis are called "Clebsch-Gordan coefficients". 
 
 There are a number of examples in physics in which $2\otimes\bar 2=1\otimes3,2\otimes2=1\otimes3$ play an important role in organising degrees of freedom of a theory. Two important ones are explained below:
+
+## Spin $1/2$:
+The rotation group in $\Re^3$ is exactly the group $SO(3)$. We saw that $SO(3)=SU(2)/\mathbb{Z}_2$. It turns out that the relevant group that describes rotations acting on fermions is $SU(2)$, not $SO(3)$. The relation between normal rotations and maps in $SU(2)$ is exactly the homomorphism we found earlier. This means that we can write the wave function of a fermion as:$$\Huge\psi=\begin{pmatrix}\psi_+ \\ \psi_-\end{pmatrix}$$which lives in the $2$ representations of $SU(2)$ under rotations. If we have a system composed of two fermions $\psi_1,\psi_2$, we can write the total wavefunction $\Psi$ as a tensor product of the two:$$\Huge \Psi=\psi_1\otimes\psi_2$$and hence the whole system lives in the $2\otimes2$ representation. Decomposing this into irreducible representations yields a singlet and triplet of wavefunctions.
+
+## Quarks:
+The two lightest quarks are the up and down quarks, with nearly identical masses and opposite electric charges. These form bound states known as baryons, which make up protons, neutrons, etc. The simplest bound states are composed of two quarks, known as mesons. 
+
+The strong nuclear force binds mesons together and is much stronger than the electromagnetic force at this scale. We can combine the wavefunctions of the up and down quark into one:$$\Huge\psi_q=\begin{pmatrix}\psi_u \\ \psi_d\end{pmatrix}$$and the statement that they are identical in strong force interactions is equivalent to an $SU(2)$ symmetry acting in the $2$ on $\psi_q$. This means that bound states of a quark and anti-quark transform in the $2\otimes\bar 2=1\otimes 3$ representation. The triplet here is simply the pions $(\pi^+,\pi^-,\pi^0)$. 
+
+There exists a third quark known as the strange quark, which has similar mass to the other two. This promotes our working group from $SU(2)$ to $SU(3)$, and so we should be studying $3\otimes\bar 3=1\otimes8$ for mesons and:$$\Huge 3\otimes3\otimes3=1\otimes8\otimes8\otimes10$$for baryons.

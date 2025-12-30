@@ -130,4 +130,37 @@ We have one more option for filling the void, mixing both techniques. We can cre
 \alpha&\frac{\alpha t}{2}<x<\alpha t \\
 \frac{x}{t}&\alpha t<x<t \\
 1&x>t\end{cases}$$where we get a rarefaction wave in:$$\Huge \{(x,t)\in\Re\times(0,\infty):\alpha t<x<t\}$$and a shock curve along:$$\Huge C=\left\{\left(\frac{\alpha t}{2},t\right):t>0\right\}$$![[Weak formulation 2025-12-11 05.04.45.excalidraw]]
-# Entropy conditions
+# Entropy conditions:
+
+A selection criterion for weak integral solution was proposed by Peter Lax in the 1960s:
+
+A shock $C$ is said to satisfy Lax' entropy condition if:$$\Huge c(u_r(\sigma(t),t))<\dot\sigma(t)<c(u_l(\sigma(t),t)),\,\,\forall(\sigma(t),t)\in C$$A weak integral solution for a conservation law is said to satisfy Lax' entropy condition if all of its shocks satisfy the above.
+
+The geometric interpretation of this condition is equivalent to the notion that characteristics cannot emerge from shocks. This fits our physical intuition that we cannot trace back along characteristics to a discontinuity:![[Weak formulation 2025-12-27 15.03.50.excalidraw]]
+Take for example Burger's equation:$$\Huge \begin{cases}\partial_tu(x,t)+u(x,t)\partial_xu(x,t)=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$with $u_0(x)=\begin{cases}0&x<0 \\1&x>0\end{cases}$. The only weak integral solution out of the infinitely many we presented that satisfies Lax' entropy condition is the one involving only a rarefaction wave. As this had no shock curves, it automatically satisfies the condition.
+
+Assume that the flux function $f$ of our conservation law is in $C^2(\Re)$ and is uniformly convex. Then a shock curve $C$ will satisfy Lax' entropy condition if and only if:$$\Huge u_l(\sigma(t),t)>u_r(\sigma(t),t),\,\,\forall(\sigma(t),t)\in C$$Proof:
+> A shock curve is defined by the Rankine-Hugoniot condition:$$\Huge f(u_l(\sigma(t),t))-f((\sigma(t),t))=\dot\sigma(t)(u_l(\sigma(t),t)-u_r(\sigma(t),t))$$When $f$ is continuously differentiable we can use the mean value theorem for any given $t$ to find some $u_*(\sigma(t),t)$ between $u_l,u_r$ such that:$$\large f'(u_*(\sigma(t),t))(u_l(\sigma(t),t)-u_r(\sigma(t),t))=\dot\sigma(t)(u_l(\sigma(t),t)-u_r(\sigma(t),t))$$From which we can conclude that:$$\Huge c(u_*(\sigma(t),t))=f'(u_*(\sigma(t),t))=\dot\sigma(t)$$Since by definition $u_l\neq u_r$. In addition we notice that as $c'=f''\geq\lambda>0$, $c$ must be strictly increasing. If $u_l>u_r$ we can use the monotonicity of $c$ and the fact that:$$\Huge u_r(\sigma(t),t)<u_*(\sigma(t),t)<u_l(\sigma(t),t)$$to conclude:$$\Huge c(u_r(\sigma(t),t))<c(u_*(\sigma(t),t))=\dot\sigma(t)<c(u_l(\sigma(t),t))$$as required.
+> Conversely if the entropy condition is satisfied then:$$\Huge c(u_r(\sigma(t),t))<c(u_l(\sigma(t),t))\implies u_l>u_r$$as $c$ is monotone.
+
+While Lax' entropy condition usually limits the number of weak integral solutions, it is not enough to guarantee uniqueness. To achieve uniqueness we must look at a more refined notion of entropy solutions introduced by Stanislav Kruzhkov.
+
+We say that a weak integral solution to the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+\partial_xf(u(x,t))=0&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$is an entropy solution if there exists some constant $C>0$ such that $u$ satisfies the one-sided jump condition:$$\Huge u(x+z,t)-u(x,t)\leq C\left(1+\frac{1}{t}\right)z$$for all $(x,t)\in\Re\times(0,\infty)$ and $z>0$. It can be shown that if $u$ is an entropy solution to a conservation law with a uniformly convex flux function $f$, then $u$ automatically satisfies Lax' entropy condition. These solutions are the "right" solutions to look for in many cases.
+
+## Existence and uniqueness of entropy solutions:
+Consider the conservation law:$$\Huge\begin{cases}\partial_tu(x,t)+\partial_xf(u(x,t))&(x,t)\in\Re\times(0,\infty) \\
+u(x,0)=u_0(x)&x\in\Re\end{cases}$$and assume that $f\in C^\infty(\Re)$ is uniformly convex and that $u_0\in L^\infty(\Re)$. Then there exists a unique entropy solution to the conservation law. The proof of this is beyond the scope of these notes.
+
+Recall that we showed that:$$\Huge u(x,t)=\begin{cases}0 & x<0 \\
+x/t & 0\leq x<t,t>0 \\
+1 & x>t\end{cases}$$is a continuous weak integral solution to the conservation law above with $f(u)=u^2/2$ and $u_0(x)=\begin{cases}0 & x<0\\1 & x>0\end{cases}$. As $f\in C^2(\Re)$ is uniformly convex and $u_0\in L^\infty(\Re)$ we must have a unique entropy solution. For any $x\in\Re,t>0,z>0$ we have:$$ u(x+z,t)-u(x,t)=\begin{cases}0 & x+z<0\text{ or }x>t \\
+\frac{x+z}{t} & x<0\text{ and }0<x+z<t \\
+1 & x<0\text{ and }x+z>t \\
+\frac{x+z}{t}-\frac{x}{t} & 0<x<x+z<t \\
+1-\frac{x}{t} & 0<x<t<x+z\end{cases}\leq\begin{cases}0 \\
+z/t \\
+\frac{x+z}{t} \\
+z/t \\
+\frac{x+z}{t}-\frac{x}{t}\end{cases}\leq z/t\leq\left(1+\frac{1}{t}\right)z$$so $u(x,t)$ satisfies the condition with the bound $C=1$.
