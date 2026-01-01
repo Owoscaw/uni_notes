@@ -171,3 +171,44 @@ Extending to two dimensions we have:$$\Huge\begin{align*}
 \hat H |x_n,n_y\rangle&=\hbar\omega(n_x+n_y+1)|n_x,n_y\rangle
 \end{align*}$$Showing that the $2D$ oscillator is degenerate.
 
+## The Fermionic SHO:
+The SHO we considered before are "Bosonic", meaning that we can add as many "quanta" as we desire by acting with $\hat a^\dagger$ on the ground state. This is different from the fermionic case, where we must obey Pauli's Exclusion Principle. This principle dictates that no two fermionic quanta can occupy the same state. 
+
+The Hamiltonian for this system is then:$$\Huge \begin{align*}
+\hat H&=\hbar\omega\hat b^\dagger\hat b\\
+\{\hat b^\dagger,\hat b\}&=\hat b^\dagger\hat b+\hat b\hat b^\dagger=1\\
+\{\hat b^\dagger,\hat b^\dagger\}&=\{\hat b,\hat b\}=0
+\end{align*}$$Note that this implies:$$\Huge \{\hat b^\dagger,\hat b^\dagger\}=0\iff2\hat b^\dagger\hat b^\dagger=0\iff(\hat b^\dagger)^2=0$$Now we let $\hat H=\hbar\omega\hat N$, that is define $\hat N=\hat b^\dagger\hat b$ and observe $\hat N^2$:$$\Huge\begin{align*}
+\hat N^2&=\hat b^\dagger\hat b\hat b^\dagger\hat b\\
+&=\hat b^\dagger(\{\hat b,\hat b^\dagger\}-\hat b^\dagger\hat b)\hat b\\
+&=\hat b^\dagger(1-\hat b^\dagger\hat b)\hat b\\
+&=\hat b^\dagger\hat b-(\hat b^\dagger)^2\hat b^2\\
+&=\hat b^\dagger\hat b=\hat N
+\end{align*}$$Therefore the eigenvalues of $\hat N$ are $0$ or $1$ since:$$\Huge \begin{align*}
+\hat N |n\rangle&=n |n\rangle\\
+\hat N^2|n\rangle&=n\hat N |n\rangle\\
+&=n^2|n\rangle\\
+\implies n^2&=n\\
+\implies n&=0\text{ or }1
+\end{align*}$$Therefore the eigenvalues of $\hat H$ are either $0$ or $\hbar\omega$. This exactly embodies Pauli's exclusion principle as it forces different states to have different quanta. Note that in principle, we could have degeneracy (more than one state with $\hat N |0,s\rangle=0$ with $s=0,1,\dots$). We assume non-degeneracy to simplify the system:$$\Huge \begin{align*}
+\hat N |0\rangle&=0\\
+\iff\hat b^\dagger\hat b |0\rangle&=0\\
+\implies \langle 0|\hat b^\dagger\hat b |0\rangle&=0\\
+\implies \hat b |0\rangle&=0
+\end{align*}$$That is, $|0\rangle$ is an eigenvector of $\hat b$ with eigenvalue $0$.$$\Huge\begin{align*}
+\hat N\hat b^\dagger |0\rangle&=\hat b^\dagger\hat b\hat b^\dagger |0\rangle\\
+&=\hat b^\dagger(\{\hat b,\hat b^\dagger\}-\hat b^\dagger\hat b)|0\rangle\\
+&=1\cdot\hat b^\dagger |0\rangle\\
+\implies |1\rangle&=c\hat b^\dagger |0\rangle\\
+\implies \langle 1|1\rangle&=|c|^2\langle 0|\hat b\hat b^\dagger |0\rangle\\
+&=|c|^2\langle 0|\{\hat b,\hat b^\dagger\}-\hat b^\dagger\hat b |0\rangle\\
+&=|c|^2 \langle 0|0\rangle\\
+&=|c|^2\\
+\implies c&=1
+\end{align*}$$It only remains to check $\hat b |1\rangle$ and $\hat b^\dagger |1\rangle$ to complete the system:$$\Huge\begin{align*}
+\hat b |1\rangle&=\hat b\hat b^\dagger |0\rangle\\
+&=(\{\hat b,\hat b^\dagger\}-\hat b^\dagger\hat b)|0\rangle\\
+&=|0\rangle\\
+\hat b^\dagger |1\rangle&=(\hat b^\dagger)^2|0\rangle\\
+&=0
+\end{align*}$$

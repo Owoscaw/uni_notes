@@ -66,3 +66,64 @@ D_t^mD_x^n(e^\theta\cdot1)&=(-1)^{m+n}D_t^mD_x^n(1\cdot e^\theta)=b^ma^ne^\theta
 > $a=0$ makes $f$ independent of $x$ and therefore $u=0$, trivial.
 > $b=-a^4$, then:$$\Huge f=1+e^{ax-a^3t+c}\implies u=2\frac{\partial^2}{\partial x^2}\log(1+e^{ax-a^3t+c})$$which is exactly the one-soliton solution with $v=a^2$ up to redefinition of constants.
 
+## The $N$-soliton solution:
+We look for a power series solution in an auxiliary parameter $\epsilon$:$$\Huge f(x,t)=\sum_{n=0}^\infty\epsilon^2f_n(x,t),\,\,f_0=1$$and hope/pray that the series terminates at some value of $n$, so we can take $\epsilon$ to be finite and eventually set it to $1$.
+
+We will write the bilinear form of KdV as:$$\Huge B(f\cdot f)=0,\,\,B=D_tD_x+D_x^4$$We now substitute our power series:$$\Huge\begin{align*}
+0&=B\left(\sum_{n_1=0}^\infty\epsilon^{n_1}f_{n_1}\cdot\sum_{n_2=0}^\infty\epsilon^{n_2}f_{n_2}\right)\\
+&=\sum_{n_1=0}^\infty\sum_{n_2=0}^\infty\epsilon^{n_1+n_2}B(f_{n_1}\cdot f_{n_2})
+\end{align*}$$where we have used the bilinearity of the Hirota operator $B$. Gathering terms of the same degree in $\epsilon$, we can rewrite this as:$$\Huge 0=\sum_{n=0}^\infty\epsilon^n\sum_{m=0}^nB(f_{n-m}\cdot f_m)=_{B(1\cdot 1)=0}\sum_{n=1}^\infty\epsilon^n\sum_{m=0}^nB(f_{n-m}\cdot f_m)$$Now we solve this order by order in $\epsilon$. We find that:$$\Huge \sum_{m=0}^nB(f_{n-m}\cdot f_m)=0,\,\,\forall n=1,2,\dots$$with $f_0=1$. We can then write this as:$$\Huge B(f_n\cdot 1)+B(1\cdot f_n)=\text{expression in }f_1,\dots,f_{n-1}$$This makes it clear that we can solve our equation order by order recursively to determine the Taylor coefficients of $f$. To do this we need another lemma:
+> For any function $f$:$$\Huge D_t^mD_x^n(f\cdot 1)=(-1)^{m+n}D_t^mD_x^n(1\cdot f)=\frac{\partial^m}{\partial t^m}\frac{\partial^n}{\partial x^n}f$$
+
+Using this, we can write our recursion relation as:$$\Huge \frac{\partial }{\partial x}\left(\frac{\partial }{\partial t}+\frac{\partial^3}{\partial x^3}\right)f_n=-\frac{1}{2}\sum_{m=1}^{n-1}B(f_{n-m}\cdot f_m)$$which is valid for all $n=1,2,\dots$. Following this, which determines $f_n$ in terms of all $f_m$ with $m<n$, we refer to the above as $A_n$. 
+
+For $n=1,A_1$ reduces to:$$\Huge\frac{\partial }{\partial x}\left(\frac{\partial }{\partial t}+\frac{\partial^3}{\partial x^3}\right)f_1=0\implies \left(\frac{\partial }{\partial t}+\frac{\partial^3 }{\partial x^3}\right)f_1=0$$with appropriate BCs. This is a linear equation, and a simple solution is:$$\Huge f_1=\sum_{i=1}^Ne^{a_ix-a_i^3t+c_i}=\sum_{i=1}^Ne^{\theta_i}$$where $a_i,c_i$ are constants of integration.
+
+Each higher $f_n$ can then be determined recursively using $A_n$. With our form of $f_1$, our power series expansion will terminate at order $N$ by definition. All higher equations $A_{n>N}$ are solved with $f_{n>N}=0$. This requires that $f_1,\dots,f_N$ satisfy the consistency conditions that the RHS of $A_n$ vanish for $n=N+1,\dots,2N$. The $N$-soliton solution of KdV is then given by:$$\Huge f=1+f_1+f_2+\dots+f_N$$where we set $\epsilon=1$. Examples:
+> Take $N=1$. In this case, $f_1=e^{a_1x-a_1^3t+c_1}=e^{\theta_1}$, and $A_2$ will then read:$$\Huge\partial_x(\partial_t+\partial_x^3)f_2=-\frac{1}{2}B(e^{\theta_1}\cdot e^{\theta_1})=0$$and so we take $f_2=0$ (and all subsequent $f_{n>2}$). Setting $\epsilon=1$ we get the final solution:$$\Huge f=1+e^{\theta_1}$$which is in agreement with our previous findings.
+> Take $N=2$. In this case, $f_1=e^{\theta_1}+e^{\theta_2}$ and equation $A_2$ becomes:$$\Huge\begin{align*}
+\partial_x(\partial_t+\partial_x^3)f_2&=-\frac{1}{2}B(e^{\theta_1}+e^{\theta_2}\cdot e^{\theta_1}+e^{\theta_2})\\
+&=-B(e^{\theta_1}\cdot e^{\theta_2})\\
+&=-(a_1-a_2)(-a_1^3+a_1^3+(a_1-a_2)^3)e^{\theta_1+\theta_2}\\
+&=3a_1a_2(a_1-a_2)^2e^{\theta_1+\theta_2}
+\end{align*}$$To solve this, we try $f_2=Ae^{\theta_1+\theta_2}$ for some constant $A$:$$\Huge\begin{align*}
+(a_1+a_2)(-a_1^3-a_2^3+(a_1+a_2)^3)Ae^{\theta_1+\theta_2}&=3a_1a_2(a_1-a_2)^2e^{\theta_1+\theta_2}\\
+\implies 3a_1a_2(a_1+a_2)^3A&=3a_1a_2(a_1-a_2)^2\\
+\implies A&=\left(\frac{a_1-a_2}{a_1+a_2}\right)^2
+\end{align*}$$and so our solution is:$$\Huge f=1+e^{\theta_1}+e^{\theta_2}+\left(\frac{a_1-a_2}{a_1+a_2}\right)^2e^{\theta_1+\theta_2}$$
+
+We now aim to generalise to any $N$. Let us first rewrite our $2$-soliton solution:$$\Huge\begin{align*}
+f&=(1+e^{\theta_1})(1+e^{\theta_2})-e^{\theta_1+\theta_2}+\left(\frac{a_1-a_2}{a_1+a_2}\right)^2e^{\theta_1+\theta_2}\\
+&=(1+e^{\theta_1})(1+e^{\theta_2})-\frac{4a_1a_2}{(a_1+a_2)^2}e^{\theta_1+\theta_2}\\
+&=\det\begin{pmatrix}1+e^{\theta_1} & \frac{2a_1}{a_1+a_2}e^{\theta_2}\\
+\frac{2a_2}{a_1+a_2}e^{\theta_1} & 1+e^{\theta_2}\end{pmatrix}
+\end{align*}$$This gives us a hint for general $N$:$$\Huge f=\det S,\,\,S_{ij}=\delta_{ij}+\frac{2a_i}{a_i+a_j}e^{\theta_j}$$with $i,j\in\{1,\dots,N\}^2$. This is proven by induction. One can also show that:$$\Huge f_n=\sum_{1\leq i_1<i_2<\dots<i_n\leq N}e^{\theta_{i_1}+\theta_{i_2}+\dots+\theta_{i_n}}\prod_{1\leq j<k\leq n}\left(\frac{a_{i_j}-a_{i_k}}{a_{i_j}+a_{i_k}}\right)^2$$
+
+# Asymptotics of $2$-soliton solutions/phase shifts:
+
+It remains to check that our method is actually producing solitons. To verify this, we look at our $2$-soliton solution. To do this, we will switch to an appropriate comoving frame and take $t\to\pm\infty$.
+
+Recall our solution:$$\Huge f=1+e^{\theta_1}+e^{\theta_2}+Ae^{\theta_1+\theta_2},\,\,\theta_i=a_ix-a_i^3t+c_i,\,\,A=\left(\frac{a_1-a_2}{a_1+a_2}\right)^2$$We can take $0<a_1<a_2$ WLOG so then $v_1=a_1^2<v_2=a_2^2$. We follow the slower soliton first:
+
+## Slower soliton $v_1$:
+We take $t\to\pm\infty$ with $X_{a_1^2}=x-a_1^2t$ fixed:$$\Huge\begin{align*}
+\implies\theta_1&=a_1X_{a_1^2}+c_1\\
+\implies\theta_2&=a_1(X_{a_1^2}-(a_2^2-a_1^2)t)+c^2
+\end{align*}$$We now consider our limits:
+> Taking $t\to+\infty$, we see that $\theta_1$ remains fixed and $\theta_2\to-\infty$ and so:$$\Huge f\to1+e^{\theta_1}$$which describes a KdV soliton centered at:$$\Huge x_\text{center}(t)=a_1^2t-\frac{c_1}{a_1}$$
+> Taking $t\to-\infty$, we see that $\theta_1$ remains fixed and $\theta_2\to+\infty$ and so:$$\Huge f\to e^{\theta_2}(1+Ae^{\theta_1})$$The prefactor $e^{\theta_2}$ is irrelevant as:$$\Huge\begin{align*}
+u&=2\frac{\partial^2}{\partial x^2}\log f=2\frac{\partial^2}{\partial x^2}(\theta_2+\log(1+Ae^{\theta_1}))\\
+&=2\frac{\partial^2}{\partial x^2}\log(1+Ae^{\theta_1})\\
+&=2\frac{\partial^2}{\partial x^2}\log(1+e^{a_1x-a_1^3t+c_1+\log A})
+\end{align*}$$where we used the fact that $\theta_2$ is linear in $x$. This describes a KdV soliton centered at:$$\Huge x_\text{center}(t)=a_1^2t-\frac{c_1+\log A}{a_1}$$
+
+Therefore, the slower soliton has a negative phase shift:$$\Huge\text{Phase shift}_\text{slower}=\frac{1}{a_1}\log A=-\frac{2}{a_1}\log\left|\frac{a_2+a_1}{a_2-a_1}\right|<0$$
+## Faster soliton $v_2$:
+We now take $t\to\pm\infty$ with $X_{a_2^2}=x-a_2^2t$ fixed:$$\Huge\begin{align*}
+\implies\theta_1&=a_1(X_{a_2^2}-(a_1^2-a_2^2)t)+c_1\\
+\implies\theta_2&=a_2X_{a_2^2}+c_2
+\end{align*}$$Now our limits are:
+> Taking $t\to-\infty$ we see that $\theta_1\to-\infty$ and $\theta_2$ remains fixed:$$\Huge f\to1+e^{\theta_2}$$which describes a KdV soliton centered at:$$\Huge x_\text{center}(t)=a_2^2t-\frac{c_2}{a_2}$$
+> Taking $t\to+\infty$ we see that $\theta_1\to+\infty$ and $\theta_2$ remains fixed:$$\Huge f\to e^{\theta_1}(1+Ae^{\theta_2})$$which describes a KdV soliton centered as:$$\Huge x_\text{center}(t)=a_2^2t-\frac{c_2+\log A}{a_2}$$
+
+Therefore the faster soliton has a positive phase shift:$$\Huge\text{Phase shift}_\text{faster}=-\frac{1}{a_2}\log A=\frac{2}{a_2}\log\left|\frac{a_2+a_1}{a_2-a_1}\right|>0$$
