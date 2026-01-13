@@ -1,5 +1,5 @@
 
-We saw that in "simple" settings, we can find [[year 3/partial differential equations 3/Conservation laws#Breakdown of classical solutions|classical solutions to conservation laws]] up to some critical time. We would like to extend our solutions past this critical time and get some notion of a solution in $\Re\times(0,\infty)$. One issue with this is the derivatives blowing up at critical time, so we try to find a way to circumvent them. 
+We saw that in "simple" settings, we can find [[year 3/partial differential equations 3/term 1/Conservation laws#Breakdown of classical solutions|classical solutions to conservation laws]] up to some critical time. We would like to extend our solutions past this critical time and get some notion of a solution in $\Re\times(0,\infty)$. One issue with this is the derivatives blowing up at critical time, so we try to find a way to circumvent them. 
 
 To do this, we can try to recast the PDE in an integral form and move the derivatives to some other function. Such functions must belong to a well behaved class in order to retain PDE information. 
 
