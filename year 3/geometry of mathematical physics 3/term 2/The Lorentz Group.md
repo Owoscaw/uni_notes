@@ -19,5 +19,12 @@ Let $\Lambda$ have components $\Lambda_\nu^\mu$ and assume $\Lambda$ linearly ma
 x^\mu\to(x^\mu)'&=\Lambda_\nu^\mu x^\nu\\
 x_\mu=\eta_{\mu\rho}x^\rho\to x_\mu'&=\eta_{\mu\rho}(x^\rho)'\\
 &=\eta_{\mu\rho}\Lambda_\nu^\rho x^\nu\\
-&=\eta_{\mu\rho}\Lambda_\nu^\rho\eta^{}
+&=\eta_{\mu\rho}\Lambda_\nu^\rho\eta^{\nu\sigma}x_\sigma\\
+&=x_\sigma(\eta\Lambda^T\eta)_\mu^\sigma\\
+&=x_\sigma(\Lambda^{-1})_\mu^\sigma
 \end{align*}$$
+Objects $x^\mu$ transforming as above are called Lorentz vectors, while objects transforming like $x_\mu$ are called Lorentz covectors. We can think of the matrix $\eta$ as a map that sends every vector to a covector and vice-versa.
+
+Whenever we contract upper and lower indices, we have get something that is invariant under the Lorentz group. By extension, it is customary to put upper/lower indices on objects that have the same transformation behaviour as $x^\mu,x_\mu$. The same rule for constructing invariants then exists there as well.
+
+Let us now examine the global st
