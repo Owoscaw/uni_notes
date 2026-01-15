@@ -34,4 +34,5 @@ Let us now examine the global structure of the Lorentz group $L$. Clearly, the d
 The orthochronous transformations keep the flow of time in the same direction. We therefore have four components. The maps $\Lambda_T=\text{diag}(-1,1,1,1)$ (time reversal) and $\Lambda_P=\text{diag}(1,-1,-1,-1)$ (parity) generate the whole group together with $L^\uparrow_+$. We can use $\Lambda_T,\Lambda_P,\Lambda_T\Lambda_P$ to map any group element to $L_+^\uparrow$, which implies we can write any group element in $L$ as a product of $\Lambda\in L_+^\uparrow$ with $\Lambda^a_T\Lambda^b_P$ for $a,b\in(0,1)$.  
 
 The component of $L$ that is continuously connected to the identity is the proper orthochronous Lorentz group $L_+^\uparrow$ which admits the following decomposition:
-> We propose that every proper orthochronous Lorentz transformation $\Lambda\in L_+^\uparrow$ has a unique decomposition as:$$\Huge\Lambda=B(\underline{v})\begin{pmatrix}1\end{pmatrix}$$
+> We propose that every proper orthochronous Lorentz transformation $\Lambda\in L_+^\uparrow$ has a unique decomposition as:$$\Huge\Lambda=B(\underline{v})\begin{pmatrix}1 &  \\  & R\end{pmatrix}$$where $B(\underline{v})$ is a boost with parameter:$$\Huge v^i/c=\Lambda_0^i/\Lambda_0^0$$and $R$ is an element of $SO(3)$ given by:$$\Huge R^{ik}=\Lambda^i_k-\frac{1}{1+\Lambda_0^0}\Lambda_0^i\Lambda_k^0$$
+> 
