@@ -75,7 +75,7 @@ Another possible velocity that satisfies the boundary conditions is an axisymmet
 \end{align*}$$Making the full pressure:$$\Huge p(\underline{x})=p_\text{atm}-\rho gz+\int\rho_0\frac{G(r)^2}{r}dr$$
 # Conservation of energy:
 
-We ask what are the [[year 3/solitons 3/Conservation laws#Standard methodology|conserved quantities]] for the incompressible Euler equations. Firstly, we consider kinetic energy.
+We ask what are the [[year 3/solitons 3/term 1/Conservation laws#Standard methodology|conserved quantities]] for the incompressible Euler equations. Firstly, we consider kinetic energy.
 
 ## Kinetic energy:
 For a fluid region $V$, we define the kinetic energy as:$$\Huge E=\frac{1}{2}\int_V\rho_0|\underline{u}|^2dV$$Verifying that it is indeed conserved:$$\Huge\begin{align*}

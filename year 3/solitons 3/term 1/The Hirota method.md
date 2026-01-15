@@ -7,7 +7,7 @@ Substituting $u=w_x$ into the KdV equation gives:$$\Huge w_{xt}+6w_xw_{xx}+w_{xx
 \epsilon^1&:w_{1t}+w_{1xxx}=0\\
 \epsilon^2&:w_{2t}+3w_{1x}^2+w_{2xxx}=0\\
 \vdots
-\end{align*}$$In principle we can solve these equations, as we did for the [[year 3/solitons 3/Conservation laws#The Gardner transform|Gardner transform]]. However:
+\end{align*}$$In principle we can solve these equations, as we did for the [[year 3/solitons 3/term 1/Conservation laws#The Gardner transform|Gardner transform]]. However:
 > An infinite amount of equations must be solved for an exact formula for $w$
 > The method could be saved if it happened that $w_m=0$ for all $m>n$ for some $n$. Then the approximate solution up to order $n$ would be exact.
 > This does not happen.

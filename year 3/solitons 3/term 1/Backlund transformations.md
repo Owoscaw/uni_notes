@@ -29,7 +29,7 @@ f'(y)=-2y\end{cases}\implies f(y)=-y^2+C$$so we find that $u(x,y)=x^2-y^2+C$ for
 
 # Backlund transformations for [[Travelling Waves#The sine-Gordon equation|sine-Gordon]]:
 
-Firstly, we rewrite the sine-Gordon equation by changing variables to [[year 3/solitons 3/Conservation laws#Relativistic field equations|light-cone]] coordinates:$$\Huge x_+=\frac{1}{2}(t+x),\,\,x_-=\frac{1}{2}(t-x)$$Recall we found the form of the derivative operator:$$\Huge\frac{\partial^2}{\partial x_+\partial x_-}=\frac{\partial^2}{\partial t^2}-\frac{\partial^2}{\partial x^2}$$making the sine-Gordon equation:$$\Huge u_{+-}=-\sin u$$We then define the BT:$$\Huge\begin{align*}
+Firstly, we rewrite the sine-Gordon equation by changing variables to [[year 3/solitons 3/term 1/Conservation laws#Relativistic field equations|light-cone]] coordinates:$$\Huge x_+=\frac{1}{2}(t+x),\,\,x_-=\frac{1}{2}(t-x)$$Recall we found the form of the derivative operator:$$\Huge\frac{\partial^2}{\partial x_+\partial x_-}=\frac{\partial^2}{\partial t^2}-\frac{\partial^2}{\partial x^2}$$making the sine-Gordon equation:$$\Huge u_{+-}=-\sin u$$We then define the BT:$$\Huge\begin{align*}
 \partial_+(u-v)&=\frac{2}{a}\sin\left(\frac{1}{2}(u+v)\right)\\
 \partial_-(u+v)&=-2a\sin\left(\frac{1}{2}(u-v)\right)
 \end{align*}$$with $a\in\Re$ a constant parameter. To check that this is valid, we differentiate the first expression wrt $x_-$ and the second wrt $x_+$:$$\Huge\begin{align*}
