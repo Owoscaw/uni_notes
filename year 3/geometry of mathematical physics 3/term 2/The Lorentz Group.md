@@ -31,4 +31,7 @@ Let us now examine the global structure of the Lorentz group $L$. Clearly, the d
 > $L^\uparrow$ where $\Lambda_0^0\geq1$ are called the orthochronous Lorentz transformations
 > $L^\downarrow$ where $\Lambda_0^0\leq-1$ are called the non-orthochronous Lorentz transformations
 
-The orthochronous transformations keep the flow of time in the same direction. We therefore have four components. The maps $\Lambda_T=\text{diag}(-1,1,1,1)$ (time reversal) and $\Lambda_P=\text{diag}(1,-1,-1,-1)$ (parity) generate the whole group together with $L^\uparrow_+$. We can use $\Lambda_T,\Lambda_P,\Lambda_T\lambd$  
+The orthochronous transformations keep the flow of time in the same direction. We therefore have four components. The maps $\Lambda_T=\text{diag}(-1,1,1,1)$ (time reversal) and $\Lambda_P=\text{diag}(1,-1,-1,-1)$ (parity) generate the whole group together with $L^\uparrow_+$. We can use $\Lambda_T,\Lambda_P,\Lambda_T\Lambda_P$ to map any group element to $L_+^\uparrow$, which implies we can write any group element in $L$ as a product of $\Lambda\in L_+^\uparrow$ with $\Lambda^a_T\Lambda^b_P$ for $a,b\in(0,1)$.  
+
+The component of $L$ that is continuously connected to the identity is the proper orthochronous Lorentz group $L_+^\uparrow$ which admits the following decomposition:
+> We propose that every proper orthochronous Lorentz transformation $\Lambda\in L_+^\uparrow$ has a unique decomposition as:$$\Huge\Lambda=B(\underline{v})\begin{pmatrix}1\end{pmatrix}$$
