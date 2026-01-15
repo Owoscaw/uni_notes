@@ -35,4 +35,6 @@ The orthochronous transformations keep the flow of time in the same direction. W
 
 The component of $L$ that is continuously connected to the identity is the proper orthochronous Lorentz group $L_+^\uparrow$ which admits the following decomposition:
 > We propose that every proper orthochronous Lorentz transformation $\Lambda\in L_+^\uparrow$ has a unique decomposition as:$$\Huge\Lambda=B(\underline{v})\begin{pmatrix}1 &  \\  & R\end{pmatrix}$$where $B(\underline{v})$ is a boost with parameter:$$\Huge v^i/c=\Lambda_0^i/\Lambda_0^0$$and $R$ is an element of $SO(3)$ given by:$$\Huge R^{ik}=\Lambda^i_k-\frac{1}{1+\Lambda_0^0}\Lambda_0^i\Lambda_k^0$$
-> 
+> To prove this, first observe that:$$\Huge\sum_i(\Lambda_0^i/\Lambda_0^0)^2=\frac{(\Lambda_0^0)^2-1}{(\Lambda_0^0)^2}<1$$
+> A boost associated to the speed $\underline{v}/c$ hence makes sense. By the definition of a boost, it follows that $B_0^0(\underline{v})=\cosh\lambda=\Lambda_0^0$ and $B_i^0(\underline{v})=-v^i/c\cosh\lambda=\Lambda_i^0$ and hence:$$\Huge B_j^i(\underline{v})=\delta_j^i+\frac{1}{1+\Lambda_0^0}\Lambda_i^0\Lambda_j^0$$
+> We now show that $$\Huge R=B(-\underline{v})\Lambda=B^{-1}(\underline{v})\$$
