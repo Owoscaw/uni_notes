@@ -37,4 +37,10 @@ The component of $L$ that is continuously connected to the identity is the prope
 > We propose that every proper orthochronous Lorentz transformation $\Lambda\in L_+^\uparrow$ has a unique decomposition as:$$\Huge\Lambda=B(\underline{v})\begin{pmatrix}1 &  \\  & R\end{pmatrix}$$where $B(\underline{v})$ is a boost with parameter:$$\Huge v^i/c=\Lambda_0^i/\Lambda_0^0$$and $R$ is an element of $SO(3)$ given by:$$\Huge R^{ik}=\Lambda^i_k-\frac{1}{1+\Lambda_0^0}\Lambda_0^i\Lambda_k^0$$
 > To prove this, first observe that:$$\Huge\sum_i(\Lambda_0^i/\Lambda_0^0)^2=\frac{(\Lambda_0^0)^2-1}{(\Lambda_0^0)^2}<1$$
 > A boost associated to the speed $\underline{v}/c$ hence makes sense. By the definition of a boost, it follows that $B_0^0(\underline{v})=\cosh\lambda=\Lambda_0^0$ and $B_i^0(\underline{v})=-v^i/c\cosh\lambda=\Lambda_i^0$ and hence:$$\Huge B_j^i(\underline{v})=\delta_j^i+\frac{1}{1+\Lambda_0^0}\Lambda_i^0\Lambda_j^0$$
-> We now show that $$\Huge R=B(-\underline{v})\Lambda=B^{-1}(\underline{v})\$$
+> We now show that $$\Huge \mathcal{R}=B(-\underline{v})\Lambda=B^{-1}(\underline{v})\Lambda$$is indeed a rotation and $\mathcal{R}=1\oplus R$, which finishes the proof:$$\Huge \begin{align*}
+\mathcal{R}_0^0&=(\Lambda_0^0)^2-\sum_i(\Lambda_0^i)^2=1\\
+\mathcal{R}_i^0&=\Lambda_0^0\Lambda_i^0-\sum_j\Lambda_0^j\Lambda_i^j=0\\
+\mathcal{R}_k^i&=\Lambda_k^i-\frac{1}{1+\Lambda_0^0}\Lambda_0^i\Lambda_k^0
+\end{align*}$$where we use $\Lambda^T\eta\Lambda=\eta$ repeatedly. This is a rotation with the right block-diagonal structure as claimed.
+
+To understand the global structure of $L_+^\uparrow=SO(1,3)_\uparrow$, we can repeat the trick we used when describing the relationship between $SO(3)$ and $SU(2)$. For a four vector we write it as a matrix $M_x$ with $M_x^\dagger=M_x$:$$\Huge M_x=\begin{pmatrix}x^0+x^3 & x^1-ix^2 \\ x^1+ix^2 & x^0-x^3\end{pmatrix}$$We can now formulate a map $SL(2,\mathbb{C})\rightarrow L$ by sending $g\in SL(2,\mathbb{C})$:$$\Huge g\rightarrow F(g),\,\,F(g)M_x=gM_xg^\dagger$$We propose that this is a surjective group homomorphism from 
