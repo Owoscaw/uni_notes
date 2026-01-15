@@ -1,0 +1,6 @@
+
+# The Lorentz group and its [[Lie Groups and Algebras#Lie algebras|Lie algebra]]:
+
+The Lorentz group is one of the most important Lie groups in physics, it arises in a similar way to most of the groups we have previously discussed. In this case, it arises from a symmetry group that respects some quadratic form, the "invariant length" of [[Lorentz transformations#Time dilation and length contraction|special relativity]].
+
+The fundamental postulate of relativity is that the speed of light is the same in all inertial frames. Let us take two points $\underline{p},\underline{q}$ in space-time through which a ray of light passes and assume that they have coordinates $t_\underline{p},\underline{x}_\underline{p}$ and $t_\underline{q},\underline{x}_\underline{q}$ in one inertial frame and coordinates $t_\underline{p}',\underline{x}_\underline{p}'$ and $t_\underline{q}',\underline{x}_\underline{q}'$ in another. Hence we require:$$\Huge c^2=(\underline{x}_\underline{p}-\underline{x}_\underline{q})^2/(t_\underline{p}-t_\underline{q})^2=(\underline{x}_\underline{p}'-\underline{x}_\underline{q}')^2/(t_\underline{p}'-t_\underline{q}')^2$$
