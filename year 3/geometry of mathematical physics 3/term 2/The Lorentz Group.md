@@ -27,4 +27,8 @@ Objects $x^\mu$ transforming as above are called Lorentz vectors, while objects 
 
 Whenever we contract upper and lower indices, we have get something that is invariant under the Lorentz group. By extension, it is customary to put upper/lower indices on objects that have the same transformation behaviour as $x^\mu,x_\mu$. The same rule for constructing invariants then exists there as well.
 
-Let us now examine the global st
+Let us now examine the global structure of the Lorentz group $L$. Clearly, the determinant of $\Lambda$ is $\pm1$, so we get two disconnected components $L_\pm$ as we did for $SO(3)$. The component $L_+$ connected to the identity is called the proper Lorentz group. Furthermore $(0,0)$ component of $\eta\Lambda^T\eta\Lambda=\mathbb{1}$ implies that:$$\Huge 1=(\Lambda_0^0)^2-(\Lambda_1^0)^2-(\Lambda_2^0)^2-(\Lambda_3^0)^2$$so that $(\Lambda_0^0)^2\geq1$ which again has two components:
+> $L^\uparrow$ where $\Lambda_0^0\geq1$ are called the orthochronous Lorentz transformations
+> $L^\downarrow$ where $\Lambda_0^0\leq-1$ are called the non-orthochronous Lorentz transformations
+
+The orthochronous transformations keep the flow of time in the same direction. We therefore have four components. The maps $\Lambda_T=\text{diag}(-1,1,1,1)$ (time reversal) and $\Lambda_P=\text{diag}(1,-1,-1,-1)$ (parity) generate the whole group together with $L^\uparrow_+$. We can use $\Lambda_T,\Lambda_P,\Lambda_T\lambd$  
