@@ -45,5 +45,19 @@ To derive the fundamental solution for $n\geq2$, we seek a radial solution of $\
 \frac{A}{2-n}|\underline{x}|^{2-n}+B&n\geq3\end{cases}$$It is easy to check that this satisfies $\Delta u(\underline{x})=0$ for $\underline{x}\neq\underline{0}$. At the origin, $u$ is singular. By making a particular choice of $A,B$ we arrive at the following important solution.
 
 The fundamental solution of Poisson's equation in $\Re^n$ is the map $\Phi:\Re^n\setminus\{\underline{0}\}\rightarrow\Re$ defined by:$$\Huge\Phi(\underline{x})=\begin{cases}-\frac{1}{2\pi}\ln|\underline{x}|&n=2 \\
-\frac{1}{n(n-2)\alpha(n)}\frac{1}{|\underline{x}|^{n-2}}&n\geq3\end{cases}$$where:$$\Huge \alpha(n)=\frac{\pi^{n/2}}{\Gamma(\frac{n}{2}+1)}$$and where $\Gamma:(0,\infty)\rightarrow\Re$ is the Gamma function, defined by:$$\Huge \Gamma(s)=\int_0^\infty x^{s-1}e^{-x}dx$$Observe that $\Gamma(1)=1$. Using integrating by parts, one can check that $\Gamma$ satisfies $\Gamma(s+1)=s\Gamma(s)$. It can be shown that $\alpha(n)$ is the volume of the unit ball $B_1(\underline{0})$ in $\Re^n$:$$\Huge \alpha(n)=\int_{B_1(\underline{0})}1d\underline{x}$$It follows from a change of variables that $\alpha(n)r^n$ is the volume of a ball of radius $r$ in $\Re^n$
- 
+\frac{1}{n(n-2)\alpha(n)}\frac{1}{|\underline{x}|^{n-2}}&n\geq3\end{cases}$$where:$$\Huge \alpha(n)=\frac{\pi^{n/2}}{\Gamma(\frac{n}{2}+1)}$$and where $\Gamma:(0,\infty)\rightarrow\Re$ is the Gamma function, defined by:$$\Huge \Gamma(s)=\int_0^\infty x^{s-1}e^{-x}dx$$Observe that $\Gamma(1)=1$. Using integrating by parts, one can check that $\Gamma$ satisfies $\Gamma(s+1)=s\Gamma(s)$. It can be shown that $\alpha(n)$ is the volume of the unit ball $B_1(\underline{0})$ in $\Re^n$:$$\Huge \alpha(n)=\int_{B_1(\underline{0})}1d\underline{x}$$It follows from a change of variables that $\alpha(n)r^n$ is the volume of a ball of radius $r$ in $\Re^n$. The surface area of a unit ball in $\Re^n$ is $n\alpha(n)$:$$\Huge n\alpha(n)=\int_{\partial B_1(\underline{0})}1dS$$
+## Properties of the fundamental solution:
+> $\Delta\Phi(\underline{x})=0$ for $\underline{x}\neq\underline{0}$
+> $\Phi(\underline{x})\to\infty$ as $\underline{x}\to\underline{0}$
+> $\Phi$ has an integrable singularity at the origin. For any $R>0$:$$\Huge\int_{B_R(\underline{0})}|\Phi(\underline{x})|d\underline{x}<\infty$$
+> $\underline{\nabla}\Phi$ also has an integrable singularity at the origin.
+
+The second derivatives of $\Phi$ are not so well behaved. If $\Delta\Phi$ were an integrable function, then for any $\epsilon>0$:$$\Huge\begin{align*}
+-\int_{B_\epsilon(\underline{0})}\Delta\Phi d\underline{x}&=-\int_{B_\epsilon(\underline{0})}\text{div}(\underline{\nabla}\Phi)d\underline{x}\\
+&=-\int_{\partial B_\epsilon(\underline{0})}\underline{\nabla}\Phi\cdot\underline{n}dS\\
+&=\frac{1}{n\alpha(n)}\int_{\partial B_\epsilon(\underline{0})}\frac{\underline{x}}{|\underline{x}|^n}\cdot\frac{\underline{x}}{\epsilon}dS(\underline{x})\\
+&=\frac{1}{n\alpha(n)}\int_{\partial B_\epsilon(\underline{0})}\frac{1}{\epsilon|\underline{x}|^{n-2}}dS(\underline{x})\\
+&=\frac{1}{n\alpha(n)}\frac{1}{\epsilon^{n-1}}\int_{\partial B_\epsilon(\underline{0})}1dS\\
+&=\frac{1}{n\alpha(n)}\frac{1}{\epsilon^{n-1}}\text{area}(\partial B_\epsilon(\underline{0}))\\
+&=\frac{1}{n\alpha(n)}\frac{1}{\epsilon^{n-1}}n\alpha(n)\epsilon^{n-1}=1
+\end{align*}$$However $\Delta\Phi(\underline{x})=0$ for all $\underline{x}\neq \underline{0}$, so the conditions $\int_{B_\epsilon(\underline{0})}\Delta\Phi d\underline{x}=-1$ and $\Delta\Phi(\underline{x})=0$ for $\underline{x}\neq\underline{0}$ are incompatible, suggesting that $\Delta\Phi$ is not an integrable function, but rather:$$\Huge -\Delta\Phi=\delta$$in the sense of distributions. This means that:$$\Huge -\int_{\Re^n}\Phi(\underline{y})\Delta\psi(\underline{y})d\underline{y}=\psi(\underline{0}),\,\,\forall\psi\in C_c^\infty(\Re^n)$$
