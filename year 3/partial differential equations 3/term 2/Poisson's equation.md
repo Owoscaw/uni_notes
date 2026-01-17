@@ -28,3 +28,22 @@ u(x)&=\frac{x-a}{b-a}\int_a^b\int_y^bf(y)dz\,dy-\int_a^x\int_y^xf(y)dz\,dy\\
 
 ## Green's functions:
 Let $\Omega\subseteq\Re^n$ be open and bounded with smooth boundary. It can be shown that if $u\in C^2(\bar\Omega)$ satisfies $-\Delta u=f$ in $\Omega$ and $u=g$ on $\partial\Omega$ where $f,g$ are continuous, then there exists a Green's function $G$:$$\Huge u(\underline{x})=\int_\Omega G(\underline{x},\underline{y})f(\underline{y})d\underline{y}-\int_{\partial\Omega}\underline{\nabla}_\underline{y}G(\underline{x},\underline{y})\cdot\underline{n}(\underline{y})g(\underline{y})dS(\underline{y})$$As above, this is symmetric and satisfies Laplace's equation in $\underline{x}$ and $\underline{y}$ away from $\underline{x}=\underline{y}$.
+
+# Poisson's equation in $\Re^n$:
+
+We now consider Poisson's equation in all of $\Re^n$ for $n\geq1$:$$\Huge-\Delta u(\underline{x})=f(\underline{x}),\,\,\underline{x}\in\Re^n$$If this equation has a solution, it cannot be unique as $u+v$ for any harmonic function $v$ will also be a solution. In order to obtain a unique solution, we must specify additional constraints. 
+
+## Fundamental solution in $\Re^n$:
+To derive the fundamental solution for $n\geq2$, we seek a radial solution of $\Delta u=0$. That is, we look for a solution of the form $u(\underline{x})=h(|\underline{x}|)$. Recall that:$$\Huge \frac{\partial }{\partial x_j}|\underline{x}|=\frac{x_j}{|\underline{x}|},\,\,\underline{\nabla}|\underline{x}|=\frac{\underline{x}}{|\underline{x}|}$$Therefore we write:$$\Huge\begin{align*}
+\frac{\partial u}{\partial x_j}&=h'\frac{x_j}{|\underline{x}|},\,\,\underline{\nabla}u=h'\frac{\underline{x}}{|\underline{x}|}\\
+\implies\frac{\partial^2u}{\partial x_j^2}&=h''\frac{x_j^2}{|\underline{x}|^2}+h'\frac{1}{|\underline{x}|}-h'x_j\frac{1}{|\underline{x}|^2}\frac{x_j}{|\underline{x}|}
+\end{align*}$$And so:$$\Huge\begin{align*}
+\Delta u&=\sum_{j=1}^n\frac{\partial^2u}{\partial x_j^2}=h''\frac{1}{|\underline{x}|^2}\sum_{j=1}^nx_j^2+h'\frac{n}{|\underline{x}|}-h'\frac{1}{|\underline{x}|^3}\sum_{j=1}^nx_j^2\\
+&=h''+\frac{n-1}{|\underline{x}|}h'
+\end{align*}$$Letting $r=|\underline{x}|$, we have shown that:$$\Huge \Delta u=0\iff h''(r)+\frac{n-1}{r}h'(r)=0$$This is a linear, first-order ODE in $h'$, so we solve by integrating factor:$$\Huge \exp\left(\int\frac{n-1}{r}dr\right)=\exp((n-1)\ln r)=r^{n-1}$$which gives:$$\Huge r^{n-1}h''+(n-1)r^{n-2}h'=0\iff \frac{d}{dr}(r^{n-1}h')=0$$Integrating this gives $h'(r)=Ar^{1-n}$ for some constant $A$, integrating further gives:$$\Huge h(r)=\begin{cases}A\ln r+B&n=2 \\
+\frac{A}{2-n}r^{2-n}+B&n\geq3\end{cases}$$for some constant $B$. This makes our solution for $u$:$$\Huge u(\underline{x})=h(|\underline{x}|)=\begin{cases}A\ln|\underline{x}|+B&n=2 \\
+\frac{A}{2-n}|\underline{x}|^{2-n}+B&n\geq3\end{cases}$$It is easy to check that this satisfies $\Delta u(\underline{x})=0$ for $\underline{x}\neq\underline{0}$. At the origin, $u$ is singular. By making a particular choice of $A,B$ we arrive at the following important solution.
+
+The fundamental solution of Poisson's equation in $\Re^n$ is the map $\Phi:\Re^n\setminus\{\underline{0}\}\rightarrow\Re$ defined by:$$\Huge\Phi(\underline{x})=\begin{cases}-\frac{1}{2\pi}\ln|\underline{x}|&n=2 \\
+\frac{1}{n(n-2)\alpha(n)}\frac{1}{|\underline{x}|^{n-2}}&n\geq3\end{cases}$$where:$$\Huge \alpha(n)=\frac{\pi^{n/2}}{\Gamma(\frac{n}{2}+1)}$$and where $\Gamma:(0,\infty)\rightarrow\Re$ is the Gamma function, defined by:$$\Huge \Gamma(s)=\int_0^\infty x^{s-1}e^{-x}dx$$Observe that $\Gamma(1)=1$. Using integrating by parts, one can check that $\Gamma$ satisfies $\Gamma(s+1)=s\Gamma(s)$. It can be shown that $\alpha(n)$ is the volume of the unit ball $B_1(\underline{0})$ in $\Re^n$:$$\Huge \alpha(n)=\int_{B_1(\underline{0})}1d\underline{x}$$It follows from a change of variables that $\alpha(n)r^n$ is the volume of a ball of radius $r$ in $\Re^n$
+ 
