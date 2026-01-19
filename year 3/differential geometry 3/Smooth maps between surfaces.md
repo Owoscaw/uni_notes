@@ -147,5 +147,4 @@ Take for example the isometry group of the Hyperbolic plane. Let $\mathbb{H}^2=\
 ### Conformal diffeomorphisms of $\Re^2$:
 Recalling our learning from complex analysis, we saw that orientation preserving conformal maps between open sets in $\Re^2$ are [[Complex differentiation#Holomorphicity|holomorphic maps]] between the same open sets with $\Re^2$ in $\mathbb{C}$. Furthermore, orientation preserving conformal diffeomorphism are equivalent to biholomorphic maps.
 
-The set of all biholomorphic maps in $\mathbb{C}$ are linear polynomials $f(z)=az+b$ with complex numbers $a,b\in\mathbb{C}$ with $a\neq0$. The conformal factor of $f$ is then $\lambda(z)=|a|$
-
+The set of all biholomorphic maps in $\mathbb{C}$ are linear polynomials $f(z)=az+b$ with complex numbers $a,b\in\mathbb{C}$ with $a\neq0$. The conformal factor of $f$ is then $\lambda(z)=|a|$.
