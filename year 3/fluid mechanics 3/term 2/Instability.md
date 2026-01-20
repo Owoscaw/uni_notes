@@ -107,3 +107,6 @@ Using our solutions in the dynamic BC gives us:$$\Huge\begin{align*}
 \end{align*}$$Therefore we have exponential growth/decay modes with:$$\Huge \omega=\pm i\sigma,\,\,\sigma=Uk$$This instability is known as the Kelvin-Helmholtz instability. We see that larger $U$ leads to larger $\sigma$ and that the largest wave numbers (highest $k$) grow the fastest. In practice, surface tension, viscosity, and density differences between the layers can counteract this growth factor.
 
 Again we turn to the full nonlinear system to observe this behaviour. The discretised Euler equations are solved numerically with periodic side boundaries and a small perturbation to the initial condition. The instability breaks the vortex sheet up into discrete vortices:![[Kelvin-Helmholtz_Instability.gif]]
+
+
+These examples demonstrate that we can gain a great deal of intuition from analysing the linear stability of fluid equilibria. This methodology gives us a tool to test other configurations, however we should always keep in mind the limitations of our assumptions. Proving stability/instability to one kind of perturbation does not necessarily mean the system is stable/unstable to other kinds of perturbations or when further physics are included.

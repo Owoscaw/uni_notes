@@ -109,4 +109,43 @@ Let $f\in C_c^2(\Re^n)$ be twice continuously differentiable with compact suppor
 &=-\frac{r^2}{2}\ln r|_{0}^\epsilon+\int_0^\epsilon(\ln r)'\frac{r^2}{2}dr\\
 &=-\frac{\epsilon^2}{2}\ln\epsilon+\frac{1}{2}\int_0^\epsilon r\,dr\\
 &=-\frac{\epsilon^2}{2}\ln\epsilon+\frac{\epsilon^4}{4}
-\end{align*}$$\\\\
+\end{align*}$$Therefore, $||\Phi||_{L^1(B_\epsilon(\underline{0}))}\to0$ as $\epsilon\to0$. This is because $\epsilon^2$ tends to $0$ faster than $|\ln\epsilon|$ goes to $\infty$. Combining our equations tells us that $I_\epsilon$ also tends to $0$ as $\epsilon\to0$.
+> We now analyse $J_\epsilon$. Recalling the IBP formula:$$\Huge\int_\Omega\varphi(\underline{y})\text{div}\underline{g}(\underline{y})d\underline{y}=\int_{\partial\Omega}\varphi(\underline{y})\underline{g}(\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})-\int_\Omega\underline{\nabla}\varphi(\underline{y})\cdot\underline{g}(\underline{y})d\underline{ y}$$where $\underline{n}$ is the outward normal vector field to $\partial\Omega$. Applying this formula with $\varphi(\underline{y})=\Phi(\underline{y}),\underline{g}(\underline{y})=\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})$ and $\Omega=\Re^2\setminus B_\epsilon(\underline{0})$ (noting that $\partial(\Re^2\setminus B_\epsilon(\underline{0}))=\partial B_\epsilon(\underline{0})$), we obtain:$$\large\begin{align*}
+J_\epsilon&=\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Phi(\underline{y})\Delta_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
+&=\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Phi(\underline{y})\text{div}_\underline{y}\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
+&=\int_{\partial B_\epsilon(\underline{0})}\Phi(\underline{y})\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})-\int_{\Re^2\setminus B_\epsilon(\underline{0})}\underline{\nabla}\Phi(\underline{y})\cdot\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
+&=K_\epsilon+L_\epsilon
+\end{align*}$$where $\underline{n}(\underline{y})$ is the outward-pointing unit normal to $\partial(\Re^2\setminus B_\epsilon(\underline{0}))$ at $\underline{y}$ and the inward-pointing unit normal to $\partial B_\epsilon(\underline{0})$ at $\underline{y}$. That is, it can be written as $\underline{n}(\underline{y})=-\underline{y}/|\underline{y}|=-\underline{y}/\epsilon$ since $\partial B_\epsilon(\underline{0})=\{\underline{y}\in\Re^2:|\underline{y}|=\epsilon\}$. Applying the Cauchy-Schwarz inequality we get$$\Huge |\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})|\leq|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})||\underline{n}(\underline{y})|=|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|$$Therefore:$$\Huge\begin{align*}
+|K_\epsilon|&\leq\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})||\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})|dL(\underline{y})\\
+&\leq\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})||\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|dL(\underline{y})\\
+&\leq\sup_{y\in\partial B_\epsilon(\underline{0})}|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})|dL(\underline{y})\\
+&\leq\sup_{z\in\Re^2}|\underline{\nabla} f(z)|\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})|dL(\underline{y})\\
+&=||\underline{\nabla} f||_{L^\infty(\Re^2)}||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}
+\end{align*}$$Observe that $\underline{\nabla}f\in C_c(\Re^2)$ and so $||\underline{\nabla}f||_{L^\infty(\Re^2)}<\infty$. The boundary integral of $\Phi$ is easy to compute:$$\Huge\begin{align*}
+||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}&=-\frac{1}{2\pi}\int_{\partial B_\epsilon(\underline{0})}\ln|\underline{y}|dL(\underline{y})\\
+&=-\frac{1}{2\pi}\int_{\partial B_\epsilon(\underline{0})}\ln\epsilon\,dL(\underline{y})\\
+&=-\frac{1}{2\pi}\ln\epsilon\int_{\partial B_\epsilon(\underline{0})}dL(\underline{y})\\
+&=-\frac{1}{2\pi}\ln\epsilon(2\pi\epsilon)=-\epsilon\ln\epsilon
+\end{align*}$$Therefore $||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}\to0$ as $\epsilon\to0$. Combining these equations shows that $K_\epsilon\to0$. It only remains to compute $L_\epsilon$, which we do using integration by parts$$\large\begin{align*}
+L_\epsilon&=-\int_{\Re^2\setminus B_\epsilon(\underline{0})}\underline{\nabla}\Phi(\underline{y})\cdot\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
+&=-\int_{\partial(\Re^2\setminus B_\epsilon(\underline{0}))}\underline{\nabla}\Phi(\underline{y})f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})+\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Delta\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}\\
+&=\int_{\partial B_\epsilon(\underline{0})}\underline{\nabla}\Phi(\underline{y})f(\underline{x}-\underline{y})\cdot\frac{\underline{y}}{\epsilon}dL(\underline{y})\\
+&=-\int_{\partial B_\epsilon(\underline{0})}\frac{1}{2\pi}\frac{\underline{y}}{|\underline{y}|^2}f(\underline{x}-\underline{y})\cdot\frac{\underline{y}}{\epsilon}dL(\underline{y})\\
+&=-\frac{1}{2\pi\epsilon}\int_{\partial B_\epsilon(\underline{0})}f(\underline{x}-\underline{y})dL(\underline{y})\\
+&=-\frac{1}{2\pi\epsilon}\int_{\partial B_\epsilon(\underline{x})}f(z)dL(z)\\
+&=-\int^*_{\partial B_\epsilon(\underline{0})}f(z)dL(z)
+\end{align*}$$where the integral on the last line denotes the average of $f$ over $\partial B_\epsilon(\underline{x})$. Therefore this integral converges to $f(\underline{x})$ as $\epsilon\to0$.
+> Combining our equations, $L_\epsilon\to-f(\underline{x})$ as $\epsilon\to0$ and$$\Huge \Delta u(\underline{x})=I_\epsilon+J_\epsilon=I_\epsilon+K_\epsilon+L_\epsilon\to-f(\underline{x})$$as $\epsilon\to0$, as required.
+
+It remains to prove that the average of a function over the surface of a ball converges to the value at the center of the ball as radius tends to $0$. Let $g:\Re^n\rightarrow\Re$ be continuous and let $\underline{x}_0\in\Re^n$. Then$$\Huge \int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)\to g(\underline{x}_0),\,\,\epsilon\to0$$Proven under the assumption that $g$ is continuously differentiable:
+> Observe that:$$\Huge\begin{align*}
+\left|\int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)-g(\underline{x}_0)\right|&=\left|\int^*_{\partial B_\epsilon(\underline{x}_0)}(g(z)-g(\underline{x}_0))dS(z)\right|\\
+&\leq\int^*_{\partial B_\epsilon(\underline{x}_0)}|g(z)-g(\underline{x}_0)|dS(z)
+\end{align*}$$
+> By the fundamental theorem of calculus and the chain rule$$\Huge\begin{align*}
+|g(z)-g(\underline{x}_0)|&=\left|\int_0^1 \frac{d}{dt}g((1-t)\underline{x}_0+tz)dt\right|\\
+&=\left|\int_0^1\underline{\nabla}g((1-t)\underline{x}_0+tz)\cdot(z-\underline{x}_0)dt\right|\\
+&\leq\int_0^1|\underline{\nabla}g((1-t)\underline{x}_0+tz)||z-\underline{x}_0|dt\\
+&\leq\max_{l(\underline{x}_0,z)}|\underline{\nabla}g||z-\underline{x}_0|
+\end{align*}$$where $l(\underline{x}_0,z)$ is the line joining $\underline{x}_0$ to $z$. Let $\epsilon<1$ and let $M=\max_{B_1(\underline{x}_0)}|\underline{\nabla}g|$.
+> We conclude that$$\Huge\left|\int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)-g(\underline{x}_0)\right|\leq\int^*_{\partial B_\epsilon(\underline{x}_0)}M|z-\underline{x}_0|dS(z)=M\epsilon\to0$$as $\epsilon\to0$, proving the result.
