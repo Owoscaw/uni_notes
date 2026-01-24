@@ -1,0 +1,52 @@
+
+# Generalisation to $\Re^3$:
+
+Previously, we have explored quantum mechanics along the real line. We now move to generalise quantum mechanics to three spatial dimension. Our basic [[Operators and Measurement#Operator multiplication|operators]] here are $\hat{\underline{x}_i}$ and $\hat{\underline{p}_i}$, position and momentum in three dimensions instead of one. These operators still satisfy $$\Huge [\underline{\hat x}_i,\underline{\hat p}_i]=i\hbar\delta_{ij},\,\,[\underline{\hat x}_i,\underline{\hat x}_j]=0,\,\,[\underline{\hat p}_i,\underline{\hat p}_j]=0$$For specific computation, we still refer to their $x$-representation$$\Huge \underline{\hat x}_i\rightarrow\underline{x}_i,\,\,\underline{\hat p}_i\rightarrow-i\hbar\partial_i$$Our object of interest is still a wavefunction, however this is now a function of three variables, $|\psi\rangle=|\psi(x,y,z)\rangle$. Dynamics to do with $\psi$ are now fixed by solving $3$-dimensional versions of the [[Time evolution of QM states#Schrodinger equation motivation|time independent Schrodinger equation]]$$\Huge \hat H |\psi\rangle=E |\psi\rangle,\,\,\hat H=\frac{\underline{\hat p}^2}{2m}+\hat V(\underline{\hat x})$$which becomes, applying the $x$-representation$$\Huge -\frac{\hbar^2}{2m}(\partial_x^2+\partial_y^2+\partial_z^2)\psi(x,y,z)+V(x,y,z)\psi(x,y,z)=E\psi(x,y,z)$$Note that this is simply generalising the Schrodinger equation by introducing kinetic energy in $\Re^3$ instead of $\Re$ (this is what the first term represents). As before, $$\Huge|\psi(x,y,z)|^2d\underline{x}$$represents the probability to find a particle in the volume $d\underline{x}$ around the point $(x,y,z)$. The particle has to be somewhere in space, so we still get$$\Huge\iiint_{\Re^3}|\psi(x,y,z)|^2d\underline{x}=1$$Note that if a particle is localised in some region, i.e. a box with infinite potential walls, then the region of integration can be taken to be said region.
+
+# Quantum angular momentum:
+
+Before interpreting angular momentum in a quantum mechanical light, let us first recall the classical definition of angular momentum $\underline{L}$. If a classical particle with velocity $\underline{v}$ and momentum $\underline{p}$ moves along some path, it carries angular momentum $\underline{L}$ with respect to some origin$$\Huge \underline{L}=\underline{r}\times\underline{p}\iff\begin{cases}L_x=yp_z-zp_y \\
+L_y=zp_x-xp_y \\
+L_z=xp_y-yp_x\end{cases}\iff L_i=\epsilon_{ijk}x_jp_k$$In the quantum case, each $L_i$ become operators $\hat L_i$ using the [[Generalisation to infinite dimensional Hilbert spaces#Angular momentum and correspondence|correspondence principle]]$$\Huge x_i\rightarrow\hat x_i,\,\,p_i\rightarrow\hat p_i\rightarrow-i\hbar\partial_i$$and hence we have$$\Huge \hat L_i=\epsilon_{ijk}\hat x_j\hat p_k$$Note that in classical mechanics, the components of $\underline{L}$ can be any three real numbers, we ask what restrictions on these components are applied in quantum mechanic. For a free particle in no potential, $\hat x,\hat p$ can take any real number as in classical mechanics, however we are interested in $\hat L$. We ask of the allowed eigenvalues of the $\hat L_i$ operators. There are no restrictions on the eigenvalues of the $\hat x,\hat p$ operators. To explore this, we first note the following properties of $\hat L_i$:
+> $[\hat L_i,\hat L_j]=i\hbar\epsilon_{ijk}\hat L_k$, which can be proven by expanding using the commutator definition. This means that each $\hat L_i$ does not commute with the next.
+> $\implies$ Since each operator does not commute, they cannot be diagonalised simultaneously.
+> $\implies$ The particle cannot have definite value for two different components of angular momentum.
+> $[\hat L^2,\hat L_i]=[\hat L_x^2+\hat L_y^2+\hat L_z^2,\hat L_i]=0$
+
+Therefore we see it is not possible for a particle to have definite values of $\underline{\hat L}$ at the same time. It is possible for a particle to be in a state which is simultaneously an eigenstate of total angular momentum $\hat L^2$ and one of the components $\hat L_i$ (this is what the last property implies). An eigenstate of each $\hat p_i$ is given by$$\Huge \psi_{p_xp_yp_z}=e^{i(p_xx+p_yy+p_zz)}$$
+Hence for angular momentum, all we can do is find simultaneous eigenstates of $\hat L^2$ and one $\hat L_i$:$$\Huge\begin{align*}
+\hat L^2 |\lambda,m\rangle&=\lambda |\lambda,m\rangle\\
+\hat L_i |\lambda,m\rangle&=m |\lambda,m\rangle
+\end{align*}$$where $|\lambda,m\rangle$ denotes an eigenstate of both operators with eigenvalues $\lambda,m$ respectively and we set $\hbar=1$. So the question becomes, what conditions are imparted on $\lambda,m$ and the eigenstate $|\lambda,m\rangle$. First let us note that $\lambda$ and $m$ are not independent, in fact it is obvious that $\sqrt\lambda\geq m$ as $m$ itself would be a length in the vector $|\underline{L}|=\sqrt{\lambda}$. 
+
+In the quantum mechanical case, we can find a restriction on the eigenvalues:$$\Huge\begin{align*}
+\langle\hat L^2-\hat L_z^2\rangle&=\langle \lambda,m|\hat L^2-\hat L_z^2 |\lambda,m\rangle\\
+&=(\lambda-m^2) \langle \lambda,m|\lambda,m\rangle\\
+&=\langle \lambda,m|\hat L_x^2+\hat L_y^2 |\lambda,m\rangle\geq0\\
+\implies\lambda&\geq m^2
+\end{align*}$$Therefore there is a maximal value that $\hat L_z$ can have, which we denote with $l\neq\lambda$$$\Huge -l\leq m\leq l$$
+In order to determine $\lambda,m$ and $|\lambda,m\rangle$, we need the [[Quantum S.H.O.#Ladder operators|raising/lowering]] operators$$\Huge \hat L_{\pm}=\hat L_x\pm i\hat L_y\implies\hat L_+^*=\hat L_-$$which has the properties:$$\Huge\begin{align*}
+[\hat L_z,\hat L_\pm]&=\pm\hat L_\pm\\
+[\hat L_+,\hat L_-]&=2\hat L_z\\
+[\hat L^2,\hat L_\pm]&=0
+\end{align*}$$
+Consider acting with $\hat L_z$ on the eigenstate after acting with $\hat L_+$:$$\Huge\begin{align*}
+\hat L_z(\hat L_+ |\lambda,m\rangle)&=(L_+\hat L_z+\hat L_+)|\lambda,m\rangle\\
+&=(m\hat L_++\hat L_+)|\lambda,m\rangle\\
+&=(m+1)\hat L_+ |\lambda,m\rangle
+\end{align*}$$That is, $\hat L_+$ raises the value of $m$ by $1$:$$\Huge \hat L_+ |\lambda,m\rangle=A |\lambda,m+1\rangle$$and similarly$$\Huge \hat L_- |\lambda,m\rangle=B |\lambda,m-1\rangle$$To gain some insight using this, consider:$$\Huge\begin{align*}
+\hat L_-\hat L_+&=(\hat L_x-i\hat L_y)(\hat L_x+i\hat L_y)\\
+&=\hat L_x^2+\hat L_y^2+i[\hat L_x,\hat L_y]\\
+&=\hat L_x^2+\hat L_y^2-\hat L_z\\
+&=\hat L^2-\hat L_z^2-\hat L_z
+\end{align*}$$Now consider applying this to the state with maximal $m_\text{max}=l$:$$\Huge\begin{align*}
+\hat L_-\hat L_+ |\lambda,l\rangle&=0\text{ as }l\text{ is maximal}\\
+(\hat L^2-\hat L_z^2-\hat L_z) |\lambda,l\rangle&=\\
+(\lambda-l^2-l) |\lambda,l\rangle&=\\
+\implies\lambda&=l(l+1)
+\end{align*}$$By convention, we write $l$ instead of the quantum number $\lambda$ as $\lambda$ is dependent on $m$ in this way.$$\Huge |\lambda=l(l+1),m\rangle\rightarrow |l,m\rangle,\,\,\hat L^2 |l,m\rangle=l(l+1)|l,m\rangle$$So we now investigate the allowed values of $m$. We have seen that for a given total angular momentum $l$, the allowed values of the $z$-component are$$\large |l,-l\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,m-1\rangle\to_{\hat L_+}|l,m\rangle\rightarrow_{\hat L_+}|l,m+1\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,l\rangle$$so then $m$ takes values in $\{-l,\dots,l\}$ for a total of $2l+1$ states. Note that this is not always the case, for example the [[Quantum S.H.O.#Number operator and ground state|quantum SHO]] has infinite states as $n\to\infty$. 
+
+Hence we see that $\hat L_z$ has a quantised spectrum, bounded from the top and bottom by the total value of $\underline{L}$. It remains to find the constants we introduced in our raising/lowering operators:$$\Huge\begin{align*}
+\hat L_+ |l,m\rangle&=A |l,m+1\rangle\\
+\hat L_- |l,m\rangle&=B |l,m-1\rangle
+\end{align*}$$
