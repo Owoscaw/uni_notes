@@ -46,7 +46,54 @@ Consider acting with $\hat L_z$ on the eigenstate after acting with $\hat L_+$:$
 \implies\lambda&=l(l+1)
 \end{align*}$$By convention, we write $l$ instead of the quantum number $\lambda$ as $\lambda$ is dependent on $m$ in this way.$$\Huge |\lambda=l(l+1),m\rangle\rightarrow |l,m\rangle,\,\,\hat L^2 |l,m\rangle=l(l+1)|l,m\rangle$$So we now investigate the allowed values of $m$. We have seen that for a given total angular momentum $l$, the allowed values of the $z$-component are$$\large |l,-l\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,m-1\rangle\to_{\hat L_+}|l,m\rangle\rightarrow_{\hat L_+}|l,m+1\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,l\rangle$$so then $m$ takes values in $\{-l,\dots,l\}$ for a total of $2l+1$ states. Note that this is not always the case, for example the [[Quantum S.H.O.#Number operator and ground state|quantum SHO]] has infinite states as $n\to\infty$. 
 
-Hence we see that $\hat L_z$ has a quantised spectrum, bounded from the top and bottom by the total value of $\underline{L}$. It remains to find the constants we introduced in our raising/lowering operators:$$\Huge\begin{align*}
+Hence we see that $\hat L_z$ has a quantised spectrum, bounded from the top and bottom by the total value of $\underline{L}$. 
+
+## Summary:
+So far, we have determined restrictions on $\lambda,m$ eigenvalues:
+> $\hat L^2 |\lambda,m\rangle=\lambda |\lambda,m\rangle$ allowed us to figure out $\hat L^2|l,m\rangle=l(l+1)|l,m\rangle$ where $\lambda=l(l+1)$ and we switched notation.
+> $\hat L_z |\lambda,m\rangle=m |\lambda,m\rangle$ allowed us to find $\hat L_z |l,m\rangle=m |l,m\rangle$.
+> Then for given total momentum $l$ we found the allowed values for $\hat L_z$ to be$$\Huge m\in(-l,-l+1,\dots,l-1,l)$$
+> We introduces $\hat L_\pm$ operators to build the $|l,m\rangle$ eigenstates.
+
+It remains to find the constants we introduced in our raising/lowering operators:$$\Huge\begin{align*}
 \hat L_+ |l,m\rangle&=A |l,m+1\rangle\\
 \hat L_- |l,m\rangle&=B |l,m-1\rangle
+\end{align*}$$To do this, we take the conjugate expression:$$\Huge\begin{align*}
+(\hat L_+ |l,m\rangle)^\dagger&= \langle l,m|\hat L_-\\
+&=(A |l,m+1\rangle)^\dagger\\
+&= \langle l,m+1|A
+\end{align*}$$and now take the square:$$\Huge\begin{align*}
+|\hat L_+|l,m\rangle|^2&=(\hat L_+ |l,m\rangle)^\dagger(\hat L^+ |l,m\rangle)\\
+&=\langle l,m|\hat L_-\hat L_+ |l,m\rangle=A^2 \langle l,m|l,m\rangle=A^2\\
+&= \langle l,m|\hat L^2-\hat L_z^2-\hat L_z |l,m\rangle\\
+&=(l^2-m^2-m)\\
+\implies A&=\sqrt{l(l+1)-m(m+1)}
+\end{align*}$$Doing this process for the $\hat L_-$ operator gives a similar result:$$\Huge\implies B=\sqrt{l(l+1)-m(m-1)}$$Hence our operators take form:$$\Huge\begin{align*}
+\hat L_+ |l,m\rangle&=\sqrt{l(l+1)-m(m+1)}|l,m+1\rangle\\
+\hat L_- |l,m\rangle&=\sqrt{l(l+1)-m(m-1)}|l,,m-1\rangle
+\end{align*}$$
+## Example:
+Let us investigate a free particle with total angular momentum $l=1$:
+> First, we define the Hilbert space of allowed states for our particle as the span of the following eigenvectors:$$\Huge\mathcal{H}_{l=1}=\text{span}\left\{|1,m=1\rangle=\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix},|1,0\rangle=\begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix},|1,-1\rangle=\begin{pmatrix}0 \\ 0 \\ 1\end{pmatrix}\right\}$$This exactly satisfies our restriction for $m\in\{-l,\dots,l\}$ with $l=1$.
+> We can find a representation of angular momentum in each axis in this space:$$\Huge \begin{align*}
+\hat L_z |l,m\rangle&=m |l,m\rangle\\
+\implies\hat L_z |1,1\rangle=1 |1,1\rangle,\,\,\hat L_z |1,0\rangle&=0 |1,0\rangle,\,\,\hat L_z |1,-1\rangle=-1 |1,-1\rangle\\
+\implies \hat L_z&=\begin{pmatrix}1 & 0 & 0\\
+0 & 0 & 0\\
+ 0 & 0 & -1\end{pmatrix}
+\end{align*}$$To find each $\hat L_x,\hat L_y$ we can use the raising/lowering operator using the identity$$\Huge\hat L_\pm |l,m\rangle=\sqrt{l(l+1)-m(m\pm1)}|l,m\pm1\rangle$$So we compute$$\Huge\begin{align*}
+\hat L_+ |1,1\rangle=0,\,\,\hat L_+ |1,0\rangle&=\sqrt 2 |1,1\,\,\,\hat L_+ |1,-1\rangle\sqrt 2 |1,0\rangle\\
+\implies \hat L_+&=\begin{pmatrix}0 & \sqrt 2 & 0\\
+0 & 0 & \sqrt 2\\
+0 & 0 & 0\end{pmatrix}\\
+\implies \hat L_-=(\hat L_+)^\dagger
+&=\begin{pmatrix}0 & 0 & 0\\
+\sqrt 2 & 0 & 0\\
+0 & \sqrt 2 & 0\end{pmatrix}\end{align*}$$And hence we have:$$\Huge\begin{align*}
+\hat L_x&=\frac{1}{2}(\hat L_++\hat L_-)=\frac{1}{2}\begin{pmatrix}0 & \sqrt 2 & 0\\
+\sqrt 2 & 0 & \sqrt 2\\
+0 & \sqrt 2 & 0\end{pmatrix}\\
+\hat L_y&=\frac{1}{2i}(\hat L_+-\hat L_-)=-\frac{i}{2}\begin{pmatrix}0 & \sqrt 2 & 0\\
+-\sqrt 2 & 0 & \sqrt 2\\
+0 & -\sqrt 2 & 0\end{pmatrix}
 \end{align*}$$
