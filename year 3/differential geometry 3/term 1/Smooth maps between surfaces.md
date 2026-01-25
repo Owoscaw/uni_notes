@@ -85,7 +85,7 @@ L(f\circ\underline{\alpha})&=\int_a^b||(f\circ\underline{\alpha})'(t)||_{f\circ\
 ## Isometries:
 A smooth map $f:S_1\rightarrow S_2$ between regular surfaces $S_1,S_2\subset\Re^3$ is called a local isometry if we have:$$\Huge \langle d_\underline{p}f(\underline{v}_1),d_\underline{p}f(\underline{v}_2)\rangle_{f(\underline{p})}=\langle \underline{v}_1,\underline{v}_2\rangle_\underline{p}$$for all $\underline{p}\in S_1$ and $\underline{v}_1,\underline{v}_2\in T_\underline{p}S_1$. If $f$ is a local isometry and also a diffeomorphism, then $f$ is called an isometry and $S_1,S_2$ are isometric to each other.
 
-We can verify that our example above is an isometry using this definition. It is clear that $f$ is a diffeomorphism. Moreover for all $\underline{p}=(u,v,0)\in S_1=(0,2\pi)\times\Re\times\{0\}$ we have:$$\Huge T_\underline{p}S_1=\Re^2\times\{0\}$$Let $\underline{v}=(a,b,0)\in T_\underline{p}S_1$, then we have:$$\Huge\begin{align*}
+	We can verify that our example above is an isometry using this definition. It is clear that $f$ is a diffeomorphism. Moreover for all $\underline{p}=(u,v,0)\in S_1=(0,2\pi)\times\Re\times\{0\}$ we have:$$\Huge T_\underline{p}S_1=\Re^2\times\{0\}$$Let $\underline{v}=(a,b,0)\in T_\underline{p}S_1$, then we have:$$\Huge\begin{align*}
 d_\underline{p}f(\underline{v})&=\frac{d}{dt}f(\underline{p}+t\underline{v})|_{t=0}\\
 &=\frac{d}{dt}f(u+ta,v+tb,0)|_{t=0}\\
 &=\frac{d}{dt}(\cos(u+ta),\sin(u+ta),v+tb)|_{t=0}\\
