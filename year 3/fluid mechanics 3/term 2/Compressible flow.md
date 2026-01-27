@@ -50,4 +50,35 @@ Furthermore, thermodynamics tells us that the entropy $S$ of an ideal gas satisf
 Meanwhile, the internal energy density $e$ is related to temperature by$$\Huge e=\frac{c_VT}{\mu}$$where $c_V$ is the molar heat capacity at constant volume, and $\mu$ is the mass per mole of a substance. For an ideal gas, $c_V=\frac{1}{2}n_\text{dof}R$ where $R$ is the universal gas constant. If we combine this relation with the definition of $e$, we find that this is a generalisation of $pV=nRT$.
 
 Consider a passenger jet flying through air. Assuming that air is an ideal gas, we ask how hot the nose of the jet liner gets. At the nose, there is a stagnation point in the flow and so $u_1=0$. Compared to a point above the fuselage and ignoring gravity, Bernoulli's principle dictates$$\Huge h_1=h_2+\frac{1}{2}u_2^2$$We know that the temperature of air at cruising altitude is about $-50$ degrees. For an ideal gas$$\Huge h(\rho)=\int_0^\rho\frac{P'(\sigma)}{\sigma}d\sigma=\int_0^\rho k\gamma\sigma^{\gamma-2}d\sigma=\frac{k\gamma}{\gamma-1}\rho^{\gamma-1}=\frac{\gamma P}{(\gamma-1)\rho}$$and$$\Huge e(\rho)=\int_0^\rho\frac{P(\rho)}{\sigma^2}d\sigma=\int_0^\rho k\sigma^{\gamma-2}d\sigma=\frac{k\rho^{\gamma-1}}{\gamma-1}=\frac{P}{(\gamma-1)\rho}=\frac{h(\rho)}{\gamma}$$but we also have$$\Huge e(\rho)=\frac{c_VT}{\mu}\implies h(\rho)=\frac{c_V\gamma T}{\mu}$$so we can now relate the temperatures by$$\Huge T_1=T_2+\frac{u_2^2\mu}{2\gamma c_V}$$Assuming the jet moves at $220\text{ms}^{-1}$, $\gamma=1.4$, $\mu=0.029\text{kg mol}^{-1}$, $c_V\approx21\text{JK}^{-1}\text{mol}^{-1}$. We therefore find$$\Huge T_1\approx-26^\circ\text{C}$$so we see only mild heating occurs. Using the speed Concorde used to fly at, $605\text{ms}^{-1}$, we see that $T_1=130$ degrees, a lot hotter.
- 
+
+
+# Sound waves:
+
+The most important feature of a compressible fluid is that it supports pressure oscillations (sound waves). We proceed to study these oscillations using linearisation.
+
+## Small amplitude sound waves:
+We start from the unforced compressible barotropic Euler equations:$$\Huge\begin{align*}
+\frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\\
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p\\
+p&=P(\rho)
+\end{align*}$$and proceed to consider disturbances around a base state with uniform density $\rho_0$, uniform pressure $p_0=P(\rho_0)$, and zero velocity. Replacing $\rho\rightarrow\rho_0+\epsilon\rho_1,p\rightarrow p_0+\epsilon p_1$, and $\underline{u}=\epsilon\underline{u}_1$ for our linearisation gives$$\Huge\begin{align*}
+\epsilon\frac{\partial \rho_1}{\partial t}+\epsilon\rho_0\underline{\nabla}\cdot\underline{u}_1+\epsilon^2\underline{\nabla}\cdot(\rho_1\underline{u}_1)&=0\\
+\epsilon\frac{\partial \underline{u}_1}{\partial t}+\epsilon^2(\underline{u}_1\cdot\underline{\nabla})\underline{u}_1&=-\frac{\epsilon}{\rho_0+\epsilon\rho_1}\underline{\nabla}p_1\\
+p_0+\epsilon p_1&=P(\rho_0+\epsilon\rho_1)
+\end{align*}$$To linearise the awkward terms on the RHS, we use the Taylor expansions:$$\Huge\begin{align*}
+\frac{1}{\rho_0+\epsilon\rho_1}&=\frac{1}{\rho_0}\left(\frac{1}{1+\epsilon\frac{\rho_1}{\rho_0}}\right)\\
+&=\frac{1}{\rho_0}\left(1-\epsilon\frac{\rho_1}{\rho_0}+\epsilon^2\frac{\rho_1^2}{\rho_0^2}+\dots\right)\\
+P(\rho_0+\epsilon\rho_1)&=P(\rho_0)+\epsilon\rho_1P'(\rho_0)+\frac{\epsilon^2\rho_1^2}{2}P''(\rho_0)+\dots\\
+&=p_0+\epsilon\rho_1P'(\rho_0)+\dots
+\end{align*}$$so the linearised equations become$$\Huge\begin{align*}\frac{\partial \rho}{\partial t}+\rho_0\underline{\nabla}\cdot\underline{u}&=0\\
+\frac{\partial \underline{u}}{\partial t}&=-\frac{1}{\rho_0}\underline{\nabla}p\\
+p&=P'(\rho_0)\rho
+\end{align*}$$To derive an equation for the pressure perturbation $p$, we differentiate the first equation wrt time and substitute into the second:$$\Huge\frac{\partial^2\rho}{\partial t^2}=-\rho_0\underline{\nabla}\cdot\frac{\partial \underline{u}}{\partial t}=\underline{\nabla}^2p$$Substituting in $\rho=p/P'(\rho_0)$ then implies$$\Huge \frac{\partial^2p}{\partial t}=c_0^2\underline{\nabla}^2p,\,\,c_0=\sqrt{P'(\rho_0)}$$which is simply the three-dimensional wave equation and $c_0$ is called the sound speed.
+> Assuming an ideal gas, $P(\rho)=kp^\gamma$, the sound speed becomes$$\Huge c_0=\sqrt{k\gamma\rho_0^{\gamma-1}}$$We know that $T=e\mu/c_V$ and saw that$$\Huge e(\rho_0)=\int_0^{\rho_0}\frac{P(\sigma)}{\sigma^2}d\sigma=\frac{k\rho_0^{\gamma-1}}{\gamma-1}$$and so we introduce $c_0$ as a function of $e$ and introduce $T$:$$\Huge c_0=\sqrt{\gamma(\gamma-1)e(\rho_0)}=\sqrt{\gamma(\gamma-1)\frac{c_VT}{\mu}}$$Given that $\gamma=(n_\text{dof}+2)/n_\text{dof}$ and $c_V=\frac{1}{2}n_\text{dof}R$, we get$$\Huge c_0=\sqrt{\frac{\gamma RT}{\mu}}$$So for an ideal gas, sound speed is only a function of temperature. For air, $\gamma=1.4,R=8.3\text{JK}^{-1}\text{mol}^{-1}$, and $\mu=0.0029\text{kg mol}^{-1}$, so we calculate$$\Huge c_0=\begin{cases}332\text{ m s}^{-1} & T=273\text{ K} \\
+344\text{ m s}^{-1} & T=293\text{ K}\end{cases}$$
+
+To find an equation for $\phi$, we take the curl of our second equation to get$$\Huge \underline{\nabla}\times\left(\frac{\partial \underline{u}}{\partial t}\right)=\underline{\nabla}\times\left(-\frac{1}{\rho_0}\underline{\nabla}p\right)\implies\frac{\partial \underline{\omega}}{\partial t}=\underline{0}$$, which shows that sound waves do not change the [[Kinematics of Fluids#Vorticity|vorticity]]. So if we start with no vorticity, we continue to have no vorticity. This means that we can express the velocity in terms of a potential$$\Huge \underline{u}(\underline{x},t)=\underline{\nabla}\phi(\underline{x},t)$$where $\phi(\underline{x},t)$ is known as the acoustic velocity potential. To find the equation that this satisfies, note that our linearisation leads to$$\Huge\begin{align*}
+\underline{\nabla}\frac{\partial \phi}{\partial t}&=-\underline{\nabla}\left(\frac{1}{\rho_0}p\right)\\
+&=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\rho\right)
+\end{align*}$$Differentiating wrt time and substituting into our other equation gives$$\Huge\underline{\nabla}\frac{\partial^2\phi}{\partial t^2}=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\frac{\partial \rho}{\partial t}\right)=\underline{\nabla}(c_0^2\underline{\nabla}^2\phi)$$Ignoring the arbitrary function of time, we have$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\underline{\nabla}^2\phi$$which is the same equation as $p$. In acoustics, we solve a wave equation for allowable forms of $\phi$ subject to certain boundary conditions. We then recover $\underline{u},p,\rho$ from$$\Huge \underline{u}=\underline{\nabla}\phi,\,\,p=-\rho_0\frac{\partial \phi}{\partial t},\,\,\rho=\frac{1}{c_0^2}p$$
+## $1D$ travelling wave solutions:

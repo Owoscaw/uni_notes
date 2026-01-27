@@ -149,3 +149,13 @@ It remains to prove that the average of a function over the surface of a ball co
 &\leq\max_{l(\underline{x}_0,z)}|\underline{\nabla}g||z-\underline{x}_0|
 \end{align*}$$where $l(\underline{x}_0,z)$ is the line joining $\underline{x}_0$ to $z$. Let $\epsilon<1$ and let $M=\max_{B_1(\underline{x}_0)}|\underline{\nabla}g|$.
 > We conclude that$$\Huge\left|\int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)-g(\underline{x}_0)\right|\leq\int^*_{\partial B_\epsilon(\underline{x}_0)}M|z-\underline{x}_0|dS(z)=M\epsilon\to0$$as $\epsilon\to0$, proving the result.
+
+Note that the solution formula $u=\Phi*f$ has the same form as the Green's function representation with $\Omega=\Re^n$ and $G(\underline{x},\underline{y})=\Phi(\underline{x}-\underline{y})$. This solution can also be derived using the Fourier transform.
+
+If $n\geq3$, it can be shown that if $u$ is any bounded solution of $-\Delta u=f$ in $\Re^n$, then $u=\Phi*f+C$ for some constant $C$. This follows from Liouville's theorem for harmonic functions. For $n=2$, $\Phi(\underline{x})=-\frac{1}{2\pi}\ln|\underline{x}|\to\infty$ as $|\underline{x}|\to0$ and so $u=\Phi*f$ may be unbounded.
+
+## Fundamental solution in $\Re^n, n=1$:
+The one dimensional case is not representative of the general case, however we include it for completeness. Let $f\in C_c^2(\Re)$ be twice continuously differentiable with compact support. We define$$\Huge \Phi(x)=\begin{cases}x&x\leq0 \\
+0 & x\geq0\end{cases}$$and $u=\Phi*f$. Then $u\in C^2(\Re)$ and $u$ satisfies$$\Huge -u''(x)=f(x),\,\,x\in\Re$$We call $\Phi$ the fundamental solution of Poisson's equation in $\Re$. Note that for all $a,b\in\Re$, $u(x)=(\Phi*f)(x)+ax+b$ satisfies the equation.
+
+# The Poincare inequality:
