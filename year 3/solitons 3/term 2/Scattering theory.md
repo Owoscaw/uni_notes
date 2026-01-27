@@ -91,3 +91,9 @@ For $V(x)=-u(x)=a\delta(x)$, the eigenvalue problem $L(u)\psi=\lambda\psi$ has a
 T(k)e^{ikx}&x>0\end{cases}$$exists with reflection and transmission coefficients$$\Huge R(k)=\frac{a}{2ik-a},\,\,T(k)=\frac{2ik}{2ik-a}$$
 > For isolated $k^2=-\mu^2<0$, a bound state solution$$\Huge\psi(x)=\begin{cases}\frac{R(i\mu)}{T(i\mu)}e^{\mu x}&x<0 \\
 e^{-\mu x}&x>0\end{cases}$$exists if $\mu=-a/2$ such that$$\Huge \frac{1}{T(i\mu)}=0$$
+
+For potentials $V(x)$ that tend to zero as $x\to\pm\infty$, bound state solutions can be obtained from scattering solutions by:
+> Dividing through by $T(k)$
+> Setting $k=i\mu$, a pole of $T(k)$ on the positive imaginary axis
+
+These conditions determine the discrete spectrum of $-\frac{d^2}{dx^2}+V(x)$.
