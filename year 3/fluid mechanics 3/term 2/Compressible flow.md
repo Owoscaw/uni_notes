@@ -82,3 +82,27 @@ To find an equation for $\phi$, we take the curl of our second equation to get$$
 &=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\rho\right)
 \end{align*}$$Differentiating wrt time and substituting into our other equation gives$$\Huge\underline{\nabla}\frac{\partial^2\phi}{\partial t^2}=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\frac{\partial \rho}{\partial t}\right)=\underline{\nabla}(c_0^2\underline{\nabla}^2\phi)$$Ignoring the arbitrary function of time, we have$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\underline{\nabla}^2\phi$$which is the same equation as $p$. In acoustics, we solve a wave equation for allowable forms of $\phi$ subject to certain boundary conditions. We then recover $\underline{u},p,\rho$ from$$\Huge \underline{u}=\underline{\nabla}\phi,\,\,p=-\rho_0\frac{\partial \phi}{\partial t},\,\,\rho=\frac{1}{c_0^2}p$$
 ## $1D$ travelling wave solutions:
+If we assume that $\phi=\phi(x,t)$, then the wave equation for $\phi$ reduces to$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\frac{\partial^2\phi}{\partial x^2}$$which admits a travelling wave solution of the form$$\Huge\phi(x,t)=F(x-c_0t)+G(x+c_0t)$$and when given $\phi(x,0)$, one can find particular forms using a Fourier expansion. However, we have two constraints on $\phi$ given by specifying pressure $p$ as well as $\underline{u}$ at $t=0$. Therefore our initial value problem becomes:$$\Huge\begin{align*}
+\frac{\partial^2\phi}{\partial t^2}&=c_0^2\frac{\partial^2\phi}{\partial x^2}\\
+\phi(x,0)&=\phi_0(x)\\
+\frac{\partial \phi}{\partial t}(x,0)&=\dot\phi_0(x)
+\end{align*}$$At $t=0$, we have$$\Huge\phi_0(x)=F(x)+G(x)$$which makes the second condition$$\Huge\begin{align*}
+\dot\phi_0(x)&=-c_0F'(x)+c_0G'(x)\\
+\implies\int_a^x\dot\phi_0(s)ds&=-c_0F(x)+c_0G(x)
+\end{align*}$$for some arbitrary point $a$. This gives us the functional form for $F,G$. Using this in our solution and assuming that $a$ is between diverging points defined by $x-c_0t,x+c_0t$ we get$$\large\begin{align*}
+\phi(x,t)&=\frac{1}{2}\phi_0(x-c_0t)-\frac{1}{2c_0}\int_a^{x-c_0t}\dot\phi_0(s)ds+\frac{1}{2}\phi_0(x+c_0t)+\frac{1}{2c_0}\int_a^{x+c_0t}\dot\phi_0(s)ds\\
+&=\frac{1}{2}(\phi_0(x-c_0t)+\phi_0(x+c_0t))+\frac{1}{2c_0}\int_{x-c_0t}^{x+c_0t}\dot\phi_0(s)ds
+\end{align*}$$This solution is known as D'Alembert's solution. Let us try an example:
+> Consider a Gaussian pulse:$$\Huge u(x,0)=0,\,\,p(x,0)=\rho_0e^{-x^2/a^2}$$These initial conditions correspond to $\phi_0(x)=0$ and$$\Huge\dot\phi_0(x)=-\frac{1}{\rho_0}p(x,0)=-e^{-x^2/a^2}$$Appling D'Alembert's solution gives$$\Huge\begin{align*}
+\phi(x,t)&=-\frac{1}{2c_0}\int_{x-c_0t}^{x+c_0t}e^{-s^2/a^2}ds\\
+&=-\frac{1}{2c_0}\int_0^{x+c_0t}e^{-s^2/a^2}ds+\frac{1}{2c_0}\int_0^{x-c_0t}e^{-s^2/a^2}ds\\
+&=\frac{a\sqrt\pi}{4c_0}\left(-\text{erf}\left(\frac{x+c_0t}{a}\right)+\text{erf}\left(\frac{x-c_0t}{a}\right)\right)
+\end{align*}$$where $\text{erf}$ is the error function, defined by$$\Huge\text{erf}(x)=\frac{2}{\sqrt\pi}\int_0^xe^{-s^2}ds$$
+> Differentiating our solution wrt time, we can find the corresponding pressure perturbation:$$\Huge p(x,t)=-\rho_0\frac{\partial \phi}{\partial t}=\frac{\rho_0}{2}\exp\left(-\frac{(x+c_0t)^2}{a^2}\right)+\frac{\rho_0}{2}\exp\left(-\frac{(x-c_0t)^2}{a^2}\right)$$
+> As expected, the initial disturbance leads to two identical pressure pulses of the same shape moving in opposite directions at constant speed $c_0$. 
+> Solving the non-linearised system numerically shows that our model holds up well for early times, however in reality $c$ can vary over space and time.
+
+## $1D$ standing wave solutions:
+Now we have an idea of the general properties of sound wave, let us introduce more effects. We start by introducing walls, so we assume our domain is now of the form $\{x:0<x<L\}$. As for water waves, we then look for standing wave solutions of the form$$\Huge\phi(x,t)=X(x)\sin(\omega t)$$Substituting this into our linear wave equation for $\phi$ gives us the ODE:$$\Huge-\omega^2X=c_0^2X''$$which has the solution$$\Huge X(x)=A\sin(kx)+B\cos(kx),\,\,k=\frac{\omega}{c_0}$$Our solution $\phi$ must satisfy suitable boundary conditions at $x=0$ and $x=L$, which depend on the problem. These will either be of the form of a constraint on pressure or velocity:
+> Let us explore an example modelling a tube with two open ends where $p=0$ but $\underline{u}$ is unconstrained. The boundary conditions are then on $p$:$$\Huge p(x,t)=-\rho_0\frac{\partial \phi}{\partial t}=-\rho_0\omega X(x)\cos(\omega t)$$so in order to satisfy them, our solution must be$$\Huge X(x)=A_n\sin\left(\frac{n\pi x}{L}\right)$$where the wavenumber $k$ is now of the form $k=n\pi/L$.
+> There is therefore a discrete spectrum of possible modes with $\omega=c_0k=c_0n\pi/L$. Each mode has the form$$\Huge\phi(x,t)=A_n\sin\left(\frac{n\pi x}{L}\right)\sin\left(\frac{c_0n\pi t}{L}\right)$$
