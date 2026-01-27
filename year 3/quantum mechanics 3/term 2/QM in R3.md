@@ -97,3 +97,41 @@ Let us investigate a free particle with total angular momentum $l=1$:
 -\sqrt 2 & 0 & \sqrt 2\\
 0 & -\sqrt 2 & 0\end{pmatrix}
 \end{align*}$$
+
+# Eigenfunctions of angular momentum:
+
+We have found$$\Huge\begin{align*}
+\hat L^2|l,m\rangle&=l(l+1) |l,m\rangle\\
+L_z |l,m\rangle&=m |l,m\rangle
+\end{align*}$$and that for a given total angular momentum $\lambda=l(l+1)$, allowed values of $m$ (the $z$-projection) are discretised to the set $\{-l,\dots,l\}$, making the eigenstates$$\Huge \{|l,-l\rangle,|l,-l+1\rangle,\dots, |l,l-1\rangle, |l,l\rangle\}$$We also found the specific forms of our operators $\hat L_\pm$ that helped us construct the whole spectrum$$\Huge \hat L_\pm |l,m\rangle=\sqrt{l(l+1)-m(m\pm 1)} |l,m\pm 1\rangle$$We now wish to find the explicit form of the $|l,m\rangle$ vector, that is the $x$-representation of $|l,m\rangle$. It is natural to work in spherical coordinates with$$\Huge\begin{align*}
+x&=r\sin\theta\cos\varphi\\
+y&=r\sin\theta\sin\varphi\\
+z&=r\cos\theta\\
+\underline{r}&=(r,\theta,\varphi)
+\end{align*}$$So the question then becomes, what is the explicit form of$$\Huge \langle \underline{r}|l,m\rangle=\psi_{l,m}(r,\theta,\varphi)$$
+To do this, we must first find the forms of the $\hat L_z,\hat L^2$ operators in spherical coordinates:$$\Huge\hat L_z\rightarrow\hat L_z=-i\left(x\frac{\partial }{\partial y}-y\frac{\partial }{\partial x}\right)=i\frac{\partial }{\partial \varphi}$$hence we have$$\Huge\hat L_z |l,m\rangle=m |l,m\rangle\rightarrow -i\frac{\partial }{\partial \varphi}\psi_{l,m}(r,\theta,\varphi)=m\psi_{l,m}(r,\theta,\varphi)$$Note that this is simple the operation of multiplying to the left by $\langle \underline{r}|$. Similarly$$\Huge\hat L^2\rightarrow\hat L^2=\left(-\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial }{\partial \theta}\right)-\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)$$and hence$$\ \hat L^2 |l,m\rangle=l(l+1) |l,m\rangle\rightarrow\left(-\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial }{\partial \theta}\right)-\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)\psi_{l,m}(r,\theta,\varphi)=l(l+1)\psi_{l,m}(r,\theta,\varphi)$$So the problem becomes solving these two equations for $\psi_{l,m}$. To do this we need the ansatz:
+> We split variables in the following way$$\Huge\psi_{l,m}(r,\theta,\varphi)=R(r)\eta_{l,m}(\theta)\Phi_m(\varphi)$$where $R(r)$ is called the radial function, and the rest of the terms (that depend on $l,m$!) the angular part. 
+
+Plugging these into our equations shows us that we have no condition on $R(r)$, as there is no $r$ dependency in any of our equations. For the angular part:
+> The $\hat L_z$ equation dictates$$\Huge\begin{align*}
+\hat L_z\psi_{l,m}(r,\theta,\varphi)&=\hat L_z(R(r)\eta_{l,m}(\theta)) \hat L_z\Phi_{m}(\varphi)\\
+&=(R(r)\eta_{l,m}(\theta))\hat L_z\Phi_{m}(\varphi)\\
+&=-(R(r)\eta_{l,m}(\theta))i\frac{\partial }{\partial \varphi}\Phi_{m}(\varphi)=m\Phi_m(\varphi)\\
+\implies\Phi_m'(\varphi)&=im\Phi_m(\varphi)\\
+\implies\Phi_m(\varphi)&=\frac{1}{\sqrt{2\pi}}e^{im\varphi}
+\end{align*}$$where we chose an arbitrary constant. Note that if we shift $\varphi\rightarrow\varphi+2\pi$, we should be in the same point in space, meaning that $\psi$ should be unchanged. Due to the form of the $\Phi_m(\varphi)$, we must have that $m$ is an integer. This directly implies that $l$ is also an integer.
+> The $\hat L^2$ equation dictates$$\large\begin{align*}
+ \hat L^2\psi_{l,m}(r,\theta,\varphi)&=R(r)\hat L^2(\eta_{l,m}(\theta)\Phi_m(\varphi))\\
+&=\left(-\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}(\sin \theta\eta_{l,m}(\theta))\Phi_m\left(\varphi\right)-\frac{1}{\sin^2\theta}\Phi_m''(\varphi)\eta_{l,m}(\theta)\right)R(r)\\
+&=l(l+1)R(r)\eta_{l,m}(\theta)\Phi_m(\varphi)
+ \end{align*}$$multiplying through by $\sin^2\theta/\Phi\eta$ and separating $\theta,\varphi$ dependency gives$$\Huge -\sin\theta(\sin\theta\eta_{l,m}'(\theta))'\frac{1}{\eta_{l,m}(\theta)}-l(l+1)\sin^2\theta=\frac{\Phi_m''(\varphi)}{\Phi_m(\varphi)}$$
+> Now using our form of $\Phi$ tells us that the RHS is equal to $-m$, so we rearrange to find$$\Huge \sin\theta\frac{\partial }{\partial \theta}(\sin \theta\,\eta_{l,m}'(\theta))+(l(l+1)\sin^2\theta-m^2)\eta_{l,m}(\theta)=0$$This is a known equation with solutions taking form of special functions called the associated [[Linear Differential Equations#Legendre's equation|Legendre polynomials]]. 
+> Hence the full solution for $\psi_{l,m}$ is $$\Huge\psi_{l,m}(r,\theta,\varphi)=R(r)Y_{l,m}(\theta,\varphi)$$where$$\Huge Y_{l,m}(\theta,\varphi)=d_{l,m}e^{im\varphi}\eta_{l,m}(\theta)$$, $R(r)$ is fixed by the Schrodinger equation, $Y_{l,m}(\theta,\varphi)$ is fully fixed by symmetries $l,m$
+, and $d_{l,m}$ is a constant (fixed by normalisation of $\psi_{l,m}$).
+
+Normalising $\psi_{l,m}$ shows$$\large\iiint_{\Re^3}|\psi_{l,m}(r,\theta,\varphi)|^2d^3\underline{r}=1\iff\left(\int_0^\infty|R(r)|^2 dr\right)\left(\iint|Y_{l,m}|^2\sin\theta\,d\theta\,d\varphi\right)=1$$however, we normally require that each angular and radial function are separately normalised. If the angular part is normalised, then the associated $Y_{l,m}$ is known as a spherical harmonic.
+
+We can find explicit formulations for $\psi$ by looking at different $l$ values:
+> $l=0$ gives the angular function $Y_{0,0}(\theta,\varphi)=\frac{1}{\sqrt{4\pi}}$, corresponding to$$\Huge \psi_{0,0}(r,\theta,\varphi)=\frac{R(r)}{\sqrt{4\pi}}$$
+> $l=1$ allows for $m\in\{-1,0,1\}$ and gives the angular functions $$\Huge Y_{1,0}(\theta,\varphi)=i\sqrt{\frac{3}{4\pi}}\cos\theta,\,\,Y_{1,\pm1}(\theta,\varphi)=\pm i\sqrt{\frac{3}{8\pi}}e^{\pm i\varphi}\sin\theta$$, the first of which corresponds to$$\Huge |\psi_{1,0}|^2\sim\cos^2\theta R^2(r)$$which has no $\varphi$ dependence, so is invariant under rotations around the $z$-axis. The other angular functions correspond to solutions invariant under rotations around the $x,y$-axis respectively:
+>![[QM in R3 2026-01-27 18.47.56.excalidraw]]
