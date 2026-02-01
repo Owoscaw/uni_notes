@@ -105,3 +105,33 @@ H(\underline{x})&=\frac{EN+GL}{2(EG-F^2)}\\
 &=t^2-2Ht+K=t^2-4=(t-2)(t+2)
 \end{align*}$$showing that $\kappa_{1/2}(\underline{p})=\pm2$.
 
+We now introduce the special case where the tangent vectors $\underline{x}_u(\underline{q}),\underline{x}_v(\underline{q})$ are orthonormal wrt the bilinear forms $\langle \cdot,\cdot\rangle_\underline{p}$ and $\langle -d_\underline{p}\underline{N}(\cdot),\cdot\rangle_\underline{p}$ with $\underline{p}=\underline{x}(\underline{q})$. A local parametrisation $\underline{x}:U\rightarrow S$ with $F=0$ is called orthogonal, and a local parametrisation with both $F=M=0$ is called principal. In the case of principal parametrisation, we have that $\underline{x}_u,\underline{x}_v$ are principal directions with corresponding principal curvatures$$\Huge \kappa_1\circ\underline{x}=\frac{L}{E},\,\,\kappa_2\circ\underline{x}=\frac{N}{G}$$with Gauss and mean curvature given by$$\Huge K\circ\underline{x}=(\kappa_1\kappa_2)\circ\underline{x}=\frac{LN}{EG},\,\,H\circ\underline{x}=\frac{1}{2}(\kappa_1+\kappa_2)\circ\underline{x}=\frac{GL+EN}{2EG}$$Proof:
+> Recall the matrix representing $-d_\underline{p}\underline{N}$ wrt the basis $\underline{x}_u,\underline{x}_v$ $$\Huge\frac{1}{EG-F^2}\begin{pmatrix}GL-FM & GM-FN \\ -FL+EM & -FM+EN\end{pmatrix}$$
+> In the case of principal parametrisation we have $F=M=0$ and so this reduces to$$\Huge \frac{1}{EG}\begin{pmatrix}GL & 0 \\ 0 & EN\end{pmatrix}=\begin{pmatrix}\frac{L}{E} & 0 \\ 0 & \frac{N}{G}\end{pmatrix}$$and so the matrix eigenvalues are simple, corresponding to the result directly.
+
+Take for example a surface of revolution. Let $S\subset\Re^3$ be the regular surface obtained by rotating a regular curve given by $\underline{\alpha}(v)=(f(v),0,g(v))$, $v\in I$ with $f(v)>0$ and $I\subset\Re$ an open interval around the vertical $z$-axis. Local parametrisations of $S$ are given by$$\Huge \underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$for $(u,v)\in(0,2\pi)\times I$. We then have$$\Huge\begin{align*}
+\underline{x}_u(u,v)&=(-f(v)\sin u,f(v)\cos u,0)\\
+\underline{x}_v(u,v)&=(f'(v)\cos u,f'(v)\sin u,g'(v))
+\end{align*}$$and so we have$$\Huge E=f^2(v),\,\,F=0,\,\,G=||\underline{\alpha}'(v)||^2$$, showing that the parametrisation is orthogonal. We also have$$\Huge (\underline{x}_u\times\underline{x}_v)(u,v)=(f(v)g'(v)\cos u,f(v)g'(v)\sin u,-f(v)f'(v))$$and so a Gauss map of the surface is given by$$\Huge \underline{N}(\underline{x}(u,v))=\frac{(\underline{x}_u\times\underline{x}_v)(u,v)}{||(\underline{x}_u\times\underline{x}_v)(u,v)||}=\frac{(g'(v)\cos u,g'(v)\sin u,-f'(v))}{||\underline{\alpha}'(v)||}$$To calculate the coefficients of the second fundamental form wrt $\underline{x}$, we need$$\Huge\begin{align*}
+\underline{x}_{uu}(u,v)&=(-f(v)\cos u,-f(v)\sin u,0)\\
+\underline{x}_{uv}(u,v)&=(-f'(v)\sin u,f'(v)\cos u,0)\\
+\underline{x}_{vv}(u,v)&=(f''(v)\cos u,f''(v)\sin u,g''(v))
+\end{align*}$$which implies$$\Huge\begin{align*}
+L(u,v)&=\underline{x}_{uu}(u,v)\cdot\underline{N}(\underline{x}(u,v))=-\frac{f(v)g'(v)}{||\underline{\alpha}'(v)||}\\
+M(u,v)&=\underline{x}_{uv}(u,v)\cdot\underline{N}(\underline{x}(u,v))=0\\
+N(u,v)&=\underline{x}_{vv}(u,v)\cdot\underline{N}(\underline{x}(u,v))=\frac{f''(v)g'(v)-f'(v)g''(v)}{||\underline{\alpha}'(v)||}
+\end{align*}$$, showing the parametrisation is principal. Therefore by our above proposition, we have$$\Huge\begin{align*}
+\kappa_1\circ\underline{x}(u,v)&=\frac{L(u,v)}{E(u,v)}=-\frac{g'(v)}{f(v)||\underline{\alpha}'(v)||}\\
+\kappa_2\circ\underline{x}(u,v)&=\frac{N(u,v)}{G(u,v)}=\frac{f''(v)g'(v)-f'(v)g''(v)}{||\underline{\alpha}'(v)||^3}\\
+K\circ\underline{x}(u,v)&=\frac{-g'(v)(f''(v)g'(v)-f'(v)g''(v))}{f(v)||\underline{\alpha}'(v)||^4}\\
+H\circ\underline{x}(u,v)&=-\frac{g'(v)}{2f(v)||\underline{\alpha}'(v)||}+\frac{f''(v)g'(v)-f'(v)g''(v)}{2||\underline{\alpha}'(v)||^3}
+\end{align*}$$
+
+Let $S\subset\Re^3$ be a regular surface with a Gauss map $\underline{N}:S\rightarrow S^2$ and $\kappa_1,\kappa_2:S\rightarrow\Re$ be the associated principal curvatures and $K:S\rightarrow\Re$ be the corresponding Gauss curvature:
+> We call a point $\underline{p}\in S$$$\Huge\begin{cases}\text{elliptic} & K(\underline{p})>0 \\
+\text{hyperbolic} & K(\underline{p})<0 \\
+\text{flat} & K(\underline{p})=0\end{cases}$$, the subsets of points belonging to each classification are known as the elliptic/hyperbolic/flat regions of $S$.
+> A point $\underline{p}\in S$ is called a planar point of the surface $S$ if $\kappa_1(\underline{p})=\kappa_2(\underline{p})=0$. Note that every planar point is also flat.
+> A point $\underline{p}\in S$ is called umbilic if we have $\kappa_1(\underline{p})=\kappa_2(\underline{p})$. Note that every planar point is also umbilic.
+
+A particular area in Differential Geometry is the study of minimal surfaces. These are surfaces that minimises area under certain constraints. A regular surface $S\subset\Re^2$ with everywhere vanishing mean curvature ($H=0$), is called minimal. 
