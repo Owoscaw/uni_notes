@@ -29,3 +29,79 @@ Since $-d_\underline{p}N$ is a linear map of $T_\underline{p}S$ onto itself, it 
 \end{align*}$$showing the independence of the characteristic polynomials. One can further show that the trace and determinant are independent of matrix representation.
 
 Recall that we introduced the first fundamental form $\underline{I}_\underline{p}:T_\underline{p}S\rightarrow\Re$ as the quadratic form corresponding to the bilinear form $\langle \cdot,\cdot\rangle_\underline{p}$ as$$\Huge\underline{I}_\underline{p}(\underline{w})=\langle \underline{w},\underline{w}\rangle_\underline{p}=||\underline{w}||^2_\underline{p}$$A similar construction involving the Weingarten map leads to the second fundamental form that we will now define. Let $S\subset\Re^3$ be a regular surface, $\underline{p}\in S$, and $N:U\rightarrow S^2$ be a local Gauss map with $\underline{p}\in U$. Then the second fundamental form $S$ at $\underline{p}$ is the quadratic form $\underline{II}_\underline{p}:T_\underline{p}S\rightarrow\Re$, define by$$\Huge \underline{II}_\underline{p}(\underline{w})=\langle -d_\underline{p}N(\underline{w}),\underline{w}\rangle_\underline{p}$$
+# Curvatures:
+
+The determinant and the trace of the Weingarten map are our fundamental curvature notions associated to a regular surface.
+
+Let $S\subset\Re^3$ be a regular surface with Gauss map $\underline{N}:U\rightarrow S^2,U\subset S$ a subset of $S$ containing a point $\underline{p}\in S$. Let $-d_\underline{p}\underline{N}:T_\underline{p}S\rightarrow T_\underline{p}S$ be the corresponding Weingarten map:
+> $K(\underline{p})=\det(-d_\underline{p}\underline{N})$ is called the Gauss curvature of $S$ at $\underline{p}$
+> $H(\underline{p})=\frac{1}{2}\text{tr}(-d_\underline{p}\underline{N})$ is called the mean curvature of $S$ at $\underline{p}$
+> The eigenvalues $\kappa_1(\underline{p}),\kappa_2(\underline{p})\in\Re$ of $-d_\underline{p}\underline{N}$ are called the principal curvatures of $S$ at $\underline{p}$
+> The eigenvectors $\underline{X}_1(\underline{p}),\underline{X}_2(\underline{p})\in\Re^3$ of $-d_\underline{p}\underline{N}$ are called the principal directions of $S$ at $\underline{p}$
+
+Note that we have$$\Huge -d_\underline{p}\underline{N}(\underline{X}_1(\underline{p}))=\kappa_1(\underline{p})\underline{X}_1(\underline{p}),\,\,-d_\underline{p}\underline{N}(\underline{X}_2(\underline{p}))=\kappa_2(\underline{p})\underline{X}_2(\underline{p})$$and so we conclude$$\Huge K(\underline{p})=\kappa_1(\underline{p})\kappa_2(\underline{p}),\,\,H(\underline{p})=\frac{1}{2}(\kappa_1(\underline{p})+\kappa_2(\underline{p}))$$
+The principal curvatures have a geometric meaning. Let $\underline{p}\in S$, then $\underline{N}=\underline{N}(\underline{p})\in\Re^3$ is a unit vector perpendicular to $T_\underline{p}S$. Intersecting the surface $S$ with a plane $E$ containing the vector $\underline{N}$ through $\underline{p}$, we obtain a curve in the plane $E$ near $\underline{p}$ with a certain curvature. This changes by rotating the plane $E$ around $\underline{N}$ and the principal curvatures $\kappa_1(\underline{p}),\kappa_2(\underline{p})$ are the two extremal curvatures of the resulting curves. It turns out that the two corresponding planes $E_1,E_2$ are perpendicular and are spanned by $\underline{N}$ together with $\underline{X}_1(\underline{p}),\underline{X}_2(\underline{p})$ respectively. Note that the curvature of the curves in $E\cap S$ have a sign, and so we have positive Gauss curvature $K(\underline{p})$ if both principal curvatures have the same sign, and negative Gauss curvature if they have opposite signs.![[Geometry of the Gauss map 2026-02-01 04.56.43.excalidraw]]
+Let us consider a sphere $S=S^2(r)=\{\underline{p}\in\Re^3:||\underline{p}||=r\}$. A Gauss map is given by $$\Huge \underline{N}(\underline{p})=\frac{1}{r}\underline{p}$$, which is simply the identity up to a fixed multiplicative constant $(1/r)$. This means that the derivative of $\underline{N}$ will also be the identity, giving us the Weingarten map:$$\Huge -d_\underline{p}\underline{N}(\underline{w})=-\frac{1}{r}\underline{w}$$We therefore have a matrix representation $\begin{pmatrix}-1/r & 0 \\ 0 & -1/r\end{pmatrix}$ wrt any basis, hence $\kappa_1(\underline{p})=\kappa_2(\underline{p})=-1/r$. This implies our curvatures are$$\Huge K(\underline{p})=\frac{1}{r^2},\,\,H(\underline{p})=-\frac{1}{r}$$and our second fundamental form is$$\Huge\underline{II}_\underline{p}(\underline{w})= \langle -d_\underline{p}\underline{N}(\underline{w}),\underline{w}\rangle_\underline{p}=-\frac{1}{r^2}||\underline{w}||^2$$
+Let $S\subset\Re^3$ be a regular surface, $\underline{x}:U\rightarrow S$ be a local parametrisation and $\underline{N}:\underline{x}(U)\rightarrow S^2$ be a local Gauss map. The functions $L,M,N:U\rightarrow\Re$ given by$$\Huge\begin{align*}
+L(\underline{q})&=\langle \underline{x}_{uu}(\underline{q}),\underline{N}(\underline{x}(\underline{q}))\rangle_{\underline{x}(\underline{q})}=\underline{x}_{uu}(\underline{q})\cdot\underline{N}(\underline{x}(\underline{q}))\\
+M(\underline{q})&=\langle \underline{x}_{uv}(\underline{q}),\underline{N}(\underline{x}(\underline{q}))\rangle_{\underline{x}(\underline{q})}=\underline{x}_{uv}(\underline{q})\cdot\underline{N}(\underline{x}(\underline{q}))\\
+N(\underline{q})&=\langle \underline{x}_{vv}(\underline{q}),\underline{N}(\underline{x}(\underline{q}))\rangle_{\underline{x}(\underline{q})}=\underline{x}_{vv}(\underline{q})\cdot\underline{N}(\underline{x}(\underline{q}))
+\end{align*}$$are called the coefficients of the second fundamental form wrt $\underline{x}$. Then we have at $\underline{p}=\underline{x}(\underline{q})$:$$\Huge \underline{II}_\underline{p}(a\underline{x}_u(\underline{q})+b\underline{x}_v(\underline{q}))=a^2L(\underline{q})+2ab M(\underline{q})+b^2N(\underline{q})$$Proof:
+> One can show that$$\Huge\begin{align*}
+\underline{N}_u(\underline{q})\cdot\underline{x}_u(\underline{q})&=-\underline{x}_{uu}(\underline{q})\cdot\underline{N}(\underline{p})\\
+\underline{N}_v(\underline{q})\cdot\underline{x}_v(\underline{q})&=-\underline{x}_{vv}(\underline{q})\cdot\underline{N}(\underline{p})
+\end{align*}$$
+> Using these, and the symmetry of the Weingarten map, we find that$$\large\begin{align*}
+\underline{II}_\underline{p}(a\underline{x}_u+b\underline{x}_v)&=\langle -d_\underline{p}\underline{N}(a\underline{x}_u+b\underline{x}_v,a\underline{x}_u+b\underline{x}_v\rangle_\underline{p}\\
+&=a^2 \langle -d_\underline{p}\underline{N}(\underline{x}_u),\underline{x}_u\rangle_\underline{p}+2ab\langle -d_\underline{p}\underline{N}(\underline{x}_u),\underline{x}_v\rangle_\underline{p}+b^2 \langle -d_\underline{p}\underline{N}(\underline{x}_v),\underline{x}_v\rangle_\underline{p}\\
+&=-a^2\underline{N}_u\cdot\underline{x}_u-2ab\underline{N}_u\cdot\underline{x}_v-b^2\underline{N}_v\cdot\underline{x}_v\\
+&=a^2\underline{x}_{uu}\cdot\underline{N}+2ab\underline{x}_{uv}\cdot\underline{N}+b^2\underline{x}_{vv}\cdot\underline{N}\\
+&=a^2L+2abM+b^2N
+\end{align*}$$
+
+Let us assume $\underline{p}=\underline{x}(\underline{q})$, we now derive the matrix representation of the Weingarten map wrt the basis $\underline{x}_u(\underline{q}),\underline{x}_v(\underline{q})\in T_\underline{p}S$. If we have $$\Huge\begin{align*}
+-d_\underline{p}\underline{N}(\underline{x}_u(\underline{q}))&=a\underline{x}_u(\underline{q})+b\underline{x}_v(\underline{q})\\
+-d_\underline{p}\underline{N}(\underline{x}_v(\underline{q}))&=c\underline{x}_u(\underline{q})+d\underline{x}_v(\underline{q})
+\end{align*}$$then the matrix representation is given by $\begin{pmatrix}a & c \\ b & d\end{pmatrix}$. Assuming the above, we find$$\Huge\begin{align*}
+L&=\langle -d_\underline{p}\underline{N}(\underline{x}_u),\underline{x}_u\rangle_\underline{p}=aE+bF\\
+M&=\langle -d_\underline{p}\underline{N}(\underline{x}_u),\underline{x}_v\rangle_\underline{p}=aF+bG\\
+M&=\langle -d_\underline{p}\underline{N}(\underline{x}_v),\underline{x}_u\rangle_\underline{p}=cE+dF\\
+N&=\langle -d_\underline{p}\underline{N}(\underline{x}_v),\underline{x}_v\rangle_\underline{p}=cF+dG
+\end{align*}$$leading to$$\Huge\begin{pmatrix}L & M \\ M & N\end{pmatrix}=\begin{pmatrix}aE+bF & cE+dF \\ aF+bG & cF+dG\end{pmatrix}=\begin{pmatrix}E & F \\ F & G\end{pmatrix}\begin{pmatrix}a & c \\ b & d\end{pmatrix}$$and we obtain our matrix representation of $-d\underline{N}_\underline{p}$ via left multiplication by $\begin{pmatrix}E & F \\ F & G\end{pmatrix}^{-1}$:$$\Huge\begin{align*}
+\begin{pmatrix}a & c\\
+b & d\end{pmatrix}&=\frac{1}{EG-F^2}\begin{pmatrix}G & -F\\
+-F & E\end{pmatrix}\begin{pmatrix}L & M\\
+M & N\end{pmatrix}\\
+&=\frac{1}{EG-F^2}\begin{pmatrix}GL-FM & GM-FN\\
+-FL+EM & -FM+EN\end{pmatrix}
+\end{align*}$$
+This representation implies the following, useful for explicit computation. Let $E,F,G$ and $L,M,N$ be the coefficients of the first and second fundamental forms wrt a local parametrisation $\underline{x}:U\rightarrow S$ of a regular surface $S\subset\Re^2$. Then the Gauss and mean curvature at $\underline{p}=\underline{x}(\underline{q})$ are given by$$\Huge\begin{align*}
+K(\underline{p})&=\frac{L(\underline{q})N(\underline{q})-M(\underline{q})^2}{E(\underline{q})G(\underline{q})-F(\underline{q})^2}=\frac{\begin{vmatrix}L(\underline{q}) & M(\underline{q})\\
+M(\underline{q}) & N(\underline{q})\end{vmatrix}}{\begin{vmatrix}E(\underline{q}) & F(\underline{q})\\
+F(\underline{q}) & G(\underline{q})\end{vmatrix}}\\
+H(\underline{p})&=\frac{E(\underline{q})N(\underline{q})-2F(\underline{q})M(\underline{q})+G(\underline{q})L(\underline{q})}{2(E(\underline{q})G(\underline{q})-F(\underline{q})^2)}
+\end{align*}$$Proof:
+> Using our matrix representation, we obtain:$$\Huge\begin{align*}
+K(\underline{p})&=\frac{1}{(EG-F^2)^2}\begin{vmatrix}GL-FM & GM-FN\\
+-FL+EM & -FM+EN\end{vmatrix}\\
+&=\frac{(GL-FM)(-FM+EN)-(GM-FN)(-FL+EM)}{(EG-F^2)^2}\\
+&=\frac{(EG-F^2)(LN-M^2)}{(EG-F^2)^2}=\frac{LN-M^2}{EG-F^2}
+\end{align*}$$
+> Similarly, we find:$$\Huge\begin{align*}
+H(\underline{p})&=\frac{1}{2(EG-F^2)}\text{tr}\begin{pmatrix}GL-FM & GM-FN\\
+-FL+EM & -FM+EN\end{pmatrix}\\
+&=\frac{EN-2FM+GL}{2(EG-F)^2}
+\end{align*}$$
+
+# Curvatures of specific surfaces:
+
+Take for example the hyperbolic paraboloid defined by$$\Huge S=\{(x,y,z)\in\Re^3:z=x^2-y^2\}$$, which is parametrised as the graph of the function $f(x,y)=x^2-y^2$. That is, $\underline{x}(u,v)=(u,v,u^2-v^2)$ for $(u,v)\in\Re^2$. Then we have$$\Huge \underline{x}_u(u,v)=(1,0,2u),\,\,\underline{x}_v(u,v)=(0,1,-2v)$$and further$$\Huge \underline{x}_{uu}(u,v)=(0,0,2),\,\,\underline{x}_{uv}=(0,0,0),\,\,\underline{x}_{vv}=(0,0,-2)$$To get our Gauss map, we find$$\Huge \underline{x}_u\times\underline{x}_v=(-2u,2v,1)\implies\underline{N}(\underline{x})=\frac{1}{D}(-2u,2v,1)$$where $D=\sqrt{1+4u^2+4v^2}$ is the norm of the above cross product. Therefore we find our first fundamental form coefficients:$$\Huge E(u,v)=1+4u^2,\,\,F(u,v)=-4uv,\,\,G(u,v)=1+4v^2$$and therefore$$\Huge EG-F^2=(1+4u^2)(1+4v^2)-16u^2v^2=1+4u^2+4v^2=D^2$$Using our Gauss map, we find the coefficients of the second fundamental form$$\Huge L=\frac{2}{D},\,\,M=0,\,\,N=-\frac{2}{D}$$Which implies that the Gauss curvature is given by$$\Huge K(\underline{x})=\frac{LN-M^2}{EG-F^2}=-\frac{4}{(1+4u^2+4v^2)^2}<0$$and the mean curvature$$\Huge \begin{align*}
+H(\underline{x})&=\frac{EN+GL}{2(EG-F^2)}\\
+&=\frac{-2(1+4u^2)+2(1+4v^2)}{2D^3}\\
+&=\frac{4(v^2-u^2)}{(1+4u^2+4v^2)^{3/2}}
+\end{align*}$$Finally, let us compute the principal curvatures at $\underline{x}(0,0)=(0,0,0)=\underline{p}\in S$. Here we have $K=-4,H=0$. Note that $\kappa_1,\kappa_2$ are the roots of the characteristic polynomial of any matrix $A$ representing $-d_\underline{p}\underline{N}$, that is$$\Huge\begin{align*}
+\det(A-tI_2)&=(t-\kappa_1)(t-\kappa_2)\\
+&=t^2-(\kappa_1+\kappa_2)t+\kappa_1\kappa_2\\
+&=t^2-2Ht+K=t^2-4=(t-2)(t+2)
+\end{align*}$$showing that $\kappa_{1/2}(\underline{p})=\pm2$.
+
