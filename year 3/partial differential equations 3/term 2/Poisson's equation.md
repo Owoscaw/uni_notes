@@ -159,3 +159,38 @@ The one dimensional case is not representative of the general case, however we i
 0 & x\geq0\end{cases}$$and $u=\Phi*f$. Then $u\in C^2(\Re)$ and $u$ satisfies$$\Huge -u''(x)=f(x),\,\,x\in\Re$$We call $\Phi$ the fundamental solution of Poisson's equation in $\Re$. Note that for all $a,b\in\Re$, $u(x)=(\Phi*f)(x)+ax+b$ satisfies the equation.
 
 # The Poincare inequality:
+
+Before we move on to study Poisson's equation in general subsets of $\Re^n$, we first prove an important integral inequality. This is Poincare's inequality and dictates that there exists a constant $C>0$ such that$$\Huge \int_a^b|f(x)-\bar f|^2dx\leq C^2\int_a^b|f'(x)|^2dx$$for all $f\in C^1([a,b])$, where $\bar f$ denotes the average of $f$ over $[a,b]$:$$\Huge\bar f=\frac{1}{b-a}\int_a^bf(x)dx$$Note that we can write the Poincare inequality in terms of $L^2$ norms as$$\Huge ||f-\bar f||_{L^2([a,b])}\leq C||f'||_{L^2([a,b])}$$Remarks:
+> The constant $C$ is independent of $f$, and depends only on the domain $[a,b]$. This can be seen without proving the inequality, as it can be shown that $C=(b-a)\tilde C$ for some constant $\tilde C>0$ independent of $a,b$ through a change of variables. Consequently, $C$ increases as the length of the interval $[a,b]$ increases.
+> The Poincare inequality is false if we replace the LHS of the equation with $||f||_{L^2([a,b])}$. That is, there does not exist a constant $C>0$ such that$$\Huge||f||_{L^2([a,b])}\leq C||f'||_{L^2([a,b])}$$for all $f\in C^1([a,b])$. This is seen by taking $f$ to be a nonzero constant function, then the RHS is zero but the LHS is positive. If we restrict the class of functions to those that vanish on the boundary of the interval, this inequality turns out to be true.
+> The Poincare inequality is true in any $L^p$ norm. For $1\leq p\leq\infty$, there exists a constant $C>0$ such that$$\Huge ||f-\bar f||_{L^p([a,b])}\leq C||f'||_{L^p([a,b])}$$for all $f\in C^1([a,b])$. Consider the case with $p=\infty$:$$\Huge \max_{[a,b]}|f-\bar f|\leq C\max_{[a,b]}|f'|$$It follows that$$\Huge \max_{[a,b]}|f|=\max_{[a,b]}|\bar f+f-\bar f|\leq|\bar f|+\max_{[a,b]}|f-\bar f|\leq|\bar f|+C\max_{[a,b]}|f'|$$That is, we can estimate the maximum absolute value of $f$ in terms of its average value and maximum slope.
+> The Poincare inequality is true in any dimension.
+
+We now prove the Poincare inequality:
+> Recalling the MVT for integrals, let $f,g\in C([a,b])$ and $g\geq0$:$$\Huge\int_a^bf(x)g(x)dx=f(c)\int_a^bg(x)dx$$for some $c\in(a,b)$. Applying this with $g=1$ gives$$\Huge\bar f=\frac{1}{b-a}\int_a^bf(x)dx=\frac{1}{b-a}f(x)\int_a^bdx=f(c)$$for some $c\in(a,b)$. That is, $f$ attains its average at point $c$.
+> By the fundamental theorem of calculus:$$\Huge f(x)-\bar f=f(x)-f(x)=\int_c^xf'(y)dy$$therefore:$$\Huge\begin{align*}
+|f(x)-\bar f|&=\left|\int_c^xf'(y)dy\right|\\
+&=\left|\int_c^x1\cdot f'(y)dy\right|\\
+&\leq\left|\int_c^x1^2dy\right|^{1/2}\left|\int_c^x|f'(y)|^2dy\right|^{1/2}\\
+&\leq|x-c|^{1/2}\left(\int_a^b|f'(y)|^2dy\right)^{1/2}
+\end{align*}$$
+> Taking the square integral of this gives$$\Huge\begin{align*}
+\int_a^b|f(x)-\bar f|^2dx&\leq\int_a^b\left(|x-c|\int_a^b|f'(y)|^2dy\right)dx\\
+&=\int_a^b|x-c|dx\int_a^b|f'(y)|^2dy\\
+&\leq\int_a^b(b-a)dx\int_a^b|f'(y)|^2dy\\
+&=(b-a)^2\int_a^b|f'(y)|^2dy
+\end{align*}$$which is exactly the Poincare inequality with $C=b-a$.
+
+The version of the Poincare inequality proven above is useful for PDEs with periodic of Neumann boundary conditions. We now introduce a version useful for PDEs with Dirichlet boundary conditions. There exists a constant $C>0$ such that$$\Huge\int_a^b|f(x)|^2dx\leq C^2\int_a^b|f'(x)|^2dx$$for all $f\in C^1([a,b])$ satisfying $f(a)=f(b)=0$. In terms of the $L^2$ norm, this is written as$$\Huge||f||_{L^2([a,b])}\leq C||f'||_{L^2([a,b])}$$
+
+Let $\Omega\subset\Re^n$ be open and bounded. There exists a constant $C>0$ such that$$\Huge||f||_{L^2(\Omega)}\leq C||\underline{\nabla} f||_{L^2(\Omega)}$$for all $f\in C^1(\bar\Omega)$ satisfying $f=0$ on $\partial\Omega$. The proof of this follows from the Poincare inequality in one dimension. For simplicity we prove $n=2$ on $\Omega=(a,b)\times(c,d)$:$$\Huge\begin{align*}
+\int_\Omega|f(\underline{x})|^2d\underline{x}&=\int_c^d\int_a^b|f(x,y)|^2dx\,dy\\
+&\leq\int_c^d C^2\int_a^b|f_x(x,y)|^2dx\,dy\\
+&\leq C^2\int_c^d\int_a^b(|f_x(x,y)|^2+|f_y(x,y)|^2)dx\,dy\\
+&=C^2\int_\Omega|\underline{\nabla} f(\underline{x})|^2d\underline{x}
+\end{align*}$$as required. For general domains $\Omega\subset\Re^2$, the idea of the proof is to extend the domain of $f$ to the whole rectangle by defining $f(\underline{x})=0$ outside $\Omega$. Then the proof above yields the desired result since the $L^2$-norm of $f$ and $\underline{\nabla}f$ will be unchanged. The same proof works for higher dimensions as well. Remarks:
+> The constant $C$ depends on the domain $\Omega$. It can be shown that we can choose $C$ such that $C\leq\text{diam}(\Omega)$ where $\text{diam}(\Omega)=\sup\{|\underline{x}-\underline{y}|:\underline{x},\underline{y}\in\Omega\}$ is the diameter of $\Omega$.
+> This theorem can be extended to any $L^p$-norm. That is, for $1\leq p\leq\infty$ there exists a constant $C>0$ such that $$\Huge||f||_{L^p(\Omega)}\leq C||\underline{\nabla}f||_{L^p(\Omega)}$$for all $f\in C^1(\bar\Omega)$ such that $f=0$ on $\partial\Omega$. 
+> The Poincare inequality is not true if $\Omega=\Re^n$. It is however true if $f,\underline{\nabla}f\in L^2(\Omega)$ and if $\Omega$ is bounded between two parallel hyperplanes.
+> The optimal Poincare constant is the smallest value of $C>0$ for which the Poincare inequality holds. Let us denote this value by $C_p$ and let$$\Huge V=\{\varphi\in C^1(\bar\Omega):\varphi=0\text{ on }\partial\Omega,\varphi\neq0\}$$, then we find that$$\Huge\frac{1}{C}\leq\frac{||\underline{\nabla}f||_{L^2(\Omega)}}{||f||_{L^2(\Omega)}}\,\,\forall f\in V\implies\frac{1}{C}\leq\inf_{f\in V}\frac{||\underline{\nabla}f||_{L^2(\Omega)}}{||f||_{L^2(\Omega)}}$$therefore we can set$$\Huge\frac{1}{C_p}=\inf_{f\in V}\frac{||\underline{\nabla}f||_{L^2(\Omega)}}{||f||_{L^2(\Omega)}}$$This expression can be used to show that $1/C_p^2$ is the smallest eigenvalue $\lambda_1$ of the operator $-\Delta$ on $V$. To be precise, $1/C_p^2$ is the smallest value of $\lambda\in\Re$ such that$$\Huge -\Delta u=\lambda u\text{ in }\Omega,u=0\text{ on }\partial\Omega$$for some $u\in C^2(\bar\Omega),u\neq0$.
+ 
