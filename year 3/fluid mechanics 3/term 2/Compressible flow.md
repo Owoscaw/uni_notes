@@ -136,7 +136,7 @@ Consider a travelling plane wave reflecting off of a wall:
 
 ## $3D$ waveguide solutions:
 We saw that in $1$ dimension on a finite domain, a discrete spectrum of standing wave modes was admitting. Similarly for a domain of finite width (waveguide), a discrete spectrum of propagating modes is admitted:
-> Let us assume a $2D$ domain with walls at $y=0,y=a$. We look for a solution propagating in $x$ of the form$$\Huge \phi(x,y,t)=Y(y)\exp(ik_xx-i\omega t)$$
+> Let us assume a $2D$ domain with walls at $y=0,y=a$. We look for a solution propagating in $x$ of the form$$\Huge \phi(x,y,t)=Y(y)\exp(ik_xx-i\omega t)$$, our domain looks like:![[planar waveguide]]
 > Substituting this into the wave equation, we find$$\Huge -\omega^2Y=c_0^2(Y''-k_x^2Y)\implies Y''=-k_y^2Y,\,\,k_y^2=\frac{\omega^2}{c_0^2}-k_x^2$$
 > The boundary conditions impose $v=0$ on $y=0,y=a$ so we need $Y'(0)=Y'(a)=0$. This shows that$$\Huge Y(y)=A_n\cos(k_yy),\,\,k_y=\frac{n\pi}{a}$$, a discrete spectrum of modes is admitted. 
 > The allowed modes then take form$$\Huge \phi(x,y,t)=A_n\cos\left(\frac{n\pi y}{a}\right)\exp(ik_xx-i\omega t)$$, provided that $\omega$ satisfies the dispersion relation$$\Huge \omega=c_0\sqrt{k_x^2+\frac{n^2\pi^2}{a^2}}$$
