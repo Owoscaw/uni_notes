@@ -50,7 +50,7 @@ B&=\int\left[\left(\frac{\partial }{\partial (\partial_t\phi)}\mathcal{L}\right)
 &+\int\left[\left(\frac{\partial }{\partial(\partial_2\phi)}\mathcal{L}\right)\right]_{x_2=a_2}^{x_2=b_2}dt\,dx_1\,dx_3\\
 &+\int\left[\left(\frac{\partial }{\partial(\partial_1\phi)}\mathcal{L}\right)\right]_{x_1=a_1}^{x_1=b_1}dt\,dx_2\,dx_3
 \end{align*}$$
-We now assume that the field vanishes when approaching infinity, and send the volume of the box to infinity. This causes the boundary terms to vanish. As $\delta\phi$ was arbitrary, we conclude that the Euler-Lagrange equations for a field theory are$$\Huge\left(\frac{\partial }{\partial \phi}\mathcal{L}\right)-\partial_t\left(\frac{\partial }{\partial (\partial_t\phi)}\mathcal{L}\right)-\partial_i\left(\frac{\partial }{\partial (\partial_i\phi)}\mathcal{L}\right)=0$$
+We now assume that the field vanishes when approaching infinity, and send the volume of the box to infinity. This causes the boundary terms to vanish. As $\delta\phi$ was arbitrary, we conclude that the Euler-Lagrange equations for a field theory are$$\Huge\left(\frac{\partial }{\partial \phi}\mathcal{L}\right)-\partial_t\left(\frac{\partial }{\partial (\partial_t\phi)}\mathcal{L}\right)-\sum_i\partial_i\left(\frac{\partial }{\partial (\partial_i\phi)}\mathcal{L}\right)=0$$
 Note that if the action $S$ depends on several fields and their derivatives, we get a Euler-Lagrange equation as above for every field. 
 
 ## Examples:
@@ -61,5 +61,5 @@ Consider a complex scalar field $\psi$ with action$$\Huge S=\int-|\underline{\na
 0&=-\partial_i\left(\frac{\partial }{\partial (\partial_i\bar\psi)}\mathcal{L}\right)-\partial_t\left(\frac{\partial }{\partial (\partial_t\bar\psi)}\mathcal{L}\right)+\left(\frac{\partial }{\partial \bar\psi}\mathcal{L}\right)\\
 &=\underline{\nabla}\cdot\underline{\nabla}\psi+\frac{i}{2}\partial_t\psi+\frac{i}{2}\partial_t\psi\\
 &=\Delta\psi+i\partial_t\psi
-\end{align*}$$which is nothing but the [[Time evolution of QM states#Schrodinger equation motivation|Schrodinger equation]] for a free particle with $m=1/2$ and $\hbar=1$.
+\end{align*}$$which is nothing but the [[Time evolution of QM states#Schrodinger equation motivation|Schrodinger equation]] for a free particle with $m=1/2$ and $\hbar=1$. Similarly for $\psi$ we find|$$\Huge \Delta\bar\psi-i\partial_t\bar\psi=0$$
 
