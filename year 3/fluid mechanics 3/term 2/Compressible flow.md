@@ -106,3 +106,54 @@ If we assume that $\phi=\phi(x,t)$, then the wave equation for $\phi$ reduces to
 Now we have an idea of the general properties of sound wave, let us introduce more effects. We start by introducing walls, so we assume our domain is now of the form $\{x:0<x<L\}$. As for water waves, we then look for standing wave solutions of the form$$\Huge\phi(x,t)=X(x)\sin(\omega t)$$Substituting this into our linear wave equation for $\phi$ gives us the ODE:$$\Huge-\omega^2X=c_0^2X''$$which has the solution$$\Huge X(x)=A\sin(kx)+B\cos(kx),\,\,k=\frac{\omega}{c_0}$$Our solution $\phi$ must satisfy suitable boundary conditions at $x=0$ and $x=L$, which depend on the problem. These will either be of the form of a constraint on pressure or velocity:
 > Let us explore an example modelling a tube with two open ends where $p=0$ but $\underline{u}$ is unconstrained. The boundary conditions are then on $p$:$$\Huge p(x,t)=-\rho_0\frac{\partial \phi}{\partial t}=-\rho_0\omega X(x)\cos(\omega t)$$so in order to satisfy them, our solution must be$$\Huge X(x)=A_n\sin\left(\frac{n\pi x}{L}\right)$$where the wavenumber $k$ is now of the form $k=n\pi/L$.
 > There is therefore a discrete spectrum of possible modes with $\omega=c_0k=c_0n\pi/L$. Each mode has the form$$\Huge\phi(x,t)=A_n\sin\left(\frac{n\pi x}{L}\right)\sin\left(\frac{c_0n\pi t}{L}\right)$$
+
+## $3D$ travelling wave solutions:
+Let us now generalise these concepts to $\Re^3$. We saw that the wave equation admits a solution of a superposition of two oppositely moving waves. In $\Re^3$, the solution will be a superposition of plane waves travelling in many different directions. Each component will have form$$\Huge \phi(\underline{x},t)=F(\underline{k}\cdot\underline{x}-\omega t)$$for some fixed vector $\underline{k}$ whose direction represents the direction of motion. Differentiating this expression, we find:$$\Huge\begin{align*}
+\frac{\partial^2\phi}{\partial t^2}&=\omega^2 F''(\underline{k}\cdot\underline{x}-\omega t)\\
+\underline{\nabla}^2\phi&=\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}+\frac{\partial^2\phi}{\partial z^2}\\
+&=(k_x^2+k_y^2+k_z^2)F''(\underline{k}\cdot\underline{x}-\omega t)
+\end{align*}$$So this will be a solution to our system, providing that $\omega$ satisfies the dispersion relation$$\Huge \omega^2=c_0^2|\underline{k}|^2$$The corresponding velocity perturbation is then$$\Huge \underline{u}(\underline{x},t)=\underline{\nabla}\phi=\underline{k}F'(\underline{k}\cdot\underline{x}-\omega t)$$, so we see that oscillations are in the direction of propagation aligned with $\underline{k}$. 
+
+Consider a travelling plane wave reflecting off of a wall:
+> If we place a rigid wall at $y=0$, let us propagate an incoming wave diagonally towards it in the $\underline{k}_i=(k_x,-k_y)$ direction:$$\Huge\implies\phi_i(x,y,t)=\exp(ik_xx-ik_yy-i\omega t)$$
+> To find the wave on the whole domain, we use two methods:
+> > Firstly we use separation of variables:$$\Huge \phi(x,y,t)=X(x)Y(y)\exp(-i\omega t)$$
+> > Recall that we expect a superposition of waves, so we should find $\phi_i$ inside our solution.
+> > Inserting our separation into our wave equation, we get$$\Huge-\omega^2=c_0^2\left(\frac{X''}{X}+\frac{Y''}{Y}\right)$$, which we further separate:$$\Huge -\frac{X''}{X}=\frac{Y''}{Y}+\frac{\omega^2}{c_0^2}=k_x^2$$
+> > The solutions then have form:$$\Huge X(x)=A\exp(ik_xx)+B\exp(-ik_xx)$$
+> > Rewriting our $Y$ equation as$$\Huge\frac{Y''}{Y}=k_x^2-\frac{\omega^2}{c_0^2}=-k_y^2\implies k_y^2=\frac{\omega^2}{c_0^2}-k_x^2$$, we see that our solution has form:$$\Huge Y(y)=C\exp(ik_yy)+D\exp(-ik_yy)$$
+> > Our full solution is then:$$\phi(x,y,t)=(A\exp(ik_xx)+B\exp(-ik_xx))(C\exp(ik_yy)+D\exp(-ik_yy))\exp(-i\omega t)$$
+> > The constants are determined by additional conditions:
+> > > Firstly we impose the condition at the wall:$$\Huge v=\frac{\partial \phi}{\partial y}=0\implies Y'(0)=0$$and so it follows that:$$\Huge ik_yC-ik_yD=0\implies C=D$$
+> > > Secondly, we note that if we expand our solution we get $4$ terms. We expect $\phi_i$ to be one of these terms, which is in fact the case with $AD=1$. Then the $BC$ term is a leftward, downward moving wave. This is not allowed, so we set $B=0$
+> > This fixes our solution:$$\Huge\begin{align*}
+\phi(x,y,t)&=X(x)Y(y)\exp(-i\omega t)\\
+&=\exp(ik_xx)(\exp(ik_yy)+\exp(-ik_yy))\exp(-i\omega t)\\
+&=\exp(ik_xx-ik_yy-i\omega t)+\exp(ik_xx+ik_yy-i\omega t)
+\end{align*}$$where the terms represent $\phi_i$ and the reflected wave respectively. 
+> > We are then left with the incidence wave with direction $\underline{k}_i=(k_x,-k_y)$ and a reflected wave with direction $\underline{k}_r(k_x,k_y)$.
+> Our second method is the method of images. Just as we did with potential flows, we can take the same approach and guarantee that $v=0$ at the wall by superimposing the incident wave $\phi_i$ with an image wave $\tilde\phi$ that is travelling in the same direction in $x$, but opposite in $y$. Thus we can directly postulate the same solution.
+
+## $3D$ waveguide solutions:
+We saw that in $1$ dimension on a finite domain, a discrete spectrum of standing wave modes was admitting. Similarly for a domain of finite width (waveguide), a discrete spectrum of propagating modes is admitted:
+> Let us assume a $2D$ domain with walls at $y=0,y=a$. We look for a solution propagating in $x$ of the form$$\Huge \phi(x,y,t)=Y(y)\exp(ik_xx-i\omega t)$$
+> Substituting this into the wave equation, we find$$\Huge -\omega^2Y=c_0^2(Y''-k_x^2Y)\implies Y''=-k_y^2Y,\,\,k_y^2=\frac{\omega^2}{c_0^2}-k_x^2$$
+> The boundary conditions impose $v=0$ on $y=0,y=a$ so we need $Y'(0)=Y'(a)=0$. This shows that$$\Huge Y(y)=A_n\cos(k_yy),\,\,k_y=\frac{n\pi}{a}$$, a discrete spectrum of modes is admitted. 
+> The allowed modes then take form$$\Huge \phi(x,y,t)=A_n\cos\left(\frac{n\pi y}{a}\right)\exp(ik_xx-i\omega t)$$, provided that $\omega$ satisfies the dispersion relation$$\Huge \omega=c_0\sqrt{k_x^2+\frac{n^2\pi^2}{a^2}}$$
+
+This tells us a few things:
+> The dispersion relation leads to a minimum frequency. For any mode $n$:$$\Huge \omega>c_0\sqrt{\frac{n^2\pi^2}{a^2}}=c_0\frac{n\pi}{a}$$So taking $n=0$, we have a wave with no $y$-dependence (giving a plane wave) and our constraint is always satisfied. For higher modes, this is not true. That is, for $\omega\leq c_0\pi/a$, only a plane wave can propagate. 
+> The phase speed in the $x$-direction $\omega/k_x$ is a function of $n$, so sound waves of different frequencies progress along the waveguide at different speeds.
+> Note that this phase speed in the $x$-direction is faster than the speed of sound since $\omega/k_x>c_0$, so the wave becomes slower in the $y$-direction to compensate. Observe that our dispersion relation dictates $\omega=c_0|\underline{k}|$. To calculate the speed we therefore need to use $|\underline{k}|$, not $k_x$.
+> This is because the mode is actually made of two travelling waves travelling at an angle and propagating off of the walls. To see this, note that$$\begin{align*}
+\cos\left(\frac{n\pi y}{a}\right)\exp(ik_xx-i\omega t)&=\frac{1}{2}\left(\exp\left(\frac{in\pi y}{a}\right)+\exp(-\frac{in\pi y}{a})\right)\exp(ik_xx-i\omega t)\\
+&=\frac{1}{2}\exp\left(\frac{in\pi y}{a} +ik_xx-i\omega t\right)+\frac{1}{2}\exp\left(-\frac{in\pi y}{a}+ik_xx-i\omega t\right)
+\end{align*}$$, so each wave has wavenumber$$\Huge |\underline{k}|=\sqrt{k_x^2+\frac{n^2\pi^2}{a^2}}$$and so their phase speed is $\omega/|\underline{k}|=c_0$ as expected. The waves therefore bounce off of the wall at the angle$$\Huge \alpha=\pm\arctan\left(\frac{k_y}{k_x}\right)=\pm\arctan\left(\frac{n\pi}{k_x a}\right)$$
+
+We can generalise this approach to $3D$ waveguides such as tubes with square or circular cross sections. Therefore let us consider a cylindrical waveguide:
+> Here, we assume the domain is an infinite tube of radius $a$:$$\Huge \Omega=\{(r,\theta,z):0\leq r<a,0\leq \theta<2\pi,-\infty<z<\infty\}$$
+> So we look for axisymmetric solutions of the form $\phi(r,z,t)=R(r)\exp(ik_zz-i\omega t)$. In cylindrical coordinates, the wave equation gives:$$\Huge -\omega^2R=c_0^2\left(\frac{1}{r}\frac{d}{dr}(rR')-k_z^2R\right)$$Which we rearrange to give$$\Huge r^2R''+rR'+\left(\frac{\omega^2}{c_0^2}-k_z^2\right)r^2R=0$$
+> Comparing this to Bessel's equation of order $\alpha$ for a function $u(s)$ and its solution:$$\Huge s^2u''+su'+(s^2-\alpha^2)u=0\implies u(s)=AJ_\alpha(s)+BY_\alpha(s)$$So we see that our equation is simply Bessel's equation of order $0$ when we change variables:$$\Huge s=\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r$$
+> Our solution is therefore the Bessel function $R(s)=AJ_0(s)$:$$\Huge R(r)=AJ_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r\right)$$
+> It remains to impose the boundary condition $u_r=0$ on $r=a$, meaning $R'(a)=0$:$$\Huge \implies J'_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}a\right)=0$$
+> As $J_0$ has a discrete sequence of turning points, this will give us a discrete spectrum of $\omega$. Let $j_n$ be the $n$th turning point of $J_0$, then:$$\Huge \phi(r,z,t)=A_nJ_0\left(\frac{j_n r}{a}\right)\exp(ik_zz-i\omega t),\,\,\omega=c_0\sqrt{k_z^2+\frac{j_n^2}{a^2}}$$ 

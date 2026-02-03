@@ -193,4 +193,18 @@ Let $\Omega\subset\Re^n$ be open and bounded. There exists a constant $C>0$ such
 > This theorem can be extended to any $L^p$-norm. That is, for $1\leq p\leq\infty$ there exists a constant $C>0$ such that $$\Huge||f||_{L^p(\Omega)}\leq C||\underline{\nabla}f||_{L^p(\Omega)}$$for all $f\in C^1(\bar\Omega)$ such that $f=0$ on $\partial\Omega$. 
 > The Poincare inequality is not true if $\Omega=\Re^n$. It is however true if $f,\underline{\nabla}f\in L^2(\Omega)$ and if $\Omega$ is bounded between two parallel hyperplanes.
 > The optimal Poincare constant is the smallest value of $C>0$ for which the Poincare inequality holds. Let us denote this value by $C_p$ and let$$\Huge V=\{\varphi\in C^1(\bar\Omega):\varphi=0\text{ on }\partial\Omega,\varphi\neq0\}$$, then we find that$$\Huge\frac{1}{C}\leq\frac{||\underline{\nabla}f||_{L^2(\Omega)}}{||f||_{L^2(\Omega)}}\,\,\forall f\in V\implies\frac{1}{C}\leq\inf_{f\in V}\frac{||\underline{\nabla}f||_{L^2(\Omega)}}{||f||_{L^2(\Omega)}}$$therefore we can set$$\Huge\frac{1}{C_p}=\inf_{f\in V}\frac{||\underline{\nabla}f||_{L^2(\Omega)}}{||f||_{L^2(\Omega)}}$$This expression can be used to show that $1/C_p^2$ is the smallest eigenvalue $\lambda_1$ of the operator $-\Delta$ on $V$. To be precise, $1/C_p^2$ is the smallest value of $\lambda\in\Re$ such that$$\Huge -\Delta u=\lambda u\text{ in }\Omega,u=0\text{ on }\partial\Omega$$for some $u\in C^2(\bar\Omega),u\neq0$.
- 
+
+# Poisson's equation in $\Omega\subset\Re^n$:
+
+For general domains $\Omega\subset\Re^n,n\geq2$, it is not usually possible to find explicit solutions of Poisson's equation. Instead we consider the questions of existence, uniqueness, and continuous dependence on data.
+
+## Existence:
+Let $\Omega\subset\Re^n$ be open, bounded, and connected with smooth boundary. Let $f\in C^1(\Omega)$ be bounded and $g\in C(\partial\Omega)$. Then there exists at least one solution $u\in C^2(\Omega)\cap C(\bar\Omega)$ of the Dirichlet problem$$\Huge -\Delta u=f\text{ in }\Omega,\,\,u=g\text{ on }\partial\Omega$$, the proof of which is beyond the scope of these notes. 
+
+Note that if $u\in C^2(\Omega)$ satisfies $-\Delta u=f$, then $f\in C(\Omega)$. We ask if the converse is true, that is if $f\in C(\Omega)$, does there exist a solution $u\in C^2(\Omega)$? It turns out it is not true, it can be shown that there exists a continuous function $f\in C(B_1(\underline{0}))$ such that Poisson's equation in $B_1(\underline{0})$ has no $C^2$ solution. While the assumption $f\in C(\Omega)$ is too weak, the assumption $f\in C^1(\Omega)$ turns out to be too strong. The correct space for $f$ lies somewhere between $C^0$ and $C^1$, the spaces $C^k$ are simply the wrong function spaces for Poisson's equation and we should consider another space.
+
+This space turns out to be the Holder spaces $C^{k,\alpha}$. Let $0<\alpha\leq1$. We say that a continuous function $u\in C(\Omega)$ is Holder continuous with exponent $\alpha$ if there exists a constant $C>0$ such that:$$\Huge|u(\underline{y})-u(\underline{x})|\leq C|\underline{y}-\underline{x}|^\alpha,\,\,\forall\underline{x},\underline{y}\in\Omega$$For example, $u(x)=|x|^\alpha$ is Holder continuous with exponent $\alpha$. Note that it is not continuously differentiable since it has no derivative at $0$. We say that $u\in C^{k,\alpha}(\Omega)$ if $u\in C^k(\Omega)$ and all its $k$-th order partial derivatives are Holder continuous with exponent $\alpha$. For all $0<\alpha\leq1$, $$\Huge C^1([a,b])\subset C^{0,\alpha}([a,b])\subset C([a,b])$$, and so Holder continuity lies between continuity and continuous differentiability. 
+
+It can be shown that if $f\in C^{0,\alpha}(\Omega)$ is bounded, then there exists a function $u\in C^{2,\alpha}(\Omega)$ satisfying $-\Delta u=f$. This is known as the Schauder theory of elliptic PDEs.
+
+## Energy Method:
