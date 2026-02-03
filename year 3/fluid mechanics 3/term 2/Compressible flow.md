@@ -154,7 +154,7 @@ We can generalise this approach to $3D$ waveguides such as tubes with square or 
 > Here, we assume the domain is an infinite tube of radius $a$, aligned with the $z$-axis:$$\Huge \Omega=\{(r,\theta,z):0\leq r<a,0\leq \theta<2\pi,-\infty<z<\infty\}$$
 > So we look for axisymmetric solutions of the form $\phi(r,z,t)=R(r)\exp(ik_zz-i\omega t)$. In cylindrical coordinates, the wave equation gives:$$\Huge -\omega^2R=c_0^2\left(\frac{1}{r}\frac{d}{dr}(rR')-k_z^2R\right)$$Which we rearrange to give$$\Huge r^2R''+rR'+\left(\frac{\omega^2}{c_0^2}-k_z^2\right)r^2R=0$$
 > Comparing this to Bessel's equation of order $\alpha$ for a function $u(s)$ and its solution:$$\Huge s^2u''+su'+(s^2-\alpha^2)u=0\implies u(s)=AJ_\alpha(s)+BY_\alpha(s)$$So we see that our equation is simply Bessel's equation of order $0$ when we change variables:$$\Huge s=\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r$$
-> Our solution is therefore the Bessel function $R(s)=AJ_0(s)$:$$\Huge R(r)=AJ_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r\right)$$
+> Our solution is therefore the Bessel function $R(s)=AJ_0(s)$, as $Y_0$ blows up at $0$:$$\Huge R(r)=AJ_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r\right)$$
 > It remains to impose the boundary condition $u_r=0$ on $r=a$, meaning $R'(a)=0$:$$\Huge \implies J'_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}a\right)=0$$
 > As $J_0$ has a discrete sequence of turning points, this will give us a discrete spectrum of $\omega$. Let $j_n$ be the $n$th turning point of $J_0$, then:$$\Huge \phi(r,z,t)=A_nJ_0\left(\frac{j_n r}{a}\right)\exp(ik_zz-i\omega t),\,\,\omega=c_0\sqrt{k_z^2+\frac{j_n^2}{a^2}}$$ 
 
