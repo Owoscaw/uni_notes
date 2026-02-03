@@ -69,10 +69,8 @@ Consider an action of the form$$\Huge S=\int\mathcal{L}(\phi_I,\partial_\mu\phi_
 For a Lie group $G$ and representation $r$, a linear map acting on fields $\phi_I$$$\Huge\begin{align*}\phi_I\rightarrow\phi_I'&=(r(g)\underline{\phi})_I\\
 \partial_\mu\phi_I\rightarrow\partial_\mu\phi_I'&=\partial_\mu(r(g)\underline{\phi})_I=(r(g)\partial_\mu\underline{\phi})_I\end{align*}$$is called a symmetry of $\mathcal{L}$ if:$$\Huge\mathcal{L}(\phi_I,\partial_\mu\phi_I)=\mathcal{L}(\phi_I',\partial_\mu\phi_I')$$
 Considering infinitesimal transformations, we see the field transforms as:$$\Huge\phi_I\rightarrow\phi_I'=\phi_I+\delta_\gamma\phi_I=((\mathbb{1}+\rho(\gamma))\underline{\phi})_I$$
-We can now state Noether's theorem. Let $G$ be a Lie group of symmetries of $\mathcal{L}$ acting in a representation $r$. Then: $$\Huge\partial_\mu j^\mu=0,\,\,j^\mu=(\rho(\gamma)\underline{\phi})_I\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}$$Where $j^\mu$ is known as a conserved current.
-
-To prove this, we use the fact that the Lagrangian shouldn't vary:
-> Consider:$$\Huge0=\delta_\gamma\mathcal{L}=\frac{\partial \mathcal{L}}{\partial \phi_I}\delta_\gamma\phi_I+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\delta_\gamma\partial_\mu\phi_I$$
+We can now state Noether's theorem. Let $G$ be a Lie group of symmetries of $\mathcal{L}$ acting in a representation $r$. Then: $$\Huge\partial_\mu j^\mu=0,\,\,j^\mu=(\rho(\gamma)\underline{\phi})_I\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}$$Where $j^\mu$ is known as a conserved current. To prove this, we use the fact that the Lagrangian shouldn't vary:
+> Consider the associated infinitesimal transformation:$$\Huge0=\delta_\gamma\mathcal{L}=\frac{\partial \mathcal{L}}{\partial \phi_I}\delta_\gamma\phi_I+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\delta_\gamma\partial_\mu\phi_I$$
 > Now we notice that the first term appears in the associated equations of motion for $\mathcal{L}$:$$\Huge\implies\begin{align*}
 0&=\partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial\mu\phi_I)}\right)\delta_\gamma\phi_I+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\partial_\mu\delta_\gamma\phi_I\\
 &=\partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\delta_\gamma\phi_I\right)\\
@@ -80,6 +78,6 @@ To prove this, we use the fact that the Lagrangian shouldn't vary:
 \end{align*}$$Completing the proof.
 
 
-To see the physical interpretation of this theorem, we turn away from relativistic notation and integrate a conserved current over some volume $V\subset\Re^3$$$\Huge\int_V\partial_\mu j^\mu\,d^3x=\frac{\partial }{\partial t}\int_Vj^0\,d^3x+\int_V\partial_i j^i\,d^3x=0$$, where we have taken the time derivative out of the first term. Then this becomes$$\Huge\frac{\partial }{\partial t}\int_V j^0\,d^3x+\int_{\partial V}j^i\,dA^i=0$$, where $dA^i$ represents the surface element. 
+To see the physical interpretation of this theorem, we turn away from relativistic notation and integrate a conserved current over some volume $V\subset\Re^3$$$\Huge\int_V\partial_\mu j^\mu\,d^3x=\frac{\partial }{\partial t}\int_Vj^0\,d^3x+\int_V\partial_i j^i\,d^3x=0$$, where we have taken the time derivative out of the first term. Then this becomes$$\Huge\frac{\partial }{\partial t}\int_V j^0\,d^3x+\int_{\partial V}j^i\,dA^i=0$$, where $dA^i$ represents the surface element, the first term represents the charge inside the volume, and the second represents the flux of charge through the boundary.
 
 Assuming our fields tend to $0$ at spatial infinity, the current $j^\mu$ must also tend to $0$ as the volume is expanded to all of $\Re^3$:$$\Huge\frac{\partial }{\partial t}\int_{\Re^3}j^0\,d^3x=0$$That is, the total charge of the system does not change with time.
