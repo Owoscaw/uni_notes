@@ -61,5 +61,25 @@ Consider a complex scalar field $\psi$ with action$$\Huge S=\int-|\underline{\na
 0&=-\partial_i\left(\frac{\partial }{\partial (\partial_i\bar\psi)}\mathcal{L}\right)-\partial_t\left(\frac{\partial }{\partial (\partial_t\bar\psi)}\mathcal{L}\right)+\left(\frac{\partial }{\partial \bar\psi}\mathcal{L}\right)\\
 &=\underline{\nabla}\cdot\underline{\nabla}\psi+\frac{i}{2}\partial_t\psi+\frac{i}{2}\partial_t\psi\\
 &=\Delta\psi+i\partial_t\psi
-\end{align*}$$which is nothing but the [[Time evolution of QM states#Schrodinger equation motivation|Schrodinger equation]] for a free particle with $m=1/2$ and $\hbar=1$. Similarly for $\psi$ we find|$$\Huge \Delta\bar\psi-i\partial_t\bar\psi=0$$
+\end{align*}$$which is nothing but the [[Time evolution of QM states#Schrodinger equation motivation|Schrodinger equation]] for a free particle with $m=1/2$ and $\hbar=1$. Similarly for $\psi$ we find$$\Huge \Delta\bar\psi-i\partial_t\bar\psi=0$$
+Consider an action of the form$$\Huge S=\int\mathcal{L}(\phi_I,\partial_\mu\phi_I)dt\,d^3x$$, then we have the E-L equations:$$\Huge\delta S=0\implies\frac{\partial \mathcal{L}}{\partial \phi_I}-\partial_\mu\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi)}=0$$
 
+# Noether's theorem:
+
+For a Lie group $G$ and representation $r$, a linear map acting on fields $\phi_I$$$\Huge\begin{align*}\phi_I\rightarrow\phi_I'&=(r(g)\underline{\phi})_I\\
+\partial_\mu\phi_I\rightarrow\partial_\mu\phi_I'&=\partial_\mu(r(g)\underline{\phi})_I=(r(g)\partial_\mu\underline{\phi})_I\end{align*}$$is called a symmetry of $\mathcal{L}$ if:$$\Huge\mathcal{L}(\phi_I,\partial_\mu\phi_I)=\mathcal{L}(\phi_I',\partial_\mu\phi_I')$$
+Considering infinitesimal transformations, we see the field transforms as:$$\Huge\phi_I\rightarrow\phi_I'=\phi_I+\delta_\gamma\phi_I=((\mathbb{1}+\rho(\gamma))\underline{\phi})_I$$
+We can now state Noether's theorem. Let $G$ be a Lie group of symmetries of $\mathcal{L}$ acting in a representation $r$. Then: $$\Huge\partial_\mu j^\mu=0,\,\,j^\mu=(\rho(\gamma)\underline{\phi})_I\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}$$Where $j^\mu$ is known as a conserved current.
+
+To prove this, we use the fact that the Lagrangian shouldn't vary:
+> Consider:$$\Huge0=\delta_\gamma\mathcal{L}=\frac{\partial \mathcal{L}}{\partial \phi_I}\delta_\gamma\phi_I+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\delta_\gamma\partial_\mu\phi_I$$
+> Now we notice that the first term appears in the associated equations of motion for $\mathcal{L}$:$$\Huge\implies\begin{align*}
+0&=\partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial\mu\phi_I)}\right)\delta_\gamma\phi_I+\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\partial_\mu\delta_\gamma\phi_I\\
+&=\partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\delta_\gamma\phi_I\right)\\
+&=\partial_\mu\left((\rho(\gamma)\underline{\phi})_I\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi_I)}\right)=\partial_\mu j^\mu
+\end{align*}$$Completing the proof.
+
+
+To see the physical interpretation of this theorem, we turn away from relativistic notation and integrate a conserved current over some volume $V\subset\Re^3$$$\Huge\int_V\partial_\mu j^\mu\,d^3x=\frac{\partial }{\partial t}\int_Vj^0\,d^3x+\int_V\partial_i j^i\,d^3x=0$$, where we have taken the time derivative out of the first term. Then this becomes$$\Huge\frac{\partial }{\partial t}\int_V j^0\,d^3x+\int_{\partial V}j^i\,dA^i=0$$, where $dA^i$ represents the surface element. 
+
+Assuming our fields tend to $0$ at spatial infinity, the current $j^\mu$ must also tend to $0$ as the volume is expanded to all of $\Re^3$:$$\Huge\frac{\partial }{\partial t}\int_{\Re^3}j^0\,d^3x=0$$That is, the total charge of the system does not change with time.
