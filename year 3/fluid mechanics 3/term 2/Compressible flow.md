@@ -157,3 +157,4 @@ We can generalise this approach to $3D$ waveguides such as tubes with square or 
 > Our solution is therefore the Bessel function $R(s)=AJ_0(s)$:$$\Huge R(r)=AJ_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r\right)$$
 > It remains to impose the boundary condition $u_r=0$ on $r=a$, meaning $R'(a)=0$:$$\Huge \implies J'_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}a\right)=0$$
 > As $J_0$ has a discrete sequence of turning points, this will give us a discrete spectrum of $\omega$. Let $j_n$ be the $n$th turning point of $J_0$, then:$$\Huge \phi(r,z,t)=A_nJ_0\left(\frac{j_n r}{a}\right)\exp(ik_zz-i\omega t),\,\,\omega=c_0\sqrt{k_z^2+\frac{j_n^2}{a^2}}$$ 
+
