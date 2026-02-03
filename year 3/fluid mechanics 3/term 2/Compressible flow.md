@@ -151,7 +151,7 @@ This tells us a few things:
 \end{align*}$$, so each wave has wavenumber$$\Huge |\underline{k}|=\sqrt{k_x^2+\frac{n^2\pi^2}{a^2}}$$and so their phase speed is $\omega/|\underline{k}|=c_0$ as expected. The waves therefore bounce off of the wall at the angle$$\Huge \alpha=\pm\arctan\left(\frac{k_y}{k_x}\right)=\pm\arctan\left(\frac{n\pi}{k_x a}\right)$$
 
 We can generalise this approach to $3D$ waveguides such as tubes with square or circular cross sections. Therefore let us consider a cylindrical waveguide:
-> Here, we assume the domain is an infinite tube of radius $a$:$$\Huge \Omega=\{(r,\theta,z):0\leq r<a,0\leq \theta<2\pi,-\infty<z<\infty\}$$
+> Here, we assume the domain is an infinite tube of radius $a$, aligned with the $z$-axis:$$\Huge \Omega=\{(r,\theta,z):0\leq r<a,0\leq \theta<2\pi,-\infty<z<\infty\}$$
 > So we look for axisymmetric solutions of the form $\phi(r,z,t)=R(r)\exp(ik_zz-i\omega t)$. In cylindrical coordinates, the wave equation gives:$$\Huge -\omega^2R=c_0^2\left(\frac{1}{r}\frac{d}{dr}(rR')-k_z^2R\right)$$Which we rearrange to give$$\Huge r^2R''+rR'+\left(\frac{\omega^2}{c_0^2}-k_z^2\right)r^2R=0$$
 > Comparing this to Bessel's equation of order $\alpha$ for a function $u(s)$ and its solution:$$\Huge s^2u''+su'+(s^2-\alpha^2)u=0\implies u(s)=AJ_\alpha(s)+BY_\alpha(s)$$So we see that our equation is simply Bessel's equation of order $0$ when we change variables:$$\Huge s=\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r$$
 > Our solution is therefore the Bessel function $R(s)=AJ_0(s)$:$$\Huge R(r)=AJ_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}r\right)$$
