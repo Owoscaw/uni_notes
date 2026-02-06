@@ -143,4 +143,60 @@ Note that curvature is a local property of a surface $S$ at any point $\underlin
 Recall the natural distance function on a connected surface $S\subset\Re^3$:$$\Huge d_S(\underline{p}_1,\underline{p}_2)=\inf\{L(\underline{\alpha}):\underline{\alpha}:[0,1]\rightarrow S\text{ smooth},\underline{\alpha}(0)=\underline{p}_1,\underline{\alpha}(1)=\underline{p}_2\}$$This makes $S$ a metric space and we call such a space $(S,d_S)$ complete if every Cauchy sequence $(\underline{p}_n)\subset S$ is convergent in $S$. That is, there exists $\underline{p}\in S$ such that for every $\epsilon>0$ there exists $N\in\mathbb{N}$ such that $d_S(\underline{p}_n,\underline{p})<\epsilon$ for all $n\geq N$. 
 
 ## Bonnet-Myers theorem for surfaces:
-Let $S\subset\Re^3$ be a connected regular surface which is complete as a metric space $(S,d_S)$. Assume there exists a positive constant $K_0$ such that$$\Huge K(\underline{p})\geq K_0\,\,\forall\underline{p}\in S$$, then the surface has bounded diameter. That is$$\Huge\text{diam}(S)=\sup_{\underline{p}_1,\underline{p}_2\in S}d_S(\underline{p}_1,\underline{p}_2)\leq\frac{\pi}{\sqrt{K_0}}$$and there exists $\underline{p}_1,\underline{p}_2\in S$ with $\text{diam}(S)=d_S(\underline{p}_1,\underline{p}_2)$. Moreover, the above inequality is sharp: the sphere $S^2(r)$ has Gauss curvature $K_0=1/r^2$ and diameter:$$\Huge \text{diam}(S^2(r))=\pi r=\frac{\pi}{\sqrt{K_0}}$$
+Let $S\subset\Re^3$ be a connected regular surface which is complete as a metric space $(S,d_S)$. Assume there exists a positive constant $K_0$ such that$$\Huge K(\underline{p})\geq K_0\,\,\forall\underline{p}\in S$$, then the surface has bounded diameter. That is$$\Huge\text{diam}(S)=\sup_{\underline{p}_1,\underline{p}_2\in S}d_S(\underline{p}_1,\underline{p}_2)\leq\frac{\pi}{\sqrt{K_0}}$$and there exists $\underline{p}_1,\underline{p}_2\in S$ with $\text{diam}(S)=d_S(\underline{p}_1,\underline{p}_2)$. Moreover, the above inequality is sharp: the sphere $S^2(r)$ has Gauss curvature $K_0=1/r^2$ and diameter:$$\Huge \text{diam}(S^2(r))=\pi r=\frac{\pi}{\sqrt{K_0}}$$We now present more global results related to curvature.
+
+Every compact surface $S\subset\Re^3$ has at least one elliptic point. It is intuitively clear that there exists a sphere $S_r(\underline{p})$ of smallest radius $r>0$ such that $S_r$ is contained in $S$. Then $S$ must touch this sphere in at least one point $\underline{p}_0$, that is $\underline{p}_0\in S\cap S_r(\underline{p})$. It is then also clear that the two principal curvatures of $S$ at $\underline{p}_0$ are of the same sign and $\geq1/r$. Consequently, $K(\underline{p}_0)\geq1/r^2>0$ and $\underline{p}_0\in S$ is an elliptic point.
+
+A corollary of this theorem is that there are no compact surfaces $S\subset\Re^3$ which are minimal. Proof:
+> We know that $S$ must contain an elliptic point $\underline{p}_0\in S$, that is:$$\Huge K(\underline{p}_0)=\kappa_1(\underline{p}_0)\kappa_2(\underline{p}_0)>0$$
+> This implies that both $\kappa_1,\kappa_2$ are non-zero and have the same sign. Therefore$$\Huge H(\underline{p}_0)=\frac{1}{2}(\kappa_1(\underline{p}_0)+\kappa_2(\underline{p}_0))\neq0$$, however minimal surfaces have vanishing mean curvature everywhere. 
+
+Let $S\subset\Re^3$ be a connected regular surface, then:
+> If all points of $S$ are umbilic and we have $K(\underline{p})\neq0$ in at least one point of $S$, then $S$ is part of a sphere. Proof:
+> > Let $S\subset\Re^3$ be a connected regular surface with all point umbilic. Then for all $\underline{p}\in S,-d_\underline{p}N$ is a multiple of the identity and we can find a function $\kappa:S\rightarrow\Re$ with:$$\Huge -d_\underline{p}N=\kappa(\underline{p})\text{Id}_{T_\underline{p}S}$$
+> > It is clear that $\kappa$ is smooth, so we aim to show that $\kappa$ must be a constant function. Let $\underline{x}:U\rightarrow S$ be a local parametrisation and $\underline{p}=\underline{x}(\underline{q})$. Then we have$$\Huge \frac{\partial (\underline{N}\circ\underline{x})}{\partial u}(\underline{q})=d_\underline{p}\underline{N}(\underline{x}_u(\underline{q}))=-\kappa(\underline{p})\underline{x}_u(\underline{q})$$and similar for the $v$ derivative. Using the fact that partial derivatives can be interchanged, we conclude that:$$\Huge\begin{align*}
+0&=\frac{\partial^2(\underline{N}\circ\underline{x})}{\partial u\partial v}-\frac{\partial^2(\underline{N}\circ\underline{x})}{\partial v\partial u}\\
+&=-\kappa_u\underline{x}_v-\kappa\underline{x}_{uv}-(-\kappa_v\underline{x}_u-\kappa\underline{x}_{vu})\\
+&=-\kappa_u\underline{x}_v+\kappa_v\underline{x}_u
+\end{align*}$$And since $\underline{x}_u,\underline{x}_v$ are linearly independent, this implies that$$\Huge \frac{\partial (\kappa\circ\underline{x})}{\partial u}=\frac{\partial (\kappa\circ\underline{x})}{\partial v}=0$$and therefore, $\kappa$ is constant on $\underline{x}(U)$. Connectedness of $S$ then implies that $\kappa$ is globally constant.
+>> Since $K(\underline{p})=\kappa^2(\underline{p})\neq0$, we must have $\kappa\neq0$. Consider$$\Huge \underline{y}(u,v)=\underline{x}(u,v)+\frac{1}{\kappa}(\underline{N}\circ\underline{x})(u,v)$$with $\underline{N}$ the Gauss map. Differentiation then yields$$\Huge \underline{y}_u=\underline{x}_u+\frac{1}{k}\frac{\partial (\underline{N}\circ\underline{x})}{\partial u}=\underline{x}_u-\frac{1}{\kappa}\kappa\underline{x}_u=0$$and similarly $\underline{y}_v=0$. This implies $\underline{y}$ is constant. Let $\underline{y}=\underline{p}_0\in\Re^3$. Then we conclude that$$\Huge ||\underline{x}(u,v)-\underline{p}_0||=||\underline{x}(u,v)-\underline{y}(u,v)||=\frac{1}{|\kappa|}$$, that is $\underline{x}(U)$ lies in the sphere of radius $1/|\kappa|$ around $\underline{p}_0$. Connectedness of $S$ then shows that the whole surface $S$ lies in this sphere.
+> If all points of $S$ are planar, then $S$ is part of a plane. Proof:
+> > Fixing a point $\underline{p}_0\in S$, we aim to show that for all $\underline{p}\in S$:$$\Huge (\underline{p}-\underline{p}_0)\cdot\underline{N}(\underline{p}_0)=0$$This describes all points in a plane through $\underline{p}_0$ and perpendicular to $\underline{N}(\underline{p}_0)$.
+> > Since $S$ is connected, there is a smooth curve $\underline{\alpha}:[0,1]\rightarrow S$ with $\underline{\alpha}(0)=\underline{p}$ and $\underline{\alpha}(1)=\underline{p}_0$. Let$$\Huge f(t)=(\underline{p}-\underline{\alpha}(t))\cdot\underline{N}(\underline{\alpha}(t))$$, then we have $f(0)=0$ and$$\Huge f'(t)=-\alpha'(t)\cdot\underline{N}(\underline{\alpha}(t))+(\underline{p}-\underline{\alpha}(t))\cdot d_{\underline{\alpha}(t)}\underline{N}(\underline{\alpha}'(t))=0$$since $\underline{\alpha}'(t)\in T_{\underline{\alpha}(t)}S$ and $-d_{\underline{\alpha(t)}}\underline{N}=0$. This implies $f=0$ identically and so:$$\Huge 0=f(1)=(\underline{p}-\underline{p}_0)\cdot\underline{N}(\underline{p}_0)$$Concluding the proof.
+
+## Caratheodory Conjecture:
+Let $S\subset\Re^3$ be a convex regular surface diffeomorphic to a sphere. Then $S$ has at least two umbilic points. 
+
+This conjecture is false for arbitrary compact surfaces, since one can show that the torus of revolution has no umbilic points. In the case of the sphere, all points are umbilic. In the case of analytic surfaces, Hans Hamburger provided a proof of this conjecture, significant progress has been made recently by Brendan Guilfoyle and Wilhelm Klingenberg using mean curvature flow.
+
+We can prove the existence of at least one umbilic point relatively easily using topological arguments. Assume a convex regular surface $S\subset\Re^3$ has no umbilic points. Then each tangent space $T_\underline{p}S$ is spanned by two one-dimensional perpendicular eigenspaces $E_1(\underline{p}),E_2(\underline{p})$ of the Weingarten map $-d_\underline{p}\underline{N}$, corresponding to the two different eigenvalues $\kappa_1(\underline{p}),\kappa_2(\underline{p})$ respectively. That is:$$\Huge T_\underline{p}S=E_1(\underline{p})\oplus E_2(\underline{p})$$The disjoint union of all one-dimensional eigenspaces $E_1(\underline{p})$ for all $\underline{p}\in S$ form a "line bundle" of $S$. Since $S$ is simply connected, this line bundle must be trivial, meaning that there exists a nowhere vanishing vector field $X:S\rightarrow\Re^3$ such that $E_1(\underline{p})=\Re X(\underline{p})$ for all $\underline{p}\in S$. Such a vector field cannot exist on $S$ by the Hairy Ball theorem.
+
+## Willmore conjecture:
+This conjecture is based on a concept known as the Willmore functional. Let $S\subset\Re^3$ be a compact orientable surface. Then the Willmore functional of $S$ is defined as the integral$$\Huge\mathcal{W}(S)=\int_SH^2dA$$where $H$ is the mean curvature of $S$. 
+
+If we have a local parametrisation $\underline{x}:U\rightarrow S$ that covers almost all of the surface $S$, then the integral $\int_SfdA$ is defined as:$$\Huge\int_Sf\,dA=\int_Uf(\underline{x}(u,v))\sqrt{E(u,v)G(u,v)-F^2(u,v)}du\,dv$$The Willmore functional has the following properties:
+> The Willmore functional does not change under rescaling. That is, if we define for $c\in\Re$$$\Huge S_c=c\cdot S=\{c\cdot\underline{p}:\underline{p}\in S\}$$then we have for $c\neq0$:$$\Huge\mathcal{W}(S_c)=\mathcal{W}(S)$$
+> The Willmore functional satisfies$$\Huge\mathcal{W}(S)\geq4\pi$$with equality if and only if $S\subset\Re^3$ is a sphere.
+
+We can now formulate the Willmore conjecture. Let $S\subset\Re^3$ be a compact, orientable, regular surface diffeomorphic to a torus. Then we have:$$\Huge\mathcal{W}(S)\geq2\pi^2$$Note that this conjecture was formulated for more general objects, called immersed surfaces. The conjecture has now been proved in full generality. 
+
+Let us verify the conjecture for tori of revolution:
+> Let $R>r>0$ and$$\Huge\underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$with $(u,v)\in(0,2\pi)\times(0,2\pi r)$ and$$\Huge f(v)=R+r\cos(v/r),\,\,g(v)=r\sin(v/r)$$be a local parametrisation of the torus of revolution $T\subset\Re^3$. Note that this local parametrisation covers almost all of $T$. 
+> One can show that$$\Huge E(u,v)=f^2(v),\,\,F(u,v)=0,\,\,G(u,v)=||\underline{\alpha}'(v)||^2=1$$and therefore:$$\Huge \sqrt{E(u,v)G(u,v)-F^2(u,v)}=f(v)$$
+> We also know the mean curvature:$$\Huge H(\underline{x}(u,v))=-\frac{R+2r\cos(v/r)}{2r(R+r\cos(v/r))}=-\frac{R+2r\cos(v/r)}{2rf(v)}$$
+> Consequently, we obtain:$$\Huge\begin{align*}
+\int_TH^2dA&=\int_0^{2\pi r}\int_0^{2\pi}H^2(\underline{x}(u,v))\sqrt{E(u,v)G(u,v)-F^2(u,v)}du\,dv\\
+&=\int_0^{2\pi r}\int_0^{2\pi}\frac{(R+2r\cos(v/r))^2}{4r^2f^2(v)}f(v)\,du\,dv\\
+&=\frac{2\pi}{4r^2}\int_0^{2\pi r}\frac{(R+2r\cos(v/r))^2}{R+r\cos(v/r)}dv\\
+&=\frac{\pi}{2r^2}\int_0^{2\pi}\frac{(R+2r\cos t)^2}{R+r\cos t}r\,dt\\
+&=\frac{\pi}{2r}\int_0^{2\pi}\frac{(R+2r\cos t)^2}{R+r\cos t}dt
+\end{align*}$$
+> We can simplify the integrand in the following way:$$\large \frac{(R+2r\cos t)^2}{R+r\cos t}=\frac{R^2+4Rr\cos t+4r^2\cos^2t}{R+r\cos t}=\frac{R^2}{R+r\cos t}+4r\cos t$$
+> So our integral simplifies to$$\Huge\int_TH^2dA=\frac{\pi R^2}{2r}\int_0^{2\pi}\frac{dt}{R+r\cos t}$$,since the other term integrates to $0$. The integral we are left with actually has an explicit value:$$\Huge\int_0^{2\pi}\frac{dt}{R+r\cos t}=\frac{2\pi}{\sqrt{R^2-r^2}}$$
+> Therefore our expression reduces to$$\Huge\begin{align*}
+\int_TH^2dA&=\frac{\pi R^2}{2r}\frac{2\pi}{\sqrt{R^2-r^2}}\\
+&=\frac{\pi^2R^2}{r\sqrt{R^2-r^2}}\\
+&=\frac{\pi^2}{(r/R)\sqrt{1-(r/R)^2}}\\
+&=\frac{\pi^2}{c\sqrt{1-c^2}}
+\end{align*}$$with $c=r/R\in(0,1)$. It is easy to see that this denominator is $\leq1/2$ and so:$$\Huge 0\leq c^4-c^3+\frac{1}{4}=\left(c^2-\frac{1}{2}\right)^2$$
+> This shows that$$\Huge\int_TH^2dA\geq2\pi^2$$, with equality if and only if $c=1/\sqrt 2$ ($R=r\sqrt 2$). This confirms the Willmore conjecture for tori of revolution, and that the inequality is sharp for the tori $T_{r,r\sqrt 2}$

@@ -81,3 +81,5 @@ We can now state Noether's theorem. Let $G$ be a Lie group of symmetries of $\ma
 To see the physical interpretation of this theorem, we turn away from relativistic notation and integrate a conserved current over some volume $V\subset\Re^3$$$\Huge\int_V\partial_\mu j^\mu\,d^3x=\frac{\partial }{\partial t}\int_Vj^0\,d^3x+\int_V\partial_i j^i\,d^3x=0$$, where we have taken the time derivative out of the first term. Then this becomes$$\Huge\frac{\partial }{\partial t}\int_V j^0\,d^3x+\int_{\partial V}j^i\,dA^i=0$$, where $dA^i$ represents the surface element, the first term represents the charge inside the volume, and the second represents the flux of charge through the boundary.
 
 Assuming our fields tend to $0$ at spatial infinity, the current $j^\mu$ must also tend to $0$ as the volume is expanded to all of $\Re^3$:$$\Huge\frac{\partial }{\partial t}\int_{\Re^3}j^0\,d^3x=0$$That is, the total charge of the system does not change with time.
+
+# Lorentz symmetry and field theories:
