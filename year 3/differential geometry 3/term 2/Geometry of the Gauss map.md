@@ -135,3 +135,12 @@ Let $S\subset\Re^3$ be a regular surface with a Gauss map $\underline{N}:S\right
 > A point $\underline{p}\in S$ is called umbilic if we have $\kappa_1(\underline{p})=\kappa_2(\underline{p})$. Note that every planar point is also umbilic.
 
 A particular area in Differential Geometry is the study of minimal surfaces. These are surfaces that minimises area under certain constraints. A regular surface $S\subset\Re^2$ with everywhere vanishing mean curvature ($H=0$), is called minimal. 
+
+# Global curvature results:
+
+Note that curvature is a local property of a surface $S$ at any point $\underline{p}\in S$. It can be thought of as a sort of "second derivative" at $\underline{p}$, so all that is required is a small neighbourhood of $\underline{p}$ in the surface. While curvature is local, its behaviour on the whole surface has implications about the global structure of the surface.
+
+Recall the natural distance function on a connected surface $S\subset\Re^3$:$$\Huge d_S(\underline{p}_1,\underline{p}_2)=\inf\{L(\underline{\alpha}):\underline{\alpha}:[0,1]\rightarrow S\text{ smooth},\underline{\alpha}(0)=\underline{p}_1,\underline{\alpha}(1)=\underline{p}_2\}$$This makes $S$ a metric space and we call such a space $(S,d_S)$ complete if every Cauchy sequence $(\underline{p}_n)\subset S$ is convergent in $S$. That is, there exists $\underline{p}\in S$ such that for every $\epsilon>0$ there exists $N\in\mathbb{N}$ such that $d_S(\underline{p}_n,\underline{p})<\epsilon$ for all $n\geq N$. 
+
+## Bonnet-Myers theorem for surfaces:
+Let $S\subset\Re^3$ be a connected regular surface which is complete as a metric space $(S,d_S)$. Assume there exists a positive constant $K_0$ such that$$\Huge K(\underline{p})\geq K_0\,\,\forall\underline{p}\in S$$, then the surface has bounded diameter. That is$$\Huge\text{diam}(S)=\sup_{\underline{p}_1,\underline{p}_2\in S}d_S(\underline{p}_1,\underline{p}_2)\leq\frac{\pi}{\sqrt{K_0}}$$and there exists $\underline{p}_1,\underline{p}_2\in S$ with $\text{diam}(S)=d_S(\underline{p}_1,\underline{p}_2)$. Moreover, the above inequality is sharp: the sphere $S^2(r)$ has Gauss curvature $K_0=1/r^2$ and diameter:$$\Huge \text{diam}(S^2(r))=\pi r=\frac{\pi}{\sqrt{K_0}}$$
