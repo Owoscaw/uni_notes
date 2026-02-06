@@ -100,3 +100,29 @@ These conditions determine the discrete spectrum of $-\frac{d^2}{dx^2}+V(x)$.
 
 # Reflectionless potentials:
 
+Let us return to the initial field configurations $u(x,0)=a\text{sech}^2(x)$ that we tried for KdV previously. We saw interesting field evolutions when $a=n(n+1)$ for a positive integer $n$. It is natural to wonder if this behaviour is apparent in the scattering problem. 
+
+The relevant potential is:$$\Huge V(x)=-a\text{ sech}^2(x)$$The relevant time independent Schrodinger equation to solve is$$\Huge-\psi''(x)-a\text{ sech}^2(x)\psi(x)=k^2\psi(x)$$, where we look for bounded solutions. Substituting in $y=\tanh(x)$ so that $$\Huge \frac{d}{dx}=\text{sech}^2(x)\frac{d}{dy}=(1-y^2)\frac{d}{dy}$$makes the equation:$$\Huge \frac{d}{dy}\left((1-y^2)\frac{d\psi}{dy}\right)+\left(\frac{k^2}{1-y^2}+a\right)\psi=0$$Putting $k^2=-m^2,a=n(n+1)$ gives us the associated Legendre equation:$$\Huge \frac{d}{dy}\left((1-y^2)\frac{d\psi}{dy}\right)+\left(n(n+1)-\frac{m^2}{1-y^2}\right)\psi=0$$This is a well studied equation, and has solutions known in terms of special functions:
+> If $n\in\mathbb{Z}_{\geq0}$ and $m=0$, then this becomes the Legendre equation and has a bounded solution for $y\in[-1,1]$$$\Huge \psi=P_n(y)=\frac{1}{n!2^n}\frac{d^n}{dy^n}(y^2-1)^n$$, the $n$th Legendre polynomial of the first kind. In general, $P_j(-y)=(-1)^jP_j(y)$ and $P_j(1)=1$. Since $y=\pm1$ corresponds to the asymptotics $x=\pm\infty$, this means we have bounded solutions to the Schrodinger equation. Note that these however are not bound states as $\psi\not\rightarrow0$ at $x\to\pm\infty$.
+> If $n\in\mathbb{Z}_{\geq0}$, bounded solutions only exist for $m=\{0,\dots,n\}$. These are given by$$\Huge P^m_n(y)=(-1)^m(1-y^2)^{m/2}\frac{d^m}{dy^m}P_n(y)$$, the associated Legendre polynomials of the first kind. 
+> Even when $m,n$ are not integers, solutions can be written explicitly using certain special functions. We have that$$\Huge P_n^m(y)=\frac{1}{\Gamma(1-m)}\left(\frac{1+y}{1-y}\right)^{m/2}\,_2F_1\left(-n,n+1;1-m;\frac{1-y}{2}\right)$$solves the Schrodinger equation and reduces to the above equation for $n\in\mathbb{Z}_{\geq0}$ and $m\in\{0,\dots,n\}$. Here, $$\Huge\Gamma(z)=\int_0^\infty t^{z-1}e^{-t}dt$$is Euler's Gamma function, and $_2F_1$ is the hypergeometric function. This has Taylor expansion$$\Huge _2F_1(a,b;c;z)=\frac{\Gamma(c)}{\Gamma(a)\Gamma(b)}\sum_{k=0}^\infty\frac{\Gamma(k+1)\Gamma(k+b)}{\Gamma(k+c)}\frac{z^k}{k!}$$for $|z|<1$, and is defined by analytic continuation elsewhere.
+> Therefore, up to normalisation, a bounded solution to the relevant Schrodinger equation is$$\Huge \psi(x)=P^m_n(y=\tanh(x))$$with:$$\Huge m=ik,\,\,n=\frac{\sqrt{1+4a}}{2}-\frac{1}{2}$$
+
+Note that we chose roots that give scattering solutions with particles incident from the left. Observe also that $n$ is real if $a\geq-1/4$ and $n\geq0$ if $a\geq0$. Let us now analyse the spectrum of solutions:
+> $k^2>0$, the continuous spectrum:
+> > As $x\to+\infty$, we have that $y=\tanh(x)\to1^-$ and so$$\Huge _2F_1\left(\dots;\frac{1-y}{2}\right)\to\,_2F_1(\dots;0)=1;\,\,\frac{1+y}{1-y}\approx e^{2x}$$, giving the asymptotic behaviour$$\Huge \psi\approx\frac{1}{\Gamma(1-ik)}e^{ikx}$$as $x\to+\infty$.
+> > As $x\to-\infty$, we have that $y=\tanh(x)\to-1^+$ and so:$$\frac{1}{\Gamma(1-m)}\,_2F_1\left(-n,n+1;1-m;\frac{1-y}{2}\right)\approx\frac{\Gamma(-m)}{\Gamma(1-m+n)\Gamma(-m-n)}+\frac{\Gamma(m)}{\Gamma(-n)\Gamma(n+1)}e^{-2mx}$$This asymptotic is proven using the properties of the hypergeometric function. Therefore$$\Huge\psi\approx\frac{\Gamma(-ik)}{\Gamma(1-ik+n)\Gamma(-ik-n)}e^{ikx}+\frac{\Gamma(ik)}{\Gamma(-n)\Gamma(n+1)}e^{-ikx}$$as $x\to-\infty$
+>>Normalising this scattering solution so that the coefficient of $e^{ikx}$ at $-\infty$ is $1$, we can read off the values of $R(k)$ and $T(k)$:$$\Huge\begin{align*}
+R(k)&=\frac{\Gamma(ik)\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(-ik)\Gamma(1+n)\Gamma(-n)}\\
+&=-\frac{\sin(\pi n)}{\pi}\frac{\Gamma(ik)\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(-ik)}\\
+T(k)&=\frac{\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(1-ik)\Gamma(-ik)}
+\end{align*}$$Note that the $\sin(\pi n)$ factor in $R(k)$ means that it vanishes for all $k$ if $n$ is an integer. The corresponding potentials$$\Huge V(x)=-n(n+1)\text{sech}^2(x)$$with $n\in\mathbb{Z}_{\geq0}$ are called reflectionless. That is, no particles are reflected for any value of $k$. 
+>$k^2<0$, the discrete spectrum. To find this spectrum, we set $k=i\mu$ with $\mu>0$, and divide the scattering solution through by $T(i\mu)$ to find a possible eigenfunction:$$\Huge \psi(x)\approx\begin{cases}\frac{1}{T(i\mu)}e^{-\mu x}+\frac{R(i\mu)}{T(i\mu)}e^{\mu x} & x\to-\infty \\
+e^{i\mu x} & x\to+\infty\end{cases}$$This is automatically bounded as $x\to+\infty$ and will be bounded at $x\to-\infty$ if and only if $\mu\geq0$ is such that $1/T(i\mu)=0$. This requires:$$\Huge\frac{1}{T(i\mu)}=\frac{\Gamma(1+\mu)\Gamma(\mu)}{\Gamma(1+\mu+n)\Gamma(\mu-n)}=0$$Given that $\mu$ must be a positive real number and that $\gamma(z)$ has no zeros, there are two options:
+> >$1+\mu+n=-j$ with $j\in\mathbb{Z}_{\geq0}$
+> >$\mu-n=-h$ with $h\in\mathbb{Z}_{\geq0}$. 
+> If $n\notin\Re$ then there are no real solutions for $\mu$. If $n\in\Re$ then we can take $n\geq-1/2$ WLOG since the first statement is equivalent to the second whenever $n\mapsto-1-n$.
+> Then the first statement never holds, while solutions for positive $\mu$ do exists for the second statement, provided $n\geq0$:$$\Huge \mu=n,n-1,\dots ,n-\lfloor n\rfloor$$Therefore the total number of bound states is $\lceil n\rceil$.
+
+## Summary:
+For our potential $V(x)=-a\text{ sech}^2(x)=-n(n+1)\text{sech}^2(x)$, we have:![[Scattering theory 2026-02-06 20.19.15.excalidraw]]
