@@ -97,3 +97,6 @@ For potentials $V(x)$ that tend to zero as $x\to\pm\infty$, bound state solution
 > Setting $k=i\mu$, a pole of $T(k)$ on the positive imaginary axis
 
 These conditions determine the discrete spectrum of $-\frac{d^2}{dx^2}+V(x)$.
+
+# Reflectionless potentials:
+

@@ -208,3 +208,31 @@ This space turns out to be the Holder spaces $C^{k,\alpha}$. Let $0<\alpha\leq1$
 It can be shown that if $f\in C^{0,\alpha}(\Omega)$ is bounded, then there exists a function $u\in C^{2,\alpha}(\Omega)$ satisfying $-\Delta u=f$. This is known as the Schauder theory of elliptic PDEs.
 
 ## Energy Method:
+The energy method is a useful tool for studying PDEs. As we will see, it is more of a general approach rather than a precise method. The idea is to multiply the PDE by some function and then to integrate by parts over the domain, with the aim of obtaining signed terms. 
+
+Let $\Omega\subset\Re^n$ be open, bounded, and connected with smooth boundary. Then there exists at most one solution $u\in C^2(\bar\Omega)$ of the Dirichlet problem$$\Huge\begin{align*}
+-\Delta u&=f\text{ in }\Omega\\
+u&=g\text{ on }\partial\Omega
+\end{align*}$$where $f\in C(\bar\Omega),g\in C(\partial\Omega)$. Proof:
+> Let $u_1,u_2$ be solutions and let $w=u_1-u_2$. Then we must have:$$\Huge\begin{align*}
+-\Delta w&=0\text{ in }\Omega\\
+w&=0\text{ on }\partial\Omega
+\end{align*}$$
+> Multiplying the first equation by $w$ and integrating over $\Omega$ gives:$$\Huge\begin{align*}
+-\int_\Omega w\Delta w\,d\underline{x}&=0\\
+\iff-\int_\Omega w\text{ div}(\underline{\nabla}w)d\underline{x}&=\\
+\iff-\int_{\partial\Omega}w\underline{\nabla}w\cdot\underline{n}dS+\int_\Omega\underline{\nabla}w\cdot\underline{\nabla}w\,d\underline{x}&=\\
+\iff\int_\Omega|\underline{\nabla}w|^2d\underline{x}&=
+\end{align*}$$
+> It follows that $\underline{\nabla}w(\underline{x})=0$ for all $\underline{x}\in\Omega$, which implies that $w$ is constant. But $w=0$ on $\partial\Omega$ and therefore $w=0$, implying $u_1=u_2$ as required.
+
+We can also use the energy method to prove that small changes in the source term $f$ correspond to small changes in the solution $u$. To make this precise, we need to define "small", let $\Omega\subset\Re^n$ be open and bounded and let $f\in C^1(\bar\Omega)$:
+> The $H_0^1$ norm of $f$ is defined by:$$\Huge ||f||_{H^1_0(\Omega)}=||\underline{\nabla}f||_{L^2(\Omega)}=\left(\int_\Omega|\underline{\nabla}f(\underline{x})|^2d\underline{x}\right)^{1/2}$$It can be shown that this is a norm on $\{f\in C^1(\bar\Omega):f=0\text{ on }\Omega\}$.
+> The $H^1$ norm of $f$ is defined by:$$\Huge\begin{align*}
+||f||_{H^1(\Omega)}&=(||f||_{L^2(\Omega)}^2+||\underline{\nabla}f||_{L^2(\Omega)})^{1/2}\\
+&=\left(\int_\Omega|f(\underline{x})|^2d\underline{x}+\int_\Omega|\underline{\nabla}f(\underline{x})|^2d\underline{x}\right)^{1/2}
+\end{align*}$$It can be shown that this is a norm on $C^1(\bar\Omega)$.
+
+Observe that $||\cdot||_{H_0^1(\Omega)}$ is not a norm on $C^1(\bar\Omega)$ since if $f(\underline{x})=c$ is a nonzero, constant function, then $||f||_{H_0^1(\Omega)}=0$ but $f\neq0$. The $H$ references David Hilbert, and the $1$ in both norms represents the first derivatives while the $0$ denotes the boundary condition $f=0$ on $\partial\Omega$.
+
+Let $\Omega\subset\Re^n$ be 
