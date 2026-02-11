@@ -183,5 +183,41 @@ Returning to the $1D$ Euler equations, we consider an ideal gas $p=P(\rho)=k\rho
 \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p\implies\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}+\frac{k\gamma\rho^{\gamma-1}}{\rho}\frac{\partial \rho}{\partial x}=0
 \end{align*}$$We will see that these can be reduced into two sets of ODEs if we first eliminate $\rho$ in favor of the variable:$$\Huge c(\rho)=\sqrt{P'(\rho)}=\sqrt{k\gamma\rho^{\gamma-1}}$$We will see that this corresponds to sound speed. To eliminate $\rho$, we use the fact that:$$\Huge \begin{align*}
 \frac{\partial c}{\partial t}&=c'(\rho)\frac{\partial \rho}{\partial t}\\
-&=\sqrt{k\gamma}
+&=\sqrt{k\gamma}\frac{\gamma-1}{2}\rho^{\gamma-3/2}\frac{\partial \rho}{\partial t}\\
+&=\frac{\gamma-1}{2}\frac{c}{p}\frac{\partial \rho}{\partial t}\\
+\implies\frac{\partial \rho}{\partial t}&=\frac{2\rho}{(\gamma-1)c}\frac{\partial c}{\partial t}
+\end{align*}$$And in the same manner:$$\Huge \frac{\partial c}{\partial x}=c'(\rho)\frac{\partial \rho}{\partial x}\implies\frac{\partial \rho}{\partial x}=\frac{2\rho}{(\gamma-1)c}\frac{\partial c}{\partial x}$$Using these in our system and multiplying through by $c/\rho$ we find:$$\Huge\begin{align*}
+\frac{2}{\gamma-1}\frac{\partial c}{\partial t}+c\frac{\partial u}{\partial x}+\frac{2u}{\gamma-1}\frac{\partial c}{\partial x}&=0\\
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}+\frac{2c}{\gamma-1}\frac{\partial c}{\partial x}&=0
+\end{align*}$$Adding and subtracting these equations we find:$$\Huge\begin{align*}
+\left(\frac{\partial }{\partial t}+(u+c)\frac{\partial }{\partial x}\right)\left(u+\frac{2c}{\gamma-1}\right)&=0\\
+\left(\frac{\partial }{\partial t}+(u-c)\frac{\partial }{\partial x}\right)\left(u-\frac{2c}{\gamma-1}\right)&=0
+\end{align*}$$And thus we find that:$$\Huge\begin{align*}
+F_+&=u+\frac{2c}{\gamma-1}\text{ is constant on curves }x_+(t)\text{ satisfying }\frac{dx_+}{dt}=u+c\\
+F_-&=u-\frac{2c}{\gamma-1}\text{ is constant on curves }x_-(t)\text{ satisfying }\frac{dx_-}{dt}=u-c
+\end{align*}$$These functions $F_+,F_-$ are known as Riemann invariants. If $F_+,F_-$ are known, then $u$ and $c$ can be found. If you know $c$, you know $\rho$, and therefore $p$. These two invariants give all of the information required for a fluids problem. These curves are known as the $+,-$ characteristics.
+
+## Simple waves:
+In general, it is hard to find closed-form solutions for characteristics. However in the case of "simple waves", one of the Riemann invariants is constant across a region. 
+
+To illustrate the breakdown of smooth solutions to the Euler equations, we consider a compression wave with initial conditions:
+> $$\Huge\begin{align*}
+u(x,0)&=U_0(1-\tanh(x))\\
+c(x,0)&=c_0+\frac{1}{2}(\gamma-1)u(x,0)
 \end{align*}$$
+> The initial velocity profile looks like:![[Compressible flow 2026-02-11 00.58.42.excalidraw]]So we have a flow moving into a region of static fluid. We have chosen this form to make $F_-$ constant, as we will see. Notice that $c\to c_0$ as $x\to\infty$.
+> The sound speed $c$ is higher where the velocity is higher, so we should expect the wave to steepen. This is worrying as if the wave gets infinitely steep, we will have a discontinuity in $u$.
+> At $t=0$, the Riemann invariants have value:$$\Huge\begin{align*}
+F_+(x,0)&=u(x,0)+\frac{2c(x,0)}{\gamma-1}=2u(x,0)+\frac{2c_0}{\gamma-1}\\
+F_-(x,0)&=u(x,0)-\frac{2c(x,0)}{\gamma-1}=-\frac{2c_0}{\gamma-1}
+\end{align*}$$Here, the first invariant $F_+$ is constant along $+$ characteristics, taking a different value on each. That is to say, $F_+(x,t)=F_+(x_0,0)$. The second Riemann invariant $F_-$ is constant along $-$ characteristics, but does not change over characteristic lines and therefore must the same everywhere.
+> In general, we have:$$\Huge\begin{align*}
+u&=\frac{1}{2}(F_+(x,t)+F_-(x,t))\\
+c&=\frac{\gamma-1}{4}(F_+(x,t)-F_-(x,t))
+\end{align*}$$And since $F_-$ is constant everywhere, $F_+$ is constant along $+$ characteristics, so must $u,c$, and $u+c$. The slope of the $+$ characteristics is given by$$\Huge \frac{dx_+}{dt}=u+c$$, so they are straight lines. They will have form:$$\Huge x_+-x_0=(u+c)t=\left(c_0+\frac{\gamma+1}{2}u(x_0,0)\right)$$For our specific initial conditions this becomes:$$\Huge x_+-x_0=\left(c_0+\frac{\gamma+1}{2}U_0(1-\tanh(x_0))\right)t$$
+> These characteristics break down when they intersect at some finite time. We can find this time through the following:$$\Huge\begin{align*}
+\frac{\partial x_+}{\partial x_0}&=0\\
+\iff1-\frac{\gamma+1}{2}U_0\text{sech}^2(x_0)t&=0\\
+\implies t&=\frac{2}{(\gamma+1)U_0}\cosh^2(x_0)
+\end{align*}$$This gives the time of intersection for the characteristic starting at $x=x_0$. The earliest intersection will be at:$$\Huge t_s=\min_{x_0}\left(\frac{2}{(\gamma+1)U_0}\cosh^2(x_0)\right)=\frac{2}{(\gamma+1)U_0}$$
+> To find solutions for $u,c$ explicitly, the equation for $x(t)$ would need to be inverted to find $x_0(c,t)$, which needs to be done numerically. Note that usually we would have to find $-$ characteristics as well.
