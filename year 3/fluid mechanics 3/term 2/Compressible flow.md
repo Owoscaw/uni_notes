@@ -158,3 +158,30 @@ We can generalise this approach to $3D$ waveguides such as tubes with square or 
 > It remains to impose the boundary condition $u_r=0$ on $r=a$, meaning $R'(a)=0$:$$\Huge \implies J'_0\left(\left(\frac{\omega^2}{c_0^2}-k_z^2\right)^{1/2}a\right)=0$$
 > As $J_0$ has a discrete sequence of turning points, this will give us a discrete spectrum of $\omega$. Let $j_n$ be the $n$th turning point of $J_0$, then:$$\Huge \phi(r,z,t)=A_nJ_0\left(\frac{j_n r}{a}\right)\exp(ik_zz-i\omega t),\,\,\omega=c_0\sqrt{k_z^2+\frac{j_n^2}{a^2}}$$ 
 
+# Nonlinearity:
+
+Let us return to the full nonlinear scenario. We will see that the nonlinear term $(u\cdot\underline{\nabla})u$, which was dropped from the momentum equation in our previous linear analysis, leads to the formation of shocks. To demonstrate this, we work in $1D$ so that $\underline{u}=u(x,t)\hat{\underline{e}}_x$.
+
+## Method of characteristics:
+The [[The Method of Characteristics|method of characteristics]] involves looking for curves in parameter space, $(x,t)$, along which the problem is easier to solve. Maybe along that curve the problem reduces to an ODE, or even constant. To find the solutions for given parameters, we just need to find the curve that it is on and follow that curve along until we find some known piece of information (usually initial or boundary conditions). Such curves are known as characteristics.
+
+Recall the general solution to the wave equation$$\Huge\frac{\partial^2y}{\partial t^2}=c^2\frac{\partial^2y}{\partial x^2}$$is $y=F(x-ct)+G(x+ct)$. We could have found this by making a change of variables $u=x-ct$ and $v=x+ct$. Applying the chain rule we find that:$$\Huge \frac{\partial^2y}{\partial u\partial v}=0\implies y=F(u)+G(v)$$Note that $u=\text{constant}$ is a curve in the $(x,t)$ plane along which $F$ is constant. If we set $x=x_0$ at $t=0$, then $u=x-ct=x_0$ is our curve. Similarly, $v=\text{constant}$ is a curve along which $G$ is constant, and we use initial conditions to find $v=x+ct=x_0$. These curves are characteristics of the wave equation and, in this case, represent the paths along which the waves propagate. Importantly, as $c$ is constant, each $x$ and $t$ has a unique pair of starting points on the line $t=0$.
+
+## Burger's equation and "blow up":
+Returning to the Euler equations, let us look at inertial terms in the momentum equation in $1D$:$$\Huge \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}=0$$This is exactly the inviscid Burgers' equation. Suppose we have a curve $x(t)$ in the $(x,t)$-plane where:$$\Huge \frac{dx}{dt}=u(x(t),t),\,\,x(0)=x_0$$Then along such curve, Burgers' equation is written as:$$\Huge \frac{\partial u}{\partial t}+\frac{dx}{dt}\frac{\partial u}{\partial x}=0\iff \frac{du}{dt}=0$$Along these curves, the PDE is reduced to an ODE! These curves are therefore characteristics of Burgers' equation. Here, they represent particle paths:
+> Let us solve Burgers' equation with an initial condition that diverges. Say at $t=0$ we have$$\Huge u(x,0)=u_0(x_0)=x_0$$, since $u$ is constant along the characteristics and $\frac{dx}{dt}=u$, they must be straight lines. Integrating $x'(t)$ gives:$$\Huge\begin{align*}
+x-x_0&=u(x_0,0)t\\
+&=u_0(x_0)t=x_0t
+\end{align*}$$
+> Here, we can invert to find the value of $x_0$ for the characteristics going through $(x,t)$ to find:$$\Huge x_0=\frac{x}{1+t}$$
+> Our equation for $u$ then dictates:$$\Huge u(x,t)=u_0(x_0)=x_0=\frac{x}{1+t}$$![[Compressible flow 2026-02-10 22.41.40.excalidraw]]
+> So we see the particle paths diverge, where those furthest from the origin move fastest. The flow speed itself is also reducing as particles are depleting. Let us reverse the direction of the flow so our initial condition is instead $u_0(x_0)=-x_0$. This time, characteristics are the lines$$\Huge x-x_0=-x_0t$$and so$$\Huge x_0=\frac{x}{1-t}\implies u(x,t)=\frac{x}{t-1}$$, which has a finite-time singularity as $t\to1$. At such time, all of the characteristics intersect at $x=0$, so that solution is not well defined there:![[Compressible flow 2026-02-10 22.49.55.excalidraw]]This means that all of the particles in the system have ended up at the same place at the same time. Therefore there is no unique starting position for a particle at $(0,1)$. There is no one-to-one particle mapping, which was a key assumption in the smooth continuum approximation of a fluid in the first place. This corresponds to a "blow up" in the velocity as particles at $x=\pm\infty$ reach singular speeds in order to get to $x=0$ in time. Note that we could also have computed the intersection time by looking for points where the characteristics curve $x$ is independent of $x_0$, so that $$\Huge \frac{\partial x}{\partial x_0}=0\iff1-t=0\iff t=1$$
+
+## Riemann invariants:
+Returning to the $1D$ Euler equations, we consider an ideal gas $p=P(\rho)=k\rho^\gamma$. The continuity and unforced momentum equations becomes:$$\Huge\begin{align*}
+	\frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\implies\frac{\partial \rho}{\partial t}+\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}=0\\
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p\implies\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}+\frac{k\gamma\rho^{\gamma-1}}{\rho}\frac{\partial \rho}{\partial x}=0
+\end{align*}$$We will see that these can be reduced into two sets of ODEs if we first eliminate $\rho$ in favor of the variable:$$\Huge c(\rho)=\sqrt{P'(\rho)}=\sqrt{k\gamma\rho^{\gamma-1}}$$We will see that this corresponds to sound speed. To eliminate $\rho$, we use the fact that:$$\Huge \begin{align*}
+\frac{\partial c}{\partial t}&=c'(\rho)\frac{\partial \rho}{\partial t}\\
+&=\sqrt{k\gamma}
+\end{align*}$$

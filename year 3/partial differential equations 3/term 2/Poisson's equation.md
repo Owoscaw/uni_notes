@@ -235,4 +235,61 @@ We can also use the energy method to prove that small changes in the source term
 
 Observe that $||\cdot||_{H_0^1(\Omega)}$ is not a norm on $C^1(\bar\Omega)$ since if $f(\underline{x})=c$ is a nonzero, constant function, then $||f||_{H_0^1(\Omega)}=0$ but $f\neq0$. The $H$ references David Hilbert, and the $1$ in both norms represents the first derivatives while the $0$ denotes the boundary condition $f=0$ on $\partial\Omega$.
 
-Let $\Omega\subset\Re^n$ be 
+Let $\Omega\subset\Re^n$ be open and bounded with smooth boundary. Let $f_1,f_2\in C(\bar\Omega)$, $u_1\in C^2(\bar\Omega)$ satisfy $-\Delta u_1=f_1$ in $\Omega$ and $u_1=0$ on $\partial\Omega$, and similar for $u_2$. Then there exists a constant $C>0$ such that:$$\Huge ||u_1-u_2||_{H^1_0(\Omega)}\leq C||f_1-f_2||_{L^2(\Omega)}$$That is, if $f_1$ is close to $f_2$ in the $L^2$ norm, then $u_1$ is close to $u_2$ in the $H_0^1$ norm. Proof:
+> Let $v=u_1-u_2,g=f_1-f_2$. By subtracting the PDEs for $u_1,u_2$, we find that:$$\Huge -\Delta v=g\text{ in }\Omega,\,\,v=0\text{ on }\Omega$$
+> So we need to prove that$$\Huge||v||_{H_0^1(\Omega)}\leq C||g||_{L^2(\Omega)}$$, so we multiply by $v$ and integrate by parts to obtain:$$\Huge\begin{align*}
+-\int_\Omega v\Delta v\,d\underline{x}&=\int_\Omega gv\,d\underline{x}\\
+\iff-\int_{\partial\Omega}v\Delta v\cdot\underline{n}dS+\int_\Omega\Delta v\cdot\Delta v\,d\underline{x}&=\\
+\iff\int_\Omega|\underline{\nabla}v|^2d\underline{x}&=
+\end{align*}$$
+> By the Cauchy-Schwarz inequality, $$\Huge\int_\Omega gv\,d\underline{x}\leq||g||_{L^2(\Omega)}||v||_{L^2(\Omega)}$$and by the Poincare inequality, $$\Huge ||v||_{L^2(\Omega)}\leq C_p||v||_{H^1_0(\Omega)}$$for some constant $C_p>0$. Combining these gives$$\large ||v||^2_{H^1_0(\Omega)}=\int_\Omega|\underline{\nabla}v|^2d\underline{x}=\int_\Omega gv\,d\underline{x}\leq||g||_{L^2(\Omega)}||v||_{L^2(\Omega)}\leq C_p||g||_{L^2(\Omega)}||v||_{H_0^1(\Omega)}$$, dividing through by $||v||_{H_0^1(\Omega)}$ gives the result.
+
+# Variational formulation of Poisson's equation:
+
+Through this section, we discover some hidden structure behind Poisson's equation. We take $\Omega\subset\Re^n$ to be open and bounded with smooth boundary and let $V$ denote:$$\Huge V=\{\varphi\in C^1(\bar\Omega):\varphi=0\text{ on }\partial\Omega\}$$We limit our attention to Poisson's equation with the zero Dirichlet boundary conditions$$\Huge\begin{align*}
+-\Delta u&=f\text{ in }\Omega\\
+u&=0\text{ on }\partial\Omega
+\end{align*}$$, where $f\in C(\bar\Omega)$. If $u\in C^2(\bar\Omega)$ satisfies this equation, we call it a classical solution in order to differentiate from the following definition.
+
+We say that $u\in V$ is a weak solution of Poisson's equation if$$\Huge \int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}=\int_\Omega f\varphi\,d\underline{x},\,\,\forall\varphi\in V$$, where $\varphi$ are known as test functions. Note that usually $V$ is replaced with the Sobolev space $H^1_0(\Omega)$, which is strictly larger than $V$. 
+
+Observe that weak solutions only need to be once continuously differentiable, whereas classical solutions must be at least twice continuously differentiable. The definition of weak solutions is motivated by:
+> If $u\in C^2(\bar\Omega)$ is a classical solution of Poisson's equation, then it is a weak solution. This is proven by multiplying $-\Delta u=f$ by $\varphi\in V$ and integrating by parts to find:$$\Huge\begin{align*}
+-\int_\Omega\Delta u\varphi\,d\underline{x}&=\int_\Omega f\varphi\,d\underline{x}\\
+\iff-\int_{\partial\Omega}(\underline{\nabla}u\cdot\underline{n})\varphi\,dS+\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}&=\\
+\iff\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}&=
+\end{align*}$$
+> If $u$ is a weak solution of Poisson's equation, and if $u\in C^2(\bar\Omega)$, then it is a classical solution. Since $u\in C^2(\bar\Omega)$, we can use integration by parts to rewrite the equation:$$\Huge\begin{align*}
+\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}&=\int_\Omega f\varphi\,d\underline{x}\\
+\iff\int_{\partial\Omega}(\underline{\nabla}u\cdot\underline{n})\varphi\,dS-\int_\Omega\Delta u\varphi\,d\underline{x}&=\\
+\iff\int_\Omega(\Delta u+f)\varphi\,d\underline{x}&=0
+\end{align*}$$Since $\varphi=0$ on $\partial\Omega$, and this holds for all $\varphi\in V$. By the fundamental lemma of the Calculus of Variations, $\Delta u+f=0$ as required.
+
+In summary, classical solutions are weak solutions, and smooth $C^2$ weak solutions are classical solutions. Unlike for [[year 3/partial differential equations 3/term 1/Conservation laws|Conservation laws]], the notion of a weak solution is not strictly necessary for Poisson's equation since solutions of Poisson's equation are smooth if $f,\Omega$ are smooth enough. Since $V$ is larger than the class of classical solutions, it is easier to prove weak solutions exist and then proving a regularity result. This regularity result asserts that the weak solution is actually smooth, and hence a classical solution. This weak formulation is also the basis of several numerical methods for PDEs, including the finite element method.
+
+## Dirichlet energy:
+The Dirichlet energy is the function $E:V\rightarrow\Re$ defined by:$$\Huge E[v]=\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}-\int_\Omega fv\,d\underline{x}$$Here, $E$ is a function of a function, so we refer to it as a functional, or energy. Dirichlet's principle then dictates that minimising $E$ is equivalent to solving Poisson's equation. Let $u\in V$, then the following are equivalent:
+> $u$ is a minimiser of $E$:$$\Huge E[u]=\min_{v\in V}E[v]$$
+> $u$ is a weak solution of Poisson's equation.
+
+That is, if $u\in C^2(\bar\Omega)\cap V$ is a minimiser of $E$, then $u$ is a classical solution of Poisson's equation:
+> Let $u$ be a minimiser of $E$. This means that the derivative of $E$ vanishes at $u$, $\underline{\nabla}E[u]=0$, however $\underline{\nabla}E$ does not make a lot of sense, as $E$ is a functional. Instead, we formulate the problem as the following.
+> For any $\varphi\in V,\epsilon\in\Re$, define $u_\epsilon=u+\epsilon\varphi$. Observe that this vanishes on the boundary as both $u,\varphi$ vanish there. Also $u_\epsilon\in C^1(\bar\Omega)$ since the sum of $C^1$ functions is $C^1$, hence $u_\epsilon\in V$. Let $g(\epsilon)=E[u_\epsilon]$ so that $u_\epsilon=u$ when $\epsilon=0$. Therefore $g$ is minimised by $\epsilon=0$ since $E$ is minimised by $u$. 
+> Since $g$ is minimised at $\epsilon=0$, we have:$$\Huge\begin{align*}
+0&=g'(0)=\frac{d}{d\epsilon}|_{\epsilon=0}E[u_\epsilon]\\
+&=\frac{d}{d\epsilon}|_{\epsilon=0}\left(\frac{1}{2}\int_\Omega|\underline{\nabla}u_\epsilon|^2d\underline{x}-\int_\Omega f(u_\epsilon)d\underline{x}\right)\\
+&=\frac{d}{d\epsilon}|_{\epsilon=0}\left(\frac{1}{2}\int_\Omega(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)d\underline{x}-\int_\Omega f(u+\epsilon\varphi)d\underline{x}\right)\\
+&=\frac{1}{2}\int_\Omega \frac{d}{d\epsilon}|_{\epsilon=0}(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)d\underline{x}-\int_\Omega f \frac{d}{d\epsilon}|_{\epsilon=0}(u+\epsilon\varphi)d\underline{x}\\
+&=\frac{1}{2}\int_\Omega[\underline{\nabla}\varphi\cdot(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)+(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)\cdot\underline{\nabla}\varphi]_{\epsilon=0}d\underline{x}-\int_\Omega f\varphi d\underline{x}\\
+&=\int_\Omega \underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}-\int_\Omega f\varphi\,d\underline{x}
+\end{align*}$$Which holds for all $\varphi\in V$, making $u$ a weak solution as required.
+> Let $u$ be a weak solution. For any $v\in V$ we compute:$$\begin{align*}
+E[u]-E[v]&=\frac{1}{2}\int_\Omega|\underline{\nabla}u|^2d\underline{x}-\int_\Omega fu\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}+\int_\Omega fv\,d\underline{x}\\
+&=\frac{1}{2}\int_\Omega \underline{\nabla}u\cdot\underline{\nabla}(u-v+v)d\underline{x}-\int_\Omega fu\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}+\int_\Omega fv\,d\underline{x}\\
+&=\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}-\frac{1}{2}\int_\Omega f(u-v)d\underline{x}+\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}v\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}
+\end{align*}$$By substituting $\varphi=u-v$, we deduce that:$$\Huge \frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}-\int_\Omega f(u-v)d\underline{x}=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}$$Therefore we write:$$\large \begin{align*}
+E[u]-E[v]&=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}+\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}v
+\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}\\
+&=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}u\,d\underline{x}+\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}v\,d\underline{x}-\frac{1}{2}\int_\Omega\underline{\nabla}v\cdot\underline{\nabla}v\,d\underline{x}\\
+&=-\frac{1}{2}\int_\Omega(\underline{\nabla}u-\underline{\nabla}v)\cdot(\underline{\nabla}u-\underline{\nabla}v)d\underline{x}\leq0\end{align*}$$Therefore $E[u]\leq E[v]$ for all $v\in V$, as required.
+
