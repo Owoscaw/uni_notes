@@ -32,3 +32,18 @@ Let us use this form of $U(\rho)$ in the equation for $U$:$$\Huge \rho \frac{d^2
 
 To avoid this problem, we assume the existence of some $j_\text{max}:a_{j_\text{max}}+1=0$. Using this in the recurrence relation gives the expression$$\Huge 2(j_\text{max}+l+1)-\rho_0(E)=2n-\rho_0(E)=0$$, where we define $n=j_\text{max}+l+1$ so that $n=1,2,\dots$. We have found an equation$$\Huge \rho_0(E)=2n$$that fixes the energy of a hydrogen atom, giving us quantised energy states labelled by the principal quantum number $n$. Hence for the energy of the hydrogen atom$$\Huge E_n=-\left(\frac{m}{2\hbar^2}\left(\frac{e^2}{4\pi\epsilon_0}\right)^2\right)\frac{1}{n^2}=\frac{E_1}{n^2}$$, where we introduce the constant $E_1$. This is known as Bohr's formula. The constant $E_1$ provided ground state energy of the hydrogen atom. This state is associated with the electron $e^-$ being kicked out from the hydrogen atom, an easily measurable quantity. Scientists found the value of this constant experimentally, proving the quantum mechanical nature of the hydrogen atom.
 
+Another natural constant that appears is$$\Huge a=\frac{4\pi\epsilon_0\hbar^2}{e^2m}\approx0.54\times10^{-10}\text{m}$$, introduced by Bohr in his model of the Hydrogen atom. This is the Bohr radius, the minimal distance at which $e^-$ can be away from the nucleus.
+
+## Wave functions:
+In terms of the angular $Y_{lm}$ and radial $R(r)$ parts of the wave function, we see that $\Psi$ is labelled by three quantum numbers:$$\Huge\begin{align*}
+\Psi_{nlm}(r,\theta,\varphi)&=R_{nl}(r)Y_{lm}(\theta,\varphi)\\
+R_{nl}(r)&=\frac{1}{r}U_{nl}(\rho)=\frac{1}{r}\rho^{l+1}e^{-\rho}v_{nl}(\rho)
+\end{align*}$$We ask what are the allowed eigenstates for this wave function. The fact that $j_\text{max}\geq0$ fixes $l,m$ for a given $n$:
+> Taking $n=1$ we see that $l=0\implies n=0$ and so the radial function $Y_{00}=\frac{1}{\sqrt{4\pi}}$ takes form. This also implies $j_\text{max}=0$ and so $v_{nl}=\text{constant}$. Putting this together, we can find the groundstate wavefunction$$\Huge \Psi_{100}=\frac{1}{\sqrt{\pi a^3}}e^{-r/a}$$, where $a$ is the Bohr radius. This has a maximum at $r=a$, so the probability to find $e^-$ is largest at the Bohr radius.
+> Taking $n=2$, $j_\text{max}=1-l\geq0\implies l\leq1\implies l=0$ or $l=1$, so $m=0$ or $m-\{-1,0,1\}$ respectively. The allowed states then become:$$\Huge\Psi_{200},\Psi_{210},\Psi_{211},\Psi_{21(-1)}$$These look like:![[Systems with spherical symmetry 2026-02-12 01.46.10.excalidraw]]
+> At generic $n$, we have $n^2$ possible states. That is, the energy spectrum id degenerate with degeneracy $n^2$.
+
+We have the important properties:
+> For $n=1,2,\dots$ we have infinite energy states, given by: $$\Huge E_n=\frac{E_1}{n^2}$$
+> $E_n<0$, since the electron is in a potential well.
+> We see that energy levels become closer and tend to a continuum as $n\to\infty$: $$\Huge E_{n+1}-E_n\approx\frac{1}{(n+1)^2}-\frac{1}{n^2}\to_{n\to\infty}0$$
