@@ -27,5 +27,28 @@ Since $L$ depends on $u$, and hence on $t$, the eigenfunctions $\psi$ and eigenv
 
 To prove this, we first assume that an operator $M(u)$ can be found such that the time evolution of $L(u(x,t))$ is given by:
 > $$\Huge\begin{align*}
-
+L(u)_t&=M(u)L(u)-L(u)M(u)\\
+&=[M(u),L(u)]
 \end{align*}$$
+> Now we let $\lambda,\psi$ be an eigenvalue and eigenfunction of $L$, so that $L\psi=\lambda\psi$. Taking the time derivatives of this equation, we rearrange to find:$$\Huge\begin{align*}
+L_t\psi+L\psi_t&=\lambda_t\psi+\lambda\psi_t\\
+\implies\lambda_t\psi&=\lambda_t\psi+L\psi_t-\lambda\psi_t\\
+&=(ML-LM)\psi+(L-\lambda)\psi_t\\
+&=(M\lambda-LM)\psi+(L-\lambda)\psi_t\\
+&=(L-\lambda)(\psi_t-M\psi)
+\end{align*}$$
+> Now consider the inner product on square integrable functions of $x$:$$\Huge\langle \psi_1,\psi_2\rangle=\int_\Re\bar{\psi_1}(x)\psi_2(x)dx$$Since this is self adjoint, and eigenvalues of a self adjoint operators are real:$$\Huge\begin{align*}
+\lambda_t \langle \psi,\psi\rangle&=\langle \psi,(L-\lambda)(\psi_t-M\psi)\rangle\\
+&=\langle (L-\lambda)\psi,(\psi_t-M\psi)\rangle=0
+\end{align*}$$Here, we used the fact that $L\psi=\lambda\psi$. Since $0<\langle \psi,\psi\rangle<\infty$, we deduce that:$$\Huge \lambda_t=0$$
+> Now we show that $(L-\lambda)\psi=0$ continues to be true if $\psi$ changes according to $\psi_t=M\psi$. We calculate:$$\Huge\begin{align*}
+\frac{\partial }{\partial t}((L-\lambda)\psi)&=L_t\psi+L\psi_t-\lambda_t\psi-\lambda\psi_t\\
+&=L_t\psi+L\psi_t-\lambda\psi_t\\
+&=L_t\psi+LM\psi-\lambda M\psi\\
+&=L_t\psi+LM\psi-M\lambda\psi\\
+&=L_t\psi+LM\psi-ML\psi\\
+&=(L_t-[M,L])\psi=0
+\end{align*}$$
+> This shows that if $\psi_t=M\psi$ and $\psi$ starts off as an eigenfunction at $t=0$, then it remains an eigenfunction:$$\Huge (L-\lambda)\psi=\text{constant wrt }t=(L-\lambda)\psi|_{t=0}=0$$Here, $L$ and $M$ are known as a Lax pair.
+
+## Lax pair for KdV:
