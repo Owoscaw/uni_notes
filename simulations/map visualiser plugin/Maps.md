@@ -1,0 +1,2 @@
+
+We want to take any map and show its effect on the cartesian plane. This is akin to plotting the set of points $f(\Re^2)$ of a map $f(x,y)$ on the screen. Note that we want smooth animation between the cartesian grid and the mapped geometry, so infinitesimal paths of a transformation may be useful to consider.
