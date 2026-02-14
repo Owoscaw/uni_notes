@@ -52,3 +52,21 @@ L_t\psi+L\psi_t&=\lambda_t\psi+\lambda\psi_t\\
 > This shows that if $\psi_t=M\psi$ and $\psi$ starts off as an eigenfunction at $t=0$, then it remains an eigenfunction:$$\Huge (L-\lambda)\psi=\text{constant wrt }t=(L-\lambda)\psi|_{t=0}=0$$Here, $L$ and $M$ are known as a Lax pair.
 
 ## Lax pair for KdV:
+
+We have already found $L(u)=\frac{\partial^2}{\partial x^2}+u(x,t)$ for the $L$ operator, where $u$ evolves according to the [[Basic properties of Solitons#The KdV equation|KdV]] equation, so it remains to find $M$ such that:$$\Huge u_t=N(u)=-6uu_x-u_{xxx}\iff L(u)_t=[M(u),L(u)]$$Since $L$ does not depend on time, we have that $L(u)_t=u_t$ and so:$$\Huge [M(u),L(u)]=N(u)=-6uu_x-u_{xxx}$$For now we make a guess about $M$'s form, and will derive a more systematic approach later. We use $D=\frac{\partial }{\partial x},D^2=\frac{\partial^2}{\partial x^2}$ in the following:$$\Huge M(u)=-(4D^3+6uD+3u_x)$$Note that here, $D$ is acting like an operator so acts on everything to its right. Operators act on functions, so it makes sense to write $[D,u]f$ as the action of the commutator between $D,u$ on some function $f$:$$\Huge\begin{align*}
+[D,u]f&=(Du-uD)f\\
+&=D(uf)-u(Df)\\
+&=(Du)f+u(Df)-u(Df)=u_xf\\
+\implies[D,u]&=u_x
+\end{align*}$$That is, the action of this commutator is simply right multiplication by $u_x$. This can be rephrased as$$\Huge Du=uD+u_x$$, which shows us how to commute $D$ through $u$. More generally, we have that$$\Huge [D^n,u]=\sum_{m=0}^{n-1}{n\choose m}u_{x\dots x}D^m$$where the lower index on $u$ is repeated $n-m$ times. Note that we require $[D^m,D^n]=0$ and $[g(x),h(x)]=0$ for all $n,m$ and functions $g,h$. Using the commutator identities $$\Huge\begin{align*}
+[A,BC]&=[A,B]C+B[A,C]\\
+[AB,C]&=A[B,C]+[A,C]B
+\end{align*}$$we can calculate our relevant commutator:$$\Huge\begin{align*}
+L=D^2+u,\,\,M&=-(4D^3+6uD+3u_x)\\
+\implies-[M(u),L(u)]&=[4D^3+6uD+3u_x,D^2+u]\\
+&=4[D^3,u]+6[uD,D^2]+6[uD,u]+3[u_x,D^2]\\
+&=4[D^3,u]+6[u,D^2]D+6u[D,u]+3[u_x,D^2]\\
+&=4(u_{xxx}+3u_{xx}D+3u_xD^2)-6(u_{xx}+2u_{x}D)D\\
+&+6uu_x-3(u_{xxx}+2u_{xx}D)\\
+&=u_{xxx}+6uu_{x}
+\end{align*}$$As required. This completes the proof that $u$ solves KdV if and only if $L_t=[M,L]$. Here, our Lax pair is $L,M$ written above.
