@@ -77,4 +77,22 @@ We have seen that if $u$ evolves by the KdV equation, then:
 > Eigenvalues $\lambda$ of $L(u)=D^2$ with $u$ constant in $t$.
 > Eigenfunctions $\psi$ evolve by $\psi_t=M(u)\psi$
 
-We ask how the scattering data associated to $V=-u$ evolve with time. To find out, we observe the asymptotics of the time-evolution equation $\psi_t=M(u)\psi$ as $x\to\pm\infty$. Since $u,u_x\to0$ at $x\to\pm\infty$ for all $t$, we have that$$\Huge M(u)\approx-4D^3$$, which is independent of $u(x,t)$. Therefore we can evolve scattering data in $t$ without knowing what $u$ evolves to. 
+We ask how the scattering data associated to $V=-u$ evolve with time. To find out, we observe the asymptotics of the time-evolution equation $\psi_t=M(u)\psi$ as $x\to\pm\infty$. Since $u,u_x\to0$ at $x\to\pm\infty$ for all $t$, we have that$$\Huge M(u)\approx-4D^3$$, which is independent of $u(x,t)$. Therefore we can evolve scattering data in $t$ without knowing what $u$ evolves to. We can find explicit equations for the $t$ evolution of the asymptotics of the scattering and bound state solutions:
+> Continuous spectrum, $-\lambda=k^2>0$. We start with the un-normalised scattering solution:$$\Huge\psi_k(x;t)\approx\begin{cases}A(k;t)e^{ikx}+B(k;t)e^{-ikx} & x\to-\infty \\
+C(k;t)e^{ikx} & x\to+\infty\end{cases}$$We impose$$\Huge \frac{\partial }{\partial t}\psi_k(x;t)=M(u)\psi_k(x;t)\sim-4D^3\psi_k(x;t)$$as $x\to\pm \infty$ we have$$\Huge\begin{align*}
+A_t(k;t)e^{ikx}+B_t(k;t)e^{-ikx}&=4ik^3(A(k;t)e^{ikx}-B(k;t)e^{-ikx})\\
+C_t(k;t)e^{ikx}&=4ik^3C(k;t)e^{ikx}
+\end{align*}$$and hence, equating coefficients of $e^{\pm ikx}$:$$\Huge\begin{align*}
+A_t(k;t)&=4ik^3A(k;t)\\
+B_t(k;t)&=-4ik^3B(k;t)\\
+C_t(k;t)&=4ik^3C(k;t)
+\end{align*}$$Which we solve to find:$$\Huge\begin{align*}
+A(k;t)&=A(k;0)e^{4ik^3t}\\
+B(k;t)&=B(k;0)e^{-4ik^3t}\\
+C(k;t)&=C(k;0)e^{4ik^3t}
+\end{align*}$$Dividing our un-normalised solution through by $A(k;t)$ so that it continues to be correctly normalised with incoming unit flux, we read off $R(k;t)$ and $T(k;t)$:$$\Huge \begin{align*}
+R(k;t)&=R(k;0)e^{-8ik^3t}\\
+T(k;t)&=T(k;0)
+\end{align*}$$Which we summarise:$$\Huge\psi_k(x;t)\approx\begin{cases}e^{ikx}+R(k;0)e^{-ik(x+8k^3t)} & x\to-\infty \\
+T(k;0)e^{ikx} & x\to+\infty\end{cases}$$As we see later, the reflected waves $\psi_k$ encoded in $R(k;t)$ translate into a dispersive component $u(x,t)$ moving to the left as $t$ increases.
+> Discrete spectrum, $-\lambda=-\mu^2_n<0$. 
