@@ -56,4 +56,11 @@ We can now write down the infamous equations of motion for a viscous fluid. To d
 &=-\frac{\partial p}{\partial x_i}+\mu\left(\frac{\partial^2u_j}{\partial x_j\partial x_i}+\frac{\partial^2u_i}{\partial x_j\partial x_j}-\frac{2}{3}\frac{\partial }{\partial x_i}(\underline{\nabla}\underline{u})\right)\\
 &=-\frac{\partial p}{\partial x_i}+\mu\left(\frac{\partial }{\partial x_i}\frac{\partial u_j}{\partial x_j}+\underline{\nabla}^2u_i-\frac{2}{3}\frac{\partial }{\partial x_j}(\underline{\nabla}\cdot\underline{u})\right)\\
 &=-\frac{\partial p}{\partial x_i}+\mu\left(\frac{1}{3}\frac{\partial }{\partial x_i}(\underline{\nabla}\cdot\underline{u})+\underline{\nabla}^2u_i\right)
-\end{align*}$$And so the [[Dynamics of viscous fluids#Viscous stress|Cauchy momentum equation ]]dictates:$$\Huge \rho\frac{D\underline{u}}{Dt}=-\underline{\nabla}p+\frac{\mu}{3}\underline{\nabla}(\underline{\nabla}\cdot\underline{u})+\mu \underline{\nabla}^2\underline{u}+\rho\underline{f}$$
+\end{align*}$$And so the [[Dynamics of viscous fluids#Viscous stress|Cauchy momentum equation ]]dictates:$$\Huge \rho\frac{D\underline{u}}{Dt}=-\underline{\nabla}p+\frac{\mu}{3}\underline{\nabla}(\underline{\nabla}\cdot\underline{u})+\mu \underline{\nabla}^2\underline{u}+\rho\underline{f}$$Thus the compressible Navier-Stokes equations are:$$\Huge\begin{align*}
+\frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\\
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}\rho+\frac{\mu}{3\rho}\underline{\nabla}(\underline{\nabla}\cdot\underline{u})+\frac{\mu}{\rho}\underline{\nabla}^2\underline{u}+\underline{f}
+\end{align*}$$With an additional unspecified equation describing the state. We discuss the incompressible Navier-Stokes equations:$$\Huge\begin{align*}
+\underline{\nabla}\cdot\underline{u}&=0\\
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho_0}\underline{\nabla}p+\frac{\mu}{\rho_0}\underline{\nabla}^2\underline{u}+\underline{f}
+\end{align*}$$Usually we write $\nu=\mu/\rho_0$, the kinematic viscosity. The boundary conditions are different to an inviscid fluid. For a viscous fluid we need no-slip condition $\underline{u}$ that matches the speed of any boundary. If the boundary is stationary then $\underline{u}=0$. Example:
+> Couette flow: Consider the flow between two moving boundaries with $p=0$ and $\underline{f}=0$. Let the boundary $y=0$ be stationary the a
