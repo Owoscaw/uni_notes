@@ -70,3 +70,11 @@ L=D^2+u,\,\,M&=-(4D^3+6uD+3u_x)\\
 &+6uu_x-3(u_{xxx}+2u_{xx}D)\\
 &=u_{xxx}+6uu_{x}
 \end{align*}$$As required. This completes the proof that $u$ solves KdV if and only if $L_t=[M,L]$. Here, our Lax pair is $L,M$ written above.
+
+# Time evolution of scattering data:
+
+We have seen that if $u$ evolves by the KdV equation, then:
+> Eigenvalues $\lambda$ of $L(u)=D^2$ with $u$ constant in $t$.
+> Eigenfunctions $\psi$ evolve by $\psi_t=M(u)\psi$
+
+We ask how the scattering data associated to $V=-u$ evolve with time. To find out, we observe the asymptotics of the time-evolution equation $\psi_t=M(u)\psi$ as $x\to\pm\infty$. Since $u,u_x\to0$ at $x\to\pm\infty$ for all $t$, we have that$$\Huge M(u)\approx-4D^3$$, which is independent of $u(x,t)$. Therefore we can evolve scattering data in $t$ without knowing what $u$ evolves to. 

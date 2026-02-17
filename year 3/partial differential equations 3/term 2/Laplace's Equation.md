@@ -43,4 +43,14 @@ Let $\Omega\subset\Re^n$ be open. If $u\in C^2(\Omega)$ is harmonic in $\Omega$,
 &=\frac{1}{2\pi r}\int_{B_r(\underline{x})}\underline{\nabla}(\underline{\nabla} u(\underline{y}))d\underline{y}\\
 &=\frac{1}{2\pi r}\int_{B_r(\underline{x})}\Delta u(\underline{y})d\underline{y}=0
 \end{align*}$$
-> Therefore $\varphi'(r)=0$ and so the mean-value formula follows immediately:$$\Huge \varphi(r)=\text{constant}=\lim_{\rho\to0}\varphi(\rho)=\lim_{\rho\to0}\int^*_{\partial B_\rho(\underline{x})}u(\underline{y})dL(\underline{y})=u(\underline{x})$$
+> Therefore $\varphi'(r)=0$ and so the mean-value formula follows immediately:$$\Huge \varphi(r)=\text{constant}=\lim_{\rho\to0}\varphi(\rho)=\lim_{\rho\to0}\int^*_{\partial B_\rho(\underline{x})}u(\underline{y})dL(\underline{y})=u(\underline{x})$$This is because the average of a function over a sphere of radius $\rho$ tends to the value of the function at the center of the sphere as $\rho\to0$. 
+> We now prove the second formula:$$\Huge u(\underline{x})=\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}$$
+> As in one dimension, this follows directly from the first formula. In polar coordinates we write$$\Huge\begin{align*}
+\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{\pi r^2}\int_{B_r(\underline{x})}u(\underline{y})d\underline{y}\\
+&=\frac{1}{\pi r^2}\int_{\rho=0}^r\int_{\theta=0}^{2\pi}u(\underline{x}+\rho(\cos\theta,\sin\theta))\rho\,d\theta\,d\rho
+\end{align*}$$, where $\partial B_\rho(\underline{x})$ is parametrised similar to the above. We can therefore write this equation as:$$\Huge\begin{align*}
+\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{\pi r^2}\int_{\rho=0}^r\int_{\theta=0}^{2\pi}u(\underline{r}_\rho(\theta))|\dot{\underline{r}}_\rho|d\theta\,d\rho\\
+&=\frac{1}{\pi r^2}\int_{\rho=0}^r\int_{\partial B_\rho(\underline{x})}u(\underline{y})dL(\underline{y})\,d\rho\\
+&=\frac{u(\underline{x})}{r^2}\int_{\rho=0}^r2\rho\,d\rho\\
+&=u(\underline{x})
+\end{align*}$$
