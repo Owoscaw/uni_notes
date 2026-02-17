@@ -63,4 +63,33 @@ We can now write down the infamous equations of motion for a viscous fluid. To d
 \underline{\nabla}\cdot\underline{u}&=0\\
 \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho_0}\underline{\nabla}p+\frac{\mu}{\rho_0}\underline{\nabla}^2\underline{u}+\underline{f}
 \end{align*}$$Usually we write $\nu=\mu/\rho_0$, the kinematic viscosity. The boundary conditions are different to an inviscid fluid. For a viscous fluid we need no-slip condition $\underline{u}$ that matches the speed of any boundary. If the boundary is stationary then $\underline{u}=0$. Example:
-> Couette flow: Consider the flow between two moving boundaries with $p=0$ and $\underline{f}=0$. Let the boundary $y=0$ be stationary the a
+> Couette flow: Consider the flow between two moving boundaries with $p=0$ and $\underline{f}=0$. Let the boundary $y=0$ be stationary and the boundary at $y=h$ move rightwards with velocity $U$:![[Dynamics of viscous fluids 2026-02-17 13.11.47.excalidraw]]
+> Using this in the incompressible Navier-Stokes equations gives:$$\Huge\begin{align*}
+\underline{\nabla}\cdot\underline{u}&=0\\
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho_0}\underline{\nabla}p+\nu\underline{\nabla}^2\underline{u}+\underline{f}\\
+0+\left(\underline{u}\frac{\partial }{\partial x}\right)\underline{u}&=0+\nu\underline{\nabla}^2\underline{u}+0\\
+\implies\nu\underline{\nabla}^2\underline{u}&=0\\
+\implies\nu \frac{d^2\underline{u}}{dy^2}&=0,\,\,u(0)=u(h)=0
+\end{align*}$$Which we solve by integrating twice:$$\Huge \implies u=Ay+B\implies_{BCs}\,u=\frac{U}{h}y$$
+> The vorticity of this solution is:$$\Huge \underline{\omega}=\underline{\nabla}\times\underline{u}=\begin{vmatrix}\hat{\underline{e}}_x & \hat{\underline{e}}_y & \hat{\underline{e}}_z \\ \partial_x & \partial_y & \partial_z \\ u & 0 & 0\end{vmatrix}=-\frac{U}{h}\hat{\underline{e}}_z$$
+
+Let us look at another example known as Poiseuille flow:
+> We consider flow in a pipe of radius $a$ oriented along the $z$ axis:![[Dynamics of viscous fluids 2026-02-17 13.25.30.excalidraw]]We force fluid through the pipe using a pressure gradient. We assume $\underline{f}=0$ with no-slip boundary conditions:$$\Huge \underline{\nabla}p=-G\hat{\underline{e}}_z$$
+> We look for steady flow solutions, so write $\underline{u}=u(r)\hat{\underline{e}}_z$. Putting this into the Navier-Stokes equations, we first compute each term in our cylindrical coordinates$$\Huge\begin{align*}
+(\underline{u}\cdot\underline{\nabla})\underline{u}&=\left(u_r\frac{\partial }{\partial r}+\frac{u_\theta}{r}\frac{\partial }{\partial \theta}+u_z\frac{\partial }{\partial z}\right)(u_r\hat{\underline{e}}_r+u_\theta\hat{\underline{e}}_\theta+u_z\hat{\underline{e}}_z)\\
+&=u_z\frac{\partial }{\partial z}(u_z\hat{\underline{e}}_z)=0\\
+\underline{\nabla}^2\underline{u}&=\left(\underline{\nabla}^2u_r-\frac{u_r}{r^2}-\frac{2}{r}^2\frac{\partial u_\theta}{\partial \theta}\right)\hat{\underline{e}}_r\\
+&+\left(\underline{\nabla}^2u_\theta+\frac{2}{r^2}\frac{\partial u_r}{\partial \theta}-\frac{u_\theta}{r^2}\right)\hat{\underline{e}}_\theta+\underline{\nabla}^2u_z\hat{\underline{e}}_z\\
+&=\underline{\nabla}^2u_z\hat{\underline{e}}_z\\
+&=\left(\frac{1}{r}\frac{\partial }{\partial r}\left(r\frac{\partial u_z}{\partial r}\right)+\frac{1}{r^2}\frac{\partial^2u_z}{\partial \theta^2}+\frac{\partial^2u_z}{\partial z^2}\right)\hat{\underline{e}}_z\\
+\implies_\text{NS}0&=G+\frac{\mu}{r}\frac{d}{dr}\left(r \frac{du}{dr}\right)\\
+\implies \frac{d}{dr}(r \frac{du}{dr})&=-\frac{G_r}{\mu}\\
+\implies \frac{du}{dr}&=-\frac{Gr}{\mu}+\frac{A}{r}\\
+\implies u&=-\frac{Gr^2}{4\mu}+A\log r+B
+\end{align*}$$Note that the presence of the logarithm dictates that $A=0$ as $u$ must be finite there. $u(a)=0$ then implies:$$\Huge u(r)=\frac{G}{4\mu}(a^2-r^2)$$This makes intuitive sense, as the velocity will be greater near $r=0$ and lesser near $r=a$, due to friction with the pipes. We can find the total flow rate (flux) of this profile:$$\Huge \begin{align*}
+Q=&=\iint ur\,dr\,d\theta\\
+&=2\pi\int_0^a ur\,dr\\
+&=\frac{\pi Ga^4}{8\mu}
+\end{align*}$$This allows $\mu$ to be found in practice by measuring $Q$.
+> Note in real life, this expression only works up to some critical pressure gradient $G$. While this equation holds true, we have steady unidirectional flow. After some critical pressure, we see unsteady flow where flow rate falls behind this linear approximation. After this stage, there is turbulent flow and the relation does not hold.
+
