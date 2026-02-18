@@ -95,4 +95,40 @@ R(k;t)&=R(k;0)e^{-8ik^3t}\\
 T(k;t)&=T(k;0)
 \end{align*}$$Which we summarise:$$\Huge\psi_k(x;t)\approx\begin{cases}e^{ikx}+R(k;0)e^{-ik(x+8k^3t)} & x\to-\infty \\
 T(k;0)e^{ikx} & x\to+\infty\end{cases}$$As we see later, the reflected waves $\psi_k$ encoded in $R(k;t)$ translate into a dispersive component $u(x,t)$ moving to the left as $t$ increases.
-> Discrete spectrum, $-\lambda=-\mu^2_n<0$. 
+> Discrete spectrum, $-\lambda=-\mu^2_n<0$. The $n$th bound state wave function has asymptotics:$$\Huge\psi_k(x;t)\approx\begin{cases}c_n(t)e^{\mu_nx} & x\to-\infty \\
+d_n(t)e^{-\mu_nx} & x\to+\infty\end{cases}$$Imposing$$\Huge\frac{\partial }{\partial t}\psi_n(x;t)=M(u)\psi_k(x;t)\approx-4D^3\psi_n(x;t)$$as $x\to\pm\infty$, we have:$$\Huge\begin{align*}
+\dot c_n(t)&=-4\mu^3_nc_n(t)\\
+\dot d_n(t)&=+4\mu^3_nd_n(t)
+\end{align*}$$Solving this:$$\Huge\begin{align*}
+c_n(t)&=c_n(0)e^{-4\mu_n^3t}\\
+d_n(t)&=d_n(0)e^{+4\mu_n^3t}
+\end{align*}$$Again, we summarise as:$$\Huge\psi_n(x;t)\approx\begin{cases}c_n(0)e^{\mu_n(x-4\mu^2_nt)} & x\to-\infty \\
+d_n(0)e^{-4\mu_n(x-4\mu_n^2t)} & x\to+\infty\end{cases}$$This will translate into a soliton for $u(x,t)$ moving to the right with velocity $4\mu_n^2$. These results describe the time evolved scattering data, so we move on:
+
+# Conservation laws from scattering data:
+
+We saw that we evolve $u(x,t)$ by the KdV equation, the transmission coefficient $T(k;t)$ associated to the potential $V(x,t)=-u(x,t)$ does not depend on the KdV time $t$. Since this is true for all values $k$, suggesting the existence of infinitely many conservation laws for solutions of the KdV equation. To make this precise, we rescale the scattering solution with unit flux of incident waves from $x=-\infty$ to obtain the Jost solution:$$\Huge\psi_+(x;t,k)=\frac{\psi_k(x;t)}{T(k;t)}\approx\begin{cases}\frac{1}{T(k;t)}e^{ikx}+\frac{R(k;t)}{T(k;t)}e^{-ikx} & x\to-\infty \\
+e^{ikx} & x\to+\infty\end{cases}$$This solution to the Schrodinger problem with asymptotic coefficients $C(k;t)=1$ and $D(k;t)=0$. Setting $D(k;t)$ is equivalent to demanding that $\psi_+(x;t,k)$ be bounded as $x\to+\infty$ for $\Im(k)\geq0$ where it is also complex analytic in $k$. The remaining asymptotic coefficients are:$$\Huge A(k;t)=\frac{1}{T(k;t)},\,\,B(k;t)=\frac{R(k;t)}{T(k;t)}$$Note that there is another Jost solution $\psi_-$ that behaves like $e^{-ikx}$ as $x\to-\infty$. Since$$\Huge \partial_tA(k;t)=0\,\,\forall k$$we find infinitely many conserved quantities. We aim to write these conserved quantities as functionals of the KdV field $u$ at some time:$$\Huge Q_n[u]=\int_{-\infty}^{+\infty}\rho_n(u,u_x,u_{xx,\dots})dx$$We achieve that by setting $$\Huge \psi_+(x;t;k)=F(x,t,k)e^{ikx}=\exp\left(ikx+\int_x^\infty S(z,t,k)dz\right)$$where:$$\Huge\begin{align*}
+S(x,t,k)&=-\frac{\partial }{\partial x}\log F(x,t,k)\\
+\lim_{x\to\infty}F(x,t,k)&=1
+\end{align*}$$
+We rearrange this to find:$$\Huge\begin{align*}
+F(x,t,k)&=\exp\left(\int_x^\infty S(z,t,k)dz\right)=e^{-ikx}\psi_+(x;t,k)\\
+&\approx\begin{cases}A(k;t)+B(k;t)e^{-2ikx} & x\to-\infty\\
+1 & x\to+\infty\end{cases}
+	\end{align*}$$If $\Im(k)>0$, the $B$ term vanishes as $x\to-\infty$ and:$$\Huge \frac{1}{T(k;t)}=A(k;t)=\lim_{x\to-\infty}e^{-ikx}\psi_+(x;t;k)=\exp\left(\int_{-\infty}^\infty S(x,t,k)dx\right)$$Then through analyticity to real $k$ and$$\Huge\partial_t\int_{-\infty}^\infty S(x,t,k)dx=0$$for all $k$ with non-negative imaginary part.
+
+
+Substituting $\psi_+$ into the time independent Schrodinger equation with $V=-u$ leads to$$\Huge S_x+2ikS-S^2=u$$for $S(x,t,k)$. This is a [[Inverse scattering method#The KdV-Schrodinger connection|Riccati equation]], which we have encountered before, setting$$\Huge\begin{align*}
+S&=-\epsilon\omega\\
+k&=-\frac{i}{2\epsilon}
+\end{align*}$$we recover the [[year 3/solitons 3/term 1/Conservation laws#The Gardner transform||Gardner transform]]:$$\Huge u=-\omega-\epsilon\omega_x-\epsilon^2\omega^2$$
+We saw that viewing the KdV field $u(x,t)$ as fixed and varying $w(x,t,\epsilon)$ with $\epsilon$ so that the above is satisfied and expanding the integral over $x$ of $w(x,t,\epsilon)$ as a formal power series in $\epsilon$, we obtained infinitely many conservation laws for the KdV equation. We reinterpret this from the viewpoint of the time evolution of scattering data, as a formal power series expansion of the time-independent function of $k$$$\Huge\int_{-\infty}^\infty w\left(x,t,\epsilon=-\frac{i}{2k}\right)dx=-2ik\int_{-\infty}^\infty S(x,t,k)dx=2ik\log T(k;t)$$in powers of $1/(2ik)$ about $k=\infty$.
+
+Solving the Riccati equation for $S$ as a formal series in powers of $1/(2ik)$$$\Huge S(x,t,k)=\sum_{n=1}^\infty\frac{S_n(x,t)}{(2ik)^n}$$leads to $S_1=u$ and the recurrence relation:$$\Huge S_{n+1}=-S_{n,x}+\sum_{m=1}^{n-1}S_mS_{n-m}$$This determines the coefficients $S_n$ of this formal power series in terms of $u$ and its spatial derivatives at a fixed time:$$\Huge\begin{align*}
+S_1&=u\\
+S_2&=-u_x\\
+S_3&=u^2+u_{xx}\\
+S_4&=-4uu_x-u_{xxx}\\
+S_5&=2u^3+5u^2_x+6uu_{xx}+u_{}
+\end{align*}$$
