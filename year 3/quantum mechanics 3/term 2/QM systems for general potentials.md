@@ -28,3 +28,26 @@ In the quantum picture, we have two situations depending on $E$:
 > > Region $I$, where the particle oscillates about $0$ and the particle cannot classically escape. 
 > > Region $II$, where the particle is between $x_2',x_2''$ and the classical particle is forbidden. Here, the particle can continue "rolling down the wave function hill" until it exits at $x_2'$. This is quantum tunnelling, and also occurs between $x_1'$ and $x_2'$. Note that exponential decay of the wave function is present within this region.
 > > Region $III$, where the particle is before $x_1'$ or after $x_2'$. Here, the particle can exist classically and the wave function is oscillatory once again.
+
+# Quantum scattering (unbounded propagation):
+
+We are studying a situation when a particle comes from $\pm\infty$ and scattering off of some potential bump $V(x)$:![[QM systems for general potentials 2026-02-18 01.34.18.excalidraw]]Classically:
+> If $E<V_0$ the particle will elastically bounce off the potential and will return to whence it came.
+> If $E>V_0$, the particle goes over the potential as if $V(x)=0$.
+
+In our superior way of thinking, both for $E>V_0$ and $E<V_0$, some figment of a particle wave is scattered back and the rest transmits through. In order to see how much of an incoming wave transmits through the potential and how much scatters back, we look at $\psi(x,t)$ at $x\to\pm\infty$:$$\Huge\begin{align*}
+x\to-\infty&:\Psi(x,t)\to A_Ie^{ipx}+A_Re^{-ipx}=\Psi_I+\Psi_R\\
+x\to+\infty&:\Psi(x,t)\to Be^{iqx}=\Psi_T
+\end{align*}$$Here, $A_I$ is the amplitude of the incoming particle with momentum $p$. $A_R$ is the amplitude of reflected particles with momentum $-p$. $B$ is the amplitude of the transmitted particle with momentum $q$:![[QM systems for general potentials 2026-02-18 01.40.40.excalidraw]]In order to quantify which fraction of particles go through the barrier and which reflect, we introduce the following quantities.:
+> Probability density $\rho$:$$\Huge\rho(\underline{x},t)=|\psi(\underline{x},t)|^2$$is the probability to find a particles in $dV$ around $(\underline{x},t)$.
+> Probability current, $J_i$:$$\Huge J_i=\frac{i}{2m}(\psi^*\partial_i\psi-\psi\partial_i\psi^*)$$is the vector dictating how probability distributes across space. For each wave $k$ for $k\in\{I,R,T\}$:$$\Huge J(\psi_k)=\frac{\hbar}{m}\times\text{associated momemntum of }\psi_k\times|\psi_k|^2$$
+
+We are trying to find a quantity of unit time, so we see that:
+> $\rho(\psi_k)=|\psi_k|^2$ is the number of particles in $dV$. Therefore we multiply by the velocity $v=p/m$.
+> $|\psi_k|^2\frac{\text{momentum}}{m}$ is the number of particles per unit time through $dV$ at $(\underline{x},t)$
+
+We can now find the coefficients that dictate the probabilities of each particle phenomenon:
+> The transmission coefficient will be the amount of transmitted wave as a fraction of the incoming wave:$$\Huge T=\frac{J_T}{J_I}=\frac{p_T}{p_I}\frac{|\psi_T|^2}{|\psi_I|^2}$$
+> The reflection coefficient is then the fraction of incoming wave that gets transmitted:$$\Huge R=\frac{J_R}{J_I}=\frac{p_I}{p_I}\frac{|\psi_R|^2}{|\psi_I|^2}$$
+
+Note that we have the important property:$$\Huge R+T=1$$This ensures we do not lose any particles, as it demands $\int|\psi|^2=1$
