@@ -60,4 +60,70 @@ F_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu\\
 &=-\partial^\nu A^\mu+\partial^\mu A^\nu=-F^{\nu\mu}\\
 \implies J^\mu-\partial_\nu F^{\mu\nu}&=0
 \end{align*}$$Where we used the Euler-Lagrange equations in the last line, proving our proposition.
- 
+
+## Gauge symmetry:
+This trick we used has an interesting consequence, the physical fields we measure are $\underline{E},\underline{B}$. These are the components of $F_{\mu\nu}$, not the dynamical field $A_\mu$ that we used to define actions. It turns out that $A_\mu$ is not uniquely defined, we are free to shift $A_\mu(x)$ by the derivative of any smooth function $\alpha(x)$$$\Huge A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu\alpha(x)$$without altering the physical fields:$$\Huge\begin{align*}
+F_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu\\
+&\rightarrow\partial_\mu(A_\mu+\partial_\mu\alpha)-\partial_\nu(A_\nu+\partial_\nu)\\
+&=\partial_\mu A_\nu-\partial_\nu A_\mu+\partial_{\mu\nu}\alpha-\partial_{\nu\mu}\alpha\\
+&=F_{\mu\nu}
+\end{align*}$$
+A symmetry for which the parameters of the transformation depend on spacetime is called a Gauge symmetry. The above equation is the gauge transformation of $A_\mu$ and we call $A_\mu$ a gauge field. These field configurations that differ by a gauge transformation are considered physically equivalent.
+
+Performing a gauge transformation on the action gives:$$\Huge\begin{align*}
+S[A_\mu]\rightarrow S[A_\mu+\partial_\mu\alpha]&=\int-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}+A_\mu J^\mu+(\partial_\mu\alpha)J^\mu\,d^4x\\
+&=S[A_\mu]+\int(\partial_\mu\alpha)J^\mu\,d^4x\\
+\implies\delta_\alpha S[A_\mu]&=\int(\partial_\mu\alpha)J^\mu\,d^4x\\
+&=-\int\alpha(\partial_\mu J^\mu)d^4x=0
+\end{align*}$$
+Note that we can write$$\Huge A_\mu\rightarrow A_\mu+\partial_\mu\alpha=e^{i\alpha}(A_\mu +i\partial_\mu)e^{-i\alpha}$$so that we can associate gauge transformations to [[U(1),SU(2),SO(3)#$U(1)$|$U(1)$]] but with a spacetime dependent parameter $\alpha$. We call $U(1)$ the gauge group. The field $A_\mu$ is transforming in the [[Representations#Definitions|adjoint representation]] except from the derivative term.
+
+# $U(1)$ global symmetry:
+
+Consider a complex scalar field $\phi(x)$. The action$$\Huge\begin{align*}
+S_0[\phi,\bar \phi]&=\int\mathcal{L}_0(\phi,\bar\phi,\partial_\mu\phi,\partial_\mu\bar\phi)d^4x\\
+\mathcal{L}_0&=-|\partial_\mu\phi|^2-V(\phi,\bar\phi)\\
+&=-|\partial_\mu\phi|^2-U(|\phi|^2)\\
+&=|\dot\phi|^2-|\underline{\nabla}\phi|^2-U(|\phi|^2)
+\end{align*}$$is invariant under global $G=U(1)$ transformations$$\Huge g:\phi(x)\rightarrow e^{i\alpha}\phi(x)$$where $\alpha\sim\alpha+2\pi$ is a constant parameter and $g=e^{i\alpha}\in U(1)$ is a constant group element. The restriction to $U(1)$ invariance demands the scalar potential $V(\phi,\bar\phi)$ depends only on the invariant $|\phi|^2$. As the scalar field is multiplied by a single power of the $U(1)$ group element, we say it has charge $1$:
+> The continuous $U(1)$ symmetry ensures the existence of the conserved current and conserved charge$$\Huge\begin{align*}
+j^\mu&=-i(\bar\phi\partial^\mu\phi-\phi\partial^\mu\bar\phi)\\
+\partial_\mu j^\mu&=0\\
+Q&=\int j^0\,d^3x\\
+\frac{d}{dt}Q&=0\end{align*}$$by [[Symmetries and Action Principles#Noether's theorem|Noether's theorem]].
+> A global symmetry relates physically distinct configurations.
+
+# $U(1)$ gauge symmetry:
+
+To make the global symmetry local, we promote $\alpha$ to a function of spacetime $\alpha(x)$. The parameter $\alpha(x)$ should approach $0$ sufficiently fast at infinity. Trying to write a kinetic term for $\phi$, we find that under a $U(1)$ gauge transformation$$\Huge\partial_\mu\phi\rightarrow\partial_\mu\phi'=\partial_\mu(e^{i\alpha}\phi)=e^{i\alpha}(\partial_\mu+i(\partial_\mu\alpha)\phi)$$since $\alpha$ is spacetime dependent. Therefore the kinetic term $-|\partial_\mu\phi|^2$ is not invariant under $U(1)$ gauge transformations.
+
+To remedy this, we replace $\partial_\mu\phi$ with the gauge covariant derivative, defined as:$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi$$This introduces a new field $A_\mu$ (gauge field) which transforms under gauge transformations precisely to cancel the unwanted second term:$$\Huge\begin{align*}
+A_\mu\rightarrow A_\mu'&=A_\mu+\partial_\mu\alpha\\
+\implies D_\mu\phi=
+(\partial_\mu\phi-iA_\mu\phi)&\rightarrow(\partial_\mu\phi'-iA_\mu'\phi')\\
+&=e^{i\alpha}(\partial_\mu\phi+i(\partial_\mu\alpha)\phi-iA_\mu\phi-i(\partial_\mu\alpha)\phi)\\
+&=e^{i\alpha}(\partial_\mu\phi-iA_\mu\phi)=e^{i\alpha}D_\mu\phi\end{align*}$$It is clear to see that replacing $\partial_\mu$ with $D_\mu$ makes the gauge kinetic term of $\phi$ invariant under $U(1)$ gauge transformations.
+
+Now we need to introduce a new gauge invariant kinetic term for our new field $A_\mu$. We do this by demanding the Maxwell Lagrangian. We find that$$\Huge\begin{align*}
+S[\phi,\bar\phi,A_\mu]&=\int\mathcal{L}(\phi,\bar\phi,A_\nu,\partial_\mu\phi,\partial_\mu\bar\phi,\partial_\mu A_\nu)d^4x\\
+\mathcal{L}&=\mathcal{L}_0(\phi,\bar\phi,D_\mu\phi,\overline{D_\mu\phi})+\mathcal{L}_\text{Maxwell}(\partial_\mu A_\nu)\\
+&=-\overline{D_\mu\phi}D^\mu\phi-U(|\phi|^2)
+-\frac{1}{4g^2}F_{\mu\nu}F^{\mu\nu}\end{align*}$$where $A_\mu$ is a real gauge field and $$\Huge\begin{align*}
+D_\mu\phi&=(\partial_\mu-iA_\mu)\phi\\
+F_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu
+\end{align*}$$are invariant under $G=U(1)$ gauge transformations:$$\Huge\begin{align*}
+\phi(x)&\rightarrow e^{i\alpha(x)}\phi(x)\\
+A_\mu(x)&\rightarrow A_\mu(x)+\partial_\mu\alpha(x)
+\end{align*}$$Note that:
+> To linear order in $A_\mu$:$$\Huge \mathcal{L}=\mathcal{L}_0+j^\mu A_\mu+\dots$$That is, the scalar field is coupled to the gauge field $A_\mu$ and not to the field strength $F_{\mu\nu}$. $A_\mu$ couples directly to the conserved current $j^\mu$ of the theory with $U(1)$ global symmetry. This is known as minimal coupling. Note that sometimes we rescale the gauge field $A_\mu\rightarrow gA_\mu$ so that we can control the strength of the coupling between $j^\mu$ and the gauge field $A_\mu$ with the group element $g$.
+> The group of gauge transformations$$\Huge \mathcal{G}=\mathcal{U}(1)=\left\{\begin{align*}
+g:\Re^{1,3}&\rightarrow G=U(1)\\
+x^\mu&\rightarrow g(x)=e^{i\alpha(x)}
+\end{align*}\right\}$$is infinite dimensional, since it associated independent $g(x)$ for the fields at different points $x^\mu$ and there are infinitely many points in spacetime. 
+> A gauge symmetry relates physically equivalent configurations, which are to be identified. The identification of field configurations which differ by a gauge transformation leads to non-trivial topological properties of gauge fields. These ensure the existence of [[Topological lumps|topological solitons]] and instantons.
+> Under a $U(1)$ gauge transformation$$\Huge\begin{align*}
+D_\mu\phi&\rightarrow e^{i\alpha}D_\mu\phi\\
+F_{\mu\nu}&\rightarrow F_{\mu\nu}
+\end{align*}$$, we say that $D_\mu\phi$ is gauge covariant as it transforms in a representation of $G$ for all $x$. The field strength $F_{\mu\nu}$ is gauge invariant.
+> We think of the covariant derivative $D_\mu=\partial_\mu-iA_\mu$ as a differential operator. Requiring that under a $U(1)$ gauge transformation$$\Huge D_\mu\rightarrow e^{i\alpha}D_\mu e^{-i\alpha},\,\,D_\mu\phi\rightarrow e^{i\alpha}D_\mu\phi$$implies the gauge transformation of the field:$$\Huge A_\mu\rightarrow A_\mu+\partial_\mu\alpha$$
+> A gauge field $A_\mu$ is only defined locally, in a patch where we take Poincare's lemma to apply. This means that for two patches $U^{(1)},U^{(2)}$ with nontrivial overlap $U^{(1)}\cap U^{(2)}\neq\emptyset$, the gauge fields $A^{(1)}_\mu,A^{(2)}_\mu$ defined in the two patches are related by a gauge transformation$$\Huge A^{(1)}_\mu=A^{(2)}_\mu+\partial_\mu\alpha^{(12)}$$on the overlap. The transformation parameter $\alpha^{(12)}$ is called a transition function. This local definition of the gauge field is responsible for most of the topological and geometric properties of gauge theories.
