@@ -129,6 +129,5 @@ Solving the Riccati equation for $S$ as a formal series in powers of $1/(2ik)$$$
 S_1&=u\\
 S_2&=-u_x\\
 S_3&=u^2+u_{xx}\\
-S_4&=-4uu_x-u_{xxx}\\
-S_5&=2u^3+5u^2_x+6uu_{xx}+u_{}
+&\,\,\,\vdots
 \end{align*}$$
