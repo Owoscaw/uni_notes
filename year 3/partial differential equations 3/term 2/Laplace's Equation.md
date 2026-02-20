@@ -28,33 +28,20 @@ We identify $(x,y)\in\Re^3$ with $z\in\mathbb{C}$ with $z=x+iy$. We write $f:\ma
 
 We will prove the last two properties of harmonic functions in any dimension. Let $v:\Re^n\rightarrow n$ and recall$$\Huge\int^*_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{1}{|B_r(\underline{x})|}\int_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{\int_{B_r(\underline{x})}v(\underline{y})d \underline{y}}{\int_{B_r(\underline{x})}1d\underline{y}}$$denotes the average (mean-value) of $v$ over the ball $B_r(\underline{x})$. A similar result exists for the average value over the surface of the ball:$$\Huge \int^*_{\partial B_r(\underline{x})}v(\underline{y})dS(\underline{y})=\frac{\int_{\partial B_r(\underline{x})}v(\underline{y})dS(\underline{y})}{\int_{\partial B_r(\underline{x})}1dS(\underline{y})}$$
 Let $\Omega\subset\Re^n$ be open. If $u\in C^2(\Omega)$ is harmonic in $\Omega$, then $$\Huge u(\underline{x})=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dS(\underline{y})=\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}$$for each ball $B_r(\underline{x})\subset\Omega$. Therefore $u(\underline{x})$ is the average of $u$ over any sphere any over any ball in $\Omega$ centered at $\underline{x}$. Proof:
-> We prove the theorem for $n=2$:$$\Huge u(\underline{x})=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dL(\underline{y})=\varphi(r)$$Note that the proof for general $n$ is essentially the same.
-> Observe that the LHS is independent of $r$, and so $\varphi(r)=\text{constant}\implies\varphi'(r)=0$. Recalling that for a parametrised curve, parametrised by $\underline{r}:[a,b]\rightarrow\Gamma,s\rightarrow\underline{r}(s)$, then the integral of a function $f:\Gamma\rightarrow\Re$ along $\Gamma$ is defined as:$$\Huge \int_\Gamma f(\underline{y})dL(\underline{y})=\int_a^bf(\underline{r}(s))|\dot{\underline{r}}(s)|ds$$
-> We parametrised $\partial B_r(\underline{x})$ using polar coordinates with:$$\Huge \underline{r}:[0,2\pi]\rightarrow\partial B_r(\underline{x}),\,\,\underline{r}(\theta)=\underline{x}+r(\cos\theta,\sin\theta)$$
-> Using this, we compute:$$\Huge\begin{align*}
-\varphi(r)&=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dL(\underline{y})=\frac{1}{|\partial B_r(\underline{x})|}\int_{\partial B_r(\underline{x})}u(\underline{y})dL(\underline{y})\\
-&=\frac{1}{2\pi r}\int_0^{2\pi}u(\underline{r}(\theta))|\dot{\underline{r}}(\theta)|d\theta\\
-&=\frac{1}{2\pi r}\int_0^{2\pi}u(\underline{x}+r(\cos\theta,\sin\theta))r\,d\theta\\
-&=\frac{1}{2\pi}\int_0^{2\pi}u(\underline{x}+r(\cos\theta,\sin \theta))d\theta
+> Fix some $\underline{x},r$ so that $B_r(\underline{x})\subset\Omega$ and let $\varphi(r)$ be given by:$$\Huge\varphi(r)=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dS(\underline{y})$$Note that the $r$ dependence is implicit in $dS(y)$. To make it explicit we make a change of variables to $\underline{y}=\underline{x}+r\hat{\underline{y}}$ where $r\in\Re$ and $|\hat{\underline{y}}|=1$. This makes the integral:$$\Huge \varphi(r)=\int^*_{\partial B_1(0)}u(\underline{x}+r\hat{\underline{y}})dS(\hat{\underline{y}})$$
+> Then $\varphi'(r)$ becomes, using our change of variables:$$\Huge\begin{align*}
+\varphi'(r)&=\frac{d}{dr}\int^*_{\partial B_1(0)}u(\underline{x}+r\hat{\underline{y}})dS(\hat{\underline{y}})\\
+&=\int^*_{\partial B_1(0)}\frac{d}{dr}u(\underline{x}+r\hat{\underline{y}})dS(\hat{\underline{y}})\\
+&=\int^*_{\partial B_1(0)}\underline{\nabla}u(\underline{x}+r\hat{\underline{y}})\cdot\hat{\underline{y}}\,dS(\hat{\underline{y}})\\
+&=\int^*_{\partial B_1(0)}\underline{\nabla}u(\underline{x}+r\hat{\underline{y}})\cdot d\underline{S}(\hat{\underline{y}})\\
+&=\int^*_{\partial B_r(\underline{x})}\underline{\nabla}u(\underline{y})\cdot d\underline{S}(\underline{y})\\
+&=\frac{1}{|\partial B_r|}\int_{\partial B_r(\underline{x})}\underline{\nabla}u(\underline{y})\cdot d\underline{S}(\underline{y})\\
+&=\frac{1}{|\partial B_r|}\int_{B_r(\underline{x})}\underline{\nabla}\cdot\underline{\nabla}u(\underline{y})\,d\underline{y}=0
 \end{align*}$$
-> Then using the chain rule gives:$$\Huge\begin{align*}
-\varphi'(r)&=\frac{d}{dr}\frac{1}{2\pi}\int_0^{2\pi}u(\underline{x}+r(\cos\theta,\sin \theta))d\theta\\
-&=\frac{1}{2\pi}\int_0^{2\pi}\underline{\nabla}u(\underline{x}+r(\cos\theta,\sin\theta))\cdot(\cos\theta,\sin\theta)d\theta
-\end{align*}$$The unit outward-pointing normal to $\partial B_r(\underline{x})$ at a point $\underline{y}$ is given by:$$\Huge \underline{n}(\underline{y})=\frac{\underline{y}-\underline{x}}{|\underline{y}-\underline{x}|}=\frac{\underline{y}-\underline{x}}{r}\implies \underline{n}(\underline{r}(\theta))=\frac{\underline{r}(\theta)-\underline{x}}{r}=(\cos\theta,\sin \theta)$$And so we write:$$\Huge\begin{align*}
-\varphi'(r)&=\frac{1}{2\pi}\int_0^{2\pi}\underline{\nabla} u(\underline{r}(\theta))\cdot\underline{n}(\underline{r}(\theta))d\theta\\
-&=\frac{1}{2\pi r}\int_0^{2\pi}\underline{\nabla} u(\underline{r}(\theta))\cdot\underline{n}(\underline{r}(\theta))|\dot{\underline{r}}(\theta)|d\theta\\
-&=\frac{1}{2\pi r}\int_{\partial B_r(\underline{x})}\underline{\nabla} u(\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})\\
-&=\frac{1}{2\pi r}\int_{B_r(\underline{x})}\underline{\nabla}(\underline{\nabla} u(\underline{y}))d\underline{y}\\
-&=\frac{1}{2\pi r}\int_{B_r(\underline{x})}\Delta u(\underline{y})d\underline{y}=0
-\end{align*}$$
-> Therefore $\varphi'(r)=0$ and so the mean-value formula follows immediately:$$\Huge \varphi(r)=\text{constant}=\lim_{\rho\to0}\varphi(\rho)=\lim_{\rho\to0}\int^*_{\partial B_\rho(\underline{x})}u(\underline{y})dL(\underline{y})=u(\underline{x})$$This is because the average of a function over a sphere of radius $\rho$ tends to the value of the function at the center of the sphere as $\rho\to0$. 
-> We now prove the second formula:$$\Huge u(\underline{x})=\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}$$
-> As in one dimension, this follows directly from the first formula. In polar coordinates we write$$\Huge\begin{align*}
-\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{\pi r^2}\int_{B_r(\underline{x})}u(\underline{y})d\underline{y}\\
-&=\frac{1}{\pi r^2}\int_{\rho=0}^r\int_{\theta=0}^{2\pi}u(\underline{x}+\rho(\cos\theta,\sin\theta))\rho\,d\theta\,d\rho
-\end{align*}$$, where $\partial B_\rho(\underline{x})$ is parametrised similar to the above. We can therefore write this equation as:$$\Huge\begin{align*}
-\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{\pi r^2}\int_{\rho=0}^r\int_{\theta=0}^{2\pi}u(\underline{r}_\rho(\theta))|\dot{\underline{r}}_\rho|d\theta\,d\rho\\
-&=\frac{1}{\pi r^2}\int_{\rho=0}^r\int_{\partial B_\rho(\underline{x})}u(\underline{y})dL(\underline{y})\,d\rho\\
-&=\frac{u(\underline{x})}{r^2}\int_{\rho=0}^r2\rho\,d\rho\\
-&=u(\underline{x})
+> Therefore $\varphi$ is constant and so $\varphi(r)=\lim_{r\to0}\varphi(r)=u(\underline{x})$, as required. 
+> For the other formula, we compute$$\Huge\begin{align*}
+\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{|B_r|}\int_{B_r(\underline{x})}u(\underline{y})d\underline{y}\\
+&=\frac{1}{|B_r|}\int_0^r\int_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
+&=\frac{1}{|B_r|}\int_0^r|\partial B_\rho|\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
+&=\frac{1}{\alpha(n)r^n}\int_0^rn\alpha(n)\rho^{n-1}\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho
 \end{align*}$$
