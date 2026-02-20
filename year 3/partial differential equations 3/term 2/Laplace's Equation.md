@@ -14,15 +14,19 @@ We also have the less obvious properties:
 > For all $r>0,u(x)=\frac{1}{2}(u(x+r)+u(x-r))$. That is, the average of $u$ over the boundary of the ball $B_r(x)=(x-r,x+r)$ is the value of $u$ at the center of that ball.
 > For all $r>0,u(x)=\frac{1}{2r}\int_{x-r}^{x+r}u(y)dy$. This is the above statement recast for general dimensions.
 
-We verify the last property directly by integrating. Assuming $u>0$ for $(x-r,x+r)$ then by linearity of $u$:$$\Huge\begin{align*}
+The first two properties are known as the maximum principles, and the last two are known as the mean-value principles. We verify the last property directly by integrating. Assuming $u>0$ for $(x-r,x+r)$ then by linearity of $u$:$$\Huge\begin{align*}
 \frac{1}{2r}\int_{x-r}^{x+r}u(y)dy&=\frac{1}{2r}\left(2r\frac{u(x-r)+u(x+r)}{2}\right)\\
 &=\frac{u(x-r)+u(x+r)}{2}=u(x)
 \end{align*}$$
 In higher dimensions, linear polynomials $u(\underline{x})=\underline{c}\cdot\underline{x}+d$ are harmonic. Note that harmonic functions are not necessarily linear. For example, $u(x,y)=\sin x\sinh y$ is harmonic but not linear. Nevertheless, all harmonic functions satisfy the above properties.
 
-# Mean-Value formulae:
+# Harmonic functions in $2D$:
 
-We will prove the last two properties of harmonic functions in any dimension. Let $v:\Re^n\rightarrow n$ and recall$$\Huge\int^*_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{1}{|B_r(\underline{x})|}\int_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{\int_{B_r(\underline{x})}v(\underline{y})d \underline{y}}{\int_{B_r(\underline{x})}1d\underline{y}}$$denotes the average (mean-value) of $v$ over the ball $B_r(\underline{x})$. A similar result exists for the average value over the surface of the ball:$$\Huge \int^*_{\partial B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{\int_{\partial B_r(\underline{x})}v(\underline{y})d\underline{y}}{\int_{\partial B_r(\underline{x})}1dS(\underline{y})}$$
+We identify $(x,y)\in\Re^3$ with $z\in\mathbb{C}$ with $z=x+iy$. We write $f:\mathbb{C}\rightarrow\mathbb{C}$ for$$\Huge f(x+iy)=u(x,y)+iv(x,y)$$with $u,v:\Re^2\rightarrow\Re^2$. If $f$ is complex analytic, then both $u,v$ are [[Complex differentiation#Cauchy-Riemann equations|harmonic]]. 
+
+# Mean-Value formulae in $\Re^n$:
+
+We will prove the last two properties of harmonic functions in any dimension. Let $v:\Re^n\rightarrow n$ and recall$$\Huge\int^*_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{1}{|B_r(\underline{x})|}\int_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{\int_{B_r(\underline{x})}v(\underline{y})d \underline{y}}{\int_{B_r(\underline{x})}1d\underline{y}}$$denotes the average (mean-value) of $v$ over the ball $B_r(\underline{x})$. A similar result exists for the average value over the surface of the ball:$$\Huge \int^*_{\partial B_r(\underline{x})}v(\underline{y})dS(\underline{y})=\frac{\int_{\partial B_r(\underline{x})}v(\underline{y})dS(\underline{y})}{\int_{\partial B_r(\underline{x})}1dS(\underline{y})}$$
 Let $\Omega\subset\Re^n$ be open. If $u\in C^2(\Omega)$ is harmonic in $\Omega$, then $$\Huge u(\underline{x})=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dS(\underline{y})=\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}$$for each ball $B_r(\underline{x})\subset\Omega$. Therefore $u(\underline{x})$ is the average of $u$ over any sphere any over any ball in $\Omega$ centered at $\underline{x}$. Proof:
 > We prove the theorem for $n=2$:$$\Huge u(\underline{x})=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dL(\underline{y})=\varphi(r)$$Note that the proof for general $n$ is essentially the same.
 > Observe that the LHS is independent of $r$, and so $\varphi(r)=\text{constant}\implies\varphi'(r)=0$. Recalling that for a parametrised curve, parametrised by $\underline{r}:[a,b]\rightarrow\Gamma,s\rightarrow\underline{r}(s)$, then the integral of a function $f:\Gamma\rightarrow\Re$ along $\Gamma$ is defined as:$$\Huge \int_\Gamma f(\underline{y})dL(\underline{y})=\int_a^bf(\underline{r}(s))|\dot{\underline{r}}(s)|ds$$
