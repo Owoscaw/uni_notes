@@ -1,0 +1,11 @@
+
+From the definition of fluids as a continuum of particles and systematically adding physical laws and constraints we can model increasingly complex behaviour:
+> The [[Kinematics of Fluids#What is a fluid?|continuum hypothesis]] defines a fluid as a continuous substance described by a density field $\rho$ and a velocity field $\underline{u}$. We adopt two perspectives to describe these fields motion:
+> > The Eulerian perspective observes the fluid at fixed points in space.
+> > The Lagrangian perspectives tracks individual particles moving through time.
+> We develop the [[Kinematics of Fluids#The material derivative|material derivative]] $D/Dt$ as the bridge between these perspectives, allowing for the calculation of the rate of change of a property in the fluid following a particle.
+> We then apply the following physical constraints:
+> > Applying conservation of mass leads to the [[Kinematics of Fluids#Conservation of mass|continuity equation]]. Note that for most fluids, this is simplified assuming incompressibility $\underline{\nabla}\cdot\underline{u}=0$.
+> > We first define a way to quantify rotation, the [[Kinematics of Fluids#Vorticity|vorticity]] $\underline{\omega}=\underline{\nabla}\times\underline{u}$. We often demand that this is zero, however we can also calculate the [[Kinematics of Fluids#Circulation|circulation]] $\Gamma$ as the integral of velocity around a closed curve.
+> > Assuming a flow is both incompressible and irrotational, we can let the velocity be defined as the gradient of a [[Kinematics of Fluids#Potential flows|velocity potential]] $\phi$. These are solved by [[Laplace's Equation]].
+> Moving on from kinematic definitions, we investigate the dynamics of fluids
