@@ -1,12 +1,12 @@
-We explore the structure of our universe by studying group structure and its connection to the standard model. 
 
-We begin by defining Lie groups as a group with smooth, differentiable, group operations. That is, for $x,y\in G$, the maps $(x,y)\rightarrow x\cdot y$ and $x\rightarrow x^{-1}$ must be differentiable. We continue to explore Lie groups as differentiable manifolds, a space that can be covered by a coordinate chart such that the transitions between overlapping charts are smooth. This enables us to use calculus on our groups, allowing us to define paths and tangent vectors. The Lie group formalism provides the global structure of the group, while the Lie algebra determines the local, infinitesimal structure.
+Our best formulation of modern physics is based on symmetries and geometry. We build algebraic structures and apply them to the physics of spacetime, which we unify through the geometric language of gauge theories:
+> We define [[Lie Groups and Algebras#Lie groups|Lie groups]], a type of [[Differentiable Manifolds#Definition|differentiable manifold]]. Some Lie groups include [[U(1),SU(2),SO(3)#$U(1)$|$U(1)$]] and [[U(1),SU(2),SO(3)#$SU(2)$|$SU(2)$]].
+> To handle infinitesimal transformations, we define a [[Lie Groups and Algebras#Lie algebras|Lie algebra]] as the tangent space of a Lie group at its identity element. This allows us to utilise linear algebra.
+> Next we introduce representation theory to describe how these abstract symmetries act on physical states represented as a vector space. Representation theory defines a [[Representations#Definitions|representation]] as a homomorphism from a group to a group of invertible linear maps $GL(V)$.
+> This framework allows us to classify particles. [[Representations#$SO(3),SU(2)$, and spin|Spin]] is defined by how a field transforms under representations of $SU(2)$ (the spin group). It also allows for the construction of [[Representations#Tensor representations|tensor products]] which allows for the description of other particles.
 
-We then move on to study representations of groups, formally defined as a group homomorphism $r:G\rightarrow GL(V)$ that assigns an invertible linear map to every group element. These maps are such that the groups abstract relations are preserved in the matrix multiplication of the image:
-> The defining, or fundamental, representation of a group is an intrinsic representation available to all Lie groups, where the group acts on its own Lie algebra via conjugation. 
-> Faithful representations are such that the homomorphism is injective.
-> Trivial representations simply map every element to the identity map.
-
-An important concept in representation theory is the invariant subspace. A subspace $W\subseteq V$ is invariant if acting on any vector in $W$ with any group element results in a vector in $W$. A representation can then be called irreducible if its only invariant subspaces are trivial.
-
-A Lie algebra representation is a homomorphism that preserves the Lie bracket structure. Every group representation uniquely determines a Lie algebra representation $\rho$ through the derivative at the identity:$$\Huge\rho(\gamma)=\frac{d}{dt}r(e^{t\gamma})|_{t=0}$$
+This framework we develop allows us to describe the geometry of spacetime itself through [[Symmetries and Action Principles#Lorentz symmetry and field theories|action principles]]:
+> The [[The Lorentz Group#The Lorentz group and its Lie Groups and Algebras Lie algebras Lie algebra|Lorentz group]] $L$ is defined as the set of linear maps on $\Re^4$ that preserve the [[Spacetime and Tensors#Minkowski space|Minkowski metric]] $\eta_{\mu\nu}$. From this we develop Lorentz vectors, covectors, and [[The Lorentz Group#Spinors of the Lorentz group|Dirac spinors]].
+> We then prove that every continuous symmetry of an action corresponds to a conserved current and charge, known as [[Symmetries and Action Principles#Noether's theorem|Noether's theorem]]. $U(1)$ symmetries lead to electric charge through Noether's theorem.
+> We then promote these [[Abelian gauge theories#$U(1)$ global symmetry|global symmetries]] to local [[Abelian gauge theories#Gauge symmetry|gauge symmetries]] in spacetime dependent parameters.
+> This "gauging" process required us to define a covariant derivative $D_\mu$ and with it a gauge field $A_\mu$ to maintain [[Symmetries and Action Principles#Lorentz symmetry and field theories|Lorentz invariant]].

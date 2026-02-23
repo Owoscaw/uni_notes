@@ -1,0 +1,17 @@
+
+The core of Quantum mechanics is defined by a mathematic framework constructed so that we can compute probabilities in coherent systems. We build this upon several objects and [[Principles of QM#Early principles|principles]]:
+> The quantum state $|\psi\rangle$ contains all the information about a system. We describe it as a unit vector in [[QM linear algebra#Hilbert space|Hilbert space]]. The dimensionality of this space corresponds to the number of distinguishable outcomes for the measurement of the system. That is, the outcome of the quantum state is introduced via the space it is embedded in.
+> Every physical quantity corresponds to a [[Hilbert space#Hermitian operators|Hermitian operator]]. These are analogous to matrices acting on the state vectors.
+> The only possible results of a measurement are therefore the [[Eigenvalues, Eigenvectors, and Diagonalisation|eigenvalues]] of this matrix. As our operators are Hermitian, the measurement outcomes will be real.
+> Generally, observables do not [[Momentum and Planck's constant#Commutation|commute]]. Physically this means that the order of measurement matters, so certain properties cannot be simultaneously determined with arbitrary precision.
+
+Based on these definitions, our theory describes how the systems change over time and how they can be interacted with:
+> The time evolution of a state is governed by the [[Time evolution of QM states#Time evolution and the importance of the $ hat H$ eigenbasis|Hamiltonian]] $\hat H$, which represents the total energy of the system. Between measurements, the state evolves unitarily, a process that preserves total probability.
+> The act of measurement is defined as a collapse, where the state is projected into an [[Generalisation to infinite dimensional Hilbert spaces#Eigenstates of $ x rangle$|eigenstate]] of the measured observable. The probability of any specific outcome is determined by the [[Principles of QM#Early principles|Born rule]] (square of the projection of the state onto that eigenspace).
+> To "quantise" classical systems, we directly build on them by replacing [[Hamiltonian Formalism#Poisson bracket|Poisson brackets]] with [[Commutators and Uncertainty Principle|commutators]]. This ensures that in systems involving large quantum numbers, [[Time evolution of QM states#Time evolution of expectation values|expectation values]] obey classic equations of motion (Ehrenfest's theorem).
+
+We extend our framework to a number of systems:
+> We use the [[Quantum S.H.O.#Ladder operators|ladder operators]] to define the Quantum SHO (simple harmonic oscillator). These operators allow for the derivation of discrete energy levels ($E_n=\hbar\omega(n+1/2)$) without directly solving differential equations.
+> Orbital [[QM in R3#Quantum angular momentum|angular momentum]] built from generators of physical rotations are build upon to the concept of intrinsic spin. This is an internal angular momentum with no classical analogue. We use this to distinguish Bosons and Fermions.
+> Our theories then scale to $3D$ systems like [[Systems with spherical symmetry#The Hydrogen atom|Hydrogen]] atoms. Using separation of variables, we get a radial and angular equation. The radial equation leads to the quantisation of energy based on a principle [[Time evolution of QM states#Time evolution and the importance of the $ hat H$ eigenbasis|quantum number]].
+> 

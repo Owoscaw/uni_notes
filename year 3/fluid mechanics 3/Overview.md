@@ -13,4 +13,6 @@ From the definition of fluids as a continuum of particles and systematically add
 > We can model [[Water waves|water waves]] using a potential flow and our dynamics with oscillations on a free surface. From this, we define concepts such as the [[Water waves#Dispersion relation|dispertion relation]].
 
 These all work well for a fluid under ideal assumptions, however this is not enough for us. We therefore change certain aspects of our model:
-> By analysing a free surface in equilibrium, we find that small perturbations can lead to exponential growth and destabilisation in the free surface. We s 
+> By analysing a free surface in equilibrium, we find that small perturbations can lead to exponential growth and destabilisation in the free surface. This can happen in the [[Instability#The Rayleigh-Taylor instability|Rayleigh-Taylor]] and [[Instability#The Kelvin-Helmholtz instability|Kelvin-Helmholtz]] instabilities.
+> By allowing for [[Compressible flow|compressible flow]], we can model gasses which introduces the notion of [[Compressible flow#Sound waves|sound waves]] as small-amplitude pressure oscillations and [[Compressible flow#Nonlinearity|shocks]].
+> We can introduce the internal friction using the [[Dynamics of viscous fluids#Stress tensor symmetry|stress tensor]]. This leads to the [[Dynamics of viscous fluids#The Navier-Stokes equations|Navier-Stokes equations]], which are the defining equations for viscous fluid motion.  
