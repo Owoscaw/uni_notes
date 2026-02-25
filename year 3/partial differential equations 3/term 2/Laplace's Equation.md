@@ -43,5 +43,56 @@ Let $\Omega\subset\Re^n$ be open. If $u\in C^2(\Omega)$ is harmonic in $\Omega$,
 \int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{|B_r|}\int_{B_r(\underline{x})}u(\underline{y})d\underline{y}\\
 &=\frac{1}{|B_r|}\int_0^r\int_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
 &=\frac{1}{|B_r|}\int_0^r|\partial B_\rho|\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
-&=\frac{1}{\alpha(n)r^n}\int_0^rn\alpha(n)\rho^{n-1}\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho
+&=\frac{1}{\alpha(n)r^n}\int_0^rn\alpha(n)\rho^{n-1}\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
+&=\frac{n}{r^n}\int_0^r\rho^{n-1}\int_{\partial B_\rho(\underline{x})}^*u(\underline{z})dS(\underline{z})d\rho
 \end{align*}$$
+
+# Maximum principles:
+
+We now prove the first two properties of harmonic functions in all dimensions. First we must recall a few of our definitions of open/closedness:
+> Let $\Omega\subseteq\Re^n$, we say that $U\subseteq\Omega$ is an open subset of $\Omega$ if $U=\Omega\cap\mathcal{O}$ for some open set $\mathcal{O}\subseteq\Re^n$. 
+> A set $V\subseteq\Omega$ is a closed subset of $\Omega$ if $V=\Omega\cap\mathcal{C}$ for some closed set $\mathcal{C}\subseteq\Re^n$.
+> A set $\Omega\subseteq\Re^n$ is disconnected if it can be written as the union of two disjoint nonempty subsets of $\Omega$, otherwise it is connected. This comes with an equivalence:
+> > $\Omega$ is connected
+> > The only subsets of $\Omega$ that are both open and closed subsets are $\Omega$ and $\emptyset$
+
+We can now state our maximum principles. Let $\Omega\subset\Re^n$ be open, bounded, and connected. Let $u:\bar\Omega\rightarrow\Re,u\in C^2(\Omega)\cap C(\bar\Omega)$ be harmonic in $\Omega$, then:
+> The weak maximum principle, $u$ attains its maximum on the boundary of $\Omega$:$$\Huge\max_{\bar\Omega}u=\max_{\partial\Omega}u$$
+> The strong maximum principle, if $u$ attains its maximum in $\Omega$ then $u$ is constant. That is, if there exists $\underline{x}_0\in\Omega$ such that$$\Huge u(\underline{x}_0)=\max_{\bar\Omega}u$$, then $u$ is constant.
+
+Note that the assumption $u\in C(\bar\Omega)$ ensures that the maximum of $u$ over $\bar\Omega$ exists:
+> We first prove the strong maximum principle. Let $\underline{x}_0\in\Omega$ satisfy$$\Huge u(\underline{x}_0)=\max_{\bar\Omega}u=M$$and define $S\subseteq\Omega$ to be the set of points in $\Omega$ where $u$ attains its maximum:$$\Huge S=\{\underline{x}\in\Omega:u(\underline{x})=M\}=u^{-1}(\{M\})\cap\Omega$$
+> Note that since $S$ is nonempty (as $\underline{x}_0\in S$ by definition). Let $\underline{x}\in S$ and $B_r(\underline{x})\subset\Omega$, then by the second mean-value formula:$$\Huge M=u(\underline{x})=\int_{B_r(\underline{x})}^*u(\underline{y})d\underline{y}\leq\int_{B_r(\underline{x})}Md\underline{y}=M$$
+> Therefore we have an equality$$\Huge \int_{B_r(\underline{x})}^*u(\underline{y})d\underline{y}=\int_{B_r(\underline{x})}^*Md\underline{y}$$, meaning that $u(\underline{y})=M$ for all $\underline{y}\in B_r(\underline{x})$. Consequently, $B_r(\underline{x})\subset S$ and so $S$ is an open set.
+> Therefore $S=\Omega\cap S$ is an open subset of $\Omega$. The set $u^{-1}(\{M\})$ is the preimage of the closed set $\{M\}$ under the continuous map $u$ and so is closed. Therefore $S=u^{-1}(\{M\})\cap\Omega$ is a closed subset of $\Omega$. We have shown that $S$ is nonempty, open, and a closed subset of the connected set $\Omega$. Therefore $S=\Omega$, implying $u=M=\text{constant}$ in $\Omega$, as required.
+> The weak maximum principle is a direct consequence of the strong maximum principle.
+
+Note that one can apply the maximum principles to $-u$ to attain corresponding minimum principles for $u$. 
+
+We previously proved the [[Poisson's equation#Energy Method|uniqueness for Poisson's equation]] using the energy method, however we also provide a proof using the weak maximum principle:
+> Let $\Omega\subset\Re^n$ be open, bounded, and connected. There exists at most one solution $u\in C^2(\Omega)\cap C(\bar\Omega)$ of the Dirichlet problem$$\Huge -\Delta u=f\text{ in }\Omega,\,\,u=g\text{ on }\Omega$$, where $f\in C(\Omega),g\in C(\partial\Omega)$.
+> Suppose that $u_1$ and $u_2$ are solutions and let $w=u_1-u_2$, then $w$ satisfies:$$\Huge \Delta w=0\text{ in }\Omega,\,\,w=0\text{ on }\partial\Omega$$
+> Since $w$ is harmonic, the weak maximum principle implies that$$\Huge \max_{\bar\Omega}w=\max_{\partial\Omega}w=0$$, therefore $w\leq0$. We can apply the same argument to $\bar\omega=-w=u_2-u_1$. As above, $\bar w$ is harmonic and $\bar w=0$ on $\partial\Omega$. Therefore by the weak maximum principle $\bar w\leq0$, however $\bar w=-w$ which implies $w\geq0$. Therefore $w=0$, as required.
+
+Note that maximum principles can be used to prove uniqueness theorems, bounds on solutions, and comparison principles.
+
+# Maximum principles for Elliptic PDEs:
+
+These maximum and minimum principles hold for a broad class of elliptic PDEs. First we look at the example of Poisson's equation $-\Delta u=f$ for the case where $f$ is signed.
+
+First we define Subharmonic and Superharmonic functions. Let $\Omega\subseteq\Re^n$ be open. We say that $u\in C^2(\Omega)$ is subharmonic in $\Omega$ if $-\Delta u(\underline{x})\leq0$ for all $\underline{x}\in\Omega$. Conversely, we define the superharmonic as $u\in C^2(\Omega)$ with $-\Delta u(\underline{x})\geq0$ for all $\underline{x}\in\Omega$.
+
+## Sub/superharmonic functions in $1D$:
+In one dimension, $u$ is subharmonic if $-u''\leq0$. For example suppose that $-u''(x)=f$ and $f<0$ is constant. Then $u$ is a quadratic polynomial of the form $u(x)=ax^2+bx+c$ with $a=-f/2>0$. Therefore $u$ attains its maximum over any interval at the boundary of the interval. Its minimum is not necessarily attains at the boundary however. 
+
+Similarly if $u$ is a superharmonic function satisfying $-u''(x)=f$ where $f>0$ is constant, then $u$ attains its minimum over any interval at the boundary of the interval, and its maximum is not necessarily attained at the boundary. This generalises to higher dimensions and to nonconstant $f$.
+
+Writing this formally, let $\Omega\subset\Re^n$ be open, bounded, and connected and let $u\in C^2(\Omega)\cap C(\bar\Omega)$:
+> If $u$ is subharmonic, then it satisfies the weak maximum principle$$\Huge\max_{\bar\Omega}u=\max_{\partial\Omega}u$$
+> If $u$ is superharmonic, then it satisfies the weak minimum principle$$\Huge\min_{\bar\Omega}u=\min_{\partial\Omega}u$$
+
+Moreover, subharmonics satisfy the strong maximum principle and superharmonics satisfy the strong minimum principle. This is proven in much the same way for harmonic functions, except with the presence of a mean-value inequality in the proof. These principles generalise further to second-order elliptic PDEs of the form $Lu=f$ for the case where $f$ has a sign and $L$ has coefficient function $c=0$:
+> Let $\Omega\subset\Re^n$ be open, bounded, and connected. Let $f\in C(\Omega)$ and $u\in C^2(\Omega)\cap C(\bar\Omega)$ satisfy $Lu=f$, where $L$ is a linear second-order elliptic operator of the form$$\Huge Lu=-\sum_{i,j=1}^na_{ij}u_{x_ix_j}+\sum_{j=1}^nb_jx_{x_j}=-A:D^2u+\underline{b}\cdot\underline{\nabla}u$$, where $a_{ij}$ and $b_j$ are continuous functions on $\Omega$ and $A$ is symmetric and uniformly positive definite. That is, $a_{ij}(\underline{x})=a_{ji}(\underline{x})$ for all $\underline{x}\in\Omega$ and there exists a constant $\alpha>0$ such that $\underline{y}^\top A(\underline{x})\underline{y}\geq\alpha|\underline{y}|^2$ for all $\underline{y}\in\Re^n,\underline{x}\in\Omega$. Assuming that $f\leq0$, we can state our principles.
+> $u$ attains its maximum on the boundary of $\Omega$:$$\Huge\max_{\bar\Omega}u=\max_{\partial\Omega}u$$
+> If $u$ attains its maximum in $\Omega$, then $u$ is constant. That is, there exists $\underline{x}_0\in\Omega$ such that$$\Huge u(\underline{x}_0)=\max_{\bar\Omega}u$$, then $u$ is constant in $\Omega$.
+> We get similar results regarding minimum principles if we take $f\leq0$. In particular if $f=0$ then $u$ satisfies both weak and strong maximum and minimum principles.
