@@ -44,4 +44,37 @@ We now have no choice but to compute. We will find that $N_m(u)=[M_m,L]$ is a po
 \end{align*}$$Requiring this to be multiplicative, the left coefficients of $D^2$ and $D$ must vanish. Therefore we find$$\Huge 3u_x+\beta_{1,x}=0\implies\beta_1=-3u+k$$for some constant $k$. Doing the same for the $D$ term we find that the multiplicative term becomes$$\Huge -4u_{xxx}-\beta_{1,xxx}+2\beta_1u_x=-u_{xxx}-6uu_x+2ku_x=N_2(x)$$, and so the associated PDE is:$$\Huge u_t-u_{xxx}-6uu_x=2ku_x$$This is simply the KdV equation if $k=0$. 
 
 This shows that the KdV equation is the third member of a hierarchy of PDEs given by $u_t=N_m(u)=[M_m(u),L(u)]$.
- 
+
+
+# Connection to conservation laws:
+
+Recall that the KdV equation has an infinite sequence of [[year 3/solitons 3/term 1/Conservation laws|conserved charges]]$$\Huge Q_n=\int_{-\infty}^\infty \rho_ndx$$where the conservation of $Q_n$ is proven by showing that$$\Huge \frac{\partial }{\partial t}\rho_n+\frac{\partial }{\partial x}j_n=0$$when KdV holds, for some current density with$$\Huge [j_n]_{-\infty}^\infty=0$$We can normalise the charge densities $\rho_n$ so that the $u^n$ term has coefficient $1$. This gives us two infinite sequences:
+> A sequence $Q_1,\dots$ of conserved charges for the KdV equation
+> An infinite sequence $N_0,N_1,\dots$ of polynomials in $u$ and its $x$ derivatives such that setting $u_t=N_n(u)$ leaves eigenvalues of $D^2+u(x,t)$ constant
+
+One possibility is that each evolution equation $u_t=K_n(u)$ has its own set of conserved charges for that equation alone. However this is boring, so let us introduce some new tools that will help us.
+
+## Functional derivatives:
+Suppose that $f$ is some function of $u$ and its $x$ derivatives, then$$\Huge F[u]=\int_{-\infty}^\infty f(u,u_x,\dots)dx$$is an example of a functional of $u$. Consider a small variation $\delta u(x)$ of $u$ such that $u(x)\rightarrow u(x)+\delta u(x)$ with $\delta u(x)\to0$ at infinity. We demand similar conditions on the $x$ derivatives of $\delta u$ so that the varied field still obeys boundary conditions. This makes $F[u]$ become:$$\Huge\begin{align*}
+F[u+\delta u]&=\int_{-\infty}^\infty f(u+\delta u,(u+\delta u)_x,\dots)dx\\
+&=\int_{-\infty}^\infty f(u+\delta u,u_x+\delta u_x,\dots)dx\\
+&=\int_{-\infty}^\infty f+\frac{\partial f}{\partial u}\delta u+\frac{\partial f}{\partial u_x}\delta u_x+\dots dx\\
+&=F[u]+\int_{-\infty}^\infty\frac{\partial f}{\partial u}\delta u+\frac{\partial f}{\partial u_x}\delta u_x+\frac{\partial f}{\partial u_{xx}}\delta u_{xx}+\dots dx\\
+&=F[u]+\int_{-\infty}^\infty\left(\frac{\partial f}{\partial u}-\frac{\partial }{\partial x}\frac{\partial f}{\partial u_x}+\frac{\partial^2}{\partial x^2}
+\frac{\partial f}{\partial u_{xx}}+\dots\right)\delta u\,dx\end{align*}$$where the boundary term in IBP vanishes due to the boundary conditions on $\delta u$. The term in the last line multiplying $\delta u(x)$ is known as the functional derivative of $F[u]$, written as $\delta F[u]/\delta u(x)$. More precisely, the functional derivative is defined by$$\Huge F[u+\delta u]=F[u]+\int_{-\infty}^\infty\frac{\delta F[u]}{\delta u(x)}\delta u\,dx+\mathcal{O}(\delta u^2)$$, equivalent to $f(x+\delta x)=f(x)+\frac{df}{dx}\delta x$ for ordinary functions. For functionals defined above, our calculation shows that:$$\Huge \frac{\delta F[u]}{\delta u}=\frac{\partial f}{\partial u}-\frac{\partial }{\partial x}\frac{\partial f}{\partial u_x}+\frac{\partial^2}{\partial x^2}\frac{\partial f}{\partial u_{xx}}+\dots$$
+The conserved quantities $Q_n[u]$ are examples of functionals of $u$, and so we can calculate their functional derivatives:$$\Huge\begin{align*}
+\frac{\delta Q_1[u]}{\delta u}&=\frac{\delta}{\delta u}\int_{-\infty}^\infty u\,dx=1\\
+\frac{\delta Q_2[u]}{\delta u}&=\frac{\delta}{\delta u}\int_{-\infty}^\infty u^2dx=2u\\
+&\vdots
+\end{align*}$$Taking the $x$ derivative of these shows that they match, up to an overall scale, the equations of the KdV hierarchy. 
+
+The normalisation of the charges and the scale of $t$ can defined to make this precise. This defines Gardner's general result:$$\Huge u_t=\frac{\partial }{\partial x}\frac{\delta}{\delta u}\left(-\frac{C_m}{2}Q_{m+1}[u]\right)\iff u_t=N_m(u)$$This connects the $m+1$th KdV conservation law to the $m$th equation in the KdV hierarchy, so our sequences are indeed the same. The factor $-C_m/2$ where $C_m$ is the $m$th Catalan number is to ensure that the normalisation conventions match.
+
+If $u_m(x,t)$ evolves by the $m$th KdV equation, then all $Q_n$ are conserved quantities for it. That is, all equations in the KdV hierarchy share the same infinite sequence of conserved quantities. Indeed as $x\to\pm\infty$$$\Huge M_m(u)\rightarrow-\frac{1}{2}(2D)^{2m-1}$$determines the [[Evolving scattering data#Time evolution of scattering data|time evolution of scattering data]]:$$\Huge\begin{align*}
+R(k;t)&=R(k;0)e^{(2ik)^{2m-1}t}\\
+T(k;t)&=T(k;0)\\
+c_n(t)&=c_n(0)e^{-\frac{1}{2}(2\mu_n)^{2m-1}t}\\
+d_n(t)&=d_n(0)e^{\frac{1}{2}(2\mu_n)^{2m-1}t}
+\end{align*}$$The time independence of the transmission coefficient for $V=-u$ leads to infinitely many conservation laws from the coefficients of the formal power series of the solution to the Riccati equation$$\Huge S_x+2ikS-S^2=u$$, or equivalently the Gardner transform. Being related to the eigenvalue equation $L(u)\psi=-k^2\psi$ for the Lax operator $L(u)$, the conservation laws are also common to the entire KdV hierarchy.
+
+Setting one "time" for each equation in the hierarchy, so that instead of $u_m(x,t)$ with $\frac{\partial }{\partial t}u_m=N_m(u)$ we have $u(x,t_1,t_2,\dots)$ with$$\Huge \frac{\partial }{\partial t_m}u=N_m(u)=-\frac{C_m}{2}\frac{\partial }{\partial x}\frac{\delta Q_{m+1}[u]}{\delta u},\,\,\forall m=0,1,2,\dots$$
