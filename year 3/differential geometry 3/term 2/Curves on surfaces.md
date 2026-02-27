@@ -66,3 +66,26 @@ Another direct consequence of Meusnier's theorem is a formula to calculate norma
 Let $S\subset\Re^3$ be a regular surface with Gauss map $\underline{N}:S\rightarrow S^2$ and $\underline{\beta}:I\rightarrow S)$ be a regular curve not necessarily unit speed. Then the geodesic curvature of $\underline{\beta}$ is given by:$$\Huge\kappa_g=\frac{1}{||\underline{\beta}'||^2}(\underline{\beta}'\times\underline{\beta}'')\cdot(\underline{N}\circ\underline{\beta})$$
 # Asymptotic curves and lines of curvature:
 
+Let $S\subset\Re^3$ be a regular surface. A regular curve $\underline{\alpha}:I\rightarrow S$ is called a line of curvature if $\underline{\alpha}'(t)$ is an eigenvector of the Weingarten map for all $t\in I$. That is, there exists a function $\lambda:I\rightarrow\Re$ such that$$\Huge -d_{\underline{\alpha}(t)}\underline{N}(\underline{\alpha}'(t))=-(\underline{N}\circ\underline{\alpha})'(t)=\lambda(t)\underline{\alpha}'(t)$$and $\lambda(t)$ is a principle curvature of $S$ at $\underline{\alpha}'(t)\in S$.
+
+Let us discuss the situation near any $\underline{p}\in S$ that is not umbilic. We can then choose a small neighbourhood $V\subset S$ of $\underline{p}$ which still contains no umbilic points and two distinct eigenvalues $\kappa_1,\kappa_2:V\rightarrow\Re$ of the Weingarten map. Since the map is symmetric, the corresponding eigenvectors are perpendicular. This gives rise to two local families of curves, all of which are lines of curvatures, such that any curve of the first family meets any curve of the second perpendicularly at any intersection. 
+
+Lines of curvature satisfy a particular ODE in coordinates of a local parametrisation. Let $E,\dots, N:U\rightarrow\Re$ be the coefficients of the first and second fundamental form of a local parametrisation $\underline{x}:U\rightarrow S$ of a regular surface $S\subset\Re^3$. A smooth curve $\underline{\alpha}:I\rightarrow S$ with $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$ is a line of curvature if and only if$$\Huge\begin{vmatrix}(v')^2 & -u'v' & (u')^2 \\ E & F & G \\ L & M & N\end{vmatrix}=0$$with $E,\dots,N$ viewed along the curve $(u(t),v(t))$. Proof:
+> We conclude from the definition of $\underline{\alpha}$ that$$\Huge\underline{\alpha}'=u'\underline{x}_u+v'\underline{x}_v$$, $\underline{\alpha}$ is a line of curvature if and only if$$\Huge -d_\underline{\alpha}\underline{N}(u'\underline{x}_u+v'\underline{x}_v)=\lambda(u'\underline{x}_u+v'\underline{x}_v)$$for some $\lambda$.
+> We now use the matrix representation of the Weingarten map in terms of our basis, so our IFF translates to:$$\Huge\frac{1}{EG-F^2}\begin{pmatrix}GL-FM & GM-FN \\ -FL+EM & -FM+EN\end{pmatrix}\begin{pmatrix}u' \\ v'\end{pmatrix}=\lambda\begin{pmatrix}u' \\ v'\end{pmatrix}$$
+> Since $\lambda$ is arbitrary and $EG-F^2\neq0$, this is equivalent to the condition that $(a,b)$ (LHS vector) is a multiple of $(u',v')$. That is $av'=bu'$, which we write as$$\large\begin{align*}
+((GL-FM)u'+(GM-FN)v')v'&=((-FL+EM)u'+(-FM+EN)v')u'\\
+\iff(EM-FL)(u')^2+(-FM+EN&-GL+FM)u'v'+(FN-GM)(v')^2=0\\
+\iff(EM-GL)(u')^2+(EN-GL)&u'v'+(FN-GM)(v')^2=0
+\end{align*}$$
+> This can be written as$$\large (v')^2\begin{vmatrix}F & G \\ M & N\end{vmatrix}-(-u'v')\begin{vmatrix}E & G \\ L & N\end{vmatrix}+(u')^2\begin{vmatrix}E & F \\ L & M\end{vmatrix}=\begin{vmatrix}(v')^2 & -u'v' & (u')^2 \\ E & F & G \\ L & M & N\end{vmatrix}$$as required.
+
+Let $\underline{x}:U\rightarrow S$ be a principal parametrisation of a surface $S\subset\Re^3$ with Gauss map $\underline{N}:S\rightarrow S^2$. That is we take $F=M=0$, then the coordinate curves are lines of curvature. Proof:
+> For curves $u(t)=(t,v_0),v(t)=(u_0,t)$, $u'v'=0$ is satisfied and since $F=M=0$ we have$$\Huge\begin{vmatrix}(v')^2 & -u'v' & (u')^2 \\ E & F & G \\ L & M & N\end{vmatrix}=\begin{vmatrix}(v')^2 & 0 & (u')^2 \\ E & 0 & G \\ L & 0 & M\end{vmatrix}=0$$, implying that both coordinate curves $\underline{x}(t,v_0)$ and $\underline{x}(u_0,t)$ are lines of curvature.
+
+Note that the converse is true in the sense that if $\underline{x}$ is a principal parametrisation and if umbilic points on $S$ are isolated, then the only lines of curvature are coordinate curves.
+
+A curve $\underline{\alpha}:I\rightarrow S$ on a regular surface $S\subset\Re^3$ is called an asymptotic curve if its normal curvature vanishes identically, $\kappa_n=0$. These curves have the following properties:
+> A unit speed curve is asymptotic if and only if:$$\Huge \underline{\alpha}''(s)\cdot\underline{N}(\underline{\alpha}(s))=0$$
+> It follows from Meusnier's Theorem that $\underline{\alpha}$ is an asymptotic curve if and only if $\underline{II}_{\underline{\alpha}(s)}(\underline{\alpha}'(s))=0$.
+> It follows from the previous fact along 
