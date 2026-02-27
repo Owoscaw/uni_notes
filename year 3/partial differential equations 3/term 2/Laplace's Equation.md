@@ -74,7 +74,27 @@ We previously proved the [[Poisson's equation#Energy Method|uniqueness for Poiss
 > Suppose that $u_1$ and $u_2$ are solutions and let $w=u_1-u_2$, then $w$ satisfies:$$\Huge \Delta w=0\text{ in }\Omega,\,\,w=0\text{ on }\partial\Omega$$
 > Since $w$ is harmonic, the weak maximum principle implies that$$\Huge \max_{\bar\Omega}w=\max_{\partial\Omega}w=0$$, therefore $w\leq0$. We can apply the same argument to $\bar\omega=-w=u_2-u_1$. As above, $\bar w$ is harmonic and $\bar w=0$ on $\partial\Omega$. Therefore by the weak maximum principle $\bar w\leq0$, however $\bar w=-w$ which implies $w\geq0$. Therefore $w=0$, as required.
 
-Note that maximum principles can be used to prove uniqueness theorems, bounds on solutions, and comparison principles.
+Note that maximum principles can be used to prove uniqueness theorems, bounds on solutions, and comparison principles:
+> Suppose that $\Delta u_1=\Delta u_2=0$ in $\Omega$, $u_1=g_1,u_2=g_2$ on $\partial\Omega$. If $g_1\leq g_2$ on $\partial\Omega$ then we have that $u_1\leq u_2$ in $\Omega$. 
+> The proof of this is trivial.
+
+Similar to complex analytic functions, the existence of a particular second derivative $\Delta u$ implies all subsequent derivatives exist. That is, harmonic functions are infinitely smooth:
+> Let $\Omega\in\Re^n$ be open, $\Delta u=0$ in $\Omega$, $u\in C^2(\Omega)$, then we have both:
+> $u\in C^\infty(\Omega)$
+> $u$ is analytic in $\Omega$. That is, $\forall x_0\in\Omega\exists r(x_0):\forall x\in B_r(x_0)$:$$\Huge u(x)=u(x_0)+Du|_{x_0}(x-x_0)+\dots$$Where the sum here converges.
+
+We can draw another analogue to $\mathbb{C}$ analytic functions by stating the Boundedness/Liouville theorem for harmonic functions:
+> If $u:\Re^n\rightarrow\Re$ is harmonic and bounded, then $u(x)=\text{constant}$.
+> To prove this, fix some $x,y\in\Re^n$ and put $\delta=|x-y|$. Consider $B_r(x),B_{r+\delta}(y)$ and, noting that $B_r(x)\subset B_{r+\delta}(y)$, compute:$$\begin{align*}
+u(x)-u(y)&=\frac{1}{|B_r|}\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_{r+\delta}(y)}u(s)ds\\
+&=\frac{1}{|B_r|}\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_{r+\delta}(y)\setminus B_r(x)}u(s)ds\\
+&=\left(\frac{1}{|B_r|}-\frac{1}{|B_{r+\delta}|}\right)\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_{r+\delta}(y)\setminus B_r(x)}u(s)ds
+\end{align*}$$
+> Now suppose $|u(x)|\leq M$ for all $x\in\Re^n$, then for any $V\subset\Re^n$ it makes sense that $|\int_V u(s)ds|\leq |V|M$. So we write:$$\Huge\begin{align*}
+ u(x)-u(y)&\leq\left(\frac{1}{|B_r|}-\frac{1}{|B_{r+\delta}|}\right)|B_r|+\frac{|B_{r+\delta}(y)\setminus B_r(x)|}{|B_{r+\delta}|}M\\
+&=2\left(1-\frac{|B_r|}{|B_{r+\delta}|}\right)M
+\end{align*}$$
+> Taking $r\to\infty$ with $x,y$ fixed makes $|B_r|/|B_{r+\delta}|\to1$ and $|u(x)-u(y)|\to0$. Since $x,y$ were arbitrary, we must have that $u(x)=u(y)$ for all $x,y\in\Re^n$. That is, $u(x)=\text{constant}$. 
 
 # Maximum principles for Elliptic PDEs:
 
@@ -91,8 +111,10 @@ Writing this formally, let $\Omega\subset\Re^n$ be open, bounded, and connected 
 > If $u$ is subharmonic, then it satisfies the weak maximum principle$$\Huge\max_{\bar\Omega}u=\max_{\partial\Omega}u$$
 > If $u$ is superharmonic, then it satisfies the weak minimum principle$$\Huge\min_{\bar\Omega}u=\min_{\partial\Omega}u$$
 
-Moreover, subharmonics satisfy the strong maximum principle and superharmonics satisfy the strong minimum principle. This is proven in much the same way for harmonic functions, except with the presence of a mean-value inequality in the proof. These principles generalise further to second-order elliptic PDEs of the form $Lu=f$ for the case where $f$ has a sign and $L$ has coefficient function $c=0$:
-> Let $\Omega\subset\Re^n$ be open, bounded, and connected. Let $f\in C(\Omega)$ and $u\in C^2(\Omega)\cap C(\bar\Omega)$ satisfy $Lu=f$, where $L$ is a linear second-order elliptic operator of the form$$\Huge Lu=-\sum_{i,j=1}^na_{ij}u_{x_ix_j}+\sum_{j=1}^nb_jx_{x_j}=-A:D^2u+\underline{b}\cdot\underline{\nabla}u$$, where $a_{ij}$ and $b_j$ are continuous functions on $\Omega$ and $A$ is symmetric and uniformly positive definite. That is, $a_{ij}(\underline{x})=a_{ji}(\underline{x})$ for all $\underline{x}\in\Omega$ and there exists a constant $\alpha>0$ such that $\underline{y}^\top A(\underline{x})\underline{y}\geq\alpha|\underline{y}|^2$ for all $\underline{y}\in\Re^n,\underline{x}\in\Omega$. Assuming that $f\leq0$, we can state our principles.
-> $u$ attains its maximum on the boundary of $\Omega$:$$\Huge\max_{\bar\Omega}u=\max_{\partial\Omega}u$$
-> If $u$ attains its maximum in $\Omega$, then $u$ is constant. That is, there exists $\underline{x}_0\in\Omega$ such that$$\Huge u(\underline{x}_0)=\max_{\bar\Omega}u$$, then $u$ is constant in $\Omega$.
-> We get similar results regarding minimum principles if we take $f\leq0$. In particular if $f=0$ then $u$ satisfies both weak and strong maximum and minimum principles.
+Moreover, subharmonics satisfy the strong maximum principle and superharmonics satisfy the strong minimum principle. This is proven in much the same way for harmonic functions, except with the presence of a mean-value inequality in the proof. These principles generalise further to second-order elliptic PDEs of the form $Lu=f$ for the case where $f$ has a sign:
+> Let $\Omega\subset\Re^n$ be open, bounded, and connected. Let $f\in C(\Omega)$ and $u\in C^2(\Omega)\cap C(\bar\Omega)$ satisfy $Lu=f$, where $L$ is a linear second-order elliptic operator of the form$$\Huge Lu=-\sum_{i,j=1}^na_{ij}u_{x_ix_j}+\sum_{j=1}^nb_ju_{x_j}+c(x)u=-A:D^2u+\underline{b}\cdot\underline{\nabla}u$$, where $a_{ij}$ and $b_j$ are continuous functions on $\Omega$ and $A$ is symmetric and uniformly positive definite. That is, $a_{ij}(\underline{x})=a_{ji}(\underline{x})$ for all $\underline{x}\in\Omega$ and there exists a constant $\alpha>0$ such that $\underline{y}^\top A(\underline{x})\underline{y}\geq\alpha|\underline{y}|^2$ for all $\underline{y}\in\Re^n,\underline{x}\in\Omega$. In this case we have no mean-value formulae, but can still state our maximum principles:
+> > Let $\Omega\subset\Re^n$ be open, bounded, and connected. For $f\in C(\Omega)$ let $u\in C^2(\Omega)\cap C(\bar\Omega)$ solve $Lu=f$. Then if $f\geq0$, $u$ satisfies the weak maximum principle$$\Huge\max_{\bar\Omega}u=\max_{\partial\Omega}u$$
+> > $u$ also satisfies the strong maximum principle, $\exists x_0\in\Omega$ such that $u(x_0)=\max_{\bar\Omega}u$ then $u$ is constant in $\Omega$.
+> > 
+
+
