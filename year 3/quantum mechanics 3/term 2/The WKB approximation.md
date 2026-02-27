@@ -59,3 +59,14 @@ Let us look at the "bump" square well potential:
 
 Let us look at a particle scattering off of a "bumpy step" potential:
 > ![[The WKB approximation 2026-02-20 23.53.57.excalidraw]]
+> For $x<0$ we have $E>V=0$ and so we have$$\Huge\Psi_I(x)=Ae^{ikx}+Be^{-ikx},\,\,k=\sqrt{2mE}$$, representing the incoming and reflected wave.
+> For $x>a$ we have the same situation:$$\Huge \Psi_{III}(x)=Qe^{ikx}$$
+> For $0\leq x\leq a$ we use the WKB approximation and write:$$\Huge \Psi_{II}(x)\approx\frac{\xi_1}{\sqrt{q(x)}}e^{\int_0^xq(y)dy}+\frac{\xi_2}{\sqrt{q(x)}}e^{-\int_0^xq(y)dy}$$That is, we get a superposition of an exponentially increasing and exponentially decreasing terms. Note that if $a\to\infty$ we would set $\xi_1=0$ as the exponentially decreasing term would dominate. The important term is therefore the decreasing term. We would expect the qualitative shape:![[The WKB approximation 2026-02-27 02.08.06.excalidraw]]
+> We can find the transmission coefficient $T=|Q|^2/|A|^2$, showing how much of the incoming wave is transmitted through the potential. We can find:$$\Huge\begin{align*}
+T&=\frac{|\Psi_\text{WKB}(a)|^2}{|\Psi_\text{WKB}(0)|^2}\sim e^{-2\int_0^a q(y)dy}\\
+\implies T&\sim e^{-2\gamma},\,\,\gamma=\int_0^aq(y)dy
+\end{align*}$$This is essentially the same method for finding the transmission coefficient, measuring the probability of finding the particle at the start and the end of potential and taking their ratio. This gives the probability for a particle to tunnel through the potential barrier.
+
+# Sloped potentials:
+
+We have so far been considering "vertical" walls in our potentials between regions.

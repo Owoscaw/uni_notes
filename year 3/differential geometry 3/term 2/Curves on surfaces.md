@@ -64,4 +64,5 @@ Another direct consequence of Meusnier's theorem is a formula to calculate norma
 > Similarly, we obtain$$\Huge \underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))=(u'(t))^2E+2u'(t)v'(t)F+(v'(t))^2G$$, finishing the proof.
 
 Let $S\subset\Re^3$ be a regular surface with Gauss map $\underline{N}:S\rightarrow S^2$ and $\underline{\beta}:I\rightarrow S)$ be a regular curve not necessarily unit speed. Then the geodesic curvature of $\underline{\beta}$ is given by:$$\Huge\kappa_g=\frac{1}{||\underline{\beta}'||^2}(\underline{\beta}'\times\underline{\beta}'')\cdot(\underline{N}\circ\underline{\beta})$$
-# Asymptotic curves and lines of curvature
+# Asymptotic curves and lines of curvature:
+
