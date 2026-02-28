@@ -88,4 +88,38 @@ Note that the converse is true in the sense that if $\underline{x}$ is a princip
 A curve $\underline{\alpha}:I\rightarrow S$ on a regular surface $S\subset\Re^3$ is called an asymptotic curve if its normal curvature vanishes identically, $\kappa_n=0$. These curves have the following properties:
 > A unit speed curve is asymptotic if and only if:$$\Huge \underline{\alpha}''(s)\cdot\underline{N}(\underline{\alpha}(s))=0$$
 > It follows from Meusnier's Theorem that $\underline{\alpha}$ is an asymptotic curve if and only if $\underline{II}_{\underline{\alpha}(s)}(\underline{\alpha}'(s))=0$.
-> It follows from the previous fact along 
+> It follows from the previous fact that a curve $\underline{\alpha}(s)=\underline{x}(u(s),v(s))$ is an asymptotic curve if and only if $$\Huge (u')^2L+2u'v'M+(v')^2N=0$$, indeed we have $\underline{\alpha}'=u'\underline{x}_u(u,v)+v'\underline{x}_v(u,v)$ and:$$\Huge \underline{II}_{\underline{\alpha}(\cdot)}(\underline{\alpha}')=u'^2L(u,v)+2u'v'M(u,v)+v'^2N(u,v)$$
+
+We know that we can write$$\Huge\underline{II}_\underline{p}(\cos\theta X_1+\sin\theta X_2)=\kappa_1(\underline{p})\cos^2\theta+\kappa_2(\underline{p})\sin^2\theta$$where $X_1,X_2\in T_\underline{p}S$ is an orthonormal basis of eigenvectors of the Weingarten map. In order to have $\underline{II}_{\underline{\alpha}(s)}(\underline{\alpha}'(s))=0$ (making the curve asymptotic), the principle curvatures $\kappa_1,\kappa_2$ cannot have the same sign. That is we must have $K(\underline{p})=\kappa_1(\underline{p})\kappa_2(\underline{p})\leq0$. Therefore asymptotic curves only exist in hyperbolic or flat regions of a regular surface $S\subset\Re^3$.
+
+Moreover if $S\subset\Re^3$ contains a straight Euclidean line, then its normal curvature vanishes along the line. Such a line is therefore an asymptotic curve of the surface. This holds in particular for lines in a ruled surface.
+
+Let us consider a few examples:
+> Consider the surface of revolution obtained from a catenoid. Let $S\subset\Re^3$ be the regular surface obtained by rotating a regular curve, $\underline{\alpha}(v)=(f(v),0,g(v)),v\in I$ with $f(v)>0$ and $I$ an open interval, around the $z$-axis with local parametrisation given by $\underline{x}:(0,2\pi)\times I\rightarrow S$:$$\Huge \underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$
+> We saw that $E=f^2,F=0,G=||\underline{\alpha}'||^2$ and:$$\Huge L=-\frac{fg'}{||\underline{\alpha}'||},\,\,M=0,\,\,N=\frac{f''g'-f'g''}{||\underline{\alpha}'||}$$In particular, this local parametrisation is principal and therefore the coordinate curves$$\Huge\begin{align*}
+u&\rightarrow (f(v_0)\cos u,f(v_0)\sin u,g(v_0))\\
+v&\rightarrow (f(v)\cos u_0,f(v)\sin u_0,g(v))
+\end{align*}$$are lines of curvature. Note that these correspond to the parallels ($u$) and meridians ($v$) of the surface $S$. The asymptotic curves of $S$ are curves $\underline{\alpha}$ satisfying $$\large -f(v(t))g'(v(t))(u'(t))^2=(f'(v(t))g''(v(t))-f''(v(t))g'(v(t)))(v'(t))^2$$
+> In the case of a catenoid, we have $f(v)=\cosh(v),g(v)=v$ and therefore we find $u'(t)=\pm v'(t)$. Choosing $v(t)=t$ we obtain $u(t)=\pm t+c$.
+
+We see that lines of curvature bisect the angle between asymptotic curves. Moreover, asymptotic curves intersect each other perpendicularly if and only if the surface is minimal. This is the case for our catenoid. 
+
+Recall that we required non-positive Gauss curvature for the existence of asymptotic curves. An interesting surface to study will then be the hyperbolic paraboloid, as this has negative Gauss curvature and is not minimal:
+> The hyperbolic paraboloid is given by $S=\{\underline{x}\in\Re^3:z=xy\}$ and is parametrised by $\underline{x}(u,v)=(u,v,uv)$. We define $D=\sqrt{1+u^2+v^2}$ and write$$\Huge \underline{x}_u=(0,1,v),\,\,\underline{x}_v=(1,0,u),\,\,\underline{N}(\underline{x})=\frac{1}{D}(-v,-u,1)$$and further:$$\Huge \underline{x}_{uu}=(0,0,0),\,\,\underline{x}_{uv}=(0,0,1),\,\,\underline{x}_{vv}=(0,0,0)$$We can then calculate the coefficients of the first and second fundamental forms:$$\Huge\begin{align*}
+E=1+v^2&,\,\,F=uv,\,\,G=1+u^2\\
+L&=\underline{x}_{uu}\cdot\underline{N}(\underline{x})=0\\
+M&=\underline{x}_{uv}\cdot\underline{N}(\underline{x})=\frac{1}{D}\\
+N&=\underline{x}_{vv}\cdot\underline{N}(\underline{x})=0
+\end{align*}$$
+> Plugging these into our determinant formula for determining lines of curvature gives:$$\Huge\begin{align*}
+0&=\begin{vmatrix}(v')^2 & -u'v' & (u')^2\\
+E & F & G\\
+L & M & N\end{vmatrix}\\
+&=\begin{vmatrix}(v')^2 & -u'v' & (u')^2\\
+1+v^2 & uv & 1+u^2\\
+0 & \frac{1}{D} & 0\end{vmatrix}\\
+&=-\frac{1}{D}((1+u^2)(v')^2-(1+v^2)(u')^2)
+\end{align*}$$
+> We can solve this using separation of variables$$\Huge \frac{u'}{\sqrt{1+v^2}}=\pm\frac{v'}{\sqrt{1+u^2}}$$, which we integrate to get:$$\Huge \text{arcsinh}(v(t))=c\pm\text{arcsinh}(u(t))$$
+> Lines of curvature are then given by$$\Huge x(u(t),v(t))=\begin{cases}(\sinh(t),\sinh(c+t),\sinh(t)\sinh(c+t)) \\
+(\sinh(t),\sinh(c-t),\sinh(t)\sinh(c-t))\end{cases}$$for any $c\in\Re$. The equation for asymptotic curves then yields$$\Huge 0=(u')^2L+2u'v'M+(v')^2N=\frac{2}{D}u'v'$$, so we see that coordinate curves $u\rightarrow\underline{x}(u,v_0),v\rightarrow\underline{x}(u_0,v)$ are asymptotic curves.
