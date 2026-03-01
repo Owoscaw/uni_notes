@@ -69,4 +69,20 @@ T&=\frac{|\Psi_\text{WKB}(a)|^2}{|\Psi_\text{WKB}(0)|^2}\sim e^{-2\int_0^a q(y)d
 
 # Sloped potentials:
 
-We have so far been considering "vertical" walls in our potentials between regions.
+We have so far been considering "vertical" walls in our potentials between regions. Here, $V(x)$ jumps at some number of points $x_1^*,x_2^*,\dots$ to define the regions in which we approximate. 
+![[The WKB approximation 2026-02-28 23.39.05.excalidraw]]
+In each region, we can write the approximate WKB wave function:$$\Huge \begin{align*}
+\Psi_{\text{WKB I}}(x)&=\frac{\eta_1}{\sqrt{p(x)}}\sin\left(\int_0^x p(y)dy\right)+\frac{\eta_2}{\sqrt{p(x)}}\cos\left(\int_0^xp(y)dy\right)\\
+\Psi_{\text{WBK II}}(x)&=\frac{\xi_+}{\sqrt{q(x)}}e^{\int_0^xq(y)dy}+\frac{\xi_-}{\sqrt{q(x)}}e^{-\int_0^xq(y)dy}\\
+\Psi_{\text{WBK III}}(x)&\sim\Psi_\text{WBK II}(x)\\
+p(x)&=\sqrt{2m(E-V(x))}=iq(y)=i\sqrt{2m(V(x)-E)}
+\end{align*}$$
+At the jump points $x=x_1^*,x_2^*$ we see that the momentum becomes:
+> $x=x_1^*$ we approach from the left and so:$$\Huge p(x=x_1^*-\epsilon)=\sqrt{2m(V_1^{-}-E)}\neq0$$
+> $x=x_2^*$ we approach from the right and so:$$\Huge q(x=x_2^*+\epsilon)=\sqrt{2m(V_2^{+}-E)}\neq0$$
+
+We have valid momentum for all $x$ and so $\Psi$ should be well defined for this scenario. However if we allow for sloped walls in this smooth $V(x)$ we see:![[The WKB approximation 2026-02-28 23.45.58.excalidraw]]Here, momentum for both turning points becomes zero. This means that $\Psi$ is not well defined as $\Psi\sim1/\sqrt{q(x)},1/\sqrt{p(x)}$ will tend to infinity at these points. These points are where the particle becomes classically forbidden. 
+
+The idea to fix this is to "zoom out" the problematic region around $x=x^*$ and approximate with a linear potential:$$\Huge V(x^*+\epsilon)=V(x^*)+V'(x^*)\epsilon+\mathcal{O}(\epsilon^2)$$We keep these terms and solve the Schrodinger equation with this linear potential. Solutions in this case are known as the Airy functions $A_i(x),B_i(x)$, two solutions that exhibit the behaviour:![[The WKB approximation 2026-02-28 23.57.03.excalidraw]]We use these functions to connect $\Psi_\text{WKB I}$ to $\Psi_\text{WKB II}$:![[The WKB approximation 2026-03-01 00.01.40.excalidraw]]Hence we have the unfixed constants $\eta_1,\eta_2,A_i,B_i,\xi_-$ and only four gluing conditions from the continuity of $\Psi,\Psi'$ at $x_1^*\pm\epsilon$. All but one constant is fixed, which we introduce to define our improved WKB approximation at the left turning point, moving inwards:$$\Huge\Psi_\text{WKBI}^\text{(L)}(x)=\begin{cases}\frac{a}{\sqrt{q(x)}}\exp(-\int_x^{x_1^*}q(y)dy) & x<<x_1^* \\
+\sqrt{\frac{4\pi}{\alpha}}aA_i(\alpha x) & x\approx x_1^* \\
+\frac{2a}{\sqrt{p(x)}}\sin(\int_{x_1^*}^xp(y)dy+\pi/4) & x>>x_1^*\end{cases}$$Where $\alpha=(2mV'(x_1^*))^{1/3}$ and $\Psi$ is smooth with one unfixed constant $a$. A similar solution can be written for the other turning point
