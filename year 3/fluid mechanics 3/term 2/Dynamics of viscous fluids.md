@@ -151,3 +151,20 @@ Let $U$ denote a characteristic flow speed $|\underline{u}|$ for the problem of 
 \iff\frac{\partial \underline{u}'}{\partial t'}+(\underline{u}'\cdot\underline{\nabla}')\underline{u}'&=-\frac{1}{\rho_0U^2}\underline{\nabla}'p+\frac{\nu}{UL}\underline{\nabla}'^2\underline{u}'
 \end{align*}$$Now all of our variables are nondimensionalised except for pressure. We can define dimensionless pressure as$$\Huge p'=\frac{1}{\rho_0U^2}p$$, making our fully nondimensionalised Navier-Stokes equation$$\Huge \frac{\partial \underline{u'}}{\partial t'}+(\underline{u}'\cdot\underline{\nabla}')\underline{u}'=-\underline{\nabla}'p'+\frac{1}{\text{Re}}\underline{\nabla}'^2\underline{u}'$$, where the remaining parameter here is the Reynolds number:$$\Huge \text{Re}=\frac{UL}{\nu}$$Two flows with the same $\text{Re}$ can be called dynamically similar, as the solutions will be the same under rescaling. Additional terms lead to additional dimensionless parameters, compressibility leads to the Mach number $\text{Ma}=U/c_0$, while introducing other body forces $\underline{f}$ leads to many other parameters.
 
+## High $\text{Re}$ limit:
+As $\text{Re}\to\infty$, the viscous term in the dimensionless Navier-Stokes equation becomes smaller and smaller. This limit however is singular, the solution of the Navier-Stokes equation does not generally tend to the solution of the Euler equation as the viscous term has the highest derivative:
+> To illustrate this point, let us observe that happens when the highest derivative term is multiplied by a small parameter $\epsilon$$$\Huge \epsilon u''+u'=1,\,\,\epsilon<<1$$with $u(0)=0,u(1)=2$.
+> Setting $\epsilon=0$ we arrive at $u'=1\implies u(x)=x+C$, boundary conditions cannot be satisfied.
+> To find the full equation, we divide through by $\epsilon$ and solve with an integrating factor:$$\Huge\begin{align*}
+\frac{d}{dx}(e^{x/\epsilon}u')&=\frac{1}{\epsilon}e^{x/\epsilon}\\
+\implies u'&=1+Ae^{-x/\epsilon}\\
+\implies u(x)&=x+B-A\epsilon e^{-x/\epsilon}
+\end{align*}$$
+> Imposing boundary conditions gives:$$\Huge\begin{align*}
+x=0&\implies B=\epsilon A\\
+x=1&\implies A=\frac{1}{\epsilon(1-e^{-1/\epsilon})}\\
+\implies u(x)&=x+\frac{1-e^{-x/\epsilon}}{1+e^{-1/\epsilon}}
+\end{align*}$$
+> The solution to the second-order equation looks like the first-order solution with a thin layer near the boundary where it changes to meet the second boundary condition. In such layer, $u''$ is large enough to compensate for $\epsilon$ and will continue to exist for any $\epsilon>0$.
+
+In the fluid case,
