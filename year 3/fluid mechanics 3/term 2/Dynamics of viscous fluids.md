@@ -167,4 +167,26 @@ x=1&\implies A=\frac{1}{\epsilon(1-e^{-1/\epsilon})}\\
 \end{align*}$$
 > The solution to the second-order equation looks like the first-order solution with a thin layer near the boundary where it changes to meet the second boundary condition. In such layer, $u''$ is large enough to compensate for $\epsilon$ and will continue to exist for any $\epsilon>0$.
 
-In the fluid case,
+In the fluid case, we have an analogous layer above a solid boundary, where $\underline{u}$ departs from inviscid flow in order to satisfy the no-slip condition. We call this a boundary layer, which we saw in a previous example where the thickness grew with $\sqrt{\nu t}$. More often we have:![[Dynamics of viscous fluids 2026-03-02 21.08.31.excalidraw]]Here, we have flow past a stationary object that slows down near the surface and stops at the surface itself. In this case, the reduction in speed propagates from the surface within the boundary layer:
+> We can estimate how big this layer grows as a high $\text{Re}$ flow moves past an object. If the object has length $L$ and flow speed $U$, the thickness of the boundary will reach $\sqrt{\nu t}=\sqrt{\frac{\nu L}{U}}$ at the rear.
+> The sheared flow within the layer is then advected beyond the object as a wake, which continues to widen due to viscous diffusion. The flow takes time $x/U$ to move a distance $x$, so the wake spreads a distance $\sqrt{\nu t}=\sqrt{\nu x/U}$.
+> Secondary flows can cause the boundary to separate before it reaches the rear of the object. Aerofoils are shaped to prevent this premature separation, but this only works if the angle of attack is not too high. When the angle of attack is increased too far we get a sudden separation of the flow, reducing lift from the wing. This is known as a stall.
+
+# Stokes flows:
+
+Looking at the other extreme, $\text{Re}<<1$, viscosity dominates. We see this in flows with small length scales and very viscous fluids like honey.
+
+Returning to the nondimensionalisation of the Navier-Stokes equations, we had to scale pressure to balance dominant forces. In the limit $\text{Re}<<1$, the viscous term dominates and so instead of choosing $P=\rho_0 U^2$ we instead choose$$\Huge P=\frac{\mu U}{L}$$, giving us the nondimensionalised Navier-Stokes momentum equation of the form:$$\Huge \frac{\partial \underline{u'}}{\partial t'}+(\underline{u}'\cdot\underline{\nabla}')\underline{u}'=\frac{1}{\text{Re}}(-\underline{\nabla}'p'+\underline{\nabla}'^2\underline{u}')$$Taking the limit $\text{Re}<<1$, we obtain (reintroducing dimension) the Stokes equations:$$\Huge \begin{align*}
+\underline{\nabla}\cdot\underline{u}&=0\\
+\mu\underline{\nabla}^2\underline{u}&=\underline{\nabla}p
+\end{align*}$$
+## Unique solutions to Stokes flows:
+The Stokes equations are linear, so are easier to deal with. These also admit only one unique solution, $\underline{u}(\underline{x}),p(\underline{x})$ in a domain $V$ matching a given boundary condition $\underline{u}=\underline{u}_S(\underline{x})$ on $S$. Therefore the boundary drives the flow, and pressure $p$ is unique up to an additive constant.
+
+To see this, suppose we have two solution $\underline{u}_1,\underline{u}_2$ and consider $\underline{v}=\underline{u}_1-\underline{u}_2$ with corresponding pressure different $q=p_1-p_2$. By linearity we have the same Stokes equations for $\underline{v}$. Since $\underline{u}_1,\underline{u}_2$ satisfy the same boundary condition, we have $\underline{v}=0$ on $S$ and it follows that:$$\Huge\begin{align*}
+\int_V\underline{v}\cdot(\mu\underline{\nabla}^2\underline{v}-\underline{\nabla}q)dV&=0\\
+\implies\int_Vv_i\left(\mu\frac{\partial^2v_i}{\partial x_jx_j}-\frac{\partial q}{\partial x_i}\right)dV&=0
+\end{align*}$$The product rule then dictates$$\Huge\mu\int_V\frac{\partial }{\partial x_j}\left(v_i\frac{\partial v_i}{\partial x_j}\right)dV-\mu\int_V\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}dV-\int_V\frac{\partial }{\partial x_i}(v_iq)dV=0$$, which we apply the divergence theorem to and find$$\Huge\begin{align*}
+\mu\int_Sv_i\frac{\partial v_i}{\partial x_j}\hat n_jdS-\mu\int_V\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}dV-\int_Sqv_i\hat n_idS&=0\\
+\implies\mu\int_V\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}dV&=0
+\end{align*}$$where we used the boundary condition $\underline{v}=0$. The remaining integrand is:$$\Huge\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}=|\underline{\nabla}v_x|^2+|\underline{\nabla}v_y|^2+|\underline{\nabla}v_z|^2$$Therefore the only way for the integral to vanish is for $\underline{v}$ to be constant. Since $\underline{v}=0$ on the boundary we must have $\underline{v}=0$ everywhere, so it follows that $\underline{u}_1=\underline{u}_2$.
