@@ -174,3 +174,6 @@ If the loop $C$ is the boundary of some surface $\Sigma$, then by [[Integral the
 \oint_C A_\mu(x)dx^\mu&=\frac{1}{2}\int_\Sigma F_{\mu\nu}(x)dx^\mu dx^\nu\\
 &=\frac{1}{2}\int_{x^{-1}(\Sigma)}F_{\mu\nu}(x(\sigma))\left(\frac{\partial x^\mu(\sigma)}{\partial \sigma^1}\frac{\partial x^\nu(\sigma)}{\partial \sigma^2}-\frac{\partial x^\nu(\sigma)}{\partial \sigma^1}\frac{\partial x^\mu(\sigma)}{\partial \sigma^2}\right)d\sigma^1d\sigma^2
 \end{align*}$$where $x^\mu(\sigma)=x^\mu(\sigma^1,\sigma^2)$ is a parametrisation of the surface $\Sigma$. This is a higher-dimensional analogue of Stokes' theorem$$\Huge \oint_C\underline{A}\cdot d\underline{l}=\int_\Sigma(\underline{\nabla}\times\underline{A})\cdot\underline{\hat{n}}d^2\sigma=\int_\Sigma\underline{B}\cdot\underline{\hat{n}}d^2\sigma$$, our version tells us that the field strength $F_{\mu\nu}$ encodes the value of infinitesimal Wilson loops. If the loop $C$ is not contractible to a point, we might have that $A_\mu\neq0$ and so$$\Huge\oint_C A_\mu dx^\mu\neq0$$even if $F_{\mu\nu}=0$ everywhere in a region probed by a quantum particle. 
+
+#  The Dirac monopole:
+
