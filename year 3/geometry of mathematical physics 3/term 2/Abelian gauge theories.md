@@ -177,3 +177,22 @@ If the loop $C$ is the boundary of some surface $\Sigma$, then by [[Integral the
 
 #  The Dirac monopole:
 
+Using the classical Maxwell equation $\underline{\nabla}\cdot\underline{E}=\rho$, we can place a point charge of magnitude $q$ at the origin, $\underline{\nabla}\cdot\underline{E}=2\pi q\delta(\underline{x})$. This is the classic electric monopole and one can integrate to find:$$\Huge\frac{1}{2\pi}\int_{\partial V}\underline{E}\cdot d\underline{S}=q$$What this means is that the field lines of the electric field lines always start and end at charges. One can do the same for the magnetic field equation to find that magnetic field lines are always closed.
+
+Dirac looked for the equivalent of a magnetic monopole writing $\underline{B}=\underline{\nabla}\times\underline{A}$ and aiming to get a similar integral:$$\Huge\frac{1}{2\pi}\int_{\partial V}\underline{B}\cdot d\underline{S}=m\neq0$$This is not admitted under the classic interpretation of the Maxwell equations, as writing $\underline{B}=\underline{\nabla}\times\underline{A}$ directly implies $\underline{\nabla}\cdot\underline{B}=0$, which disallows the existence of the magnetic monopole. The way to remedy this is to observe that we only define the scalar field $\underline{A}$ locally.
+
+We try the equivalent magnetic field to the electric monopole$$\Huge \underline{B}=\frac{m}{2}\frac{\underline{x}}{r^3}$$and try to recover $\underline{B}=\underline{\nabla}\times\underline{A}$. Solving for $\underline{A}$ we can write:$$\Huge\begin{pmatrix}A_x \\ A_y \\ A_z\end{pmatrix}=\frac{m}{2r(r+z)}\begin{pmatrix}-y \\ x \\ 0\end{pmatrix}$$Note that this is not well defined at $r=0$ and $r=-z$ ($z$-axis). In order to recover a nontrivial magnetic monopole charge while still requiring $\underline{B}=\underline{\nabla}\times\underline{A}$ we lost definition of $\underline{A}$ along the $z$-axis and the origin. The area where this is not defined is known as the Dirac string, and as the problem is rotationally symmetric we can place this anywhere.
+
+Using polar coordinates, we can split $\Re^3$ into patches:$$\Huge\begin{align*}
+u_+&=\left\{(r,\theta,\varphi):0\leq\theta<\frac{\pi}{2}+\epsilon\right\}\\
+u_-&=\left\{(r,\theta,\varphi):\frac{\pi}{2}-\epsilon\leq\theta<\pi\right\}\\
+u_+\cup u_-&=\Re^3\setminus\{0\}
+\end{align*}$$Notice that our previous findings for $\underline{A}$ are valid in $u_+$, so we define $\underline{A}^+$ as this vector potential on the $u_+$ patch. We can define a similar potential that covers the $u_-$ patch as well. On the intersection, we expect:$$\Huge\underline{A}^+-\underline{A}^-=d\alpha=\frac{\partial \alpha}{\partial x}dx+\dots+\frac{\partial \alpha}{\partial z}dz$$That is, $\underline{A}^+$ and $\underline{A}^-$ are related by a Gauge redundancy. Writing $\underline{A}^\pm$ in its differential form and using spherical coordinates, we find:$$\Huge\begin{align*}
+A^\pm&=A^\pm_xdx+A^\pm_ydy+A^\pm_zdz\\
+&=\frac{m}{2}(\pm1-\cos\theta)d\varphi\\
+\implies \underline{A}^+-\underline{A}^-&=ig\,dg^{-1}\\
+&=ie^{im\varphi}e^{-im\varphi}(-im)d\varphi\\
+&=m\,d\varphi
+\end{align*}$$Where we have written the difference between vector potentials in terms of the group elements $g\in U(1)$ that define the Gauge transformation between $\underline{A}^+$ and $\underline{A}^-$. As we have a $U(1)$ symmetry, we must have that $m\in\mathbb{Z}$.
+
+Note that the magnetic monopole cannot be physical, as if one integrates the total energy of the system over $\Re^3$, we get divergence (infinite energy). We can check our result directly by computing the integral we used to define our monopole and splitting it over $u_\pm$.
