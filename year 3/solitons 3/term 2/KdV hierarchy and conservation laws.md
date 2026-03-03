@@ -78,3 +78,24 @@ d_n(t)&=d_n(0)e^{\frac{1}{2}(2\mu_n)^{2m-1}t}
 \end{align*}$$The time independence of the transmission coefficient for $V=-u$ leads to infinitely many conservation laws from the coefficients of the formal power series of the solution to the Riccati equation$$\Huge S_x+2ikS-S^2=u$$, or equivalently the Gardner transform. Being related to the eigenvalue equation $L(u)\psi=-k^2\psi$ for the Lax operator $L(u)$, the conservation laws are also common to the entire KdV hierarchy.
 
 Setting one "time" for each equation in the hierarchy, so that instead of $u_m(x,t)$ with $\frac{\partial }{\partial t}u_m=N_m(u)$ we have $u(x,t_1,t_2,\dots)$ with$$\Huge \frac{\partial }{\partial t_m}u=N_m(u)=-\frac{C_m}{2}\frac{\partial }{\partial x}\frac{\delta Q_{m+1}[u]}{\delta u},\,\,\forall m=0,1,2,\dots$$From here we evolve (flow) $u(x,t_1,t_2,\dots)$ in $t_i$, then $t_j$. It turns out we end up with the same function of $x$ as if we evolve in $t_j$ then $t_i$. This is known as the idea of commuting flows.
+
+# The zero-curvature formalism:
+
+We saw that to each non-linear PDE in the KdV hierarchy$$\Huge u_t=N(u)$$, we can associated a linear ODE$$\Huge L\psi=\lambda\psi,\,\,L=\partial_x^2+u$$with time evolution equations$$\Huge\begin{align*}
+L_t&=[M,L]\\
+\psi_t&=M\psi\\
+\lambda_t&=0
+\end{align*}$$for the [[Evolving scattering data#Lax pairs|Lax pair]] $(L,M)$ depending on $u(x,t)$ and $\lambda$ acting on $\psi(x,t)$. We can apply the Lax formalism to a more general class of integrable non-linear PDEs. First we must recast the associated linear ODE as a linear system of first order ODEs in $x$ for$$\Huge \Psi=\begin{pmatrix}\psi \\ \varphi\end{pmatrix}$$where $\varphi=\psi_x$, so we have:$$\Huge\partial_x\begin{pmatrix}\psi \\ \varphi\end{pmatrix}=\begin{pmatrix}0 & 1 \\ \lambda-u & 0\end{pmatrix}\begin{pmatrix}\psi \\ \varphi\end{pmatrix}$$For the case of KdV, we can also compute the time derivative:$$\Huge\partial_t\begin{pmatrix}\psi \\ \varphi\end{pmatrix}=\begin{pmatrix}u_x & -2(2\lambda+u) \\ u_{xx}-2(2\lambda+u)(\lambda-u) & -u_x\end{pmatrix}\begin{pmatrix}\psi \\ \varphi\end{pmatrix}$$In general we have$$\Huge\begin{align*}
+\partial_x\Psi&=X\Psi\\
+\partial_t\Psi&=T\Psi
+\end{align*}$$with the matrices $X,T$ given above, which are dependent on the constant parameter $\lambda$, called the spectral parameter.
+
+This is an overdetermined system, with twice as many equations as unknowns. Therefore we have no solutions unless a consistency condition is satisfied. We find this condition by cross differentiating:$$\Huge\begin{align*}
+\partial_t\partial_x\Psi=\partial_t(X\Psi)=(\partial_tX)\Psi+X(\partial_t\Psi)&=(\partial_tX+XT)\Psi\\
+\partial_x\partial_t\Psi=\partial_x(T\Psi)=(\partial_xT)\Psi+T(\partial_x\Psi)&=(\partial_xT+TX)\Psi\\
+\implies(\partial_tX-\partial_xT-[T,X])\Psi&=0
+\end{align*}$$This is satisfied if the zero curvature condition$$\Huge\partial_tX-\partial_xT-[T,X]=0$$is satisfied. For generic $X,T$, this condition consists of four equations. If we choose specific forms for $X,T$ we can reduce the number of independent equations so that we match unknowns.
+
+Note that:
+> In the language of [[Abelian gauge theories#Electromagnetism as a $U(1)$ gauge theory|gauge theory]]$$\Huge A=Xdx+Tdt$$is known as a connection of a principal $GL(2)$ bundle. The linear system we defined for $\Psi$ allows us to obtain $\Psi(x,t)$ form $\Psi(x_0,t_0)$ using "parallel transport" along any curve connecting $(x_0,t_0)$ to $(x,t)$. This connection is called "flat", and our zero curvature condition is equivalent to saying that this connection has zero curvature.
+> We have a [[Abelian gauge theories#$U(1)$ gauge symmetry|gauge symmetry]]$$\large(\Psi,X,T)\rightarrow(\Psi',X',T')=(g\Psi,gXg^{-1}-g(\partial_xg^{-1}),gTg^{-1}-g(\partial_tg^{-1}))$$for the group element $g\in GL(2)$. This means that this transformation does not change the form of our system for $\Psi$ or our zero curvature condition.

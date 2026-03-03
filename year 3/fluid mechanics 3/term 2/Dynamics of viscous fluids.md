@@ -234,3 +234,35 @@ F&=Ae^{ax}+Be^{-ax}\\
 \end{align*}$$
 > Our stream function is therefore given by:$$\Huge\psi=U\left(\frac{1}{a}+x\right)e^{-ax}\sin(ay)$$We see exponential decay away from the boundary with decay length $1/a$, showing that spatial oscillations along the wall induce localised viscous motion.
 
+Let us consider Stokes flow past a sphere. We consider a sphere of radius $a$ placed in an oncoming uniform stream with speed $U$:![[Dynamics of viscous fluids 2026-03-03 20.34.27.excalidraw]]
+> The geometry of the problem suggest an axisymmetric solution in spherical coordinates $(r,\theta,\phi)$$$\Huge \underline{u}=u_r\hat{\underline{e}}_r+u_\theta\hat{\underline{e}}_\theta,\,\,u_\phi=0$$, where we are solving $D^2(D^2\Psi)=0$. We know the form of our solution will be$$\Huge u_r=\frac{1}{r^2\sin\theta}\frac{\partial \Psi}{\partial \theta},\,\,u_\theta=-\frac{1}{r\sin\theta}\frac{\partial \Psi}{\partial r}$$, so we need to implement our boundary conditions.
+> As $r\to\infty$ we must recover the uniform stream $\underline{u}\to U\hat{\underline{e}}_x$, which translates to polar coordinates as:$$\Huge\begin{align*}
+u_r\to U\cos\theta&\implies\frac{\partial \Psi}{\partial \theta}\to Ur^2\sin\theta\cos\theta\\
+u_\theta\to-U\sin\theta&\implies\frac{\partial \Psi}{\partial r}\to Ur\sin^2\theta\\
+\implies\Psi&\to\frac{1}{2}Ur^2\sin^2\theta
+\end{align*}$$
+> On the boundary of the sphere, we impose the no-slip condition:$$\Huge\begin{align*}
+u_\theta&=0\implies\frac{\partial \Psi}{\partial r}=0\\
+u_r&=0\implies\frac{\partial \Psi}{\partial \theta}=0
+\end{align*}$$These combine to impose that $\Psi$ is constant on the surface of the sphere. WLOG we set this constant to $0$. 
+> The form of the boundary conditions suggest a separable solution of the form:$$\Huge\Psi=f(r)\sin^2\theta$$We substitute this into the biharmonic equation to get:$$\Huge\begin{align*}
+D^2\Psi&=\left(\frac{\partial^2}{\partial r^2}+\frac{\sin\theta}{r^2}\frac{\partial }{\partial \theta}\left(\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\right)\right)\Psi\\
+&=f''\sin^2\theta+\frac{\sin\theta}{r^2}f\frac{\partial }{\partial \theta}\left(2\frac{\sin\theta\cos\theta}{\sin\theta}\right)\\
+&=\left(f''-\frac{2}{r^2}f\right)\sin^2\theta=F(r)\sin^2\theta\\
+\implies D^2(D^2\Psi)&=D^2(F(r)\sin^2\theta)\\
+&=\left(F''-\frac{2}{r^2}F\right)\sin^2\theta=0
+\end{align*}$$
+> Now we solve $r^2F''-2F=0$, a Cauchy type ODE, by setting $F=r^\lambda$$$\Huge\begin{align*}
+\implies\lambda(\lambda-1)-2&=0\\
+\implies(\lambda-2)(\lambda+1)&=0\\
+\implies\lambda&=2,-1
+\end{align*}$$Using this in our ODE gives:$$\Huge\begin{align*}
+F&=Ar^2+Br^{-1}\\
+\implies f''-\frac{2}{r^2}f&=Ar^2+Br^{-1}\\
+\implies r^2f''-2f&=Ar^4+Br
+\end{align*}$$This is an inhomogeneous ODE, so the solution is a complementary function and particular integral. We already know the complementary function is $f=C_1r^2+C_2r^{-1}$ and we see by inspection that the particular integral is $f=C_3r^4+C_2r^{-1}$. Therefore our function is of form:$$\Huge f(r)=C_1r^2+C_2r^{-1}+C_3r^4+C_4r$$
+> Applying boundary conditions at $r\to\infty$ we have$$\Huge f(r\to\infty)=\frac{1}{2}Ur^2$$, which sets $C_3=0$ and $C_1=U/2$. At $r=a$ we have:$$\Huge \begin{align*}
+f(a)&=0,\,\,f'(a)=0\\
+\implies C_4&=-\frac{3}{4}aU,\,\,C_2=\frac{1}{4}a^3U
+\end{align*}$$
+> Therefore, our Stokes stream function is given by:$$\Huge \Psi=\frac{1}{2}Ur^2\sin^2\theta\left(1-\frac{3a}{2r}+\frac{a^3}{2r^3}\right)$$
