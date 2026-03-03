@@ -190,3 +190,47 @@ To see this, suppose we have two solution $\underline{u}_1,\underline{u}_2$ and 
 \mu\int_Sv_i\frac{\partial v_i}{\partial x_j}\hat n_jdS-\mu\int_V\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}dV-\int_Sqv_i\hat n_idS&=0\\
 \implies\mu\int_V\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}dV&=0
 \end{align*}$$where we used the boundary condition $\underline{v}=0$. The remaining integrand is:$$\Huge\frac{\partial v_i}{\partial x_j}\frac{\partial v_i}{\partial x_j}=|\underline{\nabla}v_x|^2+|\underline{\nabla}v_y|^2+|\underline{\nabla}v_z|^2$$Therefore the only way for the integral to vanish is for $\underline{v}$ to be constant. Since $\underline{v}=0$ on the boundary we must have $\underline{v}=0$ everywhere, so it follows that $\underline{u}_1=\underline{u}_2$.
+
+## Viscous stream function:
+We can find solutions to the stokes equations$$\Huge\begin{align*}
+\underline{\nabla}\cdot\underline{u}&=0\\
+\mu\underline{\nabla}^2\underline{u}&=\underline{\nabla}p
+\end{align*}$$using [[Kinematics of Fluids#The stream function|stream functions]]. In two dimensional flow, the stream function $\psi$ satisfies:$$\Huge u=\frac{\partial \psi}{\partial y},\,\,v=-\frac{\partial \psi}{\partial x}$$This definition automatically satisfies the continuity equation, and we can rewrite the momentum equation using$$\Huge\underline{\nabla}\times(\underline{\nabla}\times\underline{u})=\underline{\nabla}(\underline{\nabla}\cdot\underline{u})-\underline{\nabla}^2\underline{u}$$to give us:$$\Huge \underline{\nabla}p=-\mu\underline{\nabla}\times\underline{\omega}$$Two dimensional flows only have a $z$-component for the vorticity, so we can write this equation component wise as:$$\Huge\begin{align*}
+\frac{\partial p}{\partial x}&=-\mu\frac{\partial \omega}{\partial y}\\
+\frac{\partial p}{\partial y}&=\mu\frac{\partial \omega}{\partial x}
+\end{align*}$$We cross-differentiate this and subtract to find:$$\Huge 0=\frac{\partial^2p}{\partial x\partial y}-\frac{\partial^2p}{\partial y\partial x}=\mu\left(\frac{\partial^2\omega}{\partial x^2}+\frac{\partial^2\omega}{\partial y^2}\right)=\mu\underline{\nabla}^2\omega$$Reintroducing the stream function, we know that$$\Huge\omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}=-\left(\frac{\partial^2\psi}{\partial y^2}+\frac{\partial^2\psi}{\partial x^2}\right)=-\underline{\nabla}^2\psi$$, putting everything together we then arrive at:$$\Huge\underline{\nabla}^2(\underline{\nabla}^2\psi)=0$$That is, $\psi$ satisfies the biharmonic equation. Therefore for two dimensional Stokes flow, the problem reduces to solving the biharmonic equation with appropriate boundary conditions.
+
+The stream function only works in two dimensional flows, however we can use an analogous idea for $3D$ axisymmetric flows. In spherical coordinates we have:$$\Huge\underline{u}=u_r(r,\theta)\hat{\underline{e}}_r+u_\theta(r,\theta)\hat{\underline{e}}_\theta,\,\,u_\phi=0$$Here, the continuity equation becomes:$$\Huge\frac{1}{r^2}\frac{\partial }{\partial r}(r^2u_r)+\frac{1}{r\sin\theta}\frac{\partial }{\partial \theta}(\sin\theta u_\theta)=0$$We can see that this is satisfied automatically if we introduce $\Psi$ such that:$$\Huge u_r=\frac{1}{r^2\sin\theta}\frac{\partial \Psi}{\partial \theta},\,\,u_\theta=-\frac{1}{r\sin\theta}\frac{\partial \Psi}{\partial r}$$We call $\Psi$ the Stokes stream function.
+
+For axisymmetric flow, the vorticity only has a $\phi$-component and so$$\Huge\begin{align*}
+\underline{\omega}&=\frac{1}{r^2\sin\theta}\begin{vmatrix}\hat{\underline{e}}_r & r\hat{\underline{e}}_\theta & (r\sin\theta)\hat{\underline{e}}_\phi\\
+\frac{\partial }{\partial r} & \frac{\partial }{\partial \theta} & \frac{\partial }{\partial \phi}\\
+u_r & ru_\theta & (r\sin\theta)0\end{vmatrix}=\omega_\phi\hat{\underline{e}}_\phi\\
+\implies\omega_\phi
+&=\frac{1}{r}\left(\frac{\partial }{\partial r}\left(ru_\theta\right)-\frac{\partial u_r}{\partial \theta}\right)\end{align*}$$, substituting in our chosen form of $u$ leads to$$\Huge\begin{align*}
+\omega_\phi&=\frac{1}{r}\left(\frac{\partial }{\partial r}\left(-\frac{1}{\sin\theta}\frac{\partial \Psi}{\partial r}\right)-\frac{\partial }{\partial \theta}\left(\frac{1}{r^2\sin\theta}\frac{\partial \Psi}{\partial \theta}\right)\right)\\
+&=-\frac{1}{r}\left(\frac{1}{\sin\theta}\frac{\partial }{\partial r}\left(\frac{\partial \Psi}{\partial r}\right)+\frac{1}{r^2}\frac{\partial }{\partial \theta}\left(\frac{1}{\sin\theta}\frac{\partial \Psi}{\partial \theta}\right)\right)\\
+&=-\frac{1}{r\sin\theta}D^2\Psi
+\end{align*}$$where:$$\Huge D^2=\frac{\partial^2}{\partial r^2}+\frac{\sin\theta}{r^2}\frac{\partial }{\partial \theta}\left(\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\right)$$Moving on to the momentum equation, we find that$$\Huge\underline{\nabla}p=-\frac{\mu}{r^2\sin\theta}\begin{vmatrix}\hat{\underline{e}}_r & r\hat{\underline{e}}_\theta & (r\sin\theta)\hat{\underline{e}}_\phi \\ \frac{\partial }{\partial r} & \frac{\partial }{\partial \theta} & \frac{\partial }{\partial \phi} \\ 0 & 0 & (r\sin\theta)\omega_\phi\end{vmatrix}$$, which we write component-wise as:$$\Huge\begin{align*}
+\frac{\partial p}{\partial r}&=\frac{\mu}{r^2\sin\theta}\frac{\partial }{\partial \theta}D^2\Psi\\
+\frac{1}{r}\frac{\partial p}{\partial \theta}&=-\frac{\mu}{r\sin\theta}\frac{\partial }{\partial r}D^2\Psi
+\end{align*}$$Again we cross-differentiate and find:$$\Huge D^2(D^2\Psi)=0$$Therefore for axisymmetric Stokes flow, the Stokes stream function satisfies a biharmonic-type equation, written in terms of the operator $D^2$ appropriate to spherical geometry. Note for cylindrical polars $(r,z)$, the equivalent operator is:$$\Huge D^2=\frac{\partial^2}{\partial r^2}-\frac{1}{r}\frac{\partial }{\partial r}+\frac{\partial^2}{\partial z^2}$$
+Let us consider a Stokes flow in the half plane $x\geq0$ driven by a flow through a permeable wall at $x=0$:![[Dynamics of viscous fluids 2026-03-03 17.47.21.excalidraw]]
+> At $x=0$, the flow $(u,v)$ is given by$$\Huge u(0,y)=U\cos(ay),\,\,v=0$$, we aim to find $\psi$ by solving $\underline{\nabla}^2(\underline{\nabla}^2\psi)=0$.
+> The boundary conditions on $\psi$ are the flow at $x=0$:$$\Huge\frac{\partial \psi}{\partial y}=U\cos(ay),\,\,\frac{\partial \psi}{\partial x}=0\implies\psi|_{x=0}=\frac{U}{a}\sin(ay)$$Here, we set the integration constant to $0$ as the stream function is only defined up to an additive constant.
+> Given the form of the boundary condition, we look for a separable solution on the whole domain$$\Huge\psi=f(x)\sin(ay)$$, which makes the biharmonic equation take form:$$\Huge\begin{align*}
+\underline{\nabla}^2\psi&=(f''-a^2f)\sin(ay)\\
+&=F(x)\sin(ay)\\
+\implies\underline{\nabla}^2(\underline{\nabla}^2\psi)&=(F''-a^2F)\sin(ay)=0
+\end{align*}$$
+> Therefore the problem is equivalent to solving $F''-a^2F=0$, which is a nice ODE:$$\Huge\begin{align*}
+F&=Ae^{ax}+Be^{-ax}\\
+\implies f''-a^2f&=\text{above}
+\end{align*}$$We solve this using the repeated root particular integral results:$$\Huge f(x)=C_1e^{ax}+C_2xe^{ax}+C_3e^{-ax}+C_4xe^{-ax}$$
+> To determine the constants, note that we require bounded solutions at $x\to\infty$ so we can immediately discard the exponentially growing terms ($C_1=C_2=0$). Using the flow at $x=0$, we observe that$$\Huge\psi|_{x=0}=\frac{U}{a}\sin(ay)\implies f(0)=\frac{U}{a}=C_3$$and also:$$\Huge\begin{align*}
+\frac{\partial \psi}{\partial x}|_{x=0}=0&\implies f'(0)=0\\
+&\implies -aC_3+C_4=0\\
+&\implies C_4=U
+\end{align*}$$
+> Our stream function is therefore given by:$$\Huge\psi=U\left(\frac{1}{a}+x\right)e^{-ax}\sin(ay)$$We see exponential decay away from the boundary with decay length $1/a$, showing that spatial oscillations along the wall induce localised viscous motion.
+
