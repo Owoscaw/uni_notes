@@ -85,4 +85,34 @@ We have valid momentum for all $x$ and so $\Psi$ should be well defined for this
 
 The idea to fix this is to "zoom out" the problematic region around $x=x^*$ and approximate with a linear potential:$$\Huge V(x^*+\epsilon)=V(x^*)+V'(x^*)\epsilon+\mathcal{O}(\epsilon^2)$$We keep these terms and solve the Schrodinger equation with this linear potential. Solutions in this case are known as the Airy functions $A_i(x),B_i(x)$, two solutions that exhibit the behaviour:![[The WKB approximation 2026-02-28 23.57.03.excalidraw]]We use these functions to connect $\Psi_\text{WKB I}$ to $\Psi_\text{WKB II}$:![[The WKB approximation 2026-03-01 00.01.40.excalidraw]]Hence we have the unfixed constants $\eta_1,\eta_2,A_i,B_i,\xi_-$ and only four gluing conditions from the continuity of $\Psi,\Psi'$ at $x_1^*\pm\epsilon$. All but one constant is fixed, which we introduce to define our improved WKB approximation at the left turning point, moving inwards:$$\Huge\Psi_\text{WKBI}^\text{(L)}(x)=\begin{cases}\frac{a}{\sqrt{q(x)}}\exp(-\int_x^{x_1^*}q(y)dy) & x<<x_1^* \\
 \sqrt{\frac{4\pi}{\alpha}}aA_i(\alpha x) & x\approx x_1^* \\
-\frac{2a}{\sqrt{p(x)}}\sin(\int_{x_1^*}^xp(y)dy+\pi/4) & x>>x_1^*\end{cases}$$Where $\alpha=(2mV'(x_1^*))^{1/3}$ and $\Psi$ is smooth with one unfixed constant $a$. A similar solution can be written for the other turning point
+\frac{2a}{\sqrt{p(x)}}\sin(\int_{x_1^*}^xp(y)dy+\pi/4) & x>>x_1^*\end{cases}$$Where $\alpha=(2mV'(x_1^*))^{1/3}$ and $\Psi$ is smooth with one unfixed constant $a$. A similar solution can be written for the other turning point.
+
+Let us look at a potential with one infinite barrier and a sloped wall:![[The WKB approximation 2026-03-03 21.22.46.excalidraw]]
+> Here we define the potential:$$\Huge V(x)=\begin{cases}0 & x<0 \\
+f(x) & x>0\end{cases}$$
+> We have a right-sloped wall so we will use our improved WKB approximation, particularly the sine integral term $x<<x_2^*$. The boundary condition $\Psi(0)=0$ implies:$$\Huge\begin{align*}
+\frac{2a}{\sqrt{p(0)}}\sin\left(\int_0^{x_2^*}p\left(y\right)dy+\frac{\pi}{4}\right)&=0\\
+\implies\int_0^{x_2^*}p(y)dy*=(n-1/4)\pi\hbar
+\end{align*}$$This is the energy quantisation condition.
+> Let us consider $f(x)=\frac{1}{2}m^2\omega^2x^2$ in our quantisation condition:$$\Huge\begin{align*}
+p(x)&=\sqrt{2m\left(E-\frac{1}{2}m^2\omega^2x^2\right)}\\
+&=m\omega\sqrt{x_2^{*2}-x^2}\\
+\implies\int_0^{x_2^*}p(y)dy&=m\omega\int_0^{x_2^*}\sqrt{x_2^{*2}-x^2}dy\\
+&=\frac{\pi}{4}m\omega^2x_2^{*2}\\
+&=\frac{\pi E}{2\omega}=(n-1/4)\pi\hbar\\
+\implies E_n&=(2n-1/2)\hbar\omega
+\end{align*}$$
+> We can rewrite $\hat n=2n$ and then shift $\tilde n=\hat n-1$ to write:$$\Huge E_{\tilde n}=(\tilde n+1/2)\hbar\omega$$This is exactly the result for the [[Quantum S.H.O.#Excited states|SHO]] with the odd states $\tilde n=1,3,5,\dots$.
+
+# Summary:
+
+We have explored the following situations for our potentials:
+> Infinite vertical walls at $x=0,a$ showed us energy was quantised and it followed that:$$\Huge \Psi_\text{WKB}(0)=\Psi_\text{WKB}(a)=0\implies\int_0^ap(y)dy=n\pi\hbar$$
+> Finite vertical walls at $x=x_1^*,x_2^*$ gave us a similar formula:$$\Huge \int_{x_1^*}^{x_2^*}p(y)dy=n\pi\hbar$$
+> One sloped, one infinite wall motivated us to improve our approximation and led us to another quantisation condition:$$\Huge\int_0^{x_1^*}p(y)dy=(n-1/4)\pi\hbar$$
+> For two sloped walls, we would need to use the left and the right wall formulas:$$\Huge\begin{align*}
+\Psi_\text{WKBI}^\text{L}(x)&=\frac{2b}{\sqrt{p(x)}}\sin\left(\int_{x_1^*}^xp\left(y\right)dy+\frac{\pi}{4}\right)\\
+\Psi_\text{WKBI}^\text{R}(x)&=\frac{2a}{\sqrt{p(x)}}\sin\left(\int_x^{x_2^*}p\left(y\right)dy+\frac{\pi}{4}\right)
+\end{align*}$$These describe the wave function of an arbitrary point between the two turning points $x_1*,x_2^*$. Since they describe the same particle, they must agree. Requiring that they match leads to the quantisation condition:$$\Huge\int_{x_1^*}^{x_2^*}p(y)dy=(n-1/2)\pi\hbar$$
+
+All of the energy quantisation formulae we found pretty much differ by constants, however since our approximation is only really valid for $E>>\hbar$ then our formulae are only really valid for $n>>1$. In practice, we can ignore the constant difference and just use our first formula.
