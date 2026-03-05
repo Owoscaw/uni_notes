@@ -123,3 +123,44 @@ L & M & N\end{vmatrix}\\
 > We can solve this using separation of variables$$\Huge \frac{u'}{\sqrt{1+v^2}}=\pm\frac{v'}{\sqrt{1+u^2}}$$, which we integrate to get:$$\Huge \text{arcsinh}(v(t))=c\pm\text{arcsinh}(u(t))$$
 > Lines of curvature are then given by$$\Huge x(u(t),v(t))=\begin{cases}(\sinh(t),\sinh(c+t),\sinh(t)\sinh(c+t)) \\
 (\sinh(t),\sinh(c-t),\sinh(t)\sinh(c-t))\end{cases}$$for any $c\in\Re$. The equation for asymptotic curves then yields$$\Huge 0=(u')^2L+2u'v'M+(v')^2N=\frac{2}{D}u'v'$$, so we see that coordinate curves $u\rightarrow\underline{x}(u,v_0),v\rightarrow\underline{x}(u_0,v)$ are asymptotic curves.
+
+
+# Intrinsic Geodesic curvature:
+
+We provide an explicit formula for the geodesic curvature in the case of an isothermal parametrisation, proving that geodesic curvature is intrinsic and independent of embedding. Let $\underline{x}:U\rightarrow S$ be an isothermal parametrisation of $S$ and $\underline{\alpha}(s)=\underline{x}(u(s),v(s))$ be a smooth unit speed curve. Let $\underline{N}:\underline{x}(U)\rightarrow S^2$ be a Gauss map of the surface written as$$\Huge \underline{N}(\underline{x}(\underline{q}))=\frac{\underline{x}_u(\underline{q})\times\underline{x}_v(\underline{q})}{||\underline{x}_u(\underline{q})\times\underline{x}_v(\underline{q})||}$$, then the geodesic curvature is given by:$$\Huge \kappa_g=\frac{1}{\lambda(u,v)}\begin{vmatrix}\lambda_u(u,v) & \lambda_v(u,v) \\ u' & v'\end{vmatrix}$$Where $E=G=\lambda^2$ and $\phi(s)$ is the angle in $T_{\underline{\alpha}(s)}S$ between $(1,0)$ and $(u',v')$. Proof:
+> Since $\underline{x}$ is isothermal we have that$$\Huge\begin{align*}
+X_1(s)&=\frac{1}{\lambda(u,v)}\underline{x}_u(u(s),v(s))\\
+X_2(s)&=\frac{1}{\lambda(u,v)}\underline{x}_v(u(s),v(s))
+\end{align*}$$form an orthonormal basis of the tangent plane along $\underline{\alpha}$. 
+> We can write $\underline{\alpha}'$ in terms of the coordinate curves$$\Huge\underline{\alpha}'=u'\underline{x}_u+v'\underline{x}_v$$and since $1=||\underline{\alpha}'||^2=\lambda^2(u,v)((u')^2+(v')^2)$ we can write:$$\Huge (u',v')=\frac{1}{\lambda(u,v)}(\cos\phi,\sin\phi)\implies\underline{\alpha}'=\cos\phi X_1+\sin\phi X_2$$
+> Therefore, recalling the form of the Gauss map, we write$$\Huge\begin{align*} (\underline{N}\circ\underline{\alpha})\times\underline{\alpha}'&=(X_1\times X_1)\times(\cos\phi X_1+\sin\phi X_2)\\
+&=\cos\phi X_2-\sin\phi X_1\end{align*}$$
+> Using the fact that $X_1,X_2$ form an orthonormal basis, and recalling that we can write geodesic curvature as$$\Huge \kappa_g=\underline{\alpha}''(s)\cdot((\underline{N}\circ\underline{\alpha})\times\underline{\alpha}')$$we compute $\underline{\alpha}''$:$$\Huge\begin{align*}
+\underline{\alpha}''&=(u'\underline{x}_u+v'\underline{x}_v)'\\
+&=(\cos\phi X_1+\sin\phi X_2)'\\
+&=-\phi'\sin\phi X_1+\phi'\cos\phi X_2+\cos\phi X_1'+\sin\phi X_2'
+\end{align*}$$
+> Therefore we write geodesic curvature as:$$\Huge\begin{align*}
+\kappa_g&=\underline{\alpha}''\cdot(\cos\phi X_2-\sin\phi X_1)\\
+&=\phi'\sin^2\phi+\phi'\cos^2\phi+\cos^2\phi X_1'\cdot X_2-\sin^2\phi X_2'\cdot X_1\\
+&=\phi'+\cos^2\phi X_1'\cdot X_2+\sin^2\phi X_1'\cdot X_2\\
+&=\phi'+X_1'\cdot X_2
+\end{align*}$$
+> We can write $X_1'$ explicitly in terms of the isothermal parametrisation by differentiating:$$\Huge\begin{align*}
+X_1&=\frac{1}{\lambda}\underline{x}_u\\
+\implies X_1'&=\left(\frac{1}{\lambda}\right)'\underline{x}_u+\frac{1}{\lambda}(\underline{x}_{uu}u'+\underline{x}_{uv}v')\\
+\implies X_1'\cdot X_2&=\frac{1}{\lambda^2}(\underline{x}_{uu}\cdot\underline{x}_vu'+\underline{x}_{uv}\cdot\underline{x}_vv')
+\end{align*}$$
+> We previously saw that we can write $\underline{x}_{uu}\cdot\underline{x}_v$ in terms of the first fundamental form:$$\Huge\begin{align*}
+\underline{x}_{uu}\cdot\underline{x}_v&=F_u-\frac{1}{2}E_v\\
+\underline{x}_{uv}\cdot\underline{x}_v
+&=\frac{1}{2}G_u\end{align*}$$So we compute these derivatives:$$\Huge E_v=2\lambda\lambda_v,\,\,F_u=0,\,\,G_u=2\lambda\lambda_u$$Substituting these into our expression for $X_1'\cdot X_2$:$$\Huge\begin{align*}
+\implies X_1'\cdot X_2&=\frac{1}{\lambda^2}\left(\left(F_u-\frac{1}{2}E_v\right)u'+(\frac{1}{2}G_u)v'\right)\\
+&=\frac{1}{\lambda^2}(-\lambda\lambda_vu'+\lambda\lambda_uv')\\
+&=\frac{1}{\lambda(u,v)}(\lambda_uv'-\lambda_vu')\\
+&=\frac{1}{\lambda(u,v)}\begin{vmatrix}\lambda_u & \lambda_v\\
+u' & v'\end{vmatrix}
+\end{align*}$$As required.
+> Note that we could generalise this to non-isothermal parametrisations and one would find:$$\Huge\kappa_g=\frac{1}{2\sqrt{E(u,v)G(u,v)}}(G_u(u,v)v'-E_v(u,v)u')+\phi'$$
+
+This proves geodesic curvature is intrinsic, and therefore invariant under isometries. This leads us to the following corollary; let $f:S_1\rightarrow S_2$ be a local isometry, $\underline{\alpha}:I\rightarrow S_1$ a curve on $S_1$, and $\underline{\beta}=f\circ\underline{\alpha}:I\rightarrow S_2$ be $\underline{\alpha}$'s image under $f$. Then we have that $\kappa_{g,\underline{\alpha}}$ and $\kappa_{g,\underline{\beta}}$ are one and the same.
