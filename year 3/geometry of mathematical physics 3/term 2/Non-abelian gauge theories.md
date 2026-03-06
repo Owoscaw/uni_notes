@@ -1,0 +1,47 @@
+
+Non-abelian gauge theories are the language of the standard model of particle physics and establish fundamental connections between maths and physics.
+
+We focus on compact [[Lie Groups and Algebras#Lie groups|Lie groups]] and choose to write group elements $g$ in terms of Lie algebra elements as$$\Huge g=\exp(i\alpha^at_a)$$for real numbers $\alpha_a$. That is, we write a basis of the Lie algebra as $it_a$. In such a basis the structure constants are related to the generators $t_a$ by$$\Huge [t_a,t_b]=if_{ab}^ct_c$$for $a,b,c=1,\dots,\dim\pmb g$. We can always assume that $r(g)$ is unitary for any compact Lie group. For simplicity, we write the representation of $t_a$ associated with a representation $r$ of the Lie group $t_a^{(r)}$.
+
+# Fields:
+
+We introduce the tools we will use to formulate actions that are invariant under non-abelian gauge transformations:
+> Charged fields, denoted as $\phi$, transforming in a representation $r$ of the gauge group $G$
+> The covariant derivative $D_\mu\phi$
+> The gauge field $A_\mu$, present in the definition of the covariant derivative
+> The field strength $F_{\mu\nu}$ of the gauge field
+
+Let us first assume the gauge group $G$ is a classical group whose elements are matrices, and that the charged field $\phi$ transforms in the fundamental representation. This means that the gauge transformation of the charged field $\phi$ is$$\Huge\phi\rightarrow g\phi=e^{i\alpha^at_a}\phi$$where $\phi$ is a column vector. In this case, the Lie algebra generators $t_a$ are matrices and the group element $g$ is also a matrix acting on $\phi$. Recall that both the field $\phi=\phi(x)$ and the group element $g=g(x)$ and so the gauge parameter $\alpha=\alpha(x)$ also depends on space-time.
+
+Given the charged field $\phi$, the covariant derivative is$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi$$where the gauge field $A_\mu$ is now a matrix, which turns out to be an element of the Lie algebra to ensure the consistency of its transformation:$$\Huge A_\mu=A_\mu^at_a$$We require that under the non-abelian gauge transformation above, the covariant derivative transforms in the same way as $\phi$:$$\Huge D_\mu\phi\rightarrow gD_\mu\phi$$We can view the covariant derivative as a matrix-valued differential operator$$\Huge D_\mu=\mathbb{1}\partial_\mu-iA_\mu$$which reads component-wise as:$$\Huge (D_\mu)^j_k=\delta^j_k\partial_\mu-i(A_\mu)^j_k$$We require the gauge transformation:$$\Huge\begin{align*}
+D_\mu&\rightarrow gD_\mu g^{-1}\\
+&\rightarrow g(\partial_\mu-iA'_\mu)g^{-1}\\
+&=g(\partial_\mu g^{-1})+gg^{-1}\partial_\mu-igA_\mu g^{-1}
+\end{align*}$$Note that $g,A_\mu$ are matrices and so they do not commute.
+
+Comparing initial and final results, we have the following gauge transformation for $A_\mu$:$$\Huge\begin{align*}
+A_\mu\rightarrow A_\mu'&=gA_\mu g^{-1}+ig(\partial_\mu g^{-1})\\
+&=gA_\mu g^{-1}-i(\partial_\mu g)g^{-1}
+\end{align*}$$Note that we used the identity:$$\Huge 0=(\partial_\mu\mathbb{1})=(\partial_\mu(gg^{-1}))=(\partial_\mu g)g^{-1}+g(\partial_\mu g^{-1})$$Remarks:
+> The first term in the gauge transformation of $A_\mu$ is the adjoint action of the Lie group $G$ on a lie algebra element. This is why $A_\mu$ belongs to the lie algebra $\pmb g$.
+> The second term is a correction term to the adjoint action, involving a derivative. This is also an element in the Lie algebra in the following sense. Consider the path $g(t_0+t)g^{-1}(t_0)$ which passes through the identity for $t=0$. The associated Lie algebra element is then:$$\Huge\begin{align*} \frac{\partial }{\partial t}g(t_0+t)g^{-1}(t_0)|_{t=0}&=\left(\frac{\partial }{\partial t_0}g(t_0+t)\right)g^{-1}(t_0)|_{t=0}\\
+&=\left(\frac{\partial }{\partial t_0}g(t_0)\right)g^{-1}(t_0)\end{align*}$$Therefore for any path $g(t)$ we have that $(\partial_tg(t))g^{-1}(t)\in\pmb g$ for all $t$. For $g(x)$ we get paths by setting $t=x^\mu$ for some $\mu$ while keeping all other components of $x$ fixed. Hence:$$\Huge (\partial_\mu g(x))g^{-1}(x)\in\pmb g$$
+
+Finally, analogous to $G=U(1)$, we define the field strength:$$\Huge F_{\mu\nu}=i[D_\mu,D_\nu]$$We view both sides of this as differential operators that are matrix valued. It turns out that $F_{\mu\nu}$ is a multiplicative operator. By construction, the field strength transforms as:$$\Huge F_{\mu\nu}\rightarrow gF_{\mu\nu}g^{-1}$$The proof of which is simple:$$\Huge\begin{align*}
+F_{\mu\nu}=i[D_\mu,D_\nu]\rightarrow F_{\mu\nu}'&=i[gD_\mu g^{-1},gD_\nu g^{-1}]\\
+&=g[D_\mu,D_\nu]g^{-1}\\
+&=gF_{\mu\nu}g^{-1}
+\end{align*}$$If we calculate the commutator, one can show that we can write the field strength as:$$\Huge F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu]$$Proof:$$\Huge\begin{align*}
+-iF_{\mu\nu}&=[D_\mu,D_\nu]=[\mathbb{1}\partial_\mu-iA_\mu,\mathbb{1}\partial_\nu-iA_\nu]\\
+&=[\mathbb{1}\partial_\mu,\mathbb{1}\partial_\nu]-i[\mathbb{1}\partial_\mu,A_\nu]-i[A_\mu,\mathbb{1}\partial_\nu]-[A_\mu,A_\nu]\\
+&=0-i(\partial_\mu A_\nu)+i(\partial_\nu A_\mu)-[A_\mu,A_\nu]\\
+&=-i(\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu])
+\end{align*}$$
+The finite gauge transformations of $D_\mu$ and $F_{\mu\nu}$ is by the adjoint action of the Lie group on the Lie algebra. That is, $D_\mu$ and $F_{\mu\nu}$ transform in the adjoint representation of $G$. By considering infinitesimal gauge transformations $$\Huge g=e^{i\alpha^at_a}=e^{i\alpha}=1+i\alpha+\mathcal{O}(\alpha^2)$$one can show that the infinitesimal gauge variations of the fields are$$\Huge\begin{align*}
+\delta_\alpha\phi&=i\alpha\phi\\
+\delta_\alpha A_\mu&=i[\alpha,A_\mu]+\partial_\mu\alpha\\
+\delta_\alpha F_{\mu\nu}&=i[\alpha,F_{\mu\nu}]
+\end{align*}$$where $\phi\rightarrow\phi+\delta_\alpha\phi+\mathcal{O}(\alpha^2)$. Remarks:
+> Field strength $F_{\mu\nu}$ transforms in the adjoint representation of $\pmb g$ under infinitesimal gauge transformations.
+> The gauge field $A_\mu$ does not transform in the adjoint representation, as the first term in its variation suggests.
+> $D_\mu$ transforms in the adjoint representation.
