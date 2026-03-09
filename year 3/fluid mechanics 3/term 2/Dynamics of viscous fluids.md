@@ -266,3 +266,6 @@ f(a)&=0,\,\,f'(a)=0\\
 \implies C_4&=-\frac{3}{4}aU,\,\,C_2=\frac{1}{4}a^3U
 \end{align*}$$
 > Therefore, our Stokes stream function is given by:$$\Huge \Psi=\frac{1}{2}Ur^2\sin^2\theta\left(1-\frac{3a}{2r}+\frac{a^3}{2r^3}\right)$$
+
+# Time reversibility:
+
