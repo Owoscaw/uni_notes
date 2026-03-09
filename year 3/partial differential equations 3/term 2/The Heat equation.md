@@ -68,3 +68,91 @@ The solution we defined here has the following properties:
 > Infinite speed of propagation: If $g\geq0$ and there exists $\underline{x}_0\in\Re^n$ such that $g(\underline{x}_0)>0$, then $u(\underline{x},t)>0$ for all $\underline{x}\in\Re^n$ and all $t>0$. That is, if temperature is initially positive somewhere, then after an infinitesimally small time the temperature is positive everywhere. One can interpret this as heat travelling with infinite speed.
 > Convergence to equilibrium: If we assume $g\in L^1(\Re^n)$ then $$\Huge|u(\underline{x},t)|\leq\frac{1}{(4\pi kt)^{n/2}}||g||_{L^1(\Re^n)}$$for all $\underline{x}\in\Re^n,t>0$. 
 > Smoothing property: While the initial distribution $g$ is only continuous, the solution is infinitely differentiable for all $t>0$. Therefore the heat equation has the property of instantly smoothing the initial data, opposite to the behaviour of conservation laws.
+
+It turns out that there are infinitely many solutions of the Heat equation, however many blow up as $|\underline{x}|\to\infty$. Adding in mild growth conditions so that there exists constants $A,a>0$ with $$\Huge |u(\underline{x},t)|\leq Ae^{a|\underline{x}|^2}$$restricts the solution such that there exists at most one. Considering the heat equation with a source term$$\Huge\begin{align*}
+u_t-k\Delta u&=f \text{ in }\Re^n\times(0,\infty)
+\\
+u&=g \text{ at }t=0\end{align*}$$, we see that this is satisfied by:$$\Huge u(\underline{x},t)=\int_{\Re^n}\Phi(\underline{x}-\underline{y})g(\underline{y})d\underline{y}+\int_0^t\int_{\Re^n}\Phi(\underline{x}-\underline{y},t-s)f(\underline{y},s)d\underline{y}\,ds$$
+# Energy method:
+
+Similar to Poisson's equation, there is not in general an explicit solution formula for spatial domain subsets of $\Re^n$. We can still determine a lot of qualitative properties of the solution using the energy method and maximum principles.
+
+Let $\Omega\subset\Re^n$ be open, bounded, and connected with smooth boundary. Let $k,T>0$, then there exists at most one smooth solution $u:\bar\Omega\times[0,T]\rightarrow\Re$ of the heat equation:$$\Huge\begin{align*}
+u_t-k\Delta u&=f \text{ in }\Omega\times(0,T]
+\\
+u&=g \text{ on }\partial\Omega\times[0,T]\\
+u&=u_0 \text{ on }\Omega\times\{0\}\end{align*}$$We prove this using the energy method:
+> Let $u_1,u_2$ be solutions and define $w=u_1-u_2$. Linearity of the heat equation then dictates:$$\Huge\begin{align*}
+w_t-k\Delta w&=0 \text{ in }\Omega\times(0,T]\\
+w&=0 \text{ on }\partial\Omega\times[0,T]\\
+w&=0 \text{ on }\Omega\times\{0\}
+\end{align*}$$
+> Multiplying by $w$ and integrating by parts over $\Omega$ gives$$\begin{align*}
+\int_\Omega ww_td\underline{x}=k\int_\Omega w\Delta wd\underline{x}&\iff\int_\Omega\frac{\partial }{\partial t}\frac{1}{2}w^2d\underline{x}=k\int_{\partial\Omega}w\underline{\nabla}w\cdot\underline{n}dS-k\int_\Omega\underline{\nabla}w\cdot\underline{\nabla}wd\underline{x}\\
+&\iff \frac{d}{dt}\frac{1}{2}\int_\Omega w^2d\underline{x}=-k\int_\Omega|\underline{\nabla} w|^2d\underline{x}
+\end{align*}$$since $w=0$ on $\partial\Omega$. Defining$$\Huge E(t)=\frac{1}{2}\int_\Omega w^2(\underline{x},t)d\underline{x}$$we have shown that:$$\Huge \frac{dE}{dt}=-k\int_\Omega|\underline{\nabla}w|^2d\underline{x}\leq0$$
+> Integrating gives$$\Huge E(t)\leq E(0)=\frac{1}{2}\int_\Omega w^2(\underline{x},0)d\underline{x}=0$$, therefore $0\leq E(t)\leq E(0)=0$ and hence $E(t)=0$ for all $t\in[0,T]$. Therefore we conclude $w=0$ and $u_1=u_2$ as required.
+
+
+## Gronwall and Sobolev inequalities:
+We can also use the energy method to study the asymptotic behaviour of solutions as $t\to\infty$. First we introduce some inequalities:
+> The Gronwall inequality: Let $E:[0,\infty)\rightarrow\Re$ be a continuously differentiable function satisfying $\dot E\leq-\lambda E$ for some constant $\lambda\in\Re$. Then $E(t)\leq e^{-\lambda t}E(0)$ for all $t\geq0$. Proof:
+> > Multiplying the inequality by the integrating factor $e^{\lambda t}$ and rearranging we find$$\Huge e^{\lambda t}\dot E+e^{\lambda t}\lambda E\leq0\iff \frac{d}{dt}(e^{\lambda t}E)\leq0$$, which we integrate to find:$$\Huge e^{\lambda t}E(t)\leq e^{\lambda\cdot0}E(0)=E(0)\iff E(t)\leq e^{-\lambda t}E(0)$$As required.
+> > This result determines that solutions of the differential inequality $\dot E\leq-\lambda E$ are bounded by solutions of the differential equation $\dot E=-\lambda E$, a type of comparison principle.
+> Sobolev Embedding theorem: Let $f\in C^1([a,b])$, then for all $x,y\in[a,b]$$$\Huge |f(y)-f(x)|\leq||f'||_{L^2([a,b])}|y-x|^{1/2}$$, that is $f$ is Holder continuous with exponent $1/2$. Proof:
+> > By the fundamental theorem of calculus$$\Huge\begin{align*}
+|f(y)-f(x)|&=\left|\int_x^yf'(s)ds\right|\\
+&=\left|\int_x^y1\cdot f'(s)ds\right|\\
+&\leq\left|\int_x^y1^2ds\right|^{1/2}\left|\int_x^y|f'(s)|^2ds\right|^{1/2}\\
+&\leq|y-x|^{1/2}||f'||_{L^2([a,b])}
+\end{align*}$$
+> The Sobolev inequality: There exists a constant $C>0$ such that$$\Huge||f||_{L^\infty([a,b])}\leq C||f||_{H^1([a,b])}$$where $||f||_{H^1([a,b])}=(||f||_{L^2([a,b])}^2+||f'||_{L^2([a,b])})^{1/2}$. Proof:
+> > This follows from the proof of Sobolev's embedding theorem. For all $y\in[a,b]$:$$\Huge\begin{align*}
+|f(y)|&=|f(x)+f(y)-f(x)|\\
+&\leq|f(x)|+|f(y)-f(x)|\\
+&\leq|f(x)|+||f'||_{L^2([a,b])}|y-x|^{1/2}
+\end{align*}$$
+> > Recall the Young inequality $2\alpha\beta\leq\alpha^2+\beta^2$, then we can square our expression to find$$\Huge\begin{align*}
+|f(y)|^2&\leq(f(x)|+||f'||_{L^2([a,b])}|y-x|^{1/2})^2\\
+&=|f(x)|^2+||f'||_{L^2([a,b])}^2|y-x|+2|f(x)|||f'||_{L^2([a,b])}|y-x|^{1/2}\\
+&\leq2(|f(x)|^2+||f'||_{L^2([a,b])}^2|y-x|)
+\end{align*}$$where we use the inequality on the last line. Integrating this wrt $x$ over $[a,b]$ yields:$$\Huge\begin{align*}
+\int_a^b|f(y)|^2dx&\leq\int_a^b|f(x)|^2dx+2||f'||_{L^2([a,b])}^2\int_a^b|y-x|dx\\
+&\leq2\int_a^b|f(x)|^2dx+2||f'||_{L^2([a,b])}^2\int_a^b(b-a)dx\\
+&=2||f||_{L^2([a,b])}^2+2(b-a)^2||f'||_{L^2([a,b])}^2\\
+&\leq2\max\{1,(b-a)^2\}(||f||_{L^2([a,b])}^2+||f'||_{L^2([a,b])}^2)
+\end{align*}$$
+> > Diving by $(b-a)$ and taking square roots gives$$\large|f(y)|\leq\left(\frac{2\max\{1,(b-a)^2\}}{b-a}\right)^{1/2}(||f||_{L^2([a,b])}^2+||f'||_{L^2([a,b])}^2)^{1/2}=C||f||_{H^1([a,b])}$$with $C=(2\max\{1,(b-a)^2\}/(b-a))^{1/2}$. Since this holds for all $y\in[a,b]$ we have proven the result.
+> > Note that this inequality holds for $\Re$ as well and can be proven using Fourier transforms. Also if $f\in L^2$ and $f'$ is a nonsingular distribution with $f'\in L^2$ the result is also true.
+> > This theorem does not work in higher dimensions, we have to make stronger assumptions on $f$ to obtain a $L^\infty$ bound.
+
+Combining these inequalities with the energy method allows us to state the important result that follows. Let $u:\Re\times[0,\infty)\rightarrow\Re$ be smooth and $2\pi$-periodic in $x$. Let $u$ satisfy$$\Huge\begin{align*}
+u_t-ku_{xx}&=0,\,\,(x,t)\in(0,2\pi)\times(0,\infty)\\
+u(x,0)&=u_0(x),\,\,x\in(0,2\pi)
+\end{align*}$$where $u_0:\Re\rightarrow\Re$ is a smooth $2\pi$-periodic function. Let $\bar u_0=\frac{1}{2\pi}\int_0^{2\pi}u_0(x)dx$ denote the average value of $u_0$. Then $u\to\bar u_0$ in $L^\infty([0,2\pi])$ as $t\to\infty$:$$\Huge\lim_{t\to\infty}||u(\cdot,t)-\bar u_0||_{L^\infty([0,2\pi])}=0$$That is, the temperature converges uniformly to the average initial temperature as $t\to\infty$. Proof:
+> Let $w=u-\bar u_0$ and observe that$$\Huge\begin{align*}
+ \frac{d\bar u}{dt}&=\frac{d}{dt}\frac{1}{2\pi}\int_0^{2\pi}u(x,t)dx\\
+&=\frac{1}{2\pi}\int_0^{2\pi}u_t(x,t)dx\\
+&=\frac{1}{2\pi}\int_0^{2\pi}ku_{xx}(x,t)dx\\
+&=\frac{1}{2\pi}k[u_x]_0^{2\pi}=0
+\end{align*}$$since $u_x$ is $2\pi$-periodic. This shows that the average value of $u$ is independent of $t$. Particularly $\bar u(t)=\bar u(0)=\bar u_0$ and so $\bar w=0$.
+> By linearity, $w$ must satisfy:$$\Huge\begin{align*}
+w_t-kw_{xx}&=0,\,\,(x,t)\in(0,2\pi)\times(0,\infty)\\
+w(x,0)&=u_0(x)-\bar u_0
+,\,\,x\in(0,2\pi)\end{align*}$$Multiplying this PDE by $w$ and integrating over $[0,2\pi]$ gives$$\large\int_0^{2\pi}ww_tdx=k\int_0^{2\pi}ww_{xx}dx\iff \frac{d}{dt}\frac{1}{2}\int_0^{2\pi}w^2dx=k[ww_x]_0^{2\pi}-k\int_0^{2\pi}w_x^2dx$$by the chain rule and IBP. Boundary terms vanish due to the periodicity of $w,w_x$.
+> We write this in terms of the $L^2$ norms as:$$\Huge \frac{d}{dt}\frac{1}{2}||w||_{L^2([0,2\pi])}^2=-k||w_x||^2_{L^2([0,2\pi])}$$Since $\bar w=0$ we can write$$\Huge||w||_{L^2([0,2\pi])}^2=||w-\bar w||_{L^2([0,2\pi])}^2\leq C||w_x||_{L^2([0,2\pi])}^2$$for some constant $C>0$ by the Poincare inequality. 
+> Combining these norm equations we can write:$$\Huge \frac{d}{dt}||w||_{L^2([0,2\pi])}^2=-2k||w_x||_{L^2([0,2\pi])}^2\leq-\frac{2k}{C}||w||_{L^2([0,2\pi])}^2$$Defining$$\Huge E(t)=||w||_{L^2([0,2\pi])}^2$$we can write this as$$\Huge \dot E\leq-\lambda E$$with $\lambda=2k/C>0$. This satisfies the Gronwall inequality and so$$\Huge E(t)\leq E(0)e^{-\lambda t}\to0 \text{ as }t\to\infty$$, therefore by definition of $E(t)$ we must have $w\to0$ in $L^2([0,2\pi])$ as $t\to\infty$.
+> By differentiating the PDE for $w$ wrt $x$ we obtain:$$\Huge\begin{align*}
+w_{xt}-kw_{xxx}&=0  \text{ for }(x,t)\in(0,2\pi)\times(0,\infty)\\
+w_x(x,0)&=u_0'(x) \text{ for }x\in(0,2\pi)
+\end{align*}$$That is, $w_x$ satisfies the heat equation with zero source term. Additionally $\bar w_x=0$ by periodicity of $w$. Therefore we apply our above argument to $w_x$, yielding $w_x\to0$ in $L^2([0,2\pi])$ as $t\to\infty$. Applying the Sobolev inequality completes the proof:$$\Huge ||w||_{L^\infty([0,2\pi])}^2\leq C||w||_{H^1([0,2\pi])}^2=C||w||_{L^2([0,2\pi])}^2+C||w_x||_{L^2([0,2\pi])}^2\to0$$
+
+We can use the same method to study the same PDE with Dirichlet boundary conditions. Let $\Omega\subset\Re$ be open, bounded, and connected with smooth boundary. Let $u:\bar\Omega\times[0,\infty)\rightarrow\Re$ be a smooth function satisfying$$\Huge\begin{align*}
+u_t(\underline{x},t)-k\Delta u(\underline{x},t)&=f(\underline{x}) \text{ for }(\underline{x},t)\in\Omega\times(0,\infty)\\
+u(\underline{x},t)&=g(\underline{x}) \text{ for }(\underline{x},t)\in\partial\Omega\times[0,\infty)\\
+u(\underline{x},0)&=u_0(\underline{x}) \text{ for }\underline{x}\in\Omega
+\end{align*}$$where $f,g,u_0$ are given smooth functions. Let $v:\bar\Omega\rightarrow\Re$ be a smooth, time independent solution of the same equation. Then:$$\Huge\lim_{t\to\infty}||u-v||_{L^2(\Omega)}=0$$That is, if the source term and boundary data are independent of time, then the solution of the heat equation converges in the $L^2$ norm to the solution of Poisson's equation as $t\to\infty$.
+
+This is notable as we see that $u$ tends to a time independent state as $t\to\infty$. More remarkable is that $u\to v$ as $t\to\infty$ for every initial condition $u_0$. This means that the long term behaviour of $u$ is independent of the starting point $u_0$.
+
+# Maximum principles
