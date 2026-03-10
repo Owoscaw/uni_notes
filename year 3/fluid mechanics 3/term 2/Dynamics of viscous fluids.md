@@ -269,3 +269,65 @@ f(a)&=0,\,\,f'(a)=0\\
 
 # Time reversibility:
 
+Another key insight into the effects of viscous flow is to consider what we can infer about earlier times in the system based on the fluid state at later times. To see this, suppose that $\underline{u},p$ solve the incompressible Navier-Stokes equations with conservative body force and let time run backwards so that:$$\Huge \underline{u}\to-\underline{u},\,\,p\to p,\,\,\frac{\partial }{\partial t}\to-\frac{\partial }{\partial t},\,\,\underline{\nabla}\to\underline{\nabla}$$Then $\underline{\nabla}\cdot\underline{u}=0$ is invariant, but the momentum equation becomes:$$\Huge \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}=-\frac{1}{\rho_0}\underline{\nabla}p-\nu\underline{\nabla}^2\underline{u}-\underline{\nabla}\Phi$$This is not invariant, information is lost during the Navier-Stokes evolution due to the dissipation of viscosity and kinetic energy. This suggests three scenarios:
+> All terms present: When the nonlinear and viscous terms are present, the fluid will in general have multi-scale eddies and complex flows that are smoothed by the viscosity. As fine scales are smooth out, different starting states can have the same end state. Therefore the system is irreversible.
+> High $\text{Re}$: In the high Reynolds number limit, we recover the Euler equations making the momentum equation invariant. If we know some later state, we can exactly reproduce the earlier state by running the equation in reverse. At this scale, small eddies can form but there is no dissipation so we maintain the one-to-one link between start and end states.
+> Low $\text{Re}$: The same is true for the low Reynolds number limit where we have Stokes flow. Since this regime is driven by the motion of the boundary, reversing the equation gives an exact reversal of the flow: 
+> > To demonstrate this, let the flow on the boundary be given by $\underline{u}_S(\underline{x})=\underline{g}(\underline{x})$ for some particular function $\underline{g}$ and suppose $\underline{u}_1,p_1$ is the corresponding solution to the Stokes equation.
+> > Now we change the boundary conditions to $\underline{u}_S=-\underline{g}(\underline{x})$ on the boundary. The solution$$\Huge \underline{u}_2(\underline{x})=-\underline{u}_1(\underline{x}),\,\,P_2=C-p_1$$matches the new conditions. Since there is only one unique solution in Stokes flow, this is the only solution. 
+> > In this regime, the high viscosity damps out the nonlinear complex flows that result in higher Reynolds number flows, leaving something simple enough to reverse.
+
+# Lubrication theory:
+
+So far, we have obtained solutions to the Navier-Stokes equations in one of two ways:
+> The geometry was simple enough to eliminate most terms
+> The Reynolds number was sufficiently small that inertia is neglected (Stokes flow)
+
+We move on to consider flows in thin layers and narrow gaps. Here, the key features are not only the low Reynolds number but also a small aspect ratio (one dimension of the flow is much smaller than others). This approximation is known as lubrication theory and reduces the Navier Stokes equations to a much simpler form while retaining the physics of viscous flow in confined spaces.
+
+Consider a flow with length scale $L$ and height scale $H$:![[Dynamics of viscous fluids 2026-03-10 14.59.00.excalidraw]]In a thin layer, we can write:$$\Huge \frac{H}{L}=\epsilon<<1$$We also say that $U$ is a typical speed along the channel and that the flow is steady. As we are comparing the sizes of terms in the Navier-Stokes equations, it is useful to nondimensionalise it. Since we have different length scales for $x$ and $y$ directions, we must nondimensionalise as$$\Huge u=Uu',\,\,v=Vv',\,\,x=Lx',\,\,y=Hy'=\epsilon Ly',\,\,p=Pp'$$where we are free to choose $V,P$. The continuity equation transforms to$$\Huge\begin{align*}
+\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}&=0\\
+\implies\frac{U}{L}\frac{\partial u'}{\partial x'}+\frac{V}{\epsilon L}\frac{\partial v'}{\partial y'}&=0
+\end{align*}$$therefore we choose $V=\epsilon U$ to maintain the continuity equation. The momentum equation in $x$ becomes:$$\large\begin{align*}
+\rho\left(u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}\right)&=-\frac{\partial p}{\partial x}+\mu\left(\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}\right)\\
+\implies\frac{\rho U^2}{L}\left(u'\frac{\partial u'}{\partial x'}+v'\frac{\partial u'}{\partial y'}\right)&=-\frac{P}{L}\frac{\partial p'}{\partial x'}+\frac{\mu U}{L^2}\left(\frac{\partial^2u'}{\partial x'^2}+\frac{1}{\epsilon^2}\frac{\partial^2u'}{\partial y'^2}\right)\\
+\implies\frac{\rho UL}{\mu}\epsilon^2\left(u'\frac{\partial u'}{\partial x'}+v'\frac{\partial u'}{\partial y'}\right)&=-\frac{PL\epsilon^2}{\mu U}\frac{\partial p'}{\partial x'}+\epsilon^2\frac{\partial^2u'}{\partial x'^2}+\frac{\partial^2u'}{\partial y'^2}
+\end{align*}$$Note that the first term features a leading Reynolds number with length scale $L$. To fix $P$ we must impose that pressure balances the dominant term, and therefore:$$\Huge P=\frac{\mu U}{L\epsilon^2}$$Then for $\epsilon<<1$ and $\epsilon^2\text{Re}_L<<1$ this reduces to:$$\Huge 0=\frac{\partial p'}{\partial x'}+\frac{\partial^2u'}{\partial y'^2}$$
+The momentum equation in $y$ is$$\large\begin{align*}
+\rho\left(u\frac{\partial v}{\partial x}+v\frac{\partial v}{\partial y}\right)&=-\frac{\partial p}{\partial y}+\mu\left(\frac{\partial^2v}{\partial x^2}+\frac{\partial^2v}{\partial y^2}\right)\\
+\implies\frac{\rho U^2\epsilon}{L}\left(u'\frac{\partial v'}{\partial x'}+v'\frac{\partial v'}{\partial y'}\right)&=-\frac{P}{\epsilon L}\frac{\partial p'}{\partial y'}+\frac{\mu\epsilon U}{L^2}\left(\frac{\partial^2v'}{\partial x'^2}+\frac{1}{\epsilon^2}\frac{\partial^2v'}{\partial y'^2}\right)\\
+\implies(\text{Re}_L\epsilon^2)\epsilon^2(u'\frac{\partial v'}{\partial x'}+v'\frac{\partial v'}{\partial y'})&=-\frac{\partial p'}{\partial y'}+\epsilon^2\left(\epsilon^2\frac{\partial^2v'}{\partial x'^2}+\frac{\partial^2v'}{\partial y'^2}\right)
+\end{align*}$$Then for $\epsilon<<1$ and $\epsilon^2\text{Re}_L<<1$ this reduces to$$\Huge 0=\frac{\partial p'}{\partial y'}$$, that is the channel is too thin to support a pressure gradient in the $y$-direction. 
+
+Combining our equations, we get the $2D$ lubrication equations:$$\Huge\begin{align*}
+0&=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\\
+0&=-\frac{\partial p}{\partial x}+\mu\frac{\partial^2u}{\partial y^2}\\
+0&=\frac{\partial p}{\partial y}
+\end{align*}$$We see that the "battle" here is between pressure and viscosity in the $y$-direction.
+
+## The Reynolds lubrication equation:
+Consider a $2D$ flow between a solid wall at $y=0$ and a surface at $h(x,t)$ that moves with speed $(U,V)$:![[Dynamics of viscous fluids 2026-03-10 15.17.16.excalidraw]]
+The lubrication equations have no time derivatives, so we are looking for a quasi-steady solution (where the flow immediately adapts to boundaries). Our boundary conditions here are$$\Huge\begin{align*}
+u&=U(x,t),&v&=V(x,t)&\text{at }y&=h\\
+u&=0,&v&=0&\text{at }y&=0
+\end{align*}$$, so we solve the lubrication equations:$$\Huge \frac{\partial p}{\partial y}=0\implies p=p(x,t)$$Therefore when we integrate$$\Huge \frac{\partial^2u}{\partial y^2}=\frac{1}{\mu}\frac{\partial p}{\partial x}$$twice, we get:$$\Huge u=\frac{1}{2\mu}\frac{\partial p}{\partial x}y^2+A(x,t)y+B(x,t)$$The boundary condition $y=0,u=0$ forces $B(x,t)=0$. The boundary condition $y=h,u=U$ allows us to find $A$:$$\Huge\begin{align*}
+u&=\frac{1}{2\mu}\frac{\partial p}{\partial x}y^2+\left(-\frac{1}{2\mu}\frac{\partial p}{\partial x}h+\frac{U}{h}\right)y\\
+&=\frac{1}{2\mu}\frac{\partial p}{\partial x}(y^2-hy)+\frac{Uy}{h}
+\end{align*}$$Here, the first term represents a [[Dynamics of viscous fluids#The Navier-Stokes equations|Poiseuille]] flow component driven by a pressure gradient. The second term represents a [[Dynamics of viscous fluids#The Navier-Stokes equations|Couette]] flow driven by the motion of the wall. 
+
+We find $v$ by integrating both sides of the continuity equation:$$\Huge-\int_0^h\frac{\partial v}{\partial y}dy=\int_0^h \frac{\partial u}{\partial x}dy$$The LHS is simply $-V$, however since the domain is not fixed in the RHS integral we must use the Leibniz integral rule$$\Huge\frac{\partial }{\partial x}\int_{a(x)}^{b(x)}u(x,y)dy=\int_{a(x)}^{b(x)}\frac{\partial u}{\partial x}dy+u(x,b)\frac{\partial b}{\partial x}-u(x,a)\frac{\partial a}{\partial x}$$to move the derivative through the integral sign. Therefore:$$\Huge\begin{align*}
+-V&=\frac{\partial }{\partial x}\int_0^hu\,dy-U\frac{\partial h}{\partial x}\\
+&=\frac{\partial }{\partial x}\left[\frac{1}{2\mu}\frac{\partial p}{\partial x}\left(\frac{y^3}{3}-\frac{hy^2}{2}\right)+\frac{Uy^2}{2h}\right]_0^h-U\frac{\partial h}{\partial x}\\
+&=\frac{\partial }{\partial x}\left(-\frac{h^3}{12\mu}\frac{\partial p}{\partial x}+\frac{Uh}{2}\right)-U\frac{\partial h}{\partial x}\\
+\implies0&=\frac{\partial }{\partial x}\left(-\frac{h^3}{12\mu}\frac{\partial p}{\partial x}+\frac{Uh}{2}\right)-U\frac{\partial h}{\partial x}+V
+\end{align*}$$This is the Reynolds lubrication equation. For a given $h,U,V$ we can find $p$ and therefore $u,v$.
+
+Let us consider an example of a rule sitting on a film of fluid:![[Dynamics of viscous fluids 2026-03-10 15.33.15.excalidraw]]
+> The ruler of length $2a$ is raised with vertical speed $V$. Imposing the Reynolds lubrication equation directly with $U=0$ and $h=h(t)$ we have$$\Huge-\frac{h^3}{12\mu}\frac{\partial^2p}{\partial x^2}+V=0$$, which we integrate in $x$ twice to get:$$\Huge p=\frac{6\mu V}{h^3}x^2+Ax+B$$
+> We have pressure boundary conditions, since the fluid just outside of the ruler at $x=\pm a$ is exposed to atmospheric pressure:$$\Huge p=p_\text{atm} \text{ at }x=\pm a$$
+> Implementing these conditions imposes:$$\Huge p=p_\text{atm}+\frac{6\mu V}{h^3}(x^2-a^2)$$Since the bracketed term is always negative, we see that the pressure inside the thin gape is less than atmospheric pressure.
+> We can recover flow speed from our equation with Couette/Poiseuille flows:$$\Huge\begin{align*}
+u&=\frac{1}{2\mu}\frac{\partial p}{\partial x}(y^2-hy)+\frac{Uy}{h}\\
+&=-\frac{6Vx}{h^3}(h-y)
+\end{align*}$$This is parabolic inward flow.
+ 
