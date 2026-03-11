@@ -30,4 +30,39 @@ We now aim to find the first order correction to the eigenstate $|\psi_n^{(1)}\r
 \sum_j\alpha_j^n(E_j^{(0)}-E_n^{(0)})\langle \psi_q^{(0)}|\psi_j^{(0)}\rangle&=E_n^{(1)}\langle \psi_q^{(0)}|\psi_n^{(0)}\rangle-\langle \psi_q^{(0)}|\hat H' |\psi_n^{(0)}\rangle\\
 \implies\sum_j\alpha_j^n(E_j^{(0)}-E_n^{(0)})\delta_{qj}&=E_n^{(1)}\delta_{qn}-\langle \psi_q^{(0)}|\hat H' |\psi_n^{(0)}\rangle\\
 \implies\alpha_q^n(E_q^{(0)}-E_n^{(0)})&=
+\end{align*}$$Therefore we have two cases:
+> $q=n$ implies the LHS is zero and so we recover the equation for the first order energy correction.
+> $q\neq n$ allows us to solve for $\alpha_q^n$:$$\Huge\alpha_q^n=\frac{\langle \psi_q^{(0)}|H' |\psi_n^{(0)}\rangle}{E_n^{(0)}-E_q^{(0)}}$$
+
+Using this in our equation for $|\psi_n^{(1)}\rangle$ shows us:$$\Huge |\psi_n^{(1)}\rangle=\sum_{j\neq n}\frac{\langle \psi_j^{(0)}|\hat H' |\psi_n^{(0)}\rangle}{E_n^{(0)}-E_j^{(0)}}|\psi_j^{(0)}\rangle$$This is the first order correction to the eigen energy state $|\psi_n\rangle$ of the full Hamiltonian. This is well defined for all $j\neq n$ as the system is non-degenerate and we have different eigen energies for each state. 
+
+It turns out that corrections for energy give more accurate results than corrections to the state, so we stop here and use the unperturbed energy with the first order correction.
+
+Let us look at an example of an infinite potential well where we add a "step" potential $V_0$ as a perturbation:
+![[Perturbation theory 2026-03-11 16.25.54.excalidraw]]
+> Before perturbation we have$$\Huge V_0(x)=\begin{cases}\infty & x>a,\,\,x<0 \\
+0 & 0<x<a\end{cases}$$which we have solved previously to find:$$\Huge\begin{align*}
+\Psi_n^{(0)}(x)&=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\\
+E_n^{(0)}&=\frac{n^2\pi^2}{2ma^2}
 \end{align*}$$
+> We then add the perturbation:$$\Huge V_0(x)+V'(x)=\begin{cases}\infty & x>a,\,\,x<0 \\
+V_*\neq0 & 0<x<a\end{cases}$$This makes the perturbed Hamiltonian:$$\Huge H'=\begin{cases}V_* & 0<x<a \\
+0 & \text{otherwise}\end{cases}$$
+> We can now compute the corrections to the unperturbed states:$$\Huge\begin{align*}
+E_n^{(1)}&=\langle \psi_n^{(0)}|H' |\psi_n^{(0)}\rangle\\
+&=\int_0^aH'\psi_n^*(x)\psi_n(x)dx\\
+&=V_*\int_0^a\psi_n^*(x)\psi_n(x)dx=V_*\\
+\implies E_n&=E_n^{(0)}+V_*
+\end{align*}$$Where I have omitted the superscript and used the fact that $\psi_n(x)$ is normalised.
+> We could consider a different perturbation:$$\Huge V_0(x)+V'(x)=\begin{cases}\infty &  x<0,\,\,x>a \\
+V_* & 0<x<a/2 \\
+0 & a/2<x<a\end{cases}$$In this case we compute:$$\Huge\begin{align*}
+E_n^{(1)}&=\langle \psi_n^{(0)}|H'|\psi_n^{(0)}\rangle\\
+&=\int_0^aH'\psi_n^*(x)\psi_n(x)dx\\
+&=V_*\int_0^{a/2}\psi_n^*(x)\psi_n(x)dx\\
+&=V_*\frac{2}{a}\int_0^{a/2}\sin^2\left(\frac{n\pi}{a}x\right)dx=V_*/2\\
+\implies E_n&=E_n^{(0)}+V_*/2
+\end{align*}$$
+
+# Degenerate theory:
+
