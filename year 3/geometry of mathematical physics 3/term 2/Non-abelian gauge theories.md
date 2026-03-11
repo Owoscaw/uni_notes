@@ -45,3 +45,13 @@ The finite gauge transformations of $D_\mu$ and $F_{\mu\nu}$ is by the adjoint a
 > Field strength $F_{\mu\nu}$ transforms in the adjoint representation of $\pmb g$ under infinitesimal gauge transformations.
 > The gauge field $A_\mu$ does not transform in the adjoint representation, as the first term in its variation suggests.
 > $D_\mu$ transforms in the adjoint representation.
+
+What we have discussed generalises to arbitrary Lie groups $G$ and charged fields $\phi$ transforming in an $r$-dimensional representation $\pmb r$. Now $\phi$ is a column vector with $r$ components, and we simply replace the group element $g$ with the appropriate $r\times r$ matrix representation:$$\Huge r(g)=\exp(i\alpha^at_a^{(r)})$$
+For example$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi=(\mathbb{1}_r\partial_\mu-iA_\mu^at_a^{(r)})\phi$$and$$\Huge\begin{align*}
+F_{\mu\nu}\phi&=i[D_\mu,D_\nu]\phi\\
+&=(\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu])\phi\\
+&=(\partial_\mu A_\nu^a-\partial_\nu A_\mu^a+f_{bc}^aA_\mu^bA_\nu^c)t_a^{(r)}\phi\\
+\end{align*}$$where we understand that if $\phi$ transforms in $\pmb r$ then:$$\Huge\begin{align*}
+A_\mu\phi&=A_\mu^at_a^{(r)}\phi\\
+F_{\mu\nu}\phi&=F_{\mu\nu}^at_a^{(r)}\phi
+\end{align*}$$

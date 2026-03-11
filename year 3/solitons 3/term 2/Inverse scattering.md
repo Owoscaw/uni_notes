@@ -27,3 +27,29 @@ Consider a reflectionless potential with a single bound state encoded in $\{\mu_
 &=h(x)\left(1+c^2\int_{-\infty}^xe^{2\mu y}dy\right)+c^2e^{\mu x}\\
 \implies h(x)&=-\frac{c^2e^{\mu x}}{1+\frac{c^2}{2\mu}e^{2\mu x}}
 \end{align*}$$Setting $c^2=2\mu e^{-2\mu x_0}$ we obtain$$\Huge h(x)=-2\mu\frac{e^{\mu(x-2x_0)}}{1+e^{2\mu(x-x_0)}}$$and therefore for $z\leq x$:$$\Huge K(x,z)=-2\mu\frac{e^{\mu(x+z-2x_0)}}{1+e^{2\mu(x-x_0)}}$$Therefore our potential has form$$\Huge V(x)=2\frac{d}{dx}K(x,x)=-2\mu^2\text{sech}^2(\mu(x-x_0))$$and $u=-V$ is indeed a snapshot of a single KdV soliton at time $t$ with center at $x=x_0$. We can easily incorporate time evolution using $$\Huge c(t)^2=c(0)^2e^{-8\mu^3t}=2\mu e^{-2\mu(x_0-4\mu^2t)}$$which makes the KdV field at time $t$:$$\Huge u(x,t)=-V(x,t)=2\mu^2\text{sech}^2(\mu(x-x_0-4\mu^2t))$$
+
+# The $N$-soliton KdV solution:
+
+Let us consider a reflectionless potential $R(k)=0$ with $N$ bound states encoded in $\{\mu_n,c_n\}_{n=1}^N$, then:$$\Huge F(\xi)=\sum_{n=1}^Nc_n^2e^{\mu_n\xi}$$Since $$\Huge F(x+z)=\sum_{n=1}^Nc_n^2e^{\mu_nx}e^{\mu_nz}$$is a sum of factorised terms, we look for a solution where $K(x,z)$ is also a sum of factorised terms. We encode this using vector and matrix notation, setting$$\Huge E(x)=\begin{pmatrix}c_1e^{\mu_1x} \\ \vdots \\ c_Ne^{\mu_Nx}\end{pmatrix},\,\,H(x)=\begin{pmatrix}c_1h_1(x) \\ \vdots \\ c_Nh_N(x)\end{pmatrix}$$where $H(x)$ is to be determined. With this notation defined, we write$$\Huge F(x+z)=E(x)^\top E(z)$$and look for $K(x,z)$ of the form:$$\Huge K(x,z)=H(x)^\top E(z)=\sum_{n=1}^Nc_n^2h_n(x)e^{\mu_nz}$$Substituting this into the Marchenko equation shows:$$\Huge \begin{align*}
+0&=K(x,z)+F(x+z)+\int_{-\infty}^xK(x,y)F(y+z)dy\\
+&=H(x)^\top E(z)+E(x)^\top E(z)+H(x)^\top\int_{-\infty}^\infty E(y)E(y)^\top E(z)dy\\
+&=\left(H(x)+E(x)+\int_{-\infty}^xE(y)E(y)^\top H(x)dy\right)^\top E(z)
+\end{align*}$$If we set the bracketed term to $0$ and solve, we will have found a solution. It turns out that this is true when$$\Huge \Gamma(x)H(x)=-E(x)$$where $\Gamma(x)$ is an $N\times N$ matrix$$\Huge \Gamma(x)=\mathbb{1}_{N\times N}+\int_{-\infty}^x E(y)E(y)^\top dy$$with matrix elements:$$\Huge\begin{align*}
+\Gamma(x)_{mn}&=\delta_{mn}+\int_{-\infty}^x c_me^{\mu_my}c_ne^{\mu_ny}dy\\
+&=\delta_{mn}+c_mc_n\frac{e^{(\mu_m+\mu_n)y}}{\mu_m+\mu_n}
+\end{align*}$$Note that we have:$$\Huge \frac{d}{dx}\Gamma(x)=E(x)E(x)^\top$$
+Therefore we can solve for $H$$$\Huge H(x)=-\Gamma(x)^{-1}E(x)$$and so the form of $K(x,z)$ must become:$$\Huge\begin{align*}
+K(x,z)&=E(z)^\top H(x)\\
+&=-E(z)^\top \Gamma(x)^{-1}E(x)\\
+&=-\text{tr}(\Gamma(x)^{-1}E(x)E(z)^\top)
+\end{align*}$$Therefore$$\Huge\begin{align*}
+K(x,x)&=-\text{tr}(\Gamma(x)^{-1}E(x)E(x)^\top)\\
+&=-\text{tr}\left(\Gamma(x)^{-1}\frac{d}{dx}\Gamma(x)\right)\\
+&=-\text{tr}\left(\frac{d}{dx}\log\Gamma(x)\right)\\
+&=-\frac{d}{dx}\text{tr}(\log\Gamma(x))\\
+&=-\frac{d}{dx}\log(\det\Gamma(x))
+\end{align*}$$, where we used the identities:$$\Huge \text{tr}\left(\frac{d}{dx}\log\Gamma\right)=\text{tr}\left(\Gamma^{-1}\frac{d}{dx}\Gamma\right),\,\,\text{tr}(\log\Gamma)=\log(\det\Gamma)$$This implies that the KdV field is given by$$\Huge u=-2\frac{d}{dx}K(x,x)=2\frac{d^2}{dx^2}\log(\det\Gamma(x))$$, reinstating time dependence through $\Gamma$  shows$$\Huge u(x,t)=2\frac{\partial^2}{\partial x^2}\log(\det\Gamma(x;t))$$with:$$\Huge \Gamma(x;t)_{mn}=\delta_{mn}+c_m(t)c_n(t)\frac{e^{(\mu_m+\mu_n)x}}{\mu_m+\mu_n}$$
+Note that these formulae are very similar to the $N$-soliton KdV solution we found using [[The Hirota method#The $N$-soliton solution|Hirota]]'s method. To show they are identical, we use Sylvester's determinant theorem$$\Huge \det(\mathbb{1}_{N\times N}+AB)=\det(\mathbb{1}_{N\times N}+BA)$$for any pair of $N\times N$ matrices. We take$$\Huge A_{mn}=c_me^{\mu_mx}\delta_{mn},\,\,B_{mn}=\frac{c_ne^{\mu_nx}}{\mu_m+\mu_n}$$and so$$\Huge (AB)_{mn}=\frac{c_mc_ne^{(\mu_m+\mu_n)x}}{\mu_m+\mu_n},\,\,(BA)_{mn}=\frac{c_n^2e^{2\mu_nx}}{\mu_m+\mu_n}$$, therefore we can write$$\Huge u(x,t)=2\frac{\partial^2}{\partial x^2}\log(\det S(x;t))$$with$$\Huge\begin{align*}
+S(x;t)_{mn}&=\delta_{mn}+\frac{1}{\mu_m+\mu_n}c_n^2(t)e^{2\mu_nx}\\
+\implies S(x;t)_{mn}&=\delta_{mn}+\frac{2\mu_n}{\mu_m+\mu_n}e^{2\mu_n(x-x_{0,n}-4\mu_n^2t)}
+\end{align*}$$where we replaced $c_n(0)$ with $x_{0,n}$ by setting:$$\Huge c_n(0)^2=2\mu_ne^{-2\mu_nx_{0,n}}$$These equations give the general form of the $N$-soliton solution of the KdV equation.
