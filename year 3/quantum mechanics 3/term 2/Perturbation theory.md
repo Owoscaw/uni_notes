@@ -22,3 +22,12 @@ Using these expansions in the eigenvalue problem that defined energy states:$$\H
 E_n^{(0)} \langle \psi_n^{(0)}|\psi_n^{(1)}\rangle+\langle \psi_n^{(0)}|\hat H' |\psi_n^{(0)}\rangle&=E_n^{(0)} \langle \psi_n^{(0)}|\psi_n^{(1)}\rangle+E_n^{(1)}\\
 \implies E_n^{(1)}&= \langle \psi_n^{(0)}|\hat H' |\psi_n^{(0)}\rangle
 \end{align*}$$We see that the first order correction to energy is the expectation value of the perturbation Hamiltonian $H'$ in the non-perturbed state $|\psi_n^{(0)}\rangle$. 
+
+We now aim to find the first order correction to the eigenstate $|\psi_n^{(1)}\rangle$. We can write the equation we got for $\lambda^1$ terms as:$$\Huge (\hat H^{(0)}-E_n^{(0)})|\psi_n^{(1)}\rangle=(E_n^{(1)}-\hat H')|\psi_n^{(0)}\rangle$$To solve this for the state correction, we use the fact that the vectors $|\psi_n^{(0)}\rangle$ for all $n$ span the full eigenbasis. Therefore we can write our correction as a linear combination of these vectors:$$\Huge|\psi_n^{(1)}\rangle=\sum_{j}\alpha^n_j |\psi_j^{(0)}\rangle$$Putting this into our equation gives$$\Huge\begin{align*}
+\sum_j\alpha_j^n(\hat H^{(0)}-E_n^{(0)})|\psi_j^{(0)}\rangle&=(E_n^{(1)}-\hat H')|\psi_n^{(0)}\rangle\\
+\implies\sum_j\alpha_j^n(E_j^{(0)}-E_n^{(0)})|\psi_j^{(0)}\rangle&=
+\end{align*}$$where we are solving for the coefficients $\alpha_j^n$. Now we act with $\langle \psi_q^{(0)}|$ on the left to get:$$\Huge\begin{align*}
+\sum_j\alpha_j^n(E_j^{(0)}-E_n^{(0)})\langle \psi_q^{(0)}|\psi_j^{(0)}\rangle&=E_n^{(1)}\langle \psi_q^{(0)}|\psi_n^{(0)}\rangle-\langle \psi_q^{(0)}|\hat H' |\psi_n^{(0)}\rangle\\
+\implies\sum_j\alpha_j^n(E_j^{(0)}-E_n^{(0)})\delta_{qj}&=E_n^{(1)}\delta_{qn}-\langle \psi_q^{(0)}|\hat H' |\psi_n^{(0)}\rangle\\
+\implies\alpha_q^n(E_q^{(0)}-E_n^{(0)})&=
+\end{align*}$$
