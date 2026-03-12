@@ -55,3 +55,18 @@ F_{\mu\nu}\phi&=i[D_\mu,D_\nu]\phi\\
 A_\mu\phi&=A_\mu^at_a^{(r)}\phi\\
 F_{\mu\nu}\phi&=F_{\mu\nu}^at_a^{(r)}\phi
 \end{align*}$$
+
+# Actions and equations of motion:
+
+Let us consider a gauge invariant action for the Lie algebra valued non-abelian gauge field $A_\mu=A_\mu^at_a$. Since the field strength $F_{\mu\nu}=F_{\mu\nu}^at_a$ transforms as$$\Huge F_{\mu\nu}\rightarrow gF_{\mu\nu}g^{-1}$$under a gauge transformation, it immediately follows that $\text{tr}(F_{\mu\nu}F^{\mu\nu})$ is gauge invariant and can therefore be used in our Lagrangian density:$$\Huge\begin{align*}
+\text{tr}(F_{\mu\nu}F^{\mu\nu})&\rightarrow\text{tr}(gF_{\mu\nu}g^{-1}gF^{\mu\nu}g^{-1})\\
+&=\text{tr}(g^{-1}gF_{\mu\nu}g^{-1}gF^{\mu\nu})=\text{tr}(F_{\mu\nu}F^{\mu\nu})
+\end{align*}$$Where we used the cyclic property of the trace. We can now define the Yang-Mills action$$\Huge\begin{align*}
+S_\text{YM}[A]&=\int\mathcal{L}_\text{YM}d^4x\\
+\mathcal{L}_\text{YM}&=-\frac{1}{2g^2_\text{YM}}\text{tr}(F_{\mu\nu}F^{\mu\nu})
+\end{align*}$$where we are working with normalisation such that:$$\Huge \text{tr}(t_at_b)=\frac{1}{2}\delta_{ab}$$Note that the constant $g_\text{YM}$ is known as the Yang-Mills coupling constant and controls the strength of the interactions.
+
+It turns out we can introduce a second gauge invariant term known as the theta term$$\Huge\begin{align*}
+S_\theta[A]&=\int\mathcal{L}_\theta d^4x\\
+\mathcal{L}_\theta&=\frac{\theta}{16\pi^2}\text{tr}(F_{\mu\nu}\tilde F^{\mu\nu})
+\end{align*}$$where $\theta$ is known as the theta angle and:$$\Huge \tilde F^{\mu\nu}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$$
