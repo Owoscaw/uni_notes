@@ -69,4 +69,14 @@ S_\text{YM}[A]&=\int\mathcal{L}_\text{YM}d^4x\\
 It turns out we can introduce a second gauge invariant term known as the theta term$$\Huge\begin{align*}
 S_\theta[A]&=\int\mathcal{L}_\theta d^4x\\
 \mathcal{L}_\theta&=\frac{\theta}{16\pi^2}\text{tr}(F_{\mu\nu}\tilde F^{\mu\nu})
-\end{align*}$$where $\theta$ is known as the theta angle and:$$\Huge \tilde F^{\mu\nu}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$$
+\end{align*}$$where $\theta$ is known as the theta angle and$$\Huge \tilde F^{\mu\nu}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$$is the dual field strength. 
+
+To summarise, the most general gauge invariant action (up to two derivatives) that contains appropriate kinetic and interaction terms for a non-abelian gauge field $A_\mu$ is:$$\Huge\begin{align*}
+S_\text{gauge}[A]&=S_\text{YM}[A]+S_\theta[A]\\
+\mathcal{L}_\text{gauge}&=\mathcal{L}_\text{YM}+\mathcal{L}_\theta\\
+&=-\frac{1}{2g_\text{YM}^2}\text{tr}(F_{\mu\nu}F^{\mu\nu})+\frac{\theta}{16\pi^2}\text{tr}(F_{\mu\nu}\tilde F^{\mu\nu})
+\end{align*}$$If we introduce charged fields $\phi$ transforming in a representation $\pmb r$, then we can write another gauge invariant action for them using covariant derivatives. Taking $G=SU(N)$ we have$$\Huge\begin{align*}
+S_\text{matter}[\phi,\phi^\dagger,A]&=\int\mathcal{L}_\text{matter}d^4x\\
+\mathcal{L}_\text{matter}&=-(D_\mu\phi)^\dagger D^\mu\phi-V(\phi,\phi^\dagger)
+\end{align*}$$where we require $V$ to be gauge invariant. This generalises to other classical groups $G$ by using an appropriate inner product for the kinetic term.
+
