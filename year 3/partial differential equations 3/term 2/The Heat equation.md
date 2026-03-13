@@ -155,4 +155,35 @@ u(\underline{x},0)&=u_0(\underline{x}) \text{ for }\underline{x}\in\Omega
 
 This is notable as we see that $u$ tends to a time independent state as $t\to\infty$. More remarkable is that $u\to v$ as $t\to\infty$ for every initial condition $u_0$. This means that the long term behaviour of $u$ is independent of the starting point $u_0$.
 
-# Maximum principles
+Let us consider an example with periodic boundary conditions:
+> Let $\Omega=\pi^n$ with $\partial\Omega=\emptyset$ and $u_0\in L^2(\Omega)$, we consider the PDE $\partial_t u+\Delta u=0$ and aim to show that for any $T>0$ and $m\in\{0,1,2,\dots\}$ we have $u(\cdot,T)\in C^m(\Omega)$.
+> From the proof of uniqueness for the heat equation we found$$\Huge \partial_t||u(\cdot,t)||_{L^2(\Omega)}^2+2||\underline{\nabla} u(\cdot,t)||_{L^2(\Omega)}^2=0$$and so we integrate this:$$\Huge\begin{align*}
+\implies2\int_0^T||\underline{\nabla} u(\cdot,s)||^2_{L^2(\Omega)}ds&=||u_0||_{L^2(\Omega)}^2-||u(\cdot,T)||_{L^2(\Omega)}^2\\
+&\leq||u_0||_{L^2(\Omega)}^2+||u(\cdot,T)||^2_{L^2(\Omega)}\\
+&\leq2||u_0||_{L^2(\Omega)}^2\\
+\implies\int_0^T||u(\cdot,s)||^2_{L^2(\Omega)}ds&\leq||u_0||_{L^2(\Omega)}^2\\
+\end{align*}$$
+> We claim that there exists some $T_1\in[0,T/2]$ such that$$\Huge ||\underline{\nabla}u(\cdot,T_1)||_{L^2(\Omega)}^2\leq\frac{2}{T}||u_0||_{L^2(\Omega)}^2$$and prove it using contradiction. Assume that no such $T_1$ exists, then:$$\Huge\int_0^T||\underline{\nabla} u(\cdot,s)||_{L^2(\Omega)}^2\geq\int_0^{T/2}||\underline{\nabla} u(\cdot,s)||_{L^2(\Omega)}^2>\frac{2}{T}||u_0||_{L^2(\Omega)}^2\int_0^{T/2}ds$$This is a contradiction, so our ansatz holds.
+> Multiplying our PDE by $-(\Delta u)$ and integrating shows us that$$\Huge \frac{1}{2}\partial_t||\underline{\nabla}u||^2+||\Delta u||^2=0$$to which we apply the Poincare inequality to find:$$\Huge \frac{1}{2}\partial_t||\underline{\nabla} u||^2+\frac{1}{c_p}||\underline{\nabla} u||\leq0$$
+> Now we use the Gronwall inequality starting from $T_1$:$$\Huge\begin{align*}
+||\underline{\nabla} u(\cdot,t)||^2&\leq e^{-(t-T_1)/c_p}||\underline{\nabla} u(\cdot,T_1)||^2\\
+&\leq e^{-(t-T_1)/c_p}\frac{2}{T}||u_0||^2
+\end{align*}$$Where we used our ansatz. This shows that $\underline{\nabla} u\in L^2(\Omega)$.
+> In our integration step after multipling the PDE by $-(\Delta u)$ we found:$$\Huge\begin{align*}
+2\int_{t_0}^{t_1}||\Delta u(\cdot,s)||^2ds&=||\underline{\nabla} u(\cdot,t_0)||^2-||\underline{\nabla} u(\cdot,t_1)||^2\\
+&\leq2||\underline{\nabla} u(\cdot,T/2)||^2
+\end{align*}$$We further apply the energy method by multiplying by $\Delta^2u$ and integrating:$$\Huge\begin{align*}
+\int_\Omega\Delta^2u\cdot\partial_t u\,dV&=\int_\Omega\Delta u\cdot\Delta(\partial_t u)dV\\
+&=\int_\Omega\frac{1}{2}\partial_t|\Delta u|^2dV\\
+&=\frac{1}{2}\partial_t||\Delta u||^2
+\end{align*}$$Alternatively we could have written:$$\Huge\begin{align*}
+\int_\Omega\Delta^2u\cdot\Delta u\,dV&=\int_\Omega\underline{\nabla}\cdot\underline{\nabla}(\Delta u)\Delta u\,dV\\
+&=\int_{\partial\Omega}\Delta u\underline{\nabla}(\Delta u)\cdot dS-\int_\Omega|\underline{\nabla}\Delta u|^2dV\\
+&=-||\underline{\nabla}\Delta u||^2\\
+\implies\frac{1}{2}\partial_t||\Delta u||^2+||\underline{\nabla}\Delta u||^2&=0
+\end{align*}$$
+> Combining this with the result from Poincare's lemma:$$\Huge\implies||\Delta u(\cdot,t)||^2\leq||\Delta u(\cdot,T_2)||^2e^{-2(t-T_2)/c_p}$$We can continue in our logic to show that every step we take, we get another power of $T$ in the denominator. If we continued here we would find:$$\Huge||\Delta u(\cdot,t)||^2\leq\frac{8}{T^2}||u_0||^2$$
+> This shows that for any $T>0$ and $m\in\{0,1,\dots\}$ we have $(-\Delta)^{m/2}u\in L^2$ if and only if $u\in H^{m/2}$. To promote this to pointwise smoothness ($C^m(\Omega)$) we use the fact that if $u\in H^{m+n/2+\epsilon}$ then $u\in C^m(\Omega)$.
+
+# Maximum principles:
+
