@@ -330,4 +330,13 @@ Let us consider an example of a rule sitting on a film of fluid:![[Dynamics of v
 u&=\frac{1}{2\mu}\frac{\partial p}{\partial x}(y^2-hy)+\frac{Uy}{h}\\
 &=-\frac{6Vx}{h^3}(h-y)
 \end{align*}$$This is parabolic inward flow.
- 
+
+## Connection to lubrication:
+Consider the example of a rigid brick sliding over a flat surface, separated by a thin film of fluid. This setup is known as slider bearing:
+> ![[Dynamics of viscous fluids 2026-03-17 15.58.48.excalidraw]]
+> It is convenient to work in the reference frame of the brick, where the floor beneath moves at speed $U$. The gap between them$$\Huge h(x)=h_1-\alpha x$$is wedge-shaped, $0<\alpha<<1$, forming a thin fluid film with varying thickness along the length of the brick:![[Dynamics of viscous fluids 2026-03-17 16.01.54.excalidraw]]
+> We assume the lubrication approximation is valid inside this thin film, but since$$\Huge \epsilon=\frac{h_1}{L}\sim\alpha$$we can equivalently write the approximation as:$$\Huge \alpha<<1,\,\,\alpha^2\text{Re}_L<<1$$
+> We therefore solve the lubrication equations with boundary conditions:$$\Huge\begin{align*}
+u&=U,&v&=0&\text{at }y&=0\\
+u&=0,&v&=0&\text{at }y&=h(x)
+\end{align*}$$
