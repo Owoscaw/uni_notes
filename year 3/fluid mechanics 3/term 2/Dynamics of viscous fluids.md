@@ -340,3 +340,32 @@ Consider the example of a rigid brick sliding over a flat surface, separated by 
 u&=U,&v&=0&\text{at }y&=0\\
 u&=0,&v&=0&\text{at }y&=h(x)
 \end{align*}$$
+> The fluid at the edge of the film is exposed to air and therefore atmospheric pressure, so we impose $p=p_\text{atm}$ at $x=0$ and $x=L$. The pressure equation integrates to $p=p(x)$ as before and hence we get:$$\Huge p(0)=p(L)=p_\text{atm}$$
+> The momentum equation equivalent for the lubrication equations integrates to:$$\Huge u=\frac{1}{2\mu}\frac{dp}{dx}y^2+A(x)y+B(x)$$The boundary condition $y=0,u=U$ imposes $B=U$, while the condition $y=h(x),u=0$ imposes$$\Huge\begin{align*}
+u&=\frac{1}{2\mu}\frac{dp}{dx}y^2+\left(-\frac{1}{2\mu}\frac{dp}{dx}h-\frac{U}{h}\right)y+U\\
+&=\frac{1}{2\mu}\frac{dp}{dx}(y^2-hy)+U\left(1-\frac{y}{h}\right)
+\end{align*}$$which is again a combination of Poiseuille and Couette flow.
+> The continuity equation then gives:$$\Huge\begin{align*}
+-\int_0^h\frac{\partial v}{\partial y}dy&=\int_0^h\frac{\partial u}{\partial x}dy\\
+\implies0&=\frac{\partial }{\partial x}\int_0^hu\,dx\\
+&=\frac{\partial }{\partial x}\left[\frac{1}{2\mu}\frac{dp}{dx}\left(\frac{y^3}{3}-\frac{hy^2}{2}\right)+U\left(y-\frac{y^2}{2h}\right)\right]_0^h\\
+&=\frac{d}{dx}\left(-\frac{h^3}{12\mu}\frac{dp}{dx}+\frac{Uh}{2}\right)
+\end{align*}$$
+>Solving the final equation for $p$ gives:$$\Huge\begin{align*}
+\frac{dp}{dx}&=\frac{12\mu}{h^3}\left(\frac{Uh}{2}+D\right)\\
+\implies p&=12\mu\int\left(\frac{U}{2h^2}+\frac{D}{h^3}\right)dx
+\end{align*}$$We make a substitution based on $\frac{dh}{dx}=-\alpha$ to find:$$\Huge\begin{align*}
+p&=-\frac{12\mu}{\alpha}\int\left(\frac{U}{2h^2}+\frac{D}{h^3}\right)dh\\
+&=-\frac{12\mu}{\alpha}\left(-\frac{U}{2h}-\frac{D}{h^2}+E\right)
+\end{align*}$$Applying boundary conditions on $p$ at $h=h_1,h_2$ we find that:$$\Huge p=p_\text{atm}+\frac{6\mu U}{\alpha}\frac{(h_1-h)(h-h_2)}{h^2(h_1+h_2)}$$
+> Since $h_1<h<h_2$, the second term is positive and so the pressure is greater than atmospheric inside the film. The friction coefficient $\mu_f$ is given by$$\Huge \mu_f=\frac{\text{tangential force}}{\text{normal force}}$$, since we assume the brick slope $\alpha<<1$, the tangential and normal stress looks like $\sigma_{22}$ (normal) and $\sigma_{12}$ (tangential) in terms of our stress tensor.
+> From the definition of our stress tensor we have$$\Huge\sigma_{22}=-p+\mu\frac{\partial v}{\partial y}$$, however at our scales we need to see how this behaves. Since we know both$$\Huge\begin{align*}\\
+p&\sim P=\frac{\mu U}{L\epsilon^2}\\
+\mu\frac{\partial v}{\partial y}&\sim\frac{\mu V}{H}=\frac{\mu\epsilon U}{\epsilon L}
+\end{align*}$$and so the pressure term dominates, $\sigma_{22}\approx-p$. The tangential force is given by the stress tensor$$\Huge \sigma_{12}=\mu\left(\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}\right)$$whose terms scale with$$\Huge\begin{align*}
+\frac{\partial u}{\partial y}&\sim\frac{U}{H}=\frac{U}{\epsilon L}\\
+\frac{\partial v}{\partial x}&\sim\frac{V}{H}=\frac{\epsilon U}{L}
+\end{align*}$$and so the first term dominates, $\sigma_{12}\approx\mu\frac{\partial u}{\partial y}$. 
+> The total normal force on the brick is therefore$$\Huge\int_0^L(p-p_\text{atm})dx=\frac{6\mu U}{\alpha^2}\left(\log\left(\frac{h_1}{h_2}\right)-\frac{2(h_1-h_2)}{h_1+h_2}\right)$$noting that we subtract atmospheric pressure in the integrand since it also acts on the top of the brick.
+> The total tangential force on the brick is therefore$$\Huge \int_0^L\mu\frac{\partial u}{\partial y}|_{y=h}dx=\frac{2\mu U}{\alpha}\left(\frac{3(h_1-h_2)}{h_1+h_2}-\log\left(\frac{h_1}{h_2}\right)\right)$$, making our friction coefficient:$$\Huge\mu_f=\alpha f\left(\frac{h_1}{h_2}\right)$$
+> For solid-solid friction we have $\mu_f=\mathcal{O}(1)$ but for solid-fluid friction we have $\mu_f=\mathcal{O}(\alpha)$, which is much much smaller. We see that this type of flow dramatically reduces friction, hence the name lubrication.

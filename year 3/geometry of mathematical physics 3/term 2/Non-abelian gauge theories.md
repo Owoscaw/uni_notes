@@ -80,3 +80,13 @@ S_\text{matter}[\phi,\phi^\dagger,A]&=\int\mathcal{L}_\text{matter}d^4x\\
 \mathcal{L}_\text{matter}&=-(D_\mu\phi)^\dagger D^\mu\phi-V(\phi,\phi^\dagger)
 \end{align*}$$where we require $V$ to be gauge invariant. This generalises to other classical groups $G$ by using an appropriate inner product for the kinetic term.
 
+# The Standard Model:
+
+The Standard Model of elementary particle physics is a gauge theory with gauge group:$$\Huge G_\text{SM}=U(1)_h\times SU(2)\times SU(3)$$The reason why field theories have relevance in particle physics is that quanta of fields are simply quantum particles. We can associate (ish) a type of particle with every field.
+
+A gauge theory implies the existence of gauge fields which generalise electric and magnetic fields, so we think of them as a mediating force. We think of $U(1)\times SU(2)$ as the gauge groups of the electromagnetic and weak forces. The $SU(3)$ factor gives rise to the strong force, which binds quarks together in Baryons.
+
+All we need to do to define this theory is to state the gauge symmetry and which charged matter fields we have and in which representations of $G_\text{SM}$ they transform in. Writing down the most general Lagrangian gives the Standard Model Lagrangian up to fixing free parameters. We discuss the "classical" version which neglects neutrino masses, which has $19$ free parameters.
+
+The charged particles are $q_{Li},u_{Ri},d_{Ri},l_{Li},e_{Ri}$ for $i=1,2,3$, which are all left/right handed [[The Lorentz Group#Spinors of the Lorentz group|Weyl fermions]]. The label $i$ is called the generation, a single complex scalar $H$. These transform in the following representations:
+
