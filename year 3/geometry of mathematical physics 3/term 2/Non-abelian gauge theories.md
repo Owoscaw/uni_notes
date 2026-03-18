@@ -90,3 +90,19 @@ All we need to do to define this theory is to state the gauge symmetry and which
 
 The charged particles are $q_{Li},u_{Ri},d_{Ri},l_{Li},e_{Ri}$ for $i=1,2,3$, which are all left/right handed [[The Lorentz Group#Spinors of the Lorentz group|Weyl fermions]]. The label $i$ is called the generation, a single complex scalar $H$. These transform in the following representations:
 
+|          | $q_{Li}$ | $u_{Ri}$ | $d_{Ri}$ | $l_{Ri}$ | $e_{Ri}$ | $H$ |
+| -------- | -------- | -------- | -------- | -------- | -------- | --- |
+| $U(1)_h$ | $1/3$    | $4/3$    | $-2/3$   | $-1$     | $-2$     | $1$ |
+| $SU(2)$  | $2$      |          |          | $2$      |          | $2$ |
+| $SU(3)$  | $3$      | $3$      | $3$      |          |          |     |
+Here we have given the $U(1)$ charge to each fermion and the $2$ or $3$ indicates that they transform in the defining representation of $SU(2)$ or $SU(3)$. Blank spaces indicate no transformation. For example $l_{Li}$ has two components and $q_{Li}$ has six components as it transforms in both $SU(2)$ and $SU(3)$.
+
+$q_{Li}=(u_{Li},d_{li}), u_{Ri}, d_{Ri}$ describe the six quarks; $i=1$ corresponds to up/down, $i=2$ corresponds to strange/charm, $i=3$ corresponds to top/bottom. $l_{Li}=(e_{Li},\nu_{Li}),e_{Ri}$ describe the leptons; $i=1$ corresponds to the electron/electron-neutrino, $i=2$ corresponds to the muon/muon-neutrino, $i=3$ corresponds to the tau/tau-neutrino. We notice several things about their interactions:
+> $SU(2)$ only interacts with left-handed Weyl spinors, not right-handed. This is the origin of parity violation in nature, demonstrated in $\beta$ decay.
+> Only quarks interact with the strong force.
+> $U(1)$ charges are not all integers, however we use an appropriate rescaling of the generator of $U(1)$ to remedy this.
+
+We can now write down the kinetic terms for all gauge fields and charged particles as usual. The covariant derivative of $q_{Li}$ is for example$$\Huge D_\mu q_{Li}=\left(\partial_\mu-i\frac{1}{3}(A_h)_\mu-iW_\mu-ig_\mu\right)q_{Li}$$where $(A_h)_\mu$ is the gauge field of $U(1)$, $W_\mu$ is the gauge field of $SU(2)$, and $g_\mu$ is the gauge field of $SU(3)$.
+
+For $H$ we can write down a potential term in the Lagrangian:$$\Huge V(H)=-m|H|^2+\lambda|H|^4$$Note that $H$ is actually two complex fields as it transforms in the $2$ of $SU(2)$ and so $|H|^2=H_i\bar H_i$. It turns out that the RHS physics emerges for $m,\lambda>0$ and so the vacua of $H$ are described by:$$\Huge |H|^2=m/\lambda$$The set of options to solve this equation is gauge-invariant, however any given choice is not invariant under all elements in $U(1)_h\times SU(2)$. This is known as spontaneous symmetry breaking, the action is invariant under a symmetry but the vacuum is not.
+
