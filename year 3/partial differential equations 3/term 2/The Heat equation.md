@@ -197,4 +197,48 @@ We can now state the weak maximum principle for the heat equation. Let $k>0$ and
 > If $$\Huge u_t-k\Delta u=0\text{ in }\Omega_T$$then:$$\Huge \max_{\bar\Omega_T}u=\max_{\Gamma_T}u,\,\,\min_{\bar\Omega_T}u=\min_{\Gamma_T}u$$
 
 We now prove each statement:
-> First we consider the special case of strict inequality$$\Huge u_t-k\Delta u<0\text{ in }\Omega_T$$and assume for contradiction that $u$ attains its maximum at a point $(\underline{x}_0,t_0)\in\Omega_T$. If $t_0<T$, then $u$ attains its maximum in the open set $\Omega\times(0,T)$. Applying our maximum point lemma in $m$ dimensions with $m=n+1,U=\Omega\times(0,T),g=u,\underline{y}_0=(\underline{x}_0,t_0)$ gives$$\Huge(u_t(\underline{x}_0,t_0),\underline{\nabla}u(\underline{x}_0,t_0))=(0,\underline{0})$$as well as:$$\Huge H=\begin{pmatrix}u_{tt} & u_{tx_1} & \dots & u_{tx_n} \\ u_{x_1t} & u_{x_1x_1} & \dots & u_{x_1x_n} \\ \vdots & \vdots & \ddots & \vdots \\ u_{x_nt} & u_{x_nx_1} & \dots & u_{x_nx_n}\end{pmatrix}|_{(\underline{x},t)=(\underline{x}_0,t_0)}\text{ is negative semi-definite}$$Let $\underline{e}_i\in\Re^{n+1}$ be the standard basis vector, then $$\Huge u_{x_ix_i}(\underline{x}_0,t_0)=\underline{e}_{i+1}\cdot H\underline{e}_{i+1}\leq0$$since $H$ is negative semi-definite. Hence $\Delta u(\underline{x}_0,t_0)=u_{x_1x_1}(\underline{x}_0,t_0)+\dots+u_{x_nx_n}(\underline{x}_0,t_0)\leq0$, so we have$$\Huge u_t(\underline{x}_0,t_0)=0,\,\,\Delta u(\underline{x}_0,t_0)\leq0$$and therefore:$$\Huge u_t(\underline{x}_0,t_0)-k\Delta u(\underline{x}_0,t_0)=-k\Delta u(\underline{x}_0,t_0)\geq0$$This is a contradiction, so we must have $t_0=T$. Consequently the map $\underline{x}\rightarrow u(\underline{x},T)$ attains its maximum at $\underline{x}_0\in\Omega$
+> First we consider the special case of strict inequality$$\Huge u_t-k\Delta u<0\text{ in }\Omega_T$$and assume for contradiction that $u$ attains its maximum at a point $(\underline{x}_0,t_0)\in\Omega_T$. If $t_0<T$, then $u$ attains its maximum in the open set $\Omega\times(0,T)$. Applying our maximum point lemma in $m$ dimensions with $m=n+1,U=\Omega\times(0,T),g=u,\underline{y}_0=(\underline{x}_0,t_0)$ gives$$\Huge(u_t(\underline{x}_0,t_0),\underline{\nabla}u(\underline{x}_0,t_0))=(0,\underline{0})$$as well as:$$\Huge H=\begin{pmatrix}u_{tt} & u_{tx_1} & \dots & u_{tx_n} \\ u_{x_1t} & u_{x_1x_1} & \dots & u_{x_1x_n} \\ \vdots & \vdots & \ddots & \vdots \\ u_{x_nt} & u_{x_nx_1} & \dots & u_{x_nx_n}\end{pmatrix}|_{(\underline{x},t)=(\underline{x}_0,t_0)}\text{ is negative semi-definite}$$Let $\underline{e}_i\in\Re^{n+1}$ be the standard basis vector, then $$\Huge u_{x_ix_i}(\underline{x}_0,t_0)=\underline{e}_{i+1}\cdot H\underline{e}_{i+1}\leq0$$since $H$ is negative semi-definite. Hence $\Delta u(\underline{x}_0,t_0)=u_{x_1x_1}(\underline{x}_0,t_0)+\dots+u_{x_nx_n}(\underline{x}_0,t_0)\leq0$, so we have$$\Huge u_t(\underline{x}_0,t_0)=0,\,\,\Delta u(\underline{x}_0,t_0)\leq0$$and therefore:$$\Huge u_t(\underline{x}_0,t_0)-k\Delta u(\underline{x}_0,t_0)=-k\Delta u(\underline{x}_0,t_0)\geq0$$This is a contradiction, so we must have $t_0=T$. 
+> Consequently the map $\underline{x}\rightarrow u(\underline{x},T)$ attains its maximum at $\underline{x}_0\in\Omega$ and so our lemma implies that $D_\underline{x}^2u(\underline{x}_0,T)$ is negative semi-definite. As before, the entries of this matrix must be non-positive and so $\Delta u(\underline{x}_0,T)=\text{tr}(D^2_\underline{x}u(\underline{x}_0,T))\leq0$. The map $t\rightarrow u(\underline{x}_0,t)$ attains its maximum in $(0,T]$ at the boundary $t=T$. Therefore $u_t(\underline{x}_0,T)\geq0$ and we have$$\Huge u_t(\underline{x}_0,T)-k\Delta u(\underline{x}_0,T)\geq0$$, which is another contradiction. Therefore we must have $(\underline{x}_0,t_0)\in\bar\Omega_T\setminus\Omega_T=\Gamma_T$ as required.
+> Considering the general case (weak inequality) we let $\epsilon>0$ and define$$\Huge u^\epsilon(\underline{x},t)=u(\underline{x},t)-\epsilon t$$, in $\Omega_T$ we must have:$$\Huge u_t^\epsilon-k\Delta u^\epsilon=u_t-\epsilon-k\Delta u\leq-\epsilon<0$$Here we can apply our findings from the strict inequality:$$\Huge \max_{\bar\Omega_T}u^\epsilon=\max_{\Gamma_T}u^\epsilon$$Therefore$$\Huge\begin{align*}
+\max_{\bar\Omega_T}u&=\max_{\bar\Omega_T}(u^\epsilon+\epsilon t)\\
+&\leq\max_{\bar\Omega_T}u^\epsilon+\max_{\bar\Omega_T}(\epsilon t)\\
+&=\max_{\bar\Omega_T}u^\epsilon+\epsilon T\\
+&=\max_{\Gamma_T}u^\epsilon+\epsilon T\\
+&\leq\max_{\Gamma_T}u+\epsilon T
+\end{align*}$$and since $u^\epsilon\leq u$ in $\Omega_T$ we have$$\Huge\max_{\Gamma_T}u\leq\max_{\bar\Omega_T}u\leq\max_{\Gamma_T}u+\epsilon T$$for all $\epsilon>0$, therefore:$$\Huge \max_{\bar\Omega_T}u=\max_{\Gamma_T}u$$As required.
+> The second statement follows immediately by substituting $v=-u$, and the third immediately follows as a consequence of the first two.
+
+The interpretation and generalisation of this principle is as follows:
+> The weak principle agrees with physical intuition, no point in the system can get hotter than the hottest point at the initial time.
+> Connectedness of $\Omega$ is not required.
+> The weak principle also holds for general parabolic operators of the form $u_t+Lu$ with$$\Huge Lu=-\sum_{i,j=1}^na_{ij}u_{x_ix_j}+\sum_{j=1}^nb_ju_{x_j}=-A:D^2u+\underline{b}\cdot\underline{\nabla}u$$where $A$ is symmetric and uniformly positive definite. This can be proven in a similar way to the above, however more work is needed to show that $H$ is negative semi-definite.
+
+We can now state our strong maximum principle. Let $\Omega\subset\Re^n$ be open and bounded. Let $u:\bar\Omega_T\rightarrow\Re,u\in C_1^2(\Omega_T)\cap C(\bar\Omega_T)$ and that $\Omega$ is connected:
+> If $u_t-k\Delta u\leq0$ in $\Omega_T$, and if $u$ attains its maximum over $\bar\Omega_T$ at a point $(\underline{x}_0,t_0)\in\Omega_T$ then $u$ is constant in $\Omega_{t_0}=\Omega\times(0,t_0]$.
+> If $u_t-k\Delta u\geq0$ in $\Omega_T$, and if $u$ attains its minimum over $\bar\Omega_T$ at a point $(\underline{x}_0,t_0)\in\Omega_T$, then $u$ is constant in $\Omega_{t_0}=\Omega\times(0,t_0]$.
+
+
+We can use our maximum principles to prove a number of things:
+> Uniqueness of the heat equation: The weak maximum principle can be used to prove that there exists at most one solution $u\in C_1^2(\Omega_T)\cap C(\bar\Omega_T)$ of the heat equation$$\Huge\begin{align*}
+u_t-k\Delta u&=f\text{ in }\Omega_T\\
+u&=g\text{ in }\Gamma_T
+\end{align*}$$where $g\in C(\Gamma_T)$ and $f\in C(\Omega_T)$. To prove this, we let $u_1,u_2$ be solutions and apply the weak maximum principle to $w=u_1-u_2$.
+> Infinite speed of propagation: The strong maximum principle can be used to prove infinite speed of propagation for the heat equation and more general parabolic equations. Let $u$ satisfy:$$\Huge\begin{align*}
+u_t-k\Delta u&=0\text{ in }\Omega_T\\
+u&=0\text{ on }\partial\Omega\times[0,T]\\
+u&=g\text{ on }\Omega\times\{0\}
+\end{align*}$$Assuming $g\geq0$ and that there exists some $\underline{x}_0\in\Omega$ such that $g(\underline{x}_0)>0$, the strong maximum principle then implies $u(\underline{x},t)>0$ for all $(\underline{x},t)\in\Omega_T$. That is, if the temperature is initially positive somewhere then for any infinitesimally small time $t>0$, it is positive everywhere.
+> Bounds on solutions: We can use the weak maximum principle to prove bounds on solutions, which we further explore now:
+
+Let $\Omega=(0,\pi),\Omega_T=(0,\pi)\times(0,T]$ and let $u$ satisfy:$$\Huge\begin{align*}
+u_t-u_{xx}&=0\text{ in }\Omega_T\\
+u(0,t)=u(\pi,t)&=0\text{ for }t\in[0,T]\\
+u(x,0)&=\sin^2x\text{ for }x\in(0,\pi)
+\end{align*}$$We then aim to use a maximum principle to prove that for all $(x,t)\in\Omega_T$:$$\Huge0\leq u(x,t)\leq e^{-t}\sin x$$Let us begin:
+> By the weak maximum principle, $u$ attains its maximum and minimum on the parabolic boundary $\Gamma_T$. On this set, $u$ takes values $0$ as $x$ takes values $0,\pi$. Since $0\leq\sin^2x\leq1$ we must have$$\Huge 0\leq u(x,t)\leq1$$for all $(x,t)\in\Omega_T$. 
+> Consider the function $v(x,t)=e^{-t}\sin x$ which satisfies$$\Huge v_t-v_{xx}=-e^{-t}\sin x-e^{-t}(-\sin x)=0$$as well as the boundary conditions $v(0,t)=v(\pi,t)=0,v(x,0)=\sin x$. Therefore $w=u-v$ satisfies:$$\Huge\begin{align*}
+w_t-w_{xx}&=0\text{ in }\Omega_T\\
+w(0,t)=w(\pi,t)&=0\text{ for }t\in[0,T]\\
+w(x,0)&=\sin^2x-\sin x\text{ for }x\in(0,\pi)
+\end{align*}$$
+> Observe that$$\Huge w(x,0)=\sin^2x-\sin x\leq\text{ for all }x\in(0,\pi)$$so therefore$$\Huge\max_{\Gamma_T}w=0$$and so by the maximum principle$$\Huge w(x,t)\leq0$$for all $(x,t)\in\Omega_T$. We conclude that $u=w+v\leq0+v=v=e^{-t}\sin x$ and hence:$$\Huge 0\leq u(x,t)\leq e^{-t}\sin x$$As required.
