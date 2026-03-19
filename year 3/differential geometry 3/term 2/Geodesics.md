@@ -105,3 +105,5 @@ d(t)\cos(\theta(t))&=(R+r\cos v(t))\cos\theta(t)\\
 \end{align*}$$
 > In particular we must have $d(t)\geq(R+r)\cos\theta_0$ for all $t\in\Re$ since $\cos\theta(t)\leq1$. Consequently, a geodesic starting at $(R+r,0,0)$ with a small angle $|\theta_0|$ to the corresponding parallel is trapped in a certain neighbourhood of this parallel, that is, in the intersection of $S$ with all points of distance at least $(R+r)\cos\theta_0$ to the vertical $z$-axis.
 
+
+A geodesic $\underline{\alpha}:I\to S$ in a surface $S$ is a closed geodesic if there exists $c>0$ such that $\underline{\alpha}(t+c)=\underline{\alpha}(t)$ for all $t,t+c\in I$.

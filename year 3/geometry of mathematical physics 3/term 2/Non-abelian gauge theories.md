@@ -106,3 +106,9 @@ We can now write down the kinetic terms for all gauge fields and charged particl
 
 For $H$ we can write down a potential term in the Lagrangian:$$\Huge V(H)=-m|H|^2+\lambda|H|^4$$Note that $H$ is actually two complex fields as it transforms in the $2$ of $SU(2)$ and so $|H|^2=H_i\bar H_i$. It turns out that the RHS physics emerges for $m,\lambda>0$ and so the vacua of $H$ are described by:$$\Huge |H|^2=m/\lambda$$The set of options to solve this equation is gauge-invariant, however any given choice is not invariant under all elements in $U(1)_h\times SU(2)$. This is known as spontaneous symmetry breaking, the action is invariant under a symmetry but the vacuum is not.
 
+We can see the mass of the gauge bosons by observing the kinetic term for $H$ after fixing a background value$$\Huge \overline{D_\mu H}D^\mu H\to W_\mu W^\mu m/\lambda$$, which is not gauge invariant and in fact gives an otherwise forbidden mass to the particles corresponding to three our of the four gauge fields $W^a_\mu,(A_h)_\mu$. The surviving combination is$$\Huge t_\text{EM}=t_3^{SU(2)}+\frac{1}{2}t_h$$and generates the $U(1)$ associated with electromagnetism. Here, $t_3^{SU(2)}$ is the third generator of $SU(2)$. Due to it causing symmetry breaking, three of the four degrees of freedom in $H$ become longitudinal components of the three $W_\mu$, the fourth is a field corresponding to a massive real scalar particle, the Higgs field.
+
+# The 'tHooft-Polyakov monopole:
+
+
+
