@@ -55,3 +55,10 @@ v''G+u''F&=-\frac{1}{2}(v')^2G_v-u'v'G_u-(u')^2\left(F_u-\frac{1}{2}E_v\right)
 # Fundamental properties of geodesics:
 
 The fact that geodesics are intrinsic to a surface has the following immediate consequence, true for all intrinsic objects. Let $\underline{\alpha}:I\rightarrow S_1$ be a geodesic in a surface $S_1$ and let $f:S_1\rightarrow S_2$ be a local isometry between two surfaces. Then the image curve $\underline{\beta}=f\circ\underline{\alpha}:I\rightarrow S_2$ is also a geodesic in $S_2$.
+
+We saw that we can write geodesics as solutions to a system of two second order differential equations. The theory of ODEs tells us that these equations should be locally uniquely determined by their initial conditions. Let $S$ be a surface, $\underline{p}\in S$ and $\underline{v}\in T_\underline{p}S$ be a non-zero tangent vector at $\underline{p}$. Then there exists $c>0$ and a unique geodesic $\underline{\alpha}:[-c,c]\rightarrow S$ such that $\underline{\alpha}(0)=\underline{p}$ and $\underline{\alpha}'(0)=\underline{v}$. That is, any non-zero tangent vector $\underline{v}$ gives rise to a unique geodesic passing through its footpoint in this particular direction with the same speed and length as $\underline{v}$.
+
+Let us consider some examples:
+> Consider the Euclidean plane $\Re^2$ as a surface and the identity as a global parametrisation leading to $E=G=1$ and $F=0$. The equations for geodesics $\underline{\alpha}(t)=(u(t),v(t))$ then simplify to$$\Huge u''=0,\,\,v''=0$$, that is $u(t)=u_0+at,v(t)=v_0+bt$ for any point $\underline{p}=(u_0,v_0)\in\Re^2$ and any tangent vector $\underline{v}=(a,b)\in T_\underline{p}\Re^2$. That is to say that all geodesics in $\Re^2$ are of the form $\alpha(t)=\underline{p}+t\underline{v}$.
+> There is a local isometry between $\Re^2$ and the cylinder $S=\{\underline{x}\in\Re^3:x^2+y^2=1\}$ given by:$$\Huge f:\Re^2\rightarrow S,\,\,f(u,v)=(\cos u,\sin u,v)$$Since geodesics on $S$ are just the images of the above straight Euclidean lines, we can write them as:
+> > 
