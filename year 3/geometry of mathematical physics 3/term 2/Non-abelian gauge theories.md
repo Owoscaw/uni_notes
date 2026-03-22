@@ -110,5 +110,41 @@ We can see the mass of the gauge bosons by observing the kinetic term for $H$ af
 
 # The 'tHooft-Polyakov monopole:
 
+It was discovered that non-abelian gauge theories with scalar fields that transform in the adjoint representation admit smooth magnetic monopoles as static finite energy solutions of their equations of motion. The theory of interest is the Georgi-Glashow model, a field theory in three space and one time dimension with $G=SU(2)$ gauge group, a scalar field $\Phi$ transforming in the adjoint representation. The Lagrangian density is$$\Huge\begin{align*}
+\mathcal{L}&=-\frac{1}{2g_\text{YM}^2}\text{tr}(F_{\mu\nu}F^{\mu\nu})-\text{tr}((D_\mu\Phi)(D^\mu\Phi))-V(\Phi)\\
+V(\Phi)&=\lambda\left(\frac{1}{2}\text{tr}(\Phi^2)-v^2\right)^2
+\end{align*}$$where $\lambda,v>0$ are constants with the usual definition of field density and covariant derivative, repeated below for reference:$$\Huge\begin{align*}
+F_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu]\\
+D_\mu\Phi&=\partial_\mu\Phi-i[A_\mu,\Phi]
+\end{align*}$$
+We can calculate the Hamiltonian density $\mathcal{H}$ as the Legendre transform of the Lagrangian density $\mathcal{L}$, and from it the total energy $E=\int\mathcal{L}d^3x$ of the system. $E$ will be gauge invariant by construction. We look for static field configurations, so drop all $\partial_0$ time derivatives and switch to a temporal gauge $A_0=0$ so that we can drop temporal covariant derivatives $D_0$. In the temporal gauge, the energy of the static field configurations becomes$$\Huge E=\int\frac{1}{g_\text{YM}^2}\text{tr}(B_iB_i)+\text{tr}((D_i\Phi)(D_i\Phi))+V(\Phi)d^3x$$where $B_i=\frac{1}{2}\epsilon_{ijk}F_{jk}$ are the components of the non-abelian magnetic field $\underline{B}$. Here, $i$ runs over spatial Euclidean indices.
 
+The energy is the integral of a sum of squares, and will therefore be minimised by setting:$$\Huge \underline{B}=0,\,\,\underline{D}\Phi=0,\,\,\text{tr}(\Phi^2)=2v^2$$The first equation sets $F_{ij}=0$ so that the vector potential $\underline{A}=(A_1,A_2,A_3)$ is pure gauge, that is $A_j=ih(\partial_jh^{-1})=-i(\partial_jh)h^{-1}$ for a function $h(\underline{x})$ taking values in $SU(2)$. The second equation determines that the adjoint scalar field $\Phi$ is covariantly constant. The third equation determines the form of $\Phi$ that minimises the scalar potential. 
 
+By gauge transformation we set $\underline{A}=0$, then the second equation sets $\Phi$ constant. Letting $\Phi=\phi^a\sigma_a$, where $\sigma_a$ are the Pauli matrices, we find that$$\Huge \text{tr}(\Phi^2)=v^2\iff(\phi^1)^2+(\phi^2)^2+(\phi^3)^2=v^2$$and so the vacuum manifold is a $2$-sphere of radius $v$:$$\Huge\begin{align*}
+\mathcal{V}&=\{\Phi=\phi^a\sigma_a\in\pmb{su}(2):\text{tr}(\Phi^2)=2v^2\}\\
+&=\{\phi=(\phi^1,\phi^2,\phi^3)\in\Re^3:\phi^2=v^2\}\cong S^2
+\end{align*}$$By constant gauge transformation we can take:$$\Huge\Phi=\begin{pmatrix}v & 0 \\ 0 & -v\end{pmatrix}=v\sigma_3,\,\,\phi=(0,0,v)$$Any choice of vacuum breaks the gauge group $G=SU(2)$ into a subgroup $H=U(1)$ which leaves the vacuum invariant.
+
+In order for the energy to be finite, we demand the boundary conditions$$\Huge\underline{B}\to0,\,\,\underline{D}\Phi\to0,\,\,\text{tr}(\Phi^2)\to2v^2,\,\,\text{as }|\underline{x}|\to\infty$$so that the fields must tend to a vacuum at spatial infinity. Note that this can be a different vacuum for each direction. As in the abelian Higgs model, we can use the gauge redundancy to work radially where $A_r=0$. In this case the limits of the field as $r\to\infty$ with $(\theta,\varphi)$ fixed exist and the vacuum is same in all directions. The limit of the adjoint scalar field at spatial infinite defines a map$$\Huge\begin{align*}
+\Phi_\infty:S_\infty^2&\to\mathcal{V}\cong S^2\\
+(\theta,\varphi)&\to\Phi_\infty(\phi,\varphi)=\lim_{r\to\infty}\Phi(r,\theta,\varphi)
+\end{align*}$$which is characterised by an integer, the topological degree $\nu$ of the map (a generalisation of the winding number for maps from $S^1$ to itself):$$\Huge\nu=\frac{1}{8\pi v^3}\int_{S^2_\infty}\epsilon_{ijk}\phi_\infty\cdot(\partial_j\phi_\infty\times\partial_k\phi_\infty)d^2\sigma_i$$
+As an example, the map $\Phi_\infty=v\hat x\cdot\underline{\sigma}$ where $\hat x=\underline{x}/|\underline{x}|$ has degree $\nu=1$. This is the identity map from $S^2\to S^2$ up to an overall constant factor. Incidentally we can write our more complex map as$$\Huge \Phi_\infty=ve^{-i\alpha}\sigma_3e^{i\alpha}$$with:$$\Huge\alpha=\frac{\theta}{2}(-\sin\varphi\,\sigma_1+\cos\varphi\,\sigma_2)=\frac{\theta}{2}e^{-i\varphi\sigma_3/2}\sigma_2e^{i\varphi\sigma_3/2}$$Therefore $\Phi_\infty$ reduces to a constant vacuum with $\Phi=v\sigma_3$ if we perform a gauge transformation with parameter $g=e^{i\alpha}$. Note that this transformation is singular at $\theta=\pi$, where $\varphi$ is ill-defined.
+
+We now introduce the 'tHooft-Polyakov hedgehog ansatz. We assume that the adjoint scalar and gauge field take form:$$\Huge\begin{align*}
+\Phi&=\frac{\underline{x}\cdot\underline{\sigma}}{r^2}H(vr)\\
+A&=\sigma_a\epsilon_{aij}\frac{x_i\,dx_j}{r^2}(1-K(vr))
+\end{align*}$$Note that dependence on angular polar coordinates in $\Re^3$ is correlated with the behaviour in the internal space in which the fields take their values. We also assume the asymptotics$$\Huge\xi=vr\to\infty:\,\,H(\xi)-\xi\to0,\,\,K(\xi)\to0$$at spatial infinity, which are needed to satisfy our previously defined boundary conditions. We also assume$$\Huge\xi=vr\to0:\,\,H(\xi)=O(\xi),\,\,K(\xi)-1=O(\xi)$$to ensure regularity at the center of the monopole.
+
+Note that the adjoint scalar field approaches the identity map at spatial infinity, which has known topological degree of $\nu=1$. The magnetic field also approaches an abelian magnetic monopole for the unbroken gauge group $H=U(1)$ at spatial infinity. If one applies the above singular gauge transformation, the gauge field $A_\mu^{U(1)}$ looks exactly like a Dirac monopole in the northern patch.
+
+We can substitute this ansatz into the equations of motion to find a system of two coupled ODEs for $H(\xi),K(\xi)$. This together with our boundary conditions defines a well-posed BVP which we can solve numerically. Therefore a finite energy static solution describing a magnetic monopole exists.
+
+We can use a [[Topological lumps#The Bogomol'nyi bound|Bogomol'nyi]]-type argument to find a lower bound the the energy in each topological sector for the adjoint scalar (equivalently the magnetic charge for the unbroken $U(1)$ gauge field). This is the Bogomol'nyi-Prasad-Sommerfield (BPS) bound:$$\Huge\begin{align*}
+E&=\int\frac{1}{g_\text{YM}^2}\text{tr}(\underline{B}^2)+\text{tr}((\underline{D}\Phi)^2)+V(\Phi)\,d^3x\\
+&\geq\int\text{tr}\left(\left(\frac{1}{g_\text{YM}}\underline{B}\mp\underline{D}\Phi\right)^2\pm\frac{2}{g_\text{YM}}\underline{B}\cdot\underline{D}\Phi\right)d^3x\\
+&\geq\pm\frac{2}{g_\text{YM}}\int\text{tr}(\underline{B}\cdot\underline{D}\Phi)d^3x=\pm\frac{2}{g_\text{YM}}\int\text{tr}(\underline{D}\cdot(\Phi\underline{B}))d^3x\\
+&=\pm\frac{2}{g_\text{YM}}\int\underline{\nabla}\cdot\text{tr}(\Phi\underline{B})d^3x=\pm\frac{2}{g_\text{YM}}\int_{S_\infty^2}\text{tr}(\Phi_\infty\underline{B})\cdot d^2\underline{\sigma}\\
+&=\pm\frac{4v}{g_\text{YM}}\int_{S^2_\infty}\underline{B}^{U(1)}\cdot d^2\underline{\sigma}=\pm\frac{8\pi v}{g_\text{YM}}m^{U(1)}
+\end{align*}$$Where we drop the contribution of the non-negative potential energy, complete the square, and use the Bianchi identity $\underline{D}\cdot\underline{B}=0$. We have found the BPS bound, a lower bound for the energy in terms of the magnetic charge:$$\Huge E\geq\frac{8\pi v}{g_\text{YM}}|m^{U(1)}|$$The bound is saturated if and only if $\lambda\to0$ while keeping $v$ fixed, called the BPS limit. In this case the fields satisfy the first order Bogomol'nyi equation:$$\Huge \underline{B}=\text{sgn}(m^{U(1)})g_\text{YM}\underline{D}\Phi$$Solutions to these equations for monopoles come in infinite families, parametrised by continuous parameters known as moduli. For $G=SU(2)$, the moduli space of $n$ BPS monopoles has $4n$ real dimensions.
