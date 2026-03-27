@@ -1,8 +1,8 @@
 
 Our best formulation of modern physics is based on symmetries and geometry. We build algebraic structures and apply them to the physics of spacetime, which we unify through the geometric language of gauge theories:
-> We define [[Lie Groups and Algebras#Lie groups|Lie groups]] as a [[Differentiable Manifolds#Definition|differentiable manifold]] such that multiplication and taking inverses are differentiable operations. This can be thought
-> To handle infinitesimal transformations, we define a [[Lie Groups and Algebras#Lie algebras|Lie algebra]] as the tangent space of a Lie group at its identity element. This allows us to utilise linear algebra.
-> Next we introduce representation theory to describe how these abstract symmetries act on physical states represented as a vector space. Representation theory defines a [[Representations#Definitions|representation]] as a homomorphism from a group to a group of invertible linear maps $GL(V)$.
+> We define [[Lie Groups and Algebras#Lie groups|Lie groups]] as a [[Differentiable Manifolds#Definition|differentiable manifold]] such that multiplication and taking inverses are differentiable operations. This can be thought of as a continuous group, allowing for the definition of paths through the manifold.
+> To handle infinitesimal transformations, we define a [[Lie Groups and Algebras#Lie algebras|Lie algebra]] as the tangent space of a Lie group at its identity element together with a bilinear operator (Lie bracket). This is essentially a vector space, allowing us to utilise linear algebra.
+> Representation theory defines a [[Representations#Definitions|representation]] as a homomorphism from a group to a group of invertible linear maps $GL(V)$. Representations of Lie algebras preserve the structure of the associated Lie bracket.
 > This framework allows us to classify particles. [[Representations#$SO(3),SU(2)$, and spin|Spin]] is defined by how a field transforms under representations of $SU(2)$ (the spin group). It also allows for the construction of [[Representations#Tensor representations|tensor products]] which allows for the description of other particles.
 
 This framework we develop allows us to describe the geometry of spacetime itself through [[Symmetries and Action Principles#Lorentz symmetry and field theories|action principles]]:
