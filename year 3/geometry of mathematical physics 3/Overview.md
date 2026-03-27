@@ -1,6 +1,6 @@
 
 Our best formulation of modern physics is based on symmetries and geometry. We build algebraic structures and apply them to the physics of spacetime, which we unify through the geometric language of gauge theories:
-> We define [[Lie Groups and Algebras#Lie groups|Lie groups]], a type of [[Differentiable Manifolds#Definition|differentiable manifold]]. Some Lie groups include [[U(1),SU(2),SO(3)#$U(1)$|$U(1)$]] and [[U(1),SU(2),SO(3)#$SU(2)$|$SU(2)$]].
+> We define [[Lie Groups and Algebras#Lie groups|Lie groups]] as a [[Differentiable Manifolds#Definition|differentiable manifold]] such that multiplication and taking inverses are differentiable operations. This can be thought
 > To handle infinitesimal transformations, we define a [[Lie Groups and Algebras#Lie algebras|Lie algebra]] as the tangent space of a Lie group at its identity element. This allows us to utilise linear algebra.
 > Next we introduce representation theory to describe how these abstract symmetries act on physical states represented as a vector space. Representation theory defines a [[Representations#Definitions|representation]] as a homomorphism from a group to a group of invertible linear maps $GL(V)$.
 > This framework allows us to classify particles. [[Representations#$SO(3),SU(2)$, and spin|Spin]] is defined by how a field transforms under representations of $SU(2)$ (the spin group). It also allows for the construction of [[Representations#Tensor representations|tensor products]] which allows for the description of other particles.
