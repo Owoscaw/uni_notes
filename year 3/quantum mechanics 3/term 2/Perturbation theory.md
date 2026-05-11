@@ -99,4 +99,25 @@ Note that if $\hat H'$ is already diagonal, all of this reduces to the non degen
 ## N-fold degeneracy:
 For systems with higher orders of degeneracy, we would not like to have to find eigenvalues/vectors and diagonalise a large matrix. To find a workaround to this, we first need the following theorem:
 
-Assume $\hat A$ is Hermitian,$$\Huge [\hat H^{(0)},\hat A]=[\hat H',\hat A]=0$$, $|\psi_a^{(0)}\rangle$ and $|\psi_b^{(0)}\rangle$ are degenerate eigenstates of $\hat H^{(0)}$, and that they are eigenstates of $\hat A$ with different eigenvalues:$$\Huge \hat A |\psi_a^{(0)}\rangle=\alpha |\psi_a^{(0)}\rangle,\,\,\hat A |\psi_b^{(0)}\rangle=\beta |\psi_b^{(0)}\rangle$$If all this holds, then these degenerate eigenstates are the same as the "good" starting states for the perturbation. The physical context of this theorem
+Assume $\hat A$ is Hermitian,$$\Huge [\hat H^{(0)},\hat A]=[\hat H',\hat A]=0$$, $|\psi_a^{(0)}\rangle$ and $|\psi_b^{(0)}\rangle$ are degenerate eigenstates of $\hat H^{(0)}$, and that they are eigenstates of $\hat A$ with different eigenvalues:$$\Huge \hat A |\psi_a^{(0)}\rangle=\alpha |\psi_a^{(0)}\rangle,\,\,\hat A |\psi_b^{(0)}\rangle=\beta |\psi_b^{(0)}\rangle$$If all this holds, then these degenerate eigenstates are the same as the "good" starting states for the perturbation. The physical context of this theorem is that we find a commuting operator that can distinguish between these eigenstates, while the Hamiltonian could not (as they are degenerate).
+## Summary:
+If $\beta=\{|\psi_1^{(0)}\rangle,\dots,|\psi_q^{(0)}\rangle\}$ are $q$ eigenstates of $\hat H^{(0)}$ with shared energy $E^{(0)}$, in order to find the "good" states and connections to energy we must:
+> Write $\hat H'$ in the basis $\beta$, giving a $q\times q$ matrix
+> Find eigenvalues and eigenvectors of this matrix
+
+## $3$-fold degeneracy example:
+Consider the unperturbed system of an empty box:$$\Huge V(x)=\begin{cases}0 & 0<x<a,\,\,0<y<a,\,\,0<z<a \\
+\infty & \text{otherwise}\end{cases}$$First we find the non-perturbed eigenstates and associated energies using the ansatz $\psi=\psi_x\psi_y\psi_z$, making the Schrodinger equation:$$\Huge\begin{align*}
+-\frac{1}{2m}\left(\frac{\partial^2 }{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}\right)\psi^{(0)}(x,y,z)&=E^{(0)}\psi(x,y,z)\\
+\implies-\frac{1}{2m}\left(\frac{\psi_x''(x)}{\psi_x(x)}+\frac{\psi_y''(y)}{\psi_y(y)}+\frac{\psi_z''(z)}{\psi_z(z)}\right)&=E^{(0)}
+\end{align*}$$Since each LHS term depends on a different variable, each term must be equal to some constant $E_x^{(0)},E_y^{(0)},E_z^{(0)}$ such that they sum to $E^{(0)}$. Therefore we get the equations:$$\Huge \frac{\psi_x''}{\psi_x}=E_x^{(0)},\,\,\frac{\psi_y''}{\psi_y}=E_y^{(0)},\,\,\frac{\psi_z''}{\psi_z}=E_z^{(0)}$$These have solutions given by $$\Huge \psi_{x_i}=\alpha_{x_i}\sin(p_{x_i}x_i)+\beta_{x_i}\cos(p_{x_i}x_i)$$where $p_{x_i}$ satisfy:$$\Huge \sum_{n=1}^3\frac{p_{x_n}^2}{2m}=E^{(0)}$$For simplicity we impose boundary conditions on only the $x$ direction:$$\Huge\begin{align*}
+\psi(0,y,z)&=\psi_x(0)\psi_y(y)\psi_z(z)=0\implies\beta_{x}=0\\
+\implies\psi_x(x)&=\alpha_x\sin(p_xx)\\
+\psi(a,y,z)&=\psi_x(a)\psi_y(y)\psi_z(z)=0\implies p_xa=n_x\pi\\
+\implies p_x&=\frac{n_x\pi}{a}\\
+\implies\psi_x^{n_x}(x)&=\alpha_{n_x}\sin\left(\frac{n_x\pi}{a}x\right)
+\end{align*}$$This makes the full wavefunction$$\Huge\Psi^{(0)}_{(n_x,n_y,n_z)}(x,y,z)=\alpha_{n_x,n_y,n_z}\sin\left(\frac{n_x\pi}{a}x\right)\sin\left(\frac{n_y\pi}{a}y\right)\sin\left(\frac{n_z\pi}{a}z\right)$$with associated energy:$$\Huge E_{n_x,n_y,n_z}^{(0)}=\frac{\pi^2}{2a^2m^2}(n_x^2+n_y^2+n_z^2)$$Note that the normalisation constant $\alpha$ can be fixed by integrating over the box.
+
+The ground state must be $(1,1,1)$ since each $n_{x_i}\neq0$. This makes the ground state energy:$$\Huge E_{(1,1,1)}^{(0)}=\frac{3}{2}\frac{\pi^2}{m^2a^2}$$For the first excited state we find a $3$-fold degeneracy:$$\Huge E_{(2,1,1)}^{(0)}=E_{(1,2,1)}^{(0)}=E_{(1,1,2)}^{(0)}=3\frac{\pi^2}{a^2m^2}$$
+Now let us perturb the system with the Hamiltonian$$\Huge H'=\begin{cases}V_* & 0<x<a/2,\,\,0<y<a/2 \\
+0 & \text{otherwise}\end{cases}$$with $V_*<\infty$ so that it is a "semi-permeable" region.
