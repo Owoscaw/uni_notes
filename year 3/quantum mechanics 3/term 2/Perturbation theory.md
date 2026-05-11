@@ -120,4 +120,22 @@ Consider the unperturbed system of an empty box:$$\Huge V(x)=\begin{cases}0 & 0<
 
 The ground state must be $(1,1,1)$ since each $n_{x_i}\neq0$. This makes the ground state energy:$$\Huge E_{(1,1,1)}^{(0)}=\frac{3}{2}\frac{\pi^2}{m^2a^2}$$For the first excited state we find a $3$-fold degeneracy:$$\Huge E_{(2,1,1)}^{(0)}=E_{(1,2,1)}^{(0)}=E_{(1,1,2)}^{(0)}=3\frac{\pi^2}{a^2m^2}$$
 Now let us perturb the system with the Hamiltonian$$\Huge H'=\begin{cases}V_* & 0<x<a/2,\,\,0<y<a/2 \\
-0 & \text{otherwise}\end{cases}$$with $V_*<\infty$ so that it is a "semi-permeable" region.
+0 & \text{otherwise}\end{cases}$$with $V_*<\infty$ so that it is a "semi-permeable" region. As our ground state was nondegenerate we can use the easier theory:$$\large\begin{align*}
+E_{(1,1,1)}^{(1)}&=\langle 111|\hat H'|111\rangle\\
+&=\int_0^{a/2}dx\int_0^{a/2}dy\int_0^adz \,V_*|\psi_{(1,1,1)}^{(0)}|^2\\
+&=\left(\frac{2}{a}\right)^3V_*\int_0^{a/2}\sin^2\left(\frac{\pi}{a}x\right)dx\int_0^{a/2}\sin^2\left(\frac{\pi}{a}y\right)dy\int_0^{a}\sin^2\left(\frac{\pi}{a}z\right)dz\\
+&=\frac{V_*}{4}
+\end{align*}$$
+The first excited state is degenerate, so let us denote the degenerate states by the following:$$\Huge\begin{align*}
+|112\rangle=|\alpha\rangle,\,\,|121\rangle&=|\beta\rangle,\,\,|211\rangle=|\gamma\rangle\\
+E_{(112)}^{(0)}=E_{(121)}^{(0)}&=E_{(211)}^{(0)}=3\frac{\pi^2}{a^2m^2}
+\end{align*}$$Now let us apply degenerate perturbation theory:$$\Huge \langle \alpha|\hat H' |\alpha\rangle=\langle \beta|\hat H'|\beta\rangle=\langle \gamma|\hat H'|\gamma\rangle=3\frac{\pi^2}{a^2m^2}$$Note that the calculation here is identical to the integral in the ground state. For the other matrix entries of $\hat H'$ we compute:$$\Huge\begin{align*}
+\langle \alpha|\hat H'|\beta\rangle&=0\\
+\implies \langle \beta|\hat H' |\alpha\rangle&=0\\
+\langle \beta|\hat H'|\gamma\rangle&=\left(\frac{4}{3\pi}\right)^2V_*\\
+\implies\ \langle \gamma|\hat H'|\beta\rangle&=\left(\frac{4}{3\pi}\right)^2V_*
+\end{align*}$$Introducing $\kappa=\left(\frac{8}{3\pi}\right)^2$ we can write the matrix as:$$\Huge \hat H'=\frac{V_*}{4}\begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & \kappa \\ 0 & \kappa & 1\end{pmatrix}$$We then solve for eigenvectors and eigenvalues:$$\Huge\begin{align*}
+\det(\hat H'-\lambda I)&=0\\
+\implies(1-\lambda)^3-\kappa^2(1-\lambda)&=0\\
+\implies\lambda_1=1,\,\,\lambda_2=1+\kappa,\,\,\lambda_3&=1-\kappa
+\end{align*}$$This gives the required energy shifts at first order.
