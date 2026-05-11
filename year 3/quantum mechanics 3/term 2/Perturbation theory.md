@@ -66,3 +66,37 @@ E_n^{(1)}&=\langle \psi_n^{(0)}|H'|\psi_n^{(0)}\rangle\\
 
 # Degenerate theory:
 
+When we have a degenerate spectrum, we must employ a different method. First we look at twofold degeneracy:
+
+## Twofold degeneracy:
+We assume that the unperturbed system $\hat H^{(0)}$ has two states $\psi_a^{(0)}\neq\psi_b^{(0)}$ such that they have identical energies:$$\Huge \hat H^{(0)}|\psi_a^{(0)}\rangle=E^{(0)}|\psi_a^{(0)}\rangle,\,\,\hat H^{(0)}|\psi_b^{(0)}\rangle=E^{(0)}|\psi_b^{(0)}\rangle,\,\,\langle \psi_a^{(0)}|\psi_b^{(0)}\rangle=0$$And hence for $\alpha,\beta\in\Re$:$$\Huge \hat H^{(0)}(\alpha |\psi_a^{(0)}\rangle+\beta |\psi_b^{(0)}\rangle)=E^{(0)}(\alpha |\psi_a^{(0)}\rangle+\beta |\psi_b^{(0)}\rangle)$$When we add a perturbation $\hat H^{(0)}+\lambda\hat H'$ for a state that is a linear combination of degenerate eigenstates, the state splits into non-degenerate states of the perturbed system. One of these states will have higher energy, and one will have lower energy. Note that these states will be eigenstates of both $\hat H^{(0)}$ and $\hat H^{(0)}+\lambda\hat H'$.![[Perturbation theory 2026-05-11 12.37.17.excalidraw]]As $\lambda\to0$ we expect the low eigenstate to "connect" to $|2\rangle$ and visa versa for the high state. The problem then reduces to finding the form of these "good" states $|1\rangle,|2\rangle$ such that:
+> $|1\rangle,|2\rangle$ are in the eigenspace of $\hat H^{(0)}$
+> In the limit $\lambda\to0$, $|\text{high}\rangle\to|1\rangle$ and $|\text{low}\rangle\to |2\rangle$
+
+To find these states, let us denote eigenstates of $\hat H^{(0)}+\lambda\hat H'=\hat H$ by $|\psi\rangle$:$$\Huge \hat H |\psi(\lambda)\rangle=E(\lambda)|\psi(\lambda)\rangle$$Notice how we have written $\psi$ and $E$ as functions of $\lambda$, so we can take an expansion in powers of $\lambda$:$$\Huge\begin{align*}
+E&=E^{(0)}+\lambda E^{(1)}+\lambda^2E^{(2)}+\dots\\
+|\psi\rangle&=|\psi^{(0)}\rangle+\lambda |\psi^{(1)}\rangle+\lambda^2 |\psi^{(2)}\rangle+\dots
+\end{align*}$$Note that as $\lambda\to0$ it follows that $|\psi^{(0)}\rangle$ will connect to either $|1\rangle$ or $|2\rangle$. Using these forms in our eigenvalue problem gives:$$\Huge\begin{align*}
+\hat H |\psi\rangle&=\hat H^{(0)}|\psi^{(0)}\rangle+\lambda(\hat H'|\psi^{(0)}\rangle+\hat H^{(0)}|\psi^{(1)}\rangle)+\dots\\
+E |\psi\rangle&=E^{(0)}|\psi^{(0)}\rangle+\lambda(E^{(1)}|\psi^{(0)}\rangle+E^{(0)}|\psi^{(1)}\rangle)+\dots
+\end{align*}$$Here, the first terms in each expansion cancel out and so we get at order $\lambda$:$$\Huge\hat H^{(0)}|\psi^{(1)}\rangle+\hat H'|\psi^{(0)}\rangle=E^{(1)}|\psi^{(0)}\rangle+E^{(0)}|\psi^{(1)}\rangle$$We now use the fact that eigenstates of $\hat H^{(0)}$ can be written as a linear combination of the basis eigenstates $\psi_a^{(0)}$ and $\psi_b^{(0)}$:$$\large\begin{align*}
+\hat H^{(0)}|\psi^{(1)}\rangle+\hat H'(\alpha |\psi_a^{(0)}\rangle+\beta |\psi_b^{(0)}\rangle)=E^{(0)}
+|\psi^{(1)}\rangle+E^{(1)}(\alpha |\psi_a^{(0)}\rangle+\beta |\psi_b^{(0)}\rangle)\end{align*}$$Now we act with the conjugates $\langle \psi_a^{(0)}|$ and $\langle \psi_b^{(0)}|$ to get:$$\Huge\begin{align*}
+LHS&=\langle \psi_a^{(0)}|\hat H^{(0)}|\psi^{(1)}\rangle+\alpha \langle \psi_a^{(0)}|\hat H'|\psi_a^{(0)}\rangle+\beta \langle \psi_a^{(0)}|\hat H'|\psi_b^{(0)}\rangle\\
+RHS&=E^{(0)} \langle \psi_a^{(0)}|\psi^{(1)}\rangle+\alpha E^{(1)}\langle \psi_a^{(0)}|\psi_a^{(0)}\rangle+\beta E^{(1)}\langle \psi_a^{(0)}|\psi_b^{(0)}\rangle\\
+\implies&\alpha H'_{aa}+\beta H'_{ab}=\alpha E^{(1)}
+\end{align*}$$Where $\hat H'_{aa}$ and $\hat H'_{ab}$ are the last two terms on the LHS. Similarly by applying the other basis state we find that:$$\Huge \alpha H'_{ba}+\beta H'_{bb}=\beta E^{(1)}$$Noting that these are essentially matrix elements, we can write this as:$$\Huge \begin{pmatrix}H'_{aa} & H'_{ab} \\ H'_{ba} & H'_{bb}\end{pmatrix}\begin{pmatrix}\alpha \\ \beta\end{pmatrix}=E^{(1)}\begin{pmatrix}\alpha \\ \beta\end{pmatrix},\,\,H'_{ij}=\langle \psi_j^{(0)}|\hat H' |\psi_i^{(0)}\rangle$$Therefore the problem of finding the first order corrections to energy, as well as the unperturbed states $|1\rangle,|2\rangle$, reduces to the problem of finding eigenvalues and vectors of the matrix $\hat H'$ written in the basis $\{|\psi_a^{(0)}\rangle,|\psi_b^{(0)}\rangle\}$ (i.e. the eigenstates of the unperturbed system).
+
+Lets do this!$$\Huge\begin{align*}
+\det(H'&-E^{(1)}I)=0\iff\det\begin{pmatrix}H'_{aa}-E^{(1)} & H'_{ab}\\
+H'_{ba} & H'_{bb}-E^{(1)}\end{pmatrix}=0\\
+\implies E^{(1)}&=\frac{1}{2}\left(H'_{aa}+H'_{bb}\pm\sqrt{(H'_{aa}+H'_{bb})^2-4(H'_{aa}H'_{bb}-|H'_{ab}|^2)}\right)\\
+E^{(1)}_\text{high}&=E_1^{(1)},\,\,E_\text{low}^{(1)}=E_2^{(1)}
+\end{align*}$$This is where the difference in energies comes from, with the higher energy associated with the positive sqrt branch. We can now find the states $|1\rangle,|2\rangle$ by finding the associated eigenvectors of this matrix.
+
+Note that if $\hat H'$ is already diagonal, all of this reduces to the non degenerate case in each direction.
+
+## N-fold degeneracy:
+For systems with higher orders of degeneracy, we would not like to have to find eigenvalues/vectors and diagonalise a large matrix. To find a workaround to this, we first need the following theorem:
+
+Assume $\hat A$ is Hermitian,$$\Huge [\hat H^{(0)},\hat A]=[\hat H',\hat A]=0$$, $|\psi_a^{(0)}\rangle$ and $|\psi_b^{(0)}\rangle$ are degenerate eigenstates of $\hat H^{(0)}$, and that they are eigenstates of $\hat A$ with different eigenvalues:$$\Huge \hat A |\psi_a^{(0)}\rangle=\alpha |\psi_a^{(0)}\rangle,\,\,\hat A |\psi_b^{(0)}\rangle=\beta |\psi_b^{(0)}\rangle$$If all this holds, then these degenerate eigenstates are the same as the "good" starting states for the perturbation. The physical context of this theorem
