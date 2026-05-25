@@ -3,7 +3,7 @@ So far we have considered [[Dynamics of ideal fluids#Incompressible Euler equati
 
 Recall the continuity and momentum equations for an inviscid fluid:$$\Huge\begin{align*}
 \frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\\
-\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}\rho+\underline{f}
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p+\underline{f}
 \end{align*}$$If the fluid is compressible, then $\rho$ can vary in space and time. Now we have $5$ unknown functions but only $4$ governing equations. To close the system, we need another physical equation. We will achieve this by positing a dependence of pressure on density and/or temperature.
 
 # Barotropic fluids:
