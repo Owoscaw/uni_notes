@@ -17,4 +17,6 @@ Let $S$ be an oriented surface, $R\subset S$ be a region and $\underline{\alpha}
 
 # Local theorem of Gauss-Bonnet:
 
-Let $S$ be an oriented surface and $T\subset S$ be a triangle. Let $\alpha,\beta,\gamma\in(0,2\pi)$ be its interior 
+Let $S$ be an oriented surface and $T\subset S$ be a triangle. Let $\alpha,\beta,\gamma\in(0,2\pi)$ be its interior angles. Then we have$$\Huge\int_TK\,dA+\int_{\partial T}\kappa_g\,ds=\alpha+\beta+\gamma-\pi$$where $K:S\rightarrow\Re$ is the Gauss curvature of $S$ and $\kappa_g:[a,b]\rightarrow S$ is the geodesic curvature of a mathematically positively traversed piecewise regular parametrisation $\underline{\alpha}:[a,b]\rightarrow S$ of $\partial T$.
+
+The angle of the tangent along a mathematically positively traversed piecewise regular simple closed curve $\underline{\alpha}:[0,1]\rightarrow \Re^2$ in the Euclidean plane turns by $2\pi$. That is, if $\theta:[0,1]\rightarrow\Re$ is the continuously varying angle between $\underline{\alpha}'(0)$ and $\underline{\alpha}'(t)$, then we have:$$\Huge\int_0^1\theta'(s)ds=2\pi$$
