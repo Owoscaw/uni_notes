@@ -19,4 +19,14 @@ Let $S$ be an oriented surface, $R\subset S$ be a region and $\underline{\alpha}
 
 Let $S$ be an oriented surface and $T\subset S$ be a triangle. Let $\alpha,\beta,\gamma\in(0,2\pi)$ be its interior angles. Then we have$$\Huge\int_TK\,dA+\int_{\partial T}\kappa_g\,ds=\alpha+\beta+\gamma-\pi$$where $K:S\rightarrow\Re$ is the Gauss curvature of $S$ and $\kappa_g:[a,b]\rightarrow S$ is the geodesic curvature of a mathematically positively traversed piecewise regular parametrisation $\underline{\alpha}:[a,b]\rightarrow S$ of $\partial T$.
 
-The angle of the tangent along a mathematically positively traversed piecewise regular simple closed curve $\underline{\alpha}:[0,1]\rightarrow \Re^2$ in the Euclidean plane turns by $2\pi$. That is, if $\theta:[0,1]\rightarrow\Re$ is the continuously varying angle between $\underline{\alpha}'(0)$ and $\underline{\alpha}'(t)$, then we have:$$\Huge\int_0^1\theta'(s)ds=2\pi$$
+The angle of the tangent along a mathematically positively traversed piecewise regular simple closed curve $\underline{\alpha}:[0,1]\rightarrow \Re^2$ in the Euclidean plane turns by $2\pi$. That is, if $\theta:[0,1]\rightarrow\Re$ is the continuously varying angle between $\underline{\alpha}'(0)$ and $\underline{\alpha}'(t)$, then we have:$$\Huge\int_0^1\theta'(s)ds=2\pi$$This has an immediate corollary for geodesic triangles in surfaces of constant Gauss curvature. Let $T\subset \mathbb{H}^2$ be a triangle in an oriented surface $S\subset\Re^3$ of constant Gauss curvature $K$. Assume that $T$ has three geodesic sides and denote its interior angles by $\alpha,\beta,\gamma$. Then we have:$$\Huge K\cdot\text{area}(T)=\alpha+\beta+\gamma-\pi$$
+
+Let $S$ be an oriented surface and $R\subset S$ be a polygon with interior angles $\gamma_1,\dots,\gamma_n$. Then we have$$\Huge \int_RK\,dA+\int_{\partial R}\kappa_g\,ds=\sum_{i=1}^n\gamma_i-(n-2)\pi$$where $K:S\rightarrow \Re$ is the Gauss curvature of $S$ and $\kappa_g:[a,b]\rightarrow\Re$ is the geodesic curvature of a mathematically positively traversed piecewise regular parametrisation $\underline{\alpha}:[a,b]\rightarrow S$ of $\partial R$.
+
+# Euler characteristic and global Gauss-Bonnet:
+
+Let $R\subset S$ be a region of a surface $S$. A triangulation $\mathcal{T}$ of $R$ is a subdivision of $R$ into finitely many triangles meeting only in common edges or common vertices. The Euler characteristic of $R$ is defined by:$$\Huge\begin{align*}
+\chi(R)&=F(\mathcal{T})-E(\mathcal{T})+V(\mathcal{T})\\
+&=\text{no. triangles }-\text{no. edges }-\text{no. vertices}
+\end{align*}$$
+Let $S$ be an oriented surface and $R\subset S$ be a region with piecewise smooth boundary $\partial R$ oriented in such a way that positive rotations by $\pi/2$ of the tangent vectors of a parametrisation of a piecewise regular curve lead to tangent vectors pointing into the region $R$. Let $\theta_1,\dots,\theta_n$ be the exterior angles at the vertices of $\partial R$. Then we have$$\Huge\int_R K\,dA+\int_{\partial R}\kappa_g\,ds+\sum_{i=1}^n\theta_i=2\pi\chi(R)$$, in particular if $S\subset\Re^3$ is a closed connected surface then:$$\Huge\int_RK\,dA=2\pi\chi(R)$$
