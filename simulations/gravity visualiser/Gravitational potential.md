@@ -11,7 +11,7 @@ Let us consider a few examples:
 > We aim to graph the equipotential lines due to a potential involving two bodies of mass $M_1,M_2$ respectively. We assume that mass $M_1$ is centered at $\underline{x}_{M_1}$ and that $M_2$ is centered at $\underline{x}_{M_2}$. Defining$$\Huge\begin{align*}
 r_1(x,y)&=||\underline{x}_{M_1}-\underline{x}_m||_{\Re^2}\\
 r_2(x,y)&=||\underline{x}_{M_2}-\underline{x}_m||_{\Re^2}
-\end{align*}$$we can write the combined potential as:$$\Huge V_T(x,y)=-G\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)$$
+\end{align*}$$we can write the combined potential as:$$\Huge V_T(x,y)=-G\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)$$Equipotential curves are then found by setting $V_T(x,y)=C$ constant.
 
 # Finding Lagrange points:
 
