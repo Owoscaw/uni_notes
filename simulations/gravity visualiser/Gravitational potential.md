@@ -27,4 +27,13 @@ We must now find the equations of motion for this system with an added mass $m$.
 We must consider what the time derivative of this vector is in our moving frame:$$\Huge \underline{\dot v}_\text{rel}=\underline{a}_\text{rel}+\underline{\Omega}\times\underline{v}_\text{rel}$$Now we calculate:$$\Huge\begin{align*}
 \underline{\ddot r}&=\underline{a}_\text{COG}+(\underline{a}_\text{rel}+\underline{\Omega}\times\underline{v}_\text{rel})+\underline{\dot\Omega}\times\underline{r}+\underline{\Omega}\times(\underline{v}_\text{rel}+\underline{\Omega}\times\underline{r})\\
 &=\underline{a}_\text{COG}+\underline{a}_\text{rel}+\underline{\dot\Omega}\times\underline{r}+\underline{\Omega}\times(\underline{\Omega}\times\underline{r})+2\underline{\Omega}\times\underline{v}_\text{rel}
-\end{align*}$$It can be shown that $\underline{a}_\text{COG}=\underline{0}$ (assuming our mass is incomparable to the other two), and since the angular velocity is constant for circular orbits, our equation reduces to:$$\Huge \underline{\ddot r}=\underline{\Omega}\times(\underline{\Omega}\times\underline{r})+2\underline{\Omega}\times\underline{v}_\text{rel}+\underline{a}_\text{rel}$$
+\end{align*}$$It can be shown that $\underline{a}_\text{COG}=\underline{0}$ (assuming our mass is incomparable to the other two), and since the angular velocity is constant for circular orbits, our equation reduces to:$$\Huge \underline{\ddot r}=\underline{\Omega}\times(\underline{\Omega}\times\underline{r})+2\underline{\Omega}\times\underline{v}_\text{rel}+\underline{a}_\text{rel}$$We can substitute our expressions for $\underline{r},\underline{v}_\text{rel}$, and $\underline{a}_\text{rel}$ to find:$$\Huge \underline{\ddot r}=(\ddot x-2\Omega \dot y-\Omega^2x)\underline{e}_x+(\ddot y+2\Omega\dot x-\Omega^2y)\underline{e}_y+\ddot z\underline{e}_z$$
+Now we invoke Newton's second law,$$\Huge m\underline{\ddot r}=\underline{F}_E+\underline{F}_S$$where $\underline{F}_E,\underline{F}_S$ are the forces on the mass $m$ due to the Earth and the Sun respectively. Let us write these forces as:$$\Huge\begin{align*}
+\underline{F}_E&=-G\frac{m_Em}{r_E^2}\underline{e}_r=-\frac{\mu_Em}{r_E^3}\underline{r}_E\\
+\underline{F}_S&=-G\frac{m_Sm}{r_E^2}\underline{e}_r=-\frac{\mu_Sm}{r_S^3}\underline{r}_S
+\end{align*}$$We therefore find the the equations of motion to be:$$\Huge\begin{align*}
+\underline{\ddot r}&=-\frac{\mu_E}{r_E^3}\underline{r}_E-\frac{\mu_S}{r_S^3}\underline{r}_S\\
+\implies\ddot x-2\Omega\dot y-\Omega^2x&=-\frac{\mu_E}{r_E^3}(x-\pi_Sr^*)-\frac{\mu_S}{r_S^3}(x+\pi_Er^*)\\
+\implies\ddot y+2\Omega\dot x-\Omega^2y&=-\frac{\mu_E}{r_E^3}y-\frac{\mu_S}{r_S^3}\\
+\implies\ddot z&=-\frac{\mu_E}{r_E^3}z-\frac{\mu_S}{r_S^3}z
+\end{align*}$$-
