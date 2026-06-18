@@ -18,5 +18,10 @@ r_2(x,y)&=||\underline{x}_{M_2}-\underline{x}_m||_{\Re^2}
 Lagrange points occur when the force due to gravity vanishes identically. We take $m=1$ in our calculations as this will just cancel later:$$\Huge\begin{align*}
 \implies \underline{\nabla}g=\underline{\nabla} V_T&=0\\
 \implies\underline{\nabla}\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)&=0\\
-
+\implies\left(\underline{e}_r\frac{\partial }{\partial r}+\underline{e}_\theta\frac{1}{r}\frac{\partial }{\partial \theta}\right)\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)&=0\\
+\end{align*}$$For the Earth-Sun system, we take $M_1$ to be the mass of the sun, $M_2$ to be the mass of the Earth, $\underline{x}_{M_1}=\underline{0}$ and $\underline{x}_{M_2}=(r^*,\theta^*)$:$$\Huge\begin{align*}
+\left(\underline{e}_r\frac{\partial }{\partial r}+\underline{e}_\theta\frac{1}{r}\frac{\partial }{\partial \theta}\right)\left(\frac{M_1}{r}+\frac{M_2}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{1/2}}\right)&=0
+\end{align*}$$Since this must be identically zero, let us look at the angular and radial components separately:$$\Huge\begin{align*}
+\implies\frac{\partial }{\partial r}\left(\frac{M_1}{r}+\frac{M_2}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{1/2}}\right)&=0\\
+\implies-\frac{M_1}{r^2}-\frac{1}{2}\frac{M_2(2r-2r^*\cos(\theta-\theta^*))}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{3/2}}&=
 \end{align*}$$
