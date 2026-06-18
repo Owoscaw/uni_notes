@@ -43,5 +43,25 @@ Now let us non-dimensionalise these equations. We have units of mass, time, and 
 \underline{\rho}&=\frac{\underline{r}}{r^*}=x^*\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z\\
 \underline{\sigma}&=\frac{\underline{r}_S}{r^*}=(x^*+\pi_E)\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z\\
 \underline{\psi}&=\frac{\underline{r}_E}{r^*}=(x^*-1+\pi_E)\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z
-\end{align*}$$Where $x_i^*=x_i/r^*$. Now for time it is natural to use the period of the circular orbit, ignoring the factor of $2\pi$:$$\Huge t^*=\sqrt{\frac{{r^*}^3}{G(m_E+m_S)}}=\sqrt{\frac{{r^*}^3}{\mu}}$$Using these dimensionless quantities, we can write our vector form of the inertial acceleration as$$\Huge \underline{\ddot\rho}=\frac{d^2}{d(t/t^*)^2}\left(\frac{\underline{r}}{r^*}\right)=\frac{{t^*}^2}{r^*}\ddot r=\frac{d^2\underline{\rho}}{d\tau^2}$$where $\tau=t/t^*$. Noting that $\Omega={t^*}^{-1}$ we can therefore write:$$\Huge \underline{\ddot\rho}=(\ddot x^*-2\dot y^*-x^*)\underline{e}_x+(\ddot y^*+2\dot x^*-y^*)\underline{e}_y+\ddot z^*\underline{e}_z$$
- 
+\end{align*}$$Where $x_i^*=x_i/r^*$. Now for time it is natural to use the period of the circular orbit, ignoring the factor of $2\pi$:$$\Huge t^*=\sqrt{\frac{{r^*}^3}{G(m_E+m_S)}}=\sqrt{\frac{{r^*}^3}{\mu}}$$Using these dimensionless quantities, we can write our vector form of the inertial acceleration as$$\Huge \underline{\ddot\rho}=\frac{d^2}{d(t/t^*)^2}\left(\frac{\underline{r}}{r^*}\right)=\frac{{t^*}^2}{r^*}\ddot r=\frac{d^2\underline{\rho}}{d\tau^2}$$where $\tau=t/t^*$. Noting that $\Omega={t^*}^{-1}$ we can therefore write:$$\Huge \underline{\ddot\rho}=(\ddot x^*-2\dot y^*-x^*)\underline{e}_x+(\ddot y^*+2\dot x^*-y^*)\underline{e}_y+\ddot z^*\underline{e}_z$$Now we apply our dimensionless quantities to the original equation of motion to find that$$\Huge\underline{\ddot\rho}=-\frac{1-\pi_2}{\sigma^3}\underline{\sigma}-\frac{\pi_2}{\psi^3}\underline{\psi}$$which we write component-wise as:$$\Huge\begin{align*}
+\ddot x^*-2\dot y^*-x^*&=-\frac{1-\pi_2}{\sigma^3}(x^*+\pi_2)-\frac{\pi_2}{\psi^3}(x^*-1+\pi_2)\\
+\ddot y^*+2\dot x^*-y^*&=-\frac{1-\pi_2}{\sigma^3}y^*-\frac{\pi_2}{\psi^3}y^*\\
+\ddot z^*&=-\frac{1-\pi_2}{\sigma^3}z^*-\frac{\pi_2}{\psi^3}z^*
+\end{align*}$$
+## Finding points:
+A Lagrange point satisfies equilibrium conditions, where velocity and acceleration components vanish:$$\Huge \dot x^*=\dot y^*=\dot z^*=0,\,\,\ddot x^*=\ddot y^*=\ddot z^*=0$$This reduces the above equations of motion to$$\Huge\begin{align*}
+-x^*&=-\frac{1-\pi_2}{\sigma^3}(x^*+\pi_2)-\frac{\pi_2}{\psi^3}(x^*-1+\pi_2)\\-y^*&=-\frac{1-\pi_2}{\sigma^3}y^*-\frac{\pi_2}{\psi^3}y^*\\
+0&=\left(-\frac{1-\pi_2}{\sigma^3}-\frac{\pi_2}{\psi^3}\right)z^*
+\end{align*}$$, where the bracketed term in the last equation is clearly positive, implying $z^*=0$. We must now consider two scenarios:
+> $y^*\neq0$ gives the equilateral Lagrange points. Assuming this to be true, the second equation becomes$$\Huge 1=\frac{1-\pi_2}{\sigma^3}+\frac{\pi_2}{\psi^3}$$, which we substitute into the first equation:$$\Huge\begin{align*}
+x^*&=\left(1-\frac{\pi_2}{\psi^3}\right)(x^*+\pi_2)+\frac{\pi_2}{\psi^3}(x^*-1+\pi_2)\\
+&=x^*+\pi_2-\frac{\pi_2}{\psi^3}\\
+\implies\psi^3&=1\\
+\implies||\underline{\psi}||&=\frac{||\underline{r}_E||}{r^*}=1\implies r_E=r^*
+\end{align*}$$This further implies $\sigma^3=1$ and therefore we have $r_S=r^*$. That is, the distance from our mass to the Earth and the distance from our mass to the Sun are equal, equilateral perchance. We can solve explicitly for the coordinates of these Lagrange points:$$\Huge\begin{align*}
+\sigma^2&=||\underline{\sigma}||^2=(x^*+\pi_2)^2+(y^*)^2\\
+\psi^2&=||\underline{\psi }||^2=(x^*-1+\pi_2)^2+(y^*)^2\\
+\sigma=\psi \implies x^*&=\frac{1}{2}-\pi_2\\
+\implies y^*&=\pm\frac{\sqrt 3}{2}
+\end{align*}$$We bestow the names $L_4,L_5$ to these points respectively. Note to restore dimension, we multiply by $r$* .
+> $y^*=0$ gives the collinear Lagrange points.
