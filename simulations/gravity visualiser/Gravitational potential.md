@@ -64,4 +64,8 @@ x^*&=\left(1-\frac{\pi_2}{\psi^3}\right)(x^*+\pi_2)+\frac{\pi_2}{\psi^3}(x^*-1+\
 \sigma=\psi \implies x^*&=\frac{1}{2}-\pi_2\\
 \implies y^*&=\pm\frac{\sqrt 3}{2}
 \end{align*}$$We bestow the names $L_4,L_5$ to these points respectively. Note to restore dimension, we multiply by $r$* .
-> $y^*=0$ gives the collinear Lagrange points.
+> $y^*=0$ gives the collinear Lagrange points. Taking this branch, we are left with the equation:$$\Huge -x^*=-\frac{1-\pi_2}{\sigma^3}(x^*+\pi_2)-\frac{\pi_2}{\psi^3}(x^*-1+\pi_2)$$To find the vector magnitudes $\sigma,\psi$ we must take the square root and therefore we do not know the sign of the magnitude. From the definition of the vectors $\underline{\rho},\underline{\psi}$, and taking $y^*=0$:$$\Huge \sigma^3=|x^*+\pi_2|^3,\,\,\psi^3=|x^*-1+\pi_2|^3$$This makes our equation take form:$$\Huge 0=x^*-\frac{1-\pi_2}{|x^*+\pi_2|^3}(x^*+\pi_2)-\frac{\pi_2}{|x^*-1+\pi_2|^3}(x^*-1+\pi_2)$$This is cubic in $x^*$ and so we expect three solutions, however we cannot solve this explicitly and rely on numerical methods in this case.
+> 
+
+# Finding Collinear Lagrange points:
+
