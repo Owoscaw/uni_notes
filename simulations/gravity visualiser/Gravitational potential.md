@@ -36,4 +36,12 @@ Now we invoke Newton's second law,$$\Huge m\underline{\ddot r}=\underline{F}_E+\
 \implies\ddot x-2\Omega\dot y-\Omega^2x&=-\frac{\mu_E}{r_E^3}(x-\pi_Sr^*)-\frac{\mu_S}{r_S^3}(x+\pi_Er^*)\\
 \implies\ddot y+2\Omega\dot x-\Omega^2y&=-\frac{\mu_E}{r_E^3}y-\frac{\mu_S}{r_S^3}\\
 \implies\ddot z&=-\frac{\mu_E}{r_E^3}z-\frac{\mu_S}{r_S^3}z
-\end{align*}$$-
+\end{align*}$$
+## Non-dimensionalisation:
+
+Now let us non-dimensionalise these equations. We have units of mass, time, and length and so we use the definitions of $\pi_E,\pi_S$ and find:$$\Huge\begin{align*}
+\underline{\rho}&=\frac{\underline{r}}{r^*}=x^*\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z\\
+\underline{\sigma}&=\frac{\underline{r}_S}{r^*}=(x^*+\pi_E)\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z\\
+\underline{\psi}&=\frac{\underline{r}_E}{r^*}=(x^*-1+\pi_E)\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z
+\end{align*}$$Where $x_i^*=x_i/r^*$. Now for time it is natural to use the period of the circular orbit, ignoring the factor of $2\pi$:$$\Huge t^*=\sqrt{\frac{r^*}{G(m_E+m_S)}}=\sqrt{\frac{r^*}{\mu}}$$
+ 
