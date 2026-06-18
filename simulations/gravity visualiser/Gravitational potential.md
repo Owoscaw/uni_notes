@@ -13,6 +13,9 @@ r_1(x,y)&=||\underline{x}_{M_1}-\underline{x}_m||_{\Re^2}\\
 r_2(x,y)&=||\underline{x}_{M_2}-\underline{x}_m||_{\Re^2}
 \end{align*}$$we can write the combined potential as:$$\Huge V_T(x,y)=-G\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)$$Equipotential curves are then found by setting $V_T(x,y)=C$ constant.
 
+# Finding equipotential curves:
+
+
 # Finding Lagrange points:
 
 To find the Lagrange points of the Sun-Earth system, we must analyse the Circular Restricted Three Body Problem (CR3BP). First we define a coordinate system centered on the center of mass of the system with the $x$-axis pointing towards $m_E$, $y$-axis within the orbital plane, and $z$-axis perpendicular to the orbital plane. In this rotating reference frame, $m_E$ and $m_S$ will appear stationary.
