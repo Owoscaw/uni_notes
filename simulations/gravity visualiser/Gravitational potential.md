@@ -43,5 +43,5 @@ Now let us non-dimensionalise these equations. We have units of mass, time, and 
 \underline{\rho}&=\frac{\underline{r}}{r^*}=x^*\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z\\
 \underline{\sigma}&=\frac{\underline{r}_S}{r^*}=(x^*+\pi_E)\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z\\
 \underline{\psi}&=\frac{\underline{r}_E}{r^*}=(x^*-1+\pi_E)\underline{e}_x+y^*\underline{e}_y+z^*\underline{e}_z
-\end{align*}$$Where $x_i^*=x_i/r^*$. Now for time it is natural to use the period of the circular orbit, ignoring the factor of $2\pi$:$$\Huge t^*=\sqrt{\frac{r^*}{G(m_E+m_S)}}=\sqrt{\frac{r^*}{\mu}}$$
+\end{align*}$$Where $x_i^*=x_i/r^*$. Now for time it is natural to use the period of the circular orbit, ignoring the factor of $2\pi$:$$\Huge t^*=\sqrt{\frac{{r^*}^3}{G(m_E+m_S)}}=\sqrt{\frac{{r^*}^3}{\mu}}$$Using these dimensionless quantities, we can write our vector form of the inertial acceleration as$$\Huge \underline{\ddot\rho}=\frac{d^2}{d(t/t^*)^2}\left(\frac{\underline{r}}{r^*}\right)=\frac{{t^*}^2}{r^*}\ddot r=\frac{d^2\underline{\rho}}{d\tau^2}$$where $\tau=t/t^*$. Noting that $\Omega={t^*}^{-1}$ we can therefore write:$$\Huge \underline{\ddot\rho}=(\ddot x^*-2\dot y^*-x^*)\underline{e}_x+(\ddot y^*+2\dot x^*-y^*)\underline{e}_y+\ddot z^*\underline{e}_z$$
  
