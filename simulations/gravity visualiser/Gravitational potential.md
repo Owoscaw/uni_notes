@@ -15,19 +15,17 @@ r_2(x,y)&=||\underline{x}_{M_2}-\underline{x}_m||_{\Re^2}
 
 # Finding Lagrange points:
 
-Lagrange points occur when the force due to gravity vanishes identically. We take $m=1$ in our calculations as this will just cancel later:$$\Huge\begin{align*}
-\implies \underline{\nabla}g=\underline{\nabla} V_T&=0\\
-\implies\underline{\nabla}\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)&=0\\
-\implies\left(\underline{e}_r\frac{\partial }{\partial r}+\underline{e}_\theta\frac{1}{r}\frac{\partial }{\partial \theta}\right)\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)&=0\\
-\end{align*}$$For the Earth-Sun system, we take $M_1$ to be the mass of the sun, $M_2$ to be the mass of the Earth, $\underline{x}_{M_1}=\underline{0}$ and $\underline{x}_{M_2}=(r^*,\theta^*)$:$$\Huge\begin{align*}
-\left(\underline{e}_r\frac{\partial }{\partial r}+\underline{e}_\theta\frac{1}{r}\frac{\partial }{\partial \theta}\right)\left(\frac{M_1}{r}+\frac{M_2}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{1/2}}\right)&=0
-\end{align*}$$Since this must be identically zero, let us look at the angular and radial components separately:$$\Huge\begin{align*}
-\frac{1}{r}\frac{\partial }{\partial \theta}\left(\frac{M_1}{r}+\frac{M_2}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{1/2}}\right)&=0\\
-\implies\frac{1}{r}\left(-\frac{1}{2}\frac{M_2(2rr^*\sin(\theta-\theta^*))}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{3/2}}\right)&=0\\
-\implies\frac{M_2r^*\sin(\theta-\theta^*)}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{3/2}}&=0\\
-\implies\theta-\theta^*&=n\pi\\
-\frac{\partial }{\partial r}\left(\frac{M_1}{r}+\frac{M_2}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)^{1/2}}\right)&=0\\
-\implies-\frac{M_1}{r^2}-\frac{1}{2}\frac{M_2(2r-2r^*\cos(\theta-\theta^*))}{(r^2-2rr^*\cos(\theta-\theta^*)+{r^*}^2)}&=0\\
-\implies M_1(r^2-2rr^*\cos(n\pi)+{r^*}^2)^{3/2}+M_2r^2(r-{r^*}\cos(n\pi))&=0
-\end{align*}$$It can be shown that the left hand bracketed term reduces to $(r-r^*\cos(n\pi))^3$, so we have:$$\Huge
-\implies(r-r^*\cos(n\pi))((\sqrt{M_1}(r-r^*\cos(n\pi))^2+(\sqrt{M_2}r)^2))=0$$So we therefore get $3$ solutions for $r$ from this equation:$$\Huge r=r^*\cos(n\pi),\,\,\frac{r^*\cos(n\pi)}{1\pm\sqrt{\frac{M_2}{M_1}}}$$
+To find the Lagrange points of the Sun-Earth system, we must analyse the Circular Restricted Three Body Problem (CR3BP). First we define a coordinate system centered on the center of mass of the system with the $x$-axis pointing towards $m_E$, $y$-axis within the orbital plane, and $z$-axis perpendicular to the orbital plane. In this rotating reference frame, $m_E$ and $m_S$ will appear stationary.
+
+In this frame, $m_E$ and $m_S$ will lie along the $x$-axis and so have $y,z$ coordinates of $0$. We find these $x$ positions using the fact we defined the center of mass to be at $x=0$:$$\Huge m_Ex_E+m_Sx_S=0$$We know the distance between the masses is $r^*=x_E-x_S\implies x_E=x_S+r^*$, so we solve these equations using the dimensionless ratios:$$\Huge \pi_E=\frac{m_E}{m_E+m_S},\,\,\pi_S=\frac{m_S}{m_E+m_S}$$Noting that $\pi_E+\pi_S=1$, we can solve for $x_E,x_S$:$$\Huge x_S=-\pi_Er^*,\,\,x_E=\pi_Sr^*$$
+
+## Equations of motion:
+We must now find the equations of motion for this system with an added mass $m$. Taking the position of this mass to be$$\Huge \underline{r}=x\underline{e}_x+y\underline{e}_y+z\underline{e}_z$$we find that the position of the mass relative to each body is:$$\Huge\begin{align*}
+\underline{r}_S&=(x+\pi_Er^*)\underline{e}_x+y\underline{e}_y+z\underline{e}_z\\
+\underline{r}_E&=(x-\pi_Sr^*)\underline{e}_x+y\underline{e}_y+z\underline{e}_z
+\end{align*}$$The inertial angular velocity of our moving frame is given by$$\Huge \underline{\Omega}=\Omega\underline{e}_z,\,\,\Omega=\sqrt{\frac{G(m_E+m_S)}{{r^*}^3}}$$, since we are finding the inertial velocity of the mass we must add the rotation of the coordinate system:$$\Huge \underline{\dot r}=\underline{\Omega}\times\underline{r}+(\underline{v}_\text{COG}+\underline{v}_\text{rel})$$Here, $\underline{v}_\text{COG}$ is the absolute velocity of the center of mass, and $\underline{v}_\text{rel}$ is the velocity of the mass relative to the moving frame:$$\Huge \underline{v}_\text{rel}=\dot x\underline{e}_x+\dot y\underline{e}_y+\dot z\underline{e}_z$$The absolute acceleration of the mass can then be found:$$\Huge\begin{align*}
+\underline{\ddot r}&=\underline{a}_\text{COG}+\underline{a}_\text{rel}+\frac{\partial }{\partial t}(\underline{\Omega}\times\underline{r})\\
+&=\underline{a}_\text{COG}+\underline{a}_\text{rel}+\underline{\dot\Omega}\times\underline{r}+\underline{\Omega}\times\underline{\dot r}\\
+&=\underline{a}_\text{COG}+\underline{a}_\text{rel}+\underline{\dot \Omega}\times\underline{r}+\underline{\Omega}\times(\underline{\Omega}\times\underline{r}+\underline{v}_\text{COG}+\underline{v}_\text{rel})\\
+&=\underline{a}_\text{COG}+\underline{a}_\text{rel}
+\end{align*}$$
