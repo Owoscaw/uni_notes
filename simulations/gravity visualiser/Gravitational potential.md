@@ -13,7 +13,23 @@ r_1(x,y)&=||\underline{x}_{M_1}-\underline{x}_m||_{\Re^2}\\
 r_2(x,y)&=||\underline{x}_{M_2}-\underline{x}_m||_{\Re^2}
 \end{align*}$$we can write the combined potential as:$$\Huge V_T(x,y)=-G\left(\frac{M_1}{r_1\left(x,y\right)}+\frac{M_2}{r_2(x,y)}\right)$$Equipotential curves are then found by setting $V_T(x,y)=C$ constant.
 
-# Finding equipotential curves:
+# Finding equipotentials:
+
+The gravitational potential for our system looks like the sum of the Earth's and the Sun's potentials, shifted so that the origin rests on the center of mass of the system:
+$$\Huge V_T(x,y)=-G\left(\frac{M_1}{\sqrt{(x-r_1)^2+y^2}}+\frac{M_2}{\sqrt{(x-r_2)^2+y^2}}\right)$$Here, we assume $r_1,r_2$ are the offsets of each body from the center of mass. Setting this function equal to a constant and solving for the family of points $(x,y)$ that solve the equation will find equipotentials for a given constant. 
+
+Computationally, we have to find the potential at every point and then use an algorithm to identify equipotentials. Using the marching squares algorithm, our isovalue is simply equal to the constant we choose, so the pseudocode looks like this:
+```python
+field = [[0]*100]*100
+xVals, yVals = np.linspace(0,1,100)
+for x in xVals:
+	for y in yVals:
+		field[x][y] = V(x,y)
+
+contourVals = [0,10,20,30,40,50]
+for isoval in contourVals:
+	run_marching_squares(field, isoval)
+```
 
 
 # Finding Lagrange points:
@@ -69,6 +85,3 @@ x^*&=\left(1-\frac{\pi_2}{\psi^3}\right)(x^*+\pi_2)+\frac{\pi_2}{\psi^3}(x^*-1+\
 \end{align*}$$We bestow the names $L_4,L_5$ to these points respectively. Note to restore dimension, we multiply by $r$* .
 > $y^*=0$ gives the collinear Lagrange points. Taking this branch, we are left with the equation:$$\Huge -x^*=-\frac{1-\pi_2}{\sigma^3}(x^*+\pi_2)-\frac{\pi_2}{\psi^3}(x^*-1+\pi_2)$$To find the vector magnitudes $\sigma,\psi$ we must take the square root and therefore we do not know the sign of the magnitude. From the definition of the vectors $\underline{\rho},\underline{\psi}$, and taking $y^*=0$:$$\Huge \sigma^3=|x^*+\pi_2|^3,\,\,\psi^3=|x^*-1+\pi_2|^3$$This makes our equation take form:$$\Huge 0=x^*-\frac{1-\pi_2}{|x^*+\pi_2|^3}(x^*+\pi_2)-\frac{\pi_2}{|x^*-1+\pi_2|^3}(x^*-1+\pi_2)$$This is cubic in $x^*$ and so we expect three solutions, however we cannot solve this explicitly and rely on numerical methods in this case.
 > 
-
-# Finding Collinear Lagrange points:
-
