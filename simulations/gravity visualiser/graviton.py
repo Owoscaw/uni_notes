@@ -4,8 +4,6 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.mlab as mlab
-import matplotlib.colors as colors
-from matplotlib import ticker as tick
 
 matplotlib.rcParams['xtick.direction'] = 'out'
 matplotlib.rcParams['ytick.direction'] = 'out'
@@ -15,10 +13,10 @@ fx = np.arange(-1.0, 1.0, delta)
 fy = np.arange(-1.0, 1.0, delta)
 X, Y = np.meshgrid(fx, fy)
 
-G = 1 #6.67*10e-11
-r = 0.75
-M_S = 10 #1.99*10e30
-M_E = 1 #5.97*10e24
+G = 6.67*10e-11
+r = 1
+M_S = 1.99*10e30
+M_E = 5.97*10e24
 pi_S = M_S/(M_S + M_E)
 pi_E = M_E/(M_S + M_E)
 
@@ -30,5 +28,5 @@ def potential(x,y):
     return -G*(D_S + D_E)
 
 Z = potential(X,Y)
-CS = ax.contour(X, Y, Z, locator=tick.LogLocator(), norm=colors.LogNorm())
+CS = ax.contour(X, Y, Z, levels=500)
 plt.show()
