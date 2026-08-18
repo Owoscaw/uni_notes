@@ -4,6 +4,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.mlab as mlab
+import matplotlib.colors as colors
+from matplotlib import ticker as tick
 
 matplotlib.rcParams['xtick.direction'] = 'out'
 matplotlib.rcParams['ytick.direction'] = 'out'
@@ -28,5 +30,5 @@ def potential(x,y):
     return -G*(D_S + D_E)
 
 Z = potential(X,Y)
-CS = ax.contour(X, Y, Z, [-n*10 for n in range(0,10)].reverse())
+CS = ax.contour(X, Y, Z, locator=tick.LogLocator(), norm=colors.LogNorm())
 plt.show()
