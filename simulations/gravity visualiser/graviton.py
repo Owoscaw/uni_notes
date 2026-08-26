@@ -4,26 +4,28 @@ import matplotlib.pyplot as plt
 # 1. Astrophysical Constants
 G = 6.67430e-11        # Gravitational constant (m^3 kg^-1 s^-2)
 M_sun = 1.989e30       # Mass of the Sun (kg)
-M_earth = 5.972e24     # Mass of the Earth (kg)
 D = 1.496e11           # Sun-Earth distance (1 AU in meters)
+scale = 1.5
+M_ratio = 0.5
+M_earth = M_sun*M_ratio
 
 # 2. Build an Asymmetric Coordinate Grid
 # We blend a coarse global grid with a dense local grid around the Earth
-x_global = np.linspace(-1.1 * D, 1.1 * D, 300)
-y_global = np.linspace(-1.1 * D, 1.1 * D, 300)
+x_global = np.linspace(-scale * D, scale * D, 300)
+y_global = np.linspace(-scale * D, scale * D, 300)
 
 # Dense patch centered on the Earth to resolve its small well
 x_earth_patch = np.linspace(0.95 * D, 1.05 * D, 200)
 y_earth_patch = np.linspace(-0.05 * D, 0.05 * D, 200)
 
 # Combine and sort to make a continuous, non-uniform grid
-x_coords = np.unique(np.concatenate([x_global, x_earth_patch]))
+x_coords = np.unique(np.concatenate([x_global, x_earth_patch])) + D/(1 + M_ratio)
 y_coords = np.unique(np.concatenate([y_global, y_earth_patch]))
 X, Y = np.meshgrid(x_coords, y_coords)
 
 # 3. Calculate Potential Fields
 # Distances from the center of the Sun (0, 0) and Earth (D, 0)
-r_sun = np.sqrt(X**2 + Y**2)
+r_sun = np.sqrt((X + D/(1 + M_ratio))**2 + Y**2)
 r_earth = np.sqrt((X - D)**2 + Y**2)
 
 # Prevent division-by-zero errors at core centers by clipping minimum radius
