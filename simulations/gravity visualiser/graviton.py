@@ -10,7 +10,7 @@ matplotlib.rcParams['xtick.direction'] = 'out'
 matplotlib.rcParams['ytick.direction'] = 'out'
 
 delta = 0.01
-G = 6.67*10e-11
+G = 1 #6.67*10e-11
 r = 1
 M_S = 1.99*10e30
 M_E = 5.97*10e24
