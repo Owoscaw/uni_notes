@@ -31,7 +31,7 @@ L_5 = scale * np.array([0.5 - pi_E, -np.sqrt(3)/2])
 def colinear_cubic(x): 
     return x - (1 - pi_E)/np.abs(x + pi_E)**3 * (x + pi_E) - pi_E/np.abs(x - 1 + pi_E)**3 * (x - 1 + pi_E)
 
-L_1, L_2, L_3 = [[i + pi_S, 0] for i in scale * scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
+L_1, L_2, L_3 = [[i, 0] for i in scale * scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
 
 # Mark Lagrange points
 zero_potentials = np.array((L_1, L_2, L_3, L_4, L_5))
@@ -39,8 +39,8 @@ for i in range(len(zero_potentials)):
     plt.plot(zero_potentials[i][0], zero_potentials[i][1], "o", color="red", markersize=5, label="L{}".format(i + 1))
 
 # Mark the celestial bodies
-plt.plot(x_S, 0, 'o', color="orange", markersize=20, label="Sun")
-plt.plot(x_E, 0, 'o', color="royalblue", markersize=10, label="Earth")
+plt.plot(-scale * pi_E, 0, 'o', color="orange", markersize=20, label="Sun")
+plt.plot(scale * pi_S, 0, 'o', color="royalblue", markersize=10, label="Earth")
 
 plt.legend()
 plt.show()
