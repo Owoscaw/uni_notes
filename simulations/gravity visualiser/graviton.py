@@ -18,29 +18,60 @@ pi_S = M_S/(M_E + M_S)
 x_S = -pi_E * R
 x_E = pi_S * R
 
-# Creating low LOD meshgrid
-low_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, LOD)
-low_y = scale * np.linspace(-1.0, 1.0, LOD)
-low_X, low_Y = np.meshgrid(low_x, low_y)
 
-# Finding equilateral points
-L_4 = scale * np.array([0.5 - pi_E, np.sqrt(3)/2])
-L_5 = scale * np.array([0.5 - pi_E, -np.sqrt(3)/2])
 
-# Finding colinear points
+# Defining minimisation function 
 def colinear_cubic(x): 
     return x - (1 - pi_E)/np.abs(x + pi_E)**3 * (x + pi_E) - pi_E/np.abs(x - 1 + pi_E)**3 * (x - 1 + pi_E)
 
-L_1, L_2, L_3 = [[i, 0] for i in scale * scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
 
-# Mark Lagrange points
-zero_potentials = np.array((L_1, L_2, L_3, L_4, L_5))
-for i in range(len(zero_potentials)):
-    plt.plot(zero_potentials[i][0], zero_potentials[i][1], "o", color="red", markersize=5, label="L{}".format(i + 1))
 
-# Mark the celestial bodies
-plt.plot(-scale * pi_E, 0, 'o', color="orange", markersize=20, label="Sun")
-plt.plot(scale * pi_S, 0, 'o', color="royalblue", markersize=10, label="Earth")
+# Creating sample patches
+def create_sample(LOD):
 
-plt.legend()
+    # Creating low LOD meshgrid
+    low_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, LOD)
+    low_y = scale * np.linspace(-1.0, 1.0, LOD)
+    low_X, low_Y = np.meshgrid(low_x, low_y)
+
+    # Creating high LOD patches
+    low_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, 5 * LOD)
+    low_y = scale * np.linspace(-1.0, 1.0, 5 * LOD)
+    low_X, low_Y = np.meshgrid(low_x, low_y)
+    L_points = plot_Lagrange()
+
+
+
+# Finding and plotting Lagrange points
+def plot_Lagrange():
+
+    fig, ax = plt.subplots()
+
+    # Finding equilateral points
+    L_4 = scale * np.array([0.5 - pi_E, np.sqrt(3)/2])
+    L_5 = scale * np.array([0.5 - pi_E, -np.sqrt(3)/2])
+
+    # Finding colinear points
+    L_1, L_2, L_3 = [[i, 0] for i in scale * scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
+
+    # Mark Lagrange points
+    zero_potentials = np.array((L_1, L_2, L_3, L_4, L_5))
+    for i in range(len(zero_potentials)):
+        plt.plot(zero_potentials[i][0], zero_potentials[i][1], "H", color="slategray", markersize=5)
+        plt.text(zero_potentials[i][0], zero_potentials[i][1], r'$\mathcal{}_{}$'.format("{L}", i), c="orangered", size="large")
+
+    # Mark the celestial bodies
+    plt.plot(-scale * pi_E, 0, 'o', color="orange", markersize=20, label="Sun")
+    plt.plot(scale * pi_S, 0, 'o', color="royalblue", markersize=10, label="Earth")
+
+    # Adding fancy stuff
+    ax.add_patch(plt.Circle([0, 0], scale, alpha=0.7, color="slateGray", fill=False, linestyle=":"))
+    ax.set_aspect("equal")
+
+    plt.legend()
+
+    return zero_potentials
+
+temp = plot_Lagrange()
 plt.show()
+
