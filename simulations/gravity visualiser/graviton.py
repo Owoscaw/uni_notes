@@ -5,7 +5,7 @@ import matplotlib.colors as colors
 import scipy
 
 M_ratio = 0.01
-step = 0.001
+step = 0.005
 scale = 1.5
 
 # Astrophysical Constants
@@ -33,7 +33,7 @@ def colinear_cubic(x):
 def create_sample(points, fine_step, coarse_step, size):
 
     # Creating high LOD grid
-    x_f = np.arange(-size/2, size/2 + fine_step, fine_step)
+    x_f = np.arange(-size/2, size/2 + fine_step, fine_step) + pi_E
     y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
     X, Y = np.meshgrid(x_f, y_f)
 
@@ -45,9 +45,17 @@ def create_sample(points, fine_step, coarse_step, size):
 
     for dx, dy in points:
         D = np.sqrt((X - dx)**2 + (Y - dy)**2)
-        mask[D <= scale * M_ratio] = False
+        mask[D <= scale*0.25] = False
 
-    return np.ma.array(X, mask=mask), np.ma.array(Y, mask=mask)
+    valid_x = X[~mask]
+    valid_y = Y[~mask]
+
+    is_fine_node = ~mask & ~(is_coarse_x & is_coarse_y)
+    is_coarse_node = ~mask & (is_coarse_x & is_coarse_y)
+
+    print("fine samples: {}\ncoarse samples: {}".format(np.sum(is_fine_node), np.sum(is_coarse_node)))
+
+    return X, Y, mask, (is_coarse_x & is_coarse_y)
 
 
 
@@ -55,11 +63,11 @@ def create_sample(points, fine_step, coarse_step, size):
 def plot_Lagrange():
 
     # Finding equilateral points
-    L_4 = scale * np.array([0.5 - pi_E, np.sqrt(3)/2])
-    L_5 = scale * np.array([0.5 - pi_E, -np.sqrt(3)/2])
+    L_4 = np.array([0.5 - pi_E, np.sqrt(3)/2])
+    L_5 = np.array([0.5 - pi_E, -np.sqrt(3)/2])
 
     # Finding colinear points
-    L_1, L_2, L_3 = [[i, 0] for i in scale * scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
+    L_1, L_2, L_3 = [[i, 0] for i in scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
 
     # Mark Lagrange points
     zero_potentials = np.array((L_1, L_2, L_3, L_4, L_5))
@@ -68,11 +76,11 @@ def plot_Lagrange():
         plt.text(zero_potentials[i][0], zero_potentials[i][1], r'$\mathcal{}_{}$'.format("{L}", i), c="orangered", size="large")
 
     # Mark the celestial bodies
-    plt.plot(-scale * pi_E, 0, 'o', color="orange", markersize=20, label="Sun")
-    plt.plot(scale * pi_S, 0, 'o', color="royalblue", markersize=10, label="Earth")
+    plt.plot(-pi_E, 0, 'o', color="orange", markersize=20, label="Sun")
+    plt.plot(pi_S, 0, 'o', color="royalblue", markersize=10, label="Earth")
 
     # Adding fancy stuff
-    ax.add_patch(plt.Circle([0, 0], scale, alpha=0.7, color="slateGray", fill=False, linestyle=":"))
+    ax.add_patch(plt.Circle([0, 0], 1, alpha=0.7, color="slateGray", fill=False, linestyle=":"))
     ax.set_aspect("equal")
 
     plt.legend()
@@ -89,15 +97,18 @@ def potential(X, Y):
 
 # Plotting scalar potential
 def plot_scalar_potential(X, Y):
-    Z = potential(X, Y)
+    Z = potential(X, Y) * 10e-6 # Converting to MJ
 
-    cf = ax.contourf(X, Y, Z, levels=35, norm=colors.SymLogNorm(linthresh=1e8, base=10), cmap="bwr")
-    fig.colorbar(cf, ax=ax)
+    levels = np.logspace(np.min(Z), np.max(Z), 20)[:0]
 
+    cf = ax.contourf(X, Y, Z, levels=levels, cmap="bwr")
+    #fig.colorbar(cf, ax=ax)
     return None
 
 
-X_m, Y_m = create_sample(plot_Lagrange(), scale * step, 5 * scale * step, 2.0 * scale)
+X_m, Y_m, mask, coarse_mask = create_sample(plot_Lagrange(), scale * step, 5 * scale * step, 2.0 * scale)
+#plt.scatter(X_m[~mask & ~coarse_mask], Y_m[~mask & ~coarse_mask], color="cyan")
+#plt.scatter(X_m[~mask & coarse_mask], Y_m[~mask & coarse_mask], color="red", alpha=0.2)
 plot_scalar_potential(X_m, Y_m)
 plt.show()
 
