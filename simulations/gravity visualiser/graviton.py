@@ -36,13 +36,8 @@ def create_sample(LOD):
     coarse_pts = np.vstack([low_X.ravel(), low_Y.ravel()]).T
     pos_coarse = np.ones(len(coarse_pts), dtype=bool)
 
-    # Creating high LOD patches
-    high_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, 5 * LOD)
-    high_y = scale * np.linspace(-1.0, 1.0, 5 * LOD)
-    high_X, high_Y = np.meshgrid(high_x, high_y)
-    L_points = plot_Lagrange()
-
     # Filtering coarse mesh and generating fine points
+    L_points = plot_Lagrange()
     filtered_fine = []
     for dx, dy in L_points:
         D_c = np.sqrt((coarse_pts[:, 0] - dx)**2 + (coarse_pts[:, 1] - dy)**2)
@@ -92,10 +87,19 @@ def plot_Lagrange():
     return zero_potentials
 
 
+# Defining grav potential
+def potential(X, Y):
+    D_S = np.sqrt((X - x_S)**2 + Y**2)
+    D_E = np.sqrt((X - x_E)**2 + Y**2)
+
+    return -G*(M_S/D_S + M_E/D_E)
 
 # Plotting scalar potential
 def plot_scalar_potential(mesh):
-
+    print(mesh)
+    X = mesh[0]
+    Y = mesh[1]
+    plt.contour(X, Y, potential(R * X, R * Y))
     return None
 
 temp = plot_scalar_potential(create_sample(LOD))
