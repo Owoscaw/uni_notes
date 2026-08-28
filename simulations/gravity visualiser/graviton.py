@@ -12,6 +12,7 @@ G = 6.67430e-11        # Gravitational constant (m^3 kg^-1 s^-2)
 M_S = 1.989e30         # Mass of the Sun (kg)
 M_E = M_ratio * M_S    # Mass of the Earth (kg)
 R = 1.496e11           # Sun-Earth distance (m)
+R_E = 63719990         # Earth radius (m)
 
 # Non-dimensionalisation
 pi_E = M_E/(M_E + M_S)
@@ -80,12 +81,24 @@ def create_mask(points, fine_step, coarse_step, size):
 
 # Defining grav potential
 def find_potential(X, Y):
-
-    V = np.zeros(X.shape)
+    # Sun distance component (Point mass model remains fine on this scale)
     D_S = np.sqrt((R * X - x_S)**2 + (R * Y)**2) + step
-    D_E = np.sqrt((R * X - x_E)**2 + (R * Y)**2) + step
-    V -= G*(M_S/D_S + M_E/D_E)
-
+    V_Sun = -G * M_S / D_S
+    
+    # Earth distance component (Dimensionless spatial units)
+    D_E_nd = np.sqrt((X - pi_S)**2 + Y**2)
+    
+    # FIX: Piecewise evaluation inside/outside the Earth's solid bulk radius boundary
+    # Solid sphere potential model prevents infinity near the center core coordinates
+    V_Earth_ext = -G * M_E / (R * D_E_nd + step)
+    V_Earth_int = -G * M_E / (2 * R_E * (3 - (D_E_nd * R / R_E)**2))
+    
+    # Apply interior vs exterior mask arrays
+    is_inside_earth = D_E_nd < R_E / R
+    V_Earth = np.where(is_inside_earth, V_Earth_int, V_Earth_ext)
+    
+    # Combine fields and scale to match your framework dimensions
+    V = (V_Sun + V_Earth) * 10e-6
     return V
 
 # Plotting scalar potential
@@ -97,8 +110,9 @@ def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
     Y = Y_m.data[:, 0]
     Z_blended = find_potential(X_m.data, Y_m.data)
 
-    vmin = find_potential(Lpts[3][0], Lpts[3][1])
-    lower, upper = vmin*1.14, vmin * 0.85
+    vmin = find_potential(Lpts[0][0], Lpts[0][1])
+    print(vmin)
+    lower, upper = vmin * 1.5, vmin * 0.7
 
     levels = np.unique(np.sort(np.linspace(lower, upper, 40)))
     contours = plt.contour(X, Y, Z_blended, levels=levels, colors=["black", "dimgray", "darkgray"], alpha=0.7, linewidths=0.6)
