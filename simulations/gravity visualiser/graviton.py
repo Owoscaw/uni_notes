@@ -19,6 +19,7 @@ pi_E = M_E/(M_E + M_S)
 pi_S = M_S/(M_E + M_S)
 x_S = -pi_E * R
 x_E = pi_S * R
+omega = np.sqrt(G * (M_S + M_E) / R**3)
 
 
 fig, ax = plt.subplots()
@@ -82,16 +83,12 @@ def create_mask(points, fine_step, coarse_step, size):
 
 def find_potential(X, Y):
     D_S = np.sqrt((R * X - x_S)**2 + (R * Y)**2) + step
-    V_Sun = -G * M_S / D_S
-    
-    D_E_nd = np.sqrt((X - pi_S)**2 + Y**2)
-    V_Earth_ext = -G * M_E / (R * D_E_nd + step)
-    V_Earth_int = -G * M_E / (2 * R_E) * (3 - (D_E_nd * R / R_E)**2)
-    
-    is_inside_earth = D_E_nd < R_E / R
-    V_Earth = np.where(is_inside_earth, V_Earth_int, V_Earth_ext)
-    
-    return (V_Sun + V_Earth) * 10e-6
+    D_E = np.sqrt((R * X - x_E)**2 + (R * Y)**2)
+
+    V_grav = -G * (M_S/D_S + M_E/D_E)
+    V_cent = -0.5 * (omega**2) * ((R * X)**2 + (R * Y)**2)
+
+    return (V_grav + V_cent) * 10e-6
 
 # Plotting scalar potential
 def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
@@ -102,12 +99,13 @@ def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
     Y = Y_m.data[:, 0]
     Z_blended = find_potential(X_m.data, Y_m.data)
 
-    v_saddle = find_potential(np.array(Lpts[0][0]), np.array([0.0]))
-    lower, upper = v_saddle * 1.08, v_saddle * 0.94
+    v_saddle = find_potential(np.array([i[0] for i in Lpts]), np.array([i[1] for i in Lpts]))
+    lower, upper = min(v_saddle) * 1.08, max(v_saddle) * 0.94
 
     levels = np.unique(np.sort(np.linspace(lower, upper, 50)))
-    contours = plt.contour(X, Y, Z_blended, levels=levels, colors=["black", "dimgray", "darkgray"], alpha=0.7, linewidths=0.6)
-    cbar = plt.colorbar(contours, label="Gravitational potential")
+    #contours = plt.contour(X, Y, Z_blended, levels=levels, colors=["black", "dimgray", "darkgray"], alpha=0.7, linewidths=0.6)
+    contours = plt.contourf(X, Y, Z_blended, levels=levels, cmap="plasma", alpha=0.7, linewidths=0.6)
+    plt.colorbar(contours, label="Gravitational potential")
 
     return None
 
