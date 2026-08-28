@@ -33,13 +33,32 @@ def create_sample(LOD):
     low_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, LOD)
     low_y = scale * np.linspace(-1.0, 1.0, LOD)
     low_X, low_Y = np.meshgrid(low_x, low_y)
+    coarse_pts = np.vstack([low_X.ravel(), low_Y.ravel()]).T
+    pos_coarse = np.ones(len(coarse_pts), dtype=bool)
 
     # Creating high LOD patches
-    low_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, 5 * LOD)
-    low_y = scale * np.linspace(-1.0, 1.0, 5 * LOD)
-    low_X, low_Y = np.meshgrid(low_x, low_y)
+    high_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, 5 * LOD)
+    high_y = scale * np.linspace(-1.0, 1.0, 5 * LOD)
+    high_X, high_Y = np.meshgrid(high_x, high_y)
     L_points = plot_Lagrange()
 
+    # Filtering coarse mesh and generating fine points
+    filtered_fine = []
+    for dx, dy in L_points:
+        D_c = np.sqrt((coarse_pts[:, 0] - dx)**2 + (coarse_pts[:, 1] - dy)**2)
+        pos_coarse &= (D_c > scale * M_ratio)
+
+        x_bb = np.arange(dx - scale * M_ratio, dx + scale * M_ratio + 5 * LOD, 5 * LOD)
+        y_bb = np.arange(dy - scale * M_ratio, dy + scale * M_ratio + 5 * LOD, 5 * LOD)
+        X_bb, Y_bb = np.meshgrid(x_bb, y_bb)
+        pos_fine = np.vstack([X_bb.ravel(), Y_bb.ravel()]).T
+        D_f = np.sqrt((pos_fine[:, 0] - dx)**2 + (pos_fine[:, 1] - dy)**2)
+        square_clip = (pos_fine[:, 0] >= -scale * M_ratio) & (pos_fine[:, 0] <= scale * M_ratio) & (pos_fine[:, 1] >= -scale * M_ratio) & (pos_fine[:, 1] <= scale * M_ratio)
+        filtered_fine.append(pos_fine[(D_f <= scale * M_ratio) & square_clip])
+
+    filtered_coarse = coarse_pts[pos_coarse]
+
+    return np.vstack([filtered_coarse] + filtered_fine)
 
 
 # Finding and plotting Lagrange points
@@ -72,6 +91,14 @@ def plot_Lagrange():
 
     return zero_potentials
 
-temp = plot_Lagrange()
+
+
+# Plotting scalar potential
+def plot_scalar_potential(mesh):
+
+    return None
+
+temp = plot_scalar_potential(create_sample(LOD))
+#temp = plot_Lagrange()
 plt.show()
 
