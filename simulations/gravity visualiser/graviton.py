@@ -1,8 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.ticker as tick
 import matplotlib.colors as colors
-import scipy
+from scipy import optimize
 
 M_ratio = 0.01
 step = 0.005
@@ -36,7 +35,7 @@ def plot_Lagrange():
     L_5 = np.array([0.5 - pi_E, -np.sqrt(3)/2])
 
     # Finding colinear points
-    L_1, L_2, L_3 = [[i, 0] for i in scipy.optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
+    L_1, L_2, L_3 = [[i, 0] for i in optimize.newton(colinear_cubic, [-1.0, 0, 1.0])]
 
     # Mark Lagrange points
     zero_potentials = np.array((L_1, L_2, L_3, L_4, L_5))
@@ -54,6 +53,30 @@ def plot_Lagrange():
 
     return zero_potentials
 
+# Creating sample patches
+def create_mask(points, fine_step, coarse_step, size):
+    # Creating high LOD grid
+    x_f = np.arange(-size/2, size/2 + fine_step, fine_step) + pi_E
+    y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
+    X, Y = np.meshgrid(x_f, y_f)
+
+    # Filtering coarse mesh and generating fine points
+    mask = np.ones(X.shape, dtype=bool)
+    is_coarse_x = np.isclose(np.mod(X - pi_E, coarse_step), 0, atol=fine_step/2) | \
+                  np.isclose(np.mod(X - pi_E, coarse_step), coarse_step, atol=fine_step/2)
+    is_coarse_y = np.isclose(np.mod(Y, coarse_step), 0, atol=fine_step/2) | \
+                  np.isclose(np.mod(Y, coarse_step), coarse_step, atol=fine_step/2)
+    mask[is_coarse_x & is_coarse_y] = False
+
+    for dx, dy in points:
+        D = np.sqrt((X - dx)**2 + (Y - dy)**2)
+        mask[D <= scale * 0.25] = False
+
+    is_fine_node = ~mask & ~(is_coarse_x & is_coarse_y)
+    is_coarse_node = ~mask & (is_coarse_x & is_coarse_y)
+    print("fine samples: {}\ncoarse samples: {}".format(np.sum(is_fine_node), np.sum(is_coarse_node)))
+
+    return np.ma.array(X, mask=mask), np.ma.array(Y, mask=mask)
 
 # Defining grav potential
 def find_potential(X, Y):
@@ -69,38 +92,19 @@ def find_potential(X, Y):
 def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
 
     Lpts = plot_Lagrange()
-
-    # Coarse mesh
-    x_c = np.arange(-size/2, size/2 + coarse_step, coarse_step) + pi_E
-    y_c = np.arange(-size/2, size/2 + coarse_step, coarse_step)
-    X_c, Y_c = np.meshgrid(x_c, y_c)
-    Z_c = -find_potential(X_c, Y_c) # Invert sign for LogNorm
-
-    # Fine mesh
-    x_f = np.arange(-size/2, size/2 + fine_step, fine_step) + pi_E
-    y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
-    X_f, Y_f = np.meshgrid(x_f, y_f)
-
-    fine_mask = np.ones(X_f.shape, dtype=bool)
-    for dx, dy in Lpts:
-        D = np.sqrt((X_f - dx)**2 + (Y_f - dy)**2)
-        fine_mask[D <= scale * 0.25] = False
-
-    Z_f_raw = -find_potential(X_f, Y_f)
-    Z_f_masked = np.ma.array(Z_f_raw, mask=fine_mask)
-
-    # Spacing contours
-    vmin = min(Z_c.min(), Z_f_masked.compressed().min())
-    vmax = max(Z_c.max(), Z_f_masked.compressed().max())
-    log_norm = colors.LogNorm(vmin=vmin, vmax=vmax)
-
-    # Render coarse potential
-    plt.pcolormesh(X_c, Y_c, Z_c, norm=log_norm, cmap="viridis_r", shading='auto', alpha=0.4)
+    X_m, Y_m = create_mask(Lpts, fine_step, coarse_step, size)
+    X = X_m.data[0, :]
+    Y = Y_m.data[:, 0]
+    Z_blended = find_potential(X_m.data, Y_m.data)
+    norm = colors.SymLogNorm(linthresh=1e-6, linscale=1.0,
+                             vmin=Z_blended.min(), vmax=Z_blended.max(), base=10)
     
-    # Render fine potential
-    pcm = plt.pcolormesh(X_f, Y_f, Z_f_masked, norm=log_norm, cmap="viridis_r", shading='auto', alpha=0.9)
-    
-    cbar = plt.colorbar(pcm, label='Potential Magnitude $|V|$ (Log Scale)')
+    bias = np.linspace(0, 1, 50) ** 2.5
+    bias_space = Z_blended.max() + bias * (Z_blended.min() + Z_blended.max())
+    levels = np.unique(np.sort(bias_space))
+    cf = plt.contourf(X, Y, Z_blended, levels=levels, norm=norm, cmap="viridis", alpha=0.7)
+    cbar = plt.colorbar(cf, label="Gravitational potential")
+    contours = plt.contour(X, Y, Z_blended, levels=levels, colors="white", alpha=0.7)
 
     return None
 
