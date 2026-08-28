@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import scipy
 
 M_ratio = 0.01
-LOD = 500
+step = 0.01
 scale = 1.5
 
 # Astrophysical Constants
@@ -27,33 +27,25 @@ def colinear_cubic(x):
 
 
 # Creating sample patches
-def create_sample(LOD):
+def create_sample(points, fine_step, coarse_step, size):
 
-    # Creating low LOD meshgrid
-    low_x = scale * np.linspace(-(1.0 + pi_E), 1.0 - pi_S, LOD)
-    low_y = scale * np.linspace(-1.0, 1.0, LOD)
-    low_X, low_Y = np.meshgrid(low_x, low_y)
-    coarse_pts = np.vstack([low_X.ravel(), low_Y.ravel()]).T
-    pos_coarse = np.ones(len(coarse_pts), dtype=bool)
+    # Creating high LOD grid
+    x_f = np.arange(-size/2, size/2 + fine_step, fine_step)
+    y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
+    X, Y = np.meshgrid(x_f, y_f)
 
     # Filtering coarse mesh and generating fine points
-    L_points = plot_Lagrange()
-    filtered_fine = []
-    for dx, dy in L_points:
-        D_c = np.sqrt((coarse_pts[:, 0] - dx)**2 + (coarse_pts[:, 1] - dy)**2)
-        pos_coarse &= (D_c > scale * M_ratio)
+    mask = np.ones(X.shape, dtype=bool)
+    is_coarse_x = np.isclose(np.mod(X + size/2, coarse_step), 0, atol=fine_step/2)
+    is_coarse_y = np.isclose(np.mod(Y + size/2, coarse_step), 0, atol=fine_step/2)
+    mask[is_coarse_x & is_coarse_y] = False
 
-        x_bb = np.arange(dx - scale * M_ratio, dx + scale * M_ratio + 5 * LOD, 5 * LOD)
-        y_bb = np.arange(dy - scale * M_ratio, dy + scale * M_ratio + 5 * LOD, 5 * LOD)
-        X_bb, Y_bb = np.meshgrid(x_bb, y_bb)
-        pos_fine = np.vstack([X_bb.ravel(), Y_bb.ravel()]).T
-        D_f = np.sqrt((pos_fine[:, 0] - dx)**2 + (pos_fine[:, 1] - dy)**2)
-        square_clip = (pos_fine[:, 0] >= -scale * M_ratio) & (pos_fine[:, 0] <= scale * M_ratio) & (pos_fine[:, 1] >= -scale * M_ratio) & (pos_fine[:, 1] <= scale * M_ratio)
-        filtered_fine.append(pos_fine[(D_f <= scale * M_ratio) & square_clip])
+    for dx, dy in points:
+        D = np.sqrt((X - dx)**2 + (Y - dy)**2)
+        mask[D <= scale * M_ratio] = False
 
-    filtered_coarse = coarse_pts[pos_coarse]
+    return np.ma.array(X, mask=mask), np.ma.array(Y, mask=mask)
 
-    return np.vstack([filtered_coarse] + filtered_fine)
 
 
 # Finding and plotting Lagrange points
@@ -95,14 +87,13 @@ def potential(X, Y):
     return -G*(M_S/D_S + M_E/D_E)
 
 # Plotting scalar potential
-def plot_scalar_potential(mesh):
-    print(mesh)
-    X = mesh[0]
-    Y = mesh[1]
-    plt.contour(X, Y, potential(R * X, R * Y))
+def plot_scalar_potential(X, Y):
+    Z = potential(X, Y) * 10e-6 # Converting to MJ
+    print(np.max(Z))
     return None
 
-temp = plot_scalar_potential(create_sample(LOD))
-#temp = plot_Lagrange()
+
+X_m, Y_m = create_sample(plot_Lagrange(), scale * step, 5 * scale * step, 2.0)
+plot_scalar_potential(R * X_m, R * Y_m)
 plt.show()
 
