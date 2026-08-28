@@ -28,29 +28,6 @@ def colinear_cubic(x):
     return x - (1 - pi_E)/np.abs(x + pi_E)**3 * (x + pi_E) - pi_E/np.abs(x - 1 + pi_E)**3 * (x - 1 + pi_E)
 
 
-
-# Creating sample patches
-def create_mask(X, Y, points, fine_step, coarse_step, size):
-
-    # Filtering coarse mesh and generating fine points
-    mask = np.ones(X.shape, dtype=bool)
-    is_coarse_x = np.isclose(np.mod(X - pi_E + size/2, coarse_step), 0, atol=fine_step/2)
-    is_coarse_y = np.isclose(np.mod(Y + size/2, coarse_step), 0, atol=fine_step/2)
-    mask[is_coarse_x & is_coarse_y] = False
-
-    for dx, dy in points:
-        D = np.sqrt((X - dx)**2 + (Y - dy)**2)
-        mask[D <= scale*0.25] = False
-
-    is_fine_node = ~mask & ~(is_coarse_x & is_coarse_y)
-    is_coarse_node = ~mask & (is_coarse_x & is_coarse_y)
-
-    print("fine samples: {}\ncoarse samples: {}".format(np.sum(is_fine_node), np.sum(is_coarse_node)))
-
-    return np.ma.array(X, mask=mask), np.ma.array(Y, mask=mask)
-
-
-
 # Finding and plotting Lagrange points
 def plot_Lagrange():
 
@@ -68,14 +45,12 @@ def plot_Lagrange():
         plt.text(zero_potentials[i][0], zero_potentials[i][1], r'$\mathcal{}_{}$'.format("{L}", i), c="orangered", size="large")
 
     # Mark the celestial bodies
-    plt.plot(-pi_E, 0, 'o', color="orange", markersize=20, label="Sun")
+    plt.plot(-pi_E, 0, 'o', color="orange", markersize=10, label="Sun")
     plt.plot(pi_S, 0, 'o', color="royalblue", markersize=10, label="Earth")
 
     # Adding fancy stuff
     ax.add_patch(plt.Circle([0, 0], 1, alpha=0.7, color="slateGray", fill=False, linestyle=":"))
     ax.set_aspect("equal")
-
-    plt.legend()
 
     return zero_potentials
 
@@ -86,30 +61,46 @@ def find_potential(X, Y):
     V = np.zeros(X.shape)
     D_S = np.sqrt((R * X - x_S)**2 + (R * Y)**2) + step
     D_E = np.sqrt((R * X - x_E)**2 + (R * Y)**2) + step
-    V -= G*(M_S/D_S + M_E/D_E) * 10e-6
+    V -= G*(M_S/D_S + M_E/D_E)
 
     return V
 
 # Plotting scalar potential
 def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
 
-    # Generating base grid
+    Lpts = plot_Lagrange()
+
+    # Coarse mesh
+    x_c = np.arange(-size/2, size/2 + coarse_step, coarse_step) + pi_E
+    y_c = np.arange(-size/2, size/2 + coarse_step, coarse_step)
+    X_c, Y_c = np.meshgrid(x_c, y_c)
+    Z_c = -find_potential(X_c, Y_c) # Invert sign for LogNorm
+
+    # Fine mesh
     x_f = np.arange(-size/2, size/2 + fine_step, fine_step) + pi_E
     y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
-    X, Y = np.meshgrid(x_f, y_f)
+    X_f, Y_f = np.meshgrid(x_f, y_f)
 
-    # Generating potential mask
-    X_m, Y_m = create_mask(X, Y, plot_Lagrange(), fine_step, coarse_step, size)
-    Z_raw = find_potential(X_m.data, Y_m.data)
-    Z_masked = np.ma.array(Z_raw, mask=X_m.mask)
+    fine_mask = np.ones(X_f.shape, dtype=bool)
+    for dx, dy in Lpts:
+        D = np.sqrt((X_f - dx)**2 + (Y_f - dy)**2)
+        fine_mask[D <= scale * 0.25] = False
+
+    Z_f_raw = -find_potential(X_f, Y_f)
+    Z_f_masked = np.ma.array(Z_f_raw, mask=fine_mask)
 
     # Spacing contours
-    levels = np.sort(-np.logspace(np.log10(-Z_masked.max() + 0.1), np.log10(-Z_masked.min()), num=20))
+    vmin = min(Z_c.min(), Z_f_masked.compressed().min())
+    vmax = max(Z_c.max(), Z_f_masked.compressed().max())
+    log_norm = colors.LogNorm(vmin=vmin, vmax=vmax)
 
-    # Plotting contour
-    cf = plt.tricontourf(X_m.data, Y_m.data, Z_masked, levels=levels, alpha=0.2)
-    cbar = plt.colorbar(cf, label='Gravitational Potential Field')
-
+    # Render coarse potential
+    plt.pcolormesh(X_c, Y_c, Z_c, norm=log_norm, cmap="viridis_r", shading='auto', alpha=0.4)
+    
+    # Render fine potential
+    pcm = plt.pcolormesh(X_f, Y_f, Z_f_masked, norm=log_norm, cmap="viridis_r", shading='auto', alpha=0.9)
+    
+    cbar = plt.colorbar(pcm, label='Potential Magnitude $|V|$ (Log Scale)')
 
     return None
 
