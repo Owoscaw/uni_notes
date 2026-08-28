@@ -34,7 +34,7 @@ def create_mask(X, Y, points, fine_step, coarse_step, size):
 
     # Filtering coarse mesh and generating fine points
     mask = np.ones(X.shape, dtype=bool)
-    is_coarse_x = np.isclose(np.mod(X + size/2, coarse_step), 0, atol=fine_step/2)
+    is_coarse_x = np.isclose(np.mod(X - pi_E + size/2, coarse_step), 0, atol=fine_step/2)
     is_coarse_y = np.isclose(np.mod(Y + size/2, coarse_step), 0, atol=fine_step/2)
     mask[is_coarse_x & is_coarse_y] = False
 
@@ -47,7 +47,7 @@ def create_mask(X, Y, points, fine_step, coarse_step, size):
 
     print("fine samples: {}\ncoarse samples: {}".format(np.sum(is_fine_node), np.sum(is_coarse_node)))
 
-    return mask
+    return np.ma.array(X, mask=mask), np.ma.array(Y, mask=mask)
 
 
 
@@ -81,19 +81,38 @@ def plot_Lagrange():
 
 
 # Defining grav potential
-def potential(X, Y):
+def find_potential(X, Y):
+
+    V = np.zeros(X.shape)
     D_S = np.sqrt((R * X - x_S)**2 + (R * Y)**2) + step
     D_E = np.sqrt((R * X - x_E)**2 + (R * Y)**2) + step
+    V -= G*(M_S/D_S + M_E/D_E) * 10e-6
 
-    return -G*(M_S/D_S + M_E/D_E)
+    return V
 
 # Plotting scalar potential
-def plot_scalar_potential(X, Y, fine_step=0.005, coarse_step=0.025, size=2.0*scale):
+def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
 
     # Generating base grid
-    x_f = np.arange(-size/2, size/2 + )
+    x_f = np.arange(-size/2, size/2 + fine_step, fine_step) + pi_E
+    y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
+    X, Y = np.meshgrid(x_f, y_f)
+
+    # Generating potential mask
+    X_m, Y_m = create_mask(X, Y, plot_Lagrange(), fine_step, coarse_step, size)
+    Z_raw = find_potential(X_m.data, Y_m.data)
+    Z_masked = np.ma.array(Z_raw, mask=X_m.mask)
+
+    # Spacing contours
+    levels = np.sort(-np.logspace(np.log10(-Z_masked.max() + 0.1), np.log10(-Z_masked.min()), num=20))
+
+    # Plotting contour
+    cf = plt.tricontourf(X_m.data, Y_m.data, Z_masked, levels=levels, alpha=0.2)
+    cbar = plt.colorbar(cf, label='Gravitational Potential Field')
+
 
     return None
 
+plot_scalar_potential()
 plt.show()
 
