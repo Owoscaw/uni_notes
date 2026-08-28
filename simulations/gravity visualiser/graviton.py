@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import scipy
 
 M_ratio = 0.01
-step = 0.01
+step = 0.001
 scale = 1.5
 
 # Astrophysical Constants
@@ -81,19 +81,20 @@ def plot_Lagrange():
 
 # Defining grav potential
 def potential(X, Y):
-    D_S = np.sqrt((X - x_S)**2 + Y**2)
-    D_E = np.sqrt((X - x_E)**2 + Y**2)
+    D_S = np.sqrt((R * X - x_S)**2 + (R * Y)**2) + step
+    D_E = np.sqrt((R * X - x_E)**2 + (R * Y)**2) + step
 
     return -G*(M_S/D_S + M_E/D_E)
 
 # Plotting scalar potential
 def plot_scalar_potential(X, Y):
-    Z = potential(X, Y) * 10e-6 # Converting to MJ
-    print(np.max(Z))
+    Z = potential(X, Y)/10e6 # Converting to MJ
+    contour = plt.contourf(X, Y, Z)
+    plt.colorbar(contour, label="Potential")
     return None
 
 
-X_m, Y_m = create_sample(plot_Lagrange(), scale * step, 5 * scale * step, 2.0)
-plot_scalar_potential(R * X_m, R * Y_m)
+X_m, Y_m = create_sample(plot_Lagrange(), scale * step, 5 * scale * step, 2.0 * scale)
+plot_scalar_potential(X_m, Y_m)
 plt.show()
 
