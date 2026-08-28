@@ -96,15 +96,11 @@ def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
     X = X_m.data[0, :]
     Y = Y_m.data[:, 0]
     Z_blended = find_potential(X_m.data, Y_m.data)
-    norm = colors.SymLogNorm(linthresh=1e-6, linscale=1.0,
-                             vmin=Z_blended.min(), vmax=Z_blended.max(), base=10)
-    
-    bias = np.linspace(0, 1, 50) ** 2.5
-    bias_space = Z_blended.max() + bias * (Z_blended.min() + Z_blended.max())
-    levels = np.unique(np.sort(bias_space))
-    cf = plt.contourf(X, Y, Z_blended, levels=levels, norm=norm, cmap="viridis", alpha=0.7)
-    cbar = plt.colorbar(cf, label="Gravitational potential")
-    contours = plt.contour(X, Y, Z_blended, levels=levels, colors="white", alpha=0.7)
+
+    vmin = find_potential(Lpts[3][0], Lpts[3][1])[0]
+    lower, upper = vmin*1.14, vmin * 0.85
+
+    levels = np.unique(np.sort(np.linspace(lower, upper, 40)))
 
     return None
 
