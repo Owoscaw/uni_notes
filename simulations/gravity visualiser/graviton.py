@@ -30,12 +30,7 @@ def colinear_cubic(x):
 
 
 # Creating sample patches
-def create_sample(points, fine_step, coarse_step, size):
-
-    # Creating high LOD grid
-    x_f = np.arange(-size/2, size/2 + fine_step, fine_step) + pi_E
-    y_f = np.arange(-size/2, size/2 + fine_step, fine_step)
-    X, Y = np.meshgrid(x_f, y_f)
+def create_mask(X, Y, points, fine_step, coarse_step, size):
 
     # Filtering coarse mesh and generating fine points
     mask = np.ones(X.shape, dtype=bool)
@@ -47,15 +42,12 @@ def create_sample(points, fine_step, coarse_step, size):
         D = np.sqrt((X - dx)**2 + (Y - dy)**2)
         mask[D <= scale*0.25] = False
 
-    valid_x = X[~mask]
-    valid_y = Y[~mask]
-
     is_fine_node = ~mask & ~(is_coarse_x & is_coarse_y)
     is_coarse_node = ~mask & (is_coarse_x & is_coarse_y)
 
     print("fine samples: {}\ncoarse samples: {}".format(np.sum(is_fine_node), np.sum(is_coarse_node)))
 
-    return X, Y, mask, (is_coarse_x & is_coarse_y)
+    return mask
 
 
 
@@ -96,19 +88,12 @@ def potential(X, Y):
     return -G*(M_S/D_S + M_E/D_E)
 
 # Plotting scalar potential
-def plot_scalar_potential(X, Y):
-    Z = potential(X, Y) * 10e-6 # Converting to MJ
+def plot_scalar_potential(X, Y, fine_step=0.005, coarse_step=0.025, size=2.0*scale):
 
-    levels = np.logspace(np.min(Z), np.max(Z), 20)[:0]
+    # Generating base grid
+    x_f = np.arange(-size/2, size/2 + )
 
-    cf = ax.contourf(X, Y, Z, levels=levels, cmap="bwr")
-    #fig.colorbar(cf, ax=ax)
     return None
 
-
-X_m, Y_m, mask, coarse_mask = create_sample(plot_Lagrange(), scale * step, 5 * scale * step, 2.0 * scale)
-#plt.scatter(X_m[~mask & ~coarse_mask], Y_m[~mask & ~coarse_mask], color="cyan")
-#plt.scatter(X_m[~mask & coarse_mask], Y_m[~mask & coarse_mask], color="red", alpha=0.2)
-plot_scalar_potential(X_m, Y_m)
 plt.show()
 
