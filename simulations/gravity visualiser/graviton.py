@@ -97,10 +97,12 @@ def plot_scalar_potential(fine_step=0.005, coarse_step=0.025, size=2.0*scale):
     Y = Y_m.data[:, 0]
     Z_blended = find_potential(X_m.data, Y_m.data)
 
-    vmin = find_potential(Lpts[3][0], Lpts[3][1])[0]
+    vmin = find_potential(Lpts[3][0], Lpts[3][1])
     lower, upper = vmin*1.14, vmin * 0.85
 
     levels = np.unique(np.sort(np.linspace(lower, upper, 40)))
+    contours = plt.contour(X, Y, Z_blended, levels=levels, colors=["black", "dimgray", "darkgray"], alpha=0.7, linewidths=0.6)
+    cbar = plt.colorbar(contours, label="Gravitational potential")
 
     return None
 
