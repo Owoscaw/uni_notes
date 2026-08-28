@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.ticker as tick
+import matplotlib.colors as colors
 import scipy
 
 M_ratio = 0.01
@@ -19,6 +21,7 @@ x_S = -pi_E * R
 x_E = pi_S * R
 
 
+fig, ax = plt.subplots()
 
 # Defining minimisation function 
 def colinear_cubic(x): 
@@ -50,8 +53,6 @@ def create_sample(points, fine_step, coarse_step, size):
 
 # Finding and plotting Lagrange points
 def plot_Lagrange():
-
-    fig, ax = plt.subplots()
 
     # Finding equilateral points
     L_4 = scale * np.array([0.5 - pi_E, np.sqrt(3)/2])
@@ -88,9 +89,11 @@ def potential(X, Y):
 
 # Plotting scalar potential
 def plot_scalar_potential(X, Y):
-    Z = potential(X, Y)/10e6 # Converting to MJ
-    contour = plt.contourf(X, Y, Z)
-    plt.colorbar(contour, label="Potential")
+    Z = potential(X, Y)
+
+    cf = ax.contourf(X, Y, Z, levels=35, norm=colors.SymLogNorm(linthresh=1e8, base=10), cmap="bwr")
+    fig.colorbar(cf, ax=ax)
+
     return None
 
 
