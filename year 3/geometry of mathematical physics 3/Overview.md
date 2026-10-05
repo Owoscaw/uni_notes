@@ -12,3 +12,11 @@ This framework we develop allows us to describe the geometry of spacetime itself
 > This "gauging" process required us to define a covariant derivative $D_\mu$ and with it a gauge field $A_\mu$ to maintain [[Symmetries and Action Principles#Lorentz symmetry and field theories|Lorentz invariance]].
 > Introducing a gauge field causes [[Abelian gauge theories#Gauge redundancy and gauge fixing|redundancy]] as we consider systems that differ by a gauge transformation to be physically equivalent. This leads to the definition of a gauge orbit, which decompose all possible field configurations. We fix the gauge so that it cuts each orbit once and only once.
 > Finally, we consider non-abelian gauge theories written carefully in the language of Lie groups and algebras. These form the basis of modern physics and allow us to classify the [[Non-abelian gauge theories#The Standard Model|standard model]].
+
+
+We build the standard model as a symmetry group $SU(3)\times SU(2)\times U(1)$, the [[Abelian gauge theories#Gauge symmetry|Gauge symmetry]] of the standard model. This is a type of field theory called a gauge theory. We establish this framework by studying $U(1)$, which describes electromagnetism and has the associated conserved current of electric charge. This comes from Noether's theorem, which basically says:
+> Spatial symmetries lead to conservation of momentum
+> Rotational symmetries lead to conservation of angular momentum
+> Temporal symmetries lead to conservation of energy
+
+We extend our understanding of point particles described by sets of coordinates to the interaction between symmetries and fields that permeate space, these are field theories. Electric fields are a good example, they have an associated conserved current of electric charge, i.e. the total electric charge in the system must remain constant. In fact this property extends locally, any charge leaving a volume $V$ must do so due to the influence of an external current. Anyway, we investigate the symmetry responsible for this conservation law:
