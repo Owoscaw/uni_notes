@@ -1,0 +1,2 @@
+
+Because the speed of light falls out of [[Abelian gauge theories#Maxwell equation and actions|Maxwell's equations]], it is universal across all reference frames. Universality of the laws of physics seems to require the universality of the speed of light.
