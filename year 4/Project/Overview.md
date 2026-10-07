@@ -1,1 +1,1 @@
-$\dbar$  
+$\textit{\dj}$   
