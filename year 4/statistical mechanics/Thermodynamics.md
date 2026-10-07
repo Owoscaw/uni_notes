@@ -41,4 +41,4 @@ Considering diathermal processes, we also give the definition$$\Huge \Delta E=W+
 ## Quasi-static processes:
 A quasi-static process is one where a system remains in equilibrium throughout. That is, we change a system slowly enough so that equilibrium is re-achieved after every infinitesimal time step.
 
-We can also write a new $1$st law for these QSP:$$\Huge dE=dQ+dW$$Since $E(p,V)$ is a function of state variables, we can write $dE$ using the chain rule:$$\Huge dE=\frac{\partial E}{\partial p}\vert_Vdp+\frac{\partial E}{\partial V}\vert_pdV,\,\,\oint_CdE=0$$Where $C$ is a closed loop in the $p,V$ plane. Note that $dQ,dW$ are not exact differentials, and so we cannot do the above with them.
+We can also write a new $1$st law for these QSP:$$\Huge dE=\dbar Q+\dbar W$$Since $E(p,V)$ is a function of state variables, we can write $dE$ using the chain rule:$$\Huge dE=\frac{\partial E}{\partial p}\vert_Vdp+\frac{\partial E}{\partial V}\vert_pdV,\,\,\oint_CdE=0$$Where $C$ is a closed loop in the $p,V$ plane. Note that $\dbar Q,\dbar W$ are not exact differentials, and so we cannot do the above with them.
