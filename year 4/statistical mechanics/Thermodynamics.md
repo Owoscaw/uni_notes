@@ -21,7 +21,8 @@ As an example, consider three systems $A,B,C$ where:
 
 We ask if $A,C$ will reach mutual thermal equilibrium. This is the "0th" Law of Thermodynamics: If $A,B$ are each in equilibrium with $C$, then they are in equilibrium with each other. That is to say, mutual thermal equilibrium is transitive.
 
-Let us assume we have the state variable relations for this system:$$\Huge\begin{align*}
+Let us assume we have the state variable relations for this system:$$\Huge
+\begin{align*}
 \text{MTE}\implies V_B&=g_{AB}(p_A,V_A;p_B)\\
 &=g_{BC}(p_C,V_C;p_B)\\
 \implies g_{AB}&=g_{BC}
