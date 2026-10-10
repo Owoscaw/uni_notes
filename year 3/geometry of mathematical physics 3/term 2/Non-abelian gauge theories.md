@@ -13,72 +13,72 @@ We introduce the tools we will use to formulate actions that are invariant under
 
 Let us first assume the gauge group $G$ is a classical group whose elements are matrices, and that the charged field $\phi$ transforms in the fundamental representation. This means that the gauge transformation of the charged field $\phi$ is$$\Huge\phi\rightarrow g\phi=e^{i\alpha^at_a}\phi$$where $\phi$ is a column vector. In this case, the Lie algebra generators $t_a$ are matrices and the group element $g$ is also a matrix acting on $\phi$. Recall that both the field $\phi=\phi(x)$ and the group element $g=g(x)$ and so the gauge parameter $\alpha=\alpha(x)$ also depends on space-time.
 
-Given the charged field $\phi$, the covariant derivative is$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi$$where the gauge field $A_\mu$ is now a matrix, which turns out to be an element of the Lie algebra to ensure the consistency of its transformation:$$\Huge A_\mu=A_\mu^at_a$$We require that under the non-abelian gauge transformation above, the covariant derivative transforms in the same way as $\phi$:$$\Huge D_\mu\phi\rightarrow gD_\mu\phi$$We can view the covariant derivative as a matrix-valued differential operator$$\Huge D_\mu=\mathbb{1}\partial_\mu-iA_\mu$$which reads component-wise as:$$\Huge (D_\mu)^j_k=\delta^j_k\partial_\mu-i(A_\mu)^j_k$$We require the gauge transformation:$$\Huge\begin{align*}
+Given the charged field $\phi$, the covariant derivative is$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi$$where the gauge field $A_\mu$ is now a matrix, which turns out to be an element of the Lie algebra to ensure the consistency of its transformation:$$\Huge A_\mu=A_\mu^at_a$$We require that under the non-abelian gauge transformation above, the covariant derivative transforms in the same way as $\phi$:$$\Huge D_\mu\phi\rightarrow gD_\mu\phi$$We can view the covariant derivative as a matrix-valued differential operator$$\Huge D_\mu=\mathbb{1}\partial_\mu-iA_\mu$$which reads component-wise as:$$\Huge (D_\mu)^j_k=\delta^j_k\partial_\mu-i(A_\mu)^j_k$$We require the gauge transformation:$$\Huge\begin{aligned}
 D_\mu&\rightarrow gD_\mu g^{-1}\\
 &\rightarrow g(\partial_\mu-iA'_\mu)g^{-1}\\
 &=g(\partial_\mu g^{-1})+gg^{-1}\partial_\mu-igA_\mu g^{-1}
-\end{align*}$$Note that $g,A_\mu$ are matrices and so they do not commute.
+\end{aligned}$$Note that $g,A_\mu$ are matrices and so they do not commute.
 
-Comparing initial and final results, we have the following gauge transformation for $A_\mu$:$$\Huge\begin{align*}
+Comparing initial and final results, we have the following gauge transformation for $A_\mu$:$$\Huge\begin{aligned}
 A_\mu\rightarrow A_\mu'&=gA_\mu g^{-1}+ig(\partial_\mu g^{-1})\\
 &=gA_\mu g^{-1}-i(\partial_\mu g)g^{-1}
-\end{align*}$$Note that we used the identity:$$\Huge 0=(\partial_\mu\mathbb{1})=(\partial_\mu(gg^{-1}))=(\partial_\mu g)g^{-1}+g(\partial_\mu g^{-1})$$Remarks:
+\end{aligned}$$Note that we used the identity:$$\Huge 0=(\partial_\mu\mathbb{1})=(\partial_\mu(gg^{-1}))=(\partial_\mu g)g^{-1}+g(\partial_\mu g^{-1})$$Remarks:
 > The first term in the gauge transformation of $A_\mu$ is the adjoint action of the Lie group $G$ on a lie algebra element. This is why $A_\mu$ belongs to the lie algebra $\pmb g$.
-> The second term is a correction term to the adjoint action, involving a derivative. This is also an element in the Lie algebra in the following sense. Consider the path $g(t_0+t)g^{-1}(t_0)$ which passes through the identity for $t=0$. The associated Lie algebra element is then:$$\Huge\begin{align*} \frac{\partial }{\partial t}g(t_0+t)g^{-1}(t_0)|_{t=0}&=\left(\frac{\partial }{\partial t_0}g(t_0+t)\right)g^{-1}(t_0)|_{t=0}\\
-&=\left(\frac{\partial }{\partial t_0}g(t_0)\right)g^{-1}(t_0)\end{align*}$$Therefore for any path $g(t)$ we have that $(\partial_tg(t))g^{-1}(t)\in\pmb g$ for all $t$. For $g(x)$ we get paths by setting $t=x^\mu$ for some $\mu$ while keeping all other components of $x$ fixed. Hence:$$\Huge (\partial_\mu g(x))g^{-1}(x)\in\pmb g$$
+> The second term is a correction term to the adjoint action, involving a derivative. This is also an element in the Lie algebra in the following sense. Consider the path $g(t_0+t)g^{-1}(t_0)$ which passes through the identity for $t=0$. The associated Lie algebra element is then:$$\Huge\begin{aligned} \frac{\partial }{\partial t}g(t_0+t)g^{-1}(t_0)|_{t=0}&=\left(\frac{\partial }{\partial t_0}g(t_0+t)\right)g^{-1}(t_0)|_{t=0}\\
+&=\left(\frac{\partial }{\partial t_0}g(t_0)\right)g^{-1}(t_0)\end{aligned}$$Therefore for any path $g(t)$ we have that $(\partial_tg(t))g^{-1}(t)\in\pmb g$ for all $t$. For $g(x)$ we get paths by setting $t=x^\mu$ for some $\mu$ while keeping all other components of $x$ fixed. Hence:$$\Huge (\partial_\mu g(x))g^{-1}(x)\in\pmb g$$
 
-Finally, analogous to $G=U(1)$, we define the field strength:$$\Huge F_{\mu\nu}=i[D_\mu,D_\nu]$$We view both sides of this as differential operators that are matrix valued. It turns out that $F_{\mu\nu}$ is a multiplicative operator. By construction, the field strength transforms as:$$\Huge F_{\mu\nu}\rightarrow gF_{\mu\nu}g^{-1}$$The proof of which is simple:$$\Huge\begin{align*}
+Finally, analogous to $G=U(1)$, we define the field strength:$$\Huge F_{\mu\nu}=i[D_\mu,D_\nu]$$We view both sides of this as differential operators that are matrix valued. It turns out that $F_{\mu\nu}$ is a multiplicative operator. By construction, the field strength transforms as:$$\Huge F_{\mu\nu}\rightarrow gF_{\mu\nu}g^{-1}$$The proof of which is simple:$$\Huge\begin{aligned}
 F_{\mu\nu}=i[D_\mu,D_\nu]\rightarrow F_{\mu\nu}'&=i[gD_\mu g^{-1},gD_\nu g^{-1}]\\
 &=g[D_\mu,D_\nu]g^{-1}\\
 &=gF_{\mu\nu}g^{-1}
-\end{align*}$$If we calculate the commutator, one can show that we can write the field strength as:$$\Huge F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu]$$Proof:$$\Huge\begin{align*}
+\end{aligned}$$If we calculate the commutator, one can show that we can write the field strength as:$$\Huge F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu]$$Proof:$$\Huge\begin{aligned}
 -iF_{\mu\nu}&=[D_\mu,D_\nu]=[\mathbb{1}\partial_\mu-iA_\mu,\mathbb{1}\partial_\nu-iA_\nu]\\
 &=[\mathbb{1}\partial_\mu,\mathbb{1}\partial_\nu]-i[\mathbb{1}\partial_\mu,A_\nu]-i[A_\mu,\mathbb{1}\partial_\nu]-[A_\mu,A_\nu]\\
 &=0-i(\partial_\mu A_\nu)+i(\partial_\nu A_\mu)-[A_\mu,A_\nu]\\
 &=-i(\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu])
-\end{align*}$$
-The finite gauge transformations of $D_\mu$ and $F_{\mu\nu}$ is by the adjoint action of the Lie group on the Lie algebra. That is, $D_\mu$ and $F_{\mu\nu}$ transform in the adjoint representation of $G$. By considering infinitesimal gauge transformations $$\Huge g=e^{i\alpha^at_a}=e^{i\alpha}=1+i\alpha+\mathcal{O}(\alpha^2)$$one can show that the infinitesimal gauge variations of the fields are$$\Huge\begin{align*}
+\end{aligned}$$
+The finite gauge transformations of $D_\mu$ and $F_{\mu\nu}$ is by the adjoint action of the Lie group on the Lie algebra. That is, $D_\mu$ and $F_{\mu\nu}$ transform in the adjoint representation of $G$. By considering infinitesimal gauge transformations $$\Huge g=e^{i\alpha^at_a}=e^{i\alpha}=1+i\alpha+\mathcal{O}(\alpha^2)$$one can show that the infinitesimal gauge variations of the fields are$$\Huge\begin{aligned}
 \delta_\alpha\phi&=i\alpha\phi\\
 \delta_\alpha A_\mu&=i[\alpha,A_\mu]+\partial_\mu\alpha\\
 \delta_\alpha F_{\mu\nu}&=i[\alpha,F_{\mu\nu}]
-\end{align*}$$where $\phi\rightarrow\phi+\delta_\alpha\phi+\mathcal{O}(\alpha^2)$. Remarks:
+\end{aligned}$$where $\phi\rightarrow\phi+\delta_\alpha\phi+\mathcal{O}(\alpha^2)$. Remarks:
 > Field strength $F_{\mu\nu}$ transforms in the adjoint representation of $\pmb g$ under infinitesimal gauge transformations.
 > The gauge field $A_\mu$ does not transform in the adjoint representation, as the first term in its variation suggests.
 > $D_\mu$ transforms in the adjoint representation.
 
 What we have discussed generalises to arbitrary Lie groups $G$ and charged fields $\phi$ transforming in an $r$-dimensional representation $\pmb r$. Now $\phi$ is a column vector with $r$ components, and we simply replace the group element $g$ with the appropriate $r\times r$ matrix representation:$$\Huge r(g)=\exp(i\alpha^at_a^{(r)})$$
-For example$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi=(\mathbb{1}_r\partial_\mu-iA_\mu^at_a^{(r)})\phi$$and$$\Huge\begin{align*}
+For example$$\Huge D_\mu\phi=\partial_\mu\phi-iA_\mu\phi=(\mathbb{1}_r\partial_\mu-iA_\mu^at_a^{(r)})\phi$$and$$\Huge\begin{aligned}
 F_{\mu\nu}\phi&=i[D_\mu,D_\nu]\phi\\
 &=(\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu])\phi\\
 &=(\partial_\mu A_\nu^a-\partial_\nu A_\mu^a+f_{bc}^aA_\mu^bA_\nu^c)t_a^{(r)}\phi\\
-\end{align*}$$where we understand that if $\phi$ transforms in $\pmb r$ then:$$\Huge\begin{align*}
+\end{aligned}$$where we understand that if $\phi$ transforms in $\pmb r$ then:$$\Huge\begin{aligned}
 A_\mu\phi&=A_\mu^at_a^{(r)}\phi\\
 F_{\mu\nu}\phi&=F_{\mu\nu}^at_a^{(r)}\phi
-\end{align*}$$
+\end{aligned}$$
 
 # Actions and equations of motion:
 
-Let us consider a gauge invariant action for the Lie algebra valued non-abelian gauge field $A_\mu=A_\mu^at_a$. Since the field strength $F_{\mu\nu}=F_{\mu\nu}^at_a$ transforms as$$\Huge F_{\mu\nu}\rightarrow gF_{\mu\nu}g^{-1}$$under a gauge transformation, it immediately follows that $\text{tr}(F_{\mu\nu}F^{\mu\nu})$ is gauge invariant and can therefore be used in our Lagrangian density:$$\Huge\begin{align*}
+Let us consider a gauge invariant action for the Lie algebra valued non-abelian gauge field $A_\mu=A_\mu^at_a$. Since the field strength $F_{\mu\nu}=F_{\mu\nu}^at_a$ transforms as$$\Huge F_{\mu\nu}\rightarrow gF_{\mu\nu}g^{-1}$$under a gauge transformation, it immediately follows that $\text{tr}(F_{\mu\nu}F^{\mu\nu})$ is gauge invariant and can therefore be used in our Lagrangian density:$$\Huge\begin{aligned}
 \text{tr}(F_{\mu\nu}F^{\mu\nu})&\rightarrow\text{tr}(gF_{\mu\nu}g^{-1}gF^{\mu\nu}g^{-1})\\
 &=\text{tr}(g^{-1}gF_{\mu\nu}g^{-1}gF^{\mu\nu})=\text{tr}(F_{\mu\nu}F^{\mu\nu})
-\end{align*}$$Where we used the cyclic property of the trace. We can now define the Yang-Mills action$$\Huge\begin{align*}
+\end{aligned}$$Where we used the cyclic property of the trace. We can now define the Yang-Mills action$$\Huge\begin{aligned}
 S_\text{YM}[A]&=\int\mathcal{L}_\text{YM}d^4x\\
 \mathcal{L}_\text{YM}&=-\frac{1}{2g^2_\text{YM}}\text{tr}(F_{\mu\nu}F^{\mu\nu})
-\end{align*}$$where we are working with normalisation such that:$$\Huge \text{tr}(t_at_b)=\frac{1}{2}\delta_{ab}$$Note that the constant $g_\text{YM}$ is known as the Yang-Mills coupling constant and controls the strength of the interactions.
+\end{aligned}$$where we are working with normalisation such that:$$\Huge \text{tr}(t_at_b)=\frac{1}{2}\delta_{ab}$$Note that the constant $g_\text{YM}$ is known as the Yang-Mills coupling constant and controls the strength of the interactions.
 
-It turns out we can introduce a second gauge invariant term known as the theta term$$\Huge\begin{align*}
+It turns out we can introduce a second gauge invariant term known as the theta term$$\Huge\begin{aligned}
 S_\theta[A]&=\int\mathcal{L}_\theta d^4x\\
 \mathcal{L}_\theta&=\frac{\theta}{16\pi^2}\text{tr}(F_{\mu\nu}\tilde F^{\mu\nu})
-\end{align*}$$where $\theta$ is known as the theta angle and$$\Huge \tilde F^{\mu\nu}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$$is the dual field strength. 
+\end{aligned}$$where $\theta$ is known as the theta angle and$$\Huge \tilde F^{\mu\nu}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$$is the dual field strength. 
 
-To summarise, the most general gauge invariant action (up to two derivatives) that contains appropriate kinetic and interaction terms for a non-abelian gauge field $A_\mu$ is:$$\Huge\begin{align*}
+To summarise, the most general gauge invariant action (up to two derivatives) that contains appropriate kinetic and interaction terms for a non-abelian gauge field $A_\mu$ is:$$\Huge\begin{aligned}
 S_\text{gauge}[A]&=S_\text{YM}[A]+S_\theta[A]\\
 \mathcal{L}_\text{gauge}&=\mathcal{L}_\text{YM}+\mathcal{L}_\theta\\
 &=-\frac{1}{2g_\text{YM}^2}\text{tr}(F_{\mu\nu}F^{\mu\nu})+\frac{\theta}{16\pi^2}\text{tr}(F_{\mu\nu}\tilde F^{\mu\nu})
-\end{align*}$$If we introduce charged fields $\phi$ transforming in a representation $\pmb r$, then we can write another gauge invariant action for them using covariant derivatives. Taking $G=SU(N)$ we have$$\Huge\begin{align*}
+\end{aligned}$$If we introduce charged fields $\phi$ transforming in a representation $\pmb r$, then we can write another gauge invariant action for them using covariant derivatives. Taking $G=SU(N)$ we have$$\Huge\begin{aligned}
 S_\text{matter}[\phi,\phi^\dagger,A]&=\int\mathcal{L}_\text{matter}d^4x\\
 \mathcal{L}_\text{matter}&=-(D_\mu\phi)^\dagger D^\mu\phi-V(\phi,\phi^\dagger)
-\end{align*}$$where we require $V$ to be gauge invariant. This generalises to other classical groups $G$ by using an appropriate inner product for the kinetic term.
+\end{aligned}$$where we require $V$ to be gauge invariant. This generalises to other classical groups $G$ by using an appropriate inner product for the kinetic term.
 
 # The Standard Model:
 
@@ -110,41 +110,41 @@ We can see the mass of the gauge bosons by observing the kinetic term for $H$ af
 
 # The 'tHooft-Polyakov monopole:
 
-It was discovered that non-abelian gauge theories with scalar fields that transform in the adjoint representation admit smooth magnetic monopoles as static finite energy solutions of their equations of motion. The theory of interest is the Georgi-Glashow model, a field theory in three space and one time dimension with $G=SU(2)$ gauge group, a scalar field $\Phi$ transforming in the adjoint representation. The Lagrangian density is$$\Huge\begin{align*}
+It was discovered that non-abelian gauge theories with scalar fields that transform in the adjoint representation admit smooth magnetic monopoles as static finite energy solutions of their equations of motion. The theory of interest is the Georgi-Glashow model, a field theory in three space and one time dimension with $G=SU(2)$ gauge group, a scalar field $\Phi$ transforming in the adjoint representation. The Lagrangian density is$$\Huge\begin{aligned}
 \mathcal{L}&=-\frac{1}{2g_\text{YM}^2}\text{tr}(F_{\mu\nu}F^{\mu\nu})-\text{tr}((D_\mu\Phi)(D^\mu\Phi))-V(\Phi)\\
 V(\Phi)&=\lambda\left(\frac{1}{2}\text{tr}(\Phi^2)-v^2\right)^2
-\end{align*}$$where $\lambda,v>0$ are constants with the usual definition of field density and covariant derivative, repeated below for reference:$$\Huge\begin{align*}
+\end{aligned}$$where $\lambda,v>0$ are constants with the usual definition of field density and covariant derivative, repeated below for reference:$$\Huge\begin{aligned}
 F_{\mu\nu}&=\partial_\mu A_\nu-\partial_\nu A_\mu-i[A_\mu,A_\nu]\\
 D_\mu\Phi&=\partial_\mu\Phi-i[A_\mu,\Phi]
-\end{align*}$$
+\end{aligned}$$
 We can calculate the Hamiltonian density $\mathcal{H}$ as the Legendre transform of the Lagrangian density $\mathcal{L}$, and from it the total energy $E=\int\mathcal{L}d^3x$ of the system. $E$ will be gauge invariant by construction. We look for static field configurations, so drop all $\partial_0$ time derivatives and switch to a temporal gauge $A_0=0$ so that we can drop temporal covariant derivatives $D_0$. In the temporal gauge, the energy of the static field configurations becomes$$\Huge E=\int\frac{1}{g_\text{YM}^2}\text{tr}(B_iB_i)+\text{tr}((D_i\Phi)(D_i\Phi))+V(\Phi)d^3x$$where $B_i=\frac{1}{2}\epsilon_{ijk}F_{jk}$ are the components of the non-abelian magnetic field $\underline{B}$. Here, $i$ runs over spatial Euclidean indices.
 
 The energy is the integral of a sum of squares, and will therefore be minimised by setting:$$\Huge \underline{B}=0,\,\,\underline{D}\Phi=0,\,\,\text{tr}(\Phi^2)=2v^2$$The first equation sets $F_{ij}=0$ so that the vector potential $\underline{A}=(A_1,A_2,A_3)$ is pure gauge, that is $A_j=ih(\partial_jh^{-1})=-i(\partial_jh)h^{-1}$ for a function $h(\underline{x})$ taking values in $SU(2)$. The second equation determines that the adjoint scalar field $\Phi$ is covariantly constant. The third equation determines the form of $\Phi$ that minimises the scalar potential. 
 
-By gauge transformation we set $\underline{A}=0$, then the second equation sets $\Phi$ constant. Letting $\Phi=\phi^a\sigma_a$, where $\sigma_a$ are the Pauli matrices, we find that$$\Huge \text{tr}(\Phi^2)=v^2\iff(\phi^1)^2+(\phi^2)^2+(\phi^3)^2=v^2$$and so the vacuum manifold is a $2$-sphere of radius $v$:$$\Huge\begin{align*}
+By gauge transformation we set $\underline{A}=0$, then the second equation sets $\Phi$ constant. Letting $\Phi=\phi^a\sigma_a$, where $\sigma_a$ are the Pauli matrices, we find that$$\Huge \text{tr}(\Phi^2)=v^2\iff(\phi^1)^2+(\phi^2)^2+(\phi^3)^2=v^2$$and so the vacuum manifold is a $2$-sphere of radius $v$:$$\Huge\begin{aligned}
 \mathcal{V}&=\{\Phi=\phi^a\sigma_a\in\pmb{su}(2):\text{tr}(\Phi^2)=2v^2\}\\
 &=\{\phi=(\phi^1,\phi^2,\phi^3)\in\Re^3:\phi^2=v^2\}\cong S^2
-\end{align*}$$By constant gauge transformation we can take:$$\Huge\Phi=\begin{pmatrix}v & 0 \\ 0 & -v\end{pmatrix}=v\sigma_3,\,\,\phi=(0,0,v)$$Any choice of vacuum breaks the gauge group $G=SU(2)$ into a subgroup $H=U(1)$ which leaves the vacuum invariant.
+\end{aligned}$$By constant gauge transformation we can take:$$\Huge\Phi=\begin{pmatrix}v & 0 \\ 0 & -v\end{pmatrix}=v\sigma_3,\,\,\phi=(0,0,v)$$Any choice of vacuum breaks the gauge group $G=SU(2)$ into a subgroup $H=U(1)$ which leaves the vacuum invariant.
 
-In order for the energy to be finite, we demand the boundary conditions$$\Huge\underline{B}\to0,\,\,\underline{D}\Phi\to0,\,\,\text{tr}(\Phi^2)\to2v^2,\,\,\text{as }|\underline{x}|\to\infty$$so that the fields must tend to a vacuum at spatial infinity. Note that this can be a different vacuum for each direction. As in the abelian Higgs model, we can use the gauge redundancy to work radially where $A_r=0$. In this case the limits of the field as $r\to\infty$ with $(\theta,\varphi)$ fixed exist and the vacuum is same in all directions. The limit of the adjoint scalar field at spatial infinite defines a map$$\Huge\begin{align*}
+In order for the energy to be finite, we demand the boundary conditions$$\Huge\underline{B}\to0,\,\,\underline{D}\Phi\to0,\,\,\text{tr}(\Phi^2)\to2v^2,\,\,\text{as }|\underline{x}|\to\infty$$so that the fields must tend to a vacuum at spatial infinity. Note that this can be a different vacuum for each direction. As in the abelian Higgs model, we can use the gauge redundancy to work radially where $A_r=0$. In this case the limits of the field as $r\to\infty$ with $(\theta,\varphi)$ fixed exist and the vacuum is same in all directions. The limit of the adjoint scalar field at spatial infinite defines a map$$\Huge\begin{aligned}
 \Phi_\infty:S_\infty^2&\to\mathcal{V}\cong S^2\\
 (\theta,\varphi)&\to\Phi_\infty(\phi,\varphi)=\lim_{r\to\infty}\Phi(r,\theta,\varphi)
-\end{align*}$$which is characterised by an integer, the topological degree $\nu$ of the map (a generalisation of the winding number for maps from $S^1$ to itself):$$\Huge\nu=\frac{1}{8\pi v^3}\int_{S^2_\infty}\epsilon_{ijk}\phi_\infty\cdot(\partial_j\phi_\infty\times\partial_k\phi_\infty)d^2\sigma_i$$
+\end{aligned}$$which is characterised by an integer, the topological degree $\nu$ of the map (a generalisation of the winding number for maps from $S^1$ to itself):$$\Huge\nu=\frac{1}{8\pi v^3}\int_{S^2_\infty}\epsilon_{ijk}\phi_\infty\cdot(\partial_j\phi_\infty\times\partial_k\phi_\infty)d^2\sigma_i$$
 As an example, the map $\Phi_\infty=v\hat x\cdot\underline{\sigma}$ where $\hat x=\underline{x}/|\underline{x}|$ has degree $\nu=1$. This is the identity map from $S^2\to S^2$ up to an overall constant factor. Incidentally we can write our more complex map as$$\Huge \Phi_\infty=ve^{-i\alpha}\sigma_3e^{i\alpha}$$with:$$\Huge\alpha=\frac{\theta}{2}(-\sin\varphi\,\sigma_1+\cos\varphi\,\sigma_2)=\frac{\theta}{2}e^{-i\varphi\sigma_3/2}\sigma_2e^{i\varphi\sigma_3/2}$$Therefore $\Phi_\infty$ reduces to a constant vacuum with $\Phi=v\sigma_3$ if we perform a gauge transformation with parameter $g=e^{i\alpha}$. Note that this transformation is singular at $\theta=\pi$, where $\varphi$ is ill-defined.
 
-We now introduce the 'tHooft-Polyakov hedgehog ansatz. We assume that the adjoint scalar and gauge field take form:$$\Huge\begin{align*}
+We now introduce the 'tHooft-Polyakov hedgehog ansatz. We assume that the adjoint scalar and gauge field take form:$$\Huge\begin{aligned}
 \Phi&=\frac{\underline{x}\cdot\underline{\sigma}}{r^2}H(vr)\\
 A&=\sigma_a\epsilon_{aij}\frac{x_i\,dx_j}{r^2}(1-K(vr))
-\end{align*}$$Note that dependence on angular polar coordinates in $\Re^3$ is correlated with the behaviour in the internal space in which the fields take their values. We also assume the asymptotics$$\Huge\xi=vr\to\infty:\,\,H(\xi)-\xi\to0,\,\,K(\xi)\to0$$at spatial infinity, which are needed to satisfy our previously defined boundary conditions. We also assume$$\Huge\xi=vr\to0:\,\,H(\xi)=O(\xi),\,\,K(\xi)-1=O(\xi)$$to ensure regularity at the center of the monopole.
+\end{aligned}$$Note that dependence on angular polar coordinates in $\Re^3$ is correlated with the behaviour in the internal space in which the fields take their values. We also assume the asymptotics$$\Huge\xi=vr\to\infty:\,\,H(\xi)-\xi\to0,\,\,K(\xi)\to0$$at spatial infinity, which are needed to satisfy our previously defined boundary conditions. We also assume$$\Huge\xi=vr\to0:\,\,H(\xi)=O(\xi),\,\,K(\xi)-1=O(\xi)$$to ensure regularity at the center of the monopole.
 
 Note that the adjoint scalar field approaches the identity map at spatial infinity, which has known topological degree of $\nu=1$. The magnetic field also approaches an abelian magnetic monopole for the unbroken gauge group $H=U(1)$ at spatial infinity. If one applies the above singular gauge transformation, the gauge field $A_\mu^{U(1)}$ looks exactly like a Dirac monopole in the northern patch.
 
 We can substitute this ansatz into the equations of motion to find a system of two coupled ODEs for $H(\xi),K(\xi)$. This together with our boundary conditions defines a well-posed BVP which we can solve numerically. Therefore a finite energy static solution describing a magnetic monopole exists.
 
-We can use a [[Topological lumps#The Bogomol'nyi bound|Bogomol'nyi]]-type argument to find a lower bound the the energy in each topological sector for the adjoint scalar (equivalently the magnetic charge for the unbroken $U(1)$ gauge field). This is the Bogomol'nyi-Prasad-Sommerfield (BPS) bound:$$\Huge\begin{align*}
+We can use a [[Topological lumps#The Bogomol'nyi bound|Bogomol'nyi]]-type argument to find a lower bound the the energy in each topological sector for the adjoint scalar (equivalently the magnetic charge for the unbroken $U(1)$ gauge field). This is the Bogomol'nyi-Prasad-Sommerfield (BPS) bound:$$\Huge\begin{aligned}
 E&=\int\frac{1}{g_\text{YM}^2}\text{tr}(\underline{B}^2)+\text{tr}((\underline{D}\Phi)^2)+V(\Phi)\,d^3x\\
 &\geq\int\text{tr}\left(\left(\frac{1}{g_\text{YM}}\underline{B}\mp\underline{D}\Phi\right)^2\pm\frac{2}{g_\text{YM}}\underline{B}\cdot\underline{D}\Phi\right)d^3x\\
 &\geq\pm\frac{2}{g_\text{YM}}\int\text{tr}(\underline{B}\cdot\underline{D}\Phi)d^3x=\pm\frac{2}{g_\text{YM}}\int\text{tr}(\underline{D}\cdot(\Phi\underline{B}))d^3x\\
 &=\pm\frac{2}{g_\text{YM}}\int\underline{\nabla}\cdot\text{tr}(\Phi\underline{B})d^3x=\pm\frac{2}{g_\text{YM}}\int_{S_\infty^2}\text{tr}(\Phi_\infty\underline{B})\cdot d^2\underline{\sigma}\\
 &=\pm\frac{4v}{g_\text{YM}}\int_{S^2_\infty}\underline{B}^{U(1)}\cdot d^2\underline{\sigma}=\pm\frac{8\pi v}{g_\text{YM}}m^{U(1)}
-\end{align*}$$Where we drop the contribution of the non-negative potential energy, complete the square, and use the Bianchi identity $\underline{D}\cdot\underline{B}=0$. We have found the BPS bound, a lower bound for the energy in terms of the magnetic charge:$$\Huge E\geq\frac{8\pi v}{g_\text{YM}}|m^{U(1)}|$$The bound is saturated if and only if $\lambda\to0$ while keeping $v$ fixed, called the BPS limit. In this case the fields satisfy the first order Bogomol'nyi equation:$$\Huge \underline{B}=\text{sgn}(m^{U(1)})g_\text{YM}\underline{D}\Phi$$Solutions to these equations for monopoles come in infinite families, parametrised by continuous parameters known as moduli. For $G=SU(2)$, the moduli space of $n$ BPS monopoles has $4n$ real dimensions.
+\end{aligned}$$Where we drop the contribution of the non-negative potential energy, complete the square, and use the Bianchi identity $\underline{D}\cdot\underline{B}=0$. We have found the BPS bound, a lower bound for the energy in terms of the magnetic charge:$$\Huge E\geq\frac{8\pi v}{g_\text{YM}}|m^{U(1)}|$$The bound is saturated if and only if $\lambda\to0$ while keeping $v$ fixed, called the BPS limit. In this case the fields satisfy the first order Bogomol'nyi equation:$$\Huge \underline{B}=\text{sgn}(m^{U(1)})g_\text{YM}\underline{D}\Phi$$Solutions to these equations for monopoles come in infinite families, parametrised by continuous parameters known as moduli. For $G=SU(2)$, the moduli space of $n$ BPS monopoles has $4n$ real dimensions.

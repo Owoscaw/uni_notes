@@ -11,5 +11,7 @@ Where $D/Dt$ is the [[Kinematics of Fluids#The material derivative|material deri
 > No-slip, $\underline{u}=0$ on the boundary
 > Free-slip, normal velocity is zero
 
+
+## Hydrostatic balance
 For a fluid in hydrostatic balance, $\underline{f}_b=-g\underline{e}_z$, which implies:$$\Huge \frac{Dw}{Dt}=-\frac{1}{\rho}\frac{\partial p}{\partial z}-g\approx 0\implies\frac{\partial p}{\partial z}=-\rho g$$At a fixed point $(x_0,y_0)$ we integrate from $z_0$ to $z$:$$\Huge P(x_0,y_0,z)-P(x_0,y_0,z_0)=-\int_{z_0}^z\rho(x_0,y_0,s)g\,ds$$
 Consider an ideal atmosphere with no motion and constant temperature. This is an ideal gas equation so we have $p=\rho RT$ and we have:$$\Huge \frac{dp}{dz}=-\rho g\implies \frac{dp}{dz}=-\frac{g}{RT}p=-\frac{p}{H}$$Which has solution $p=p_0e^{-z/H}$.

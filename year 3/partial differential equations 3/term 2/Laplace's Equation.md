@@ -14,10 +14,10 @@ We also have the less obvious properties:
 > For all $r>0,u(x)=\frac{1}{2}(u(x+r)+u(x-r))$. That is, the average of $u$ over the boundary of the ball $B_r(x)=(x-r,x+r)$ is the value of $u$ at the center of that ball.
 > For all $r>0,u(x)=\frac{1}{2r}\int_{x-r}^{x+r}u(y)dy$. This is the above statement recast for general dimensions.
 
-The first two properties are known as the maximum principles, and the last two are known as the mean-value principles. We verify the last property directly by integrating. Assuming $u>0$ for $(x-r,x+r)$ then by linearity of $u$:$$\Huge\begin{align*}
+The first two properties are known as the maximum principles, and the last two are known as the mean-value principles. We verify the last property directly by integrating. Assuming $u>0$ for $(x-r,x+r)$ then by linearity of $u$:$$\Huge\begin{aligned}
 \frac{1}{2r}\int_{x-r}^{x+r}u(y)dy&=\frac{1}{2r}\left(2r\frac{u(x-r)+u(x+r)}{2}\right)\\
 &=\frac{u(x-r)+u(x+r)}{2}=u(x)
-\end{align*}$$
+\end{aligned}$$
 In higher dimensions, linear polynomials $u(\underline{x})=\underline{c}\cdot\underline{x}+d$ are harmonic. Note that harmonic functions are not necessarily linear. For example, $u(x,y)=\sin x\sinh y$ is harmonic but not linear. Nevertheless, all harmonic functions satisfy the above properties.
 
 # Harmonic functions in $2D$:
@@ -29,7 +29,7 @@ We identify $(x,y)\in\Re^3$ with $z\in\mathbb{C}$ with $z=x+iy$. We write $f:\ma
 We will prove the last two properties of harmonic functions in any dimension. Let $v:\Re^n\rightarrow n$ and recall$$\Huge\int^*_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{1}{|B_r(\underline{x})|}\int_{B_r(\underline{x})}v(\underline{y})d\underline{y}=\frac{\int_{B_r(\underline{x})}v(\underline{y})d \underline{y}}{\int_{B_r(\underline{x})}1d\underline{y}}$$denotes the average (mean-value) of $v$ over the ball $B_r(\underline{x})$. A similar result exists for the average value over the surface of the ball:$$\Huge \int^*_{\partial B_r(\underline{x})}v(\underline{y})dS(\underline{y})=\frac{\int_{\partial B_r(\underline{x})}v(\underline{y})dS(\underline{y})}{\int_{\partial B_r(\underline{x})}1dS(\underline{y})}$$
 Let $\Omega\subset\Re^n$ be open. If $u\in C^2(\Omega)$ is harmonic in $\Omega$, then $$\Huge u(\underline{x})=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dS(\underline{y})=\int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}$$for each ball $B_r(\underline{x})\subset\Omega$. Therefore $u(\underline{x})$ is the average of $u$ over any sphere any over any ball in $\Omega$ centered at $\underline{x}$. Proof:
 > Fix some $\underline{x},r$ so that $B_r(\underline{x})\subset\Omega$ and let $\varphi(r)$ be given by:$$\Huge\varphi(r)=\int^*_{\partial B_r(\underline{x})}u(\underline{y})dS(\underline{y})$$Note that the $r$ dependence is implicit in $dS(y)$. To make it explicit we make a change of variables to $\underline{y}=\underline{x}+r\hat{\underline{y}}$ where $r\in\Re$ and $|\hat{\underline{y}}|=1$. This makes the integral:$$\Huge \varphi(r)=\int^*_{\partial B_1(0)}u(\underline{x}+r\hat{\underline{y}})dS(\hat{\underline{y}})$$
-> Then $\varphi'(r)$ becomes, using our change of variables:$$\Huge\begin{align*}
+> Then $\varphi'(r)$ becomes, using our change of variables:$$\Huge\begin{aligned}
 \varphi'(r)&=\frac{d}{dr}\int^*_{\partial B_1(0)}u(\underline{x}+r\hat{\underline{y}})dS(\hat{\underline{y}})\\
 &=\int^*_{\partial B_1(0)}\frac{d}{dr}u(\underline{x}+r\hat{\underline{y}})dS(\hat{\underline{y}})\\
 &=\int^*_{\partial B_1(0)}\underline{\nabla}u(\underline{x}+r\hat{\underline{y}})\cdot\hat{\underline{y}}\,dS(\hat{\underline{y}})\\
@@ -37,15 +37,15 @@ Let $\Omega\subset\Re^n$ be open. If $u\in C^2(\Omega)$ is harmonic in $\Omega$,
 &=\int^*_{\partial B_r(\underline{x})}\underline{\nabla}u(\underline{y})\cdot d\underline{S}(\underline{y})\\
 &=\frac{1}{|\partial B_r|}\int_{\partial B_r(\underline{x})}\underline{\nabla}u(\underline{y})\cdot d\underline{S}(\underline{y})\\
 &=\frac{1}{|\partial B_r|}\int_{B_r(\underline{x})}\underline{\nabla}\cdot\underline{\nabla}u(\underline{y})\,d\underline{y}=0
-\end{align*}$$
+\end{aligned}$$
 > Therefore $\varphi$ is constant and so $\varphi(r)=\lim_{r\to0}\varphi(r)=u(\underline{x})$, as required. 
-> For the other formula, we compute$$\Huge\begin{align*}
+> For the other formula, we compute$$\Huge\begin{aligned}
 \int^*_{B_r(\underline{x})}u(\underline{y})d\underline{y}&=\frac{1}{|B_r|}\int_{B_r(\underline{x})}u(\underline{y})d\underline{y}\\
 &=\frac{1}{|B_r|}\int_0^r\int_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
 &=\frac{1}{|B_r|}\int_0^r|\partial B_\rho|\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
 &=\frac{1}{\alpha(n)r^n}\int_0^rn\alpha(n)\rho^{n-1}\int^*_{\partial B_\rho(\underline{x})}u(\underline{z})dS(\underline{z})\,d\rho\\
 &=\frac{n}{r^n}\int_0^r\rho^{n-1}\int_{\partial B_\rho(\underline{x})}^*u(\underline{z})dS(\underline{z})d\rho
-\end{align*}$$
+\end{aligned}$$
 
 # Maximum principles:
 
@@ -85,15 +85,15 @@ Similar to complex analytic functions, the existence of a particular second deri
 
 We can draw another analogue to $\mathbb{C}$ analytic functions by stating the Boundedness/Liouville theorem for harmonic functions:
 > If $u:\Re^n\rightarrow\Re$ is harmonic and bounded, then $u(x)=\text{constant}$.
-> To prove this, fix some $x,y\in\Re^n$ and put $\delta=|x-y|$. Consider $B_r(x),B_{r+\delta}(y)$ and, noting that $B_r(x)\subset B_{r+\delta}(y)$, compute:$$\begin{align*}
+> To prove this, fix some $x,y\in\Re^n$ and put $\delta=|x-y|$. Consider $B_r(x),B_{r+\delta}(y)$ and, noting that $B_r(x)\subset B_{r+\delta}(y)$, compute:$$\begin{aligned}
 u(x)-u(y)&=\frac{1}{|B_r|}\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_{r+\delta}(y)}u(s)ds\\
 &=\frac{1}{|B_r|}\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_{r+\delta}(y)\setminus B_r(x)}u(s)ds\\
 &=\left(\frac{1}{|B_r|}-\frac{1}{|B_{r+\delta}|}\right)\int_{B_r(x)}u(s)ds-\frac{1}{|B_{r+\delta}|}\int_{B_{r+\delta}(y)\setminus B_r(x)}u(s)ds
-\end{align*}$$
-> Now suppose $|u(x)|\leq M$ for all $x\in\Re^n$, then for any $V\subset\Re^n$ it makes sense that $|\int_V u(s)ds|\leq |V|M$. So we write:$$\Huge\begin{align*}
+\end{aligned}$$
+> Now suppose $|u(x)|\leq M$ for all $x\in\Re^n$, then for any $V\subset\Re^n$ it makes sense that $|\int_V u(s)ds|\leq |V|M$. So we write:$$\Huge\begin{aligned}
  u(x)-u(y)&\leq\left(\frac{1}{|B_r|}-\frac{1}{|B_{r+\delta}|}\right)|B_r|+\frac{|B_{r+\delta}(y)\setminus B_r(x)|}{|B_{r+\delta}|}M\\
 &=2\left(1-\frac{|B_r|}{|B_{r+\delta}|}\right)M
-\end{align*}$$
+\end{aligned}$$
 > Taking $r\to\infty$ with $x,y$ fixed makes $|B_r|/|B_{r+\delta}|\to1$ and $|u(x)-u(y)|\to0$. Since $x,y$ were arbitrary, we must have that $u(x)=u(y)$ for all $x,y\in\Re^n$. That is, $u(x)=\text{constant}$. 
 
 # Maximum principles for Elliptic PDEs:

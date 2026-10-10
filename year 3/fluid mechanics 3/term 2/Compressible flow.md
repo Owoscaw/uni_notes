@@ -1,10 +1,10 @@
 
 So far we have considered [[Dynamics of ideal fluids#Incompressible Euler equations|incompressible fluids]], which is a good approximation for water and oil, but fails for gasses in most contexts. We will see that we gain sound waves and shocks from allowing fluid to be compressible.
 
-Recall the continuity and momentum equations for an inviscid fluid:$$\Huge\begin{align*}
+Recall the continuity and momentum equations for an inviscid fluid:$$\Huge\begin{aligned}
 \frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\\
 \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p+\underline{f}
-\end{align*}$$If the fluid is compressible, then $\rho$ can vary in space and time. Now we have $5$ unknown functions but only $4$ governing equations. To close the system, we need another physical equation. We will achieve this by positing a dependence of pressure on density and/or temperature.
+\end{aligned}$$If the fluid is compressible, then $\rho$ can vary in space and time. Now we have $5$ unknown functions but only $4$ governing equations. To close the system, we need another physical equation. We will achieve this by positing a dependence of pressure on density and/or temperature.
 
 # Barotropic fluids:
 
@@ -15,13 +15,13 @@ Having made this assumption, we now need to check whether this still leads to ph
 
 In the absence of a body force, energy $E$ is conserved as long as we allow kinetic energy to convert into internal energy $e$. The exact form of this is$$\Huge E=\int_V\rho\left(\frac{1}{2}|\underline{u}|^2+e(\rho)\right)dV,\,\,e(\rho)=\int_0^\rho\frac{P(\sigma)}{\sigma^2}d\sigma$$assuming that no fluid enters the control volume ($\underline{u}\cdot\underline{\hat{n}}=0$ on the boundary). We call $e(\rho)$ the internal energy density or specific internal energy.
 
-Let us consider these forms by proving that $E$ is conserved. We consider each term separately$$\Huge\begin{align*}
+Let us consider these forms by proving that $E$ is conserved. We consider each term separately$$\Huge\begin{aligned}
 \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV&=\int_V\frac{1}{2}\frac{\partial }{\partial t}(\rho|\underline{u}|^2)dV\\
 &=\int_V\left(\frac{1}{2}|\underline{u}|^2\frac{\partial \rho}{\partial t}+\rho\underline{u}\cdot\frac{\partial \underline{u}}{\partial t}\right)dV\\
 &=\int_V\left(\frac{1}{2}|\underline{u}|^2\frac{\partial \rho}{\partial t}+\rho\underline{u}\cdot\left(-(\underline{u}\cdot\underline{\nabla})\underline{u}-\frac{1}{\rho}\underline{\nabla}P\right)\right)dV
-\end{align*}$$We use the same trick for incompressible fluids and use the identity$$\Huge (\underline{u}\cdot\underline{\nabla})\underline{u}=(\underline{\nabla}\times\underline{u})\times\underline{u}+\frac{1}{2}\underline{\nabla}(|\underline{u}|^2)$$along with the observation that the cross product term disappears when dotted with $\underline{u}$$$\Huge \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV=\int_V\left(\frac{1}{2}|\underline{u}|^2\frac{\partial \rho}{\partial t}-\rho\underline{u}\cdot\underline{\nabla}\left(\frac{1}{2}|\underline{u}|^2\right)-\underline{u}\cdot\underline{\nabla}P\right)dV$$we manipulate the middle term using $$\Huge \underline{A}\cdot\underline{\nabla}f=\underline{\nabla}\cdot(f\underline{A})-f\underline{\nabla}\cdot\underline{A}$$and then use the divergence theorem on the final term to get$$\large \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV=\int_V\left(\frac{1}{2}|\underline{u}|^2\frac{\partial \rho}{\partial t}+\frac{1}{2}|\underline{u}|^2\underline{\nabla}\cdot(\rho\underline{u})-\underline{u}\cdot\underline{\nabla} P\right)dV-\int_S\frac{1}{2}|\underline{u}|^2\rho\underline{u}\cdot d\underline{S}$$The first two terms on the right form a multiple of the continuity equation and so disappear. The final term is integrating a multiple of $\underline{u}\cdot\underline{\hat{n}}$ around the boundary, however $\underline{u}\cdot\underline{\hat{n}}=0$ on the boundary, leaving$$\Huge \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV=-\int_V\underline{u}\cdot\underline{\nabla}P\,dV$$We can interpret this as saying kinetic energy is converted away when the pressure forces ($-\underline{\nabla}P$) act directly against the velocity. Note that we have not used our barotropic fluid assumption yet.
+\end{aligned}$$We use the same trick for incompressible fluids and use the identity$$\Huge (\underline{u}\cdot\underline{\nabla})\underline{u}=(\underline{\nabla}\times\underline{u})\times\underline{u}+\frac{1}{2}\underline{\nabla}(|\underline{u}|^2)$$along with the observation that the cross product term disappears when dotted with $\underline{u}$$$\Huge \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV=\int_V\left(\frac{1}{2}|\underline{u}|^2\frac{\partial \rho}{\partial t}-\rho\underline{u}\cdot\underline{\nabla}\left(\frac{1}{2}|\underline{u}|^2\right)-\underline{u}\cdot\underline{\nabla}P\right)dV$$we manipulate the middle term using $$\Huge \underline{A}\cdot\underline{\nabla}f=\underline{\nabla}\cdot(f\underline{A})-f\underline{\nabla}\cdot\underline{A}$$and then use the divergence theorem on the final term to get$$\large \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV=\int_V\left(\frac{1}{2}|\underline{u}|^2\frac{\partial \rho}{\partial t}+\frac{1}{2}|\underline{u}|^2\underline{\nabla}\cdot(\rho\underline{u})-\underline{u}\cdot\underline{\nabla} P\right)dV-\int_S\frac{1}{2}|\underline{u}|^2\rho\underline{u}\cdot d\underline{S}$$The first two terms on the right form a multiple of the continuity equation and so disappear. The final term is integrating a multiple of $\underline{u}\cdot\underline{\hat{n}}$ around the boundary, however $\underline{u}\cdot\underline{\hat{n}}=0$ on the boundary, leaving$$\Huge \frac{d}{dt}\int_V\frac{1}{2}\rho|\underline{u}|^2dV=-\int_V\underline{u}\cdot\underline{\nabla}P\,dV$$We can interpret this as saying kinetic energy is converted away when the pressure forces ($-\underline{\nabla}P$) act directly against the velocity. Note that we have not used our barotropic fluid assumption yet.
 
-Now we consider the internal energy term. From the chain rule we get$$\Huge \frac{\partial e}{\partial t}=\frac{de}{d\rho}\frac{\partial \rho}{\partial t}=\frac{P}{\rho^2}\frac{\partial \rho}{\partial t}$$and so$$\Huge\begin{align*}
+Now we consider the internal energy term. From the chain rule we get$$\Huge \frac{\partial e}{\partial t}=\frac{de}{d\rho}\frac{\partial \rho}{\partial t}=\frac{P}{\rho^2}\frac{\partial \rho}{\partial t}$$and so$$\Huge\begin{aligned}
 \frac{d}{dt}\int_V\rho e\,dV&=\int_V\left(e\frac{\partial \rho}{\partial t}+\rho\frac{\partial e}{\partial t}\right)dV\\
 &=\int_V\left(e+\frac{P}{\rho}\right)\frac{\partial \rho}{\partial t}dV\\
 &=-\int_V\left(e+\frac{P}{\rho}\right)\underline{\nabla}\cdot(\rho\underline{u})dV\\
@@ -30,18 +30,18 @@ Now we consider the internal energy term. From the chain rule we get$$\Huge \fra
 &=\int_V\rho\underline{u}\cdot\left(\frac{P}{\rho^2}+\frac{P'(\rho)}{\rho}-\frac{P}{\rho^2}\right)\underline{\nabla}\rho\,dV\\
 &=\int_V\rho\underline{u}\cdot\frac{P'(\rho)}{\rho}\underline{\nabla}\rho\,dV\\
 &=\int_V\underline{u}\cdot\underline{\nabla}P\,dV
-\end{align*}$$which is equal and opposite to the equation we found for kinetic energy, proving total energy is conserved.
+\end{aligned}$$which is equal and opposite to the equation we found for kinetic energy, proving total energy is conserved.
 
 ## Bernoulli's principle revised:
 As we incompressible flows, we can find a conserved energy-related quantity along streamlines, generalising Bernoulli's principle.
 
 Recall that we derived Bernoulli's principle by writing down the momentum equation for a conservative body force $\underline{f}=-\underline{\nabla}\Phi$$$\Huge \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}=-\frac{1}{\rho}\underline{\nabla}p-\underline{\nabla}\Phi$$and using our favorite vector identity on the second term to write the whole RHS as a gradient. This was all well and good when $\rho$ was constant, however now it will be harder to write the pressure term as a gradient.
 
-We introduce $h(\rho)$ so that the momentum equation becomes$$\Huge \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}=-\underline{\nabla}h-\underline{\nabla}\Phi$$we then ask of the form of $h$$$\Huge\begin{align*}
+We introduce $h(\rho)$ so that the momentum equation becomes$$\Huge \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}=-\underline{\nabla}h-\underline{\nabla}\Phi$$we then ask of the form of $h$$$\Huge\begin{aligned}
 \underline{\nabla}h(\rho)&=\frac{1}{\rho}\underline{\nabla}P(\rho)\\
 \frac{dh}{d\rho}\underline{\nabla}\rho&=\frac{1}{\rho}\frac{dP}{d\rho}\underline{\nabla}\rho\\
 \frac{dh}{d\rho}&=\frac{1}{\rho}\frac{dP}{d\rho}\implies h(\rho)=\int_0^\rho\frac{P'(\sigma)}{\sigma}d\sigma
-\end{align*}$$and our previous method then works to generalise Bernoulli's principle, giving us the energy head$$\Huge H=h(\rho)+\frac{1}{2}|\underline{u}|^2+\Phi$$
+\end{aligned}$$and our previous method then works to generalise Bernoulli's principle, giving us the energy head$$\Huge H=h(\rho)+\frac{1}{2}|\underline{u}|^2+\Phi$$
 ## Thermodynamics:
 A common model for pressure is$$\Huge P(\rho)=k\rho^\gamma$$which represents an ideal gas undergoing an adiabatic process (no heat added). The constant $\gamma$ is called the adiabatic index and depends on the number of degrees of freedom of the molecules making up the gas. Specifically, $\gamma=(n_\text{dof}+2)/n_\text{dof}$. Diatomic molecules have $n_\text{dof}=5$ ($3$ translational, $2$ rotational), so $\gamma\approx1.4$ for air. 
 
@@ -57,47 +57,47 @@ Consider a passenger jet flying through air. Assuming that air is an ideal gas, 
 The most important feature of a compressible fluid is that it supports pressure oscillations (sound waves). We proceed to study these oscillations using linearisation.
 
 ## Small amplitude sound waves:
-We start from the unforced compressible barotropic Euler equations:$$\Huge\begin{align*}
+We start from the unforced compressible barotropic Euler equations:$$\Huge\begin{aligned}
 \frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\\
 \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p\\
 p&=P(\rho)
-\end{align*}$$and proceed to consider disturbances around a base state with uniform density $\rho_0$, uniform pressure $p_0=P(\rho_0)$, and zero velocity. Replacing $\rho\rightarrow\rho_0+\epsilon\rho_1,p\rightarrow p_0+\epsilon p_1$, and $\underline{u}=\epsilon\underline{u}_1$ for our linearisation gives$$\Huge\begin{align*}
+\end{aligned}$$and proceed to consider disturbances around a base state with uniform density $\rho_0$, uniform pressure $p_0=P(\rho_0)$, and zero velocity. Replacing $\rho\rightarrow\rho_0+\epsilon\rho_1,p\rightarrow p_0+\epsilon p_1$, and $\underline{u}=\epsilon\underline{u}_1$ for our linearisation gives$$\Huge\begin{aligned}
 \epsilon\frac{\partial \rho_1}{\partial t}+\epsilon\rho_0\underline{\nabla}\cdot\underline{u}_1+\epsilon^2\underline{\nabla}\cdot(\rho_1\underline{u}_1)&=0\\
 \epsilon\frac{\partial \underline{u}_1}{\partial t}+\epsilon^2(\underline{u}_1\cdot\underline{\nabla})\underline{u}_1&=-\frac{\epsilon}{\rho_0+\epsilon\rho_1}\underline{\nabla}p_1\\
 p_0+\epsilon p_1&=P(\rho_0+\epsilon\rho_1)
-\end{align*}$$To linearise the awkward terms on the RHS, we use the Taylor expansions:$$\Huge\begin{align*}
+\end{aligned}$$To linearise the awkward terms on the RHS, we use the Taylor expansions:$$\Huge\begin{aligned}
 \frac{1}{\rho_0+\epsilon\rho_1}&=\frac{1}{\rho_0}\left(\frac{1}{1+\epsilon\frac{\rho_1}{\rho_0}}\right)\\
 &=\frac{1}{\rho_0}\left(1-\epsilon\frac{\rho_1}{\rho_0}+\epsilon^2\frac{\rho_1^2}{\rho_0^2}+\dots\right)\\
 P(\rho_0+\epsilon\rho_1)&=P(\rho_0)+\epsilon\rho_1P'(\rho_0)+\frac{\epsilon^2\rho_1^2}{2}P''(\rho_0)+\dots\\
 &=p_0+\epsilon\rho_1P'(\rho_0)+\dots
-\end{align*}$$so the linearised equations become$$\Huge\begin{align*}\frac{\partial \rho}{\partial t}+\rho_0\underline{\nabla}\cdot\underline{u}&=0\\
+\end{aligned}$$so the linearised equations become$$\Huge\begin{aligned}\frac{\partial \rho}{\partial t}+\rho_0\underline{\nabla}\cdot\underline{u}&=0\\
 \frac{\partial \underline{u}}{\partial t}&=-\frac{1}{\rho_0}\underline{\nabla}p\\
 p&=P'(\rho_0)\rho
-\end{align*}$$To derive an equation for the pressure perturbation $p$, we differentiate the first equation wrt time and substitute into the second:$$\Huge\frac{\partial^2\rho}{\partial t^2}=-\rho_0\underline{\nabla}\cdot\frac{\partial \underline{u}}{\partial t}=\underline{\nabla}^2p$$Substituting in $\rho=p/P'(\rho_0)$ then implies$$\Huge \frac{\partial^2p}{\partial t}=c_0^2\underline{\nabla}^2p,\,\,c_0=\sqrt{P'(\rho_0)}$$which is simply the three-dimensional wave equation and $c_0$ is called the sound speed.
+\end{aligned}$$To derive an equation for the pressure perturbation $p$, we differentiate the first equation wrt time and substitute into the second:$$\Huge\frac{\partial^2\rho}{\partial t^2}=-\rho_0\underline{\nabla}\cdot\frac{\partial \underline{u}}{\partial t}=\underline{\nabla}^2p$$Substituting in $\rho=p/P'(\rho_0)$ then implies$$\Huge \frac{\partial^2p}{\partial t}=c_0^2\underline{\nabla}^2p,\,\,c_0=\sqrt{P'(\rho_0)}$$which is simply the three-dimensional wave equation and $c_0$ is called the sound speed.
 > Assuming an ideal gas, $P(\rho)=kp^\gamma$, the sound speed becomes$$\Huge c_0=\sqrt{k\gamma\rho_0^{\gamma-1}}$$We know that $T=e\mu/c_V$ and saw that$$\Huge e(\rho_0)=\int_0^{\rho_0}\frac{P(\sigma)}{\sigma^2}d\sigma=\frac{k\rho_0^{\gamma-1}}{\gamma-1}$$and so we introduce $c_0$ as a function of $e$ and introduce $T$:$$\Huge c_0=\sqrt{\gamma(\gamma-1)e(\rho_0)}=\sqrt{\gamma(\gamma-1)\frac{c_VT}{\mu}}$$Given that $\gamma=(n_\text{dof}+2)/n_\text{dof}$ and $c_V=\frac{1}{2}n_\text{dof}R$, we get$$\Huge c_0=\sqrt{\frac{\gamma RT}{\mu}}$$So for an ideal gas, sound speed is only a function of temperature. For air, $\gamma=1.4,R=8.3\text{JK}^{-1}\text{mol}^{-1}$, and $\mu=0.0029\text{kg mol}^{-1}$, so we calculate$$\Huge c_0=\begin{cases}332\text{ m s}^{-1} & T=273\text{ K} \\
 344\text{ m s}^{-1} & T=293\text{ K}\end{cases}$$
 
-To find an equation for $\phi$, we take the curl of our second equation to get$$\Huge \underline{\nabla}\times\left(\frac{\partial \underline{u}}{\partial t}\right)=\underline{\nabla}\times\left(-\frac{1}{\rho_0}\underline{\nabla}p\right)\implies\frac{\partial \underline{\omega}}{\partial t}=\underline{0}$$, which shows that sound waves do not change the [[Kinematics of Fluids#Vorticity|vorticity]]. So if we start with no vorticity, we continue to have no vorticity. This means that we can express the velocity in terms of a potential$$\Huge \underline{u}(\underline{x},t)=\underline{\nabla}\phi(\underline{x},t)$$where $\phi(\underline{x},t)$ is known as the acoustic velocity potential. To find the equation that this satisfies, note that our linearisation leads to$$\Huge\begin{align*}
+To find an equation for $\phi$, we take the curl of our second equation to get$$\Huge \underline{\nabla}\times\left(\frac{\partial \underline{u}}{\partial t}\right)=\underline{\nabla}\times\left(-\frac{1}{\rho_0}\underline{\nabla}p\right)\implies\frac{\partial \underline{\omega}}{\partial t}=\underline{0}$$, which shows that sound waves do not change the [[Kinematics of Fluids#Vorticity|vorticity]]. So if we start with no vorticity, we continue to have no vorticity. This means that we can express the velocity in terms of a potential$$\Huge \underline{u}(\underline{x},t)=\underline{\nabla}\phi(\underline{x},t)$$where $\phi(\underline{x},t)$ is known as the acoustic velocity potential. To find the equation that this satisfies, note that our linearisation leads to$$\Huge\begin{aligned}
 \underline{\nabla}\frac{\partial \phi}{\partial t}&=-\underline{\nabla}\left(\frac{1}{\rho_0}p\right)\\
 &=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\rho\right)
-\end{align*}$$Differentiating wrt time and substituting into our other equation gives$$\Huge\underline{\nabla}\frac{\partial^2\phi}{\partial t^2}=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\frac{\partial \rho}{\partial t}\right)=\underline{\nabla}(c_0^2\underline{\nabla}^2\phi)$$Ignoring the arbitrary function of time, we have$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\underline{\nabla}^2\phi$$which is the same equation as $p$. In acoustics, we solve a wave equation for allowable forms of $\phi$ subject to certain boundary conditions. We then recover $\underline{u},p,\rho$ from$$\Huge \underline{u}=\underline{\nabla}\phi,\,\,p=-\rho_0\frac{\partial \phi}{\partial t},\,\,\rho=\frac{1}{c_0^2}p$$
+\end{aligned}$$Differentiating wrt time and substituting into our other equation gives$$\Huge\underline{\nabla}\frac{\partial^2\phi}{\partial t^2}=-\underline{\nabla}\left(c_0^2\frac{1}{\rho_0}\frac{\partial \rho}{\partial t}\right)=\underline{\nabla}(c_0^2\underline{\nabla}^2\phi)$$Ignoring the arbitrary function of time, we have$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\underline{\nabla}^2\phi$$which is the same equation as $p$. In acoustics, we solve a wave equation for allowable forms of $\phi$ subject to certain boundary conditions. We then recover $\underline{u},p,\rho$ from$$\Huge \underline{u}=\underline{\nabla}\phi,\,\,p=-\rho_0\frac{\partial \phi}{\partial t},\,\,\rho=\frac{1}{c_0^2}p$$
 ## $1D$ travelling wave solutions:
-If we assume that $\phi=\phi(x,t)$, then the wave equation for $\phi$ reduces to$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\frac{\partial^2\phi}{\partial x^2}$$which admits a travelling wave solution of the form$$\Huge\phi(x,t)=F(x-c_0t)+G(x+c_0t)$$and when given $\phi(x,0)$, one can find particular forms using a Fourier expansion. However, we have two constraints on $\phi$ given by specifying pressure $p$ as well as $\underline{u}$ at $t=0$. Therefore our initial value problem becomes:$$\Huge\begin{align*}
+If we assume that $\phi=\phi(x,t)$, then the wave equation for $\phi$ reduces to$$\Huge \frac{\partial^2\phi}{\partial t^2}=c_0^2\frac{\partial^2\phi}{\partial x^2}$$which admits a travelling wave solution of the form$$\Huge\phi(x,t)=F(x-c_0t)+G(x+c_0t)$$and when given $\phi(x,0)$, one can find particular forms using a Fourier expansion. However, we have two constraints on $\phi$ given by specifying pressure $p$ as well as $\underline{u}$ at $t=0$. Therefore our initial value problem becomes:$$\Huge\begin{aligned}
 \frac{\partial^2\phi}{\partial t^2}&=c_0^2\frac{\partial^2\phi}{\partial x^2}\\
 \phi(x,0)&=\phi_0(x)\\
 \frac{\partial \phi}{\partial t}(x,0)&=\dot\phi_0(x)
-\end{align*}$$At $t=0$, we have$$\Huge\phi_0(x)=F(x)+G(x)$$which makes the second condition$$\Huge\begin{align*}
+\end{aligned}$$At $t=0$, we have$$\Huge\phi_0(x)=F(x)+G(x)$$which makes the second condition$$\Huge\begin{aligned}
 \dot\phi_0(x)&=-c_0F'(x)+c_0G'(x)\\
 \implies\int_a^x\dot\phi_0(s)ds&=-c_0F(x)+c_0G(x)
-\end{align*}$$for some arbitrary point $a$. This gives us the functional form for $F,G$. Using this in our solution and assuming that $a$ is between diverging points defined by $x-c_0t,x+c_0t$ we get$$\large\begin{align*}
+\end{aligned}$$for some arbitrary point $a$. This gives us the functional form for $F,G$. Using this in our solution and assuming that $a$ is between diverging points defined by $x-c_0t,x+c_0t$ we get$$\large\begin{aligned}
 \phi(x,t)&=\frac{1}{2}\phi_0(x-c_0t)-\frac{1}{2c_0}\int_a^{x-c_0t}\dot\phi_0(s)ds+\frac{1}{2}\phi_0(x+c_0t)+\frac{1}{2c_0}\int_a^{x+c_0t}\dot\phi_0(s)ds\\
 &=\frac{1}{2}(\phi_0(x-c_0t)+\phi_0(x+c_0t))+\frac{1}{2c_0}\int_{x-c_0t}^{x+c_0t}\dot\phi_0(s)ds
-\end{align*}$$This solution is known as D'Alembert's solution. Let us try an example:
-> Consider a Gaussian pulse:$$\Huge u(x,0)=0,\,\,p(x,0)=\rho_0e^{-x^2/a^2}$$These initial conditions correspond to $\phi_0(x)=0$ and$$\Huge\dot\phi_0(x)=-\frac{1}{\rho_0}p(x,0)=-e^{-x^2/a^2}$$Appling D'Alembert's solution gives$$\Huge\begin{align*}
+\end{aligned}$$This solution is known as D'Alembert's solution. Let us try an example:
+> Consider a Gaussian pulse:$$\Huge u(x,0)=0,\,\,p(x,0)=\rho_0e^{-x^2/a^2}$$These initial conditions correspond to $\phi_0(x)=0$ and$$\Huge\dot\phi_0(x)=-\frac{1}{\rho_0}p(x,0)=-e^{-x^2/a^2}$$Appling D'Alembert's solution gives$$\Huge\begin{aligned}
 \phi(x,t)&=-\frac{1}{2c_0}\int_{x-c_0t}^{x+c_0t}e^{-s^2/a^2}ds\\
 &=-\frac{1}{2c_0}\int_0^{x+c_0t}e^{-s^2/a^2}ds+\frac{1}{2c_0}\int_0^{x-c_0t}e^{-s^2/a^2}ds\\
 &=\frac{a\sqrt\pi}{4c_0}\left(-\text{erf}\left(\frac{x+c_0t}{a}\right)+\text{erf}\left(\frac{x-c_0t}{a}\right)\right)
-\end{align*}$$where $\text{erf}$ is the error function, defined by$$\Huge\text{erf}(x)=\frac{2}{\sqrt\pi}\int_0^xe^{-s^2}ds$$
+\end{aligned$$where $\text{erf}$ is the error function, defined by$$\Huge\text{erf}(x)=\frac{2}{\sqrt\pi}\int_0^xe^{-s^2}ds$$
 > Differentiating our solution wrt time, we can find the corresponding pressure perturbation:$$\Huge p(x,t)=-\rho_0\frac{\partial \phi}{\partial t}=\frac{\rho_0}{2}\exp\left(-\frac{(x+c_0t)^2}{a^2}\right)+\frac{\rho_0}{2}\exp\left(-\frac{(x-c_0t)^2}{a^2}\right)$$
 > As expected, the initial disturbance leads to two identical pressure pulses of the same shape moving in opposite directions at constant speed $c_0$. 
 > Solving the non-linearised system numerically shows that our model holds up well for early times, however in reality $c$ can vary over space and time.
@@ -108,11 +108,11 @@ Now we have an idea of the general properties of sound wave, let us introduce mo
 > There is therefore a discrete spectrum of possible modes with $\omega=c_0k=c_0n\pi/L$. Each mode has the form$$\Huge\phi(x,t)=A_n\sin\left(\frac{n\pi x}{L}\right)\sin\left(\frac{c_0n\pi t}{L}\right)$$
 
 ## $3D$ travelling wave solutions:
-Let us now generalise these concepts to $\Re^3$. We saw that the wave equation admits a solution of a superposition of two oppositely moving waves. In $\Re^3$, the solution will be a superposition of plane waves travelling in many different directions. Each component will have form$$\Huge \phi(\underline{x},t)=F(\underline{k}\cdot\underline{x}-\omega t)$$for some fixed vector $\underline{k}$ whose direction represents the direction of motion. Differentiating this expression, we find:$$\Huge\begin{align*}
+Let us now generalise these concepts to $\Re^3$. We saw that the wave equation admits a solution of a superposition of two oppositely moving waves. In $\Re^3$, the solution will be a superposition of plane waves travelling in many different directions. Each component will have form$$\Huge \phi(\underline{x},t)=F(\underline{k}\cdot\underline{x}-\omega t)$$for some fixed vector $\underline{k}$ whose direction represents the direction of motion. Differentiating this expression, we find:$$\Huge\begin{aligned}
 \frac{\partial^2\phi}{\partial t^2}&=\omega^2 F''(\underline{k}\cdot\underline{x}-\omega t)\\
 \underline{\nabla}^2\phi&=\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}+\frac{\partial^2\phi}{\partial z^2}\\
 &=(k_x^2+k_y^2+k_z^2)F''(\underline{k}\cdot\underline{x}-\omega t)
-\end{align*}$$So this will be a solution to our system, providing that $\omega$ satisfies the dispersion relation$$\Huge \omega^2=c_0^2|\underline{k}|^2$$The corresponding velocity perturbation is then$$\Huge \underline{u}(\underline{x},t)=\underline{\nabla}\phi=\underline{k}F'(\underline{k}\cdot\underline{x}-\omega t)$$, so we see that oscillations are in the direction of propagation aligned with $\underline{k}$. 
+\end{aligned}$$So this will be a solution to our system, providing that $\omega$ satisfies the dispersion relation$$\Huge \omega^2=c_0^2|\underline{k}|^2$$The corresponding velocity perturbation is then$$\Huge \underline{u}(\underline{x},t)=\underline{\nabla}\phi=\underline{k}F'(\underline{k}\cdot\underline{x}-\omega t)$$, so we see that oscillations are in the direction of propagation aligned with $\underline{k}$. 
 
 Consider a travelling plane wave reflecting off of a wall:
 > If we place a rigid wall at $y=0$, let us propagate an incoming wave diagonally towards it in the $\underline{k}_i=(k_x,-k_y)$ direction:$$\Huge\implies\phi_i(x,y,t)=\exp(ik_xx-ik_yy-i\omega t)$$
@@ -126,11 +126,11 @@ Consider a travelling plane wave reflecting off of a wall:
 > > The constants are determined by additional conditions:
 > > > Firstly we impose the condition at the wall:$$\Huge v=\frac{\partial \phi}{\partial y}=0\implies Y'(0)=0$$and so it follows that:$$\Huge ik_yC-ik_yD=0\implies C=D$$
 > > > Secondly, we note that if we expand our solution we get $4$ terms. We expect $\phi_i$ to be one of these terms, which is in fact the case with $AD=1$. Then the $BC$ term is a leftward, downward moving wave. This is not allowed, so we set $B=0$
-> > This fixes our solution:$$\Huge\begin{align*}
+> > This fixes our solution:$$\Huge\begin{aligned}
 \phi(x,y,t)&=X(x)Y(y)\exp(-i\omega t)\\
 &=\exp(ik_xx)(\exp(ik_yy)+\exp(-ik_yy))\exp(-i\omega t)\\
 &=\exp(ik_xx-ik_yy-i\omega t)+\exp(ik_xx+ik_yy-i\omega t)
-\end{align*}$$where the terms represent $\phi_i$ and the reflected wave respectively. 
+\end{aligned}$$where the terms represent $\phi_i$ and the reflected wave respectively. 
 > > We are then left with the incidence wave with direction $\underline{k}_i=(k_x,-k_y)$ and a reflected wave with direction $\underline{k}_r(k_x,k_y)$.
 > Our second method is the method of images. Just as we did with potential flows, we can take the same approach and guarantee that $v=0$ at the wall by superimposing the incident wave $\phi_i$ with an image wave $\tilde\phi$ that is travelling in the same direction in $x$, but opposite in $y$. Thus we can directly postulate the same solution.
 
@@ -145,10 +145,10 @@ This tells us a few things:
 > The dispersion relation leads to a minimum frequency. For any mode $n$:$$\Huge \omega>c_0\sqrt{\frac{n^2\pi^2}{a^2}}=c_0\frac{n\pi}{a}$$So taking $n=0$, we have a wave with no $y$-dependence (giving a plane wave) and our constraint is always satisfied. For higher modes, this is not true. That is, for $\omega\leq c_0\pi/a$, only a plane wave can propagate. Note that we can write this relation in terms of wavelength, $\implies\lambda/2\geq a$, at least half a wavelength needs to fix between the boundaries.
 > The phase speed in the $x$-direction $\omega/k_x$ is a function of $n$, so sound waves of different frequencies progress along the waveguide at different speeds.
 > Note that this phase speed in the $x$-direction is faster than the speed of sound since $\omega/k_x>c_0$, so the wave becomes slower in the $y$-direction to compensate. Observe that our dispersion relation dictates $\omega=c_0|\underline{k}|$. To calculate the speed we therefore need to use $|\underline{k}|$, not $k_x$.
-> This is because the mode is actually made of two travelling waves travelling at an angle and propagating off of the walls. To see this, note that$$\begin{align*}
+> This is because the mode is actually made of two travelling waves travelling at an angle and propagating off of the walls. To see this, note that$$\begin{aligned}
 \cos\left(\frac{n\pi y}{a}\right)\exp(ik_xx-i\omega t)&=\frac{1}{2}\left(\exp\left(\frac{in\pi y}{a}\right)+\exp(-\frac{in\pi y}{a})\right)\exp(ik_xx-i\omega t)\\
 &=\frac{1}{2}\exp\left(\frac{in\pi y}{a} +ik_xx-i\omega t\right)+\frac{1}{2}\exp\left(-\frac{in\pi y}{a}+ik_xx-i\omega t\right)
-\end{align*}$$, so each wave has wavenumber$$\Huge |\underline{k}|=\sqrt{k_x^2+\frac{n^2\pi^2}{a^2}}$$and so their phase speed is $\omega/|\underline{k}|=c_0$ as expected. The waves therefore bounce off of the wall at the angle$$\Huge \alpha=\pm\arctan\left(\frac{k_y}{k_x}\right)=\pm\arctan\left(\frac{n\pi}{k_x a}\right)$$
+\end{aligned}$$, so each wave has wavenumber$$\Huge |\underline{k}|=\sqrt{k_x^2+\frac{n^2\pi^2}{a^2}}$$and so their phase speed is $\omega/|\underline{k}|=c_0$ as expected. The waves therefore bounce off of the wall at the angle$$\Huge \alpha=\pm\arctan\left(\frac{k_y}{k_x}\right)=\pm\arctan\left(\frac{n\pi}{k_x a}\right)$$
 
 We can generalise this approach to $3D$ waveguides such as tubes with square or circular cross sections. Therefore let us consider a cylindrical waveguide:
 > Here, we assume the domain is an infinite tube of radius $a$, aligned with the $z$-axis:$$\Huge \Omega=\{(r,\theta,z):0\leq r<a,0\leq \theta<2\pi,-\infty<z<\infty\}$$
@@ -169,55 +169,55 @@ Recall the general solution to the wave equation$$\Huge\frac{\partial^2y}{\parti
 
 ## Burger's equation and "blow up":
 Returning to the Euler equations, let us look at inertial terms in the momentum equation in $1D$:$$\Huge \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}=0$$This is exactly the inviscid Burgers' equation. Suppose we have a curve $x(t)$ in the $(x,t)$-plane where:$$\Huge \frac{dx}{dt}=u(x(t),t),\,\,x(0)=x_0$$Then along such curve, Burgers' equation is written as:$$\Huge \frac{\partial u}{\partial t}+\frac{dx}{dt}\frac{\partial u}{\partial x}=0\iff \frac{du}{dt}=0$$Along these curves, the PDE is reduced to an ODE! These curves are therefore characteristics of Burgers' equation. Here, they represent particle paths:
-> Let us solve Burgers' equation with an initial condition that diverges. Say at $t=0$ we have$$\Huge u(x,0)=u_0(x_0)=x_0$$, since $u$ is constant along the characteristics and $\frac{dx}{dt}=u$, they must be straight lines. Integrating $x'(t)$ gives:$$\Huge\begin{align*}
+> Let us solve Burgers' equation with an initial condition that diverges. Say at $t=0$ we have$$\Huge u(x,0)=u_0(x_0)=x_0$$, since $u$ is constant along the characteristics and $\frac{dx}{dt}=u$, they must be straight lines. Integrating $x'(t)$ gives:$$\Huge\begin{aligned}
 x-x_0&=u(x_0,0)t\\
 &=u_0(x_0)t=x_0t
-\end{align*}$$
+\end{aligned}$$
 > Here, we can invert to find the value of $x_0$ for the characteristics going through $(x,t)$ to find:$$\Huge x_0=\frac{x}{1+t}$$
 > Our equation for $u$ then dictates:$$\Huge u(x,t)=u_0(x_0)=x_0=\frac{x}{1+t}$$![[Compressible flow 2026-02-10 22.41.40.excalidraw]]
 > So we see the particle paths diverge, where those furthest from the origin move fastest. The flow speed itself is also reducing as particles are depleting. Let us reverse the direction of the flow so our initial condition is instead $u_0(x_0)=-x_0$. This time, characteristics are the lines$$\Huge x-x_0=-x_0t$$and so$$\Huge x_0=\frac{x}{1-t}\implies u(x,t)=\frac{x}{t-1}$$, which has a finite-time singularity as $t\to1$. At such time, all of the characteristics intersect at $x=0$, so that solution is not well defined there:![[Compressible flow 2026-02-10 22.49.55.excalidraw]]This means that all of the particles in the system have ended up at the same place at the same time. Therefore there is no unique starting position for a particle at $(0,1)$. There is no one-to-one particle mapping, which was a key assumption in the smooth continuum approximation of a fluid in the first place. This corresponds to a "blow up" in the velocity as particles at $x=\pm\infty$ reach singular speeds in order to get to $x=0$ in time. Note that we could also have computed the intersection time by looking for points where the characteristics curve $x$ is independent of $x_0$, so that $$\Huge \frac{\partial x}{\partial x_0}=0\iff1-t=0\iff t=1$$
 
 ## Riemann invariants:
-Returning to the $1D$ Euler equations, we consider an ideal gas $p=P(\rho)=k\rho^\gamma$. The continuity and unforced momentum equations becomes:$$\Huge\begin{align*}
+Returning to the $1D$ Euler equations, we consider an ideal gas $p=P(\rho)=k\rho^\gamma$. The continuity and unforced momentum equations becomes:$$\Huge\begin{aligned}
 	\frac{\partial \rho}{\partial t}+\underline{\nabla}\cdot(\rho\underline{u})&=0\implies\frac{\partial \rho}{\partial t}+\rho\frac{\partial u}{\partial x}+u\frac{\partial\rho}{\partial x}=0\\
 \frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p\implies\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}+\frac{k\gamma\rho^{\gamma-1}}{\rho}\frac{\partial \rho}{\partial x}=0
-\end{align*}$$We will see that these can be reduced into two sets of ODEs if we first eliminate $\rho$ in favor of the variable:$$\Huge c(\rho)=\sqrt{P'(\rho)}=\sqrt{k\gamma\rho^{\gamma-1}}$$We will see that this corresponds to sound speed. To eliminate $\rho$, we use the fact that:$$\Huge \begin{align*}
+\end{aligned}$$We will see that these can be reduced into two sets of ODEs if we first eliminate $\rho$ in favor of the variable:$$\Huge c(\rho)=\sqrt{P'(\rho)}=\sqrt{k\gamma\rho^{\gamma-1}}$$We will see that this corresponds to sound speed. To eliminate $\rho$, we use the fact that:$$\Huge \begin{aligned}
 \frac{\partial c}{\partial t}&=c'(\rho)\frac{\partial \rho}{\partial t}\\
 &=\sqrt{k\gamma}\frac{\gamma-1}{2}\rho^{\gamma-3/2}\frac{\partial \rho}{\partial t}\\
 &=\frac{\gamma-1}{2}\frac{c}{p}\frac{\partial \rho}{\partial t}\\
 \implies\frac{\partial \rho}{\partial t}&=\frac{2\rho}{(\gamma-1)c}\frac{\partial c}{\partial t}
-\end{align*}$$And in the same manner:$$\Huge \frac{\partial c}{\partial x}=c'(\rho)\frac{\partial \rho}{\partial x}\implies\frac{\partial \rho}{\partial x}=\frac{2\rho}{(\gamma-1)c}\frac{\partial c}{\partial x}$$Using these in our system and multiplying through by $c/\rho$ we find:$$\Huge\begin{align*}
+\end{aligned}$$And in the same manner:$$\Huge \frac{\partial c}{\partial x}=c'(\rho)\frac{\partial \rho}{\partial x}\implies\frac{\partial \rho}{\partial x}=\frac{2\rho}{(\gamma-1)c}\frac{\partial c}{\partial x}$$Using these in our system and multiplying through by $c/\rho$ we find:$$\Huge\begin{aligned}
 \frac{2}{\gamma-1}\frac{\partial c}{\partial t}+c\frac{\partial u}{\partial x}+\frac{2u}{\gamma-1}\frac{\partial c}{\partial x}&=0\\
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}+\frac{2c}{\gamma-1}\frac{\partial c}{\partial x}&=0
-\end{align*}$$Adding and subtracting these equations we find:$$\Huge\begin{align*}
+\end{aligned}$$Adding and subtracting these equations we find:$$\Huge\begin{aligned}
 \left(\frac{\partial }{\partial t}+(u+c)\frac{\partial }{\partial x}\right)\left(u+\frac{2c}{\gamma-1}\right)&=0\\
 \left(\frac{\partial }{\partial t}+(u-c)\frac{\partial }{\partial x}\right)\left(u-\frac{2c}{\gamma-1}\right)&=0
-\end{align*}$$And thus we find that:$$\Huge\begin{align*}
+\end{aligned}$$And thus we find that:$$\Huge\begin{aligned}
 F_+&=u+\frac{2c}{\gamma-1}\text{ is constant on curves }x_+(t)\text{ satisfying }\frac{dx_+}{dt}=u+c\\
 F_-&=u-\frac{2c}{\gamma-1}\text{ is constant on curves }x_-(t)\text{ satisfying }\frac{dx_-}{dt}=u-c
-\end{align*}$$These functions $F_+,F_-$ are known as Riemann invariants. If $F_+,F_-$ are known, then $u$ and $c$ can be found. If you know $c$, you know $\rho$, and therefore $p$. These two invariants give all of the information required for a fluids problem. These curves are known as the $+,-$ characteristics.
+\end{aligned}$$These functions $F_+,F_-$ are known as Riemann invariants. If $F_+,F_-$ are known, then $u$ and $c$ can be found. If you know $c$, you know $\rho$, and therefore $p$. These two invariants give all of the information required for a fluids problem. These curves are known as the $+,-$ characteristics.
 
 ## Simple waves:
 In general, it is hard to find closed-form solutions for characteristics. However in the case of "simple waves", one of the Riemann invariants is constant across a region. 
 
 To illustrate the breakdown of smooth solutions to the Euler equations, we consider a compression wave with initial conditions:
-> $$\Huge\begin{align*}
+> $$\Huge\begin{aligned}
 u(x,0)&=U_0(1-\tanh(x))\\
 c(x,0)&=c_0+\frac{1}{2}(\gamma-1)u(x,0)
-\end{align*}$$
+\end{aligned}$$
 > The initial velocity profile looks like:![[Compressible flow 2026-02-11 00.58.42.excalidraw]]So we have a flow moving into a region of static fluid. We have chosen this form to make $F_-$ constant, as we will see. Notice that $c\to c_0$ as $x\to\infty$.
 > The sound speed $c$ is higher where the velocity is higher, so we should expect the wave to steepen. This is worrying as if the wave gets infinitely steep, we will have a discontinuity in $u$.
-> At $t=0$, the Riemann invariants have value:$$\Huge\begin{align*}
+> At $t=0$, the Riemann invariants have value:$$\Huge\begin{aligned}
 F_+(x,0)&=u(x,0)+\frac{2c(x,0)}{\gamma-1}=2u(x,0)+\frac{2c_0}{\gamma-1}\\
 F_-(x,0)&=u(x,0)-\frac{2c(x,0)}{\gamma-1}=-\frac{2c_0}{\gamma-1}
-\end{align*}$$Here, the first invariant $F_+$ is constant along $+$ characteristics, taking a different value on each. That is to say, $F_+(x,t)=F_+(x_0,0)$. The second Riemann invariant $F_-$ is constant along $-$ characteristics, but does not change over characteristic lines and therefore must the same everywhere.
-> In general, we have:$$\Huge\begin{align*}
+\end{aligned}$$Here, the first invariant $F_+$ is constant along $+$ characteristics, taking a different value on each. That is to say, $F_+(x,t)=F_+(x_0,0)$. The second Riemann invariant $F_-$ is constant along $-$ characteristics, but does not change over characteristic lines and therefore must the same everywhere.
+> In general, we have:$$\Huge\begin{aligned}
 u&=\frac{1}{2}(F_+(x,t)+F_-(x,t))\\
 c&=\frac{\gamma-1}{4}(F_+(x,t)-F_-(x,t))
-\end{align*}$$And since $F_-$ is constant everywhere, $F_+$ is constant along $+$ characteristics, so must $u,c$, and $u+c$. The slope of the $+$ characteristics is given by$$\Huge \frac{dx_+}{dt}=u+c$$, so they are straight lines. They will have form:$$\Huge x_+-x_0=(u+c)t=\left(c_0+\frac{\gamma+1}{2}u(x_0,0)\right)$$For our specific initial conditions this becomes:$$\Huge x_+-x_0=\left(c_0+\frac{\gamma+1}{2}U_0(1-\tanh(x_0))\right)t$$
-> These characteristics break down when they intersect at some finite time. We can find this time through the following:$$\Huge\begin{align*}
+\end{aligned}$$And since $F_-$ is constant everywhere, $F_+$ is constant along $+$ characteristics, so must $u,c$, and $u+c$. The slope of the $+$ characteristics is given by$$\Huge \frac{dx_+}{dt}=u+c$$, so they are straight lines. They will have form:$$\Huge x_+-x_0=(u+c)t=\left(c_0+\frac{\gamma+1}{2}u(x_0,0)\right)$$For our specific initial conditions this becomes:$$\Huge x_+-x_0=\left(c_0+\frac{\gamma+1}{2}U_0(1-\tanh(x_0))\right)t$$
+> These characteristics break down when they intersect at some finite time. We can find this time through the following:$$\Huge\begin{aligned}
 \frac{\partial x_+}{\partial x_0}&=0\\
 \iff1-\frac{\gamma+1}{2}U_0\text{sech}^2(x_0)t&=0\\
 \implies t&=\frac{2}{(\gamma+1)U_0}\cosh^2(x_0)
-\end{align*}$$This gives the time of intersection for the characteristic starting at $x=x_0$. The earliest intersection will be at:$$\Huge t_s=\min_{x_0}\left(\frac{2}{(\gamma+1)U_0}\cosh^2(x_0)\right)=\frac{2}{(\gamma+1)U_0}$$
+\end{aligned}$$This gives the time of intersection for the characteristic starting at $x=x_0$. The earliest intersection will be at:$$\Huge t_s=\min_{x_0}\left(\frac{2}{(\gamma+1)U_0}\cosh^2(x_0)\right)=\frac{2}{(\gamma+1)U_0}$$
 > To find solutions for $u,c$ explicitly, the equation for $x(t)$ would need to be inverted to find $x_0(c,t)$, which needs to be done numerically. Note that usually we would have to find $-$ characteristics as well.

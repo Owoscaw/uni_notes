@@ -79,20 +79,20 @@ Recall that the representation of a group $G$ is a map $R:G\rightarrow GL(V)$ th
 We define the Lie algebra homomorphism as a linear map $f:\pmb g\rightarrow\pmb h$ between Lie algebras such that:$$\Huge f([\gamma,\delta]_{\pmb g})=[f(\gamma),f(\delta)]_{\pmb h},\,\,\forall \gamma,\delta\in\pmb g$$The representation of a Lie algebra $\pmb g$ is then a Lie algebra homomorphism:$$\Huge \rho:\pmb g\rightarrow GL(V)$$with $V$ a finite dimensional vector space over $\Re$ or $\mathbb{C}$. Such representation is reducible if there exists some $W\subseteq V$ invariant with $W\neq\{0\}$ or $V$. That is, $\rho(\gamma)\underline{w}\in W$ for all $\underline{w}\in W,\gamma\in\pmb g$. If $\rho$ is not reducible, then it is an irreducible representation.
 
 If $g(t)$ is a path in $G$ such that $g(0)=\mathbb{1}$:![[Representations 2025-11-25 16.30.35.excalidraw]]More formally, let $R:G\rightarrow GL(V)$ be a finite dimensional representation of $G$. Then there exists an associated $\rho:\pmb g\rightarrow GL(V)$ Lie algebra representation such that:$$\Huge R(e^{t\gamma})=e^{t\rho(\gamma)},\,\,\forall \gamma\in\pmb g$$that is, $\rho(\gamma)=\frac{\partial }{\partial t}(R(e^{t\gamma}))|_{t=0}$. There are two steps to prove this:
-> First we prove that $\rho$ is linear. To do this, consider the path in $G$:$$\Huge g(t)=e^{t\gamma}\cdot e^{i\delta}$$We then consider the derivative of its representation evaluated at $t=0$:$$\Huge\begin{align*}
+> First we prove that $\rho$ is linear. To do this, consider the path in $G$:$$\Huge g(t)=e^{t\gamma}\cdot e^{i\delta}$$We then consider the derivative of its representation evaluated at $t=0$:$$\Huge\begin{aligned}
 \frac{\partial }{\partial t}(R(g(t)))|_{t=0}&=\frac{\partial }{\partial t}(R(e^{t\gamma}\cdot e^{t\delta}))|_{t=0}\\
 &=\frac{\partial }{\partial t}(R(e^{t\gamma})\cdot R(e^{t\delta}))|_{t=0}\\
 &=\frac{\partial }{\partial t}(R(e^{t\gamma}))|_{t=0}R(\mathbb{1})+R(\mathbb{1})\frac{\partial }{\partial t}(R(e^{t\delta}))|_{t=0}\\
 &=\rho(\gamma)+\rho (\delta)
-\end{align*}$$where we have used the fact that representations preserve group structure on the second line. We also have:$$\Huge\begin{align*}
+\end{aligned}$$where we have used the fact that representations preserve group structure on the second line. We also have:$$\Huge\begin{aligned}
 e^{t\delta}\cdot e^{t\delta}&=\sum_{k=0}^\infty\frac{(t\gamma)^k}{k!}\sum_{l=0}^\infty\frac{(t\delta)^l}{l!}\\
 &=(1+t\gamma+\dots)(1+t\delta+\dots)\\
 &=\sum_{n=0}^\infty\frac{(t(\gamma+\delta))^n}{n!}+\frac{t^2}{2}(\gamma\delta-\delta\gamma)+\mathcal{O}(t^3)
-\end{align*}$$Returning to our derivative calculation:$$\Huge\begin{align*}
+\end{aligned}$$Returning to our derivative calculation:$$\Huge\begin{aligned}
 \frac{\partial }{\partial t}(R(g(t)))|_{t=0}&=\frac{\partial }{\partial t}(R(e^{t(\gamma+\delta)}+t^2(\dots)))|_{t=0}\\
 &=\frac{\partial }{\partial t}(R(e^{t(\gamma+\delta)}))|_{t=0}\\
 &=\rho(\gamma+\delta)
-\end{align*}$$Showing that $\rho$ is a linear map. It remains to show that $\rho$ is a Lie algebra homomorphism.
+\end{aligned}$$Showing that $\rho$ is a linear map. It remains to show that $\rho$ is a Lie algebra homomorphism.
 
 ### Examples:
 
@@ -106,11 +106,11 @@ Given some complex polynomial $P(z)$ in two variables $z=(z_1,z_2)$, we can let 
 
 We propose that the map:$$\Huge r_d(g)P=P(g^{-1}z)$$where $g^{-1}\in SU(2)$ acts on $z=(z_1,z_2)$ as:$$\Huge \begin{pmatrix}z_1 \\ z_2\end{pmatrix}=g^{-1}\begin{pmatrix}z_1 \\ z_2\end{pmatrix}$$defines a representation $r_d$ of $SU(2)$ on the complex vector space $\Pi_d$ of dimension $d+1$.
 
-We can then find representations $\rho_d$ of $\pmb{su}(2)$ that are associated with the $r_d$ described above. We choose $l_j=\frac{i}{2}\sigma_j$ as the generators of the Lie algebra $\pmb{su}(2)$:$$\Huge l_1=\frac{1}{2}\begin{pmatrix}0 & i \\ i & 0\end{pmatrix},\,\,l_2=\frac{1}{2}\begin{pmatrix}0 & 1 \\ -1 & 0\end{pmatrix},\,\,l_3=\frac{1}{2}\begin{pmatrix}i & 0 \\ 0 & -i\end{pmatrix}$$Their action on the monomials $z_1^kz_2^{d-k}$ is then:$$\Huge\begin{align*}
+We can then find representations $\rho_d$ of $\pmb{su}(2)$ that are associated with the $r_d$ described above. We choose $l_j=\frac{i}{2}\sigma_j$ as the generators of the Lie algebra $\pmb{su}(2)$:$$\Huge l_1=\frac{1}{2}\begin{pmatrix}0 & i \\ i & 0\end{pmatrix},\,\,l_2=\frac{1}{2}\begin{pmatrix}0 & 1 \\ -1 & 0\end{pmatrix},\,\,l_3=\frac{1}{2}\begin{pmatrix}i & 0 \\ 0 & -i\end{pmatrix}$$Their action on the monomials $z_1^kz_2^{d-k}$ is then:$$\Huge\begin{aligned}
 l_1&:z_1^kz_2^{d-k}\rightarrow -\frac{i}{2}(kz_1^{k-1}z_2^{d-k+1}+(d-k)z_1^{k+1}z_2^{d-k-1})\\
 l_2&:z_1^kz_2^{d-k}\rightarrow\frac{1}{2}(-kz_1^{k-1}z_2^{d-k+1}+(d-k)z_1^{k+1}z_2^{d-k-1})\\
 l_3&:z_1^kz_2^{d-k}\rightarrow i(d/2-k)z_1^kz_2^{d-k}
-\end{align*}$$
+\end{aligned}$$
 For every integer $d\geq0$ there is a single finite dimensional irreducible representation $r_d$ of $SU(2)$ on a complex vector space $\Pi_d$ of dimension $d+1$. These are all of the complex irreducible finite-dimensional representations of $SU(2)$. Proof:
 > First we prove a lemma to make life easier:
 > > Let $r$ be a complex representation of $SU(2)$ acting on $V$. Then all eigenvalues of $\rho(\sigma_i)$ for $\rho$ the associated representation of $\pmb{su}(2)$ are real.
@@ -118,27 +118,27 @@ For every integer $d\geq0$ there is a single finite dimensional irreducible repr
 > We start by enlarging the scope and study representations of the Lie algebra $\pmb{sl}(2,\mathbb{C})=\pmb{su}(2)\otimes\mathbb{C}=\pmb{su}_\mathbb{C}(2)$. We saw that irreducible representations of $\pmb{sl}(2,\mathbb{C})$ correspond to irreducible representations of $\pmb{su}(2)$. We can therefore consider a complex vector space over the Pauli matrices, allowing us to define:$$\Huge H=\frac{1}{2}\rho_d(\sigma_3),\,\,L_\pm=\frac{1}{2}(\rho_d(\sigma_1)\pm i\rho_d(\sigma_2))$$which obey the algebra:$$\Huge [H,L_\pm]=\pm L_\pm,\,\,[L_+,L_-]=2H$$
 > We assume that $w_n$ is an eigenvector of $H$ with eigenvalue $n$, so that $Hw_n=nw_n$, then:$$ HL_+w_n=(L_+H+[H,L_+])w_n=(L_+H+L_+)w_n=(L_+n+L_+)w_n=(n+1)(L_+w_n)$$Which defines $L_+w_n$ as another eigenvector of $H$ with eigenvalue $n+1$. A similar computation shows that $L_-w_n$ is an eigenvector with eigenvalue $n-1$. We therefore call $L_+,L_-$ raising and lowering operators respectively.
 > Now we apply our lemma and conclude that $H$ only has real eigenvalues. As we are considering a finite-dimensional vector space, one of these eigenvalues must be the largest. We call such value $m$ with $w_m$ associated eigenvector. Then we must have:$$\Huge L_+w_m=0$$That is, we cannot raise it any more. We then act repeatedly with $L_-$ to produce more eigenvectors with smaller eigenvalues. This must terminate at some point, i.e. for some $d\in\mathbb{Z}, (L_-)^{d+1}w_m=0$. A basis for our representations is therefore:$$\Huge w_{m-l}=(L_-)^lw_m,\,\,l=0,\dots,d$$with dimension $d+1$. 
-> To find which values can appear, we introduce:$$\Huge \Delta=\frac{1}{2}(\rho_d(\sigma_1)^2+\rho_d(\sigma_2)^2+\rho_d(\sigma_3)^2)=\frac{1}{2}(L_+L_-+L_-L_+)+H^2$$We know that $\sigma_i^2=\mathbb{1}$ in the defining representation. $\Delta=c\mathbb{1}$ from Schur's lemma follows from observing that:$$\Huge [\Delta,H]=[\Delta,L_\pm]=0$$To fix $c$, we observe that:$$\Huge\begin{align*}
+> To find which values can appear, we introduce:$$\Huge \Delta=\frac{1}{2}(\rho_d(\sigma_1)^2+\rho_d(\sigma_2)^2+\rho_d(\sigma_3)^2)=\frac{1}{2}(L_+L_-+L_-L_+)+H^2$$We know that $\sigma_i^2=\mathbb{1}$ in the defining representation. $\Delta=c\mathbb{1}$ from Schur's lemma follows from observing that:$$\Huge [\Delta,H]=[\Delta,L_\pm]=0$$To fix $c$, we observe that:$$\Huge\begin{aligned}
 \Delta w_m&=(\frac{1}{2}(L_+L_-+L_-L_+)+H^2)w_m\\
 &=(L_-L_++H(H+\mathbb{1}))w_m\\
 &=m(m+1)w_m
-\end{align*}$$Hence $c=m(m+1)$. As $L_-w_{m-d}=0$ and $L_+L_-=\Delta-H(H-1)$ we have that:$$\Huge\begin{align*}
+\end{aligned}$$Hence $c=m(m+1)$. As $L_-w_{m-d}=0$ and $L_+L_-=\Delta-H(H-1)$ we have that:$$\Huge\begin{aligned}
 0&=(\Delta-H(H-\mathbb{1}))w_{m-d}\\
 &=(m(m+1)-(m-d)(m-d-1))w_{m-d}\\
 &=(1+d)(2m-d)w_{m-d}
-\end{align*}$$Implying that $2m-d=0$. As $d\in\mathbb{Z}$ we have that $m$ takes half-integer values. By construction, these are finite dimensional irreducible representations of $\pmb{sl}(2,\mathbb{C})$.
+\end{aligned}$$Implying that $2m-d=0$. As $d\in\mathbb{Z}$ we have that $m$ takes half-integer values. By construction, these are finite dimensional irreducible representations of $\pmb{sl}(2,\mathbb{C})$.
 > We can easily restrict all of these matrices appearing in the representation to anti-Hermitian ones to find a representation of $\pmb{su}(2)$. As we have that $\rho(\sigma_i)=\rho(\sigma_i^\dagger)$, we get a representation of $\pmb{sl}(2,\mathbb{C})$ as:$$\Huge \sum_ja_j\rho(\sigma_j),\,\,a_j\in\mathbb{C}$$And a representation of $\pmb{su}(2)$ as:$$\Huge \sum_jia_j\rho(\sigma_j),\,\,a_j\in\Re$$
-> In order to compare this with the representations $\rho_d$ of $su(2)$ associated to the representations $r_d$ of $SU(2)$ that we know exists, it is convenient to rescale the basis vectors $w_j$ as follows:$$\Huge L_-v_k=(m+k)v_{k-1}$$Which implies:$$\Huge\begin{align*}
+> In order to compare this with the representations $\rho_d$ of $su(2)$ associated to the representations $r_d$ of $SU(2)$ that we know exists, it is convenient to rescale the basis vectors $w_j$ as follows:$$\Huge L_-v_k=(m+k)v_{k-1}$$Which implies:$$\Huge\begin{aligned}
 L_+v_k&=\frac{1}{m+k+1}L_+L_-v_{k+1}\\
 &=\frac{1}{m+k+1}(\Delta-H(H-1))v_{k+1}\\
 &=\frac{1}{m+k+1}(m(m+1)-k(k+1))v_{k+1}\\
 &=(m-k)v_{k+1}
-\end{align*}$$
-> In this basis, the action of $l_i$ is then:$$\Huge\begin{align*}
+\end{aligned}$$
+> In this basis, the action of $l_i$ is then:$$\Huge\begin{aligned}
 l_1v_{m-k}&=\frac{i}{2}(L_++L_-)v_{m-k}=\frac{i}{2}(kv_{m-k+1}+(d-k)v_{m-k-1})\\
 l_2v_{m-k}&=\frac{1}{2}(L_+-L_-)v_{m-k}=\frac{1}{2}(kv_{m-k+1}-(d-k)v_{m-k-1})\\
 l_3v_{m-k}&=iHv_{m-k}=i(m-k)v_{d/2-k}
-\end{align*}$$where $m=d/2$ for integer $d$. Comparing with the action we saw before we see that representations are identified with:$$\Huge z_1^kz_2^{d-k}\cong(-1)^kv_{m-k}$$Meaning that all representations of $\pmb{su}(2)$ that we found are the associated representations of the group representations $r_d$ we already found.
+\end{aligned}$$where $m=d/2$ for integer $d$. Comparing with the action we saw before we see that representations are identified with:$$\Huge z_1^kz_2^{d-k}\cong(-1)^kv_{m-k}$$Meaning that all representations of $\pmb{su}(2)$ that we found are the associated representations of the group representations $r_d$ we already found.
 > We now show that this representation is irreducible. Take any invariant subspace $V$ of $\Pi_d$. By assumption the action of $l_k$ maps any vector of $V$ to another vector of $V$. As $V$ is a complex vector space, complex linear combinations are again in $V$. This implies that if $P\in V$ we also have that any linear combination of$$\Huge l_+^n=\left(z_2\frac{\partial }{\partial z_1}\right)^nP,\,\,l_-^p=\left(z_1\frac{\partial }{\partial z_2}\right)^pP$$is also in $V$. We can hence apply a suitable power of $l_-$ to map $P$ to the single monomial $z_1^d$. Hence this monomial is in $V$, implying that any complex multiple of it is in $V$ also. We can now use $l_+$ to conclude the same for the other monomial. As these formed a basis of $\Pi_d$, it follows that $V=\Pi_d$. The Lie algebra representations $\rho_d$ are hence irreducible.
 > This implies that $r_d$ is irreducible as well. If $W\in\Pi_d$ is an invariant subspace of $r_d$, then it must be invariant under $e^{t\rho(\gamma)}$ for all $t$ and $\gamma\in\pmb{su}(2)$. So in particular under $\frac{\partial }{\partial t}e^{t\rho(\gamma)}$ and hence under $\rho_d(su(2))$. But the Lie algebra representation $\rho$ is irreducible as we already know.
 > Now we know that all irreducible representations of $SU(2)$, if there were others, the associated Lie algebra representations would have to have shown up in our analysis.
@@ -170,16 +170,16 @@ Given a representation of a group $G$, it is implied that representations of any
 
 Given two vector spaces $V,W$, we can form their tensor product $V\otimes W$. Let $\underline{e}_i,i=1,\dots,\dim V$ be a basis of $V$ and $\underline{f}_j,i=j,\dots,\dim W$ be a basis of $W$. Then $V\otimes W$ is a vector space with basis consisting of tuples $(\underline{e}_i,\underline{f}_j)$, or $\underline{e}_i\otimes\underline{f}_j$
 
-It follows from this definition that $\dim(V\otimes W)=\dim V\cdot\dim W$. Computing with tensor products works almost the same with usual products, we have:$$\Huge\begin{align*}
+It follows from this definition that $\dim(V\otimes W)=\dim V\cdot\dim W$. Computing with tensor products works almost the same with usual products, we have:$$\Huge\begin{aligned}
 \underline{v}\otimes\underline{w}+\underline{v}'\otimes\underline{w}&=(\underline{v}+\underline{v}')\otimes\underline{w}\\
 \underline{v}\otimes\underline{w}+\underline{v}\otimes\underline{w}'&=\underline{v}\otimes(\underline{w}+\underline{w}')
-\end{align*}$$and for $c\in\Re$:$$\Huge c(\underline{v}\otimes\underline{w})=(c\underline{v})\otimes\underline{w}=\underline{v}\otimes(c\underline{w})$$However $\underline{v}\otimes\underline{w}\neq\underline{w}\otimes\underline{v}$. The first slot is reserved for vectors from $V$ and the second for vectors from $W$, so writing $\underline{w}\otimes\underline{v}$ does not make sense if $\underline{v}\in V$ and $\underline{w}\in W$. Not every vector in $V\otimes W$ can be written as a product, for example $\underline{v}\otimes\underline{w}+\underline{v}'\otimes\underline{w}'$.
+\end{aligned}$$and for $c\in\Re$:$$\Huge c(\underline{v}\otimes\underline{w})=(c\underline{v})\otimes\underline{w}=\underline{v}\otimes(c\underline{w})$$However $\underline{v}\otimes\underline{w}\neq\underline{w}\otimes\underline{v}$. The first slot is reserved for vectors from $V$ and the second for vectors from $W$, so writing $\underline{w}\otimes\underline{v}$ does not make sense if $\underline{v}\in V$ and $\underline{w}\in W$. Not every vector in $V\otimes W$ can be written as a product, for example $\underline{v}\otimes\underline{w}+\underline{v}'\otimes\underline{w}'$.
 
-For example, consider $\Re^3\otimes\Re^3$ and let $e_1,e_2,e_3$ be a basis of the first $\Re^3$ and $f_1,f_2,f_3$ of the second. A basis of $\Re^3\otimes\Re^3$ is then:$$\Huge\begin{align*}
+For example, consider $\Re^3\otimes\Re^3$ and let $e_1,e_2,e_3$ be a basis of the first $\Re^3$ and $f_1,f_2,f_3$ of the second. A basis of $\Re^3\otimes\Re^3$ is then:$$\Huge\begin{aligned}
 e_1&\otimes f_1,\,\,e_2\otimes f_2,\,\,e_1\otimes f_3\\
 e_2&\otimes f_1,\,\,e_2\otimes f_2,\,\,e_2\otimes f_3\\
 e_3&\otimes f_1,\,\,e_3\otimes f_2,\,\,e_3\otimes f_3
-\end{align*}$$whereas $\Re^3\oplus\Re^3$ has a basis $e_1,e_2,e_3,f_1,f_2,f_3$. Note that whereas $\Re^3\oplus\Re^3$ is six-dimensional, $\Re^3\otimes\Re^3$ is nine-dimensional. 
+\end{aligned}$$whereas $\Re^3\oplus\Re^3$ has a basis $e_1,e_2,e_3,f_1,f_2,f_3$. Note that whereas $\Re^3\oplus\Re^3$ is six-dimensional, $\Re^3\otimes\Re^3$ is nine-dimensional. 
 
 We can think of $\Re^3\otimes\Re^3$ as the vector space of real $3\times3$ matrices. That is, we can write any element of $\Re^3\otimes\Re^3$ as:$$\Huge \underline{v}=\sum_{ij}a_{ij}e_i\otimes f_j$$What makes tensor products interesting in this context is that we can form new representations our of existing ones by "tensoring" the vector spaces they act on.
 

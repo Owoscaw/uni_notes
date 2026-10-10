@@ -8,11 +8,11 @@ We now look at curves bounded to a [[Surfaces in R3|surface]] in $\Re^3$. Let $S
 > $\underline{N}(s)\times\underline{\alpha}'(s)$ 
 > ![[Curves on surfaces 2026-02-19 15.17.21.excalidraw]]
 
-Since $1=\underline{\alpha}'(s)\cdot\underline{\alpha}'(s)$, we have that:$$\Huge\begin{align*}
+Since $1=\underline{\alpha}'(s)\cdot\underline{\alpha}'(s)$, we have that:$$\Huge\begin{aligned}
 \implies0&=\frac{d}{ds}(1)=\frac{d}{ds}(\underline{\alpha}'(s)\cdot\underline{\alpha}'(s))\\
 &=2\underline{\alpha}''(s)\cdot\underline{\alpha}'(s)\\
 \implies\underline{\alpha}''(s)&\perp\underline{\alpha}'(s)
-\end{align*}$$So we have an orthonormal basis for the plane drawn above given by $\{\underline{N},\underline{N}\times\underline{\alpha}'\}$ and $\underline{\alpha}''(s)$ is by definition in this plane.
+\end{aligned}$$So we have an orthonormal basis for the plane drawn above given by $\{\underline{N},\underline{N}\times\underline{\alpha}'\}$ and $\underline{\alpha}''(s)$ is by definition in this plane.
 
 # Geodesic and normal curvature:
 
@@ -22,7 +22,7 @@ For general curves $\underline{\beta}:I\rightarrow S$ we let $\underline{\alpha}
 
 We can consider a curve along a plane, which will be both a plane curve and a surface curve:
 > Let $S=\{(u,v,0)\in\Re:(u,v)\in\Re^2\}$ and define $\underline{\alpha}:I\rightarrow S$ with $\underline{\alpha}(s)=(u(s),v(s),0)$.
-> Here, the Gauss map will be a constant vector $\underline{N}=(0,0,1)$ so we compute:$$\Huge\begin{align*}
+> Here, the Gauss map will be a constant vector $\underline{N}=(0,0,1)$ so we compute:$$\Huge\begin{aligned}
 \underline{N}\times\underline{\alpha}'&=(0,0,1)\times(u',v',0)\\
 &=(-v',u',0)\\
 \implies\kappa_g(s)&=(u'',v'',0)\cdot(-v',u',0)\\
@@ -31,7 +31,7 @@ We can consider a curve along a plane, which will be both a plane curve and a su
 \implies\kappa_\text{plane}&=(u'',v'')\cdot\underline{n}\\
 &=(u'',v'')\cdot(-v',u')=\kappa_g\\
 \implies\kappa_\text{space}&=|\kappa_g||(-v',u',0)|=|\kappa_g|=|\kappa_\text{plane}|
-\end{align*}$$
+\end{aligned}$$
 > This agrees with our result linking plane curvature to geodesic and normal.
 
 Consider a regular surface $S\subset\Re^3$ containing a straight-line curve $\underline{\alpha}(s)=\underline{p}+s\underline{v}$ for some $\underline{p}\in S$ and $\underline{v}\in\Re^3$ with $||\underline{v}||=1$:
@@ -39,11 +39,11 @@ Consider a regular surface $S\subset\Re^3$ containing a straight-line curve $\un
 
 ## Meusnier's theorem:
 Let $S\subset\Re^3$, $\underline{p}\in S$, $\underline{w}\in T_\underline{p}S$ where [[Tangent planes#The tangent plane|$T_\underline{p}S$]] is the tangent plane to $S$ at $\underline{p}$. Then for all $\underline{\alpha}(s)\in S$ with $\underline{p}=\underline{\alpha}(s)$ (and so $\underline{w}=\underline{\alpha}'(s)$), the normal curvature is the same at that point for all curves:$$\Huge\kappa_n(s)=\underline{II}_\underline{p}(|\underline{w}|^{-1}\underline{w})=\frac{1}{||\underline{w}||^2}\langle -d_\underline{p}\underline{N}(\underline{w}),\underline{w}\rangle_\underline{p}$$Here, $\underline{II}_\underline{p}$ is the [[Geometry of the Gauss map#Weingarten map and second fundamental form|second fundamental form]]. It makes sense that $\underline{\alpha}$ does not appear in this result, as $\kappa_n(s)$ is independent of the curve. Proof:
-> Let us assume $\underline{\alpha}$ is a unit speed curve and let $\underline{p}=\underline{\alpha}(s)$ for some $s\in I$. We differentiate $\underline{\alpha}'\cdot(N\circ\underline{\alpha})=0$ at $s$ and obtain:$$\Huge\begin{align*}
+> Let us assume $\underline{\alpha}$ is a unit speed curve and let $\underline{p}=\underline{\alpha}(s)$ for some $s\in I$. We differentiate $\underline{\alpha}'\cdot(N\circ\underline{\alpha})=0$ at $s$ and obtain:$$\Huge\begin{aligned}
 0&=\underline{\alpha}''(s)\cdot\underline{N}(\underline{\alpha}(s))+\underline{\alpha}'(s)\cdot d_\underline{p}\underline{N}(\underline{\alpha}'(s))\\
 &=\kappa_n(s)-\langle -d_\underline{p}\underline{N}(\underline{\alpha}'(s)),\underline{\alpha}'(s)\rangle_\underline{p}\\
 \implies\kappa_n(s)&=\langle -d_\underline{p}\underline{N}(\underline{\alpha}'(s)),\underline{\alpha}'(s)\rangle_\underline{p}
-\end{align*}$$with $||\underline{\alpha}'(s)||=1$. This proves the theorem for a unit speed curve and by our previous observations, for general curves passing through $\underline{p}$.
+\end{aligned}$$with $||\underline{\alpha}'(s)||=1$. This proves the theorem for a unit speed curve and by our previous observations, for general curves passing through $\underline{p}$.
 
 Note that the reason why the [[Geometry of the Gauss map#Weingarten map and second fundamental form|Weingarten map]] was defined as the negative derivative is because that otherwise, the relationship between normal curvature and the second fundamental form would require another minus sign. Our choice for the Weingarten map therefore gives the simplest possible relation between curvature and second fundamental form.
 
@@ -55,12 +55,12 @@ We can also use Meusnier's theorem to give a relation between normal curvature a
 Another direct consequence of Meusnier's theorem is a formula to calculate normal curvature with the coefficients of the first and second fundamental forms. Let $S\subset\Re^3$ be a regular surface with Gauss map $\underline{N}:S\rightarrow S^2$. Let $\underline{x}:U\rightarrow S$ be a local parametrisation and $E,F,G,L,M,N:U\rightarrow\Re$ be the corresponding coefficients of the fundamental forms. Then we have for any $\underline{a; }:I\rightarrow\underline{x}(U)\subset S$ with $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$:$$\Huge\kappa_n=\frac{\underline{II}_\underline{\alpha}(\underline{\alpha}')}{\underline{I}_\underline{\alpha}(\underline{\alpha}')}=\frac{(u')^2L+2u'v'M+(v')^2N}{(u')^2E+2u'v'F+(v')^2G}$$Proof:
 > The first identity follows from Meusnier's theorem directly:$$\Huge \kappa_n(t)=\underline{II}_{\underline{\alpha(t)}}\left(\frac{\underline{\alpha}'(t)}{||\underline{\alpha}'(t)||}\right)=\frac{\underline{II}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))}{||\underline{\alpha}'(t)||^2}=\frac{\underline{II}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))}{\underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))}$$
 > The second is a consequence of the way we write the first and second fundamental form calculated with a local parametrisation. By the chain rule,$$\Huge\underline{\alpha}'(t)=u'(t)\underline{x}_u(\underline{q})+v'(t)\underline{x}_v(t)$$with $\underline{q}=(u(t),v(t))$ and therefore $\underline{p}=\underline{x}(\underline{q})$. 
-> Using linearity in the inner form and the symmetry of the Weingarten map:$$\large\begin{align*}
+> Using linearity in the inner form and the symmetry of the Weingarten map:$$\large\begin{aligned}
 \underline{II}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))&=(-d_\underline{p}\underline{N}(\underline{\alpha}'(t)))\cdot\underline{\alpha}'(t)\\
 &=(u'(t))^2(-d_\underline{p}\underline{N}(\underline{x}_u(\underline{q}))\cdot\underline{x}_u(\underline{q}))+u'(t)v'(t)(-d_\underline{p}\underline{N}(\underline{x}_u(\underline{q}))\cdot\underline{x}_v(\underline{q}))\\
 &+v'(t)u'(t)(-d_\underline{p}\underline{N}(\underline{x}_v(\underline{q}))\cdot\underline{x}_u(\underline{q}))+(v'(t))^2(-d_\underline{p}\underline{N}(\underline{x}_v(\underline{q}))\cdot\underline{x}_v(\underline{q}))\\
 &=(u'(t))^2L+2u'(t)v'(t)M+(v'(t))^2N
-\end{align*}$$
+\end{aligned}$$
 > Similarly, we obtain$$\Huge \underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))=(u'(t))^2E+2u'(t)v'(t)F+(v'(t))^2G$$, finishing the proof.
 
 Let $S\subset\Re^3$ be a regular surface with Gauss map $\underline{N}:S\rightarrow S^2$ and $\underline{\beta}:I\rightarrow S)$ be a regular curve not necessarily unit speed. Then the geodesic curvature of $\underline{\beta}$ is given by:$$\Huge\kappa_g=\frac{1}{||\underline{\beta}'||^2}(\underline{\beta}'\times\underline{\beta}'')\cdot(\underline{N}\circ\underline{\beta})$$
@@ -73,11 +73,11 @@ Let us discuss the situation near any $\underline{p}\in S$ that is not umbilic. 
 Lines of curvature satisfy a particular ODE in coordinates of a local parametrisation. Let $E,\dots, N:U\rightarrow\Re$ be the coefficients of the first and second fundamental form of a local parametrisation $\underline{x}:U\rightarrow S$ of a regular surface $S\subset\Re^3$. A smooth curve $\underline{\alpha}:I\rightarrow S$ with $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$ is a line of curvature if and only if$$\Huge\begin{vmatrix}(v')^2 & -u'v' & (u')^2 \\ E & F & G \\ L & M & N\end{vmatrix}=0$$with $E,\dots,N$ viewed along the curve $(u(t),v(t))$. Proof:
 > We conclude from the definition of $\underline{\alpha}$ that$$\Huge\underline{\alpha}'=u'\underline{x}_u+v'\underline{x}_v$$, $\underline{\alpha}$ is a line of curvature if and only if$$\Huge -d_\underline{\alpha}\underline{N}(u'\underline{x}_u+v'\underline{x}_v)=\lambda(u'\underline{x}_u+v'\underline{x}_v)$$for some $\lambda$.
 > We now use the matrix representation of the Weingarten map in terms of our basis, so our IFF translates to:$$\Huge\frac{1}{EG-F^2}\begin{pmatrix}GL-FM & GM-FN \\ -FL+EM & -FM+EN\end{pmatrix}\begin{pmatrix}u' \\ v'\end{pmatrix}=\lambda\begin{pmatrix}u' \\ v'\end{pmatrix}$$
-> Since $\lambda$ is arbitrary and $EG-F^2\neq0$, this is equivalent to the condition that $(a,b)$ (LHS vector) is a multiple of $(u',v')$. That is $av'=bu'$, which we write as$$\large\begin{align*}
+> Since $\lambda$ is arbitrary and $EG-F^2\neq0$, this is equivalent to the condition that $(a,b)$ (LHS vector) is a multiple of $(u',v')$. That is $av'=bu'$, which we write as$$\large\begin{aligned}
 ((GL-FM)u'+(GM-FN)v')v'&=((-FL+EM)u'+(-FM+EN)v')u'\\
 \iff(EM-FL)(u')^2+(-FM+EN&-GL+FM)u'v'+(FN-GM)(v')^2=0\\
 \iff(EM-GL)(u')^2+(EN-GL)&u'v'+(FN-GM)(v')^2=0
-\end{align*}$$
+\end{aligned}$$
 > This can be written as$$\large (v')^2\begin{vmatrix}F & G \\ M & N\end{vmatrix}-(-u'v')\begin{vmatrix}E & G \\ L & N\end{vmatrix}+(u')^2\begin{vmatrix}E & F \\ L & M\end{vmatrix}=\begin{vmatrix}(v')^2 & -u'v' & (u')^2 \\ E & F & G \\ L & M & N\end{vmatrix}$$as required.
 
 Let $\underline{x}:U\rightarrow S$ be a principal parametrisation of a surface $S\subset\Re^3$ with Gauss map $\underline{N}:S\rightarrow S^2$. That is we take $F=M=0$, then the coordinate curves are lines of curvature. Proof:
@@ -96,22 +96,22 @@ Moreover if $S\subset\Re^3$ contains a straight Euclidean line, then its normal 
 
 Let us consider a few examples:
 > Consider the surface of revolution obtained from a catenoid. Let $S\subset\Re^3$ be the regular surface obtained by rotating a regular curve, $\underline{\alpha}(v)=(f(v),0,g(v)),v\in I$ with $f(v)>0$ and $I$ an open interval, around the $z$-axis with local parametrisation given by $\underline{x}:(0,2\pi)\times I\rightarrow S$:$$\Huge \underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$
-> We saw that $E=f^2,F=0,G=||\underline{\alpha}'||^2$ and:$$\Huge L=-\frac{fg'}{||\underline{\alpha}'||},\,\,M=0,\,\,N=\frac{f''g'-f'g''}{||\underline{\alpha}'||}$$In particular, this local parametrisation is principal and therefore the coordinate curves$$\Huge\begin{align*}
+> We saw that $E=f^2,F=0,G=||\underline{\alpha}'||^2$ and:$$\Huge L=-\frac{fg'}{||\underline{\alpha}'||},\,\,M=0,\,\,N=\frac{f''g'-f'g''}{||\underline{\alpha}'||}$$In particular, this local parametrisation is principal and therefore the coordinate curves$$\Huge\begin{aligned}
 u&\rightarrow (f(v_0)\cos u,f(v_0)\sin u,g(v_0))\\
 v&\rightarrow (f(v)\cos u_0,f(v)\sin u_0,g(v))
-\end{align*}$$are lines of curvature. Note that these correspond to the parallels ($u$) and meridians ($v$) of the surface $S$. The asymptotic curves of $S$ are curves $\underline{\alpha}$ satisfying $$\large -f(v(t))g'(v(t))(u'(t))^2=(f'(v(t))g''(v(t))-f''(v(t))g'(v(t)))(v'(t))^2$$
+\end{aligned}$$are lines of curvature. Note that these correspond to the parallels ($u$) and meridians ($v$) of the surface $S$. The asymptotic curves of $S$ are curves $\underline{\alpha}$ satisfying $$\large -f(v(t))g'(v(t))(u'(t))^2=(f'(v(t))g''(v(t))-f''(v(t))g'(v(t)))(v'(t))^2$$
 > In the case of a catenoid, we have $f(v)=\cosh(v),g(v)=v$ and therefore we find $u'(t)=\pm v'(t)$. Choosing $v(t)=t$ we obtain $u(t)=\pm t+c$.
 
 We see that lines of curvature bisect the angle between asymptotic curves. Moreover, asymptotic curves intersect each other perpendicularly if and only if the surface is minimal. This is the case for our catenoid. 
 
 Recall that we required non-positive Gauss curvature for the existence of asymptotic curves. An interesting surface to study will then be the hyperbolic paraboloid, as this has negative Gauss curvature and is not minimal:
-> The hyperbolic paraboloid is given by $S=\{\underline{x}\in\Re^3:z=xy\}$ and is parametrised by $\underline{x}(u,v)=(u,v,uv)$. We define $D=\sqrt{1+u^2+v^2}$ and write$$\Huge \underline{x}_u=(0,1,v),\,\,\underline{x}_v=(1,0,u),\,\,\underline{N}(\underline{x})=\frac{1}{D}(-v,-u,1)$$and further:$$\Huge \underline{x}_{uu}=(0,0,0),\,\,\underline{x}_{uv}=(0,0,1),\,\,\underline{x}_{vv}=(0,0,0)$$We can then calculate the coefficients of the first and second fundamental forms:$$\Huge\begin{align*}
+> The hyperbolic paraboloid is given by $S=\{\underline{x}\in\Re^3:z=xy\}$ and is parametrised by $\underline{x}(u,v)=(u,v,uv)$. We define $D=\sqrt{1+u^2+v^2}$ and write$$\Huge \underline{x}_u=(0,1,v),\,\,\underline{x}_v=(1,0,u),\,\,\underline{N}(\underline{x})=\frac{1}{D}(-v,-u,1)$$and further:$$\Huge \underline{x}_{uu}=(0,0,0),\,\,\underline{x}_{uv}=(0,0,1),\,\,\underline{x}_{vv}=(0,0,0)$$We can then calculate the coefficients of the first and second fundamental forms:$$\Huge\begin{aligned}
 E=1+v^2&,\,\,F=uv,\,\,G=1+u^2\\
 L&=\underline{x}_{uu}\cdot\underline{N}(\underline{x})=0\\
 M&=\underline{x}_{uv}\cdot\underline{N}(\underline{x})=\frac{1}{D}\\
 N&=\underline{x}_{vv}\cdot\underline{N}(\underline{x})=0
-\end{align*}$$
-> Plugging these into our determinant formula for determining lines of curvature gives:$$\Huge\begin{align*}
+\end{aligned}$$
+> Plugging these into our determinant formula for determining lines of curvature gives:$$\Huge\begin{aligned}
 0&=\begin{vmatrix}(v')^2 & -u'v' & (u')^2\\
 E & F & G\\
 L & M & N\end{vmatrix}\\
@@ -119,7 +119,7 @@ L & M & N\end{vmatrix}\\
 1+v^2 & uv & 1+u^2\\
 0 & \frac{1}{D} & 0\end{vmatrix}\\
 &=-\frac{1}{D}((1+u^2)(v')^2-(1+v^2)(u')^2)
-\end{align*}$$
+\end{aligned}$$
 > We can solve this using separation of variables$$\Huge \frac{u'}{\sqrt{1+v^2}}=\pm\frac{v'}{\sqrt{1+u^2}}$$, which we integrate to get:$$\Huge \text{arcsinh}(v(t))=c\pm\text{arcsinh}(u(t))$$
 > Lines of curvature are then given by$$\Huge x(u(t),v(t))=\begin{cases}(\sinh(t),\sinh(c+t),\sinh(t)\sinh(c+t)) \\
 (\sinh(t),\sinh(c-t),\sinh(t)\sinh(c-t))\end{cases}$$for any $c\in\Re$. The equation for asymptotic curves then yields$$\Huge 0=(u')^2L+2u'v'M+(v')^2N=\frac{2}{D}u'v'$$, so we see that coordinate curves $u\rightarrow\underline{x}(u,v_0),v\rightarrow\underline{x}(u_0,v)$ are asymptotic curves.
@@ -128,39 +128,39 @@ L & M & N\end{vmatrix}\\
 # Intrinsic Geodesic curvature:
 
 We provide an explicit formula for the geodesic curvature in the case of an isothermal parametrisation, proving that geodesic curvature is intrinsic and independent of embedding. Let $\underline{x}:U\rightarrow S$ be an isothermal parametrisation of $S$ and $\underline{\alpha}(s)=\underline{x}(u(s),v(s))$ be a smooth unit speed curve. Let $\underline{N}:\underline{x}(U)\rightarrow S^2$ be a Gauss map of the surface written as$$\Huge \underline{N}(\underline{x}(\underline{q}))=\frac{\underline{x}_u(\underline{q})\times\underline{x}_v(\underline{q})}{||\underline{x}_u(\underline{q})\times\underline{x}_v(\underline{q})||}$$, then the geodesic curvature is given by:$$\Huge \kappa_g=\frac{1}{\lambda(u,v)}\begin{vmatrix}\lambda_u(u,v) & \lambda_v(u,v) \\ u' & v'\end{vmatrix}$$Where $E=G=\lambda^2$ and $\phi(s)$ is the angle in $T_{\underline{\alpha}(s)}S$ between $(1,0)$ and $(u',v')$. Proof:
-> Since $\underline{x}$ is isothermal we have that$$\Huge\begin{align*}
+> Since $\underline{x}$ is isothermal we have that$$\Huge\begin{aligned}
 X_1(s)&=\frac{1}{\lambda(u,v)}\underline{x}_u(u(s),v(s))\\
 X_2(s)&=\frac{1}{\lambda(u,v)}\underline{x}_v(u(s),v(s))
-\end{align*}$$form an orthonormal basis of the tangent plane along $\underline{\alpha}$. 
+\end{aligned}$$form an orthonormal basis of the tangent plane along $\underline{\alpha}$. 
 > We can write $\underline{\alpha}'$ in terms of the coordinate curves$$\Huge\underline{\alpha}'=u'\underline{x}_u+v'\underline{x}_v$$and since $1=||\underline{\alpha}'||^2=\lambda^2(u,v)((u')^2+(v')^2)$ we can write:$$\Huge (u',v')=\frac{1}{\lambda(u,v)}(\cos\phi,\sin\phi)\implies\underline{\alpha}'=\cos\phi X_1+\sin\phi X_2$$
-> Therefore, recalling the form of the Gauss map, we write$$\Huge\begin{align*} (\underline{N}\circ\underline{\alpha})\times\underline{\alpha}'&=(X_1\times X_1)\times(\cos\phi X_1+\sin\phi X_2)\\
-&=\cos\phi X_2-\sin\phi X_1\end{align*}$$
-> Using the fact that $X_1,X_2$ form an orthonormal basis, and recalling that we can write geodesic curvature as$$\Huge \kappa_g=\underline{\alpha}''(s)\cdot((\underline{N}\circ\underline{\alpha})\times\underline{\alpha}')$$we compute $\underline{\alpha}''$:$$\Huge\begin{align*}
+> Therefore, recalling the form of the Gauss map, we write$$\Huge\begin{aligned} (\underline{N}\circ\underline{\alpha})\times\underline{\alpha}'&=(X_1\times X_1)\times(\cos\phi X_1+\sin\phi X_2)\\
+&=\cos\phi X_2-\sin\phi X_1\end{aligned}$$
+> Using the fact that $X_1,X_2$ form an orthonormal basis, and recalling that we can write geodesic curvature as$$\Huge \kappa_g=\underline{\alpha}''(s)\cdot((\underline{N}\circ\underline{\alpha})\times\underline{\alpha}')$$we compute $\underline{\alpha}''$:$$\Huge\begin{aligned}
 \underline{\alpha}''&=(u'\underline{x}_u+v'\underline{x}_v)'\\
 &=(\cos\phi X_1+\sin\phi X_2)'\\
 &=-\phi'\sin\phi X_1+\phi'\cos\phi X_2+\cos\phi X_1'+\sin\phi X_2'
-\end{align*}$$
-> Therefore we write geodesic curvature as:$$\Huge\begin{align*}
+\end{aligned}$$
+> Therefore we write geodesic curvature as:$$\Huge\begin{aligned}
 \kappa_g&=\underline{\alpha}''\cdot(\cos\phi X_2-\sin\phi X_1)\\
 &=\phi'\sin^2\phi+\phi'\cos^2\phi+\cos^2\phi X_1'\cdot X_2-\sin^2\phi X_2'\cdot X_1\\
 &=\phi'+\cos^2\phi X_1'\cdot X_2+\sin^2\phi X_1'\cdot X_2\\
 &=\phi'+X_1'\cdot X_2
-\end{align*}$$
-> We can write $X_1'$ explicitly in terms of the isothermal parametrisation by differentiating:$$\Huge\begin{align*}
+\end{aligned}$$
+> We can write $X_1'$ explicitly in terms of the isothermal parametrisation by differentiating:$$\Huge\begin{aligned}
 X_1&=\frac{1}{\lambda}\underline{x}_u\\
 \implies X_1'&=\left(\frac{1}{\lambda}\right)'\underline{x}_u+\frac{1}{\lambda}(\underline{x}_{uu}u'+\underline{x}_{uv}v')\\
 \implies X_1'\cdot X_2&=\frac{1}{\lambda^2}(\underline{x}_{uu}\cdot\underline{x}_vu'+\underline{x}_{uv}\cdot\underline{x}_vv')
-\end{align*}$$
-> We previously saw that we can write $\underline{x}_{uu}\cdot\underline{x}_v$ in terms of the first fundamental form:$$\Huge\begin{align*}
+\end{aligned}$$
+> We previously saw that we can write $\underline{x}_{uu}\cdot\underline{x}_v$ in terms of the first fundamental form:$$\Huge\begin{aligned}
 \underline{x}_{uu}\cdot\underline{x}_v&=F_u-\frac{1}{2}E_v\\
 \underline{x}_{uv}\cdot\underline{x}_v
-&=\frac{1}{2}G_u\end{align*}$$So we compute these derivatives:$$\Huge E_v=2\lambda\lambda_v,\,\,F_u=0,\,\,G_u=2\lambda\lambda_u$$Substituting these into our expression for $X_1'\cdot X_2$:$$\Huge\begin{align*}
+&=\frac{1}{2}G_u\end{aligned}$$So we compute these derivatives:$$\Huge E_v=2\lambda\lambda_v,\,\,F_u=0,\,\,G_u=2\lambda\lambda_u$$Substituting these into our expression for $X_1'\cdot X_2$:$$\Huge\begin{aligned}
 \implies X_1'\cdot X_2&=\frac{1}{\lambda^2}\left(\left(F_u-\frac{1}{2}E_v\right)u'+(\frac{1}{2}G_u)v'\right)\\
 &=\frac{1}{\lambda^2}(-\lambda\lambda_vu'+\lambda\lambda_uv')\\
 &=\frac{1}{\lambda(u,v)}(\lambda_uv'-\lambda_vu')\\
 &=\frac{1}{\lambda(u,v)}\begin{vmatrix}\lambda_u & \lambda_v\\
 u' & v'\end{vmatrix}
-\end{align*}$$As required.
+\end{aligned}$$As required.
 > Note that we could generalise this to non-isothermal parametrisations and one would find:$$\Huge\kappa_g=\frac{1}{2\sqrt{E(u,v)G(u,v)}}(G_u(u,v)v'-E_v(u,v)u')+\phi'$$
 
 This proves geodesic curvature is intrinsic, and therefore invariant under isometries. This leads us to the following corollary; let $f:S_1\rightarrow S_2$ be a local isometry, $\underline{\alpha}:I\rightarrow S_1$ a curve on $S_1$, and $\underline{\beta}=f\circ\underline{\alpha}:I\rightarrow S_2$ be $\underline{\alpha}$'s image under $f$. Then we have that $\kappa_{g,\underline{\alpha}}$ and $\kappa_{g,\underline{\beta}}$ are one and the same.

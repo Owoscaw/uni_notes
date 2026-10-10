@@ -4,18 +4,18 @@ In this note we discuss the method of characteristics, used to solve first order
 
 # Motivation:
 
-Consider a given material and assume it is made up of particles that are being carried by an advection field $\underline{\beta}$. This can be expressed with the system of ODEs:$$\Huge \frac{d\underline{X}_i}{dt}(t)=\underline{\beta}(\underline{X}_i(t))$$where $\underline{X}_i$ represents the position of the $i$th particle in the system. If we assume the particles cannot change shape and fill the volume that consists of the material (incompressible matter), the density of the matter remains the same along the particle trajectories:$$\Huge \frac{d\underline{X}}{dt}(t)=\underline{\beta}(\underline{X}(t)),\,\,\underline{X}(0)=\underline{X}_0$$which represents the paths particles take that started at $\underline{X}_0$ at time $t=0$. That is, if $\rho$ is the density of the matter then:$$\Huge \rho(\underline{X}_0,0)=\rho(\underline{X}(t),t)$$Differentiating wrt $t$ gives:$$\Huge\begin{align*}
+Consider a given material and assume it is made up of particles that are being carried by an advection field $\underline{\beta}$. This can be expressed with the system of ODEs:$$\Huge \frac{d\underline{X}_i}{dt}(t)=\underline{\beta}(\underline{X}_i(t))$$where $\underline{X}_i$ represents the position of the $i$th particle in the system. If we assume the particles cannot change shape and fill the volume that consists of the material (incompressible matter), the density of the matter remains the same along the particle trajectories:$$\Huge \frac{d\underline{X}}{dt}(t)=\underline{\beta}(\underline{X}(t)),\,\,\underline{X}(0)=\underline{X}_0$$which represents the paths particles take that started at $\underline{X}_0$ at time $t=0$. That is, if $\rho$ is the density of the matter then:$$\Huge \rho(\underline{X}_0,0)=\rho(\underline{X}(t),t)$$Differentiating wrt $t$ gives:$$\Huge\begin{aligned}
 0=\frac{d}{dt}\rho(\underline{X}_0,0)&=\frac{d}{dt}\rho(\underline{X}(t),t)\\
 &=\underline{\nabla}_x\rho(\underline{X}(t),t)\cdot \frac{d\underline{X}}{dt}(t)+\partial_t\rho(\underline{X}(t),t)\\
 &=\partial_t\rho(\underline{X}(t),t)+\underline{\beta}(\underline{X}(t))\cdot\underline{\nabla}_x\rho(\underline{X}(t),t)
-\end{align*}$$which resembles the quasi-linear PDE $\partial_t\rho(\underline{x},t)+\underline{\beta}(\underline{x})\cdot\underline{\nabla}_x\rho(\underline{x},t)=0$ on the particle paths which are determined by $\underline{\beta}$. This hints at a solution to:$$\Huge\begin{cases}\partial_t\rho(\underline{x},t)+\underline{\beta}(\underline{x})\cdot\underline{\nabla}_x\rho(\underline{x},t)=0&(\underline{x},t)\in\Lambda\times(0,\infty) \\
+\end{aligned}$$which resembles the quasi-linear PDE $\partial_t\rho(\underline{x},t)+\underline{\beta}(\underline{x})\cdot\underline{\nabla}_x\rho(\underline{x},t)=0$ on the particle paths which are determined by $\underline{\beta}$. This hints at a solution to:$$\Huge\begin{cases}\partial_t\rho(\underline{x},t)+\underline{\beta}(\underline{x})\cdot\underline{\nabla}_x\rho(\underline{x},t)=0&(\underline{x},t)\in\Lambda\times(0,\infty) \\
 \rho(\underline{x},0)=\rho_0(\underline{x})&x\in\Lambda\end{cases}$$now by associating particle paths to the PDE:
 > We look for a particle path $\underline{X}(\tau)$ that solves the system of ODEs:$$\Huge \begin{cases}\frac{d\underline{X}}{d\tau}(\tau)=\underline{\beta}(\underline{X}(\tau))&\tau\in(0,t) \\
 \underline{X}(0)=\underline{X}_0\end{cases}$$where $\underline{X}_0$ is some fixed vector.
->We have the implication:$$\Huge\begin{align*}
+>We have the implication:$$\Huge\begin{aligned}
 \frac{d}{d\tau}\rho(\underline{X}(\tau),\tau)&=\partial_t\rho(\underline{X}(\tau),\tau)+\underline{\beta}(\underline{X}(\tau))\cdot\underline{\nabla}_x\rho(\underline{X}(\tau),\tau)=0\\
 \implies&\rho(\underline{X}(\tau),\tau)=\rho(\underline{X}(0),0)=\rho_0(\underline{X}_0)
-\end{align*}$$for all $\tau\in[0,t]$.
+\end{aligned}$$for all $\tau\in[0,t]$.
 >For a given $(\underline{x},t)$ we look for $\underline{X}_0$ that depends on $\underline{x},t$ such that the path $\underline{X}(\tau)$ we found satisfies:$$\Huge \underline{X}(t)=\underline{x}$$That is, we found the initial condition using the terminal condition. We can conclude that:$$\Huge \rho(\underline{x},t)=\rho(\underline{X}(t),t)=\rho_0(\underline{X}_0(\underline{x},t))$$
 
 Here, we used the given advection field $\underline{\beta}$ to find particle paths on which density is constant due to the PDE, then we traced information back to the initial datum:![[The Method of Characteristics 2025-10-21 05.01.56.excalidraw]]
@@ -52,16 +52,16 @@ Now we follow our methodology:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=c \\
 \partial_\tau T(\tau,s)=1 \\
 \partial_\tau z(\tau,s)=0\end{cases}$$and:$$\Huge\begin{cases}X(0,s)=s \\
 T(0,s)=0 \\
-z(0,s)=u(x_0(s),t_0(s))=u_0(s)\end{cases}$$which is easily solved:$$\Huge\begin{align*}
+z(0,s)=u(x_0(s),t_0(s))=u_0(s)\end{cases}$$which is easily solved:$$\Huge\begin{aligned}
 X(\tau,\underline{s})&=c\tau+X(0,s)=s+c\tau\\
 T(\tau,\underline{s})&=\tau+T(0,s)=\tau\\
 z(\tau,\underline{s})&=z(0,\tau)=u_0(s)
-\end{align*}$$We now reverse the flow:$$\Huge\begin{align*}
+\end{aligned}$$We now reverse the flow:$$\Huge\begin{aligned}
 x&=s+c\tau\\
 t&=\tau\\
 \implies\tau&=t\\
 s&=x-ct
-\end{align*}$$Then we can write the solution:$$\Huge u(x,t)=z(\tau(x,t),s(x,t))=u_0(x-ct)$$
+\end{aligned}$$Then we can write the solution:$$\Huge u(x,t)=z(\tau(x,t),s(x,t))=u_0(x-ct)$$
 ## More complex example:
 Take the Cauchy problem:$$\Huge\begin{cases}(t+u(x,t))\partial_xu(x,t)+t\partial_tu(x,t)=x-t&(x,t)\in\Re\times(0,\infty) \\
 u(x,1)=1+x&x\in\Re\end{cases}$$Here, the characteristics are:
@@ -70,30 +70,30 @@ u(x,1)=1+x&x\in\Re\end{cases}$$Here, the characteristics are:
 > Domain $\Omega=\Re\times(0,\infty)$
 > Boundary $\Gamma=\{(x,1):x\in\Re\}$ parametrised by $\underline s\to (x_0(s),t_0(s))=(s,1)$
 
-Following the methodology:$$\Huge\begin{align*}
+Following the methodology:$$\Huge\begin{aligned}
 \partial_\tau X(\tau,s)&=T(\tau,s)+z(\tau,s)\\
 \partial_\tau T(\tau,s)&=T(\tau,s)\\
 \partial\tau z(\tau,s)&=X(\tau,s)-T(\tau,s)
-\end{align*}$$with, for $s\in\Re$:$$\Huge\begin{align*}
+\end{aligned}$$with, for $s\in\Re$:$$\Huge\begin{aligned}
 X(0,s)&=x_0(s)=s\\
 T(0,s)&=t_0(s)=1\\
 z(0,s)&=u(x_0(s),t_0(s))=u(s,1)=1+s
-\end{align*}$$Solving for $T$ gives:$$\Huge T(\tau,s)=T(0,s)e^{\tau}=e^\tau$$so we can write:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=e^\tau+z(\tau,s)&X(0,s)=s \\
+\end{aligned}$$Solving for $T$ gives:$$\Huge T(\tau,s)=T(0,s)e^{\tau}=e^\tau$$so we can write:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=e^\tau+z(\tau,s)&X(0,s)=s \\
 \partial_\tau z(\tau,s)=X(\tau,s)-e^\tau&z(0,s)=1+s\end{cases}$$we can see that:$$\Huge\begin{cases}\partial_\tau(X(\tau,s)+z(\tau,s))=X(\tau,s)+z(\tau,s) \\
 \partial_\tau(X(\tau,s)-z(\tau,s))=-(X(\tau,s)-z(\tau,s)+2e^\tau\end{cases}$$$$\Huge\begin{cases}X(0,s)+z(0,s)=1+2s \\
-X(0,s)-z(0,s)=-1\end{cases}$$From this we can find $(X+z)(\tau,s)$ and $(X-z)(\tau,s)$ and consequently:$$\Huge\begin{align*}
+X(0,s)-z(0,s)=-1\end{cases}$$From this we can find $(X+z)(\tau,s)$ and $(X-z)(\tau,s)$ and consequently:$$\Huge\begin{aligned}
 X(\tau,s)&=(1+s)e^\tau-e^{-\tau}\\
 z(\tau,s)&=se^\tau+e^{-\tau}\\
 T(\tau,s)&=e^\tau
-\end{align*}$$We have solved the system of ODEs, now we must reverse the flow:$$\Huge\begin{align*}
+\end{aligned}$$We have solved the system of ODEs, now we must reverse the flow:$$\Huge\begin{aligned}
 \tau&=\log(T)\\
 X(\tau,s)&=(1+s)T-\frac{1}{T}\\
 \implies s&=\frac{X+\frac{1}{T}}{T}-1
-\end{align*}$$Finally we can write the solution:$$\Huge\begin{align*}
+\end{aligned}$$Finally we can write the solution:$$\Huge\begin{aligned}
 u(x,t)&=z(\tau(x,t),s(x,t))\\
 &=s(x,t)e^{\tau(x,t)}+e^{-\tau(x,t)}\\
 &=\left(x+\frac{1}{t}-t\right)+\frac{1}{t}=x+\frac{2}{t}-t
-\end{align*}$$
+\end{aligned}$$
 ## Review of the method:
 This is all fine and dandy, however we ask:
 > Does the method hold?
@@ -123,26 +123,26 @@ Let $U\subseteq\Re^n$ be open and convex. If $\underline{f}:U\rightarrow\Re^m$ i
 Consider the system of ODEs:$$\Huge\begin{cases}\frac{d\underline{X}}{d\tau}(\tau)=\underline{f}(\tau,\underline{X}(\tau)) \\
 \underline{X}(t_0)=\underline{X}_0\end{cases}$$where $\underline{f}:\Re\times\Re^n\rightarrow\Re^n$, $t_0\in\Re$, and $\underline{X}_0\in\Re^n$ are given. Assume that there exists $\delta>0$ and $M>0$ such that $\underline{f}$ is continuous in its first variable on $[t_0-\delta,t_0+\delta]\times\overline{B_M(\underline{X}_0)}$ and that there exists $L(\underline{X}_0)$ such that:$$\Huge|\underline{f}(\tau, \underline{X})-\underline{f}(\tau,\underline{Y})|\leq L(\underline{X}_0)|\underline{X}-\underline{Y}|$$for all $(\tau,\underline{X})\in[t_0-\delta,t_0+\delta]\times\overline{B_M(\underline{X}_0)}$. Then there exists $\epsilon>0$ and a unique continuously differentiable function $\underline{X}:(t_0-\delta,t_0+\delta)\rightarrow\Re^n$ that solves the system of ODEs.
 
-This problem is equivalent to finding a continuous map $\underline{X}:(t_0-\epsilon,t_0+\epsilon)\rightarrow\Re^n$ such that:$$\Huge \underline{X}(t)=\underline{X}_0+\int_{t_0}^t\underline{f}(\tau,\underline{X}(\tau))d\tau$$We can also define an operator on functions from $(t_0-\delta,t_0+\delta)\rightarrow\Re^n$ to the same space by:$$\Huge T(g)(t)=\underline{X}_0+\int_{t_0}^t\underline{f}(\tau,g(\tau))d\tau$$then we want to find $\underline{X}$ such that:$$\Huge \underline{X}=T(\underline{X})$$Note that:$$\Huge |T(h)-T(g)|\leq\int_{t_0}^t|f(\tau,h(\tau))-f(\tau,g(\tau))|d\tau$$so we can define a sequence:$$\Huge\begin{align*}
+This problem is equivalent to finding a continuous map $\underline{X}:(t_0-\epsilon,t_0+\epsilon)\rightarrow\Re^n$ such that:$$\Huge \underline{X}(t)=\underline{X}_0+\int_{t_0}^t\underline{f}(\tau,\underline{X}(\tau))d\tau$$We can also define an operator on functions from $(t_0-\delta,t_0+\delta)\rightarrow\Re^n$ to the same space by:$$\Huge T(g)(t)=\underline{X}_0+\int_{t_0}^t\underline{f}(\tau,g(\tau))d\tau$$then we want to find $\underline{X}$ such that:$$\Huge \underline{X}=T(\underline{X})$$Note that:$$\Huge |T(h)-T(g)|\leq\int_{t_0}^t|f(\tau,h(\tau))-f(\tau,g(\tau))|d\tau$$so we can define a sequence:$$\Huge\begin{aligned}
 \underline{X}_1(t)&=\underline{X_0}\\
 \underline{X}_{n+1}(t)&=T(\underline{X}_n)(t)
-\end{align*}$$Then for small enough $\epsilon>0$ we will get that:$$\Huge \underline{X}_n\to X,\,\,T(\underline{X}_n)\to T(\underline{X})$$
+\end{aligned}$$Then for small enough $\epsilon>0$ we will get that:$$\Huge \underline{X}_n\to X,\,\,T(\underline{X}_n)\to T(\underline{X})$$
 
-For example, consider the ODE $\frac{dx}{dt}=x^{1/2}$ with $x(0)=0$. Here, $x=0$ is a solution. Assuming $x(t)\neq0$ in a small neighbourhood of $(-\epsilon,\epsilon)\setminus\{0\}$ we can separate the equation:$$\Huge\begin{align*}
+For example, consider the ODE $\frac{dx}{dt}=x^{1/2}$ with $x(0)=0$. Here, $x=0$ is a solution. Assuming $x(t)\neq0$ in a small neighbourhood of $(-\epsilon,\epsilon)\setminus\{0\}$ we can separate the equation:$$\Huge\begin{aligned}
 \frac{dx}{\sqrt{x}}&=dt\\
 \implies 2\sqrt{x}&=t+c\\
 \implies x(t)&=\frac{(t+c)^2}{4}\\
 x(0)=0\implies x(t)&=\frac{t^2}{4}
-\end{align*}$$As the left and right derivatives of $1/4t^2$ agree with $x=0$, we can stitch them together to form a global (exists for all time) solution.
+\end{aligned}$$As the left and right derivatives of $1/4t^2$ agree with $x=0$, we can stitch them together to form a global (exists for all time) solution.
 
 This is not always the case, take for example:$$\Huge\begin{cases}\frac{dx}{d\tau}=x^2 \\
-x(0)=0\end{cases}$$If $x(\tau)\neq0$ in a small neighbourhood of $\tau=0$, then:$$\Huge\begin{align*}
+x(0)=0\end{cases}$$If $x(\tau)\neq0$ in a small neighbourhood of $\tau=0$, then:$$\Huge\begin{aligned}
 \frac{dx}{x^2}&=d\tau\\
 \implies-\frac{1}{x}&=\tau+c\\
 x(\tau=0)=1\implies-\frac{1}{1}&=c\\
 \implies c&=-1\\
 \implies x(\tau)&=\frac{1}{1-\tau}
-\end{align*}$$and we see that the solution is only defined on $(-\infty,1)$.
+\end{aligned}$$and we see that the solution is only defined on $(-\infty,1)$.
 
 ## Local existence and uniqueness with continuous dependence in parameters:
 
@@ -167,18 +167,18 @@ z(0,\underline{s})=u_0(\underline{x}_0(\underline{s})) & s\in I\end{cases}$$Sinc
 
 It remains to check that this solutions satisfies the ODEs as well as boundary conditions. First we aim to check that $u|_{\Gamma\cap B_{R(\underline{x}_0(\underline{s}_0))}(\underline{x}_0(\underline{s}_0))}=u_0|_{\dots}$. Since the ball is in the domain where characteristics are defined, there exists some characteristic $\underline{X}(\tau,\underline{s})$:$$\Huge \underline{X}(0,\underline{s}_1)=\underline{x}_0(\underline{s}_1)=\underline{x}$$By invertibility of the flow, we have that $\tau(\underline{x})=0$ and $\underline{s}(\underline{x})=\underline{s}_1$. This implies that:$$\Huge u(\underline{x})=z(\tau(\underline{x}),\underline{s}(\underline{x}))=z(0,\underline{s}_1)=u_0(\underline{x}_0(\underline{s}_1))=u_0(\underline{x})$$This shows that general points on the boundary hold.
 
-We now show that the PDE holds. To do this, we need to differentiate $u$ wrt $\underline{x}$ and as such $\tau,\underline{s}$ wrt to $\underline{x}$. By the inverse function theorem:$$\Huge D(\tau,\underline{s})|_\underline{X}\cdot D\underline{X}|_{(\tau(\underline{x}),\underline{s}(\underline{x}))}=\mathbb{I}$$which can be shown trivially. Next:$$ \underline{a}(\underline{x},u(\underline{x}))\cdot\underline{\nabla}u(\underline{x})=\sum_{l=1}^na_l(\underline{x},u(\underline{x}))\cdot\left(\partial_\tau z\left(\tau(\underline{x}),\underline{s}\left(\underline{x}\right)\right)\frac{\partial \tau}{\partial x_l}(\underline{x})+\sum_{i=1}^{n-1}\partial_{s_i}z(\tau(\underline{x}),\underline{s}(\underline{x}))\cdot\frac{\partial s_i}{\partial x_l}(\underline{x})\right)$$which is simply:$$\large\begin{align*}
+We now show that the PDE holds. To do this, we need to differentiate $u$ wrt $\underline{x}$ and as such $\tau,\underline{s}$ wrt to $\underline{x}$. By the inverse function theorem:$$\Huge D(\tau,\underline{s})|_\underline{X}\cdot D\underline{X}|_{(\tau(\underline{x}),\underline{s}(\underline{x}))}=\mathbb{I}$$which can be shown trivially. Next:$$ \underline{a}(\underline{x},u(\underline{x}))\cdot\underline{\nabla}u(\underline{x})=\sum_{l=1}^na_l(\underline{x},u(\underline{x}))\cdot\left(\partial_\tau z\left(\tau(\underline{x}),\underline{s}\left(\underline{x}\right)\right)\frac{\partial \tau}{\partial x_l}(\underline{x})+\sum_{i=1}^{n-1}\partial_{s_i}z(\tau(\underline{x}),\underline{s}(\underline{x}))\cdot\frac{\partial s_i}{\partial x_l}(\underline{x})\right)$$which is simply:$$\large\begin{aligned
 \underline{a}(\underline{x},u(\underline{x}))\cdot\underline{\nabla}u(\underline{x})&=b(\underline{x},u(\underline{x}))\cdot\sum_{l=1}^na_l(\underline{x},u(\underline{x}))\cdot\frac{\partial z}{\partial x_l}(\underline{x})\\
 &+\sum_{i=1}^{n-1}\partial_{s_i}z(\tau(x),\underline{s}(x))\sum_{l=1}^na_l(x,u(x))\frac{\partial s_i}{\partial x_l}(x)\\
 &=b(\underline{x},u(\underline{x}))\cdot\sum_{l=1}^na_l(X(\tau(x),\underline{s}(x)))\cdot\frac{\partial z}{\partial x_l}(X(\tau(x),\underline{s}(x)))+0\\
 &=b(\underline{x},u(\underline{x}))
-\end{align*}$$Therefore a solution exists. This must be the unique solution in $B_{R(\underline{x}_0)(\underline{s}_0)}(\underline{x}_0(\underline{s}_0))$ since we know that $z$ is uniquely there and $(\tau,\underline{s})\rightarrow\underline{X}$ is invertible. This concludes the proof for the local result. The global result holds following the global well posedness of ODE systems and the fact that $\Gamma$ is non characteristic.
+\end{aligned}$$Therefore a solution exists. This must be the unique solution in $B_{R(\underline{x}_0)(\underline{s}_0)}(\underline{x}_0(\underline{s}_0))$ since we know that $z$ is uniquely there and $(\tau,\underline{s})\rightarrow\underline{X}$ is invertible. This concludes the proof for the local result. The global result holds following the global well posedness of ODE systems and the fact that $\Gamma$ is non characteristic.
 
 This non characteristic condition is essential, to show this we consider the example:$$\Huge\begin{cases}\partial_xu(x,y)+\partial_yu(x,y)=1&(x,y)\in\Re^2 \\
-u(x,x)=x&x\in\Re\end{cases}$$We have $\Omega=\Re^2$ and the Cauchy curve $\Gamma=\{(x,x):x\in\Re\}$ which is parametrised by $x_0(s)=s,y_0(s)=s$ and $s\in\Re$. The leading vector field is $\underline{a}(x,y,u)=(1,1)$ and the source term is $b(x,y,u)=1$:![[The Method of Characteristics 2025-11-11 19.04.51.excalidraw]]We see that the leading vector field keeps us on the boundary, and we cannot escape it into the domain. The points are all non characteristic:$$\Huge\begin{align*}
+u(x,x)=x&x\in\Re\end{cases}$$We have $\Omega=\Re^2$ and the Cauchy curve $\Gamma=\{(x,x):x\in\Re\}$ which is parametrised by $x_0(s)=s,y_0(s)=s$ and $s\in\Re$. The leading vector field is $\underline{a}(x,y,u)=(1,1)$ and the source term is $b(x,y,u)=1$:![[The Method of Characteristics 2025-11-11 19.04.51.excalidraw]]We see that the leading vector field keeps us on the boundary, and we cannot escape it into the domain. The points are all non characteristic:$$\Huge\begin{aligned}
 a_1(x_0(s),y_0(s))\partial_sy_0(s)-a_2(x_0(s),y_0(s))\partial_sx_0(s)&=1\cdot1-1\cdot1\\
 &=0
-\end{align*}$$for all $s\in\Re$. Writing the equation with the method of characteristics gives:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=1 \\
+\end{aligned}$$for all $s\in\Re$. Writing the equation with the method of characteristics gives:$$\Huge\begin{cases}\partial_\tau X(\tau,s)=1 \\
 \partial_\tau Y(\tau,s)=1 \\
 \partial_\tau z(\tau,s)=1\end{cases},\,\,\begin{cases}X(0,s)=x_0(s)=s \\
 Y(0,s)=y_0(s)=s \\

@@ -1,18 +1,18 @@
 # Lie groups:
 
-Lie groups unite the structures of [[Groups|groups]] and [[Differentiable Manifolds#Definition|differentiable manifolds]] in a compatible way. A lie group is a group that is also a differentiable manifold such that the group operations:$$\Huge\begin{align*}
+Lie groups unite the structures of [[Groups|groups]] and [[Differentiable Manifolds#Definition|differentiable manifolds]] in a compatible way. A lie group is a group that is also a differentiable manifold such that the group operations:$$\Huge\begin{aligned}
 \circ &=G\times G\rightarrow G\;\;\;\;\;\;(x,y)\rightarrow x\circ y\\
 {}^{-1} &=G\rightarrow G\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\, x\rightarrow x^{-1}
-\end{align*}$$are differentiable maps.
+\end{aligned}$$are differentiable maps.
 
 For example, the group $\mathbb{C}^*=\mathbb{C}\setminus\{0\}$ is a Lie group under multiplication. The map:$$\Huge(x,y)\rightarrow xy$$is a differentiable map from $\mathbb{C}^*\times\mathbb{C}^*$ to $\mathbb{C}^*$, and $x\rightarrow 1/x$ is a differentiable map from $\mathbb{C}^*$ to $\mathbb{C}^*$.
 
 We propose that the group $GL(n,\Re)$ of real invertible $n\times n$ matrices is a Lie group under matrix multiplication. Note that these naturally sit inside $\Re^m$ with $m=n^2$:
 > To prove this, recall that a map is differentiable if it can be locally approximated by a linear map. We ask if this is true for matrix multiplication. For two matrices $P,Q\in GL(n,\Re)$, the group operation is the map:$$\Huge (P,Q)\rightarrow PQ$$
-> To examine if this can be approximated by a linear map we change $P$ to $P+\Delta_P$ and $Q$ to $Q+\Delta_Q$:$$\large\begin{align*}
+> To examine if this can be approximated by a linear map we change $P$ to $P+\Delta_P$ and $Q$ to $Q+\Delta_Q$:$$\large\begin{aligned}
 (P+\epsilon\Delta_P,Q+\epsilon\Delta_Q)\rightarrow(P+\epsilon\Delta_P)(Q+\epsilon\Delta_Q)&=PQ+P\epsilon\Delta_Q+\epsilon^2\Delta_P\Delta_Q\\
 &\approx\,PQ+\epsilon(P\Delta_Q+\Delta_PQ)
-\end{align*}$$which is linear in both $\Delta_P$ and $\Delta_Q$. [[Determinants and Adjoints#Cramer's rule|Cramer's rule]] for constructing inverse matrices similarly shows that $P\rightarrow P^{-1}$ is differentiable.
+\end{aligned}$$which is linear in both $\Delta_P$ and $\Delta_Q$. [[Determinants and Adjoints#Cramer's rule|Cramer's rule]] for constructing inverse matrices similarly shows that $P\rightarrow P^{-1}$ is differentiable.
 > Note that closed subgroups $H$ of $GL(n,\Re)$ are again Lie groups, called matrix Lie groups.
 
 This is allows us to find more Lie groups in the form of closed subgroups of $GL(n,\Re)$:

@@ -35,10 +35,10 @@ We are studying a situation when a particle comes from $\pm\infty$ and scatterin
 > If $E<V_0$ the particle will elastically bounce off the potential and will return to whence it came.
 > If $E>V_0$, the particle goes over the potential as if $V(x)=0$.
 
-In our superior way of thinking, both for $E>V_0$ and $E<V_0$, some figment of a particle wave is scattered back and the rest transmits through. In order to see how much of an incoming wave transmits through the potential and how much scatters back, we look at $\psi(x,t)$ at $x\to\pm\infty$:$$\Huge\begin{align*}
+In our superior way of thinking, both for $E>V_0$ and $E<V_0$, some figment of a particle wave is scattered back and the rest transmits through. In order to see how much of an incoming wave transmits through the potential and how much scatters back, we look at $\psi(x,t)$ at $x\to\pm\infty$:$$\Huge\begin{aligned}
 x\to-\infty&:\Psi(x,t)\to A_Ie^{ipx}+A_Re^{-ipx}=\Psi_I+\Psi_R\\
 x\to+\infty&:\Psi(x,t)\to Be^{iqx}=\Psi_T
-\end{align*}$$Here, $A_I$ is the amplitude of the incoming particle with momentum $p$. $A_R$ is the amplitude of reflected particles with momentum $-p$. $B$ is the amplitude of the transmitted particle with momentum $q$:![[QM systems for general potentials 2026-02-18 01.40.40.excalidraw]]In order to quantify which fraction of particles go through the barrier and which reflect, we introduce the following quantities.:
+\end{aligned}$$Here, $A_I$ is the amplitude of the incoming particle with momentum $p$. $A_R$ is the amplitude of reflected particles with momentum $-p$. $B$ is the amplitude of the transmitted particle with momentum $q$:![[QM systems for general potentials 2026-02-18 01.40.40.excalidraw]]In order to quantify which fraction of particles go through the barrier and which reflect, we introduce the following quantities.:
 > Probability density $\rho$:$$\Huge\rho(\underline{x},t)=|\psi(\underline{x},t)|^2$$is the probability to find a particles in $dV$ around $(\underline{x},t)$.
 > Probability current, $J_i$:$$\Huge J_i=\frac{i}{2m}(\psi^*\partial_i\psi-\psi\partial_i\psi^*)$$is the vector dictating how probability distributes across space. For each wave $k$ for $k\in\{I,R,T\}$:$$\Huge J(\psi_k)=\frac{\hbar}{m}\times\text{associated momemntum of }\psi_k\times|\psi_k|^2$$
 

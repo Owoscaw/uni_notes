@@ -7,10 +7,10 @@ Commutation implies that the energy eigenstates are also energy eigenstates of $
 
 # Solving Schrodinger equation:
 
-The Schrodinger equation for a spherical system is:$$\Huge -\frac{1}{2m}\underline{\nabla}^2\Psi(r,\theta,\varphi)+V(r)\Psi(r,\theta,\varphi)=E\Psi(r,\theta,\varphi)$$The Laplacian in spherical coordinates becomes:$$\Huge\underline{\nabla}^2=\frac{1}{r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)-\frac{\hat L^2}{r^2}$$In order to solve this equation, we make a factorisation ansatz:$$\Huge \Psi(r,\theta,\varphi)=R(r)Y(\theta,\varphi)$$Note that we normalise $R,Y$ separately. Using these pieces, the equation becomes:$$ -\left(\frac{1}{r^2}Y(\theta,\varphi)(r(R'(r)))\right)+\frac{1}{r^2}R(r)(\hat L^2Y(\theta,\varphi))+2mV(r)R(r)Y(\theta,\varphi)=2mEY(\theta,\varphi)R(r)$$We separate the dependence on each side to obtain:$$\Huge \left\{\frac{1}{R(r)}(r^2R'(r))'+2mr^2(E-V(r))\right\}_r+\left\{-\frac{\hat L^2Y(\theta,\varphi)}{Y(\theta,\varphi)}\right\}_\theta=0$$So each term must be constant. This essentially splits our equations in the radial $(\theta,\varphi)$ and the $r$ dependence:$$\Huge\begin{align*}
+The Schrodinger equation for a spherical system is:$$\Huge -\frac{1}{2m}\underline{\nabla}^2\Psi(r,\theta,\varphi)+V(r)\Psi(r,\theta,\varphi)=E\Psi(r,\theta,\varphi)$$The Laplacian in spherical coordinates becomes:$$\Huge\underline{\nabla}^2=\frac{1}{r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)-\frac{\hat L^2}{r^2}$$In order to solve this equation, we make a factorisation ansatz:$$\Huge \Psi(r,\theta,\varphi)=R(r)Y(\theta,\varphi)$$Note that we normalise $R,Y$ separately. Using these pieces, the equation becomes:$$ -\left(\frac{1}{r^2}Y(\theta,\varphi)(r(R'(r)))\right)+\frac{1}{r^2}R(r)(\hat L^2Y(\theta,\varphi))+2mV(r)R(r)Y(\theta,\varphi)=2mEY(\theta,\varphi)R(r)$$We separate the dependence on each side to obtain:$$\Huge \left\{\frac{1}{R(r)}(r^2R'(r))'+2mr^2(E-V(r))\right\}_r+\left\{-\frac{\hat L^2Y(\theta,\varphi)}{Y(\theta,\varphi)}\right\}_\theta=0$$So each term must be constant. This essentially splits our equations in the radial $(\theta,\varphi)$ and the $r$ dependence:$$\Huge\begin{aligned}
 \hat L^2(\theta,\varphi)Y(\theta,\varphi)&=\eta Y(\theta,\varphi)\\
 (r^2R'(r))'-2mr^2(V(r)-E)&=\eta R(r)
-\end{align*}$$Here, the first equation defines an eigen-equation for $\hat L^2$, which we know [[QM in R3#Eigenfunctions of angular momentum|solutions]] for:
+\end{aligned}$$Here, the first equation defines an eigen-equation for $\hat L^2$, which we know [[QM in R3#Eigenfunctions of angular momentum|solutions]] for:
 > The eigenproblem becomes$$\Huge \eta=l |l+1\rangle$$for any $l\in\mathbb{N}$. This has spherical harmonic solutions$$\Huge Y=Y_{l,m},\,\,m\in\{-l,\dots,l\}$$
 
 In order to solve the radial equation:
@@ -35,10 +35,10 @@ To avoid this problem, we assume the existence of some $j_\text{max}:a_{j_\text{
 Another natural constant that appears is$$\Huge a=\frac{4\pi\epsilon_0\hbar^2}{e^2m}\approx0.54\times10^{-10}\text{m}$$, introduced by Bohr in his model of the Hydrogen atom. This is the Bohr radius, the minimal distance at which $e^-$ can be away from the nucleus.
 
 ## Wave functions:
-In terms of the angular $Y_{lm}$ and radial $R(r)$ parts of the wave function, we see that $\Psi$ is labelled by three quantum numbers:$$\Huge\begin{align*}
+In terms of the angular $Y_{lm}$ and radial $R(r)$ parts of the wave function, we see that $\Psi$ is labelled by three quantum numbers:$$\Huge\begin{aligned}
 \Psi_{nlm}(r,\theta,\varphi)&=R_{nl}(r)Y_{lm}(\theta,\varphi)\\
 R_{nl}(r)&=\frac{1}{r}U_{nl}(\rho)=\frac{1}{r}\rho^{l+1}e^{-\rho}v_{nl}(\rho)
-\end{align*}$$We ask what are the allowed eigenstates for this wave function. The fact that $j_\text{max}\geq0$ fixes $l,m$ for a given $n$:
+\end{aligned}$$We ask what are the allowed eigenstates for this wave function. The fact that $j_\text{max}\geq0$ fixes $l,m$ for a given $n$:
 > Taking $n=1$ we see that $l=0\implies n=0$ and so the radial function $Y_{00}=\frac{1}{\sqrt{4\pi}}$ takes form. This also implies $j_\text{max}=0$ and so $v_{nl}=\text{constant}$. Putting this together, we can find the groundstate wavefunction$$\Huge \Psi_{100}=\frac{1}{\sqrt{\pi a^3}}e^{-r/a}$$, where $a$ is the Bohr radius. This has a maximum at $r=a$, so the probability to find $e^-$ is largest at the Bohr radius.
 > Taking $n=2$, $j_\text{max}=1-l\geq0\implies l\leq1\implies l=0$ or $l=1$, so $m=0$ or $m-\{-1,0,1\}$ respectively. The allowed states then become:$$\Huge\Psi_{200},\Psi_{210},\Psi_{211},\Psi_{21(-1)}$$These look like:![[Systems with spherical symmetry 2026-02-12 01.46.10.excalidraw]]
 > At generic $n$, we have $n^2$ possible states. That is, the energy spectrum id degenerate with degeneracy $n^2$.

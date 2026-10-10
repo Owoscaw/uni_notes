@@ -10,20 +10,20 @@ Linear, second order PDEs in two independent variables $(n=2)$ have form:$$\Huge
 # Poisson's equation on $[a,b]$:
 
 In one dimension, $\Delta u=u''$ and Poisson's equation takes form:$$\Huge -u''=f$$In which case we can find a solution simply by integrating, which we cannot do for higher dimensions. We begin by finding the solution subject to zero Dirichlet BCs:$$\Huge\begin{cases}-u''(x)=f(x)&x\in(a,b) \\
-u(x)=0&x=a,b\end{cases}$$where $u:[a,b]\rightarrow\Re$ and $f\in C([a,b])$. We now use the fundamental theorem of calculus to integrate over $[a,z]$:$$\Huge \int_a^zu''(y)dy=-\int_a^zf(y)dy\iff u'(z)=u'(a)-\int_a^zf(y)dy$$now integrating over $[a,x]$:$$\Huge\begin{align*}
+u(x)=0&x=a,b\end{cases}$$where $u:[a,b]\rightarrow\Re$ and $f\in C([a,b])$. We now use the fundamental theorem of calculus to integrate over $[a,z]$:$$\Huge \int_a^zu''(y)dy=-\int_a^zf(y)dy\iff u'(z)=u'(a)-\int_a^zf(y)dy$$now integrating over $[a,x]$:$$\Huge\begin{aligned}
 \int_a^xu'(z)dz&=\int_a^xu'(a)-\int_a^zf(y)dy\,dz\\
 \iff u(x)-u(a)&=(x-a)u'(a)-\int_a^x\int_a^zf(y)dy\,dz\\
 \iff u(x)&=(x-a)u'(a)-\int_a^x\int_a^zf(y)dy\,dz
-\end{align*}$$This is not yet an explicit solution as $u'(a)$ appears on the RHS, however we can use the fact that $u(b)=0$:$$\Huge \begin{align*}
+\end{aligned}$$This is not yet an explicit solution as $u'(a)$ appears on the RHS, however we can use the fact that $u(b)=0$:$$\Huge \begin{aligned}
 u(b)&=(b-a)u'(a)-\int_a^b\int_a^zf(y)dy\,dz=0\\
 \implies u'(a)&=\frac{1}{b-a}\int_a^b\int_a^zf(y)dy\,dz
-\end{align*}$$and so our explicit solution becomes:$$\Huge u(x)=\frac{x-a}{b-a}\int_a^b\int_a^zf(y)dy\,dz-\int_a^x\int_a^zf(y)dy\,dz$$However this is ugly, and we can tidy it up by changing the order of integration:$$\large\begin{align*}
+\end{aligned}$$and so our explicit solution becomes:$$\Huge u(x)=\frac{x-a}{b-a}\int_a^b\int_a^zf(y)dy\,dz-\int_a^x\int_a^zf(y)dy\,dz$$However this is ugly, and we can tidy it up by changing the order of integration:$$\large\begin{aligned}
 u(x)&=\frac{x-a}{b-a}\int_a^b\int_y^bf(y)dz\,dy-\int_a^x\int_y^xf(y)dz\,dy\\
 &=\frac{x-a}{b-a}\int_a^b(b-y)f(y)dy-\int_a^x(x-y)f(y)dy\\
 &=\frac{x-a}{b-a}\left(\int_a^x(b-y)f(y)dy+\int_x^b(b-y)f(y)dy\right)-\int_a^x(x-y)f(y)dy\\
 &=\int_a^x\left(\frac{(x-a)(b-y)}{b-a}-(x-y)\right)f(y)dy+\int_x^b\frac{(x-a)(b-y)}{b-a}f(y)dy\\
 &=\int_a^x\frac{(y-a)(b-x)}{b-a}f(y)dy+\int_x^b\frac{(x-a)(b-y)}{b-a}f(y)dy
-\end{align*}$$which we can write as:$$\Huge u(x)=\int_a^bG(x,y)f(y)dy,\,\,G(x,y)=\begin{cases}\frac{(y-a)(b-x)}{b-a}&y\leq x \\
+\end{aligned}$$which we can write as:$$\Huge u(x)=\int_a^bG(x,y)f(y)dy,\,\,G(x,y)=\begin{cases}\frac{(y-a)(b-x)}{b-a}&y\leq x \\
 \frac{(x-a)(b-y)}{b-a}&y\geq x\end{cases}$$We call $G$ a Green's function. Observe that $G(x,y)=G(y,x)$ is symmetric. Away from $x=y$, $G$ is twice differentiable and satisfies the one-dimensional Laplace equation in $x$ and $y$ ($G_{xx}=G_{yy}=0$ for $y\neq x$). The partial derivatives $G_x,G_y$ suffer a jump discontinuity across this line. The same procedure is used to solve Poisson's equation on $[a,b]$ with Neumann BCs as well as mixed BCs.
 
 ## Green's functions:
@@ -34,13 +34,13 @@ Let $\Omega\subseteq\Re^n$ be open and bounded with smooth boundary. It can be s
 We now consider Poisson's equation in all of $\Re^n$ for $n\geq1$:$$\Huge-\Delta u(\underline{x})=f(\underline{x}),\,\,\underline{x}\in\Re^n$$If this equation has a solution, it cannot be unique as $u+v$ for any harmonic function $v$ will also be a solution. In order to obtain a unique solution, we must specify additional constraints. 
 
 ## Fundamental solution in $\Re^n$:
-To derive the fundamental solution for $n\geq2$, we seek a radial solution of $\Delta u=0$. That is, we look for a solution of the form $u(\underline{x})=h(|\underline{x}|)$. Recall that:$$\Huge \frac{\partial }{\partial x_j}|\underline{x}|=\frac{x_j}{|\underline{x}|},\,\,\underline{\nabla}|\underline{x}|=\frac{\underline{x}}{|\underline{x}|}$$Therefore we write:$$\Huge\begin{align*}
+To derive the fundamental solution for $n\geq2$, we seek a radial solution of $\Delta u=0$. That is, we look for a solution of the form $u(\underline{x})=h(|\underline{x}|)$. Recall that:$$\Huge \frac{\partial }{\partial x_j}|\underline{x}|=\frac{x_j}{|\underline{x}|},\,\,\underline{\nabla}|\underline{x}|=\frac{\underline{x}}{|\underline{x}|}$$Therefore we write:$$\Huge\begin{aligned}
 \frac{\partial u}{\partial x_j}&=h'\frac{x_j}{|\underline{x}|},\,\,\underline{\nabla}u=h'\frac{\underline{x}}{|\underline{x}|}\\
 \implies\frac{\partial^2u}{\partial x_j^2}&=h''\frac{x_j^2}{|\underline{x}|^2}+h'\frac{1}{|\underline{x}|}-h'x_j\frac{1}{|\underline{x}|^2}\frac{x_j}{|\underline{x}|}
-\end{align*}$$And so:$$\Huge\begin{align*}
+\end{aligned}$$And so:$$\Huge\begin{aligned}
 \Delta u&=\sum_{j=1}^n\frac{\partial^2u}{\partial x_j^2}=h''\frac{1}{|\underline{x}|^2}\sum_{j=1}^nx_j^2+h'\frac{n}{|\underline{x}|}-h'\frac{1}{|\underline{x}|^3}\sum_{j=1}^nx_j^2\\
 &=h''+\frac{n-1}{|\underline{x}|}h'
-\end{align*}$$Letting $r=|\underline{x}|$, we have shown that:$$\Huge \Delta u=0\iff h''(r)+\frac{n-1}{r}h'(r)=0$$This is a linear, first-order ODE in $h'$, so we solve by integrating factor:$$\Huge \exp\left(\int\frac{n-1}{r}dr\right)=\exp((n-1)\ln r)=r^{n-1}$$which gives:$$\Huge r^{n-1}h''+(n-1)r^{n-2}h'=0\iff \frac{d}{dr}(r^{n-1}h')=0$$Integrating this gives $h'(r)=Ar^{1-n}$ for some constant $A$, integrating further gives:$$\Huge h(r)=\begin{cases}A\ln r+B&n=2 \\
+\end{aligned}$$Letting $r=|\underline{x}|$, we have shown that:$$\Huge \Delta u=0\iff h''(r)+\frac{n-1}{r}h'(r)=0$$This is a linear, first-order ODE in $h'$, so we solve by integrating factor:$$\Huge \exp\left(\int\frac{n-1}{r}dr\right)=\exp((n-1)\ln r)=r^{n-1}$$which gives:$$\Huge r^{n-1}h''+(n-1)r^{n-2}h'=0\iff \frac{d}{dr}(r^{n-1}h')=0$$Integrating this gives $h'(r)=Ar^{1-n}$ for some constant $A$, integrating further gives:$$\Huge h(r)=\begin{cases}A\ln r+B&n=2 \\
 \frac{A}{2-n}r^{2-n}+B&n\geq3\end{cases}$$for some constant $B$. This makes our solution for $u$:$$\Huge u(\underline{x})=h(|\underline{x}|)=\begin{cases}A\ln|\underline{x}|+B&n=2 \\
 \frac{A}{2-n}|\underline{x}|^{2-n}+B&n\geq3\end{cases}$$It is easy to check that this satisfies $\Delta u(\underline{x})=0$ for $\underline{x}\neq\underline{0}$. At the origin, $u$ is singular. By making a particular choice of $A,B$ we arrive at the following important solution.
 
@@ -52,7 +52,7 @@ The fundamental solution of Poisson's equation in $\Re^n$ is the map $\Phi:\Re^n
 > $\Phi$ has an integrable singularity at the origin. For any $R>0$:$$\Huge\int_{B_R(\underline{0})}|\Phi(\underline{x})|d\underline{x}<\infty$$
 > $\underline{\nabla}\Phi$ also has an integrable singularity at the origin.
 
-The second derivatives of $\Phi$ are not so well behaved. If $\Delta\Phi$ were an integrable function, then for any $\epsilon>0$:$$\Huge\begin{align*}
+The second derivatives of $\Phi$ are not so well behaved. If $\Delta\Phi$ were an integrable function, then for any $\epsilon>0$:$$\Huge\begin{aligned}
 -\int_{B_\epsilon(\underline{0})}\Delta\Phi d\underline{x}&=-\int_{B_\epsilon(\underline{0})}\text{div}(\underline{\nabla}\Phi)d\underline{x}\\
 &=-\int_{\partial B_\epsilon(\underline{0})}\underline{\nabla}\Phi\cdot\underline{n}dS\\
 &=\frac{1}{n\alpha(n)}\int_{\partial B_\epsilon(\underline{0})}\frac{\underline{x}}{|\underline{x}|^n}\cdot\frac{\underline{x}}{\epsilon}dS(\underline{x})\\
@@ -60,7 +60,7 @@ The second derivatives of $\Phi$ are not so well behaved. If $\Delta\Phi$ were a
 &=\frac{1}{n\alpha(n)}\frac{1}{\epsilon^{n-1}}\int_{\partial B_\epsilon(\underline{0})}1dS\\
 &=\frac{1}{n\alpha(n)}\frac{1}{\epsilon^{n-1}}\text{area}(\partial B_\epsilon(\underline{0}))\\
 &=\frac{1}{n\alpha(n)}\frac{1}{\epsilon^{n-1}}n\alpha(n)\epsilon^{n-1}=1
-\end{align*}$$However $\Delta\Phi(\underline{x})=0$ for all $\underline{x}\neq \underline{0}$, so the conditions $\int_{B_\epsilon(\underline{0})}\Delta\Phi d\underline{x}=-1$ and $\Delta\Phi(\underline{x})=0$ for $\underline{x}\neq\underline{0}$ are incompatible, suggesting that $\Delta\Phi$ is not an integrable function, but rather:$$\Huge -\Delta\Phi=\delta$$in the sense of distributions. This means that:$$\Huge -\int_{\Re^n}\Phi(\underline{y})\Delta\psi(\underline{y})d\underline{y}=\psi(\underline{0}),\,\,\forall\psi\in C_c^\infty(\Re^n)$$This is a direct result of taking $f=\psi,\underline{x}=\underline{0}$. 
+\end{aligned}$$However $\Delta\Phi(\underline{x})=0$ for all $\underline{x}\neq \underline{0}$, so the conditions $\int_{B_\epsilon(\underline{0})}\Delta\Phi d\underline{x}=-1$ and $\Delta\Phi(\underline{x})=0$ for $\underline{x}\neq\underline{0}$ are incompatible, suggesting that $\Delta\Phi$ is not an integrable function, but rather:$$\Huge -\Delta\Phi=\delta$$in the sense of distributions. This means that:$$\Huge -\int_{\Re^n}\Phi(\underline{y})\Delta\psi(\underline{y})d\underline{y}=\psi(\underline{0}),\,\,\forall\psi\in C_c^\infty(\Re^n)$$This is a direct result of taking $f=\psi,\underline{x}=\underline{0}$. 
 
 ## Function spaces:
 Before continuing, recall the definition of the [[Distributions#Test functions|support]] of a function:
@@ -79,29 +79,29 @@ Let $\varphi\in L^1_\text{loc}(\Re^n)$ and $f\in C_c(\Re^n)$. The convolution of
 
 Let $f\in C_c^2(\Re^n)$ be twice continuously differentiable with compact support. Define$$\Huge u=\Phi*f$$then $u\in C^2(\Re)$ and satisfies:$$\Huge -\Delta u(\underline{x})=f(\underline{x}),\,\,\underline{x}\in\Re^n$$We prove this for the $n=2$ case:
 > By the symmetry of convolution:$$\Huge u(\underline{x})=(\Phi*f)(\underline{x})=(f*\Phi)(\underline{x})=\int_{\Re^2}\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}$$and therefore$$\Huge \Delta u(\underline{x})=\Delta\int_{\Re^2}\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}$$
-> We now show that we can bring the Laplacian operator $\Delta$ inside the integral. Let $\underline{e}_1=(1,0),\underline{e}_2=(0,1)$ be the standard basis vectors for $\Re^2$. Letting $h>0$ and applying the mean value theorem to $g(h)=f(\underline{x}+h\underline{e}_i-\underline{y})$ gives:$$\Huge\begin{align*}
+> We now show that we can bring the Laplacian operator $\Delta$ inside the integral. Let $\underline{e}_1=(1,0),\underline{e}_2=(0,1)$ be the standard basis vectors for $\Re^2$. Letting $h>0$ and applying the mean value theorem to $g(h)=f(\underline{x}+h\underline{e}_i-\underline{y})$ gives:$$\Huge\begin{aligned}
 \frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}&=\frac{g(h)-g(0)}{h-0}\\
 &=g'(\xi)
 \\
 &=\underline{\nabla}f(\underline{x}+\xi\underline{e}_i-\underline{y})\cdot\underline{e}_i\\
 &=f_{x_i}(\underline{x}+\xi\underline{e}_i-\underline{y})
-\end{align*}$$for some $\xi=\xi(\underline{x},\underline{y})\in(0,h)$. Therefore:$$\large \frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}-f_{x_i}(\underline{x}-\underline{y})=f_{x_i}(\underline{x}+\xi\underline{e}_i-\underline{y})-f_{x_i}(\underline{x}-\underline{y})$$Observe that $f_{x_i}$ is uniformly continuous since $f_{x_i}$ is continuous and has compact support. By the definition of uniform continuity, for all $\epsilon>0$ there exists $\delta(\epsilon)>0$ such that:$$\Huge |f_{x_i}(z_2)-f_{x_i}(z_1)|<\epsilon$$whenever $|z_2-z_1|<\delta(\epsilon)$. Choose some $0<h<\delta(\epsilon)$, then $|(\underline{x}+\xi\underline{e}_i-\underline{y})-(\underline{x}-\underline{y})|=\xi<h<\delta(\epsilon)$ and so:$$\Huge\left|\frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}-f_{x_i}(\underline{x}-\underline{y})\right|<\epsilon,\,\,\forall\underline{x},\underline{y}\in\Re^2$$Consequently:$$\Huge \sup_{\underline{y}\in\Re^2}\Huge\left|\frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}-f_{x_i}(\underline{x}-\underline{y})\right|<\epsilon,\,\,\forall h<\delta(\epsilon)$$That is to say, the sequence of functions:$$\Huge F_h^{\underline{x}}(\underline{y})=\frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}$$converges uniformly as $h\to0$ to $F^{\underline{x}}(\underline{y})=f_{x_i}(\underline{x}-\underline{y})$. Since $f$ has compact support, we can write $u(\underline{x})$ as:$$\Huge u(\underline{x})=\int_{K_\underline{x}}\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}$$where $K_\underline{x}\subset\Re^2$ is any compact set containing $\{\underline{x}-\underline{z}:\underline{z}\in\text{supp}(f)\}$.
+\end{aligned}$$for some $\xi=\xi(\underline{x},\underline{y})\in(0,h)$. Therefore:$$\large \frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}-f_{x_i}(\underline{x}-\underline{y})=f_{x_i}(\underline{x}+\xi\underline{e}_i-\underline{y})-f_{x_i}(\underline{x}-\underline{y})$$Observe that $f_{x_i}$ is uniformly continuous since $f_{x_i}$ is continuous and has compact support. By the definition of uniform continuity, for all $\epsilon>0$ there exists $\delta(\epsilon)>0$ such that:$$\Huge |f_{x_i}(z_2)-f_{x_i}(z_1)|<\epsilon$$whenever $|z_2-z_1|<\delta(\epsilon)$. Choose some $0<h<\delta(\epsilon)$, then $|(\underline{x}+\xi\underline{e}_i-\underline{y})-(\underline{x}-\underline{y})|=\xi<h<\delta(\epsilon)$ and so:$$\Huge\left|\frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}-f_{x_i}(\underline{x}-\underline{y})\right|<\epsilon,\,\,\forall\underline{x},\underline{y}\in\Re^2$$Consequently:$$\Huge \sup_{\underline{y}\in\Re^2}\Huge\left|\frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}-f_{x_i}(\underline{x}-\underline{y})\right|<\epsilon,\,\,\forall h<\delta(\epsilon)$$That is to say, the sequence of functions:$$\Huge F_h^{\underline{x}}(\underline{y})=\frac{f(\underline{x}+h\underline{e}_i-\underline{y})-f(\underline{x}-\underline{y})}{h}$$converges uniformly as $h\to0$ to $F^{\underline{x}}(\underline{y})=f_{x_i}(\underline{x}-\underline{y})$. Since $f$ has compact support, we can write $u(\underline{x})$ as:$$\Huge u(\underline{x})=\int_{K_\underline{x}}\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}$$where $K_\underline{x}\subset\Re^2$ is any compact set containing $\{\underline{x}-\underline{z}:\underline{z}\in\text{supp}(f)\}$.
 > For $0<h<1$ we have$$\large\frac{u(\underline{x}+h\underline{e}_i)-u(\underline{x})}{h}-\int_{\Re^2}\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}=\int_K\Phi(\underline{y})(F_h^{\underline{x}}(\underline{y})-F^\underline{x}(\underline{y}))d\underline{y}$$where $K\subset\Re^2$ is any compact set containing $\bigcup_{h\in[0,1]}K_{\underline{x}+h\underline{e}_i}$. Therefore$$\large\left|\frac{u(\underline{x}+h\underline{e}_i)-u(\underline{x})}{h}-\int_{\Re^2}\Phi(\underline{y})f_{x_i}(\underline{x}-\underline{y})d\underline{y}\right|\leq||F_h^\underline{x}-F^\underline{x}||_{L^\infty(\Re^n)}\int_K\Phi(\underline{y})d\underline{y}\to0$$as $h\to0$, since $F_h^\underline{x}$ converges uniformly to $F^\underline{x}$ and $\Phi\in L^1_\text{loc}(\Re^2)$. Hence the partial derivatives $u_{x_i}$ exist for $i\in\{1,2\}$ and:$$\Huge u_{x_i}(\underline{x})=\int_{\Re^2}\Phi(\underline{y})f_{x_i}(\underline{x}-\underline{y})d\underline{y}$$Moreover, $u_{x_i}$ is continuous since $f_{x_i}$ is continuous with compact support. Therefore $u\in C_c^1(\Re^2)$. Using the same argument for $u_{x_i}$, we find that:$$\Huge u_{x_ix_j}(\underline{x})=\int_{\Re^2}\Phi(\underline{y})f_{x_ix_j}(\underline{x}-\underline{y})d\underline{y}$$and that $u\in C^2(\Re^2)$. In particular,$$\Huge\Delta u(\underline{x})=\int_{\Re^2}\Phi(\underline{y})\Delta f(\underline{x}-\underline{y})d\underline{y}=\int_\Re^2\Phi(\underline{y})\Delta_{\underline{x}}f(\underline{x}-\underline{y})d\underline{y}$$as claimed.
-> Now by the chain rule:$$\Huge\begin{align*}
+> Now by the chain rule:$$\Huge\begin{aligned}
 \underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})&=-\underline{\nabla}_\underline{x}f(\underline{x}-\underline{y})\\
 \Delta_\underline{y}f(\underline{x}-\underline{y})&=\Delta_\underline{x}f(\underline{x}-\underline{y})\\
 \implies\Delta u(\underline{x})&=\int_{\Re^2}\Phi(\underline{y})\Delta_\underline{y}f(\underline{x}-\underline{y})d\underline{y}
-\end{align*}$$
+\end{aligned}$$
 > Now the remaining proof is simple, we use integration by parts to move the Laplacian from $f$ on to $\Phi$ and use the fact that $\Delta\Phi=0$ for all $\underline{x}\neq0$. The singularity at the origin however means this calculation must be done carefully.
 > Let $0<\epsilon<1$. We then split the integral above in two parts:$$\large \Delta(\underline{x})=\int_{B_\epsilon(\underline{0})}\Phi(\underline{y})\Delta_\underline{y}f(\underline{x}-\underline{y})d\underline{y}+\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Phi(\underline{y})\Delta_\underline{y}f(\underline{x}-\underline{y})d\underline{y}=I_\epsilon+J_\epsilon$$
-> First we estimate $I_\epsilon$:$$\Huge\begin{align*}
+> First we estimate $I_\epsilon$:$$\Huge\begin{aligned}
 |I_\epsilon|&=\left|\int_{B_\epsilon(\underline{0})}\Phi(\underline{y})\Delta_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\right|\\
 &\leq\int_{B_\epsilon(\underline{0})}|\Phi(\underline{y})||\Delta_\underline{y}f(\underline{x}-\underline{y})|d\underline{y}\\
 &\leq\sup_{\underline{y}\in B_\epsilon(\underline{0})}|\Delta_\underline{y}f(\underline{x}-\underline{y})|\int_{B_\epsilon(\underline{0})}|\Phi(\underline{y})|d\underline{y}\\
 &\leq\sup_{\underline{z}\in\Re^2}|\Delta f(\underline{z})|\int_{B_\epsilon(\underline{0})}|\Phi(\underline{y})|d\underline{y}\\
 &=|||\Delta f||_{L^\infty(\Re^2)}||\Phi||_{L^1(B_\epsilon(\underline{0}))}
-\end{align*}$$
-> Observe that $\Delta f\in C_c(\Re^2)$ and so $||\Delta f||_{L^\infty(\Re^2)}<\infty$. Switching to polar coordinates, we compute:$$\Huge\begin{align*}
+\end{aligned}$$
+> Observe that $\Delta f\in C_c(\Re^2)$ and so $||\Delta f||_{L^\infty(\Re^2)}<\infty$. Switching to polar coordinates, we compute:$$\Huge\begin{aligned}
 ||\Phi||_{L^1(B_\epsilon(\underline{0}))}&=\int_{B_\epsilon(\underline{0})}|\Phi(\underline{y})|d\underline{y}\\
 &=-\frac{1}{2\pi}\int_{B_\epsilon(\underline{0})}\ln|\underline{y}|d\underline{y}\\
 &=-\frac{1}{2\pi}\int_{0}^{2\pi}\int_0^\epsilon r\ln r\,dr\,d\theta\\
@@ -109,24 +109,24 @@ Let $f\in C_c^2(\Re^n)$ be twice continuously differentiable with compact suppor
 &=-\frac{r^2}{2}\ln r|_{0}^\epsilon+\int_0^\epsilon(\ln r)'\frac{r^2}{2}dr\\
 &=-\frac{\epsilon^2}{2}\ln\epsilon+\frac{1}{2}\int_0^\epsilon r\,dr\\
 &=-\frac{\epsilon^2}{2}\ln\epsilon+\frac{\epsilon^4}{4}
-\end{align*}$$Therefore, $||\Phi||_{L^1(B_\epsilon(\underline{0}))}\to0$ as $\epsilon\to0$. This is because $\epsilon^2$ tends to $0$ faster than $|\ln\epsilon|$ goes to $\infty$. Combining our equations tells us that $I_\epsilon$ also tends to $0$ as $\epsilon\to0$.
-> We now analyse $J_\epsilon$. Recalling the IBP formula:$$\Huge\int_\Omega\varphi(\underline{y})\text{div}\underline{g}(\underline{y})d\underline{y}=\int_{\partial\Omega}\varphi(\underline{y})\underline{g}(\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})-\int_\Omega\underline{\nabla}\varphi(\underline{y})\cdot\underline{g}(\underline{y})d\underline{ y}$$where $\underline{n}$ is the outward normal vector field to $\partial\Omega$. Applying this formula with $\varphi(\underline{y})=\Phi(\underline{y}),\underline{g}(\underline{y})=\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})$ and $\Omega=\Re^2\setminus B_\epsilon(\underline{0})$ (noting that $\partial(\Re^2\setminus B_\epsilon(\underline{0}))=\partial B_\epsilon(\underline{0})$), we obtain:$$\large\begin{align*}
+\end{aligned}$$Therefore, $||\Phi||_{L^1(B_\epsilon(\underline{0}))}\to0$ as $\epsilon\to0$. This is because $\epsilon^2$ tends to $0$ faster than $|\ln\epsilon|$ goes to $\infty$. Combining our equations tells us that $I_\epsilon$ also tends to $0$ as $\epsilon\to0$.
+> We now analyse $J_\epsilon$. Recalling the IBP formula:$$\Huge\int_\Omega\varphi(\underline{y})\text{div}\underline{g}(\underline{y})d\underline{y}=\int_{\partial\Omega}\varphi(\underline{y})\underline{g}(\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})-\int_\Omega\underline{\nabla}\varphi(\underline{y})\cdot\underline{g}(\underline{y})d\underline{ y}$$where $\underline{n}$ is the outward normal vector field to $\partial\Omega$. Applying this formula with $\varphi(\underline{y})=\Phi(\underline{y}),\underline{g}(\underline{y})=\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})$ and $\Omega=\Re^2\setminus B_\epsilon(\underline{0})$ (noting that $\partial(\Re^2\setminus B_\epsilon(\underline{0}))=\partial B_\epsilon(\underline{0})$), we obtain:$$\large\begin{aligned}
 J_\epsilon&=\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Phi(\underline{y})\Delta_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
 &=\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Phi(\underline{y})\text{div}_\underline{y}\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
 &=\int_{\partial B_\epsilon(\underline{0})}\Phi(\underline{y})\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})-\int_{\Re^2\setminus B_\epsilon(\underline{0})}\underline{\nabla}\Phi(\underline{y})\cdot\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
 &=K_\epsilon+L_\epsilon
-\end{align*}$$where $\underline{n}(\underline{y})$ is the outward-pointing unit normal to $\partial(\Re^2\setminus B_\epsilon(\underline{0}))$ at $\underline{y}$ and the inward-pointing unit normal to $\partial B_\epsilon(\underline{0})$ at $\underline{y}$. That is, it can be written as $\underline{n}(\underline{y})=-\underline{y}/|\underline{y}|=-\underline{y}/\epsilon$ since $\partial B_\epsilon(\underline{0})=\{\underline{y}\in\Re^2:|\underline{y}|=\epsilon\}$. Applying the Cauchy-Schwarz inequality we get$$\Huge |\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})|\leq|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})||\underline{n}(\underline{y})|=|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|$$Therefore:$$\Huge\begin{align*}
+\end{aligned}$$where $\underline{n}(\underline{y})$ is the outward-pointing unit normal to $\partial(\Re^2\setminus B_\epsilon(\underline{0}))$ at $\underline{y}$ and the inward-pointing unit normal to $\partial B_\epsilon(\underline{0})$ at $\underline{y}$. That is, it can be written as $\underline{n}(\underline{y})=-\underline{y}/|\underline{y}|=-\underline{y}/\epsilon$ since $\partial B_\epsilon(\underline{0})=\{\underline{y}\in\Re^2:|\underline{y}|=\epsilon\}$. Applying the Cauchy-Schwarz inequality we get$$\Huge |\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})|\leq|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})||\underline{n}(\underline{y})|=|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|$$Therefore:$$\Huge\begin{aligned}
 |K_\epsilon|&\leq\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})||\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})|dL(\underline{y})\\
 &\leq\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})||\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|dL(\underline{y})\\
 &\leq\sup_{y\in\partial B_\epsilon(\underline{0})}|\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})|\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})|dL(\underline{y})\\
 &\leq\sup_{z\in\Re^2}|\underline{\nabla} f(z)|\int_{\partial B_\epsilon(\underline{0})}|\Phi(\underline{y})|dL(\underline{y})\\
 &=||\underline{\nabla} f||_{L^\infty(\Re^2)}||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}
-\end{align*}$$Observe that $\underline{\nabla}f\in C_c(\Re^2)$ and so $||\underline{\nabla}f||_{L^\infty(\Re^2)}<\infty$. The boundary integral of $\Phi$ is easy to compute:$$\Huge\begin{align*}
+\end{aligned}$$Observe that $\underline{\nabla}f\in C_c(\Re^2)$ and so $||\underline{\nabla}f||_{L^\infty(\Re^2)}<\infty$. The boundary integral of $\Phi$ is easy to compute:$$\Huge\begin{aligned}
 ||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}&=-\frac{1}{2\pi}\int_{\partial B_\epsilon(\underline{0})}\ln|\underline{y}|dL(\underline{y})\\
 &=-\frac{1}{2\pi}\int_{\partial B_\epsilon(\underline{0})}\ln\epsilon\,dL(\underline{y})\\
 &=-\frac{1}{2\pi}\ln\epsilon\int_{\partial B_\epsilon(\underline{0})}dL(\underline{y})\\
 &=-\frac{1}{2\pi}\ln\epsilon(2\pi\epsilon)=-\epsilon\ln\epsilon
-\end{align*}$$Therefore $||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}\to0$ as $\epsilon\to0$. Combining these equations shows that $K_\epsilon\to0$. It only remains to compute $L_\epsilon$, which we do using integration by parts$$\large\begin{align*}
+\end{aligned}$$Therefore $||\Phi||_{L^1(\partial B_\epsilon(\underline{0}))}\to0$ as $\epsilon\to0$. Combining these equations shows that $K_\epsilon\to0$. It only remains to compute $L_\epsilon$, which we do using integration by parts$$\large\begin{aligned}
 L_\epsilon&=-\int_{\Re^2\setminus B_\epsilon(\underline{0})}\underline{\nabla}\Phi(\underline{y})\cdot\underline{\nabla}_\underline{y}f(\underline{x}-\underline{y})d\underline{y}\\
 &=-\int_{\partial(\Re^2\setminus B_\epsilon(\underline{0}))}\underline{\nabla}\Phi(\underline{y})f(\underline{x}-\underline{y})\cdot\underline{n}(\underline{y})dL(\underline{y})+\int_{\Re^2\setminus B_\epsilon(\underline{0})}\Delta\Phi(\underline{y})f(\underline{x}-\underline{y})d\underline{y}\\
 &=\int_{\partial B_\epsilon(\underline{0})}\underline{\nabla}\Phi(\underline{y})f(\underline{x}-\underline{y})\cdot\frac{\underline{y}}{\epsilon}dL(\underline{y})\\
@@ -134,20 +134,20 @@ L_\epsilon&=-\int_{\Re^2\setminus B_\epsilon(\underline{0})}\underline{\nabla}\P
 &=-\frac{1}{2\pi\epsilon}\int_{\partial B_\epsilon(\underline{0})}f(\underline{x}-\underline{y})dL(\underline{y})\\
 &=-\frac{1}{2\pi\epsilon}\int_{\partial B_\epsilon(\underline{x})}f(z)dL(z)\\
 &=-\int^*_{\partial B_\epsilon(\underline{0})}f(z)dL(z)
-\end{align*}$$where the integral on the last line denotes the average of $f$ over $\partial B_\epsilon(\underline{x})$. Therefore this integral converges to $f(\underline{x})$ as $\epsilon\to0$.
+\end{aligned}$$where the integral on the last line denotes the average of $f$ over $\partial B_\epsilon(\underline{x})$. Therefore this integral converges to $f(\underline{x})$ as $\epsilon\to0$.
 > Combining our equations, $L_\epsilon\to-f(\underline{x})$ as $\epsilon\to0$ and$$\Huge \Delta u(\underline{x})=I_\epsilon+J_\epsilon=I_\epsilon+K_\epsilon+L_\epsilon\to-f(\underline{x})$$as $\epsilon\to0$, as required.
 
 It remains to prove that the average of a function over the surface of a ball converges to the value at the center of the ball as radius tends to $0$. Let $g:\Re^n\rightarrow\Re$ be continuous and let $\underline{x}_0\in\Re^n$. Then$$\Huge \int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)\to g(\underline{x}_0),\,\,\epsilon\to0$$Proven under the assumption that $g$ is continuously differentiable:
-> Observe that:$$\Huge\begin{align*}
+> Observe that:$$\Huge\begin{aligned}
 \left|\int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)-g(\underline{x}_0)\right|&=\left|\int^*_{\partial B_\epsilon(\underline{x}_0)}(g(z)-g(\underline{x}_0))dS(z)\right|\\
 &\leq\int^*_{\partial B_\epsilon(\underline{x}_0)}|g(z)-g(\underline{x}_0)|dS(z)
-\end{align*}$$
-> By the fundamental theorem of calculus and the chain rule$$\Huge\begin{align*}
+\end{aligned}$$
+> By the fundamental theorem of calculus and the chain rule$$\Huge\begin{aligned}
 |g(z)-g(\underline{x}_0)|&=\left|\int_0^1 \frac{d}{dt}g((1-t)\underline{x}_0+tz)dt\right|\\
 &=\left|\int_0^1\underline{\nabla}g((1-t)\underline{x}_0+tz)\cdot(z-\underline{x}_0)dt\right|\\
 &\leq\int_0^1|\underline{\nabla}g((1-t)\underline{x}_0+tz)||z-\underline{x}_0|dt\\
 &\leq\max_{l(\underline{x}_0,z)}|\underline{\nabla}g||z-\underline{x}_0|
-\end{align*}$$where $l(\underline{x}_0,z)$ is the line joining $\underline{x}_0$ to $z$. Let $\epsilon<1$ and let $M=\max_{B_1(\underline{x}_0)}|\underline{\nabla}g|$.
+\end{aligned}$$where $l(\underline{x}_0,z)$ is the line joining $\underline{x}_0$ to $z$. Let $\epsilon<1$ and let $M=\max_{B_1(\underline{x}_0)}|\underline{\nabla}g|$.
 > We conclude that$$\Huge\left|\int^*_{\partial B_\epsilon(\underline{x}_0)}g(z)dS(z)-g(\underline{x}_0)\right|\leq\int^*_{\partial B_\epsilon(\underline{x}_0)}M|z-\underline{x}_0|dS(z)=M\epsilon\to0$$as $\epsilon\to0$, proving the result.
 
 Note that the solution formula $u=\Phi*f$ has the same form as the Green's function representation with $\Omega=\Re^n$ and $G(\underline{x},\underline{y})=\Phi(\underline{x}-\underline{y})$. This solution can also be derived using the Fourier transform.
@@ -168,27 +168,27 @@ Before we move on to study Poisson's equation in general subsets of $\Re^n$, we 
 
 We now prove the Poincare inequality:
 > Recalling the MVT for integrals, let $f,g\in C([a,b])$ and $g\geq0$:$$\Huge\int_a^bf(x)g(x)dx=f(c)\int_a^bg(x)dx$$for some $c\in(a,b)$. Applying this with $g=1$ gives$$\Huge\bar f=\frac{1}{b-a}\int_a^bf(x)dx=\frac{1}{b-a}f(x)\int_a^bdx=f(c)$$for some $c\in(a,b)$. That is, $f$ attains its average at point $c$.
-> By the fundamental theorem of calculus:$$\Huge f(x)-\bar f=f(x)-f(x)=\int_c^xf'(y)dy$$therefore:$$\Huge\begin{align*}
+> By the fundamental theorem of calculus:$$\Huge f(x)-\bar f=f(x)-f(x)=\int_c^xf'(y)dy$$therefore:$$\Huge\begin{aligned}
 |f(x)-\bar f|&=\left|\int_c^xf'(y)dy\right|\\
 &=\left|\int_c^x1\cdot f'(y)dy\right|\\
 &\leq\left|\int_c^x1^2dy\right|^{1/2}\left|\int_c^x|f'(y)|^2dy\right|^{1/2}\\
 &\leq|x-c|^{1/2}\left(\int_a^b|f'(y)|^2dy\right)^{1/2}
-\end{align*}$$
-> Taking the square integral of this gives$$\Huge\begin{align*}
+\end{aligned}$$
+> Taking the square integral of this gives$$\Huge\begin{aligned}
 \int_a^b|f(x)-\bar f|^2dx&\leq\int_a^b\left(|x-c|\int_a^b|f'(y)|^2dy\right)dx\\
 &=\int_a^b|x-c|dx\int_a^b|f'(y)|^2dy\\
 &\leq\int_a^b(b-a)dx\int_a^b|f'(y)|^2dy\\
 &=(b-a)^2\int_a^b|f'(y)|^2dy
-\end{align*}$$which is exactly the Poincare inequality with $C=b-a$.
+\end{aligned}$$which is exactly the Poincare inequality with $C=b-a$.
 
 The version of the Poincare inequality proven above is useful for PDEs with periodic of Neumann boundary conditions. We now introduce a version useful for PDEs with Dirichlet boundary conditions. There exists a constant $C>0$ such that$$\Huge\int_a^b|f(x)|^2dx\leq C^2\int_a^b|f'(x)|^2dx$$for all $f\in C^1([a,b])$ satisfying $f(a)=f(b)=0$. In terms of the $L^2$ norm, this is written as$$\Huge||f||_{L^2([a,b])}\leq C||f'||_{L^2([a,b])}$$
 
-Let $\Omega\subset\Re^n$ be open and bounded. There exists a constant $C>0$ such that$$\Huge||f||_{L^2(\Omega)}\leq C||\underline{\nabla} f||_{L^2(\Omega)}$$for all $f\in C^1(\bar\Omega)$ satisfying $f=0$ on $\partial\Omega$. The proof of this follows from the Poincare inequality in one dimension. For simplicity we prove $n=2$ on $\Omega=(a,b)\times(c,d)$:$$\Huge\begin{align*}
+Let $\Omega\subset\Re^n$ be open and bounded. There exists a constant $C>0$ such that$$\Huge||f||_{L^2(\Omega)}\leq C||\underline{\nabla} f||_{L^2(\Omega)}$$for all $f\in C^1(\bar\Omega)$ satisfying $f=0$ on $\partial\Omega$. The proof of this follows from the Poincare inequality in one dimension. For simplicity we prove $n=2$ on $\Omega=(a,b)\times(c,d)$:$$\Huge\begin{aligned}
 \int_\Omega|f(\underline{x})|^2d\underline{x}&=\int_c^d\int_a^b|f(x,y)|^2dx\,dy\\
 &\leq\int_c^d C^2\int_a^b|f_x(x,y)|^2dx\,dy\\
 &\leq C^2\int_c^d\int_a^b(|f_x(x,y)|^2+|f_y(x,y)|^2)dx\,dy\\
 &=C^2\int_\Omega|\underline{\nabla} f(\underline{x})|^2d\underline{x}
-\end{align*}$$as required. For general domains $\Omega\subset\Re^2$, the idea of the proof is to extend the domain of $f$ to the whole rectangle by defining $f(\underline{x})=0$ outside $\Omega$. Then the proof above yields the desired result since the $L^2$-norm of $f$ and $\underline{\nabla}f$ will be unchanged. The same proof works for higher dimensions as well. Remarks:
+\end{aligned}$$as required. For general domains $\Omega\subset\Re^2$, the idea of the proof is to extend the domain of $f$ to the whole rectangle by defining $f(\underline{x})=0$ outside $\Omega$. Then the proof above yields the desired result since the $L^2$-norm of $f$ and $\underline{\nabla}f$ will be unchanged. The same proof works for higher dimensions as well. Remarks:
 > The constant $C$ depends on the domain $\Omega$. It can be shown that we can choose $C$ such that $C\leq\text{diam}(\Omega)$ where $\text{diam}(\Omega)=\sup\{|\underline{x}-\underline{y}|:\underline{x},\underline{y}\in\Omega\}$ is the diameter of $\Omega$.
 > This theorem can be extended to any $L^p$-norm. That is, for $1\leq p\leq\infty$ there exists a constant $C>0$ such that $$\Huge||f||_{L^p(\Omega)}\leq C||\underline{\nabla}f||_{L^p(\Omega)}$$for all $f\in C^1(\bar\Omega)$ such that $f=0$ on $\partial\Omega$. 
 > The Poincare inequality is not true if $\Omega=\Re^n$. It is however true if $f,\underline{\nabla}f\in L^2(\Omega)$ and if $\Omega$ is bounded between two parallel hyperplanes.
@@ -210,60 +210,60 @@ It can be shown that if $f\in C^{0,\alpha}(\Omega)$ is bounded, then there exist
 ## Energy Method:
 The energy method is a useful tool for studying PDEs. As we will see, it is more of a general approach rather than a precise method. The idea is to multiply the PDE by some function and then to integrate by parts over the domain, with the aim of obtaining signed terms. 
 
-Let $\Omega\subset\Re^n$ be open, bounded, and connected with smooth boundary. Then there exists at most one solution $u\in C^2(\bar\Omega)$ of the Dirichlet problem$$\Huge\begin{align*}
+Let $\Omega\subset\Re^n$ be open, bounded, and connected with smooth boundary. Then there exists at most one solution $u\in C^2(\bar\Omega)$ of the Dirichlet problem$$\Huge\begin{aligned}
 -\Delta u&=f\text{ in }\Omega\\
 u&=g\text{ on }\partial\Omega
-\end{align*}$$where $f\in C(\bar\Omega),g\in C(\partial\Omega)$. Proof:
-> Let $u_1,u_2$ be solutions and let $w=u_1-u_2$. Then we must have:$$\Huge\begin{align*}
+\end{aligned}$$where $f\in C(\bar\Omega),g\in C(\partial\Omega)$. Proof:
+> Let $u_1,u_2$ be solutions and let $w=u_1-u_2$. Then we must have:$$\Huge\begin{aligned}
 -\Delta w&=0\text{ in }\Omega\\
 w&=0\text{ on }\partial\Omega
-\end{align*}$$
-> Multiplying the first equation by $w$ and integrating over $\Omega$ gives:$$\Huge\begin{align*}
+\end{aligned}$$
+> Multiplying the first equation by $w$ and integrating over $\Omega$ gives:$$\Huge\begin{aligned}
 -\int_\Omega w\Delta w\,d\underline{x}&=0\\
 \iff-\int_\Omega w\text{ div}(\underline{\nabla}w)d\underline{x}&=\\
 \iff-\int_{\partial\Omega}w\underline{\nabla}w\cdot\underline{n}dS+\int_\Omega\underline{\nabla}w\cdot\underline{\nabla}w\,d\underline{x}&=\\
 \iff\int_\Omega|\underline{\nabla}w|^2d\underline{x}&=
-\end{align*}$$
+\end{aligned}$$
 > It follows that $\underline{\nabla}w(\underline{x})=0$ for all $\underline{x}\in\Omega$, which implies that $w$ is constant. But $w=0$ on $\partial\Omega$ and therefore $w=0$, implying $u_1=u_2$ as required.
 
 We can also use the energy method to prove that small changes in the source term $f$ correspond to small changes in the solution $u$. To make this precise, we need to define "small", let $\Omega\subset\Re^n$ be open and bounded and let $f\in C^1(\bar\Omega)$:
 > The $H_0^1$ norm of $f$ is defined by:$$\Huge ||f||_{H^1_0(\Omega)}=||\underline{\nabla}f||_{L^2(\Omega)}=\left(\int_\Omega|\underline{\nabla}f(\underline{x})|^2d\underline{x}\right)^{1/2}$$It can be shown that this is a norm on $\{f\in C^1(\bar\Omega):f=0\text{ on }\Omega\}$.
-> The $H^1$ norm of $f$ is defined by:$$\Huge\begin{align*}
+> The $H^1$ norm of $f$ is defined by:$$\Huge\begin{aligned}
 ||f||_{H^1(\Omega)}&=(||f||_{L^2(\Omega)}^2+||\underline{\nabla}f||_{L^2(\Omega)})^{1/2}\\
 &=\left(\int_\Omega|f(\underline{x})|^2d\underline{x}+\int_\Omega|\underline{\nabla}f(\underline{x})|^2d\underline{x}\right)^{1/2}
-\end{align*}$$It can be shown that this is a norm on $C^1(\bar\Omega)$.
+\end{aligned}$$It can be shown that this is a norm on $C^1(\bar\Omega)$.
 
 Observe that $||\cdot||_{H_0^1(\Omega)}$ is not a norm on $C^1(\bar\Omega)$ since if $f(\underline{x})=c$ is a nonzero, constant function, then $||f||_{H_0^1(\Omega)}=0$ but $f\neq0$. The $H$ references David Hilbert, and the $1$ in both norms represents the first derivatives while the $0$ denotes the boundary condition $f=0$ on $\partial\Omega$.
 
 Let $\Omega\subset\Re^n$ be open and bounded with smooth boundary. Let $f_1,f_2\in C(\bar\Omega)$, $u_1\in C^2(\bar\Omega)$ satisfy $-\Delta u_1=f_1$ in $\Omega$ and $u_1=0$ on $\partial\Omega$, and similar for $u_2$. Then there exists a constant $C>0$ such that:$$\Huge ||u_1-u_2||_{H^1_0(\Omega)}\leq C||f_1-f_2||_{L^2(\Omega)}$$That is, if $f_1$ is close to $f_2$ in the $L^2$ norm, then $u_1$ is close to $u_2$ in the $H_0^1$ norm. Proof:
 > Let $v=u_1-u_2,g=f_1-f_2$. By subtracting the PDEs for $u_1,u_2$, we find that:$$\Huge -\Delta v=g\text{ in }\Omega,\,\,v=0\text{ on }\Omega$$
-> So we need to prove that$$\Huge||v||_{H_0^1(\Omega)}\leq C||g||_{L^2(\Omega)}$$, so we multiply by $v$ and integrate by parts to obtain:$$\Huge\begin{align*}
+> So we need to prove that$$\Huge||v||_{H_0^1(\Omega)}\leq C||g||_{L^2(\Omega)}$$, so we multiply by $v$ and integrate by parts to obtain:$$\Huge\begin{aligned}
 -\int_\Omega v\Delta v\,d\underline{x}&=\int_\Omega gv\,d\underline{x}\\
 \iff-\int_{\partial\Omega}v\Delta v\cdot\underline{n}dS+\int_\Omega\Delta v\cdot\Delta v\,d\underline{x}&=\\
 \iff\int_\Omega|\underline{\nabla}v|^2d\underline{x}&=
-\end{align*}$$
+\end{aligned}$$
 > By the Cauchy-Schwarz inequality, $$\Huge\int_\Omega gv\,d\underline{x}\leq||g||_{L^2(\Omega)}||v||_{L^2(\Omega)}$$and by the Poincare inequality, $$\Huge ||v||_{L^2(\Omega)}\leq C_p||v||_{H^1_0(\Omega)}$$for some constant $C_p>0$. Combining these gives$$\large ||v||^2_{H^1_0(\Omega)}=\int_\Omega|\underline{\nabla}v|^2d\underline{x}=\int_\Omega gv\,d\underline{x}\leq||g||_{L^2(\Omega)}||v||_{L^2(\Omega)}\leq C_p||g||_{L^2(\Omega)}||v||_{H_0^1(\Omega)}$$, dividing through by $||v||_{H_0^1(\Omega)}$ gives the result.
 
 # Variational formulation of Poisson's equation:
 
-Through this section, we discover some hidden structure behind Poisson's equation. We take $\Omega\subset\Re^n$ to be open and bounded with smooth boundary and let $V$ denote:$$\Huge V=\{\varphi\in C^1(\bar\Omega):\varphi=0\text{ on }\partial\Omega\}$$We limit our attention to Poisson's equation with the zero Dirichlet boundary conditions$$\Huge\begin{align*}
+Through this section, we discover some hidden structure behind Poisson's equation. We take $\Omega\subset\Re^n$ to be open and bounded with smooth boundary and let $V$ denote:$$\Huge V=\{\varphi\in C^1(\bar\Omega):\varphi=0\text{ on }\partial\Omega\}$$We limit our attention to Poisson's equation with the zero Dirichlet boundary conditions$$\Huge\begin{aligned}
 -\Delta u&=f\text{ in }\Omega\\
 u&=0\text{ on }\partial\Omega
-\end{align*}$$, where $f\in C(\bar\Omega)$. If $u\in C^2(\bar\Omega)$ satisfies this equation, we call it a classical solution in order to differentiate from the following definition.
+\end{aligned}$$, where $f\in C(\bar\Omega)$. If $u\in C^2(\bar\Omega)$ satisfies this equation, we call it a classical solution in order to differentiate from the following definition.
 
 We say that $u\in V$ is a weak solution of Poisson's equation if$$\Huge \int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}=\int_\Omega f\varphi\,d\underline{x},\,\,\forall\varphi\in V$$, where $\varphi$ are known as test functions. Note that usually $V$ is replaced with the Sobolev space $H^1_0(\Omega)$, which is strictly larger than $V$. 
 
 Observe that weak solutions only need to be once continuously differentiable, whereas classical solutions must be at least twice continuously differentiable. The definition of weak solutions is motivated by:
-> If $u\in C^2(\bar\Omega)$ is a classical solution of Poisson's equation, then it is a weak solution. This is proven by multiplying $-\Delta u=f$ by $\varphi\in V$ and integrating by parts to find:$$\Huge\begin{align*}
+> If $u\in C^2(\bar\Omega)$ is a classical solution of Poisson's equation, then it is a weak solution. This is proven by multiplying $-\Delta u=f$ by $\varphi\in V$ and integrating by parts to find:$$\Huge\begin{aligned}
 -\int_\Omega\Delta u\varphi\,d\underline{x}&=\int_\Omega f\varphi\,d\underline{x}\\
 \iff-\int_{\partial\Omega}(\underline{\nabla}u\cdot\underline{n})\varphi\,dS+\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}&=\\
 \iff\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}&=
-\end{align*}$$
-> If $u$ is a weak solution of Poisson's equation, and if $u\in C^2(\bar\Omega)$, then it is a classical solution. Since $u\in C^2(\bar\Omega)$, we can use integration by parts to rewrite the equation:$$\Huge\begin{align*}
+\end{aligned}$$
+> If $u$ is a weak solution of Poisson's equation, and if $u\in C^2(\bar\Omega)$, then it is a classical solution. Since $u\in C^2(\bar\Omega)$, we can use integration by parts to rewrite the equation:$$\Huge\begin{aligned}
 \int_\Omega\underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}&=\int_\Omega f\varphi\,d\underline{x}\\
 \iff\int_{\partial\Omega}(\underline{\nabla}u\cdot\underline{n})\varphi\,dS-\int_\Omega\Delta u\varphi\,d\underline{x}&=\\
 \iff\int_\Omega(\Delta u+f)\varphi\,d\underline{x}&=0
-\end{align*}$$Since $\varphi=0$ on $\partial\Omega$, and this holds for all $\varphi\in V$. By the fundamental lemma of the Calculus of Variations, $\Delta u+f=0$ as required.
+\end{aligned}$$Since $\varphi=0$ on $\partial\Omega$, and this holds for all $\varphi\in V$. By the fundamental lemma of the Calculus of Variations, $\Delta u+f=0$ as required.
 
 In summary, classical solutions are weak solutions, and smooth $C^2$ weak solutions are classical solutions. Unlike for [[year 3/partial differential equations 3/term 1/Conservation laws|Conservation laws]], the notion of a weak solution is not strictly necessary for Poisson's equation since solutions of Poisson's equation are smooth if $f,\Omega$ are smooth enough. Since $V$ is larger than the class of classical solutions, it is easier to prove weak solutions exist and then proving a regularity result. This regularity result asserts that the weak solution is actually smooth, and hence a classical solution. This weak formulation is also the basis of several numerical methods for PDEs, including the finite element method.
 
@@ -275,21 +275,21 @@ The Dirichlet energy is the function $E:V\rightarrow\Re$ defined by:$$\Huge E[v]
 That is, if $u\in C^2(\bar\Omega)\cap V$ is a minimiser of $E$, then $u$ is a classical solution of Poisson's equation:
 > Let $u$ be a minimiser of $E$. This means that the derivative of $E$ vanishes at $u$, $\underline{\nabla}E[u]=0$, however $\underline{\nabla}E$ does not make a lot of sense, as $E$ is a functional. Instead, we formulate the problem as the following.
 > For any $\varphi\in V,\epsilon\in\Re$, define $u_\epsilon=u+\epsilon\varphi$. Observe that this vanishes on the boundary as both $u,\varphi$ vanish there. Also $u_\epsilon\in C^1(\bar\Omega)$ since the sum of $C^1$ functions is $C^1$, hence $u_\epsilon\in V$. Let $g(\epsilon)=E[u_\epsilon]$ so that $u_\epsilon=u$ when $\epsilon=0$. Therefore $g$ is minimised by $\epsilon=0$ since $E$ is minimised by $u$. 
-> Since $g$ is minimised at $\epsilon=0$, we have:$$\Huge\begin{align*}
+> Since $g$ is minimised at $\epsilon=0$, we have:$$\Huge\begin{aligned}
 0&=g'(0)=\frac{d}{d\epsilon}|_{\epsilon=0}E[u_\epsilon]\\
 &=\frac{d}{d\epsilon}|_{\epsilon=0}\left(\frac{1}{2}\int_\Omega|\underline{\nabla}u_\epsilon|^2d\underline{x}-\int_\Omega f(u_\epsilon)d\underline{x}\right)\\
 &=\frac{d}{d\epsilon}|_{\epsilon=0}\left(\frac{1}{2}\int_\Omega(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)d\underline{x}-\int_\Omega f(u+\epsilon\varphi)d\underline{x}\right)\\
 &=\frac{1}{2}\int_\Omega \frac{d}{d\epsilon}|_{\epsilon=0}(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)d\underline{x}-\int_\Omega f \frac{d}{d\epsilon}|_{\epsilon=0}(u+\epsilon\varphi)d\underline{x}\\
 &=\frac{1}{2}\int_\Omega[\underline{\nabla}\varphi\cdot(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)+(\underline{\nabla}u+\epsilon\underline{\nabla}\varphi)\cdot\underline{\nabla}\varphi]_{\epsilon=0}d\underline{x}-\int_\Omega f\varphi d\underline{x}\\
 &=\int_\Omega \underline{\nabla}u\cdot\underline{\nabla}\varphi\,d\underline{x}-\int_\Omega f\varphi\,d\underline{x}
-\end{align*}$$Which holds for all $\varphi\in V$, making $u$ a weak solution as required.
-> Let $u$ be a weak solution. For any $v\in V$ we compute:$$\begin{align*}
+\end{aligned}$$Which holds for all $\varphi\in V$, making $u$ a weak solution as required.
+> Let $u$ be a weak solution. For any $v\in V$ we compute:$$\begin{aligned}
 E[u]-E[v]&=\frac{1}{2}\int_\Omega|\underline{\nabla}u|^2d\underline{x}-\int_\Omega fu\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}+\int_\Omega fv\,d\underline{x}\\
 &=\frac{1}{2}\int_\Omega \underline{\nabla}u\cdot\underline{\nabla}(u-v+v)d\underline{x}-\int_\Omega fu\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}+\int_\Omega fv\,d\underline{x}\\
 &=\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}-\frac{1}{2}\int_\Omega f(u-v)d\underline{x}+\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}v\,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}
-\end{align*}$$By substituting $\varphi=u-v$, we deduce that:$$\Huge \frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}-\int_\Omega f(u-v)d\underline{x}=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}$$Therefore we write:$$\large \begin{align*}
+\end{aligned}$$By substituting $\varphi=u-v$, we deduce that:$$\Huge \frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}-\int_\Omega f(u-v)d\underline{x}=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}$$Therefore we write:$$\large \begin{aligned}
 E[u]-E[v]&=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}(u-v)d\underline{x}+\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}v
 \,d\underline{x}-\frac{1}{2}\int_\Omega|\underline{\nabla}v|^2d\underline{x}\\
 &=-\frac{1}{2}\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}u\,d\underline{x}+\int_\Omega\underline{\nabla}u\cdot\underline{\nabla}v\,d\underline{x}-\frac{1}{2}\int_\Omega\underline{\nabla}v\cdot\underline{\nabla}v\,d\underline{x}\\
-&=-\frac{1}{2}\int_\Omega(\underline{\nabla}u-\underline{\nabla}v)\cdot(\underline{\nabla}u-\underline{\nabla}v)d\underline{x}\leq0\end{align*}$$Therefore $E[u]\leq E[v]$ for all $v\in V$, as required.
+&=-\frac{1}{2}\int_\Omega(\underline{\nabla}u-\underline{\nabla}v)\cdot(\underline{\nabla}u-\underline{\nabla}v)d\underline{x}\leq0\end{aligned}$$Therefore $E[u]\leq E[v]$ for all $v\in V$, as required.
 

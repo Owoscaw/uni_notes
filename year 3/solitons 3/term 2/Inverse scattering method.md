@@ -31,10 +31,10 @@ u(x,t)&=\frac{1}{2\pi}\int_\Re\tilde u(k,t)e^{ikx}dk
 \end{aligned}$$Solving for $A,B$ gives us our FT field $\tilde u(k,t)$:$$\Huge\begin{aligned}
 \tilde u(k,t)&=\frac{1}{2}\left(\tilde\alpha(k)+\frac{\tilde\beta(k)}{i\omega}\right)e^{i\omega t}+\frac{1}{2}\left(\tilde\alpha(k)-\frac{\tilde\beta(k)}{i\omega}\right)e^{-i\omega t}\\
 &=\tilde\alpha(k)\cos(\omega t)+\frac{1}{\omega}\tilde\beta(k)\sin(\omega t)
-\end{aligned}$$and we finally get our solution by applying the inverse FT:$$\large\begin{align*}
+\end{aligned}$$and we finally get our solution by applying the inverse FT:$$\large\begin{aligned}
 u(x,t)&=\frac{1}{2\pi}\int_\Re\left(\tilde\alpha(k)\cos(\omega t)+\frac{1}{\omega}\tilde\beta(k)\sin(\omega t)\right)e^{ikx}dk\\
 &=\frac{1}{2\pi}\iint_{\Re^2}\left(u(x',0)\cos(\omega t)+\frac{1}{\omega}u_t(x',0)\sin(\omega t)\right)e^{ik(x-x')}dk\,dx'
-\end{align*}$$with $\omega=\omega(k)=\sqrt{k^2+m^2}$. Again this is a linear function of the initial data $u(x,0)$ and $u_t(x,0)$.
+\end{aligned}$$with $\omega=\omega(k)=\sqrt{k^2+m^2}$. Again this is a linear function of the initial data $u(x,0)$ and $u_t(x,0)$.
 
 The key feature from this is that the Fourier transformed data $\tilde u(k,t)$ for each value of $k$ evolves separately and in a simple way according to the Fourier transformed wave equation:![[Inverse scattering method 2026-01-15 19.44.04.excalidraw]]
 # Outline of the method to solve the IVP for KdV:

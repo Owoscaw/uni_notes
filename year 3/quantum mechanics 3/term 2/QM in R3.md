@@ -14,37 +14,37 @@ L_z=xp_y-yp_x\end{cases}\iff L_i=\epsilon_{ijk}x_jp_k$$In the quantum case, each
 > $[\hat L^2,\hat L_i]=[\hat L_x^2+\hat L_y^2+\hat L_z^2,\hat L_i]=0$
 
 Therefore we see it is not possible for a particle to have definite values of $\underline{\hat L}$ at the same time. It is possible for a particle to be in a state which is simultaneously an eigenstate of total angular momentum $\hat L^2$ and one of the components $\hat L_i$ (this is what the last property implies). An eigenstate of each $\hat p_i$ is given by$$\Huge \psi_{p_xp_yp_z}=e^{i(p_xx+p_yy+p_zz)}$$
-Hence for angular momentum, all we can do is find simultaneous eigenstates of $\hat L^2$ and one $\hat L_i$:$$\Huge\begin{align*}
+Hence for angular momentum, all we can do is find simultaneous eigenstates of $\hat L^2$ and one $\hat L_i$:$$\Huge\begin{aligned}
 \hat L^2 |\lambda,m\rangle&=\lambda |\lambda,m\rangle\\
 \hat L_i |\lambda,m\rangle&=m |\lambda,m\rangle
-\end{align*}$$where $|\lambda,m\rangle$ denotes an eigenstate of both operators with eigenvalues $\lambda,m$ respectively and we set $\hbar=1$. So the question becomes, what conditions are imparted on $\lambda,m$ and the eigenstate $|\lambda,m\rangle$. First let us note that $\lambda$ and $m$ are not independent, in fact it is obvious that $\sqrt\lambda\geq m$ as $m$ itself would be a length in the vector $|\underline{L}|=\sqrt{\lambda}$. 
+\end{aligned}$$where $|\lambda,m\rangle$ denotes an eigenstate of both operators with eigenvalues $\lambda,m$ respectively and we set $\hbar=1$. So the question becomes, what conditions are imparted on $\lambda,m$ and the eigenstate $|\lambda,m\rangle$. First let us note that $\lambda$ and $m$ are not independent, in fact it is obvious that $\sqrt\lambda\geq m$ as $m$ itself would be a length in the vector $|\underline{L}|=\sqrt{\lambda}$. 
 
-In the quantum mechanical case, we can find a restriction on the eigenvalues:$$\Huge\begin{align*}
+In the quantum mechanical case, we can find a restriction on the eigenvalues:$$\Huge\begin{aligned}
 \langle\hat L^2-\hat L_z^2\rangle&=\langle \lambda,m|\hat L^2-\hat L_z^2 |\lambda,m\rangle\\
 &=(\lambda-m^2) \langle \lambda,m|\lambda,m\rangle\\
 &=\langle \lambda,m|\hat L_x^2+\hat L_y^2 |\lambda,m\rangle\geq0\\
 \implies\lambda&\geq m^2
-\end{align*}$$Therefore there is a maximal value that $\hat L_z$ can have, which we denote with $l\neq\lambda$$$\Huge -l\leq m\leq l$$
-In order to determine $\lambda,m$ and $|\lambda,m\rangle$, we need the [[Quantum S.H.O.#Ladder operators|raising/lowering]] operators$$\Huge \hat L_{\pm}=\hat L_x\pm i\hat L_y\implies\hat L_+^*=\hat L_-$$which has the properties:$$\Huge\begin{align*}
+\end{aligned}$$Therefore there is a maximal value that $\hat L_z$ can have, which we denote with $l\neq\lambda$$$\Huge -l\leq m\leq l$$
+In order to determine $\lambda,m$ and $|\lambda,m\rangle$, we need the [[Quantum S.H.O.#Ladder operators|raising/lowering]] operators$$\Huge \hat L_{\pm}=\hat L_x\pm i\hat L_y\implies\hat L_+^*=\hat L_-$$which has the properties:$$\Huge\begin{aligned}
 [\hat L_z,\hat L_\pm]&=\pm\hat L_\pm\\
 [\hat L_+,\hat L_-]&=2\hat L_z\\
 [\hat L^2,\hat L_\pm]&=0
-\end{align*}$$
-Consider acting with $\hat L_z$ on the eigenstate after acting with $\hat L_+$:$$\Huge\begin{align*}
+\end{aligned}$$
+Consider acting with $\hat L_z$ on the eigenstate after acting with $\hat L_+$:$$\Huge\begin{aligned}
 \hat L_z(\hat L_+ |\lambda,m\rangle)&=(L_+\hat L_z+\hat L_+)|\lambda,m\rangle\\
 &=(m\hat L_++\hat L_+)|\lambda,m\rangle\\
 &=(m+1)\hat L_+ |\lambda,m\rangle
-\end{align*}$$That is, $\hat L_+$ raises the value of $m$ by $1$:$$\Huge \hat L_+ |\lambda,m\rangle=A |\lambda,m+1\rangle$$and similarly$$\Huge \hat L_- |\lambda,m\rangle=B |\lambda,m-1\rangle$$To gain some insight using this, consider:$$\Huge\begin{align*}
+\end{aligned}$$That is, $\hat L_+$ raises the value of $m$ by $1$:$$\Huge \hat L_+ |\lambda,m\rangle=A |\lambda,m+1\rangle$$and similarly$$\Huge \hat L_- |\lambda,m\rangle=B |\lambda,m-1\rangle$$To gain some insight using this, consider:$$\Huge\begin{aligned}
 \hat L_-\hat L_+&=(\hat L_x-i\hat L_y)(\hat L_x+i\hat L_y)\\
 &=\hat L_x^2+\hat L_y^2+i[\hat L_x,\hat L_y]\\
 &=\hat L_x^2+\hat L_y^2-\hat L_z\\
 &=\hat L^2-\hat L_z^2-\hat L_z
-\end{align*}$$Now consider applying this to the state with maximal $m_\text{max}=l$:$$\Huge\begin{align*}
+\end{aligned}$$Now consider applying this to the state with maximal $m_\text{max}=l$:$$\Huge\begin{aligned}
 \hat L_-\hat L_+ |\lambda,l\rangle&=0\text{ as }l\text{ is maximal}\\
 (\hat L^2-\hat L_z^2-\hat L_z) |\lambda,l\rangle&=\\
 (\lambda-l^2-l) |\lambda,l\rangle&=\\
 \implies\lambda&=l(l+1)
-\end{align*}$$By convention, we write $l$ instead of the quantum number $\lambda$ as $\lambda$ is dependent on $m$ in this way.$$\Huge |\lambda=l(l+1),m\rangle\rightarrow |l,m\rangle,\,\,\hat L^2 |l,m\rangle=l(l+1)|l,m\rangle$$So we now investigate the allowed values of $m$. We have seen that for a given total angular momentum $l$, the allowed values of the $z$-component are$$\large |l,-l\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,m-1\rangle\to_{\hat L_+}|l,m\rangle\rightarrow_{\hat L_+}|l,m+1\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,l\rangle$$so then $m$ takes values in $\{-l,\dots,l\}$ for a total of $2l+1$ states. Note that this is not always the case, for example the [[Quantum S.H.O.#Number operator and ground state|quantum SHO]] has infinite states as $n\to\infty$. 
+\end{aligned}$$By convention, we write $l$ instead of the quantum number $\lambda$ as $\lambda$ is dependent on $m$ in this way.$$\Huge |\lambda=l(l+1),m\rangle\rightarrow |l,m\rangle,\,\,\hat L^2 |l,m\rangle=l(l+1)|l,m\rangle$$So we now investigate the allowed values of $m$. We have seen that for a given total angular momentum $l$, the allowed values of the $z$-component are$$\large |l,-l\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,m-1\rangle\to_{\hat L_+}|l,m\rangle\rightarrow_{\hat L_+}|l,m+1\rangle\to_{\hat L_+}\dots\rightarrow_{\hat L_+} |l,l\rangle$$so then $m$ takes values in $\{-l,\dots,l\}$ for a total of $2l+1$ states. Note that this is not always the case, for example the [[Quantum S.H.O.#Number operator and ground state|quantum SHO]] has infinite states as $n\to\infty$. 
 
 Hence we see that $\hat L_z$ has a quantised spectrum, bounded from the top and bottom by the total value of $\underline{L}$. 
 
@@ -55,33 +55,33 @@ So far, we have determined restrictions on $\lambda,m$ eigenvalues:
 > Then for given total momentum $l$ we found the allowed values for $\hat L_z$ to be$$\Huge m\in(-l,-l+1,\dots,l-1,l)$$
 > We introduces $\hat L_\pm$ operators to build the $|l,m\rangle$ eigenstates.
 
-It remains to find the constants we introduced in our raising/lowering operators:$$\Huge\begin{align*}
+It remains to find the constants we introduced in our raising/lowering operators:$$\Huge\begin{aligned}
 \hat L_+ |l,m\rangle&=A |l,m+1\rangle\\
 \hat L_- |l,m\rangle&=B |l,m-1\rangle
-\end{align*}$$To do this, we take the conjugate expression:$$\Huge\begin{align*}
+\end{aligned}$$To do this, we take the conjugate expression:$$\Huge\begin{aligned}
 (\hat L_+ |l,m\rangle)^\dagger&= \langle l,m|\hat L_-\\
 &=(A |l,m+1\rangle)^\dagger\\
 &= \langle l,m+1|A
-\end{align*}$$and now take the square:$$\Huge\begin{align*}
+\end{aligned}$$and now take the square:$$\Huge\begin{aligned}
 |\hat L_+|l,m\rangle|^2&=(\hat L_+ |l,m\rangle)^\dagger(\hat L^+ |l,m\rangle)\\
 &=\langle l,m|\hat L_-\hat L_+ |l,m\rangle=A^2 \langle l,m|l,m\rangle=A^2\\
 &= \langle l,m|\hat L^2-\hat L_z^2-\hat L_z |l,m\rangle\\
 &=(l^2-m^2-m)\\
 \implies A&=\sqrt{l(l+1)-m(m+1)}
-\end{align*}$$Doing this process for the $\hat L_-$ operator gives a similar result:$$\Huge\implies B=\sqrt{l(l+1)-m(m-1)}$$Hence our operators take form:$$\Huge\begin{align*}
+\end{aligned}$$Doing this process for the $\hat L_-$ operator gives a similar result:$$\Huge\implies B=\sqrt{l(l+1)-m(m-1)}$$Hence our operators take form:$$\Huge\begin{aligned}
 \hat L_+ |l,m\rangle&=\sqrt{l(l+1)-m(m+1)}|l,m+1\rangle\\
 \hat L_- |l,m\rangle&=\sqrt{l(l+1)-m(m-1)}|l,,m-1\rangle
-\end{align*}$$
+\end{aligned}$$
 ## Example:
 Let us investigate a free particle with total angular momentum $l=1$:
 > First, we define the Hilbert space of allowed states for our particle as the span of the following eigenvectors:$$\Huge\mathcal{H}_{l=1}=\text{span}\left\{|1,m=1\rangle=\begin{pmatrix}1 \\ 0 \\ 0\end{pmatrix},|1,0\rangle=\begin{pmatrix}0 \\ 1 \\ 0\end{pmatrix},|1,-1\rangle=\begin{pmatrix}0 \\ 0 \\ 1\end{pmatrix}\right\}$$This exactly satisfies our restriction for $m\in\{-l,\dots,l\}$ with $l=1$.
-> We can find a representation of angular momentum in each axis in this space:$$\Huge \begin{align*}
+> We can find a representation of angular momentum in each axis in this space:$$\Huge \begin{aligned}
 \hat L_z |l,m\rangle&=m |l,m\rangle\\
 \implies\hat L_z |1,1\rangle=1 |1,1\rangle,\,\,\hat L_z |1,0\rangle&=0 |1,0\rangle,\,\,\hat L_z |1,-1\rangle=-1 |1,-1\rangle\\
 \implies \hat L_z&=\begin{pmatrix}1 & 0 & 0\\
 0 & 0 & 0\\
  0 & 0 & -1\end{pmatrix}
-\end{align*}$$To find each $\hat L_x,\hat L_y$ we can use the raising/lowering operator using the identity$$\Huge\hat L_\pm |l,m\rangle=\sqrt{l(l+1)-m(m\pm1)}|l,m\pm1\rangle$$So we compute$$\Huge\begin{align*}
+\end{aligned}$$To find each $\hat L_x,\hat L_y$ we can use the raising/lowering operator using the identity$$\Huge\hat L_\pm |l,m\rangle=\sqrt{l(l+1)-m(m\pm1)}|l,m\pm1\rangle$$So we compute$$\Huge\begin{aligned}
 \hat L_+ |1,1\rangle=0,\,\,\hat L_+ |1,0\rangle&=\sqrt 2 |1,1\,\,\,\hat L_+ |1,-1\rangle\sqrt 2 |1,0\rangle\\
 \implies \hat L_+&=\begin{pmatrix}0 & \sqrt 2 & 0\\
 0 & 0 & \sqrt 2\\
@@ -89,42 +89,42 @@ Let us investigate a free particle with total angular momentum $l=1$:
 \implies \hat L_-=(\hat L_+)^\dagger
 &=\begin{pmatrix}0 & 0 & 0\\
 \sqrt 2 & 0 & 0\\
-0 & \sqrt 2 & 0\end{pmatrix}\end{align*}$$And hence we have:$$\Huge\begin{align*}
+0 & \sqrt 2 & 0\end{pmatrix}\end{aligned}$$And hence we have:$$\Huge\begin{aligned}
 \hat L_x&=\frac{1}{2}(\hat L_++\hat L_-)=\frac{1}{2}\begin{pmatrix}0 & \sqrt 2 & 0\\
 \sqrt 2 & 0 & \sqrt 2\\
 0 & \sqrt 2 & 0\end{pmatrix}\\
 \hat L_y&=\frac{1}{2i}(\hat L_+-\hat L_-)=-\frac{i}{2}\begin{pmatrix}0 & \sqrt 2 & 0\\
 -\sqrt 2 & 0 & \sqrt 2\\
 0 & -\sqrt 2 & 0\end{pmatrix}
-\end{align*}$$
+\end{aligned}$$
 
 # Eigenfunctions of angular momentum:
 
-We have found$$\Huge\begin{align*}
+We have found$$\Huge\begin{aligned}
 \hat L^2|l,m\rangle&=l(l+1) |l,m\rangle\\
 L_z |l,m\rangle&=m |l,m\rangle
-\end{align*}$$and that for a given total angular momentum $\lambda=l(l+1)$, allowed values of $m$ (the $z$-projection) are discretised to the set $\{-l,\dots,l\}$, making the eigenstates$$\Huge \{|l,-l\rangle,|l,-l+1\rangle,\dots, |l,l-1\rangle, |l,l\rangle\}$$We also found the specific forms of our operators $\hat L_\pm$ that helped us construct the whole spectrum$$\Huge \hat L_\pm |l,m\rangle=\sqrt{l(l+1)-m(m\pm 1)} |l,m\pm 1\rangle$$We now wish to find the explicit form of the $|l,m\rangle$ vector, that is the $x$-representation of $|l,m\rangle$. It is natural to work in spherical coordinates with$$\Huge\begin{align*}
+\end{aligned}$$and that for a given total angular momentum $\lambda=l(l+1)$, allowed values of $m$ (the $z$-projection) are discretised to the set $\{-l,\dots,l\}$, making the eigenstates$$\Huge \{|l,-l\rangle,|l,-l+1\rangle,\dots, |l,l-1\rangle, |l,l\rangle\}$$We also found the specific forms of our operators $\hat L_\pm$ that helped us construct the whole spectrum$$\Huge \hat L_\pm |l,m\rangle=\sqrt{l(l+1)-m(m\pm 1)} |l,m\pm 1\rangle$$We now wish to find the explicit form of the $|l,m\rangle$ vector, that is the $x$-representation of $|l,m\rangle$. It is natural to work in spherical coordinates with$$\Huge\begin{aligned}
 x&=r\sin\theta\cos\varphi\\
 y&=r\sin\theta\sin\varphi\\
 z&=r\cos\theta\\
 \underline{r}&=(r,\theta,\varphi)
-\end{align*}$$So the question then becomes, what is the explicit form of$$\Huge \langle \underline{r}|l,m\rangle=\psi_{l,m}(r,\theta,\varphi)$$
+\end{aligned}$$So the question then becomes, what is the explicit form of$$\Huge \langle \underline{r}|l,m\rangle=\psi_{l,m}(r,\theta,\varphi)$$
 To do this, we must first find the forms of the $\hat L_z,\hat L^2$ operators in spherical coordinates:$$\Huge\hat L_z\rightarrow\hat L_z=-i\left(x\frac{\partial }{\partial y}-y\frac{\partial }{\partial x}\right)=i\frac{\partial }{\partial \varphi}$$hence we have$$\Huge\hat L_z |l,m\rangle=m |l,m\rangle\rightarrow -i\frac{\partial }{\partial \varphi}\psi_{l,m}(r,\theta,\varphi)=m\psi_{l,m}(r,\theta,\varphi)$$Note that this is simple the operation of multiplying to the left by $\langle \underline{r}|$. Similarly$$\Huge\hat L^2\rightarrow\hat L^2=\left(-\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial }{\partial \theta}\right)-\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)$$and hence$$\ \hat L^2 |l,m\rangle=l(l+1) |l,m\rangle\rightarrow\left(-\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial }{\partial \theta}\right)-\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)\psi_{l,m}(r,\theta,\varphi)=l(l+1)\psi_{l,m}(r,\theta,\varphi)$$So the problem becomes solving these two equations for $\psi_{l,m}$. To do this we need the ansatz:
 > We split variables in the following way$$\Huge\psi_{l,m}(r,\theta,\varphi)=R(r)\eta_{l,m}(\theta)\Phi_m(\varphi)$$where $R(r)$ is called the radial function, and the rest of the terms (that depend on $l,m$!) the angular part. 
 
 Plugging these into our equations shows us that we have no condition on $R(r)$, as there is no $r$ dependency in any of our equations. For the angular part:
-> The $\hat L_z$ equation dictates$$\Huge\begin{align*}
+> The $\hat L_z$ equation dictates$$\Huge\begin{aligned}
 \hat L_z\psi_{l,m}(r,\theta,\varphi)&=\hat L_z(R(r)\eta_{l,m}(\theta)) \hat L_z\Phi_{m}(\varphi)\\
 &=(R(r)\eta_{l,m}(\theta))\hat L_z\Phi_{m}(\varphi)\\
 &=-(R(r)\eta_{l,m}(\theta))i\frac{\partial }{\partial \varphi}\Phi_{m}(\varphi)=m\Phi_m(\varphi)\\
 \implies\Phi_m'(\varphi)&=im\Phi_m(\varphi)\\
 \implies\Phi_m(\varphi)&=\frac{1}{\sqrt{2\pi}}e^{im\varphi}
-\end{align*}$$where we chose an arbitrary constant. Note that if we shift $\varphi\rightarrow\varphi+2\pi$, we should be in the same point in space, meaning that $\psi$ should be unchanged. Due to the form of the $\Phi_m(\varphi)$, we must have that $m$ is an integer. This directly implies that $l$ is also an integer.
-> The $\hat L^2$ equation dictates$$\large\begin{align*}
+\end{aligned}$$where we chose an arbitrary constant. Note that if we shift $\varphi\rightarrow\varphi+2\pi$, we should be in the same point in space, meaning that $\psi$ should be unchanged. Due to the form of the $\Phi_m(\varphi)$, we must have that $m$ is an integer. This directly implies that $l$ is also an integer.
+> The $\hat L^2$ equation dictates$$\large\begin{aligned}
  \hat L^2\psi_{l,m}(r,\theta,\varphi)&=R(r)\hat L^2(\eta_{l,m}(\theta)\Phi_m(\varphi))\\
 &=\left(-\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}(\sin \theta\eta_{l,m}(\theta))\Phi_m\left(\varphi\right)-\frac{1}{\sin^2\theta}\Phi_m''(\varphi)\eta_{l,m}(\theta)\right)R(r)\\
 &=l(l+1)R(r)\eta_{l,m}(\theta)\Phi_m(\varphi)
- \end{align*}$$multiplying through by $\sin^2\theta/\Phi\eta$ and separating $\theta,\varphi$ dependency gives$$\Huge -\sin\theta(\sin\theta\eta_{l,m}'(\theta))'\frac{1}{\eta_{l,m}(\theta)}-l(l+1)\sin^2\theta=\frac{\Phi_m''(\varphi)}{\Phi_m(\varphi)}$$
+ \end{aligned}$$multiplying through by $\sin^2\theta/\Phi\eta$ and separating $\theta,\varphi$ dependency gives$$\Huge -\sin\theta(\sin\theta\eta_{l,m}'(\theta))'\frac{1}{\eta_{l,m}(\theta)}-l(l+1)\sin^2\theta=\frac{\Phi_m''(\varphi)}{\Phi_m(\varphi)}$$
 > Now using our form of $\Phi$ tells us that the RHS is equal to $-m$, so we rearrange to find$$\Huge \sin\theta\frac{\partial }{\partial \theta}(\sin \theta\,\eta_{l,m}'(\theta))+(l(l+1)\sin^2\theta-m^2)\eta_{l,m}(\theta)=0$$This is a known equation with solutions taking form of special functions called the associated [[Linear Differential Equations#Legendre's equation|Legendre polynomials]]. 
 > Hence the full solution for $\psi_{l,m}$ is $$\Huge\psi_{l,m}(r,\theta,\varphi)=R(r)Y_{l,m}(\theta,\varphi)$$where$$\Huge Y_{l,m}(\theta,\varphi)=d_{l,m}e^{im\varphi}\eta_{l,m}(\theta)$$, $R(r)$ is fixed by the Schrodinger equation, $Y_{l,m}(\theta,\varphi)$ is fully fixed by symmetries $l,m$
 , and $d_{l,m}$ is a constant (fixed by normalisation of $\psi_{l,m}$).

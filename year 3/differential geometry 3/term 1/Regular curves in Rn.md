@@ -20,10 +20,10 @@ A curve $\underline \alpha:I\rightarrow\Re^n$ is said to be rectifiable on $[a,b
 
 An example of a non-rectifiable curve is the Von-Koch snowflake, defined iteratively as follows:![[Regular curves in Rn 2025-10-10 14.50.37.excalidraw]]Iterating infinitely many times forms the Von-Koch snowflake. The sum of all of these "cones" at each iteration follows the formula $(4/3)^k$, which obviously blows up as $k\to\infty$, therefore the supremum of $L$ is not finite and the curve is not rectifiable.
 
-Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth curve and $[a,b]\subset I$. Then the length of $\underline{\alpha}([a,b])$ is given by:$$\Huge L(\underline{\alpha}|_{[a,b]})=\int_a^b||\underline{\alpha}'(u)||du$$Proof is given heuristically:$$\Huge\begin{align*}
+Let $\underline{\alpha}:I\rightarrow\Re^n$ be a smooth curve and $[a,b]\subset I$. Then the length of $\underline{\alpha}([a,b])$ is given by:$$\Huge L(\underline{\alpha}|_{[a,b]})=\int_a^b||\underline{\alpha}'(u)||du$$Proof is given heuristically:$$\Huge\begin{aligned}
 \sum_{i=0}^{m-1}||\underline{\alpha}(u_{i+1})-\underline{\alpha}(u_i)||&=\sum_{i=0}^{m-1}\left|\left|\frac{\underline{\alpha}(u_{i+1})-\underline{\alpha}(u_i)}{u_{i+1}-u_i}\right|\right|(u_{i+1}-u_i)\\
 &=_{m\to\infty}\int_a^b||\underline{\alpha}'(u)||du
-\end{align*}$$
+\end{aligned}$$
 
 # Reparametrisations and unit speed i:
 
@@ -49,45 +49,45 @@ Note that for unit speed curves, the change of the unit tangent vector $\underli
 
 For a straight line in $\Re^2$ we have $\underline{t}'(s)=0$ and the proportionality factor is $0$, which is expected as we want straight lines to have no curvature.
 
-The signed curvature $\kappa(s)$ of a unit speed plane curve $\underline{\alpha}:I\rightarrow\Re^2$ at $s\in I$ is defined by:$$\Huge \underline{t}'(s)=\kappa(s)\underline{\hat{n}}(s)$$For a given unit speed plane curve $\underline{\alpha}:I\rightarrow\Re^2$ we can compute $\kappa(s)$ for $s\in I$:$$\Huge\begin{align*}
+The signed curvature $\kappa(s)$ of a unit speed plane curve $\underline{\alpha}:I\rightarrow\Re^2$ at $s\in I$ is defined by:$$\Huge \underline{t}'(s)=\kappa(s)\underline{\hat{n}}(s)$$For a given unit speed plane curve $\underline{\alpha}:I\rightarrow\Re^2$ we can compute $\kappa(s)$ for $s\in I$:$$\Huge\begin{aligned}
 \underline{t'}(s)\cdot\underline{\hat{n}}(s)&=\kappa(s)\underline{\hat{n}}(s)\cdot\underline{\hat{n}}(s)=\kappa(s)||\underline{\hat{n}}(s)||^2=\kappa(s)
-\end{align*}$$Writing $\alpha(s)=(x(s),y(s))$ we have $\underline{t}(s)=(x'(s),y'(s))$ and $\underline{\hat{n}}(s)=(-y'(s),x'(s))$, so the curvature becomes:$$\Huge\begin{align*}
+\end{aligned}$$Writing $\alpha(s)=(x(s),y(s))$ we have $\underline{t}(s)=(x'(s),y'(s))$ and $\underline{\hat{n}}(s)=(-y'(s),x'(s))$, so the curvature becomes:$$\Huge\begin{aligned}
 \kappa(s)&=\underline{t}'(s)\cdot\underline{\hat{n}}(s)\\
 &=(x''(s),y''(s))\cdot(-y'(s),x'(s))\\
 &=-y'(s)x''(s)+x'(s)y''(s)
-\end{align*}$$
-Take for example a circle of radius $r>0$. We assume that it is centered at the origin, then a unit speed parametrisation is given by:$$\Huge \underline{\alpha}(s)=\left(r\cos\left(\frac{s}{r}\right),r\sin\left(\frac{s}{r}\right)\right)=(x(s),y(s))$$Then we have:$$\Huge\begin{align*}
+\end{aligned}$$
+Take for example a circle of radius $r>0$. We assume that it is centered at the origin, then a unit speed parametrisation is given by:$$\Huge \underline{\alpha}(s)=\left(r\cos\left(\frac{s}{r}\right),r\sin\left(\frac{s}{r}\right)\right)=(x(s),y(s))$$Then we have:$$\Huge\begin{aligned}
 (x'(s),y'(s))&=\left(-\sin\left(\frac{s}{r}\right),\cos\left(\frac{s}{r}\right)\right)\\
 (x''(s),y''(s))&=\left(-\frac{1}{r}\cos\left(\frac{s}{r}\right),-\frac{1}{r}\sin(\frac{s}{r})\right)
-\end{align*}$$We can now compute the curvature:$$\Huge\kappa(s)=-\left(\cos\frac{s}{r}\right)\left(-\frac{1}{r}\cos(\frac{s}{r})\right)+\left(-\sin\left(\frac{s}{r}\right)\right)\left(-\frac{1}{r}\sin\left(\frac{s}{r}\right)\right)=\frac{1}{r}$$fitting the requirement that a circle of radius $r$ should have curvature $1/r$. One can check that if we reverse the parametrisation, the curvature comes out to be $-1/r$. This reflects a general fact that reversing a parametrisation causes the curvature to change sign. In general, if a curve turns to the left, then $\kappa>0$, and if a curve turns to the right then $\kappa<0$.
+\end{aligned}$$We can now compute the curvature:$$\Huge\kappa(s)=-\left(\cos\frac{s}{r}\right)\left(-\frac{1}{r}\cos(\frac{s}{r})\right)+\left(-\sin\left(\frac{s}{r}\right)\right)\left(-\frac{1}{r}\sin\left(\frac{s}{r}\right)\right)=\frac{1}{r}$$fitting the requirement that a circle of radius $r$ should have curvature $1/r$. One can check that if we reverse the parametrisation, the curvature comes out to be $-1/r$. This reflects a general fact that reversing a parametrisation causes the curvature to change sign. In general, if a curve turns to the left, then $\kappa>0$, and if a curve turns to the right then $\kappa<0$.
 
 General smooth regular plane curves $\underline{\alpha}:I\rightarrow\Re^2$ are usually not arc length parametrised, it is desirable to have an explicit formula for curvature without the need for reparametrisation:
 
-Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve with $\underline{\alpha}(u)=(x(u),y(u))$:$$\Huge \kappa=\frac{x'y''-x''y''}{((x')^2+(y')^2)^{3/2}}$$To prove this, we first consider:$$\Huge s=l(u)=\int_{u_0}^u||\underline{\alpha}'(t)||dt$$then we have $u=l^{-1}(s)$, and $\underline{\beta}=\underline{\alpha}\circ l^{-1}$ is an arc length reparametrisation of $\underline{\alpha}$ with tangent vector $\underline{t}$ and unit normal $\underline{\hat{n}}$. The curvature of $\underline{\alpha}$ at $u$ agrees with the curvature of $\underline{\beta}$ at $s$. Since $\underline{\beta}$ is unit speed:$$\Huge\begin{align*}
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve with $\underline{\alpha}(u)=(x(u),y(u))$:$$\Huge \kappa=\frac{x'y''-x''y''}{((x')^2+(y')^2)^{3/2}}$$To prove this, we first consider:$$\Huge s=l(u)=\int_{u_0}^u||\underline{\alpha}'(t)||dt$$then we have $u=l^{-1}(s)$, and $\underline{\beta}=\underline{\alpha}\circ l^{-1}$ is an arc length reparametrisation of $\underline{\alpha}$ with tangent vector $\underline{t}$ and unit normal $\underline{\hat{n}}$. The curvature of $\underline{\alpha}$ at $u$ agrees with the curvature of $\underline{\beta}$ at $s$. Since $\underline{\beta}$ is unit speed:$$\Huge\begin{aligned}
 \underline{t}(s)=\underline{\beta}'(s)&=(\underline{\alpha}\circ l^{-1})'(s)\\
 &=\underline{\alpha}'(l^{-1}(s))(l^{-1})(s)\\
 &=\frac{\underline{\alpha}'(l^{-1}(s))}{||\underline{\alpha}'(l^{-1}(s))||}\\
 &=\frac{\underline{\alpha}'(u)}{||\underline{\alpha}'(u)||}
-\end{align*}$$Since $\underline{\alpha}(u)=(x(u),y(u))$, we have that $\underline{\alpha}'(u)=(x'(u),y'(u))$ and therefore:$$\Huge \underline{t}(s)=\frac{(x'(u),y'(u))}{||\underline{\alpha}'(u)||},\,\,\underline{\hat{n}}(s)=\frac{(-y'(u),x'(u))}{||\underline{\alpha}'(u)||}$$with $||\underline{\alpha}'(u)||=\sqrt{(x'(u))^2+(y'(u))^2}$. We must now calculate $\underline{t}'(s)$, so by the chain rule and the fact that $\frac{du}{ds}(s)=(l^{-1})'(s)=\frac{1}{||\underline{\alpha}'(u)||}$:$$\Huge \frac{d\underline{t}}{ds}(s)=\frac{d\underline{t}}{du}(u)\cdot\frac{du}{ds}(s)=\frac{1}{||\underline{\alpha}'(u)||}\cdot\frac{d}{du}\left(\frac{(x'(u),y'(u))}{\sqrt{(x'(u))^2+(y'(u))^2}}\right)$$We continue omitting the argument $u$:$$\large\begin{align*}
+\end{aligned}$$Since $\underline{\alpha}(u)=(x(u),y(u))$, we have that $\underline{\alpha}'(u)=(x'(u),y'(u))$ and therefore:$$\Huge \underline{t}(s)=\frac{(x'(u),y'(u))}{||\underline{\alpha}'(u)||},\,\,\underline{\hat{n}}(s)=\frac{(-y'(u),x'(u))}{||\underline{\alpha}'(u)||}$$with $||\underline{\alpha}'(u)||=\sqrt{(x'(u))^2+(y'(u))^2}$. We must now calculate $\underline{t}'(s)$, so by the chain rule and the fact that $\frac{du}{ds}(s)=(l^{-1})'(s)=\frac{1}{||\underline{\alpha}'(u)||}$:$$\Huge \frac{d\underline{t}}{ds}(s)=\frac{d\underline{t}}{du}(u)\cdot\frac{du}{ds}(s)=\frac{1}{||\underline{\alpha}'(u)||}\cdot\frac{d}{du}\left(\frac{(x'(u),y'(u))}{\sqrt{(x'(u))^2+(y'(u))^2}}\right)$$We continue omitting the argument $u$:$$\large\begin{aligned}
 \frac{d}{du}\left(\frac{(x',y')}{\sqrt{(x')^2+(y')^2}}\right)&=\frac{\sqrt{(x')^2+(y')^2}(x'',y'')-\frac{x'x''+y'y''}{\sqrt{(x')^2+(y')^2}}(x',y')}{(x')^2+(y')^2}\\
 &=\frac{((x')^2+(y')^2)(x'',y'')-(x'x''+y'y'')(x',y')}{||\underline{\alpha}'||^3}\\
 &=\frac{x'y''-x''y'}{||\underline{\alpha}||^3}(-y',x')\\
 &=\frac{x'y''-x''y'}{||\underline{\alpha}'||^2}\underline{\hat{n}}(s)=\underline{t}'(s)
-\end{align*}$$Using this in the curvature formula gives:$$\Huge\begin{align*}
+\end{aligned}$$Using this in the curvature formula gives:$$\Huge\begin{aligned}
 \kappa(s)&=\underline{t}'(s)\cdot\underline{\hat{n}}(s)\\
 &=\frac{x'(u)y''(u)-x''(u)y'(u)}{||\underline{\alpha}'(u)||^3}||\underline{\hat{n}}(s)||^2\\
 &=\frac{x'(u)y''(u)-x''(u)y'(u)}{((x'(u))^2+(y'(u))^2)^{3/2}}
-\end{align*}$$
+\end{aligned}$$
 
-Take for example an ellipse. We define an ellipse as the set:$$\Huge \varepsilon_{a,b}=\left\{(x,y)\in\Re^2:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\right\}$$for fixed $a,b>0$. Note that $a=b=r$ describes the circle of radius $r>0$ centered at the origin. A parametrisation of $\varepsilon_{[a,b]}$ is given by:$$\Huge \underline{\alpha}:\Re\rightarrow\Re^2,\,\,\underline{\alpha}(u)=(a\cos u,b\sin u)$$This is obviously a regular curve as $\underline{\alpha}'(u)=(-a\sin u,b\cos u)\neq0$ for all $u\in\Re$. Note that in the regular case $a\neq b$ there is no closed expression for the arc length, as choosing $u_0=0$, the elliptic integral:$$\Huge l(u)=\int_0^u||\underline{\alpha}'(u)||du=\int_0^u\sqrt{a^2\sin^2u+b^2\cos^2u}\,du$$cannot be expressed in a closed form in terms of elementary functions. Therefore we cannot simply reparametrise an ellipse and calculate its curvature, however we can use the formula we just derived with:$$\Huge\begin{align*}
+Take for example an ellipse. We define an ellipse as the set:$$\Huge \varepsilon_{a,b}=\left\{(x,y)\in\Re^2:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\right\}$$for fixed $a,b>0$. Note that $a=b=r$ describes the circle of radius $r>0$ centered at the origin. A parametrisation of $\varepsilon_{[a,b]}$ is given by:$$\Huge \underline{\alpha}:\Re\rightarrow\Re^2,\,\,\underline{\alpha}(u)=(a\cos u,b\sin u)$$This is obviously a regular curve as $\underline{\alpha}'(u)=(-a\sin u,b\cos u)\neq0$ for all $u\in\Re$. Note that in the regular case $a\neq b$ there is no closed expression for the arc length, as choosing $u_0=0$, the elliptic integral:$$\Huge l(u)=\int_0^u||\underline{\alpha}'(u)||du=\int_0^u\sqrt{a^2\sin^2u+b^2\cos^2u}\,du$$cannot be expressed in a closed form in terms of elementary functions. Therefore we cannot simply reparametrise an ellipse and calculate its curvature, however we can use the formula we just derived with:$$\Huge\begin{aligned}
 \underline{\alpha}'(u)&=(x',y')=(-a\sin u,b\cos u)\\
 ||\underline{\alpha}'(u)||&=\sqrt{a^2\sin^2u+b^2\cos^2u}\\
 \underline{\alpha}''(u)&=(-a\cos u,-b\sin u)
-\end{align*}$$so we have:$$\Huge\begin{align*}
+\end{aligned}$$so we have:$$\Huge\begin{aligned}
 \kappa(u)&=\frac{x'y''-x''y'}{((x')^2+(y')^2)^{3/2}}\\
 &=\frac{(-a\sin u)(-b\sin u)-(-a\cos u)(b\cos u)}{(a^2\sin^2u+b^2\cos^2u)^{3/2}}\\
 &=\frac{ab}{(a^2\sin^2u+b^2\cos^2u)^{3/2}}
-\end{align*}$$
+\end{aligned}$$
 
 A geometric interpretation of curvature is that $|\kappa(u)|$ is the reciprocal of the radius of a circle approximating a small neighbourhood $\underline{\alpha}([u-\epsilon,u+\epsilon])$ as best as possible. The sign of $\kappa(u)$ is determined whether this approximating circle lies to the left or to the right of the curve at $\underline{\alpha}(u)$. We call such circle the curvature circle at $\underline{\alpha}(u)$.
 
@@ -122,10 +122,10 @@ Returning to the geometric description of $|\kappa(u)|$ of $\underline{\alpha}$ 
 
 Let $\alpha:I\rightarrow\Re^2$ be a smooth regular plane curve with corresponding curvature function $\kappa:I\rightarrow\Re$. Assume that $\underline{\alpha}$ has no inflection points. Then the curve $e:I\rightarrow\Re^2$ given by:$$\Huge e(u)=\underline{\alpha}(u)+\frac{1}{\kappa(u)}\underline{n}(u)$$is the evolute of $\underline{\alpha}$. 
 
-Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth unit speed plane curve and $\kappa:I\rightarrow\Re$ be its curvature function. Then we have:$$\Huge\begin{align*}
+Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth unit speed plane curve and $\kappa:I\rightarrow\Re$ be its curvature function. Then we have:$$\Huge\begin{aligned}
 \underline{t}'(s)&=\kappa(s)\underline{n}(s)\\
 \underline{n}'(s)&=-\kappa(s)\underline{t}(s)
-\end{align*}$$The first equation is proven trivially, as it is the definition of curvature, for the second:$$\Huge\begin{align*}
+\end{aligned}$$The first equation is proven trivially, as it is the definition of curvature, for the second:$$\Huge\begin{aligned}
 \underline{n}'(s)&=\underline{t}'(s)\begin{pmatrix}0 & 1\\
 -1 & 0\end{pmatrix}\\
 &=\kappa(s)\underline{n}(s)\begin{pmatrix}0 & 1\\
@@ -133,29 +133,29 @@ Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth unit speed plane curve an
 &=\kappa(s)\underline{t}(s)\begin{pmatrix}0 & 1\\
 -1 & 0\end{pmatrix}^2\\
 &=-\kappa(s)\underline{t}(s)
-\end{align*}$$Geometrically, we can think of $\underline{t}(s),\underline{n}(s)$ as being a "frame" of two orthonormal basis vectors moving along $\underline{\alpha}(s)$. The equations above then define the relationship between these two vectors.
+\end{aligned}$$Geometrically, we can think of $\underline{t}(s),\underline{n}(s)$ as being a "frame" of two orthonormal basis vectors moving along $\underline{\alpha}(s)$. The equations above then define the relationship between these two vectors.
 
-Such a frame also exists for non unit speed smooth regular plane curves, however the equations above no longer hold without taking the speed of the curve ($||\underline{\alpha}'(u)||$) into account. Note that the trace of the evolute does not change under reparametrisation, so we assume WLOG that $\underline{\alpha}:I\rightarrow\Re^2$ is unit speed:$$\Huge \begin{align*}
+Such a frame also exists for non unit speed smooth regular plane curves, however the equations above no longer hold without taking the speed of the curve ($||\underline{\alpha}'(u)||$) into account. Note that the trace of the evolute does not change under reparametrisation, so we assume WLOG that $\underline{\alpha}:I\rightarrow\Re^2$ is unit speed:$$\Huge \begin{aligned}
 e'(s)&=\underline{\alpha}'(s)-\frac{\kappa'(s)}{\kappa^2(s)}\underline{n}(s)+\frac{1}{\kappa(s)}\underline{n}'(s)\\
 &=\underline{t}(s)-\frac{\kappa'(s)}{\kappa^2(s)}\underline{n}(s)-\frac{1}{\kappa(s)}\kappa(s)\underline{t}(s)\\
 &=-\frac{\kappa'(s)}{\kappa^2(s)}\underline{n}(s)\\
 \implies||e'(s)||&=\frac{|\kappa'(s)|}{\kappa^2(s)}
-\end{align*}$$Which suggests:
+\end{aligned}$$Which suggests:
 > $e:I\rightarrow\Re^2$ is not arc length parametrised in general
 > Since $e'(s)=0$ if and only if $\kappa'(s)=0$, the evolute is regular if and only if $\underline{\alpha}$ has no vertices, and $e(s)$ is singular if and only if $\underline{\alpha}(s)$ is a vertex
 > If $e$ is regular, then its tangent $e'(s)$ is parallel to the unit normal vector $\underline{n}(s)$
 
-Take for example the ellipse $\underline{\alpha}:[0,2\pi]\rightarrow\Re^2$ given by $\underline{\alpha}(u)=(a\cos u,b\sin u)$ with $a,b>0$:$$\Huge\begin{align*}
+Take for example the ellipse $\underline{\alpha}:[0,2\pi]\rightarrow\Re^2$ given by $\underline{\alpha}(u)=(a\cos u,b\sin u)$ with $a,b>0$:$$\Huge\begin{aligned}
 \underline{\alpha}'(u)&=(-a\sin u,b\cos u)\\
 \implies||\underline{\alpha}'(u)||&=\sqrt{a^2\sin^2u+b^2\cos^2u}\\
 \implies\underline{n}(u)&=\frac{1}{||\underline{\alpha}'(u)||}\underline{\alpha}'(u)\begin{pmatrix}0 & -1\\
 1 & 0\end{pmatrix}\\
 &=\frac{(-b\cos u,-a\sin u)}{\sqrt{a^2\sin^2u+b^2\cos^2u}}
-\end{align*}$$Recalling the curvature function of the ellipse allows us to find the evolute:$$\large\begin{align*}
+\end{aligned}$$Recalling the curvature function of the ellipse allows us to find the evolute:$$\large\begin{aligned}
 e(u)&=\underline{\alpha}(u)+\frac{1}{\kappa(u)}\underline{n}(u)\\
 &=(a\cos u,b\sin u)+\frac{a^2\sin^2u+b^2\cos^2u}{ab}(-b\cos u,-a\sin u)\\
 &=\left(\left(a-\frac{a^2\sin^2u+b^2\cos^2u}{a}\right)\cos u,\left(b-\frac{a^2\sin^2u+b^2\cos^2u}{b}\right)\sin u\right)\\
 &=(a^2-b^2)\left(\frac{1}{a}\cos^3u,-\frac{1}{b}\sin^3u\right)
-\end{align*}$$![[Regular curves in Rn 2025-10-30 17.36.30.excalidraw]]
+\end{aligned}$$![[Regular curves in Rn 2025-10-30 17.36.30.excalidraw]]
 Let $\underline{\alpha}:I\rightarrow\Re^2$ be a smooth regular plane curve and $\underline{t}:I\rightarrow\Re^2$ be its unit tangent vector, $u_0\in I$ and $l(u)=\int_{u_0}^u||\underline{\alpha'(t)}||dt$. Then the curve $\underline{\beta}:I\rightarrow\Re^2$ given by:$$\Huge\underline{\beta}(u)=\underline{\alpha}(u)-l(u)\underline{t}(u)$$is called the involute of $\underline{\alpha}$. Note that the definition of the involute depends on $u_0\in I$. We propose that $\underline{\alpha}$ is the evolute of the involute $\underline{\beta}$. Proof omitted.
 

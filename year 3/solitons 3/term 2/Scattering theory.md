@@ -112,7 +112,7 @@ Note that we chose roots that give scattering solutions with particles incident 
 > $k^2>0$, the continuous spectrum:
 > > As $x\to+\infty$, we have that $y=\tanh(x)\to1^-$ and so$$\Huge _2F_1\left(\dots;\frac{1-y}{2}\right)\to\,_2F_1(\dots;0)=1;\,\,\frac{1+y}{1-y}\approx e^{2x}$$, giving the asymptotic behaviour$$\Huge \psi\approx\frac{1}{\Gamma(1-ik)}e^{ikx}$$as $x\to+\infty$.
 > > As $x\to-\infty$, we have that $y=\tanh(x)\to-1^+$ and so:$$\frac{1}{\Gamma(1-m)}\,_2F_1\left(-n,n+1;1-m;\frac{1-y}{2}\right)\approx\frac{\Gamma(-m)}{\Gamma(1-m+n)\Gamma(-m-n)}+\frac{\Gamma(m)}{\Gamma(-n)\Gamma(n+1)}e^{-2mx}$$This asymptotic is proven using the properties of the hypergeometric function. Therefore$$\Huge\psi\approx\frac{\Gamma(-ik)}{\Gamma(1-ik+n)\Gamma(-ik-n)}e^{ikx}+\frac{\Gamma(ik)}{\Gamma(-n)\Gamma(n+1)}e^{-ikx}$$as $x\to-\infty$
->>Normalising this scattering solution so that the coefficient of $e^{ikx}$ at $-\infty$ is $1$, we can read off the values of $R(k)$ and $T(k)$:$$\Huge\begin{alignedd}
+>>Normalising this scattering solution so that the coefficient of $e^{ikx}$ at $-\infty$ is $1$, we can read off the values of $R(k)$ and $T(k)$:$$\Huge\begin{aligned}
 R(k)&=\frac{\Gamma(ik)\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(-ik)\Gamma(1+n)\Gamma(-n)}\\
 &=-\frac{\sin(\pi n)}{\pi}\frac{\Gamma(ik)\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(-ik)}\\
 T(k)&=\frac{\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(1-ik)\Gamma(-ik)}

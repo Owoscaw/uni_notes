@@ -8,26 +8,26 @@ Instead of using a geometric description of straight lines, we use the physical 
 
 Let $S\subset\Re^3$ be a [[Surfaces in R3#Regular points/values|regular surface]]. A regular curve $\underline{\alpha}:I\rightarrow S$ is called a geodesic if $\underline{\alpha}''$ is normal to $S$. That is:$$\Huge \underline{\alpha}''\perp T_{\underline{\alpha}(t)}S\,\,\forall t\in I$$
 An immediate consequence of this definition is that for a geodesic $\underline{\alpha}$ of $S$, we must have $||\underline{\alpha}'||$ is constant. That is, $\underline{\alpha}$ is proportional to a unit speed curve. Proof:
-> Let $f(t)=||\underline{\alpha}'(t)||^2=\underline{\alpha}'(t)\cdot\underline{\alpha}'(t)$, the proof is then immediate:$$\Huge\begin{align*}
+> Let $f(t)=||\underline{\alpha}'(t)||^2=\underline{\alpha}'(t)\cdot\underline{\alpha}'(t)$, the proof is then immediate:$$\Huge\begin{aligned}
 f'(t)&=\underline{\alpha}''(t)\cdot\underline{\alpha}'(t)+\underline{\alpha}'(t)\cdot\underline{\alpha}''(t)\\
 &=2\underline{\alpha}''(t)\cdot\underline{\alpha}'(t)=0
-\end{align*}$$This is because $\underline{\alpha}''(t)$ is normal to $S$, while $\underline{\alpha}'(t)\in T_{\underline{\alpha}(t)}S$, so they are orthogonal to one another. Since $f'(t)=0$, $f(t)$ is constant, as required.
+\end{aligned}$$This is because $\underline{\alpha}''(t)$ is normal to $S$, while $\underline{\alpha}'(t)\in T_{\underline{\alpha}(t)}S$, so they are orthogonal to one another. Since $f'(t)=0$, $f(t)$ is constant, as required.
 
 Let us consider great circles on a sphere:
 > Let $$\Huge S^2(r)=\{\underline{x}\in\Re^3:||\underline{x}||^2=r^2\}$$be the round sphere of radius $r$. A great circle is the intersection of $S^2(r)$ with a plane through the origin. That is, they are circles on $S^2(r)$ with the same center and radius.
-> Let $P$ be a plane through the origin, $X_1,X_2$ an orthonormal basis of $P$. Then $P\cap S^2(r)$ is defined by the curve$$\Huge\underline{\alpha}(t)=r\cos tX_1+r\sin tX_2$$, which has derivatives:$$\Huge\begin{align*}
+> Let $P$ be a plane through the origin, $X_1,X_2$ an orthonormal basis of $P$. Then $P\cap S^2(r)$ is defined by the curve$$\Huge\underline{\alpha}(t)=r\cos tX_1+r\sin tX_2$$, which has derivatives:$$\Huge\begin{aligned}
 \underline{\alpha}'(t)&=-r\sin tX_1+r\cos tX_2\\
 \underline{\alpha}''(t)&=-r\cos tX_1-r\sin tX_2\\
 &=-\underline{\alpha}(t)
-\end{align*}$$
+\end{aligned}$$
 > This is orthogonal to the tangent plane of $S^2(r)$ and so must be a geodesic.
 
 Let us consider geodesics on a cylinder:
 > We define the cylinder as $$\Huge S=\{\underline{x}:x^2+y^2=1\}$$and consider the curve$$\Huge\underline{\alpha}(t)=(\cos(at+b),\sin(at+b),ct+d)$$with $a,b,c,d\in\Re$ and $a,c\neq0$. The trace of this curve is generally a subset that spirals up or down along the cylinder.
-> We verify that $\underline{\alpha}$ is a geodesic, we have:$$\Huge\begin{align*}
+> We verify that $\underline{\alpha}$ is a geodesic, we have:$$\Huge\begin{aligned}
 \underline{\alpha}'(t)&=(-a\sin(at+b),a\cos(at+b),c)\\
 \underline{\alpha}''(t)&=(-a^2\cos(at+b),-a^2\sin(at+b),0)
-\end{align*}$$
+\end{aligned}$$
 > Noting that the inward unit normal of $S$ is given by $(-x,-y,0)$ and it is clear that $\underline{\alpha}''$ is parallel to the unit normal of $S$ at $\underline{\alpha}(t)$. It can be shown that all geodesics on $S$ have this form.
 > In the case of $c=0$ we obtain a parallel of $S$ and in the case of $a=0$ we obtain a meridian of $S$.
 
@@ -36,18 +36,18 @@ We now provide an alternative definition of geodesics that implies geodesics are
 > $\underline{\alpha}$ is constant speed and its geodesic curvature $\kappa_g$ vanishes identically
 
 Since $||\underline{\alpha}'||$ and $\kappa_g$ are intrinsic quantities, geodesics are also intrinsic to the surface:
-> Let us assume $\underline{\alpha}$ is a geodesic, then $\underline{\alpha}$ is constant speed trivially and:$$\Huge \begin{align*}
+> Let us assume $\underline{\alpha}$ is a geodesic, then $\underline{\alpha}$ is constant speed trivially and:$$\Huge \begin{aligned}
 \kappa_g&=\frac{1}{||\underline{\alpha}'||^3}(\underline{\alpha}'\times\underline{\alpha}'')\cdot(\underline{N}\circ\underline{\alpha})\\
 &=\frac{1}{||\underline{\alpha}||^3}(\underline{\alpha}\times0)\cdot(\underline{N}\circ\underline{\alpha})=0
-\end{align*}$$This prove the first equivalence direction.
+\end{aligned}$$This prove the first equivalence direction.
 > We now assume $\underline{\alpha}$ is constant speed and has vanishing geodesic curvature. Since $\underline{\alpha}$ is regular, $\underline{\alpha}'$ and $\underline{\alpha}'\times\underline{N}(\underline{\alpha})$ span the [[Tangent planes#The tangent plane|tangent plane]] $T_\underline{\alpha}S$. Therefore it is only required to show $\underline{\alpha}''$ is perpendicular to both $\underline{\alpha}'$ and $\underline{\alpha}'\times(\underline{N}\circ\underline{\alpha})$ as this would force $\underline{\alpha}''$ to be normal to $S$.
 > Constant $\underline{\alpha}'$ implies $\underline{\alpha}'\cdot\underline{\alpha}'$ is constant and so $\underline{\alpha}''\perp\underline{\alpha}'$. Since $\kappa_g=0$ we have:$$\Huge \kappa_g=\underline{\alpha}'\times\underline{\alpha}''\cdot(\underline{N}\circ\underline{\alpha})=0$$
 > A basic property of the spat product is$$\Huge (\underline{x}\times\underline{y})\cdot\underline{z}=\begin{vmatrix}\underline{x} \\ \underline{y} \\ \underline{z}\end{vmatrix}$$and so we can write the vanishing curvature condition as$$\Huge\begin{vmatrix}\underline{\alpha}' \\ \underline{\alpha}'' \\ \underline{N}\circ\underline{\alpha}\end{vmatrix}=0$$where we consider $\underline{\alpha}',\underline{\alpha}'',\underline{N}\circ\underline{\alpha}$ as row vectors. Interchanging rows, we can write this as$$\Huge 0=\begin{vmatrix}\underline{\alpha}' \\ \underline{N}\circ\underline{\alpha} \\ \underline{\alpha}''\end{vmatrix}=(\underline{\alpha}'\times(\underline{N}\circ\underline{\alpha}))\cdot\underline{\alpha}''$$, showing that $\underline{\alpha}''$ is normal to $S$ and therefore a geodesic.
 
-We now provide a description of geodesics using a nonlinear system of second order ODEs. Let $\underline{x}:U\rightarrow S$ be a local parametrisation of a surface $S$ and $E,F,G:U\rightarrow\Re$ be the corresponding coefficients of the first fundamental form. Then $\underline{\alpha}:I\rightarrow\underline{x}(U)\subset S$ with $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$ is a geodesic if and only if the following system of ODEs is satisfied:$$\Huge\begin{align*}
+We now provide a description of geodesics using a nonlinear system of second order ODEs. Let $\underline{x}:U\rightarrow S$ be a local parametrisation of a surface $S$ and $E,F,G:U\rightarrow\Re$ be the corresponding coefficients of the first fundamental form. Then $\underline{\alpha}:I\rightarrow\underline{x}(U)\subset S$ with $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$ is a geodesic if and only if the following system of ODEs is satisfied:$$\Huge\begin{aligned}
 u''E+v''F&=-\frac{1}{2}(u')^2E_u-u'v' E_v-(v')^2\left(F_v-\frac{1}{2}G_u\right)\\
 v''G+u''F&=-\frac{1}{2}(v')^2G_v-u'v'G_u-(u')^2\left(F_u-\frac{1}{2}E_v\right)
-\end{align*}$$To prove this:
+\end{aligned}$$To prove this:
 > Notice that the tangent space $T_{\underline{\alpha}(t)}S$ is spanned by $\underline{x}_u(u(t),v(t))$ and $\underline{x}_v(u(t),v(t))$. The curve $\underline{\alpha}$ is a geodesic if and only if:$$\Huge \underline{\alpha}''\cdot\underline{x}_u=\underline{\alpha}''\cdot\underline{x}_v=0$$
 > Starting with the form $\underline{\alpha}'=u'\underline{x}_u+v'\underline{x}_v$ we differentiate further:$$\Huge\underline{\alpha}''=u''\underline{x}_u+(u')^2\underline{x}_{uu}+u'v'\underline{x}_{uv}+v''\underline{x}_v+u'v'\underline{x}_{vu}+(v')^2\underline{x}_{vv}$$
 > Taking the inner product with $\underline{x}_u$ then gives$$\large\underline{\alpha}''\cdot\underline{x}_u=u''E+v''F+(u')^2\frac{1}{2}E_u+2u'v'\frac{1}{2}E_v+(v')^2(F_v-\frac{1}{2}G_u)=0$$, which rearranges to the differential equation required. The same can be done with $\underline{x}_v$ to get the other equation.
@@ -74,19 +74,19 @@ The connection between minimising curves on a connected surface and geodesics is
 
 Let us consider Geodesics on the hyperbolic plane:
 > Let $\mathbb{H}^2=\{z=u+iv\in\mathbb{C}:v>0\}$ be the upper half plane model of the hyperbolic plane with:$$\Huge E(u,v)=G(u,v)=\frac{1}{v^2},\,\,F(u,v)=0$$
-> We know that geodesics $\underline{\alpha}(t)=(u(t),v(t))$ are solutions of differential equations, which simplify to:$$\Huge\begin{align*}
+> We know that geodesics $\underline{\alpha}(t)=(u(t),v(t))$ are solutions of differential equations, which simplify to:$$\Huge\begin{aligned}
 u''E(u,v)&=-u'v'E_v(u,v)\\
 v''G(u,v)&=-\frac{1}{2}(v')^2G_v(u,v)+\frac{1}{2}(u')^2E_v(u,v)
-\end{align*}$$Since $E_v(u,v)=G_v(u,v)=-\frac{2}{v^3}$ we write these equations as:$$\Huge u''=\frac{2u'v'}{v},\,\,v''=\frac{(v')^2-(u')^2}{v}$$
+\end{aligned}$$Since $E_v(u,v)=G_v(u,v)=-\frac{2}{v^3}$ we write these equations as:$$\Huge u''=\frac{2u'v'}{v},\,\,v''=\frac{(v')^2-(u')^2}{v}$$
 > Assuming $u$ is constant, the first equation is trivially satisfied and the second simplifies to$$\Huge v''v-(v')^2=0\implies_{v>0}\left(\frac{v'}{v}\right)'=\frac{v''v-(v')^2}{v^2}=0$$, that is $v'/v$ is constant. Taking $v'/v=C$ leads to (if $C\neq0$) $v(t)=Ae^{Ct}$ for $A>0$. A unit speed geodesic is therefore$$\Huge \underline{\alpha}(t)=(u(t),v(t))=(0,e^t)$$since $\underline{\alpha}'(t)=(0,e^t)\in T_{\underline{\alpha}(t)}\mathbb{H}^2$ and:$$\Huge \underline{I}_{\underline{\alpha}(t)}(\underline{\alpha}'(t))=\frac{\underline{\alpha}'(t)\cdot\underline{\alpha}'(t)}{v(t)^2}=\frac{e^{2t}}{e^{2t}}=1$$
 > Since [[Mobius transform#Finding Mobius transforms|Mobius transformations]] are isometries of $\mathbb{H}^2$, curves $\underline{\beta}=f_A\circ\underline{\alpha}:\Re\to\mathbb{H}^2$ ,with $f_A$ the Mobius transform, are also geodesics in $\mathbb{H}^2$.
 
 # Clairaut's Theorem:
 
-We now explore geodesics on surfaces of revolution. Let $S\subset\Re^3$ be a surface of revolution with local parametrisation$$\Huge \underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$for $(u,v)\in(0,2\pi)\times[a,b]$ and $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$. If we assume $f(v)>0$ for all $v\in[a,b]$ then we deduce $E(u,v)=E(v)=f(v)^2,F(u,v)=0,G(u,v)=G(v)=(f'(v))^2+(g'(v))^2$ and the geodesic defining differential equations take form:$$\Huge\begin{align*}
+We now explore geodesics on surfaces of revolution. Let $S\subset\Re^3$ be a surface of revolution with local parametrisation$$\Huge \underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$for $(u,v)\in(0,2\pi)\times[a,b]$ and $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$. If we assume $f(v)>0$ for all $v\in[a,b]$ then we deduce $E(u,v)=E(v)=f(v)^2,F(u,v)=0,G(u,v)=G(v)=(f'(v))^2+(g'(v))^2$ and the geodesic defining differential equations take form:$$\Huge\begin{aligned}
 u''E+u'v'E_v&=0\\
 v''G+\frac{1}{2}(v')^2G_v-\frac{1}{2}(u')^2E_v&=0
-\end{align*}$$The first equation is rewritten as $(u'E)'=0$, implying $c=u'E$ and therefore$$\Huge u'=\frac{c}{f(v)^2}$$for some constant $c\in\Re$. Assuming the generating curve has unit speed, we have $G=1$ and the second equation simplifies to:$$\Huge v''=(u')^2f(v)f'(v)=\frac{c^2f'(v)}{f(v)^3}$$Consequently, surfaces of revolution with an arc length parametrised generating curve, a curve $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$ is a geodesic if and only if the two equations above are satisfied.
+\end{aligned}$$The first equation is rewritten as $(u'E)'=0$, implying $c=u'E$ and therefore$$\Huge u'=\frac{c}{f(v)^2}$$for some constant $c\in\Re$. Assuming the generating curve has unit speed, we have $G=1$ and the second equation simplifies to:$$\Huge v''=(u')^2f(v)f'(v)=\frac{c^2f'(v)}{f(v)^3}$$Consequently, surfaces of revolution with an arc length parametrised generating curve, a curve $\underline{\alpha}(t)=\underline{x}(u(t),v(t))$ is a geodesic if and only if the two equations above are satisfied.
 
 From this we draw the following conclusion. Let $S\subset\Re^3$ be a regular surface of revolution with unit speed generating curve $v\to(f(v),0,g(v))$ with $f>0$ and parametrisation:$$\Huge \underline{x}(u,v)=(f(v)\cos u,f(v)\sin u,g(v))$$Then all meridians $\underline{\alpha}(t)=\underline{x}(u_0,t)$ are geodesics and parallels $\underline{\beta}(t)=\underline{x}(t,v_0)$ are geodesics if and only if $f'(v_0)=1$. Proof:
 > Let us first verify the meridians. In this case we have $u(t)=u_0$ and $v(t)=t$, implying that $u'=0$ and therefore the first equation holds with $c=0$. We also have $v''=0$ and so the other equation is automatically satisfied.
@@ -99,10 +99,10 @@ We can now present Clairaut's theorem: Let $S\subset\Re^3$ be a surface of revol
 Let us apply this theorem to a Torus of revolution:
 > A torus of revolution $S\subset\Re^3$ is given as follows. Let $C$ be a circle of radius $r>0$ in the $(x,z)$-coordinate plane around $(R,0,0)$. That is$$\Huge C=\{(R+r\cos v,0,r\sin v):v\in[0,2\pi)\}$$, we then obtain $S$ by rotating $C$ around the $z$-axis:$$\Huge S=\{((R+r\cos v)\cos u,(R+r\cos v)\sin u,r\sin v):u,v\in[0,2\pi)\}$$
 > We know that there must exists a unique geodesic $\underline{\alpha}$ starting at $(R+r,0,0)\in S$ in a specific direction at an angle $\theta_0$ to the corresponding parallel, given by $x^2+y^2=(R+r)^2,z=0$. In the case of the Torus, such a geodesic exists globally as a map $\underline{\alpha}:\Re\to S$$$\Huge \underline{\alpha}(t)=((R+r\cos v(t))\cos u(t),(R+r\cos v(t))\sin u(t),r\sin v(t))$$with suitable function $u,v:\Re\to\Re$.
-> Let $d,\theta$ be the corresponding functions introduced above. Then we have $d(0)=R+r$ and $\underline{\alpha}(0)=\theta_0$ and we can conclude that for all $t\in\Re$:$$\Huge\begin{align*}
+> Let $d,\theta$ be the corresponding functions introduced above. Then we have $d(0)=R+r$ and $\underline{\alpha}(0)=\theta_0$ and we can conclude that for all $t\in\Re$:$$\Huge\begin{aligned}
 d(t)\cos(\theta(t))&=(R+r\cos v(t))\cos\theta(t)\\
 &=d(0)\theta(0)=(R+r)\cos\theta_0
-\end{align*}$$
+\end{aligned}$$
 > In particular we must have $d(t)\geq(R+r)\cos\theta_0$ for all $t\in\Re$ since $\cos\theta(t)\leq1$. Consequently, a geodesic starting at $(R+r,0,0)$ with a small angle $|\theta_0|$ to the corresponding parallel is trapped in a certain neighbourhood of this parallel, that is, in the intersection of $S$ with all points of distance at least $(R+r)\cos\theta_0$ to the vertical $z$-axis.
 
 

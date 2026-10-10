@@ -25,8 +25,8 @@ Let $S$ be an oriented surface and $R\subset S$ be a polygon with interior angle
 
 # Euler characteristic and global Gauss-Bonnet:
 
-Let $R\subset S$ be a region of a surface $S$. A triangulation $\mathcal{T}$ of $R$ is a subdivision of $R$ into finitely many triangles meeting only in common edges or common vertices. The Euler characteristic of $R$ is defined by:$$\Huge\begin{align*}
+Let $R\subset S$ be a region of a surface $S$. A triangulation $\mathcal{T}$ of $R$ is a subdivision of $R$ into finitely many triangles meeting only in common edges or common vertices. The Euler characteristic of $R$ is defined by:$$\Huge\begin{aligned}
 \chi(R)&=F(\mathcal{T})-E(\mathcal{T})+V(\mathcal{T})\\
 &=\text{no. triangles }-\text{no. edges }-\text{no. vertices}
-\end{align*}$$
+\end{aligned}$$
 Let $S$ be an oriented surface and $R\subset S$ be a region with piecewise smooth boundary $\partial R$ oriented in such a way that positive rotations by $\pi/2$ of the tangent vectors of a parametrisation of a piecewise regular curve lead to tangent vectors pointing into the region $R$. Let $\theta_1,\dots,\theta_n$ be the exterior angles at the vertices of $\partial R$. Then we have$$\Huge\int_R K\,dA+\int_{\partial R}\kappa_g\,ds+\sum_{i=1}^n\theta_i=2\pi\chi(R)$$, in particular if $S\subset\Re^3$ is a closed connected surface then:$$\Huge\int_RK\,dA=2\pi\chi(R)$$
