@@ -22,11 +22,11 @@ As an example, consider three systems $A,B,C$ where:
 We ask if $A,C$ will reach mutual thermal equilibrium. This is the "0th" Law of Thermodynamics: If $A,B$ are each in equilibrium with $C$, then they are in equilibrium with each other. That is to say, mutual thermal equilibrium is transitive.
 
 Let us assume we have the state variable relations for this system:$$\Huge
-\begin{align*}
+\begin{aligned}
 \text{MTE}\implies V_B&=g_{AB}(p_A,V_A;p_B)\\
 &=g_{BC}(p_C,V_C;p_B)\\
 \implies g_{AB}&=g_{BC}
-\end{align*}$$Now our $0$th law implies MTE between $A,C$ so we have another relation:$$\Huge F_{AC}(p_A,V_A;p_C,V_C)=0$$This came from our understanding of MTE, so we expect the relation $g_{AB}=g_{BC}$ to imply the above. Note that the above is independent of $p_B$, so we can drop the $p_B$ dependence. Two systems in MTE are characterised by a function $\theta(p,V)$ which is equal in MTE. We call this function the Empirical temperature:$$\Huge \text{MTE}\implies \theta_A(p_A,V_A)=\theta_C(p_C,V_C)$$Remarks:
+\end{aligned}$$Now our $0$th law implies MTE between $A,C$ so we have another relation:$$\Huge F_{AC}(p_A,V_A;p_C,V_C)=0$$This came from our understanding of MTE, so we expect the relation $g_{AB}=g_{BC}$ to imply the above. Note that the above is independent of $p_B$, so we can drop the $p_B$ dependence. Two systems in MTE are characterised by a function $\theta(p,V)$ which is equal in MTE. We call this function the Empirical temperature:$$\Huge \text{MTE}\implies \theta_A(p_A,V_A)=\theta_C(p_C,V_C)$$Remarks:
 >Note that this definition is not unique, and $\tilde\theta(\theta)$ is also an "Empirical temperature". Consider an ideal gas. By default we have $T=\frac{pV}{c}$, which is of form:$$\Huge \theta=\theta(p,V)=\frac{pV}{c}$$This is called our "Equation of state". 
 >If we set $\theta(p,V)=\theta_0$, we trace out lines in the $p,V$ plane which we call "isotherms".
 

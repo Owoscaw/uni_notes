@@ -9,21 +9,21 @@ To solve this, we separate variables$$\Huge \Psi(x,\tau)=\psi(x)\phi(\tau)$$to f
 
 With our connection to KdV in mind, we will consider potentials that tend to $0$ as $x\to\pm\infty$. In classical mechanics, a particle with total energy $E=T+V$ is localised, and bounces off the potential at the "turning points" $x_*$ where $V(x_*)=E$. In quantum mechanics, there is a nonzero chance to find the particle anywhere, and the particle can "tunnel" through potential barriers which are impenetrable in classical mechanics.
 
-The scattering data will be encoded in the asymptotics of $\psi(x)$ as $x\to\pm\infty$. Since $V(x)\to0$ as $x\to\pm\infty$, the equation reduces to (in these regions)$$\Huge -\frac{d^2}{dx^2}\psi=k^2\psi$$which has two independent plane wave solutions $e^{\pm ikx}$. Therefore the general solution with eigenvalue $E=k^2$ has asymptotics$$\Huge\begin{align*}
+The scattering data will be encoded in the asymptotics of $\psi(x)$ as $x\to\pm\infty$. Since $V(x)\to0$ as $x\to\pm\infty$, the equation reduces to (in these regions)$$\Huge -\frac{d^2}{dx^2}\psi=k^2\psi$$which has two independent plane wave solutions $e^{\pm ikx}$. Therefore the general solution with eigenvalue $E=k^2$ has asymptotics$$\Huge\begin{aligned}
 \psi(x)&\approx A(k)e^{ikx}+B(k)e^{-ikx},\,\,x\to-\infty\\
 \psi(x)&\approx C(k)e^{ikx}+D(k)e^{-ikx},\,\,x\to+\infty
-\end{align*}$$and, restoring $\tau$-dependence$$\Huge\begin{align*}
+\end{aligned}$$and, restoring $\tau$-dependence$$\Huge\begin{aligned}
 \Psi(x,\tau)&\approx A(k)e^{ikx-ik^2\tau}+B(k)e^{-ikx-ik^2\tau},\,\,x\to-\infty\\
 \Psi(x,\tau)&\approx C(k)e^{ikx-ik^2\tau}+D(k)e^{-ikx-ik^2\tau},\,\,x\to+\infty
-\end{align*}$$showing that for real $k>0$, the $A,C$ terms correspond to right-moving waves, while the $B,D$ terms correspond to left-moving waves. Taking $k>0$ WLOG, our solution will be bounded for any $A,B,C,D$ if $E=k^2>0$.
+\end{aligned}$$showing that for real $k>0$, the $A,C$ terms correspond to right-moving waves, while the $B,D$ terms correspond to left-moving waves. Taking $k>0$ WLOG, our solution will be bounded for any $A,B,C,D$ if $E=k^2>0$.
 
-We will see that solving the time independent Schrodinger equation in the region where $V(x)\neq0$ interpolates between the two asymptotic regions and imposes two relations on $A,B,C,D$ leaving two undetermined coefficients. To fix these remaining coefficients, for $k^2>0$ we impose$$\Huge A(k)=1,\,\,D(k)=0$$and write$$\Huge\begin{align*}
+We will see that solving the time independent Schrodinger equation in the region where $V(x)\neq0$ interpolates between the two asymptotic regions and imposes two relations on $A,B,C,D$ leaving two undetermined coefficients. To fix these remaining coefficients, for $k^2>0$ we impose$$\Huge A(k)=1,\,\,D(k)=0$$and write$$\Huge\begin{aligned}
 B(k)&=R(k)\text{ (reflection coefficient)}\\
 C(k)&=T(k)\text{ (transmission coefficient)}
-\end{align*}$$so that the resulting scattering solution has asymptotics$$\Huge\begin{align*}
+\end{aligned}$$so that the resulting scattering solution has asymptotics$$\Huge\begin{aligned}
 \psi(x)&\approx e^{ikx}+R(k)e^{-ikx},&x\to-\infty\\
 \psi(x)&\approx T(k)e^{ikx}&x\to+\infty
-\end{align*}$$and represents a unit flux of incoming particles from the left, partially reflected from the potential and partially transmitted through it. It can be shown that$$\Huge |R(k)|^2+|T(k)|^2=1$$meaning that a particle is either reflected or transmitted with probability $1$.
+\end{aligned}$$and represents a unit flux of incoming particles from the left, partially reflected from the potential and partially transmitted through it. It can be shown that$$\Huge |R(k)|^2+|T(k)|^2=1$$meaning that a particle is either reflected or transmitted with probability $1$.
 
 ## The Wronskian:
 The above result is proven using a tool known as the Wronskian. For two functions $f,g$ their Wronskian is the function$$\Huge W[f,g](x)=f'(x)g(x)-f(x)g'(x)$$which has the properties:
@@ -33,10 +33,10 @@ The above result is proven using a tool known as the Wronskian. For two function
 > > either function is nonzero on that interval
 > then $f,g$ are linearly dependent on that interval
 
-Returning to our equation$$\Huge \left(-\frac{d^2}{dx^2}+V(x)\right)\psi(x)=E\psi(x)=k^2\psi(x)$$So far we have considered $k^2=E>0$. For $k^2<0$ we let $k=i\mu$ with $\mu>0$ real, so $E=-\mu^2$. Then the asymptotics of the general solution become$$\Huge\begin{align*}
+Returning to our equation$$\Huge \left(-\frac{d^2}{dx^2}+V(x)\right)\psi(x)=E\psi(x)=k^2\psi(x)$$So far we have considered $k^2=E>0$. For $k^2<0$ we let $k=i\mu$ with $\mu>0$ real, so $E=-\mu^2$. Then the asymptotics of the general solution become$$\Huge\begin{aligned}
 \psi(x)&\approx a(\mu)e^{-\mu x}+b(\mu)e^{\mu x},&x\to-\infty\\
 \psi(x)&\approx c(\mu)e^{-\mu x}+d(\mu)e^{\mu x},&x\to+\infty
-\end{align*}$$and it follows that$$\Huge \psi\text{ bounded}\iff a(\mu)=d(\mu)=0$$In such cases, $\psi$ is not only bounded, but it also tends to zero exponentially fast at $\pm\infty$ and therefore satisfies $\int_\Re|\psi|^2dx<\infty$.
+\end{aligned}$$and it follows that$$\Huge \psi\text{ bounded}\iff a(\mu)=d(\mu)=0$$In such cases, $\psi$ is not only bounded, but it also tends to zero exponentially fast at $\pm\infty$ and therefore satisfies $\int_\Re|\psi|^2dx<\infty$.
 
 Note that there might be no values for $\mu$ where this happens, but if it does then $\psi$ is called a bound state solution. Given a potential $V(x)$ tending to zero at $\pm\infty$, bound state solutions only exist for a finite set of $\mu$ values:$$\Huge \{\mu_k\}_{k=1}^N=\{\mu_1,\mu_2,\dots,\mu_N\},\,\,\mu_1<\mu_2<\dots<\mu_N$$
 ## Summary:
@@ -57,28 +57,28 @@ For $u=0$, the problem $L(u)\psi=\lambda\psi$ has a scattering solution for all 
 Here, $a$ is a real constant and $\delta(x)$ is the Dirac delta function. Recall that $\delta(x)$ can be viewed as the limit of a sequence of unit-area functions that become increasingly concentrated at the origin so that for any continuous test function $f(x)$ we have$$\Huge \int_\Re\delta(x)f(x)dx=f(0)$$We seek a single solution $\psi(x)$ solving the equation in both regions before and after the delta spike, and is also consistent with the potential at $x=0$.
 > $k^2>0$: In both regions, $V(x)=0$ and so $\psi$ satisfies our above example. Here, the solutions are$$\Huge\psi(x)=\begin{cases}A(k)e^{ikx}+B(k)e^{-ikx}&x<0 \\
 C(k)e^{ikx}+D(k)e^{-ikx}&x>0\end{cases}$$However we must match the two parts of the solution at $x=0$, which will determine the relationship between $A,B,C,D$. 
-> To find these conditions, we integrate the time-independent Schrodinger equation$$\Huge -\psi''(x)+a\delta(x)\psi(x)=k^2\psi(x)$$in an infinitesimal neighbourhood $[-\epsilon,+\epsilon]$ of $x=0$:$$\Huge\begin{align*}
+> To find these conditions, we integrate the time-independent Schrodinger equation$$\Huge -\psi''(x)+a\delta(x)\psi(x)=k^2\psi(x)$$in an infinitesimal neighbourhood $[-\epsilon,+\epsilon]$ of $x=0$:$$\Huge\begin{aligned}
 \int_{-\epsilon}^\epsilon-\psi''(x)+a\delta(x)\psi(x)\,dx&=k^2\int_{-\epsilon}^\epsilon\psi(x)\,dx\\
 \implies[-\psi'(x)]_{-\epsilon}^\epsilon+a\psi(0)&=k^2\int_{-\epsilon}^\epsilon\psi(x)\,dx
-\end{align*}$$
+\end{aligned}$$
 > Provided that $\psi$ is bounded, the RHS of this equation tends to $0$ as $\epsilon\to0$. Taking this limit implies that$$\Huge[\psi'(x)]_{0^-}^{0^+}=a\psi(0)$$Here, we implicitly assume that $\psi(x)$ is continuous at $x=0$. It is not hard to relax this assumption to deduce a modified version of our condition that can be used to deduce if $\psi(x)$ is continuous$$\Huge [\psi(x)]_{0^-}^{0^+}=0$$
-> Applying our matching conditions, we have$$\Huge\begin{align*}
+> Applying our matching conditions, we have$$\Huge\begin{aligned}
 A+B&=C+D\\
 ik(C-D)-ik(A-B)&=a(A+B)=a(C+D)
-\end{align*}$$which in turn implies$$\Huge\begin{align*}
+\end{aligned}$$which in turn implies$$\Huge\begin{aligned}
 A+B&=C+D\\
 A-B&=\left(1-\frac{a}{ik}\right)C-\left(1-\frac{a}{ik}\right)D
-\end{align*}$$Adding and subtracting gives$$\Huge\begin{align*}
+\end{aligned}$$Adding and subtracting gives$$\Huge\begin{aligned}
 A&=\left(1-\frac{a}{2ik}\right)C-\frac{a}{2ik}D\\
 B&=\frac{a}{ik}C+\left(1+\frac{a}{2ik}\right)D
-\end{align*}$$
+\end{aligned}$$
 > Substituting this into our general solution gives a solution with two undetermined constants as expected. To get the scattering solution, we set $D=0$ and divide through so that $A=1$:$$\Huge\psi(x)=\begin{cases}e^{ikx}+\frac{a}{2ik-a}e^{-ikx}&x<0 \\
 \frac{2ik}{2ik-a}e^{ikx}&x>0\end{cases}$$from which we read the reflection and transmission coefficients:$$\Huge R(k)=\frac{a}{2ik-a},\,\,T(k)=\frac{2ik}{2ik-a}$$
 > $k^2=-\mu^2<0$: Setting $k=i\mu$ in our general solution and our relationships between $A,B,C,D$ with $\mu>0$ we obtain$$\Huge\psi(x)=\begin{cases}A(i\mu)e^{-\mu x}+B(i\mu)e^{\mu x}&x<0 \\
-C(i\mu)e^{-\mu x}+D(i\mu)e^{\mu x} & x>0\end{cases}$$Given that we chose $\mu>0$, this is bounded as $x\to\pm\infty$ if and only if$$\Huge A(i\mu)=D(i\mu)=0$$which fixes our relation$$\Huge\begin{align*}
+C(i\mu)e^{-\mu x}+D(i\mu)e^{\mu x} & x>0\end{cases}$$Given that we chose $\mu>0$, this is bounded as $x\to\pm\infty$ if and only if$$\Huge A(i\mu)=D(i\mu)=0$$which fixes our relation$$\Huge\begin{aligned}
 0&=\left(1+\frac{a}{2\mu}\right)C\\
 B&=-\frac{a}{\mu}C
-\end{align*}$$which gives two further options:
+\end{aligned}$$which gives two further options:
 > > $A=B=C=D=0$, which is trivial.
 > > $\mu=-\frac{a}{2}$ with $B=C$. Given that we took $\mu>0$, this option means that there is a bounded solution with $k^2<0$ only for $a<0$. The bound state solution is then$$\Huge\psi(x)=e^{\frac{a}{2}|x|},\,\,k^2=-\frac{a^2}{4}$$
 > Note that we can obtain bound state solutions by an alternative method. First, we observe $D(k)=0$ is a requirement for the general solution to be bounded. Hence we can directly substitute $k=i\mu$ directly into our scattering solution$$\Huge\psi(x)=\begin{cases}e^{-\mu x}+\frac{a}{-2\mu-a}e^{\mu x}&x<0 \\
@@ -112,11 +112,11 @@ Note that we chose roots that give scattering solutions with particles incident 
 > $k^2>0$, the continuous spectrum:
 > > As $x\to+\infty$, we have that $y=\tanh(x)\to1^-$ and so$$\Huge _2F_1\left(\dots;\frac{1-y}{2}\right)\to\,_2F_1(\dots;0)=1;\,\,\frac{1+y}{1-y}\approx e^{2x}$$, giving the asymptotic behaviour$$\Huge \psi\approx\frac{1}{\Gamma(1-ik)}e^{ikx}$$as $x\to+\infty$.
 > > As $x\to-\infty$, we have that $y=\tanh(x)\to-1^+$ and so:$$\frac{1}{\Gamma(1-m)}\,_2F_1\left(-n,n+1;1-m;\frac{1-y}{2}\right)\approx\frac{\Gamma(-m)}{\Gamma(1-m+n)\Gamma(-m-n)}+\frac{\Gamma(m)}{\Gamma(-n)\Gamma(n+1)}e^{-2mx}$$This asymptotic is proven using the properties of the hypergeometric function. Therefore$$\Huge\psi\approx\frac{\Gamma(-ik)}{\Gamma(1-ik+n)\Gamma(-ik-n)}e^{ikx}+\frac{\Gamma(ik)}{\Gamma(-n)\Gamma(n+1)}e^{-ikx}$$as $x\to-\infty$
->>Normalising this scattering solution so that the coefficient of $e^{ikx}$ at $-\infty$ is $1$, we can read off the values of $R(k)$ and $T(k)$:$$\Huge\begin{align*}
+>>Normalising this scattering solution so that the coefficient of $e^{ikx}$ at $-\infty$ is $1$, we can read off the values of $R(k)$ and $T(k)$:$$\Huge\begin{alignedd}
 R(k)&=\frac{\Gamma(ik)\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(-ik)\Gamma(1+n)\Gamma(-n)}\\
 &=-\frac{\sin(\pi n)}{\pi}\frac{\Gamma(ik)\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(-ik)}\\
 T(k)&=\frac{\Gamma(1-ik+n)\Gamma(-ik-n)}{\Gamma(1-ik)\Gamma(-ik)}
-\end{align*}$$Note that the $\sin(\pi n)$ factor in $R(k)$ means that it vanishes for all $k$ if $n$ is an integer. The corresponding potentials$$\Huge V(x)=-n(n+1)\text{sech}^2(x)$$with $n\in\mathbb{Z}_{\geq0}$ are called reflectionless. That is, no particles are reflected for any value of $k$. 
+\end{aligned}$$Note that the $\sin(\pi n)$ factor in $R(k)$ means that it vanishes for all $k$ if $n$ is an integer. The corresponding potentials$$\Huge V(x)=-n(n+1)\text{sech}^2(x)$$with $n\in\mathbb{Z}_{\geq0}$ are called reflectionless. That is, no particles are reflected for any value of $k$. 
 >$k^2<0$, the discrete spectrum. To find this spectrum, we set $k=i\mu$ with $\mu>0$, and divide the scattering solution through by $T(i\mu)$ to find a possible eigenfunction:$$\Huge \psi(x)\approx\begin{cases}\frac{1}{T(i\mu)}e^{-\mu x}+\frac{R(i\mu)}{T(i\mu)}e^{\mu x} & x\to-\infty \\
 e^{i\mu x} & x\to+\infty\end{cases}$$This is automatically bounded as $x\to+\infty$ and will be bounded at $x\to-\infty$ if and only if $\mu\geq0$ is such that $1/T(i\mu)=0$. This requires:$$\Huge\frac{1}{T(i\mu)}=\frac{\Gamma(1+\mu)\Gamma(\mu)}{\Gamma(1+\mu+n)\Gamma(\mu-n)}=0$$Given that $\mu$ must be a positive real number and that $\gamma(z)$ has no zeros, there are two options:
 > >$1+\mu+n=-j$ with $j\in\mathbb{Z}_{\geq0}$

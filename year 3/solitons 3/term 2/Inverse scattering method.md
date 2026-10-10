@@ -19,19 +19,19 @@ Inverse scattering will allow us to understand these different situations and gi
 
 For a linear wave equation, the general solution is just a linear transformation of the initial data. Take for example:
 > The heat equation, $u_t=u_{xx}$ for $x\in\Re,t>0$. Given initial data $u(x,0)=u_0(x)$, the general solution becomes:$$\Huge u(x,t)=\int_\Re\frac{1}{\sqrt{4\pi t}}e^{-(x-x')^2/(4t)}u_0(x')dx'$$which is simply a linear transformation of $u_0(x)$ (and is also a [[Green's method#General greens' function|Green's function]] solution).
-> The Klein-Gordon equation, $u_{tt}-u_{xx}+m^2u=0$ for $x\in\Re,t>0$. This is second order in time, so we specify $u(x,0)=\alpha(x),u_t(x,0)=\beta(x)$. It turns out that this is a well-posed IVP and can be solved using a [[Fourier transform]] wrt $x$. Given $u(x,t)$, we set:$$\Huge\begin{align*}
+> The Klein-Gordon equation, $u_{tt}-u_{xx}+m^2u=0$ for $x\in\Re,t>0$. This is second order in time, so we specify $u(x,0)=\alpha(x),u_t(x,0)=\beta(x)$. It turns out that this is a well-posed IVP and can be solved using a [[Fourier transform]] wrt $x$. Given $u(x,t)$, we set:$$\Huge\begin{aligned}
 \tilde u(k,t)&=\int_\Re u(x,t)e^{-ikx}dx\\
 u(x,t)&=\frac{1}{2\pi}\int_\Re\tilde u(k,t)e^{ikx}dk
-\end{align*}$$where the first equation defines the Fourier transform $\tilde u$ of $u$ wrt $x$, and the second acts as the inverse FT. We then work with $\tilde u(k,t)$ instead of $u$ as the wave equation becomes:$$\Huge\tilde u_{tt}+(k^2+m^2)\tilde u=0$$which is actually an ODE in $t$ for given $k$. The general solution of which is:$$\Huge\begin{align*}
+\end{aligned}$$where the first equation defines the Fourier transform $\tilde u$ of $u$ wrt $x$, and the second acts as the inverse FT. We then work with $\tilde u(k,t)$ instead of $u$ as the wave equation becomes:$$\Huge\tilde u_{tt}+(k^2+m^2)\tilde u=0$$which is actually an ODE in $t$ for given $k$. The general solution of which is:$$\Huge\begin{aligned}
 \tilde u(k,t)&=A(k)e^{i\omega t}+B(k)e^{-i\omega t}\\
 \omega&=\omega (k)=\sqrt{k^2+m^2}
-\end{align*}$$The integration constants $A,B$ are found by matching initial data at $t=0$:$$\Huge\begin{align*}
+\end{aligned}$$The integration constants $A,B$ are found by matching initial data at $t=0$:$$\Huge\begin{aligned}
 \tilde\alpha(k)&=\tilde u(k,0)=A(k)+B(k)\\
 \tilde\beta(k)&=\tilde u_t(k,0)=i\omega(A(k)-B(k))
-\end{align*}$$Solving for $A,B$ gives us our FT field $\tilde u(k,t)$:$$\Huge\begin{align*}
+\end{aligned}$$Solving for $A,B$ gives us our FT field $\tilde u(k,t)$:$$\Huge\begin{aligned}
 \tilde u(k,t)&=\frac{1}{2}\left(\tilde\alpha(k)+\frac{\tilde\beta(k)}{i\omega}\right)e^{i\omega t}+\frac{1}{2}\left(\tilde\alpha(k)-\frac{\tilde\beta(k)}{i\omega}\right)e^{-i\omega t}\\
 &=\tilde\alpha(k)\cos(\omega t)+\frac{1}{\omega}\tilde\beta(k)\sin(\omega t)
-\end{align*}$$and we finally get our solution by applying the inverse FT:$$\large\begin{align*}
+\end{aligned}$$and we finally get our solution by applying the inverse FT:$$\large\begin{align*}
 u(x,t)&=\frac{1}{2\pi}\int_\Re\left(\tilde\alpha(k)\cos(\omega t)+\frac{1}{\omega}\tilde\beta(k)\sin(\omega t)\right)e^{ikx}dk\\
 &=\frac{1}{2\pi}\iint_{\Re^2}\left(u(x',0)\cos(\omega t)+\frac{1}{\omega}u_t(x',0)\sin(\omega t)\right)e^{ik(x-x')}dk\,dx'
 \end{align*}$$with $\omega=\omega(k)=\sqrt{k^2+m^2}$. Again this is a linear function of the initial data $u(x,0)$ and $u_t(x,0)$.
