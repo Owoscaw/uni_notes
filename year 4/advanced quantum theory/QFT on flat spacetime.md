@@ -16,3 +16,7 @@ We define the Minkowski metric as$$\Huge\eta_{\mu\nu}=\begin{pmatrix}-1  & 0 & 0
 > $\Lambda^\mu_\nu\eta_{\mu\rho}\Lambda^{\rho}_\sigma=\eta_{\nu\sigma}$, setting $\nu=\sigma=0$ shows us:$$\Huge(\Lambda_0^0)^2-(\Lambda_1^1)^2-(\Lambda_2^2)^2-(\Lambda_3^3)^2=1$$
 
 This suggests an obvious decomposition into $4$ disconnected components as$$\Huge (\Lambda_0^0)^2\geq1\implies\Lambda_0^0\geq1\text{ or }\Lambda_0^0\leq-1$$combined with $\det\Lambda=\pm1$ gives $4$ total combinations. We are interested in $SO(1,3)^+$, the proper orthochronous Lorentz group:$$\Huge SO(1,3)^+=\{\Lambda\in O(1,3):\det\Lambda=1,\Lambda_0^0\geq1\}$$
+## Lie group/algebra of $SO(1,3)^+$:
+Let us consider elements in $SO(1,3)^+$ close to the identity. Consider the Lorentz algebra$$\Huge\Lambda(\epsilon)=\exp(\epsilon M)$$, clearly we have $\Lambda(0)\in SO(1,3)^+$. We ask what the condition on $M$ must be in order to have $\Lambda(\epsilon)\in SO(1,3)^+$:$$\Huge\begin{aligned}
+\Lambda(\epsilon)&=\mathbb{1}+\epsilon M
++ca\end{aligned}$$
