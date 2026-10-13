@@ -1,10 +1,10 @@
 
 Defining systems using an action $S$ provokes the definition of a symmetry.
 
-Let $g$ be an invertible map:$$\Huge g:\begin{align}
+Let $g$ be an invertible map:$$\Huge g:\begin{aligned}
 q_i&\rightarrow g(q_i)\\
 \dot q_i&\rightarrow g(\dot q_i)
-\end{align}$$such that $S[g(q_i),g(\dot q_i)]=S[q_i,\dot q_i]$. In this case, $g$ is called a symmetry of the action $S$. This must hold for all generalised coordinates $q_i,\dot q_i$. For any given action $S$, we can ask about the set $G$ of all of its symmetries. The above definition has two immediate consequences:
+\end{aligned}$$such that $S[g(q_i),g(\dot q_i)]=S[q_i,\dot q_i]$. In this case, $g$ is called a symmetry of the action $S$. This must hold for all generalised coordinates $q_i,\dot q_i$. For any given action $S$, we can ask about the set $G$ of all of its symmetries. The above definition has two immediate consequences:
 > The identity map $g=\underline 1$ is a trivial symmetry
 > For any two symmetries $g,g'$ we can form a composed symmetry:$$\Huge S[g(g'(q_i)),g(g'(\dot q_i))]=S[g'(q_i),g'(\dot q_i)]=S[q_i,\dot q_i]$$Note that it does not matter in which order $g,g'$ are applied.
 
