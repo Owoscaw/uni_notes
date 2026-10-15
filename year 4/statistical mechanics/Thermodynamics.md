@@ -79,3 +79,6 @@ Consider traversing $C$ in the other direction, so we have $Q<0,W>0$. Here, work
 ## 2nd Law of Thermodynamics:
 We have two versions of this law:
 > Kelvin: No process is possible whose only effect is to extract heat from a hot reservoir and convert it entirely to work. That is, there is no such thing as an ideal engine. In a physical engine with $Q_H$ being inputted, an amount of heat $Q_C>0$ is dissipated and the work converted comes to $W=Q_H-Q_C$.
+> Clausius: No process is possible whose only effect is to transfer heat from a colder to a hotter body. That is, there is no such thing as an ideal fridge.
+
+Note that these statements are logically equivalent, one could use a perfect engine to build a perfect fridge:![[Thermodynamics 2026-10-15 10.52.35.excalidraw]]
