@@ -81,4 +81,16 @@ We have two versions of this law:
 > Kelvin: No process is possible whose only effect is to extract heat from a hot reservoir and convert it entirely to work. That is, there is no such thing as an ideal engine. In a physical engine with $Q_H$ being inputted, an amount of heat $Q_C>0$ is dissipated and the work converted comes to $W=Q_H-Q_C$.
 > Clausius: No process is possible whose only effect is to transfer heat from a colder to a hotter body. That is, there is no such thing as an ideal fridge.
 
-Note that these statements are logically equivalent, one could use a perfect engine to build a perfect fridge:![[Thermodynamics 2026-10-15 10.52.35.excalidraw]]
+Note that these statements are logically equivalent, one could use a perfect engine to build a perfect fridge:![[Thermodynamics 2026-10-15 10.52.35.excalidraw]]The dashed blue box shows how the work done on a fridge by an ideal engine makes the system equivalent to an ideal fridge. Similarly, the existence of an ideal fridge implies the existence of an ideal engine.
+
+## Carnot cycle:
+It might appear that reversible cycles seem to convert heat to work fine via $0=W+Q$, however the cycle must necessarily dump heat out. 
+
+Consider a reversible engine operating between heat reservoirs with fixed temperatures $\theta_H>\theta_C$. Two paths of the process are isothermal, and the other two are adiabatic:![[Thermodynamics 2026-10-15 11.46.17.excalidraw]]
+The cycle is as follows:
+> $AB$: Isothermal expansion $\theta_H$, during which the system has fixed temperature, but heat $Q_H$ is absorbed at a fixed temperature. That is, we have heated the system.
+> $BC$: Adiabatic expansion, the system exchanges no heat this time so $\dbar Q=0$ - however the system still expands, causing a drop in temperature $\theta_H\to\theta_C$.
+> $CD$: Isothermal compression $\theta_C$, $Q_C$ is dumped into the cold reservoir at a fixed temperature.
+> $DA$: Adiabatic compression, causing a rise in temperature $\theta_C\to\theta_H$.
+
+Now at the end of the cycle, we see that the first law of thermodynamics dictates:$$$$
