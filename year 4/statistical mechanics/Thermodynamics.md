@@ -93,4 +93,28 @@ The cycle is as follows:
 > $CD$: Isothermal compression $\theta_C$, $Q_C$ is dumped into the cold reservoir at a fixed temperature.
 > $DA$: Adiabatic compression, causing a rise in temperature $\theta_C\to\theta_H$.
 
-Now at the end of the cycle, we see that the first law of thermodynamics dictates:$$$$
+Now at the end of the cycle, we see that the first law of thermodynamics dictates:$$\Huge W=Q_H-Q_C$$We can now define the efficiency of an engine by:$$\Huge\eta=\frac{W}{Q_H}=1-\frac{Q_C}{Q_H}$$If this is $1$, all energy is used as work (an ideal engine!). Kelvin's law then dictates $\eta<1$, the engine always dumps some $Q_C>0$ into its surroundings that is not used as work. Note that $\eta$ is invariant under the following operations$$\Large\begin{aligned}
+(Q_H,Q_C)&\to(-Q_H,-Q_C)&\text{reversal}\\
+(Q_H,Q_C)&\to(\lambda Q_H,\lambda Q_C)&\text{run }\lambda\text{ cycles}
+\end{aligned}$$, so efficiency can be thought of as a property of the engine itself.
+
+## Carnot's theorem:
+We can now prove Carnot's theorem, which states; Of all engines running between two heat reservoirs, reversible engines have the highest efficiency. 
+
+To prove this, consider a non-reversible engine called Merlin $(Q_H',Q_C')$, coupled to a reversible engine called Carnot $(Q_H,Q_C)$ running in reverse. That is, the work output $W$ of Merlin drives Carnot in reverse. The two engines take energy $\Delta E'=Q_H'-Q_H$ from the hot reservoir and dump it into the cold reservoir $Q_C'-Q_C=Q_H'-Q_H$. Clausius' statement of the second law then dictates $Q_H'-Q_H\geq0\implies Q_H'\geq Q_H$ as a perfect fridge cannot exist. We can rearrange out statement about $\Delta E$ to say$$\Huge Q_C'-Q_H'=Q_C-Q_H$$and so we compute the efficiency of Merlin:$$\Large\begin{aligned}
+\eta_\text{Merlin}&=1-\frac{Q_C'}{Q_H'}\\
+&=\frac{Q_C-Q_H}{Q_H'}\\
+&\leq\frac{Q_C-Q_H}{Q_H}=\eta_\text{Carnot}
+\end{aligned}$$Hence proving Carnot's theorem.
+
+### Corollary:
+All reversible engines have the same efficiency, dependent only on the temperatures of the reservoirs $\theta_H,\theta_C$. This is clear to see if one imagines that a Merlin engine were indeed reversible, in which case we would find $\eta_\text{Merlin}\geq\eta_\text{Carnot}$ as we could just reverse the direction of each engine. This would force $\eta_\text{Carnot}=\eta_\text{Merlin}=\eta_\text{rev}$, and so this argument applies to ALL reversible engines. Since the engines are characterised only by the temperatures of the reservoirs, we have:$$\Huge\eta_\text{rev}=\eta(\theta_H,\theta_C)$$
+
+## Thermodynamic temperature scale:
+We now have the tools to define our true temperature, the thermodynamic temperature scale. Consider running several Carnot cycles between a few different temperatures, say from $\theta_1\to\theta_2$ and $\theta_2\to\theta_3$. Using our newfound knowledge of efficiency, we can write:$$\Large\frac{Q_2}{Q_1}=1-\eta(\theta_1,\theta_2),\,\,\frac{Q_3}{Q_2}=1-\eta(\theta_2,\theta_3)$$Now consider the composition of these engines, which forms an engine between $\theta_1$ and $\theta_3$:$$\Large\frac{Q_3}{Q_1}=1-\eta(\theta_1,\theta_3)$$We multiply the first two expressions to find$$\Large\begin{aligned}
+(1-\eta(\theta_1,\theta_2))(1-\eta(\theta_2,\theta_3))&=1-\eta(\theta_1,\theta_3)\\
+\implies1-\eta(\theta_H,\theta_C)&=\frac{f(\theta_C)}{f(\theta_H)}
+\end{aligned}$$, since the LHS contains functions of $\theta_2$ but the RHS does not - implying that it must cancel out somehow (note we also relabeled $\theta_1,\theta_3\to\theta_H,\theta_C$). We now define the thermodynamic temperature $T$ by$$\Huge T=cf(\theta)$$where $f(\theta)$ is the function defined above, and $c$ is a constant fixed so that $T=273.15\text{K}$ at the triple point of ice-water-steam (what the fuck). We then have a nice relation between the efficiency of a reversible engine operating between two temperatures:$$\Large\eta(T_H,T_C)=1-\frac{T_C}{T_H}=1-\frac{Q_C}{Q_H}$$
+This is rather profound, we have defined a quantitative measure of efficiency from a set of axioms and some pretty drawings. To revel in our joy, let us consider the example of an automobile engine:
+> Gasoline burns at $1000\text{K}$ and room temperature is $300\text{K}$, so the efficiency of a Carnot engine between the two is$$\Large\eta_\text{car}\approx1-0.3=0.7$$
+> This is an upper bound on efficiency, unless one could make the fuel burn hotter.
