@@ -75,18 +75,21 @@ h_0Uk\frac{\partial^2}{\partial x^2}\cos(kx+mz)+h_0Uk\frac{\partial^2}{\partial 
 \implies\left(-k^2-m^2+\frac{N^2}{U^2}\right)h_0Uk\cos(kx+mz)&=0
 \end{aligned}$$For this to hold $\forall x,z$, we require:$$\Huge -k^2-m^2+\frac{N^2}{U^2}=0$$Hence we write, assuming $\frac{N}{U}>k$:$$\Large m^2=\frac{N^2}{U^2}-k^2,\,\,m=\pm\sqrt{\frac{N^2}{U^2}-k^2}$$This condition is favoured by strong stratification, weak winds, or sufficiently long wavelengths. We must determine which sign of $m$ corresponds to a physical solution. We expect energy to propagate upwards. Vertical wave energy flux is given by $pw$, pressure work:$$\Large\begin{aligned}
 w&=h_0Uk\cos(kx+mz)\\
-\implies\frac{\partial u}{\partial x}&=h_0Ukm\sin(kx+mz)\\
-\implies\frac{\partial p}{\partial x}&=-h_0U^2km\sin(kx+mz)\\
-\implies p&=h_0U^2m\cos(kx+mz)\\
-\implies pw&=h_0^2 U^3km\cos^2(kx+mz)
+\implies\frac{\partial u}{\partial x}&=h_0Ukm\sin(kx+mz)\\\frac{\partial p}{\partial x}&=-\frac{U}{\rho_0}\frac{\partial u}{\partial x}\\
+&=\rho_0h_0U^2km\sin(kx+mz)\\
+\implies p&=\rho_0h_0U^2m\cos(kx+mz)\\
+\implies pw&=\rho_0h_0^2 U^3km\cos^2(kx+mz)
 \end{aligned}$$Since $x$ is taken to be the direction of the background wind we have $U>0$, and we take $k>0$ as $\cos^2\geq0$. The sign of vertical energy flux is therefore determined by the sign of $m$, and so we naturally take the positive branch as we expect energy to propagate away from the mountains:$$\Huge m=+\sqrt{\frac{N^2}{U^2}-k^2}$$Hence our final solution is:$$\Large\begin{aligned}
 w&=h_0Uk\cos\left(kx+\sqrt{\frac{N^2}{U^2}-k^2}z\right)\\
 u&=-h_0U\sqrt{\frac{N^2}{U^2}-k^2}\cos\left(kx+\sqrt{\frac{N^2}{U^2}-k^2}z\right)\\
-p&=h_0U^2\sqrt{\frac{N^2}{U^2}-k^2}\cos\left(kx+\sqrt{\frac{N^2}{U^2}-k^2}\right)
+p&=\rho_0h_0U^2\sqrt{\frac{N^2}{U^2}-k^2}\cos\left(kx+\sqrt{\frac{N^2}{U^2}-k^2}\right)
 \end{aligned}$$In sufficiently moist air, the upward displacement can cause condensation and therefore cloud bands along oscillatory paths:
 ![[Capture (2).png]]
 
-In reality, mountains are not purely sinusoidal but can actually be decomposed using a Fourier transform. Since all of our equations are linear, the wave response to each Fourier component can be calculated and the solutions superposed.
+In reality, mountains are not purely sinusoidal but can actually be decomposed using a Fourier transform. Since all of our equations are linear, the wave response to each Fourier component can be calculated and the solutions superposed. We model this as an inverse Fourier transform:$$\Large\begin{aligned}
+h(x)&=\int_\Re\hat f(\underline{k})e^{ikx}dx\\
+_\text{or}&=\frac{A_0}{2}+\sum_{k=1}^\infty A_k\cos(kx)+\sum_{k=1}^\infty B_k\sin(kx)
+\end{aligned}$$
 
 If we have no stratification, $N=0$, our equation for $w$ reduces to $\frac{\partial^2w}{\partial x^2}+\frac{\partial^2w}{\partial z^2}=0$, leading to a decaying solution with the same sinusoidal ground forcing:$$\Large N=0\implies w=h_0Uke^{-kx}\cos(kx)$$
 ## Hydrostatic approximation:
