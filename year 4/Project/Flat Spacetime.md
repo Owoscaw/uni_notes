@@ -18,4 +18,4 @@ Writing our [[Special relativity#Relativistic notation|Lorentz transformations]]
 # Vectors:
 To each point $p$ in spacetime, we associate the set of all possible located at that point. That is, we define the tangent space $T_p$ at $p$. Note this behaves as a real vector space, so we are nice and linear. 
 
-Consider at each tangent space we set of four basis vectors $\hat{\underline{e}}_\mu$ with $\mu=0,1,2,3$ as usual. Any abstract vector $A$ can then be written as a linear combination:$$\Huge A=A^\mu\hat{\underline{e}}_\mu$$The coefficients $A^\mu$ here are simply the components of the vector $A$. A sta
+Consider at each tangent space we set of four basis vectors $\hat{\underline{e}}_\mu$ with $\mu=0,1,2,3$ as usual. Any abstract vector $A$ can then be written as a linear combination:$$\Huge A=A^\mu\hat{\underline{e}}_\mu$$The coefficients $A^\mu$ here are simply the components of the vector $A$. 

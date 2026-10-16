@@ -43,18 +43,53 @@ There are two transformations that are not in $SO(1,3)^+$ but are still Lorentz 
 
 We can then recover the full Lorentz group $O(1,3)$ by composing time reversal, parity, and their composition with elements of $SO(1,3)^+$. The most general element $\tilde\Lambda\in O(1,3)$ is written as:$$\Huge\tilde\Lambda=\Lambda_T^{n_T}\Lambda_P^{n_P}$$Here, $n_T,n_P\in\{0,1\}$. 
 
-# Poincare group:
+# Poincare group and scalar fields:
 
-We now consider translations, which are transformations of the form:$$\Large x^\mu\rightarrow x'^\mu=x^\mu-a^\mu,\,\,a^\mu\in\Re^{1,3}$$The Lorentz group, together with this translation group, form the Poincare group. This group acts on spacetime coordinates as:$$\Large x^\mu\rightarrow x'^\mu=\Lambda^\mu_\nu x^\nu-a^\mu$$This group has $10$ generators, $6$ of which given by Lorentz generators, $4$ of which come from translations $P^\mu$. In addition to our $M$ matrix commutator, we get two more conditions to form the Poincare algebra:$$\Huge\begin{aligned}
+We now consider translations, which are transformations of the form:$$\Large x^\mu\rightarrow x'^\mu=x^\mu-a^\mu,\,\,a^\mu\in\Re^{1,3}$$The Lorentz group, together with this translation group, form the Poincare group. This group acts on spacetime coordinates as:$$\Large x^\mu\rightarrow x'^\mu=\Lambda^\mu_\nu x^\nu-a^\mu$$This group has $10$ generators, $6$ of which given by Lorentz generators, $4$ of which come from translations $P^\mu$. In addition to our $M$ matrix commutator, we get two more conditions to form the Poincare algebra:$$\Large\begin{aligned}
 [P^\mu,P^\nu]&=0\\
 [P^\mu,M^{\nu\rho }]&=-\eta^{\mu\nu}P^\rho+\eta^{\mu\rho}P^\nu
 \end{aligned}$$
 Consider a scalar field $\phi:\Re^{1,3}\rightarrow\Re$ transforming under the Poincare group, $\phi:x^\mu\rightarrow\phi(x^\mu)$. This transforms in the scalar representation of the Poincare group:$$\Large\begin{aligned}
 x^\mu&\rightarrow x'^\mu=\Lambda^\mu_\nu x^\nu-a^\mu\\
 \phi(x^\mu)&\rightarrow\phi'(x^\mu)=\phi(x^\mu)
-\end{aligned}$$We want to find conditions on $\phi$ that make it transform in this way. Consider what the above statement is saying:$$\Large\phi'(x')=\phi'(x-a)=\phi(x)\implies\phi'(x)=\phi(x+a)$$Assuming $a$ is infinitesimally small, we can write:$$\Large\phi'(x)=\phi(x)+a^\mu\frac{\partial }{\partial x^\mu}\phi(x)+\mathcal{O}(a^2)$$We then find our variation in $\phi$:$$\Huge\begin{aligned}
+\end{aligned}$$We want to find conditions on $\phi$ that make it transform in this way. Consider what the above statement is saying:$$\Large\phi'(x')=\phi'(x-a)=\phi(x)\implies\phi'(x)=\phi(x+a)$$Assuming $a$ is infinitesimally small, we can write:$$\Large\phi'(x)=\phi(x)+a^\mu\frac{\partial }{\partial x^\mu}\phi(x)+\mathcal{O}(a^2)$$We then find our variation in $\phi$:$$\Large\begin{aligned}
 \delta\phi(x)&=\phi'(x)-\phi(x)\\
 &=a^\mu\frac{\partial }{\partial x^\mu}\phi(x)
 \end{aligned}$$We should expect to find some operator $\tilde P_\mu$ such that:$$\Large\begin{aligned}\phi'(x)=\phi(x+a)&=\exp(a^\mu\tilde P_\mu)\phi(x)\\
 &=\phi(x)+a^\mu\tilde P_\mu\phi(x)+\mathcal{O}(a^2)\\
 \implies\tilde P_\mu&=\frac{\partial }{\partial x^\mu}\end{aligned}$$This is the momentum operator, and generates translations.
+
+## Lorentz group on scalar fields:
+Let us show the same process for Lorentz transformations:$$\Large\begin{aligned}
+x'^\mu&=\Lambda^\mu_\nu x^\nu\\
+&=\exp(\omega_{\rho\sigma}M^{\rho\sigma})^\mu_\nu x^\nu\\
+\implies\phi'(x')&=\phi'(\Lambda x)=\phi(x)\\
+\implies\phi'(x)&=\phi(\Lambda^{-1}x)\\
+&=\phi(\exp(-\omega_{\rho\sigma}M^{\rho\sigma})x)\\
+&=\exp(\omega_{\rho\sigma}L^{\rho\sigma})\phi(x)
+\end{aligned}$$Now let us expand the exponential to linear order (i.e. consider $\omega\to0$):$$\Large\begin{aligned}
+\phi'(x)&=\phi(x-\omega_{\rho\sigma}M^{\rho\sigma}x+\mathcal{O}(\omega^2))\\
+_\text{Taylor on phi}&=\phi(x)-(\omega_{\rho\sigma}M^{\rho\sigma})^\mu_\nu x^\nu\partial_\mu\phi+\mathcal{O}(\omega^2)\\
+_\text{Taylor on exp}&=\phi(x)+\omega_{\rho\sigma}L^{\rho\sigma}\phi(x)+\mathcal{O}(\omega^2)\\
+\implies\delta\phi(x)&=\omega_{\rho\sigma}L^{\rho\sigma}\phi(x)\\
+&=-(\omega_{\rho\sigma}M^{\rho\sigma})_\nu^\mu x^\nu\partial_\mu\phi(x)
+\end{aligned}$$Substituting our basis for $(M^{\rho\sigma})_\nu^\mu=\eta^{\rho\mu}\delta^\rho_\nu-\eta^{\rho\mu}\delta^\sigma_\nu$ (EX!!!) gives us our relation:$$\Huge L^{\rho\sigma}=x^\sigma\partial_\rho-x^\rho\partial_\sigma$$This is exactly our generator of Lorentz transformations on scalar fields. If one can be bothered to compute every commutator between our generators for the Poincare and Lorentz groups, one would find that they satisfy the Poincare algebra we found previously.
+
+# Classical field theory:
+
+In a classical system of $N$ degrees of freedom with generalised coordinates $\underline{q}_a$, our Lagrangian is simply given by:$$\Large\mathcal{L}(q_1,\dots,q_N,\dot q_1,\dots,\dot q_N)=\sum_{a=1}^N\frac{1}{2}m_a\dot q_a^2-V(q_1,\dots,q_N)$$This is just kinetic minus potential terms. Recall the action, defined by the integral$$\Huge S[q_a]=\int_{T_i}^{T_f}\mathcal{L}(\underline{q}_a,\underline{\dot q}_a)dt$$Equations of motion then arise from extremising the action:$$\Large\delta_qS[q_a]\implies\frac{\partial \mathcal{L}}{\partial q_a}-\frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot q_a}\right)=0$$
+Now for our scalar fields $\phi(x,t)$, the generalised coordinates become our scalar field and the sum over kinetic terms becomes an integral:$$\Huge L=\int\mathcal{L}(\phi(x^\nu),\partial_\mu\phi(x^\nu))d^3x$$This makes the action:$$\Huge S=\int\mathcal{L}(\phi,\partial_\mu\phi)d^4x$$
+The principle of locality demands there be no action at a distance. If we demand$$\Huge\delta_\phi S[\phi]=\int\delta_\phi\mathcal{L}(\phi,\partial_\mu\phi)d^4x=0$$we can write:$$\Large\begin{aligned}
+\int\delta\phi\frac{\partial \mathcal{L}}{\partial \phi}+\partial_\mu(\delta\phi)\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi)}d^4x&=0\\
+\int\delta\phi\left(\frac{\partial \mathcal{L}}{\partial \phi}-\partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi)}\right)\right)d^4x&=\\
+\implies\frac{\partial \mathcal{L}}{\partial \phi(x)}-\partial_\mu\left(\frac{\partial \mathcal{L}}{\partial (\partial_\mu\phi(x))}\right)&=0
+\end{aligned}$$These are the Euler-Lagrange equations for our scalar field $\phi$.
+
+## Actions for real scalar fields:
+Firstly, let us impose all of our symmetries (i.e. invariance under Poincare). We first ask if our differential $d^4x$ transforms?
+> Under translations $x\to x'-a$, $d^4x\to d^4x$ trivially.
+> Under Lorentz transformations $x\to x'=\Lambda x$, $d^4$ transforms with the determinant. That is, $d^4x'=|\det\Lambda|d^4x=d^4x$
+
+Since our differential is invariant, and the Lagrangian is defined to be invariant, we must also have that our action is invariant under the Poincare group.
+
+Secondly, we impost non-trivial dynamics. That is, we require $\mathcal{L}=\mathcal{L}(\phi,\partial_\mu\phi)$ otherwise if we had $\mathcal{L}=\mathcal{L}(\phi)$, equations of motion would give us trivial dynamics:$$\Huge\mathcal{L}(\phi,\partial_\mu\phi)=\frac{1}{2}\partial_\mu\phi\partial^\mu\phi-V(\phi)$$This is analogous to our kinetic minus potential example above. In component form, we can write our general Lagrangian as:$$\huge\mathcal{L}=\frac{1}{2}(\partial_t\phi)^2-\frac{1}{2}(\nabla\phi)\cdot(\nabla\phi)-V(\phi)$$Really, the first term here is the only "kinetic term" while the rest can be thought of as potential terms. Our simplest possible Lagrangian has us introduce the mass term,$$\Huge V(\phi)=\frac{1}{2}m^2\phi^2\,\,\leftarrow\text{  mass term}$$Putting this all together, we find our Lagrangian for a free, massive scalar:$$\Huge\mathcal{L}=-\frac{1}{2}\partial_\mu\phi\partial^\mu\phi-\frac{1}{2}m^2\phi^2$$The equations of this are simply the Klein-Gordon equations.
