@@ -1,2 +1,5 @@
 
-Before we introduce [[Manifolds and tensors|manifolds]], we describe spacetime in the context of special relativity as a four dimensional set whose elements are labelled by $3$ spatial and $1$ temporal dimension. We call points in spacetime events, and a particle's path is written as a parametrised $1$D set of events - called the worldline.
+# Special relativity recap:
+
+Before we introduce [[Manifolds and tensors|manifolds]], we describe spacetime in the context of special relativity as a four dimensional set whose elements are labelled by $3$ spatial and $1$ temporal dimension. We call points in spacetime events, and a particle's path is written as a parametrised $1$D set of events - called the worldline. Note we will use$$\Huge\eta_{\mu\nu}=\begin{pmatrix}-1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}$$as our [[Special relativity#Relativistic notation|Minkowski metric]], allowing us to write the [[Special relativity#Lorentz transformations|invariant interval]] as:$$\Huge (\Delta s)^2=\eta_{\mu\nu}\Delta x^\mu\Delta x^\nu$$For timelike particles, this interval will clearly be negative which prompts the definition of proper time:$$\Huge (\Delta\tau)^2=-(\Delta s)^2$$This has a crucial feature:
+> The proper time between two events measures the time elapsed as seen by an observer mov
