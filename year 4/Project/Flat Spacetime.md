@@ -1,0 +1,2 @@
+
+Before we introduce [[Manifolds and tensors|manifolds]], we describe spacetime in the context of special relativity as a four dimensional set whose elements are labelled by $3$ spatial and $1$ temporal dimension. We call points in spacetime events, and a particle's path is written as a parametrised $1$D set of events - called the worldline.
