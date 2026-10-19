@@ -94,8 +94,8 @@ _\text{or}&=\frac{A_0}{2}+\sum_{k=1}^\infty A_k\cos(kx)+\sum_{k=1}^\infty B_k\si
 If we have no stratification, $N=0$, our equation for $w$ reduces to $\frac{\partial^2w}{\partial x^2}+\frac{\partial^2w}{\partial z^2}=0$, leading to a decaying solution with the same sinusoidal ground forcing:$$\Large N=0\implies w=h_0Uke^{-kx}\cos(kx)$$
 ## Hydrostatic approximation:
 A common approximation is to assume horizontal scale is much larger than the vertical scale. In such case, vertical components in the momentum equation are replaced by the hydrostatic balance equation. This gives the hydrostatic Boussinesq equations:$$\Large\begin{aligned}
-\frac{\partial v}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho_0}\nabla_H
+\frac{D\underline{v}}{Dt}=\frac{\partial v}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}&=-\frac{1}{\rho_0}\nabla_H
 p\\
 \frac{\partial p}{\partial z}&=\rho_0b=-\rho g\\
 \underline{\nabla}\cdot\underline{u}&=0\\
-\frac{\partial b}{\partial t}+(\underline{u}\cdot\underline{\nabla})b+N^2w&=0\end{aligned}$$Where $\underline{u}=(u,v)$ is horizontal velocity and $\nabla_H=\left(\frac{\partial }{\partial x},\frac{\partial }{\partial y}\right)$.
+\frac{Db}{Dt}+N^2\omega=\frac{\partial b}{\partial t}+(\underline{u}\cdot\underline{\nabla})b+N^2w&=0\end{aligned}$$Where $\underline{u}=(u,v)$ is horizontal velocity and $\nabla_H=\left(\frac{\partial }{\partial x},\frac{\partial }{\partial y}\right)$.
