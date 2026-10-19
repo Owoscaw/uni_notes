@@ -24,3 +24,43 @@ These objects are so useful since they allow us to make coordinate-independent s
 > Terms may have an arbitrary number of contracted indices, however must appear in pairs of up and down. That is, the sum implied by $V^\mu=T^\mu_\nu\lambda_\nu$ is invalid as $\lambda$ should have an upper $\nu$ index
 > Indices may be renamed
 > Order of tensors does not matter
+
+# Manifolds:
+
+We want to generalise flat spacetime geometry to consider smoothly curved geometries, characterised by the spacetime looking locally flat on small enough scales. We express this by saying that around every point, there is some coordinate system mapping some local neighbourhood of the point onto $\Re^n$. Therefore we must consider general coordinates, not necessarily ones adapted to inertial observers. By thinking of coordinates as a map from parts of spacetime to open regions of $\Re^n$, $x^\mu(p)$ can be thought of as collections of functions.
+
+Let $n$ be a fixed positive integer. Given a set $M$, an $n$-dimensional chart on $M$ is a bijection $\varphi$ from a subset $U\subset M$ to an open subset $\varphi(U)\subset\Re^n$, defining coordinates $x^\mu(p)$ for each $p\in U$. An atlas for $M$ is a collection of charts $\{(U_a,\varphi_a)\}$ such that:
+> $\bigcup_aU_a=M$, the charts cover the whole set
+> If $U_a\cap U_b\neq\emptyset$, then the map $F=\varphi_a\circ\varphi_b^{-1}:\Re^n\rightarrow\Re^n(\tilde x^\mu(x^\nu))$ is differentiable where it is defined.
+
+A maximal atlas is one containing all charts satisfying these conditions. An $n$-dimensional manifold ([[Differentiable Manifolds#Definition|differentiable manifold]]) is the set $M$ together with a maximal atlas. The coordinate map is always invertible where it is defined, so we can think of points $p$ as being determined by their coordinates $p(x^\mu)$.
+
+We can define a coordinate transformation where coordinate systems $x^\mu,\tilde x^\mu$ overlap, a map $\tilde x^\mu(x^\nu)$ from an open region in $\Re^n$ to another open region in $\Re^n$. For example:
+> Take $M=\Re^2,U=M,\phi=\text{id}$ to define cartesian coordinates, which cover the whole set. A maximal atlas includes other coordinates, for example polar, related to cartesian coordinates $(x,y)$ by:$$\huge x=r\cos(\phi),\,\,y=r\sin(\phi)$$
+> In our notation, the above is the inverse map $\varphi^{-1}$. The following is the map $\varphi$$$\huge r=\sqrt{x^2+y^2},\,\,\phi=\tan^{-1}(y/x)$$except at $x=y=0$. Note that polar coordiantes are local coordinates, with a coordinate singularity at $r=0$. Therefore the map $(x,y)\to(r,\theta)$ is not differentiable at $r=0$, so these coordinates map $\Re^2\setminus\{x\geq0,y=0\}$ to the semi-infinite strip $\{r>0,0<\phi<2\pi\}$.
+
+The utility of this notation is that it defines a differentiable structure on the underlying set, that is a notion of smoothness. Given a set $M$, we can define a function $f$ on $M$ as a map $f:M\rightarrow\Re,f:p\rightarrow f(p)$. If $M$ is a manifold, the charts define functions $f\circ\phi^{-1}:\Re^n\to\Re$, which send $x^\mu\to f(p(x^\mu))$. We say $f$ is differentiable function on $M$ if these functions $f\circ\phi^{-1}$ are differentiable where defined. By differentiability of $\tilde x^\mu(x^\nu)$, the notion of differentiability obtained from $f\circ\phi^{-1},f\circ\tilde\phi^{-1}$ agree on overlaps.
+
+# Vectors and covectors:
+
+## Vectors:
+In curved space, we define the [[Special relativity#Curves and $4$-vectors|tangent vector]] in terms of the directional derivative - giving a coordinate independent definition. We can then determine components wrt some coordinates from this definition:
+> Given a curve $\gamma:\Re\to M,\gamma:\lambda\to p(\lambda)$, the tangent vector $V$ to $\gamma$ at $p$ is the derivative along the curve, $V=\frac{d}{d\lambda}$. This acts on functions on $M$, for a function $f:M\to\Re$ we have $f\circ\gamma:\Re\to\Re$, whose derivative is $V(f)=\frac{df}{d\lambda}$.
+> Thus, at a point $p$, $V$ is a map from functions on $M$ to the reals. These are linear maps, allowing us to define addition of vectors by $(V+W)(f+g)=V(f)+V(g)+W(f)+W(g)$. This definition allows the vectors to form a vector space, which we nap the tangent space to $M$ at $p$, $T_p$.
+
+The vectors are elements in the tangent space, not $M$ itself. If we embed the manifold in $\Re^n$, we can picture the tangent space as the tangent plane at the point $p$:![[Manifolds and tensors 2026-10-19 14.45.49.excalidraw]]
+
+We can also define a vector field, a choice of vector $V\in T_p$ at each point $p\in M$, a vector-valued function on $M$. Note that while every vector $V\in T_p$ can be realised as the tangent vector to some curve through $p$, given a vector field $V(x^\mu)$, we will not in general be able to find a family of curves such that $V$ is tangent to the curves at every point. 
+
+If we introduce coordinates, we can write $\gamma$ in terms of coordinates as $x^\mu(\lambda)$ (i.e. the composition $\phi\circ\gamma$) and find$$\huge V(f)=\frac{df}{d\lambda}=\frac{dx^\mu}{d\lambda}\frac{\partial f}{\partial x^\mu}$$by the chain rule. This is just the component expansion of an abstract vector:
+> To illustrate this point, let us pick a coordinate system on $\Re^n$ and vary a single coordinate. The point $p(x^\mu)$ will trace out a curve in $M$, the image of our chosen coordinate axis. The tangents to these axes $\frac{\partial }{\partial x^\mu}$ are tangent vectors, defining a basis of $T_p$. 
+> We can write $V=V^\mu\partial_\mu$, defining the components $V^\mu$ of $V$ wrt this basis, the above formula then dictates$$\huge V^\mu=\frac{dx^\mu}{d\lambda}=\dot x^\mu$$, as we would expect from our $\Re^n$ embedding.
+> When we change coordinates to $\tilde x^\mu(x^\nu)$, we also change bases on $T_p$, so we have$$\huge V=V^\mu\frac{\partial }{\partial x^\mu}=\tilde V^\nu\frac{\partial }{\partial \tilde x^\nu}=\tilde V^\nu\frac{\partial x^\mu}{\partial \tilde x^\nu}\frac{\partial }{\partial x^\mu}$$, so the components of $V$ will transform by a change of basis under coordinate transformations:$$\huge\begin{aligned}
+V^\mu&=\tilde V^\nu\frac{\partial x^\mu}{\partial \tilde x^\nu},\\
+\tilde V^\mu&=\frac{d\tilde x^\mu}{d\lambda}\\
+&=\frac{\partial \tilde x^\mu}{\partial x^\nu}\frac{d x^\nu}{d\lambda}=\frac{\partial \tilde x^\mu}{\partial x^\nu}V^\nu
+\end{aligned}$$
+
+Note that in our more general context, the coordinate transformation $\tilde x^\mu(x^\nu)$ is not in general linear, but the transformation of the tangent vector still is. A general vector can be given by specifying components $V^\mu(x^\nu)$ wrt the coordinate basis at each point. The relations between components of a vector in different coordinate systems will change as the point moves around a manifold, so it is not possible to equate vectors in different tangent spaces.
+
+## Cotangent vectors:
