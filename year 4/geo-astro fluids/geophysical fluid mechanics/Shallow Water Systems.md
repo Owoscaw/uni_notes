@@ -19,6 +19,16 @@ _{\text{assuming}\,\underline{v}=\underline{v}(x,y,t)}\implies\frac{\partial \un
 Consider a column of shallow water:
 ![[Shallow Water Systems 2026-10-20 18.31.25.excalidraw]]The cross-sectional area of this column is $\Delta x\Delta y$. If fluid enters the column from the sides, height has to increase to conserve mass. Consider the two sides perpendicular to the $x$-axis, velocity normal to one of the sides is $u$. Velocity through the other normal surface will then be $u+\Delta x\frac{\partial u}{\partial x}$. Similarly, if the thickness of one side is $h$, the thickness has to expand to $h+\Delta x\frac{\partial h}{\partial x}$. The mass flux through one side is given by normal velocity $\times$ surface area $\times$ density. We can then calculate the mass flux along each axis:$$\Large\begin{aligned}
 MF_x&=\rho_0 uh\Delta y-\rho_0\left(u+\Delta x\frac{\partial u}{\partial x}\right)\left(h+\Delta x\frac{\partial h}{\partial x}\right)\Delta y\\
-&=-\rho_0\Delta x\frac{\partial u}{\partial x}h\Delta y-\rho_0 u\Delta x\frac{\partial h}{\partial x}\Delta y-\rho_0\Delta x\frac{\partial h}{\partial x}\Delta y-\rho_0\Delta x\frac{\partial u}{\partial x}\Delta x\frac{\partial h}{\partial x}\Delta y\\
+&=-\rho_0\Delta x\frac{\partial u}{\partial x}h\Delta y-\rho_0 u\Delta x\frac{\partial h}{\partial x}\Delta y-\rho_0\Delta x\frac{\partial u}{\partial x}\Delta x\frac{\partial h}{\partial x}\Delta y\\
 MF_y&=-\rho_0\Delta y\frac{\partial v}{\partial y}h\Delta x-\rho_0v\Delta y\frac{\partial h}{\partial y}\Delta x-\rho_0\Delta y\frac{\partial v}{\partial y}\Delta y\frac{\partial h}{\partial y}\Delta x
-\end{aligned}$$The rate of change in mass in the fluid column is given by:$$\huge\rho_0\Delta x\Delta y\frac{\Delta h}{\Delta t}=MF_x+MF_y$$
+\end{aligned}$$The rate of change in mass in the fluid column is given by:$$\large\begin{aligned}
+\rho_0\Delta x\Delta y\frac{\Delta h}{\Delta t}&=MF_x+MF_y\\
+\implies\frac{\Delta h}{\Delta t}&=-\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}+u\frac{\partial }{\partial x}+v\frac{\partial }{\partial y}+\Delta x\frac{\partial u}{\partial x}\frac{\partial }{\partial x}+\Delta y\frac{\partial v}{\partial y}\frac{\partial }{\partial y}\right)h\\
+_{\Delta x,\Delta y,\Delta t\to0}\implies\frac{\partial h}{\partial t}&=-h\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right)-u\frac{\partial h}{\partial x}-v\frac{\partial h}{\partial y}
+\end{aligned}$$We write this using our material derivative or vector notation:$$\huge\frac{\partial h}{\partial t}+\underline{\nabla}\cdot(h\underline{v})=0,\,\,\text{or }\frac{Dh}{Dt}+h\underline{\nabla}\cdot\underline{v}=0$$Note that this is not divergence free, as fluid columns can be compressed by decreasing their height.
+
+Putting this all together, we arrive at our inviscid shallow water equations:$$\huge\begin{aligned}
+\text{momentum}&:\frac{D\underline{v}}{Dt}=-g\nabla\eta\\
+\text{mass continuity}&:\frac{\partial h}{\partial t}+\underline{\nabla}\cdot(h\underline{v})=0\\
+\text{height relation}&:h=\eta-\eta_b
+\end{aligned}$$
