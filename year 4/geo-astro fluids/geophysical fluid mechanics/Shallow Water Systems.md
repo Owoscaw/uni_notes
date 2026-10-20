@@ -16,3 +16,9 @@ _{\text{assuming}\,\underline{v}=\underline{v}(x,y,t)}\implies\frac{\partial \un
 \end{aligned}$$Note we assumed $\underline{v}$ is independent of $z$, this is motivated by the fact that the RHS was independent of $z$ - i.e. if the initial velocity was independent of $z$, it should remain independent $z$. We write the above equation as:$$\Huge \frac{D\underline{v}}{Dt}=-g\underline{\nabla}\eta$$
 
 ## Mass continuity equation:
+Consider a column of shallow water:
+![[Shallow Water Systems 2026-10-20 18.31.25.excalidraw]]The cross-sectional area of this column is $\Delta x\Delta y$. If fluid enters the column from the sides, height has to increase to conserve mass. Consider the two sides perpendicular to the $x$-axis, velocity normal to one of the sides is $u$. Velocity through the other normal surface will then be $u+\Delta x\frac{\partial u}{\partial x}$. Similarly, if the thickness of one side is $h$, the thickness has to expand to $h+\Delta x\frac{\partial h}{\partial x}$. The mass flux through one side is given by normal velocity $\times$ surface area $\times$ density. We can then calculate the mass flux along each axis:$$\Large\begin{aligned}
+MF_x&=\rho_0 uh\Delta y-\rho_0\left(u+\Delta x\frac{\partial u}{\partial x}\right)\left(h+\Delta x\frac{\partial h}{\partial x}\right)\Delta y\\
+&=-\rho_0\Delta x\frac{\partial u}{\partial x}h\Delta y-\rho_0 u\Delta x\frac{\partial h}{\partial x}\Delta y-\rho_0\Delta x\frac{\partial h}{\partial x}\Delta y-\rho_0\Delta x\frac{\partial u}{\partial x}\Delta x\frac{\partial h}{\partial x}\Delta y\\
+MF_y&=-\rho_0\Delta y\frac{\partial v}{\partial y}h\Delta x-\rho_0v\Delta y\frac{\partial h}{\partial y}\Delta x-\rho_0\Delta y\frac{\partial v}{\partial y}\Delta y\frac{\partial h}{\partial y}\Delta x
+\end{aligned}$$The rate of change in mass in the fluid column is given by:$$\huge\rho_0\Delta x\Delta y\frac{\Delta h}{\Delta t}=MF_x+MF_y$$
