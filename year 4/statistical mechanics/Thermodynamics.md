@@ -119,3 +119,37 @@ This is rather profound, we have defined a quantitative measure of efficiency fr
 > Petrol burns at $1000\text{K}$ and room temperature is $300\text{K}$, so the efficiency of a Carnot engine between the two is$$\Large\eta_\text{car}\approx1-0.3=0.7$$
 > This is an upper bound on efficiency, unless one could make the fuel burn hotter.
 
+## Carnot cycle for an Ideal gas:
+An ideal gas has the equation of state $pV=cT$, and $E(T,V)=E(T)$ is dependent only on temperature. Now consider a Carnot cycle as we have above:
+> Along the isotherm $AB$, $T=T_H\implies dT=0$ and therefore:$$\huge dE=\frac{dE}{dT}dT=0$$Our first law then dictates:$$\huge\begin{aligned}
+dE&=\dbar Q+\dbar W\\
+&=\dbar Q-pdV=0\\
+\implies\dbar Q&=pdV
+\end{aligned}$$Allowing us to write:$$\Large\begin{aligned}
+Q_H&=\int_A^B\dbar Q\\
+&=\int_A^Bp\,dV\\
+&=\int_A^B\frac{cT}{V}dV\\
+&=cT_H\int_A^B\frac{dV}{V}=cT_H\ln\left(\frac{V_B}{V_A}\right)
+\end{aligned}$$We get a similar result for the $CD$ isotherm:$$\huge Q_C=cT_C\ln\left(\frac{V_C}{V_D}\right)$$Note that we should have a leading minus sign here, as this is the heat leaving the system. However since we drew a nice diagram with arrows above, it is clear that this is the heat exiting the system and we continue with this convention throughout.
+> Along the adiabat $BC$, we have $\dbar Q=0$ and so we get $dE=\dbar W=-p\,dV$ from the first law. Now by the chain rule:$$\huge\begin{aligned}
+dE&=\frac{dE}{dT}dT=-p\,dV\\
+&=-\frac{cT}{V}dV\\
+\implies \frac{dV}{V}&=-\frac{1}{cT}\frac{dE}{dT}dT\equiv df(T)\\
+_\text{where }\,f(T)&=-\frac{1}{c}\int_{T_0}^T\frac{1}{T'}\frac{dE(T')}{dT'}dT'
+\end{aligned}$$Along our adiabatic path, we can write:$$\huge\begin{aligned}
+\int_B^C\frac{dV}{V}&=\int_B^Cdf(T)=f(T_C)-f(T_B)\\
+\implies\ln\left(\frac{V_C}{V_B}\right)&=f(T_C)-f(T_H)
+\end{aligned}$$We again get a similar result for the other adiabat:$$\huge \ln\left(\frac{V_A}{V_D}\right)=f(T_H)-f(T_C)$$Note that this differs from the above by only a minus sign, giving us the result:$$\huge\begin{aligned}
+\ln\left(\frac{V_A}{V_D}\right)&=-\ln\left(\frac{V_C}{V_B}\right)\\
+\implies\frac{V_D}{V_A}&=\frac{V_C}{V_B}\\
+\implies\frac{V_C}{V_D}&=\frac{V_B}{V_A}
+\end{aligned}$$
+> We can now compute the efficiency of this Carnot cycle, as we have expressions for both $Q_C,Q_H$:$$\huge\begin{aligned}
+\eta&=1-\frac{Q_C}{Q_H}\\
+&=1-\frac{cT_C\ln\left(\frac{V_C}{V_D}\right)}{cT_H\ln\left(\frac{V_B}{V_A}\right)}\\
+&=1-\frac{T_C}{T_H}
+\end{aligned}$$This is exactly the thermodynamic temperature, we have:$$\Huge T_\text{thermodynamic}=T_\text{ideal gas}$$
+
+# 
+
+We now switch conventions so that outgoing heat is negative, $Q_2=-Q_C<0$, and incoming heat is positive $Q_1=Q_H>0$. This makes our definition of Carnot efficiency:$$\huge \eta_\text{Carnot}=1+\frac{Q_2}{Q_1}=1-\frac{T_2}{T_1}$$
