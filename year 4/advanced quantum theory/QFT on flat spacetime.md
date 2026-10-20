@@ -106,4 +106,15 @@ Consider a free massive complex scalar field. The action is invariant under phas
 Now let us prove Noether's theorem (again):
 > Consider a field theory for a set of scalar fields $\phi_a$ for $a=1,\dots,N$ with action $S[\phi_a]$. Now suppose this theory is invariant under a continuous symmetry, that is we have an infinitesimal variation of the fields$$\Large\phi_a(x)\to\phi_a(x)+\epsilon\Delta\phi_a(x)+\mathcal{O}(\epsilon^2)$$where $\epsilon$ is an infinitesimal parameter, under which the action is invariant. That is, $\delta_\epsilon S[\phi_a]=0$.
 > Now consider a variation where we allow $\epsilon$ to depend on spacetime:$$\Large\phi_a(x)\to\phi_a(x)+\epsilon(x)\Delta\phi_a(x)+\mathcal{O}(\epsilon^2)$$The action will no longer be invariant, however the variation in the action should still vanish for constant $\epsilon(x)$. Therefore we should expect the variation to take form$$\huge\delta_{\epsilon(x)}S[\phi_a]=\int j^\mu\partial_\mu\epsilon(x)d^4x$$, assuming the field theory is local. Here, $j^\mu(\phi_a,\partial_\nu\phi_a,\dots)$ is a function of the fields and their derivatives and is dependent on the theory. 
-> Integrating this by parts
+> Integrating this by parts:$$\Large\begin{aligned}
+\delta_{\epsilon(x)}S[\phi_a]&=\int\partial_\mu(j^\mu\epsilon)-\partial_\mu j^\mu\epsilon\,d^4x\\
+&=-\int\partial_\mu j^\mu\epsilon\,d^4x
+\end{aligned}$$This holds for any field configuration. Restricting to configurations that satisfy E-L equations (i.e. on-shell), the variation of the action vanishes by definition and so for these configurations we have$$\huge\begin{aligned}
+\delta_{\epsilon(x)}S[\phi_a]&=-\int_\text{on shell}\partial_\mu j^\mu\epsilon(x)d^4x\\
+&=0\\
+\implies\partial_\mu j^\mu&=0
+\end{aligned}$$, as this holds for any choice of $\epsilon(x)$.
+> Therefore there exists a divergence free vector field $j^\mu$, called the conserved current. This is exactly the conserved current we found in previous proofs.
+
+The existence of this current is important, as it implies the existence of a conserved charge. We can expand this contraction to read$$\huge\partial_t j^0(t,x_i)+\partial_i j^i(t,x^i)=0$$, which we integrate over space to get:$$\Large\partial_t\int j^0d^3x+\int\partial_ij^id^3x=0$$The second term here is a total derivative, and so vanishes under our assumptions. Therefore we arrive at the expression$$\huge \frac{d}{dt}Q(t)=0,\,\,Q=\int j^0(t,x_i)d^3x$$
+Note that we could have also considered a variation in the Lagrangian density under the same symmetry variation.
