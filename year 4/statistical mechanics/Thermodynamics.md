@@ -115,6 +115,7 @@ We now have the tools to define our true temperature, the thermodynamic temperat
 (1-\eta(\theta_1,\theta_2))(1-\eta(\theta_2,\theta_3))&=1-\eta(\theta_1,\theta_3)\\
 \implies1-\eta(\theta_H,\theta_C)&=\frac{f(\theta_C)}{f(\theta_H)}
 \end{aligned}$$, since the LHS contains functions of $\theta_2$ but the RHS does not - implying that it must cancel out somehow (note we also relabeled $\theta_1,\theta_3\to\theta_H,\theta_C$). We now define the thermodynamic temperature $T$ by$$\Huge T=cf(\theta)$$where $f(\theta)$ is the function defined above, and $c$ is a constant fixed so that $T=273.15\text{K}$ at the triple point of ice-water-steam (what the fuck). We then have a nice relation between the efficiency of a reversible engine operating between two temperatures:$$\Large\eta(T_H,T_C)=1-\frac{T_C}{T_H}=1-\frac{Q_C}{Q_H}$$
-This is rather profound, we have defined a quantitative measure of efficiency from a set of axioms and some pretty drawings. To revel in our joy, let us consider the example of an automobile engine:
-> Gasoline burns at $1000\text{K}$ and room temperature is $300\text{K}$, so the efficiency of a Carnot engine between the two is$$\Large\eta_\text{car}\approx1-0.3=0.7$$
+This is rather profound, we have defined a quantitative measure of efficiency from a set of axioms and some pretty drawings. To revel in our joy, let us consider the example of an car engine:
+> Petrol burns at $1000\text{K}$ and room temperature is $300\text{K}$, so the efficiency of a Carnot engine between the two is$$\Large\eta_\text{car}\approx1-0.3=0.7$$
 > This is an upper bound on efficiency, unless one could make the fuel burn hotter.
+
