@@ -68,7 +68,7 @@ The general expression for change in work done for a system is written as$$\Huge
 | Conserved particle number | $N$ (# of particles) | $\mu$ (chemical potential) |
 We can therefore write a more general version of the $1$st law of thermodynamics:$$\Huge dE=\sum_iy_idx_i+\dbar Q$$We look to write $\dbar Q$ as an exact differential in the form $\dbar Q=\alpha\,d\sigma$. Considering two isolated systems $A,B$ separated by a diathermal wall, we call the systems in mechanical equilibrium if $p_A=p_B$ and thermal equilibrium if $\theta_A=\theta_B$. It is therefore natural to set $\alpha$ to be the empirical temperature $\theta$:$$\Huge \implies\dbar Q=\theta\,d\sigma$$However, what does $d\sigma$ represent?...
 
-# 2nd law and the Arrow of Time:
+# 2nd law of thermodynamics:
 
 ## Engines and reversible cycles:
 Reversible processes are a subset of quasi-static processes, but have the additional property that they can be ran both forward and backward in time. For such processes, friction is absent and heat comes exclusively from temperature differences. In the $p,V$ plane, consider a closed path (cycle) $C$. Reversible processes have the property that $C$ can be traversed in either direction. We must also have:$$\Huge\Delta E=0\implies W=-Q$$
@@ -76,7 +76,7 @@ When $Q>0$, we are traversing the direction where $W<0$. That is, the system con
 
 Consider traversing $C$ in the other direction, so we have $Q<0,W>0$. Here, work is converted to heat - we call this a fridge.
 
-## 2nd Law of Thermodynamics:
+## 2nd Law:
 We have two versions of this law:
 > Kelvin: No process is possible whose only effect is to extract heat from a hot reservoir and convert it entirely to work. That is, there is no such thing as an ideal engine. In a physical engine with $Q_H$ being inputted, an amount of heat $Q_C>0$ is dissipated and the work converted comes to $W=Q_H-Q_C$.
 > Clausius: No process is possible whose only effect is to transfer heat from a colder to a hotter body. That is, there is no such thing as an ideal fridge.
@@ -150,6 +150,34 @@ _\text{where }\,f(T)&=-\frac{1}{c}\int_{T_0}^T\frac{1}{T'}\frac{dE(T')}{dT'}dT'
 &=1-\frac{T_C}{T_H}
 \end{aligned}$$This is exactly the thermodynamic temperature, we have:$$\Huge T_\text{thermodynamic}=T_\text{ideal gas}$$
 
-# 
+# Entropy and the arrow of time:
 
-We now switch conventions so that outgoing heat is negative, $Q_2=-Q_C<0$, and incoming heat is positive $Q_1=Q_H>0$. This makes our definition of Carnot efficiency:$$\huge \eta_\text{Carnot}=1+\frac{Q_2}{Q_1}=1-\frac{T_2}{T_1}$$
+We now switch conventions so that outgoing heat is negative, $Q_2=-Q_C<0$, and incoming heat is positive $Q_1=Q_H>0$. This makes our definition of Carnot efficiency:$$\huge \eta_\text{Carnot}=1+\frac{Q_2}{Q_1}=1-\frac{T_2}{T_1}$$Now let us consider our Carnot cycle as before, however let us add a point $E$ along $AB$, $G$ along $BC$, and $F$ as shown:![[Thermodynamics 2026-10-21 10.11.53.excalidraw]]Our cycle is $AEFGCD$. From before we have $\frac{Q_{AB}}{T_{AB}}+\frac{Q_{CD}}{T_{CD}}=0$ so we label $Q_1=Q_{AB},Q_2=Q_{CD},T_1=T_{AB},T_2=T_{CD}$. Since $EBGF$ also forms a Carnot cycle, we have $\frac{Q_{EB}}{T_{EB}}+\frac{Q_{GF}}{T_{GF}}=0$. The fact that the whole cycle is also Carnot implies $Q_{AB}=Q_{AE}+Q_{EB}$ and so:$$\huge\frac{Q_{AB}-Q_{AE}}{T_{EB}}+\frac{Q_{GF}}{T_{GF}}=0$$Since $AB$ and $FG$ are isotherms, $T_{AB}=T_{AE}=T_{EB}$ and $T_{FG}=T_{GF}$:$$\Large\begin{aligned}
+\implies\frac{Q_{AB}}{T_{AB}}-\frac{Q_{AE}}{T_{AE}}-\frac{Q_{FG}}{T_{FG}}&=0\\
+\implies\frac{Q_{CD}}{T_{CD}}+\frac{Q_{AE}}{T_{AE}}+\frac{Q_{FG}}{T_{FG}}&=
+\end{aligned}$$This suggests that for arbitrary cycles satisfy the above, $\frac{Q_i}{T_i}$ sums to zero. Consider summing over infinitesimally small adiabatic and isothermal legs that approximate some arbitrarily-shaped Carnot cycle. This hints at the following$$\Huge\oint_C\frac{\dbar Q}{T}=0$$, where $C$ is the Carnot cycle. 
+
+Consider a cycle $C$ between two points $A,B$ with two legs ($\gamma_1,\gamma_2$). By the above we then have$$\huge\oint_C\frac{\dbar Q}{T}=\int_{\gamma_1}\frac{\dbar Q}{T}-\int_{\gamma_2}\frac{\dbar Q}{T}=0$$, implying path independence. This allows us to define a new function of state, $S(A)=S(p,V)$ we define as:$$\Huge S(A)=S(0)+\int_0^A\frac{\dbar Q}{T}=S(0)+\int_0^AdS$$Here, $S(0)$ is some reference state. This quantity $S$ is known as entropy and must satisfy:$$\huge\begin{aligned}
+dS&=\frac{\dbar Q}{T}\\
+\implies dE&=\dbar W+\dbar Q\\
+&=-p\,dV+TdS
+\end{aligned}$$
+## Irreversibility:
+Let us now consider irreversible processes, firstly with an irreversible engine running a Carnot fridge. The first law then dictates$$\huge W=Q_H'-Q_C'=Q_H-Q_C$$where $Q'$ are the quantities associated with the engine, $Q$ are associated with the Carnot fridge, and $W$ is the work done on the fridge. The second law also dictates$$\huge Q_H'-Q_H\geq0$$, so we can write:$$\Large
+\frac{Q_H'}{T_H}-\frac{Q_C'}{T_C}=\left(\frac{Q_H}{T_H}-\frac{Q_C}{T_C}\right)+(Q_H'-Q_H)\left(\frac{1}{T_H}-\frac{1}{T_C}\right)\leq0$$The first bracketed term is $0$ as it refers to our Carnot engine, the second is positive, and the third is negative by the second law ($T_H>T_C$). This inequality is saturated when the engine mentioned is Carnot. We then arrive at Clausius' inequality where we can have an irreversible process anywhere inside the line integral:$$\Huge\oint_C\frac{\dbar Q}{T}\leq0$$Here, $C$ is a possibly irreversible cycle. As before, let us consider a cycle with two legs between $A,B$where $\gamma_1$ (one of the legs) is possibly irreversible:$$\Large\begin{aligned}
+\oint_C\frac{\dbar Q}{T}&=0\\
+\int_{\gamma_1}\frac{\dbar Q}{T}-\int_{\gamma_2}\frac{\dbar Q}{T}&=\\
+\implies\int_{\gamma_2}\frac{\dbar Q}{T}=\int_{\gamma_1}\frac{\dbar Q}{T}&=S(B)-S(A)\\
+\implies\int_{\gamma_1}\frac{\dbar Q}{T}&\leq S(B)-S(A)
+\end{aligned}$$Where the inequality is saturated for a reversible cycle. Infinitesimally, we write this as:$$\Huge \dbar Q\leq TdS$$
+Supposing that our system is isolated, $\gamma_1$ must be an adiabatic process and therefore $\dbar Q=0$:$$\Huge\implies\int_{\gamma_1}\frac{\dbar Q}{T}=0\implies S(B)\geq S(A)$$That is, the entropy of an isolated system never decreases. This is the "pop culture" statement of the second law.
+
+Note that for the isotherm $CD$ in our Carnot cycle, $Q<0\implies\dbar Q<0\implies dS<0$. However this does not violate the second law as the system is not isolated, the system is in contact with hot/cold reservoirs along adiabatic legs. This defines our arrow of time, time flows such that entropy increases into the future.
+
+Consider an ideal gas expanding at constant temperature ($AB$):$$\Large\begin{aligned}
+\implies dE&=TdS-p\,dV,\,\,E=E(T)\\
+\implies\int TdS&=\int p\,dV\\
+\implies T_H\Delta S&=cT_H\int\frac{dV}{V}\\
+&=cT_H\ln\left(\frac{V_B}{V_A}\right)\\
+\implies \Delta S&=c\ln\left(\frac{V_B}{V_A}\right)
+\end{aligned}$$
