@@ -27,8 +27,11 @@ These objects are so useful since they allow us to make coordinate-independent s
 
 # Manifolds:
 
-We want to generalise flat spacetime geometry to consider smoothly curved geometries, characterised by the spacetime looking locally flat on small enough scales. We express this by saying that around every point, there is some coordinate system mapping some local neighbourhood of the point onto $\Re^n$. Therefore we must consider general coordinates, not necessarily ones adapted to inertial observers. By thinking of coordinates as a map from parts of spacetime to open regions of $\Re^n$, $x^\mu(p)$ can be thought of as collections of functions.
+We want to generalise flat spacetime geometry to consider smoothly curved geometries, characterised by the spacetime looking locally flat on small enough scales. We express this by saying that around every point, there is some coordinate system mapping some local neighbourhood of the point onto $\Re^n$. Therefore we must consider general coordinates, not necessarily ones adapted to inertial observers. By thinking of coordinates as a map from parts of spacetime to open regions of $\Re^n$, $x^\mu(p)$ can be thought of as collections of functions:![[Manifolds and tensors 2026-10-21 12.13.32.excalidraw]]
 
+Special relativity had come coordinate system associated with inertial observers, in general relativity we move away from these coordinate systems - we do not assume the existence of coordinate systems integral to the theory. 
+
+## Definition:
 Let $n$ be a fixed positive integer. Given a set $M$, an $n$-dimensional chart on $M$ is a bijection $\varphi$ from a subset $U\subset M$ to an open subset $\varphi(U)\subset\Re^n$, defining coordinates $x^\mu(p)$ for each $p\in U$. An atlas for $M$ is a collection of charts $\{(U_a,\varphi_a)\}$ such that:
 > $\bigcup_aU_a=M$, the charts cover the whole set
 > If $U_a\cap U_b\neq\emptyset$, then the map $F=\varphi_a\circ\varphi_b^{-1}:\Re^n\rightarrow\Re^n(\tilde x^\mu(x^\nu))$ is differentiable where it is defined.
