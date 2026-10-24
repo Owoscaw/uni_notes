@@ -53,8 +53,8 @@ W&=\int\underline{F}\cdot d\underline{x}\\
 
 ## Heat capacities:
 Heat capacity measures how the energy of system responds to a change in temperature:
-> For a fixed volume, we can define heat capacity:$$\Large C_V=\frac{\dbar Q}{dt}\vert_V=\frac{dE+p\,dV}{dt}\vert_V=\frac{\partial E}{\partial t}\vert_V$$
-> For a fixed pressure, we can provide an alternative definition:$$\Large C_p=\frac{\dbar Q}{dt}\vert_p=\frac{dE+p\,dV}{dt}\vert_p=\frac{\partial E}{\partial t}\vert_p+p\frac{\partial V}{\partial t}\vert_p$$
+> For a fixed volume, we can define heat capacity:$$\Large C_V=\frac{\dbar Q}{dT}\vert_V=\frac{dE+p\,dV}{dT}\vert_V=\frac{\partial E}{\partial T}\vert_V$$
+> For a fixed pressure, we can provide an alternative definition:$$\Large C_p=\frac{\dbar Q}{dT}\vert_p=\frac{dE+p\,dV}{dT}\vert_p=\frac{\partial E}{\partial T}\vert_p+p\frac{\partial V}{\partial T}\vert_p$$
 
 # Generalised displacements:
 
