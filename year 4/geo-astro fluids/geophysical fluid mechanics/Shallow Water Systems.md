@@ -37,7 +37,7 @@ Putting this all together, we arrive at our inviscid shallow water equations:$$\
 
 ## Deep water:
 Consider an example of a dam/membrane creating two levels of fluid that we remove at $t=0$ to see how the fluid evolves in time:![[Shallow Water Systems 2026-10-25 15.31.31.excalidraw]]Since this is one dimensional flow, we can write our initial surface as$$\large\eta(x,t=0)=\begin{cases}\eta_0 & x<0 \\
--\eta_0 & x>0\end{cases}=-\eta_0\text{sgn}(x)$$, noting that our fluid is initially at rest $u(x,t=0)=0$. To do our analysis, we assume disturbances to the initial state are relatively small. I.e. we write:$$\Large h(x,t)=H+\eta(x,t),\,\,u=u(x,t)$$Using these expressions in our shallow water equations leads to$$\Large\begin{aligned}
+-\eta_0 & x>0\end{cases}=-\eta_0\sgn(x)$$, noting that our fluid is initially at rest $u(x,t=0)=0$. To do our analysis, we assume disturbances to the initial state are relatively small. I.e. we write:$$\Large h(x,t)=H+\eta(x,t),\,\,u=u(x,t)$$Using these expressions in our shallow water equations leads to$$\Large\begin{aligned}
 \frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}&=-g\frac{\partial \eta}{\partial x}\\
 \frac{\partial \eta}{\partial t}+\frac{\partial }{\partial x}((H+\eta)u)&=0\\
 _{\text{neglect products of }\eta,u}\implies\frac{\partial u}{\partial t}+g\frac{\partial \eta}{\partial x}&=0\\
@@ -47,5 +47,26 @@ _{\text{neglect products of }\eta,u}\implies\frac{\partial u}{\partial t}+g\frac
 \frac{\partial }{\partial t}\left(\frac{\partial \eta}{\partial t}+H\frac{\partial u}{\partial x}\right)&=\frac{\partial^2\eta}{\partial t^2}+H\frac{\partial^2u}{\partial t\partial x}=0\\
 _{\text{assume }\partial_x,\partial_t\text{ commute}}\implies\frac{\partial^2\eta}{\partial t^2}-c_0^2\frac{\partial^2\eta}{\partial x^2}&=0,\,\,c_0^2=gH
 \end{aligned}$$This is just the one-dimensional wave equation, a surprise to no-one. For unbounded domains, we use the d'Alembert solution$$\Large\eta(x,t)=\frac{1}{2}(F(x-c_0t)+F(x+c_0t))$$, where $F$ is the initial condition. This makes our solution:$$\Large\begin{aligned}
-\eta(x,t)&=-\frac{\eta_0}{2}(\text{sgn}(x-c_0t)+\sgn)
+\eta(x,t)&=-\frac{\eta_0}{2}(\sgn(x-c_0t)+\sgn(x+c_0t))\\
+&=\begin{cases}\eta_0 & x<-c_0t\\
+0 & -c_0t<x<c_0t\\
+-\eta_0 & x>c_0t\end{cases}
+\end{aligned}$$This suggests half of the disturbance moves backwards, and the other half forwards at the speed $c_0=\sqrt{gH}$. Note that this suggests the disturbances moves faster in deeper water:![[Shallow Water Systems 2026-10-25 15.53.38.excalidraw]]
+
+## Nonlinear wet-dry break:
+Now let us tackle this problem without neglecting small product terms, i.e. we do not linearise. Consider a reservoir with constant depth $H$ with a dry region next to it separated by a dam that we remove at $t=0$:![[Shallow Water Systems 2026-10-25 15.56.32.excalidraw]]
+Over a flat ($\eta_0=0$) bottom, our one-dimensional shallow water equations become:$$\Large\begin{aligned}
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}&=-g\frac{\partial h}{\partial x}\\
+\frac{\partial h}{\partial t}+\frac{\partial (hu)}{\partial x}&=0\\
+h(x,0)&=\begin{cases}H & x<0\\
+0 & x>0\end{cases}\\
+u(x,0)&=0
 \end{aligned}$$
+We retain the nonlinear advection term. There is no specified length-scale here, so we expect the horizontal scale of the solution to grow with time. To determine the speed of this growth, we seek a solution of the form$$\Large h(x,t)=h(\xi),\,\,u(x,t)=u(\xi),\,\,\xi=\frac{x}{t^n}$$, because I say so. $\xi$'s $x$ and $t$ derivatives are calculated nicely:$$\Large\frac{\partial \xi }{\partial t}=-\frac{n}{t}\xi,\,\,\frac{\partial \xi}{\partial t}=\frac{1}{t^n}$$This makes our momentum equation:$$\Large-\frac{n\xi }{t}\frac{du}{d\xi }+\frac{u}{t^n}\frac{du}{d\xi }=-\frac{g}{t^n}\frac{dh}{d\xi }$$This highlights the benefit of seeking a solution in this form, the momentum equation is now an ODE. For this to hold for all time, we expect same $t$ dependence on LHS and RHS, forcing $n=1$. Note we could've done this with the mass equation aswell.
+
+Over time evolution, the disturbed region will simply expand away from the initial dam position. This motivates a solution depending on $x,t$ through the relation:$$\Huge \xi=\frac{x}{t}$$This is known as a self-similar solution. Rewriting our space/time derivatives in terms of $\xi$$$\Large \frac{\partial }{\partial t}=-\frac{\xi}{t}\frac{d}{d\xi },\,\,\frac{\partial }{\partial x}=\frac{1}{t}\frac{d}{d\xi}$$makes the momentum and mass equations take form:$$\Large\begin{aligned}_\text{momentum }(u-\xi)\frac{du}{d\xi}+g\frac{dh}{d\xi }&=0\\
+_\text{mass }(u-\xi )\frac{dh}{d\xi }+h\frac{du}{d\xi }&=0\\
+\implies\begin{pmatrix}u-\xi  & g\\
+h & u-\xi \end{pmatrix}\begin{pmatrix}u_\xi \\
+h_\xi \end{pmatrix}&=0
+\end{aligned}$$For a non-trivial solution, the determinant of this matrix must vanish:$$\huge\implies(u-\xi )^2=gh$$Writing $c=\sqrt{gh}$, we can write the above as $u-\xi=c$.
