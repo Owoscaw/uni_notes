@@ -118,3 +118,7 @@ Now let us prove Noether's theorem (again):
 
 The existence of this current is important, as it implies the existence of a conserved charge. We can expand this contraction to read$$\huge\partial_t j^0(t,x_i)+\partial_i j^i(t,x^i)=0$$, which we integrate over space to get:$$\Large\partial_t\int j^0d^3x+\int\partial_ij^id^3x=0$$The second term here is a total derivative, and so vanishes under our assumptions. Therefore we arrive at the expression$$\huge \frac{d}{dt}Q(t)=0,\,\,Q=\int j^0(t,x_i)d^3x$$
 Note that we could have also considered a variation in the Lagrangian density under the same symmetry variation.
+
+## Hamiltonian formalism:
+Recall how we construct the [[Hamiltonian Formalism#Phase space|Hamiltonian]] in classical mechanics. Given $N$ degrees of freedom $q_a$, the canonical conjugate momentum is define as$$\huge p_a=\frac{\partial L}{\partial \dot q_a}$$, allowing us to define the Hamiltonian:$$\huge H(q_a,p_a)=\sum_{a=1}^Np_a\dot q_a-L(q_a,\dot q_a)$$
+Proceeding analogously for field theory, we construct our canonical conjugate momentum for a field $\phi_a(t,\underline{x})$ from the Lagrangian density$$\huge \pi_a(t,\underline{x})=\frac{\partial \mathcal{L}}{\partial (\partial_t\phi_a(t,\underline{x}))}$$, allowing us to write our (cooler) Hamiltonian density as:$$$$
