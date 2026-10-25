@@ -121,4 +121,16 @@ Note that we could have also considered a variation in the Lagrangian density un
 
 ## Hamiltonian formalism:
 Recall how we construct the [[Hamiltonian Formalism#Phase space|Hamiltonian]] in classical mechanics. Given $N$ degrees of freedom $q_a$, the canonical conjugate momentum is define as$$\huge p_a=\frac{\partial L}{\partial \dot q_a}$$, allowing us to define the Hamiltonian:$$\huge H(q_a,p_a)=\sum_{a=1}^Np_a\dot q_a-L(q_a,\dot q_a)$$
-Proceeding analogously for field theory, we construct our canonical conjugate momentum for a field $\phi_a(t,\underline{x})$ from the Lagrangian density$$\huge \pi_a(t,\underline{x})=\frac{\partial \mathcal{L}}{\partial (\partial_t\phi_a(t,\underline{x}))}$$, allowing us to write our (cooler) Hamiltonian density as:$$$$
+Proceeding analogously for field theory, we construct our canonical conjugate momentum for a field $\phi_a(t,\underline{x})$ from the Lagrangian density$$\huge \pi_a(t,\underline{x})=\frac{\partial \mathcal{L}}{\partial (\partial_t\phi_a(t,\underline{x}))}$$, allowing us to write our (cooler) Hamiltonian density as:$$\large\mathcal{H}(\phi_a,\pi_a,\nabla\phi_a)=\sum_{a=1}^N\pi_a(t, \underline{x})\partial_a\phi_a(t,\underline{x})-\mathcal{L}(\phi_a,\partial_\mu\phi_a)$$Note that here, we substitute in for $\partial_t\phi_a$ in terms of our canonical momentum $\pi_a$. The Hamiltonian is then given by the whole space integral of the above:$$\huge H=\int\mathcal{H}d^3x$$This can be interpreted as the energy of our system. For field theories invariant under time translations, this symmetry leads to conservation of energy. That is, we can derive energy as the Noether charge associated with time translation symmetry. For example:
+> Consider a free massive real scalar field with Lagrangian density and potential such that:$$\Large\begin{aligned} \mathcal{L}&=-\frac{1}{2}\eta^{\mu\nu}\partial_\mu\phi\partial_\nu\phi-\frac{1}{2}m^2\phi^2\\
+&=\frac{1}{2}(\partial_t\phi)^2-\frac{1}{2}\nabla\phi\cdot\nabla\phi-\frac{1}{2}m^2\phi^2\\
+\implies\pi(t,\underline{x})&=\frac{\partial \mathcal{L}}{\partial (\partial_t\phi)}=\partial_t\phi
+\end{aligned}$$
+> We can then write our Hamiltonian density:$$\Large\begin{aligned}
+\mathcal{H}&=\pi\partial_t\phi-\left(\frac{1}{2}\left(\partial_t\phi\right)^2-\frac{1}{2}\nabla\phi\cdot\nabla\phi-\frac{1}{2}m^2\phi^2\right)\\
+&=\pi^2-\left(\frac{1}{2}\pi^2-\frac{1}{2}\nabla\phi\cdot\nabla\phi-\frac{1}{2}m^2\phi^2\right)\\
+&=\frac{1}{2}\pi^2+\frac{1}{2}\nabla\phi\cdot\nabla\phi+\frac{1}{2}m^2\phi^2
+\end{aligned}$$
+> Note this is a manifestly positive-definite quantity, consistent with the energy of a system.
+
+Observe how we have lost Lorentz-symmetry due to our choice of "time direction" when defining conjugate momentum - not very covariant of us.

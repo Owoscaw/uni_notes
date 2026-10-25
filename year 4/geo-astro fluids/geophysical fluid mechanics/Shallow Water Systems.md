@@ -32,3 +32,20 @@ Putting this all together, we arrive at our inviscid shallow water equations:$$\
 \text{mass continuity}&:\frac{\partial h}{\partial t}+\underline{\nabla}\cdot(h\underline{v})=0\\
 \text{height relation}&:h=\eta-\eta_b
 \end{aligned}$$
+
+# Dam break example:
+
+## Deep water:
+Consider an example of a dam/membrane creating two levels of fluid that we remove at $t=0$ to see how the fluid evolves in time:![[Shallow Water Systems 2026-10-25 15.31.31.excalidraw]]Since this is one dimensional flow, we can write our initial surface as$$\large\eta(x,t=0)=\begin{cases}\eta_0 & x<0 \\
+-\eta_0 & x>0\end{cases}=-\eta_0\text{sgn}(x)$$, noting that our fluid is initially at rest $u(x,t=0)=0$. To do our analysis, we assume disturbances to the initial state are relatively small. I.e. we write:$$\Large h(x,t)=H+\eta(x,t),\,\,u=u(x,t)$$Using these expressions in our shallow water equations leads to$$\Large\begin{aligned}
+\frac{\partial u}{\partial t}+u\frac{\partial u}{\partial x}&=-g\frac{\partial \eta}{\partial x}\\
+\frac{\partial \eta}{\partial t}+\frac{\partial }{\partial x}((H+\eta)u)&=0\\
+_{\text{neglect products of }\eta,u}\implies\frac{\partial u}{\partial t}+g\frac{\partial \eta}{\partial x}&=0\\
+\implies\frac{\partial \eta}{\partial t}+H\frac{\partial u}{\partial x}&=0
+\end{aligned}$$, where we proceed to cross differentiate:$$\Large\begin{aligned}
+\frac{\partial }{\partial x}\left(\frac{\partial u}{\partial t}+g\frac{\partial \eta}{\partial x}\right)&=\frac{\partial^2u}{\partial x\partial t}+g\frac{\partial^2\eta}{\partial x^2}=0\\
+\frac{\partial }{\partial t}\left(\frac{\partial \eta}{\partial t}+H\frac{\partial u}{\partial x}\right)&=\frac{\partial^2\eta}{\partial t^2}+H\frac{\partial^2u}{\partial t\partial x}=0\\
+_{\text{assume }\partial_x,\partial_t\text{ commute}}\implies\frac{\partial^2\eta}{\partial t^2}-c_0^2\frac{\partial^2\eta}{\partial x^2}&=0,\,\,c_0^2=gH
+\end{aligned}$$This is just the one-dimensional wave equation, a surprise to no-one. For unbounded domains, we use the d'Alembert solution$$\Large\eta(x,t)=\frac{1}{2}(F(x-c_0t)+F(x+c_0t))$$, where $F$ is the initial condition. This makes our solution:$$\Large\begin{aligned}
+\eta(x,t)&=-\frac{\eta_0}{2}(\text{sgn}(x-c_0t)+\sgn)
+\end{aligned}$$
