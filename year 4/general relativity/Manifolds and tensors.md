@@ -1,4 +1,4 @@
-
+![[Manifolds and tensors 2026-10-25 01.18.02.excalidraw]]
 # Introducing tensors:
 In our quest to formulate straight lines, we could consider another [[Special relativity#Curves and $4$-vectors|vector]]-like object: the gradient of a function. This can be thought of as the normal to the surface $f=\text{constant}$. For a function $f(x^\mu)$, it's gradient $\partial_\mu f$ is a vector:$$\Huge\tilde\partial_\mu f=\frac{\partial x^\nu}{\partial \tilde x^\mu}\partial_\nu f$$Compared to a $4$-vector $(\tilde V^\mu=\frac{\partial \tilde x^\mu}{\partial x^\nu}V^\nu)$, we see that the gradient transforms in the opposite way. The set of all such vectors forms a vector space, called the cotangent space as it is the dual space to the tangent space. General elements in this space are called covectors. 
 
