@@ -64,12 +64,17 @@ u(x,0)&=0
 \end{aligned}$$
 We retain the nonlinear advection term. There is no specified length-scale here, so we expect the horizontal scale of the solution to grow with time. To determine the speed of this growth, we seek a solution of the form$$\Large h(x,t)=h(\xi),\,\,u(x,t)=u(\xi),\,\,\xi=\frac{x}{t^n}$$, because I say so. $\xi$'s $x$ and $t$ derivatives are calculated nicely:$$\Large\frac{\partial \xi }{\partial t}=-\frac{n}{t}\xi,\,\,\frac{\partial \xi}{\partial t}=\frac{1}{t^n}$$This makes our momentum equation:$$\Large-\frac{n\xi }{t}\frac{du}{d\xi }+\frac{u}{t^n}\frac{du}{d\xi }=-\frac{g}{t^n}\frac{dh}{d\xi }$$This highlights the benefit of seeking a solution in this form, the momentum equation is now an ODE. For this to hold for all time, we expect same $t$ dependence on LHS and RHS, forcing $n=1$. Note we could've done this with the mass equation aswell.
 
-Over time evolution, the disturbed region will simply expand away from the initial dam position. This motivates a solution depending on $x,t$ through the relation:$$\Huge \xi=\frac{x}{t}$$This is known as a self-similar solution. Rewriting our space/time derivatives in terms of $\xi$$$\Large \frac{\partial }{\partial t}=-\frac{\xi}{t}\frac{d}{d\xi },\,\,\frac{\partial }{\partial x}=\frac{1}{t}\frac{d}{d\xi}$$makes the momentum and mass equations take form:$$\Large\begin{aligned}_\text{momentum }(u-\xi)\frac{du}{d\xi}+g\frac{dh}{d\xi }&=0\\
+Over time evolution, the disturbed region will simply expand away from the initial dam position. This motivates a solution depending on $x,t$ through the relation:$$\Huge \xi=\frac{x}{t}$$This is known as a self-similar solution:
+> These generally take form $x^m/t^n$.
+> Look for these when a problem has no defined time/length scale
+> This worked here as we had equal $n$ dependence on each side of our momentum equation. If $\frac{u}{t^{n+1}}$ appeared in front of $\frac{du}{d\xi}$ instead, we would not be able to determine $n$ and a self-similar solution would not have worked.
+
+Rewriting our space/time derivatives in terms of $\xi$$$\Large \frac{\partial }{\partial t}=-\frac{\xi}{t}\frac{d}{d\xi },\,\,\frac{\partial }{\partial x}=\frac{1}{t}\frac{d}{d\xi}$$makes the momentum and mass equations take form:$$\Large\begin{aligned}_\text{momentum }(u-\xi)\frac{du}{d\xi}+g\frac{dh}{d\xi }&=0\\
 _\text{mass }(u-\xi )\frac{dh}{d\xi }+h\frac{du}{d\xi }&=0\\
 \implies\begin{pmatrix}u-\xi  & g\\
 h & u-\xi \end{pmatrix}\begin{pmatrix}u_\xi \\
 h_\xi \end{pmatrix}&=0
-\end{aligned}$$For a non-trivial solution, the determinant of this matrix must vanish:$$\huge\implies(u-\xi )^2=gh$$Writing $c=\sqrt{gh}$, we can write the above as $u-\xi=c$. Writing$$\Large h=\frac{c^2}{g},\,\,\frac{dh}{d\xi }=\frac{2c}{g}\frac{dc}{d\xi }$$we can substitute the above into our momentum equation to get:$$\Large\begin{aligned}
+\end{aligned}$$For a non-trivial solution, the determinant of this matrix must vanish (otherwise $u,h=\text{constant}$):$$\huge\implies(u-\xi )^2=gh$$Writing $c=\sqrt{gh}$, we can write the above as $u-\xi=c$. Note we discard $\xi-u=c$ as a branch as $\lim_{x\to0^-}u>0$ (the water should initially jump forward). Writing$$\Large h=\frac{c^2}{g},\,\,\frac{dh}{d\xi }=\frac{2c}{g}\frac{dc}{d\xi }$$we can substitute the above into our momentum equation to get:$$\Large\begin{aligned}
 \frac{du}{d\xi}+2\frac{dc}{d\xi}&=0\\
 \implies u+2c&=\text{constant}
 \end{aligned}$$
