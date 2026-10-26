@@ -47,7 +47,7 @@ We can define a coordinate transformation where coordinate systems $x^\mu,\tilde
 
 The utility of this notation is that it defines a differentiable structure on the underlying set, that is, a notion of smoothness. Given a set $M$, we can define a function $f$ on $M$ as a map $f:M\rightarrow\Re,f:p\rightarrow f(p)$. If $M$ is a manifold, the charts define functions $f\circ\phi^{-1}:\Re^n\to\Re$, which send $x^\mu\to f(p(x^\mu))$. We say $f$ is differentiable function on $M$ if these functions $f\circ\phi^{-1}$ are differentiable where defined. By differentiability of $\tilde x^\mu(x^\nu)$, the notions of differentiability obtained from $f\circ\phi^{-1},f\circ\tilde\phi^{-1}$ agree on overlaps.
 
-# Vectors and covectors:
+# Vectors, covectors, and tensors:
 
 ## Vectors:
 In curved space, we define the [[Special relativity#Curves and $4$-vectors|tangent vector]] in terms of the directional derivative - giving a coordinate independent definition. We can then determine components wrt some coordinates from this definition:
@@ -71,4 +71,36 @@ Note that in our more general context, the coordinate transformation $\tilde x^\
 
 ## Cotangent vectors:
 Given a tangent space $T_p$, we define the cotangent space $T_p^*$ as the dual space. That is, $T_p^*$ is the space of linear maps $\omega:T_p\to\Re$. Linearity implies the map is characterised by its action on basis vectors:$$\Large \partial_\mu:\omega_\mu=\omega(\partial_\mu),\,\,\omega(V)=V^\mu\omega(\partial_\mu)=V^\mu\omega_\mu$$
-Each $\omega$ is a cotangent vector (or covector)
+Each $\omega$ is a cotangent vector (or covector);
+> The prototypical example of a covector is the differential $df$ of a function $f$. $f$ naturally maps $V\in T_p$ to a real number $V(f)$, so we can think of defining $df\in T_p^*$ by $df(V)=V(f)$. 
+> Component-wise we have $$\Large (df)_\mu=df(\partial_\mu)=\partial_\mu(f)=\partial_\mu f$$, i.e. the differential is a normal vector to the surface $f=\text{constant}$.
+
+We can think of the coordinates as function $x^\mu$ on a manifold $M$, then the associated differentials $dx^\mu$ form a basis of $T_p^*$. We say such a basis is dual to the basis $\partial_\mu\in T_p$, i.e.:$$\huge dx^\nu(\partial_\mu)=\partial_\mu(x^\nu)=\delta^\nu_\mu$$
+Our linear maps $\omega_\mu$ can then be thought of as the components of $\omega$ wrt this basis, i.e. if $\omega=\omega_\mu dx^\mu$ we can write$$\Large \omega(\partial_\mu)=\omega_\nu dx^\nu(\partial_\mu)=\omega_\nu\delta^\nu_\mu=\omega_\mu$$, reproducing our definition of $\omega_\mu$. 
+
+Analogous to the tangent space, any element in $T_p^*$ can be written as the differential of some function. We can also define covector fields, however there will not generally exist a function such that a covector field is its differential. 
+
+Under coordinate transformations:$$\Large\begin{aligned}
+\omega=\omega_\nu dx^\nu&=\tilde \omega_\mu d\tilde x^\mu\\
+&=\tilde\omega_\mu\frac{\partial \tilde x^\mu}{\partial x^\nu}dx^\nu\\
+\implies\omega_\nu&=\tilde\omega_\mu\frac{\partial \tilde x^\mu}{\partial x^\nu}
+\end{aligned}$$Note that this is linear, but opposite to vector transformation. Our action of a covector on a vector was defined with no reference to coordinates, so we expect $\omega_\mu V^\mu$ to be coordinate-independent:$$\Large\begin{aligned}
+\tilde\omega_\nu\tilde V^\mu&=\frac{\partial x^\nu}{\partial \tilde x^\mu}\omega_\nu\frac{\partial \tilde x^\mu}{\partial x^\rho}V^\rho\\
+&=\frac{\partial x^\nu}{\partial x^\rho}\omega_\nu V^\rho\\
+&=\delta^\nu_\rho\omega_\nu V^\rho=\omega_\nu V^\nu
+\end{aligned}$$
+## Tensors:
+Thinking of covectors as linear maps $T_p\to\Re$ and vectors $T^*_p\to\Re$, we define $V(\omega)=\omega(V)$. Let us generalise this notion to define a tensor of type $[r,s]$ at a point $p$ as a linear map:$$\huge T_{[r,s]}:(T_p^*)^r\times T_p^s\to\Re$$That is, a tensor takes $r$ covectors and $s$ vectors to a single real number. A type $[r,s]$ tensor field defines an $[r,s]$ tensor at each point. Note:
+> Scalars are $[0,0]$ tensors
+> Vectors are $[1,0]$ tensors
+> Covectors are $[0,1]$ tensors
+> Everything is a fucking tensor i guess
+
+Since we defined tensors as linear maps, they are completely specified by their action on basis vectors. That is, tensors are characterised by their components:$$\Large T^{\mu_1\dots\mu_r}\,_{\nu_1\dots\nu_s}=T(dx^{\mu_1},\dots,dx^\mu_r,\partial_{\nu_1},\dots,\partial_{\nu_s})$$The action on a general set of vectors and covectors is given by contracting components of the tensor with the components of vectors/covectors:
+> Take for example a $[1,1]$ tensor. This takes a vector and a covector as inputs:$$\Large\begin{aligned}
+T(\omega,V)&=T(\omega_\mu dx^\mu,V^\nu\partial_\nu)\\
+&=\omega_\mu V^\nu T(dx^\mu,\partial_\nu)\\
+&=\omega_\mu V^\nu T^\mu_\nu
+\end{aligned}$$
+> Under coordinate transformations, this moves like$$\Large\tilde T^\rho_\sigma=\frac{\partial \tilde x^\rho}{\partial x^\mu}\frac{\partial x^\nu}{\partial \tilde x^\sigma}T^\mu_\nu$$a scalar...
+
