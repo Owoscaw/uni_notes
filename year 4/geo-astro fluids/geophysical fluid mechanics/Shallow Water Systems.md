@@ -69,4 +69,16 @@ _\text{mass }(u-\xi )\frac{dh}{d\xi }+h\frac{du}{d\xi }&=0\\
 \implies\begin{pmatrix}u-\xi  & g\\
 h & u-\xi \end{pmatrix}\begin{pmatrix}u_\xi \\
 h_\xi \end{pmatrix}&=0
-\end{aligned}$$For a non-trivial solution, the determinant of this matrix must vanish:$$\huge\implies(u-\xi )^2=gh$$Writing $c=\sqrt{gh}$, we can write the above as $u-\xi=c$.
+\end{aligned}$$For a non-trivial solution, the determinant of this matrix must vanish:$$\huge\implies(u-\xi )^2=gh$$Writing $c=\sqrt{gh}$, we can write the above as $u-\xi=c$. Writing$$\Large h=\frac{c^2}{g},\,\,\frac{dh}{d\xi }=\frac{2c}{g}\frac{dc}{d\xi }$$we can substitute the above into our momentum equation to get:$$\Large\begin{aligned}
+\frac{du}{d\xi}+2\frac{dc}{d\xi}&=0\\
+\implies u+2c&=\text{constant}
+\end{aligned}$$
+To impose boundary conditions, we look at the left-had edge of the disturbance where the solution must match the undisturbed reservoir:$$\Large u=0,\,\,h=H\text{ at left-hand edge}$$Now using our relation between $u,c,\xi$ and $c_0=\sqrt{gH}$ we can write:$$\Large\begin{aligned}
+u(\xi)&=\frac{2}{3}(c_0+\xi)\\
+c(\xi)&=\frac{1}{3}(2c_0-\xi)\\
+_{h=\frac{c^2}{g}}\implies h(\xi)&=\frac{1}{9g}(2c_0-\xi)^2\\
+\implies u(x,t)&=\frac{2}{3}\left(c_0+\frac{x}{t}\right)\\
+\implies h(x,t)&=\frac{1}{9g}\left(2c_0-\frac{x}{t}\right)^2
+\end{aligned}$$We must still determine where we can apply this solution. At the left hand edge, $u=0,h=H\implies x/t=-c_0$. At the right hand edge, $h=0\implies x/t=2c_0$. Therefore our complete solution is:$$\Large (h,u)=\begin{cases}(H,0) & x<-c_0t \\
+\left(\frac{1}{9g}\left(2c_0-\frac{x}{t}\right)^2,\frac{2}{3}\left(c_0+\frac{x}{t}\right)\right) & -c_0t<x<2c_0t \\
+(0,0) & x>2c_0t\end{cases}$$

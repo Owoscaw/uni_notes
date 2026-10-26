@@ -70,3 +70,5 @@ V^\mu&=\tilde V^\nu\frac{\partial x^\mu}{\partial \tilde x^\nu},\\
 Note that in our more general context, the coordinate transformation $\tilde x^\mu(x^\nu)$ is not in general linear, but the transformation of the tangent vector still is. A general vector can be given by specifying components $V^\mu(x^\nu)$ wrt the coordinate basis at each point. The relations between components of a vector in different coordinate systems will change as the point moves around a manifold, so it is not possible to equate vectors in different tangent spaces.
 
 ## Cotangent vectors:
+Given a tangent space $T_p$, we define the cotangent space $T_p^*$ as the dual space. That is, $T_p^*$ is the space of linear maps $\omega:T_p\to\Re$. Linearity implies the map is characterised by its action on basis vectors:$$\Large \partial_\mu:\omega_\mu=\omega(\partial_\mu),\,\,\omega(V)=V^\mu\omega(\partial_\mu)=V^\mu\omega_\mu$$
+Each $\omega$ is a cotangent vector (or covector)
