@@ -181,3 +181,31 @@ Consider an ideal gas expanding at constant temperature ($AB$):$$\Large\begin{al
 &=cT_H\ln\left(\frac{V_B}{V_A}\right)\\
 \implies \Delta S&=c\ln\left(\frac{V_B}{V_A}\right)
 \end{aligned}$$
+# Thermodynamic potentials and the Third Law:
+
+Looking at our entropy version of the first law, we can write:$$\Large\begin{aligned}
+dE&=TdS-p\,dV\\
+&=\left(\frac{\partial E}{\partial S}\right)_VdS+\left(\frac{\partial E}{\partial V}\right)_SdV\\
+\implies T&=\frac{\partial E}{\partial S}\vert_V,\,\,-p=\frac{\partial E}{\partial V}\vert_S
+\end{aligned}$$Note we assume $E=E(S,V)$. Say we wanted to write something similar in terms of $T,V$, to do this we define the Helmholtz free energy as$$\huge F(T,V)=E-TS$$, which has differential:$$\Large\begin{aligned}
+dF&=dE-TdS-SdT\\
+&=-p\,dV-SdT\\
+&=\left(\frac{\partial F}{\partial V}\right)_TdV+\left(\frac{\partial F}{\partial T}\right)_VdT\\
+\implies-p&=\frac{\partial F}{\partial V}\vert_T,\,\,-S=\frac{\partial F}{\partial T}\vert_V
+\end{aligned}$$
+## Maxwell relations:
+Differentiating our relation between $T$ and $E$ with constant entropy $S$, we get the first Maxwell relation:$$\Large\begin{aligned}
+\left(\frac{\partial T}{\partial V}\right)_S&=\frac{\partial^2E}{\partial V\partial S}=\frac{\partial^2E}{\partial S\partial V}\\
+&=-\left(\frac{\partial p}{\partial S}\right)_V
+\end{aligned}$$Note we also get similar relations by playing this same game with two other functions we define:
+> Gibbs free energy, $G(T,p)=E+pV-TS$
+> Enthalpy, $H(S,p)=E+pV$
+
+## Third Law:
+Our definition of entropy made reference to some "$0$" state, which we have not yet defined. This is known as Nernst's postulate: The entropy of any system vanishes at $T=0$:$$\huge\lim_{T\to 0}S(T)=0$$Note that:
+> This law has different footing than the previous three, and is known as the Thermodynamic limit, and is violated in prescence of ground state degeneracy.
+> It is false, really:$$\huge\lim_{T\to0,\,N\to\infty}\frac{S(T)}{N}=0$$
+> Heat capacities also vanish:$$\large\begin{aligned}
+S(A)=\int_0^AdS&=\int_0^A\frac{\dbar Q}{T}=\int_0^{T_A}\frac{C_{V,p}(T)}{T}dT\\
+&\to\infty\text{ logarithmically as }T\to0
+\end{aligned}$$
