@@ -104,3 +104,4 @@ T(\omega,V)&=T(\omega_\mu dx^\mu,V^\nu\partial_\nu)\\
 \end{aligned}$$
 > Under coordinate transformations, this moves like$$\Large\tilde T^\rho_\sigma=\frac{\partial \tilde x^\rho}{\partial x^\mu}\frac{\partial x^\nu}{\partial \tilde x^\sigma}T^\mu_\nu$$a scalar...
 
+Note that if we work in flat spacetime with inertial coordinates, then the partial derivative of a $(k,l)$ tensor is a $(k,l+1)$ tensor:$$\huge T_\alpha{}^\mu{}_\nu=\partial_\alpha R^\mu{}_\nu$$Where $\ T_{\alpha}{}^{\mu}{}_\nu$ is a $(k,l+1)$ tensor, and $R$ is the $(k,l)$ tensor. Note that this transforms properly under Lorentz transformations
