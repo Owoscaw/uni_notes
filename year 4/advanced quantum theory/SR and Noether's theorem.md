@@ -133,4 +133,4 @@ Proceeding analogously for field theory, we construct our canonical conjugate mo
 \end{aligned}$$
 > Note this is a manifestly positive-definite quantity, consistent with the energy of a system.
 
-Observe how we have lost Lorentz-symmetry due to our choice of "time direction" when defining conjugate momentum - not very covariant of us.
+Observe how we have lost Lorentz-symmetry due to our choice of "time direction" when defining conjugate momentum - not very covariant of us. For now we stick with this canonical momentum and aim to formulate a manifestly invariant momentum later.

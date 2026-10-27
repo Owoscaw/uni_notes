@@ -40,7 +40,7 @@ This setup allows for us to find $\hat N$ eigenvalues without actually solving f
 \end{aligned}$$This shows that $\hat a |n\rangle$ is an eigenvector of $\hat N$ with eigenvalue $n-1$. This implies that $\hat a |n\rangle=c_{n-1}|n-1\rangle$ as there is no degeneracy in one dimension. Thus more generally we can write a whole tower of eigenstates if we know only one of them:$$\Huge \hat a^m |n\rangle=\left(\prod_{i=1}^mc_{n-i}\right)|n-m\rangle$$
 We fill find coefficients after we decide where this process needs to stop. As we can always apply $\hat a$ to the lower eigenvalue, it seems to imply that we can keep applying $\hat a$ until eigenvalues of $\hat N$ become negative. However this will contradict out previous finding that eigenvalues of $\hat H$ are non-negative. Therefore there must be some lowest eigenvalue state, known as the ground state $|0\rangle$ which obeys:$$\Huge \hat a |0\rangle=0$$This has associated energy:$$\Huge \hat H |0\rangle=\frac{\hbar\omega}{2}|0\rangle$$
 Starting from this ground state, we can find the entire spectrum without ever solving anything. To do this, we note that $\hat a^\dagger$ must raise the energy eigenvalues. All eigenstates of $\hat N$ are therefore found using:$$\Huge |n\rangle=c_n(\hat a^\dagger)^n |0\rangle$$
-These $|n\rangle$ form the complete eigenbasis of $\hat H$. We proceed by fixing the constants $c_n$ by demanding unit norm:$$\Huge\begin{aligned}
+These $|n\rangle$ form the complete eigenbasis of $\hat H$. We proceed by fixing the constants $c_n$ by demanding unit norm:$$\Large\begin{aligned}
 \langle n|n\rangle&=|c_n|^2 \langle 0|\hat a^n(\hat a^\dagger)^n |0\rangle\\
 &=|c_n|^2 \langle 0|\hat a^{n-1}\hat a(\hat a^\dagger)^n |0\rangle\\
 &=|c_n|^2\langle 0|\hat a^{n-1}((\hat a^\dagger)^n\hat a+[\hat a,(\hat a^\dagger)^n])|0\rangle\\
@@ -53,7 +53,7 @@ These $|n\rangle$ form the complete eigenbasis of $\hat H$. We proceed by fixing
 \implies c_n&=\frac{1}{\sqrt{n!}}\\
 \implies |n\rangle&=\frac{1}{\sqrt{n!}}(\hat a^\dagger)^n |0\rangle
 \end{aligned}$$
-Finally, we can confirm that energy eigenvalues are are given by what we saw previously:$$\Huge\begin{aligned}
+Finally, we can confirm that energy eigenvalues are are given by what we saw previously:$$\Large\begin{aligned}
 \hat N |n\rangle&=\hat a^\dagger\hat ac_n(\hat a^\dagger)^n |0\rangle\\
 &=c_n\hat a^\dagger((\hat a^\dagger)^n\hat a+[\hat a,(\hat a^\dagger)^n])|0\rangle\\
 &=c_n\hat a^\dagger\{[\hat a,\hat a^\dagger](\hat a^\dagger)^{n-1}+\hat a^\dagger[\hat a,\hat a^\dagger](\hat a^\dagger)^{n-2}+\dots\} |0\rangle\\
