@@ -28,8 +28,6 @@ The partial derivative of a tensor is no generally a new tensor, as we can see b
 &=\frac{\partial x^\mu}{\partial x^{\mu'}}\frac{\partial x^\nu}{\partial x^{\nu'}}\frac{\partial W_\nu}{\partial x^\mu}+W_\nu\frac{\partial x^\mu}{\partial x^{\mu'}}\frac{\partial^2 x^\nu}{\partial x^\mu\partial x^{\nu'}}
 \end{aligned}$$This does not fit our known behaviour of tensors under Lorentz transformations, so this partial derivative is not a tensor. This motivates the definition of new kinds of derivatives, like the [[Non-abelian gauge theories#Fields|covariant derivative]].
 
-## The metric:
-
 # Energy-Momentum tensor:
 
 The energy of a particle described above is given by $E=p^0$, the timelike component of four momentum. In a moving frame we can find components of $p^\mu$ by taking Lorentz transformations:$$\huge p^\mu\to(\gamma m,v\gamma m,0,0)$$For a particle moving with velocity $v$ along the $x$-axis. Note that $p^0$ and $p^1$ correspond to rest + kinetic energy and Newtonian momentum for small $v$. Outside of that approximation, we write:$$\Large p_\mu p^\mu=-m^2,\,\,E=\sqrt{m^2+p^2}\,\,(p^2=\delta_{ij}p^ip^j)$$We should look for an $F=ma$ in this formulation, naturally motivation the definition of a four vector $f^\mu$ satisfying:$$\Large f^\mu=m\frac{d^2}{d\tau^2}x^\mu(\tau)=\frac{d}{d\tau}p^\mu(\tau)$$Note that we can now find tensorial verions of any force we want, however one will find that the requirements for an equation to be a tensor equation restricts the form signficantly.

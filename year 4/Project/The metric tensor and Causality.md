@@ -1,0 +1,28 @@
+
+# Metrics:
+
+The [[SR, Manifolds, and Field theory summary#Tensors on manifolds|metric tensor]] is an integral object in curved space, we write it as $g_{\mu\nu}$ and will now discuss restrictions on its components. We take this metric to be symmetric, rank $(2,0)$, and nondegenerate - allowing for the definition of its inverse:$$\huge g^{\mu\nu}g_{\nu\sigma}=g_{\lambda\sigma}g^{\lambda\mu}=\delta^\mu_\sigma$$Note this is different to the [[Metrics|topological]] notion of a metric, and we cannot use this definition to create a topology. We will put this lil guy through the ringer:
+> The metric implies a past and a future
+> The metric allows path lengths and proper time to be computed
+> The metric is [[Geodesics#Fundamental properties of geodesics|geodesic]]
+> The metric replaces the [[Gravitational potential|Newtonian gravitational field]] $\phi$
+> The metric provides a notion of locally inertial reference frames
+> The metric defines causality
+> The metric replaces the "dot product"
+
+We often write our infinitesimal line element $ds$ in terms of the metric:
+$$\Huge ds^2=g_{\mu\nu}dx^\mu dx^\nu$$From this we can easily write the following expressions for the inner product of vectors $V^\mu,W^\nu$:$$\huge g_{\mu\nu}V^\mu W^\nu=g(V,W)=ds^2(V,W)$$We will see that the metric tensor contains all information needed to describe the curvature of a manifold. In Minkowski space we choose coordinates in which the components of the metric are constant, however let me emphasise that curvature is independent of coordinate embedding. Note that the constancy of metric components is sufficient for a space to be called flat, however there are many ways to deviate from a flat surface - some of which may be hard to find a coordinate system to embed the manifold. In canonical form we write:$$\Large g_{\mu\nu}=\text{diag}(-1,\dots,-1,+1,\dots,+1,0,\dots,0)$$This is clearly non-degenerate, we will always deal with non-degenerate continuous metrics:
+> If all signs are positive, the metric is Riemannian
+> If there is a single minus, the metric is Lorentzian
+> Other metrics are called indefinite
+
+We are interested in Lorentzian metrics.
+
+## Locally inertial coordinates:
+It is always possible to write the metric in canonical form at a point $p\in\mathbf{M}$, however this is only possible at the point. That is, we cannot write a canonical form for the metric in a neighbourhood of $p$. At any point $p$ we have a coordinate system $x^{\hat\mu}$ in which $g_{\hat\mu\hat\nu}$ takes its canonical form and all first derivatives $\partial_{\hat\sigma}g_{\hat\mu\hat\nu}$ all vanish (not applicable to second derivatives):$$\huge g_{\hat\mu\hat\nu}(p)=\eta_{\hat\mu\hat\nu},\,\,\partial_{\hat\sigma}g_{\hat\mu\hat\nu}(p)=0$$Such coordinates are called locally inertial, and the associated basis vectors form the local Lorentz frame. Due to the vanishing of first derivatives, the metric at $p$ in locally inertial coordinates looks like flat space (this is the formal notion of "flat enough"). One can construct such basis vectors by looking at the metric's transformation law and Taylor expanding.
+
+These coordinates are very useful, and best of all we do not have to construct them. We will take physically interesting questions, answer them in locally inertial coordinates, and write an answer in coordinate-independent form. Take for example:
+> Consider an observer with four-velocity $U^{\hat\mu}$ passed by a rocket with four-velocity $V^{\hat\mu}$.
+> Working such that the observer is our rest frame and the rocket moves along the $x$ axis, we can write the four-velocities as$$\Large U^{\hat\mu}=(1,0,0,0),\,\,V^{\hat\mu}=(\gamma,v\gamma,0,0)$$, where $v$ is three-velocity and $\gamma$ is the Lorentz factor.
+> In flat spacetime,$$\Large\gamma=-\eta_{\hat\mu\hat\nu}U^{\hat\mu}V^{\hat\nu}=-U_{\hat\mu}V^{\hat\mu}$$, so we can solve for three-velocity:$$\huge v=\sqrt{1-(U_{\hat\mu}V^{\hat\mu})^{-2}}$$
+> Returning to curved spacetime, we are free to use locally inertial coordinates. In this case $g_{\hat\mu\hat\nu}$ matches $\eta_{\hat\mu\hat\nu}$ and so this answer is still valid in curved spacetime (for this coordinate system). Note that this equation is completely tensorial and is therefore coordinate independent.
