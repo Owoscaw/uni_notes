@@ -11,8 +11,24 @@ For general trajectories, proper time will differ from coordinate time. Not all 
 
 Consider the worldline of a single particle, which we specify by a map $\mathbb{R}\to M$ where $M$ is the manifold representing spacetime. We think of the particles as a parametrised curve $x^\mu(\lambda)$, and focus on [[Special relativity#Curves and $4$-vectors|timelike]] particles with paths $\tau(\lambda)$ which are invertible given good choice of parameter. In this parametrisation, we write the four velocity $U^\mu$ as:$$\huge U^\mu=\frac{dx^\mu}{d\tau}$$The line element $d\tau^2=-\eta_{\mu\nu}dx^\mu dx^\nu$ (note the sign change) is the infinitesimal for our particle, whose form allows for the automatic normalisation of four velocity:$$\huge
 \ \eta_{\mu\nu}{}^{}U^\mu U^\nu=-1$$This is a reflection of the fact that our definition of four velocity can be thought of as a velocity through a spacetime manifold through which one always travels at unit velocity. From this we define the momentum four vector:$$\huge p^\mu=mU^\mu$$
-## Tensors on manifolds:
-Having defined vectors and covectors in copious detail, let us explore in more depth how tensors behave on manifolds. Recall the canonical example of a one-form, the gradient of a function $f$:$$\huge df:\,\,df\left(\frac{d}{d\lambda}\right)=\frac{df}{d\lambda}$$
+# Tensors on manifolds:
+
+Having defined vectors and covectors in copious detail, let us explore in more depth how tensors behave on manifolds. Recall the canonical example of a one-form, the gradient of a function $f$:$$\huge df:\,\,df\left(\frac{d}{d\lambda}\right)=\frac{df}{d\lambda}$$Through this machinery we defined [[Manifolds and tensors#Vectors, covectors, and tensors|vectors and covectors]] in differential form and wrote bases for $T_p,T_p^*$ in terms of $\omega=\omega_\mu dx^\mu$ and $\partial_\nu$. A $(k,l)$ tensor is then a multilinear map from $k$ covectors and $l$ vectors to $\mathbf{R}$ Its component expression can be expressed as the tensor acting on the set of basis vectors, equivalent to the expansion on the following line:$$\Large\begin{aligned}
+\ T^{\mu_1\dots\mu_k}{}_{\nu_1\dots\nu_k}&=T(dx^{\mu_1},\dots,dx^{\mu_k},\partial_{\nu_1},\dots,\partial_{\nu_l})\\
+\implies T&= T^{\mu_1\dots\mu_k}{}_{\nu_1\dots\nu_l}\partial_{\mu_1}\otimes\dots\otimes\partial_{\mu_k}\otimes dx^{\nu_1}\dots\otimes dx^{\nu_l}
+\end{aligned}$$
+ASK WHY THE INDICES ARE REVERSED ^^^ Under Lorentz transformations, this general tensor transforms like:$$\Large\ T^{\mu_1'\dots\mu_k'}{}_{\nu_1'\dots\nu_l'}=\frac{\partial x^{\mu_1'}}{\partial x^{\mu_1}}\dots\frac{\partial x^{\nu_l}}{\partial x^{\nu_l'}}\ T^{\mu_1\dots\mu_K}{}_{\nu_1\dots\nu_l}$$Generally, the various tensor operations we define on flat space hold in more general settings with three important exceptions:
+> Partial derivatives
+> The metric
+> Levi-Civita tensor
+
+## Partial derivatives:
+The partial derivative of a tensor is no generally a new tensor, as we can see by looking at the partial derivative of the one-form $\partial_\mu W_\nu$ under a new coordinate system:$$\Large\begin{aligned}
+\frac{\partial }{\partial x^{\mu'}}W_{\nu'}&=\frac{\partial x^\mu}{\partial x^{\mu'}}\frac{\partial }{\partial x^\mu}\left(\frac{\partial x^\nu}{\partial x^{\nu'}}W_\nu\right)\\
+&=\frac{\partial x^\mu}{\partial x^{\mu'}}\frac{\partial x^\nu}{\partial x^{\nu'}}\frac{\partial W_\nu}{\partial x^\mu}+W_\nu\frac{\partial x^\mu}{\partial x^{\mu'}}\frac{\partial^2 x^\nu}{\partial x^\mu\partial x^{\nu'}}
+\end{aligned}$$This does not fit our known behaviour of tensors under Lorentz transformations, so this partial derivative is not a tensor. This motivates the definition of new kinds of derivatives, like the [[Non-abelian gauge theories#Fields|covariant derivative]].
+
+## The metric:
 
 # Energy-Momentum tensor:
 
