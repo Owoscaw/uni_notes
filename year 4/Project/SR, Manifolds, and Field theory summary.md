@@ -11,6 +11,9 @@ For general trajectories, proper time will differ from coordinate time. Not all 
 
 Consider the worldline of a single particle, which we specify by a map $\mathbb{R}\to M$ where $M$ is the manifold representing spacetime. We think of the particles as a parametrised curve $x^\mu(\lambda)$, and focus on [[Special relativity#Curves and $4$-vectors|timelike]] particles with paths $\tau(\lambda)$ which are invertible given good choice of parameter. In this parametrisation, we write the four velocity $U^\mu$ as:$$\huge U^\mu=\frac{dx^\mu}{d\tau}$$The line element $d\tau^2=-\eta_{\mu\nu}dx^\mu dx^\nu$ (note the sign change) is the infinitesimal for our particle, whose form allows for the automatic normalisation of four velocity:$$\huge
 \ \eta_{\mu\nu}{}^{}U^\mu U^\nu=-1$$This is a reflection of the fact that our definition of four velocity can be thought of as a velocity through a spacetime manifold through which one always travels at unit velocity. From this we define the momentum four vector:$$\huge p^\mu=mU^\mu$$
+## Tensors on manifolds:
+Having defined vectors and covectors in copious detail, let us explore in more depth how tensors behave on manifolds. Recall the canonical example of a one-form, the gradient of a function $f$:$$\huge df:\,\,df\left(\frac{d}{d\lambda}\right)=\frac{df}{d\lambda}$$
+
 # Energy-Momentum tensor:
 
 The energy of a particle described above is given by $E=p^0$, the timelike component of four momentum. In a moving frame we can find components of $p^\mu$ by taking Lorentz transformations:$$\huge p^\mu\to(\gamma m,v\gamma m,0,0)$$For a particle moving with velocity $v$ along the $x$-axis. Note that $p^0$ and $p^1$ correspond to rest + kinetic energy and Newtonian momentum for small $v$. Outside of that approximation, we write:$$\Large p_\mu p^\mu=-m^2,\,\,E=\sqrt{m^2+p^2}\,\,(p^2=\delta_{ij}p^ip^j)$$We should look for an $F=ma$ in this formulation, naturally motivation the definition of a four vector $f^\mu$ satisfying:$$\Large f^\mu=m\frac{d^2}{d\tau^2}x^\mu(\tau)=\frac{d}{d\tau}p^\mu(\tau)$$Note that we can now find tensorial verions of any force we want, however one will find that the requirements for an equation to be a tensor equation restricts the form signficantly.
@@ -32,3 +35,5 @@ Recall the Lagrangian formulation that led to [[Abelian gauge theories#Relativis
 > Gauge fields describe forces in nature, including strong and weak nuclear forces as well as electromagnetism and are all matrix valued.
 > Higgs fields are the aformentioned scalar fields, are matrix valued.
 > Fermions include leptons and quarks, and are not described by tensor fields but rather by a [[The Lorentz Group#Spinors of the Lorentz group|spinor]] field.
+
+General relativity is a classical field theory who's dynamical field is the metric tensor. Our aim will be to explore the nature of curved geometries, which we characterise by the spacetime metric. Before putting these notions to work, we introduce the theory of gravitation.
