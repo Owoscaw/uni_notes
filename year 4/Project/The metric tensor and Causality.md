@@ -35,5 +35,9 @@ Typically, solutions for the scale factor are power laws, $a(t)=t^q$ for $0<q<1$
 \implies \frac{dx}{dt}&=\pm t^{-q}
 \end{aligned}$$Note that we don't just "divide by $dt^2$" here, instead we act on the $(0,2)$ tensor in the first line with two copies of $V=\left(\frac{dx^\mu}{d\lambda}\right)\partial_\mu$. Consider acting on $V$ with $dt^2$ only:$$\Large\begin{aligned}
 dt^2(V,V)&=(dt\otimes dt)(V,V)=dt(V)\cdot dt(V)\\
-dt(V)&=dt(\frac{dx^\mu}{d\lambda}\partia)
-\end{aligned}$$
+dt(V)&=dt\left(\frac{dx^\mu}{d\lambda}\partial_\mu\right)\\
+&=\frac{dx^\mu}{d\lambda}dt(\partial_\mu)\\
+&=\frac{dx^\mu}{d\lambda}\frac{\partial t}{\partial x^\mu}=\frac{dt}{d\lambda}\\
+_{\text{same with }dx^2}\implies dx(V)&=\frac{dx}{d\lambda}\\
+\implies0&=-\left(\frac{dt}{d\lambda}\right)^2+t^{2q}\left(\frac{dx}{d\lambda}\right)^2
+\end{aligned}$$Our equation for $\frac{dx}{dt}$ is then a direct implication of the chain rule. What we take from this is that we can manipulate basis one-forms as if they were differentials. Solving our equation in terms of $t$ gives:$$\Large t=(1-q)^{\frac{1}{1-q}}(\pm x-x_0)^{\frac{1}{1-q}}$$
