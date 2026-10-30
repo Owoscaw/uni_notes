@@ -17,4 +17,32 @@ Consider a free massive scalar field, with Hamiltonian density:$$\Large H=\frac{
 \phi(t,\underline{x})&=\frac{1}{(2\pi)^3}\int e^{i\underline{k}\cdot\underline{x}}\tilde\phi(t,\underline{k})d^3k\\
 \tilde\phi(t,\underline{x})&=\int e^{-i\underline{k}\cdot\underline{x}}\phi(t,\underline{x})d^3x\\
 _\text{FT KG}\implies(\partial_t^3+|\underline{k}|^2+m^2)\tilde\phi(t,\underline{k})&=0
-\end{aligned}$$This is just the EOM for a simple harmonic oscillator, i.e:$$\Large\omega_\underline{k}=\sqrt{|\underline{k}|^2+m^2}\implies(\partial_t^2+\omega_\underline{k}^2)\tilde\phi(t,\underline{k})=0$$That is, each Fourier mode of $\phi(t,\underline{x})$ is a SHO which we know how to [[Quantum S.H.O.|quantise]].
+\end{aligned}$$This is just the EOM for a simple harmonic oscillator, i.e:$$\Large\omega_\underline{k}=\sqrt{|\underline{k}|^2+m^2}\implies(\partial_t^2+\omega_\underline{k}^2)\tilde\phi(t,\underline{k})=0$$That is, each Fourier mode of $\phi(t,\underline{x})$ is a SHO which we know how to [[Quantum S.H.O.|quantise]]. The most general solution is therefore:$$\Large\tilde\Phi(t,\underline{k})=\frac{1}{\sqrt{2\omega_\underline{k}}}(a_\underline{k}e^{-i\omega_\underline{k}t}+b^*_{-\underline{k}}e^{i\omega_\underline{k}t})$$Returning to position space, we can write the solution as:$$\Large\begin{aligned}\Phi(t,\underline{x})&=\frac{1}{(2\pi)^3\sqrt{2\omega_\underline{k}}}\int e^{i\underline{k}\cdot\underline{x}}(a_\underline{k}e^{-i\omega_\underline{k}t}+b^*_{-\underline{k}}e^{i\omega_\underline{k}t})d^3k\\
+&=\frac{1}{(2\pi)^3\sqrt{2\omega_\underline{k}}}\int a_\underline{k}e^{i(\underline{k}\cdot\underline{x}-\omega_\underline{k}t)}+b^*_\underline{k}e^{i(\omega_\underline{k}t-\underline{k}\cdot\underline{x})}d^3k
+\end{aligned}$$Writing $k^\mu=(\omega_\underline{k},\underline{k}),x^\mu=(t,\underline{x})$ our solution becomes:$$\Large\Phi(t,\underline x)=\frac{1}{(2\pi)^3\sqrt{2\omega_\underline{k}}}\int a_\underline{k}e^{ik_\mu x^\mu}+b^*_\underline{k}e^{-ik_\mu x^\mu}d^3k$$Note we can recover the real scalar field by demanding $b_\underline{k}=a_\underline{k}$. We are now ready to apply the canonical quantisation, promoting $\Phi,\pi$ to operators:$$\Large\begin{aligned}
+\hat\Phi(t,\underline{x})&=\frac{1}{(2\pi)^3\sqrt{2\omega_\underline{k}}}\int\hat a_\underline{k}e^{ik_\mu x^\mu}+\hat b^\dagger_\underline{k}e^{-ik_\mu x^\mu}d^3k\\
+\hat\Phi(t,\underline{x})^\dagger&=\frac{1}{(2\pi)^3\sqrt{2\omega_\underline{k}}}\int\hat a_\underline{k}^\dagger e^{-ik_\mu x^\mu}+\hat b_\underline{k}e^{ik_\mu x^\mu}d^3k\\
+\pi&=\frac{\partial \mathcal{L}}{\partial (\partial_t\Phi)}=\partial_t\Phi^*\\
+\implies\hat\pi(t,\underline{x})&=\partial_t\hat\Phi(t,\underline{x})^\dagger\\
+&=-i\sqrt{\frac{\omega_\underline{k}}{2}}\int\hat b_\underline{k}e^{ik_\mu x^\mu}-\hat a_\underline{k}^\dagger e^{-ik_\mu x^\mu}\frac{d^3k}{(2\pi)^3}\\
+\hat\pi(t,\underline{x})^\dagger&=-i\sqrt{\frac{\omega_\underline{k}}{2}}\int\hat a_\underline{k}e^{ik_\mu x^\mu}-\hat b_\underline{k}^\dagger e^{-ik_\mu x^\mu}\frac{d^3k}{(2\pi)^3}
+\end{aligned}$$We can think of each of these as a "sum over infinitely many SHOs". What remains to do is:
+> Impose equal time canonical commutation relations between $\hat\Phi,\hat\pi$
+> Find commutation relations for our constants 
+> Use creation/annihilation operators to construct spectrum
+
+## Equal time commutation relations:
+Applying the equal time commutation relations on our operators shows:$$\Large\begin{aligned}
+[\hat\Phi(t,\underline{x}),\hat \pi(t,\underline{y})]&=[\hat\Phi(t,\underline{x})^\dagger,\hat\pi(t,\underline{y})^\dagger]\\
+&=i\delta(\underline{x}-\underline{y})
+\end{aligned}$$All other commutators are trivially zero. Using the identity$$\Large\int e^{i\underline{p}\cdot\underline{x}}d^3x=(2\pi)^3\delta(\underline{p})$$, we proceed to isolate the $k'$th Fourier mode:$$\Large\begin{aligned}
+\int e^{i\underline{k'}\cdot\underline{x}}\hat\Phi(t,\underline{x})d^3x&=\frac{1}{\sqrt{2\omega_\underline{k}}}\iint(\hat a_\underline{k}e^{-i\omega_\underline{k}t+i\underline{k}\cdot\underline{x}}+\hat b_\underline{k}^\dagger e^{i\omega_kt-i\underline{k}\cdot\underline{x}})e^{i\underline{k}'\cdot\underline{x}}\frac{d^3k}{(2\pi)^3}d^3x\\
+&=\int\frac{d^3k}{(2\pi)^2}\frac{1}{\sqrt{2\omega_\underline{k}}}\left(\hat a_\underline{k}e^{-i\omega_kt}\int d^3x(e^{i(\underline{k}+\underline{k}')\cdot\underline{x}})\\
++\hat b_\underline{k}^\dagger e^{i\omega_\underline{k}t}\int d^3x(e^{i(\underline{k}'-\underline{k})\cdot\underline{x}})\right)\\
+&=\frac{1}{\sqrt{2\omega_\underline{k}}}(\hat a_{-\underline{k}'}e^{-i\omega_\underline{k'}t}+\hat b_\underline{k'}^\dagger e^{i\omega_\underline{k'}t})
+\end{aligned}$$Similarly, we can find an expression for $\hat\pi$ and therefore $\hat a_\underline{k},\hat b_\underline{k}^\dagger$:$$\Large\begin{aligned}
+\int e^{i\underline{k}'\cdot\underline{x}}\hat\pi^\dagger(t,\underline{x})d^3x&=-i\sqrt{\frac{\omega_\underline{k}}{2}}(\hat a_{-\underline{k}'}e^{-i\omega_\underline{k'}t}-\hat b_\underline{k'}^\dagger e^{i\omega_\underline{k'}t})\\
+\hat a_\underline{k}&=\int d^3x\,e^{-ik_\mu x^\mu}\left(\sqrt{\frac{\omega_\underline{k}}{2}}\hat\Phi\left(t,\underline{x}\right)+\frac{i}{\sqrt{2\omega_\underline{k}}}\hat\pi^\dagger(t,\underline{x})\right)\\
+\hat b_\underline{k}^\dagger&=\int d^3x\,e^{ik_\mu x^\mu}\left(\sqrt{\frac{\omega_\underline{k}}{2}}\hat\Phi(t,\underline{x})^\dagger-\frac{i}{\sqrt{2\omega_\underline{k}}}\hat\pi(t,\underline{x})\right)
+\end{aligned}$$We can then proceed to calculate our commutation relations for $a,b$, with our delta function identity and commutator between $\hat\Phi,\hat\pi$ in mind:$$\huge
+[\hat a_\underline{k},\hat a_{\underline{k}'}^\dagger]=(2\pi)^3\delta(\underline{k}-\underline{k}')$$
