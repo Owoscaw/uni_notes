@@ -44,3 +44,9 @@ _{\text{same with }dx^2}\implies dx(V)&=\frac{dx}{d\lambda}\\
 
 # Causality:
 
+The fact that we can solve initial value problems is due to causality, the idea that future events can be understood as consequences of initial conditions in addition to the laws of physics. We look at the problem of evolving matter fields on a fixed background spacetime, rather than the evolution of the metric. Our guiding principle is that information can only flow along null or timelike curves (which are not necessarily geodesic):
+> We define a causal curve to be one that is null or timelike everywhere
+> Given a subset $S\subset M$ of a manifold $M$, we define the causal future of $S$ (denoted $J^+(S)$) to be the set of points that can be reached from $S$ by following a future-directed causal curve.
+> The chronological future $I^+(S)$ is then the set of points that can be reached from $S$ by following a future-directed timelike curve. 
+
+Note that a curve of length $0$ is causal but not chronal, i.e. a point $p$ will always be in its own $J^+(p)$ but not necessarily $I^+(p)$. Causal/Chronological past are defined similarly.
