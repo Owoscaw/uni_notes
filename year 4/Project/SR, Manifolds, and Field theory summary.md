@@ -17,7 +17,7 @@ Having defined vectors and covectors in copious detail, let us explore in more d
 \ T^{\mu_1\dots\mu_k}{}_{\nu_1\dots\nu_k}&=T(dx^{\mu_1},\dots,dx^{\mu_k},\partial_{\nu_1},\dots,\partial_{\nu_l})\\
 \implies T&= T^{\mu_1\dots\mu_k}{}_{\nu_1\dots\nu_l}\partial_{\mu_1}\otimes\dots\otimes\partial_{\mu_k}\otimes dx^{\nu_1}\dots\otimes dx^{\nu_l}
 \end{aligned}$$
-ASK WHY THE INDICES ARE REVERSED ^^^ Under Lorentz transformations, this general tensor transforms like:$$\Large\ T^{\mu_1'\dots\mu_k'}{}_{\nu_1'\dots\nu_l'}=\frac{\partial x^{\mu_1'}}{\partial x^{\mu_1}}\dots\frac{\partial x^{\nu_l}}{\partial x^{\nu_l'}}\ T^{\mu_1\dots\mu_K}{}_{\nu_1\dots\nu_l}$$Generally, the various tensor operations we define on flat space hold in more general settings with three important exceptions:
+Under Lorentz transformations, this general tensor transforms like:$$\Large\ T^{\mu_1'\dots\mu_k'}{}_{\nu_1'\dots\nu_l'}=\frac{\partial x^{\mu_1'}}{\partial x^{\mu_1}}\dots\frac{\partial x^{\nu_l}}{\partial x^{\nu_l'}}\ T^{\mu_1\dots\mu_K}{}_{\nu_1\dots\nu_l}$$Generally, the various tensor operations we define on flat space hold in more general settings with three important exceptions:
 > Partial derivatives
 > The metric
 > Levi-Civita tensor
