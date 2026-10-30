@@ -26,3 +26,8 @@ These coordinates are very useful, and best of all we do not have to construct t
 > Working such that the observer is our rest frame and the rocket moves along the $x$ axis, we can write the four-velocities as$$\Large U^{\hat\mu}=(1,0,0,0),\,\,V^{\hat\mu}=(\gamma,v\gamma,0,0)$$, where $v$ is three-velocity and $\gamma$ is the Lorentz factor.
 > In flat spacetime,$$\Large\gamma=-\eta_{\hat\mu\hat\nu}U^{\hat\mu}V^{\hat\nu}=-U_{\hat\mu}V^{\hat\mu}$$, so we can solve for three-velocity:$$\huge v=\sqrt{1-(U_{\hat\mu}V^{\hat\mu})^{-2}}$$
 > Returning to curved spacetime, we are free to use locally inertial coordinates. In this case $g_{\hat\mu\hat\nu}$ matches $\eta_{\hat\mu\hat\nu}$ and so this answer is still valid in curved spacetime (for this coordinate system). Note that this equation is completely tensorial and is therefore coordinate independent.
+
+## Expanding universes:
+A simple example of a nontrivial Lorentzian geometry is given by a four-dimensional spacetime with metric$$\Large ds^2=-dt^2+a^2(t)(dx^2+dy^2+dz^2)$$, describing a universe for which space at a fixed moment in time is a flat three dimensional Euclidean space expanding as a function of time. We call worldlines (and therefore volumes) that remain at constant spatial coordinates $x^i$ (or spaces whose boundaries expand with volume) co-moving. The form of this metric suggests the distance between points grows with $a(t)$, which we call the scale factor.
+
+Typically, solutions for the scale factor are power laws, $a(t)=t^q$ for $0<q<1$. In our case, $t=0$ represents a true singularity of the geometry (the Big Bang) which we exclude from the manifold
