@@ -30,4 +30,10 @@ These coordinates are very useful, and best of all we do not have to construct t
 ## Expanding universes:
 A simple example of a nontrivial Lorentzian geometry is given by a four-dimensional spacetime with metric$$\Large ds^2=-dt^2+a^2(t)(dx^2+dy^2+dz^2)$$, describing a universe for which space at a fixed moment in time is a flat three dimensional Euclidean space expanding as a function of time. We call worldlines (and therefore volumes) that remain at constant spatial coordinates $x^i$ (or spaces whose boundaries expand with volume) co-moving. The form of this metric suggests the distance between points grows with $a(t)$, which we call the scale factor.
 
-Typically, solutions for the scale factor are power laws, $a(t)=t^q$ for $0<q<1$. In our case, $t=0$ represents a true singularity of the geometry (the Big Bang) which we exclude from the manifold
+Typically, solutions for the scale factor are power laws, $a(t)=t^q$ for $0<q<1$. In our case, $t=0$ represents a true singularity of the geometry (the Big Bang) which we exclude from the manifold. We can draw a spacetime diagram by considering null paths ($ds^2=0$) for which we hold $y,z$ constant:$$\Large\begin{aligned}
+0&=-dt^2+t^{2q}dx^2\\
+\implies \frac{dx}{dt}&=\pm t^{-q}
+\end{aligned}$$Note that we don't just "divide by $dt^2$" here, instead we act on the $(0,2)$ tensor in the first line with two copies of $V=\left(\frac{dx^\mu}{d\lambda}\right)\partial_\mu$. Consider acting on $V$ with $dt^2$ only:$$\Large\begin{aligned}
+dt^2(V,V)&=(dt\otimes dt)(V,V)=dt(V)\cdot dt(V)\\
+dt(V)&=dt(\frac{dx^\mu}{d\lambda}\partia)
+\end{aligned}$$
