@@ -10,5 +10,10 @@ Now consider a vector of constant length $\underline{C}$ rotating relative to th
 \delta\underline{C}&=|\underline{C}|\sin(\gamma)\delta\lambda\underline{e}_n\\
 &=|\underline{C}||\underline{\Omega}|\sin\gamma\,\delta t\underline{e}_n\\
 &=\underline{\Omega}\times\underline{C}\,\delta t\\
-\implies\left(\frac{d\underline{C}}{dt}\right)&=\underline{\Omega}\times\underline{C}
+\implies\left(\frac{d\underline{C}}{dt}\right)_I&=\underline{\Omega}\times\underline{C}
+\end{aligned}$$This holds for any constant magnitude vector in the inertial frame. 
+
+Let us consider a general vector with changing magnitude:$$\Large\underline{B}=B_1(t)\hat{\underline{e}}_1+B_2(t)\hat{\underline{e}}_2+B_3(t)\hat{\underline{e}}_3$$Since we define the vector in our rotating frame, it follows that:$$\Large \left(\frac{d\underline{B}}{dt}\right)_R=\frac{dB_i}{dt}\hat{\underline{e}}_i$$In the inertial frame, we have:$$\Large\begin{aligned}
+\left(\frac{d\underline{B}}{dt}\right)_I&=\frac{d}{dt}(B_i(t)\hat{\underline{e}}_i)\\
+&=\frac{dB_i}{dt}\hat{\underline{e}}_i+B_i\left(\frac{d\hat{\underline{e}}_i}{dt}\right)_I
 \end{aligned}$$
