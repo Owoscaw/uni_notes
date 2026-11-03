@@ -1,7 +1,7 @@
 
 In classical mechanics, we introduced the Lagrangian and Hamiltonian $L,H$. Once quantised, the Lagrangian will lead to the path integral quantisation and the Hamiltonian will lead to the canonical quantisation. For now, we focus on the latter. 
 
-## Equal-time commutation relations:
+# Equal-time commutation relations:
 
 Classically, we defined the [[Hamiltonian Formalism#Poisson bracket|Poisson bracket]] structure. When we quantise, each canonical coordinate and momentum gets promoted to operators and we can go one of two ways:
 > Schrodinger's formulation defined states $|\psi(t)\rangle\in\mathcal{H}$ for a [[Hilbert space]] $\mathcal{H}$. We then had the commutator relations:$$\huge\begin{aligned}
@@ -46,3 +46,13 @@ Applying the equal time commutation relations on our operators shows:$$\Large\be
 \hat b_\underline{k}^\dagger&=\int d^3x\,e^{ik_\mu x^\mu}\left(\sqrt{\frac{\omega_\underline{k}}{2}}\hat\Phi(t,\underline{x})^\dagger-\frac{i}{\sqrt{2\omega_\underline{k}}}\hat\pi(t,\underline{x})\right)
 \end{aligned}$$We can then proceed to calculate our commutation relations for $a,b$, with our delta function identity and commutator between $\hat\Phi,\hat\pi$ in mind:$$\huge
 [\hat a_\underline{k},\hat a_{\underline{k}'}^\dagger]=(2\pi)^3\delta(\underline{k}-\underline{k}')$$
+# The Hamiltonian and vacuum energy:
+
+Recall the classical Hamiltonian for a free massive complex scalar field, we quantise this as$$\Large\hat H=\int\hat\Pi\hat\Pi^\dagger+\underline{\nabla}\hat\Phi^\dagger\cdot\underline{\nabla}\hat\Phi+m^2\hat\Phi^\dagger\hat\Phi\,d^3x$$, where we promoted $\Phi$ and conjugate momentum $\Pi$ to operators. Substituting our Fourier expansions into the integrand gives:$$\huge\hat H=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}\hat b_\underline{k}^\dagger)$$We use our commutation relations above to move the dagger:$$\Large\hat H=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}^\dagger\hat b_\underline{k}+(2\pi)^3\delta(0))$$Note this quantum Hamiltonian can be thought of as a sum of SHO Hamiltonians, where each $\hat a_\underline{k},\hat b_\underline{k}$ is an independent SHO which we integrate over the momentum label $\underline{k}$. To construct our Hilbert space, we define the vacuum state $|0\rangle$, the state annihilated by:$$\huge\hat a_\underline{k}|0\rangle=\hat b_\underline{k}|0\rangle=0\,\,\forall\underline{k}$$This represents the state of no particles and anti-particles, i.e. empty spacetime. Let us compute the energy of this state:$$\Large\begin{aligned}
+E_0=\hat H |0\rangle&=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}^\dagger\hat b_\underline{k}+(2\pi)^3\delta(0))|0\rangle\\
+&=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(2\pi)^3\delta(0)\\
+&=\int\omega_\underline{k}\delta(0)d^3k
+\end{aligned}$$Therefore $|0\rangle$ is an energy eigenstate, but with infinite energy as we have a delta function evaluated at $0$:$$\Large\begin{aligned}
+(2\pi)^3\delta(\underline{p})&=\lim_{V\to\infty}\int e^{i\underline{p}\cdot\underline{x}}d^3x\\
+\implies(2\pi)^3\delta(0)&=\lim_{V\to\infty}\int_Vd^3x=\lim_{V\to\infty}V
+\end{aligned}$$That is, the infinite energy of the vacuum state is related to the infinite volume of space. Therefore we can compute vacuum energy density
