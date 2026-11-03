@@ -55,4 +55,10 @@ E_0=\hat H |0\rangle&=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\unde
 \end{aligned}$$Therefore $|0\rangle$ is an energy eigenstate, but with infinite energy as we have a delta function evaluated at $0$:$$\Large\begin{aligned}
 (2\pi)^3\delta(\underline{p})&=\lim_{V\to\infty}\int e^{i\underline{p}\cdot\underline{x}}d^3x\\
 \implies(2\pi)^3\delta(0)&=\lim_{V\to\infty}\int_Vd^3x=\lim_{V\to\infty}V
-\end{aligned}$$That is, the infinite energy of the vacuum state is related to the infinite volume of space. Therefore we can compute vacuum energy density
+\end{aligned}$$That is, the infinite energy of the vacuum state is related to the infinite volume of space. Therefore we can compute vacuum energy density:$$\huge \epsilon_0=\frac{E_0}{V}=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}$$There is a second "infinity" here related to large momenta and high energies, so we argue that only differences in energy are measurable.
+
+
+## Normal ordering:
+To do this, we introduce normal ordering. Given an operator $\mathcal{O}$ written in terms of creation/annihilation operators, we define its normal ordered version $:\mathcal{O}:$ to be the same expression with creation operators to the left and annihilation operators to the right in each term. Our normal ordered Hamiltonian is then$$\Large:\hat H:=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}^\dagger\hat b_\underline{k})$$which will annihilate the vacuum state $|0\rangle$. Therefore the vacuum energy $E_0=0$. Note when we canonically quantise, each expression can take a different quantum operator with different vacuum energy however they will take the same normal ordered form. This justifies ignoring infinite vacuum energy, however there are some systems where differences in vacuum energy is measurable. Beyond free theories, removing infinities in QFT needs to be consistently. The formalism of this is regularisation and renormalisation.
+
+## Single particle states:

@@ -1,0 +1,9 @@
+
+The coordinate derivatives of a vector field do not form a tensor field. Under coordinate transformation:$$\Large\partial_\mu V^\mu=\frac{\partial \tilde x^\rho}{\partial x^\mu}\frac{\partial }{\partial \tilde x^\rho}\left(\frac{\partial x^\nu}{\partial \tilde x^\sigma}\tilde V^\sigma\right)=\frac{\partial \tilde x^\rho}{\partial x^\mu}\frac{\partial x^\nu}{\partial \tilde x^\sigma}\tilde\partial_\rho\tilde V^\sigma+\frac{\partial \tilde x^\rho}{\partial x^\mu}\frac{\partial^2x^\nu}{\partial \tilde x^\rho\partial\tilde x^\sigma}\tilde V^\sigma$$Note the second term vanishes for linear coordinate transformations, however this does not yield the expected tensor transformation for more general transformations. There is no coordiante-independent notion of a vector field $V$ being constant. 
+
+Therefore we proceed by introducing the covariant derivative $\nabla$, defined as some linear operation mapping vectors to $[1,1]$ tensors that acts like a derivative:
+> The covariant derivative of a vector field $V^\mu$ is defined as a $[1,1]$ tensor field $(\nabla V)^\nu_\mu$, which we write as $\nabla_\mu V^\nu$.
+> $\nabla$ is linear, $\nabla(V+W)=\nabla V+\nabla W$.
+> $\nabla$ should satisfy the [[Leibniz and Chain rules|Leibniz]] rule $\nabla fV=dfV+f\nabla V$ for a vector field $V$ and function $f$. In component form:$$\Large(\nabla(fV))_\mu^\nu=(\partial_\mu f)V^\nu+f(\nabla V)_\mu^\nu$$
+
+This gives us a coordinate-independent notion of a relation between vectors at different points, i.e. in different tangent spaces. We want to characterise the most general structure satisfying these properties, which we will do by looking at it's action on the basis vectors. We define the connection coefficients by the components of the $[1,1]$ tensor obtained as the covariant derivatives of the coordinate basis vectors:$$\huge\Gamma^\nu_{\mu\lambda}=(\nabla(\partial_\lambda))_\mu^\nu$$
