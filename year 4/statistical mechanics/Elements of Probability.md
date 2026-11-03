@@ -22,4 +22,36 @@ The normal, or Gaussian, distribution for a single continuous variable $x$ is de
 \tilde p(k)&=\int\frac{1}{\sigma\sqrt{2\pi}}\exp\left(-ikx-\frac{(x-\lambda)^2}{2\sigma^2}\right)dx\\
 _\text{completing the square}&=\int\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{(x-\lambda-ik\sigma^2)^2}{2\sigma^2}-\frac{\sigma^2k^2}{2}-ik\lambda\right)dx\\
 _{\text{shift in }x\text{, normalise}}&=\exp\left(-\frac{k^2\sigma^2}{2}-ik\lambda\right)
+\end{aligned}$$Let us also compute the cumulants:$$\Large\begin{aligned}
+\log\tilde p(k)&=-ik\langle x\rangle_c-\frac{k^2}{2}\langle x^2\rangle_c+\dots\\
+&=-ik\lambda-\frac{k^2}{2}\sigma^2\\
+\implies\langle x\rangle_c&=\lambda\,\,\text{ mean}\\
+\implies  \langle x^2\rangle_c&=\sigma^2\,\,\text{ variance}\\
+\implies  \langle x^n\rangle_c&=0\,\,\text{ for }n>2
+\end{aligned}$$Note that higher order moments do not vanish for the Gaussian distribution. For $X_i$ independent randomly distributed variables each with mean $\mu$ and variance $\sigma^2$, the [[Inference#The central limit theorem|Central Limit theorem]] dictates:$$\huge \sum_{i=1}^N X_i\to_{N\to\infty}\sim N(\mu,\sigma^2)$$
+## Binomial:
+Consider a random variable with two discrete outcomes, $S=\{A,B\},P(X=A)=p,P(X=B)=1-p$. Over $N$ trials, we ask what the probability of getting $N_A$ of outcome $A$:$$\Large\begin{aligned}
+N_A&\in\{0,\dots, N\}\\
+\implies p_N(N_A) &= {N\choose N_A}p^{N_A}(1-p)^{N-N_A}
+\end{aligned}$$Note that this is not technically a PDF, as the outcomes are discrete. To show this is properly normalised:$$\Large\begin{aligned}
+\sum_{N_A=0}^Np_N(N_A)&=\sum_{N_A=0}^N{N\choose N_A}p^{N_A}(1-p)^{N-N_A}\\
+&=(p+(1-p))^N\\
+&=1^N=1
+\end{aligned}$$Now let us compute the characteristic function. Due to the discreteness of this distribution, we write:$$\Large\begin{aligned}
+\tilde p_N(k)&=\langle e^{-ikN_A}\rangle\\
+&=\sum_{N_A=0}^Np_N(N_A)e^{-ikN_A}\\
+&=\sum_{N_A=0}^N{N\choose N_A}(1-p)^{1-N_A}(pe^{-ik})^{N_A}\\
+&=(pe^{-ik}+1-p)^N
+\end{aligned}$$Continuing to write the cumulants:$$\Large\begin{aligned}
+\log\tilde p(k)&=N\log(pe^{-ik}+1-p)\\
+&=N\log\tilde p_1(k)\\
+\implies  \langle x^m\rangle_c\text{ for }N&=N  \langle x^m\rangle_c\text{ for }1
+\end{aligned}$$Therefore let us proceed by finding cumulants for $N=1$:$$\Large\begin{aligned}
+ \langle x^m\rangle&=p\cdot 1^m+(1-p)\cdot 0^m\\
+&=p\\
+\implies  \langle x\rangle_c&=\langle x\rangle =p\\
+\implies  \langle x^2\rangle_c&=\langle x^2\rangle-\langle x\rangle^2=p-p^2\\
+&=p(1-p)\\
+\implies_{\text{for }N} \langle x\rangle_c&=Np\\
+ \langle x^2\rangle_c&=Np(1-p)
 \end{aligned}$$
