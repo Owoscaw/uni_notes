@@ -11,13 +11,22 @@ The [[SR, Manifolds, and Field theory summary#Tensors on manifolds|metric tensor
 > The metric replaces the "dot product"
 
 We often write our infinitesimal line element $ds$ in terms of the metric:
-$$\Huge ds^2=g_{\mu\nu}dx^\mu dx^\nu$$From this we can easily write the following expressions for the inner product of vectors $V^\mu,W^\nu$:$$\huge g_{\mu\nu}V^\mu W^\nu=g(V,W)=ds^2(V,W)$$We will see that the metric tensor contains all information needed to describe the curvature of a manifold. In Minkowski space we choose coordinates in which the components of the metric are constant, however let me emphasise that curvature is independent of coordinate embedding. Note that the constancy of metric components is sufficient for a space to be called flat, however there are many ways to deviate from a flat surface - some of which may be hard to find a coordinate system to embed the manifold. In canonical form we write:$$\Large g_{\mu\nu}=\text{diag}(-1,\dots,-1,+1,\dots,+1,0,\dots,0)$$This is clearly non-degenerate, we will always deal with non-degenerate continuous metrics:
+$$\Huge ds^2=g_{\mu\nu}dx^\mu dx^\nu$$Note this quantity is not always positive: 
+>When it is, we take its square root to find proper length. I.e. for curves with spacelike tangent vectors:$$\huge l=\int\sqrt{g_{\mu\nu}dx^\mu dx^\nu}d\lambda$$
+>When it is not, i.e. for timelike curves, we find the proper time:$$\huge\tau=\int\sqrt{-g_{\mu\nu}dx^\mu dx^\nu}d\lambda$$
+>Both of these objects are invariant under coordinate transformations $\tilde x^\mu(x^\nu)$ and reparametrisations of the curve $\tilde\lambda(\lambda)$. Therefore we often take $\lambda=l,\tau$, corresponding to tangent vectors being unit.
+
+From this we can easily write the following expressions for the inner product of vectors $V^\mu,W^\nu$:$$\huge g_{\mu\nu}V^\mu W^\nu=g(V,W)=ds^2(V,W)$$We will see that the metric tensor contains all information needed to describe the curvature of a manifold. In Minkowski space we choose coordinates in which the components of the metric are constant, however let me emphasise that curvature is independent of coordinate embedding. Note that the constancy of metric components is sufficient for a space to be called flat, however there are many ways to deviate from a flat surface - some of which may be hard to find a coordinate system to embed the manifold. In canonical form we write:$$\Large g_{\mu\nu}=\text{diag}(-1,\dots,-1,+1,\dots,+1,0,\dots,0)$$This is clearly non-degenerate, we will always deal with non-degenerate continuous metrics:
 > If all signs are positive, the metric is Riemannian
 > If there is a single minus, the metric is Lorentzian
 > Other metrics are called indefinite
 
-We are interested in Lorentzian metrics.
-
+We are interested in Lorentzian metrics. Let us consider the following examples:
+> $\Re^2$ in cartesian coordinates, $ds^2=dx^2+dy^2$ makes the metric $g_{\mu\nu}=\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$.
+> In Minkowski space, $ds^2=-dt^2+dx^2+dy^2+dz^2$ makes the metric $g_{\mu\nu}=\eta_{\mu\nu}$. Note this is not a tensor equation, it just specifies the components of the metric.
+> Note we can work in light-cone coordinates $u=\frac{1}{\sqrt 2}(t+x),v=\frac{1}{\sqrt 2}(t-x)\implies ds^2=-2dudv+dy^2+dz^2$, which makes the metric $g_{\mu\nu}=\begin{pmatrix}0 & -1 & 0 & 0 \\ -1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}$.
+> We can find a metric on $S^2$ by writing the line element on $\Re^3$ in polar coordinates then restricting to $S^2$. In spherical polars, $ds^2=dr^2+r^2(d\theta^2+\sin^2\theta d\phi^2)$. To restrict, we just take $r=1$ to define a metric on the two sphere, $ds^2=d\theta^2+\sin^2\theta d\phi^2$. Therefore our metric is $g_{\mu\nu}=\begin{pmatrix}1 & 0 \\ 0 & \sin^2\theta\end{pmatrix}$.
+> In hyperbolic space $H^2$, we can write the line element as $ds^2=d\rho^2+\sinh^2\rho d\phi^2$. Note this is the surface associated $ds^2=1$ in Minkowski space.
 ## Locally inertial coordinates:
 It is always possible to write the metric in canonical form at a point $p\in\mathbf{M}$, however this is only possible at the point. That is, we cannot write a canonical form for the metric in a neighbourhood of $p$. At any point $p$ we have a coordinate system $x^{\hat\mu}$ in which $g_{\hat\mu\hat\nu}$ takes its canonical form and all first derivatives $\partial_{\hat\sigma}g_{\hat\mu\hat\nu}$ all vanish (not applicable to second derivatives):$$\huge g_{\hat\mu\hat\nu}(p)=\eta_{\hat\mu\hat\nu},\,\,\partial_{\hat\sigma}g_{\hat\mu\hat\nu}(p)=0$$Such coordinates are called locally inertial, and the associated basis vectors form the local Lorentz frame. Due to the vanishing of first derivatives, the metric at $p$ in locally inertial coordinates looks like flat space (this is the formal notion of "flat enough"). One can construct such basis vectors by looking at the metric's transformation law and Taylor expanding.
 
