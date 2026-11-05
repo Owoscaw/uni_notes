@@ -55,3 +55,23 @@ N_A&\in\{0,\dots, N\}\\
 \implies_{\text{for }N} \langle x\rangle_c&=Np\\
  \langle x^2\rangle_c&=Np(1-p)
 \end{aligned}$$
+# Many random variables:
+
+We want to build probability distributions over all particles in a gas, i.e. for $N$ random variables. Consider an $N$ dimensional space of outcomes$$\Large \mathcal{S}_\underline{x}=\{\underline{x}=(x_1,\dots,x_N)\in\Re^N\}$$where we define a joint probability density $p(\underline{x})$, defined as$$\Large\text{prob}(X_i\in[x_i,x_i+dx_i]\forall i\in1,\dots,N)=p(\underline{x})d^Nx$$where $d^Nx=\prod_{i=1}^N dx_i$. The joint probability density is normalised by construction. There are two ways to look at specific subsets of variables:
+> We introduce the unconditional probability density, the probability for a set of random variables $(X_1,\dots,X_m)$ regardless of the value of the other variables $(X_{m+1},\dots,X_N)$:$$\Large p(x_1,\dots,x_m)=\int\prod_{i=m+1}^Ndx_ip(x_1,\dots,x_N)$$
+> The other way to do this is the conditional probability density. This is the probability density for a subset of random variables $(X_1,\dots,X_m)$ given the value of the other other variables $(X_{m+1},\dots,X_N)$. This must be properly normalised, one can check the appropriate normalisation factor is the unconditional probability density for the variables held fixed:$$\Large p(x_1,\dots,x_m|x_{m+1},\dots,x_N)=\frac{p(x_1,\dots,x_m,x_{m+1},\dots,x_N)}{p(x_{m+1},\dots,x_N)}$$
+
+Note if all variables are independent, the joint probability density reduces into a produce of single-variable densities:$$\huge p(\underline{x})=\prod_{i=1}^Np_i(x_i)$$We can also define the joint characteristic function, which is now a multidimensional Fourier transform:$$\Large\tilde p(\underline{k})=\langle e^{-i\sum_ik_iX_i}\rangle=\langle e^{-i\underline{k}\cdot\underline{X}}\rangle$$We can find cumulants by looking at the expansion of the logarithm of this for each equation. To strip these powers out, we can take $k$ derivatives:
+> We therefore define the joint moments as:$$\Large\langle X_1^{n_1}\dots X_N^{n_N}\rangle=\left(i\frac{\partial }{\partial k_1}\right)^{n_1}\dots\left(i\frac{\partial }{\partial k_N}\right)^{n_N}\tilde p(\underline{k})|_{\underline{k}=0}$$As well as the joint cumulants:$$\Large\langle X_1^{n_1}\dots X_N^{n_N}\rangle_c=\left(i\frac{\partial }{\partial k_1}\right)^{n_1}\dots\left(i\frac{\partial }{\partial k_N}\right)^{n_N}\log\tilde p(\underline{k})|_{\underline{k}=0}$$
+
+It is straightforward to see that if two random variables $X_1,X_2$ are independent, their mixed cumulant will vanish:$$\huge\langle X_1,X_2\rangle_c=0$$
+# The random walk:
+
+Consider a particle at $x=0$ that takes a series of steps, each with length $a$ either left or right with probability $1/2$. We ask what the probability distribution is for the walker's net displacement after $N$ steps. Say the displacement at each step is given by a random variable $s_i$ with PDF $w(s_i)$, which will be the same at each step. The distribution above is therefore:$$\Large w(s)=\frac{1}{2}\delta(s-a)+\frac{1}{2}\delta(s+a)$$We wish to calculate the net displacement$$\huge X=\sum_{i=1}^Ns_i$$, which we do in two different ways:
+
+## Exact solution:
+Let us write the joint PDF for $X$ and $s_i$ for each $i$:$$\Large p(X,s_1,\dots,s_N)=\delta\left(X-\sum_{i=1}^Ns_i\right)\prod_{i=1}^Nw(s_i)$$To show this is correct, let us compute the unconditional PDF for the $\{s_i\}$, which we obtain by integrating over $X$:$$\Large\int dXp(X,s_1,\dots,s_N)=\prod_{i=1}^Nw(s_i)$$This is exactly what we expect, the joint PDF of a collection of independent random variables is the product of the individual PDFs. We introduce the delta function to force $X$ to take the value we want. We are interested in the unconditional PDF for the random variable $X$, which we find by integrating over the individual steps $s_i$:$$\Large\begin{aligned}
+p(X)&=\int\prod_{i=1}^N(ds_i\,w(s_i))\delta\left(X-\sum_{i=1}^Ns_i\right)\\
+\implies\tilde p(k)&=\int dX\,e^{-ikX}\int\prod_{i=1}^N(ds_i\,w(s_i))\delta\left(X-\sum_{i=1}^Ns_i\right)\\
+&=\int\prod_{i=1}^N(ds_i\,w(s_i))e^{ik \sum_{i=1}^Ns_i}
+\end{aligned}$$Where we used the delta function definition to integrate over $X$, note this is just $N$ copies of the integral for $\tilde w(s_i)$:$$\Large\implies\tilde p(k)=\tilde w(k)^M\,\,p(X)=\int\frac{dk}{2\pi}e^{ikX}\tilde w(k)^N$$This gives us a procedure to answer the question, simply raise the characteristic function to the $N$th power and inverse Fourier transform.
