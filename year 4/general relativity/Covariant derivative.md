@@ -27,3 +27,13 @@ A connection is torsion-free if the connection coefficients are symmetric in low
 [\nabla_\mu,\nabla_\nu]f&=\nabla_\mu\nabla_\nu f-\nabla_\nu\nabla_\mu f\\
 &=(\partial_\mu\partial_\nu f-\Gamma^\lambda_{\mu\nu}f)-(\partial_\nu\partial_\mu f-\Gamma^\lambda_{\nu\mu}f)=0
 \end{aligned}$$
+A connection is metric compatible if the covariant derivative of the metric wrt that connection is everywhere zero, implying a few nice properties:
+> For a metric compatible tensor ($\nabla_\rho g_{\mu\nu}=0$), it is easy to show that the Levi-Civita tensor as well as the inverse metric are also metric compatible:$$\Large\nabla_\lambda\epsilon_{\mu\nu\rho\sigma}=\nabla_\rho g^{\mu\nu}=0$$
+> A metric compatible covariant derivative commutes with raising and lowering of indices. That is, for a vector field $V^\lambda$:$$\Large g_{\mu\lambda}\nabla_\rho V^\lambda=\nabla_\rho(g_{\mu\lambda}V^\lambda)=\nabla_\rho V_\mu$$
+
+We claim that there is exactly one torsion-free connection on a given manifold that is also compatible with the metric given on the manifold. To demonstrate both existence and uniqueness, we derive a manifestly unique expression for the connection coefficients in terms of the metric. Expanding the equation of metric compatibility over three permutations of the indices:$$\Large\begin{aligned}
+\nabla_\rho g_{\mu\nu}&=\partial_\rho g_{\mu\nu}-\Gamma^\lambda_{\rho\mu}g_{\lambda\nu}-\Gamma^\lambda_{\rho\nu}g_{\mu\lambda}=0\,\,(1)\\
+\nabla_\mu g_{\nu\rho}&=\partial_\mu g_{\nu\rho}-\Gamma^\lambda_{\mu\nu}g_{\lambda\rho}-\Gamma^\lambda_{\mu\rho}g_{\nu\lambda}=0\,\,(2)\\
+\nabla_\nu g_{\rho\mu}&=\partial_\rho g_{\rho\mu}-\Gamma^\lambda_{\nu\rho}g_{\lambda\mu}-\Gamma^\lambda_{\nu\mu}g_{\rho\lambda}=0\,\,(3)\\
+_{\text{subtracting }2,3\text{ from }1}\implies0&=\partial_\rho g_{\mu\nu}-\partial_\mu g_{\nu\rho}-\partial_\nu g_{\rho\mu}+2\Gamma^\lambda_{\mu\nu}g_{\lambda\rho}
+\end{aligned}$$
