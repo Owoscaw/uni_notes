@@ -31,9 +31,30 @@ A connection is metric compatible if the covariant derivative of the metric wrt 
 > For a metric compatible tensor ($\nabla_\rho g_{\mu\nu}=0$), it is easy to show that the Levi-Civita tensor as well as the inverse metric are also metric compatible:$$\Large\nabla_\lambda\epsilon_{\mu\nu\rho\sigma}=\nabla_\rho g^{\mu\nu}=0$$
 > A metric compatible covariant derivative commutes with raising and lowering of indices. That is, for a vector field $V^\lambda$:$$\Large g_{\mu\lambda}\nabla_\rho V^\lambda=\nabla_\rho(g_{\mu\lambda}V^\lambda)=\nabla_\rho V_\mu$$
 
+# Christoffel connection:
+
 We claim that there is exactly one torsion-free connection on a given manifold that is also compatible with the metric given on the manifold. To demonstrate both existence and uniqueness, we derive a manifestly unique expression for the connection coefficients in terms of the metric. Expanding the equation of metric compatibility over three permutations of the indices:$$\Large\begin{aligned}
 \nabla_\rho g_{\mu\nu}&=\partial_\rho g_{\mu\nu}-\Gamma^\lambda_{\rho\mu}g_{\lambda\nu}-\Gamma^\lambda_{\rho\nu}g_{\mu\lambda}=0\,\,(1)\\
 \nabla_\mu g_{\nu\rho}&=\partial_\mu g_{\nu\rho}-\Gamma^\lambda_{\mu\nu}g_{\lambda\rho}-\Gamma^\lambda_{\mu\rho}g_{\nu\lambda}=0\,\,(2)\\
 \nabla_\nu g_{\rho\mu}&=\partial_\rho g_{\rho\mu}-\Gamma^\lambda_{\nu\rho}g_{\lambda\mu}-\Gamma^\lambda_{\nu\mu}g_{\rho\lambda}=0\,\,(3)\\
 _{\text{subtracting }2,3\text{ from }1}\implies0&=\partial_\rho g_{\mu\nu}-\partial_\mu g_{\nu\rho}-\partial_\nu g_{\rho\mu}+2\Gamma^\lambda_{\mu\nu}g_{\lambda\rho}
+\end{aligned}$$We can then solve for the connection by multiplying by the inverse metric $g^{\sigma\rho}$:$$\Large\Gamma^\sigma_{\mu\nu}=\frac{1}{2}g^{\sigma\rho}(\partial_\mu g_{\nu\rho}+\partial_\nu g_{\rho\mu}-\partial_\rho g_{\mu\nu})$$It remains to check that the RHS of this transforms like a connection. This is known as the Christoffel connection, with the associated connection coefficients called the Christoffel symbols written as $\{^\sigma_{\mu\nu}\}$. The study of manifolds with their associated connections is known as Riemannian geometry.
+
+Note that in flat spacetime, the Christoffel symbols vanish in cartesian coordinates but not in curvilinear coordinates. Consider the plane in polar coordinates ($ds^2=dr^2+r^2d\theta^2$). The nonzero components of the inverse metric are found to be $g^{rr}=1,g^{\theta\theta}=r^{-2}$. Computing the symbols, we find:$$\Large\begin{aligned}
+\Gamma^r_{\theta r}&=\Gamma^r_{r\theta}=0\\
+\Gamma^\theta_{rr}&=0\\
+\Gamma^\theta_{r\theta}&=\Gamma^\theta_{\theta r}=\frac{1}{r}\\
+\Gamma^\theta_{\theta\theta}&=0
 \end{aligned}$$
+We can write the formula for the divergence of a vector (wrt the Christoffel connection) in a simplified form. The covariant divergence of $V^\mu$ is given by$$\large\begin{aligned}
+\nabla_\mu V^\mu&=\partial_\mu V^\mu+\Gamma^\mu_{\mu\lambda}V^\lambda\\
+&=\partial_\mu V^\mu+\frac{1}{\sqrt{|g|}}\partial_\lambda\sqrt{|g|}V^\lambda\\
+&=\frac{1}{\sqrt{|g|}}\partial_\mu(\sqrt{|g|}V^\mu)
+\end{aligned}$$, which we use in the curved-space version of [[Integral theorems#Stokes' theorem|Stokes' theorem]]:
+> If $V^\mu$ is a vector field over a region $\Sigma\subset M$ of a manifold $M$ with boundary $\partial\Sigma$$$\Large\int_\Sigma\nabla_\mu V^\mu\sqrt{|g|}d^nx=\int_{\partial\Sigma}n_\mu V^\mu\sqrt{|\gamma|}d^{n-1}x$$, where $n_\mu$ is normal to $\partial\Sigma$, and $\gamma_{ij}$ is the induced metric on $\partial\Sigma$. The metric compatible and torsion free requirements remove additional terms.
+
+Note since the [[SR, Manifolds, and Field theory summary#Exterior derivatives|exterior derivative]] and the vector-field commutator are both well-defined as both involve antisymmetrisation that cancels nontensorial terms in transformation laws. This implies they can be defined in terms of torsion free covariant derivatives. That is to say, if $\nabla$ is the Christoffel connection, $\omega_\mu$ is a $1$-form, and $X^\mu,Y^\mu$ are vector fields:$$\Large\begin{aligned}
+(d\omega)_{\mu\nu}&=2\partial_{[\mu\omega_\nu]}=2\nabla_{[\mu\omega_\nu]}\\
+[X,Y]^\mu&=X^\lambda\partial_\lambda Y^\mu-Y^\lambda\partial_\lambda X^\mu\\
+&=X^\lambda\nabla_\lambda Y^\mu-Y^\lambda\nabla_\lambda X^\mu
+\end{aligned}$$For torsion-full connections, the last equalities in each expression are not true and there will be additional terms. 
