@@ -59,6 +59,51 @@ E_0=\hat H |0\rangle&=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\unde
 
 
 ## Normal ordering:
-To do this, we introduce normal ordering. Given an operator $\mathcal{O}$ written in terms of creation/annihilation operators, we define its normal ordered version $:\mathcal{O}:$ to be the same expression with creation operators to the left and annihilation operators to the right in each term. Our normal ordered Hamiltonian is then$$\Large:\hat H:=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}^\dagger\hat b_\underline{k})$$which will annihilate the vacuum state $|0\rangle$. Therefore the vacuum energy $E_0=0$. Note when we canonically quantise, each expression can take a different quantum operator with different vacuum energy however they will take the same normal ordered form. This justifies ignoring infinite vacuum energy, however there are some systems where differences in vacuum energy is measurable. Beyond free theories, removing infinities in QFT needs to be consistently. The formalism of this is regularisation and renormalisation.
+To do this, we introduce normal ordering. Given an operator $\mathcal{O}$ written in terms of creation/annihilation operators, we define its normal ordered version $:\mathcal{O}:$ to be the same expression with creation operators to the left and annihilation operators to the right in each term. Our normal ordered Hamiltonian is then$$\Large:\hat H:=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}^\dagger\hat b_\underline{k})$$which will annihilate the vacuum state $|0\rangle$. Therefore the vacuum energy $E_0=0$ is the eigenvalue of this eigenstate. Note when we canonically quantise, each expression can take a different quantum operator with different vacuum energy however they will take the same normal ordered form. This justifies ignoring infinite vacuum energy, however there are some systems where differences in vacuum energy is measurable. Beyond free theories, removing infinities in QFT needs to be consistently. The formalism of this is regularisation and renormalisation
+
+Note this ordered Hamiltonian obeys the commutation relations:$$\huge\begin{aligned}
+[:\hat H:,\hat a_\underline{k}]&=-\omega_\underline{k}\hat a_\underline{k}\\
+[:\hat H:,\hat a_\underline{k}^\dagger]&=\omega_\underline{k}\hat a_\underline{k}^\dagger
+\end{aligned}$$Similar for $\hat b_\underline{k}$. We use this ordered Hamiltonian to construct eigenstates:$$\huge :\hat H:\hat a_\underline{k}^\dagger |0\rangle=\omega_\underline{k}\hat a_\underline{k}^\dagger|0\rangle$$
 
 ## Single particle states:
+Recall we had a $U(1)$ symmetry on the scalar field $\Phi$, meaning we can construct a symmetry from$$\Large\begin{aligned}
+Q&=-i\int d^3x(\Pi\Phi-\Phi^*\Pi^*)\\
+\implies:\hat Q:&=\int\frac{d^3k}{(2\pi)^3}(\hat a_\underline{k}^\dagger\hat a_\underline{k}-\hat b_\underline{k}^\dagger\hat b_\underline{k})\\
+\implies[:\hat H:,:\hat Q:]&=0
+\end{aligned}$$, which we can therefore diagonalise simultaniously. This "charge" operator acts like:$$\Large\begin{aligned}
+:\hat Q:\hat a_\underline{k}^\dagger |0\rangle&=+1\hat a_\underline{k}^\dagger |0\rangle&Q=+1\\
+:\hat Q:\hat b_\underline{k}^\dagger |0\rangle&=-1\hat b_\underline{k}^\dagger |0\rangle&Q=-1
+\end{aligned}$$We introduce the stress-energy tensor by quantising it's classical definition:$$\Large\begin{aligned}
+P^i&=-\int d^3x(\Pi\partial^i\Phi+(\partial^i\Phi^*)\Pi^*)\\
+\implies:\hat P:&=\int\frac{d^3k}{(2\pi)^3}k^i(\hat a_\underline{k}^\dagger\hat a_\underline{k}+\hat b_\underline{k}^\dagger\hat b_\underline{k})\\
+\implies:\hat P^i:\hat a_\underline{k}^\dagger |0\rangle&=k^i\hat a_\underline{k}^\dagger |0\rangle\\
+:\hat P^i:\hat b_\underline{k}^\dagger |0\rangle&=k^i\hat b_\underline{k}^\dagger |0\rangle
+\end{aligned}$$This pulls out the momentum eigenvalue of the state. To summarise:
+
+| State                                    | Energy                 | Charge | Momentum        |
+| ---------------------------------------- | ---------------------- | ------ | --------------- |
+| $\| 0\rangle$                            | $0$                    | $0$    | $0$             |
+| $\hat a_\underline{k}^\dagger\|0\rangle$ | $\omega_\underline{k}$ | $+1$   | $\underline{k}$ |
+| $\hat b_\underline{k}^\dagger\|0\rangle$ | $\omega_\underline{k}$ | $-1$   | $\underline{k}$ |
+## Multi-particle states:
+To construct multi-particle states, we can simply repeatedly act with our creation operators. To make $N_a$ $a$-type particles and $N_b$ $b$-type particles:$$\Large |\{\underline{p}_1,\dots,\underline{p}_{N_a},\underline{q_1},\dots,\underline{q}_{N_b}\}\rangle=\hat a_{\underline{p}_1}^\dagger\dots\hat b_{\underline{q}_{N_b}}^\dagger |0\rangle$$We can easily quantise the particle number by promoting it to an operator:$$\Large\begin{aligned}
+\hat N_a&=\int\frac{d^3k}{(2\pi)^3}\hat a_\underline{k}^\dagger\hat a_\underline{k}\\
+\hat N_b&=\int\frac{d^3k}{(2\pi)^3}\hat b_\underline{k}^\dagger\hat b_\underline{k}
+\end{aligned}$$Fixing the number of each particle, we can write the commutation relation and realise:$$\Large\begin{aligned}
+[:\hat H:,\hat N_a]&=[:\hat H:,\hat N_b]=0\\
+\implies:\hat Q:&=\hat N_a-\hat N_b
+\end{aligned}$$To summarise, our Fock space is constructed via:
+
+| Operator     | Eigenvalue            | explicitly                                                                           |
+| ------------ | --------------------- | ------------------------------------------------------------------------------------ |
+| $:\hat H:$   | energy $E$            | $\sum_{i=1}^{N_a}=\omega_{\underline{p}_i}+\sum_{j=1}^{N_b}\omega_{\underline{q}_j}$ |
+| $:\hat Q:$   | charge $Q$            | $N_a-N_b$                                                                            |
+| $:\hat P^i:$ | stress $\underline P$ | $\sum_{i=1}^{N_a}\underline{p}_i+\sum_{j=1}^{N_b}\underline{q}_j$                    |
+Note that a group of multiple $a$-type particles created from $\hat a_{\underline{p}_1}^\dagger$ and then $\hat a_{\underline{p}_2}^\dagger$ is indistinguishable from creating them in the opposite order. This implies Bosons.
+
+We created states with definite momentum from the $a$-type operators above, we ask how we can construct definite position eigenstates from this. As always, Fourier is the answer. Recall how we constructed the field as an operator. Acting with this on the vaccum state:$$\Large\begin{aligned}
+\hat \Phi(t,\underline{x})|0\rangle&=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}(\hat a_\underline{k}e^{i\underline{k}\cdot\underline{x}}+\hat b_\underline{k}^\dagger e^{-i\underline{k}\cdot\underline{x}})|0\rangle\\
+&=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega}_\underline{k}}e^{i\omega_\underline{k}t-i\underline{k}\cdot\underline{x}}
+\hat b_\underline{k}^\dagger |0\rangle\end{aligned}$$This is the state of a $b$-type particle with definite position. Similarly, we could have constructed a definite position state of an $a$-type particle with $\hat\Phi^\dagger$.
+
