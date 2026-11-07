@@ -46,3 +46,7 @@ _\text{cylindrical coordinates}\implies\underline{X}&=s\underline{e}_s+z\underli
 \end{aligned}$$This demonstrates that the centrifugal force pushes objects away from $\underline{\Omega}$. We aim to find a potential $\phi_c$ such that $\underline{\nabla}\phi_c=\underline{\Omega}\times(\underline{\Omega}\times\underline{X})$:$$\Large\frac{\partial \phi_c}{\partial s}=-\Omega^2s,\,\,\frac{\partial \phi_c}{\partial \theta}=\frac{\partial \phi_c}{\partial z}=0$$Therefore we can write:$$\Large \phi_c=-\frac{\Omega^2s^2}{2}=-\frac{1}{2}|\underline{\Omega}\times\underline{X}|^2$$We can therefore simplify the centrifugal force term in the rotating Boussinesq equations$$\Large \frac{D\underline{u}}{Dt}+2\underline{\Omega}\times\underline{u}=-\frac{1}{\rho_0}\underline{\nabla}p_r+b\underline{e}_z$$where $p_r=p+\rho_0\phi_c$.
 
 ## Tangent-plane approximation:
+
+# Rotationally dominated flow:
+
+In fluid flows where the Coriolis force dominates other forces and acceleration terms, the horizontal components of the rotating Boussinesq equations reduce to:$$\huge \underline{f}\times\underline{u}=-\frac{1}{\rho_0}\underline{\nabla}_Hp$$This is known as Geostrophic Balance. Recalling our $2$-dimensional velocity $\underline{v}=(u,v,0)$, it follows that:$$\Large\underline{v}\cdot(\underline{f}\times\underline{u})=0\implies\underline{v}\cdot\underline{\nabla}_Hp=0$$Therefore horizontal wind will flow along lines of constant pressure.
