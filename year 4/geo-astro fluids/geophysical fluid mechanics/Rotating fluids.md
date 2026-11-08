@@ -46,6 +46,16 @@ _\text{cylindrical coordinates}\implies\underline{X}&=s\underline{e}_s+z\underli
 \end{aligned}$$This demonstrates that the centrifugal force pushes objects away from $\underline{\Omega}$. We aim to find a potential $\phi_c$ such that $\underline{\nabla}\phi_c=\underline{\Omega}\times(\underline{\Omega}\times\underline{X})$:$$\Large\frac{\partial \phi_c}{\partial s}=-\Omega^2s,\,\,\frac{\partial \phi_c}{\partial \theta}=\frac{\partial \phi_c}{\partial z}=0$$Therefore we can write:$$\Large \phi_c=-\frac{\Omega^2s^2}{2}=-\frac{1}{2}|\underline{\Omega}\times\underline{X}|^2$$We can therefore simplify the centrifugal force term in the rotating Boussinesq equations$$\Large \frac{D\underline{u}}{Dt}+2\underline{\Omega}\times\underline{u}=-\frac{1}{\rho_0}\underline{\nabla}p_r+b\underline{e}_z$$where $p_r=p+\rho_0\phi_c$.
 
 ## Tangent-plane approximation:
+It is often convenient to work in reference frames rotating with a planet during the study of oceans and atmospheres. However, rotation forces often dominate and so we make two approximations. In spherical polars $(r,\theta,\phi)$ we have that$$\Large\underline{\Omega}=\Omega\sin\theta\,\underline{e}_r+\Omega\cos\theta\,\underline{e}_\theta$$, where $\theta$ is latitude and $\phi$ is longitude. That is to say, the most general form of $\underline{\Omega}$ has latitude dependent radial and meridional components. If we limit dynamics to a small region in $\theta$, we can make a set of simplifications by defining a tangent plane to the surface at some latitude $\theta_0$.
+
+Taking the $z$-axis to point along $-\underline{\nabla}\Phi$ and writing $-\underline{\nabla}\Phi=g\underline{e}_z$, we take $x$ to point east and $y$ north with $y=0$ at $\theta=\theta_0$:![[Rotating fluids 2026-11-08 17.01.54.excalidraw]]In this approximation, gravity points (nearly) radially inwards so we take $\underline{e}_r\approx\underline{e}_z$ and $\underline{\theta}\approx\underline{e}_y$ at $\theta=\theta_0$:$$\Large\implies\underline{\Omega}\approx\Omega\sin\theta\,\underline{e}_z+\Omega\cos\theta\,\underline{e}_y$$For small $\theta-\theta_0$, $y\approx r_e(\theta-\theta_0)$ so:$$\Large\begin{aligned}
+\sin(\theta)&=\sin(\theta_0-(\theta-\theta_0))=\sin\theta_0+(\theta-\theta_0)\cos\theta_0+\mathcal{O}((\theta-\theta_0)^2)\\
+&\approx\sin\theta_0+\frac{\cos\theta_0}{r_e}y\\
+\cos\theta&\approx\cos\theta_0-\frac{\sin\theta_0}{r_e}y\text{ similarly}
+\end{aligned}$$Therefore if we write $\underline{\Omega}=\Omega_z\underline{e}_z+\Omega_y\underline{e}_y$ with$$\Large\begin{aligned}
+\Omega_z&=\Omega\sin\theta_0+\frac{\Omega\cos\theta_0}{r_e}y\\
+\Omega_y&=\Omega\cos\theta_0-\frac{\Omega\sin\theta_0}{r_e}y
+\end{aligned}$$, we can write the Coriolis force $2\underline{\Omega}\times\underline{u}$ as:$$\Large2\underline{\Omega}\times\underline{u}=(2\Omega_yw-2\Omega_zv,2\Omega_zu,-2\Omega_yu)$$
 
 # Rotationally dominated flow:
 
