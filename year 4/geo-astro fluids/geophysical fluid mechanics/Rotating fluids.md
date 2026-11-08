@@ -55,7 +55,35 @@ Taking the $z$-axis to point along $-\underline{\nabla}\Phi$ and writing $-\unde
 \end{aligned}$$Therefore if we write $\underline{\Omega}=\Omega_z\underline{e}_z+\Omega_y\underline{e}_y$ with$$\Large\begin{aligned}
 \Omega_z&=\Omega\sin\theta_0+\frac{\Omega\cos\theta_0}{r_e}y\\
 \Omega_y&=\Omega\cos\theta_0-\frac{\Omega\sin\theta_0}{r_e}y
-\end{aligned}$$, we can write the Coriolis force $2\underline{\Omega}\times\underline{u}$ as:$$\Large2\underline{\Omega}\times\underline{u}=(2\Omega_yw-2\Omega_zv,2\Omega_zu,-2\Omega_yu)$$
+\end{aligned}$$, we can write the Coriolis force $2\underline{\Omega}\times\underline{u}$ as:$$\Large2\underline{\Omega}\times\underline{u}=(2\Omega_yw-2\Omega_zv,2\Omega_zu,-2\Omega_yu)$$Therefore the cartesian components of the momentum equations under our approximation become:$$\Large\begin{aligned}
+\frac{Du}{Dt}+2(\Omega_yw-\Omega_zv)&=-\frac{1}{\rho_0}\frac{\partial p}{\partial x}\\
+\frac{Dv}{Dt}+2\Omega_zu&=-\frac{1}{\rho_0}\frac{\partial p}{\partial y}\\
+\frac{Dw}{Dt}-2\Omega_yu&=-\frac{1}{\rho_0}\frac{\partial p}{\partial z}+b
+\end{aligned}$$Further assuming that the layer is thin, we have $|w|<<|u|,|v|$ and so we drop the $\omega_yw$ term for the $x$-direction equation. To conserve energy we also drop the $-\Omega_yw$ term, leading to the equations:$$\Large\begin{aligned}
+\frac{Du}{Dt}-fv&=-\frac{1}{\rho}\frac{\partial p}{\partial x}\\
+\frac{Dv}{Dt}+fv&=-\frac{1}{\rho}\frac{\partial p}{\partial y}\\
+\frac{Dw}{Dt}&=-\frac{1}{\rho}\frac{\partial p}{\partial z}+b\\
+f&=2\Omega_z\\
+\implies \frac{D\underline{u}}{Dt}+\underline{f}\times\underline{u}&=-\frac{1}{\rho}\underline{\nabla}p+b\underline{e}_z
+\end{aligned}$$Where $\underline{f}=f(y)\underline{e}_z$. This is known as the traditional approximation, and $f$ is known as the Coriolis parameter. We often write$$\Large f=f_0+\beta y,\,\,f_0=2\Omega\sin\theta_0,\,\,\beta=\frac{2\Omega\cos\theta_0}{r_e}$$, called the $\beta$-plane approximation. Here, $\beta$ contains the latitudinal variations in $f$. For extremely localised flows, we do not need to take latitudinal variations into account $(\beta=0)$. This is known as the $f$-plane approximation.
+
+Considering the tangent plane approximation, we can write our usual set of equations in the rotating frame:
+> The rotating shallow water equations become:$$\Large\begin{aligned}
+\frac{\partial \underline{v}}{\partial t}+(\underline{v}\cdot\underline{\nabla}_H)\underline{v}+\underline{f}\times\underline{v}&=-g\underline{\nabla}_H\eta\\
+\frac{\partial h}{\partial t}+\underline{\nabla}_H\cdot(h\underline{v})&=0\\
+h&=\eta-\eta_b
+\end{aligned}$$
+> The rotating hydrostatic Boussinesq equations become:$$\Large\begin{aligned}
+\frac{\partial \underline{v}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{v}+\underline{f}\times\underline{v}&=-\frac{1}{\rho_0}\underline{\nabla}_Hp\\
+\frac{1}{\rho_0}\frac{\partial p}{\partial z}&=b\\
+\underline{\nabla}\cdot\underline{u}&=0\\
+\frac{\partial b}{\partial t}+(\underline{u}\cdot\underline{\nabla})b+N^2w&=0
+\end{aligned}$$
+> The rotating non-hydrostatic Boussinesq equations become:$$\Large\begin{aligned}
+\frac{\partial \underline{u}}{\partial t}+(\underline{u}\cdot\underline{\nabla})\underline{u}+\underline{f}\times\underline{u}&=-\frac{1}{\rho_0}\underline{\nabla}p+b\underline{e}_z\\
+\underline{\nabla}\cdot\underline{u}&=0\\
+\frac{\partial b}{\partial t}+(\underline{u}\cdot\underline{\nabla})b+N^2(z)w&=0
+\end{aligned}$$
 
 # Rotationally dominated flow:
 
