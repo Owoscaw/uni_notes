@@ -32,5 +32,7 @@ Let us consider a non-trivial example:
 > For timelike separated $x$ and $y$, we choose $x-y$ to point in the time direction. That is, there exists a Lorentz transformation such that:$$\Large\Lambda^\mu_\nu(x-y)^\nu=(x'^0-y'^0,0,0,0)^\mu$$The integral then becomes$$\Large\int\frac{d^3k}{(2\pi)^32\omega_\underline{k}}(e^{-i\omega_\underline{k}(x'^0-y'^0)}-e^{i\omega_\underline{k}(x'^0-y'^0)})$$, a non-vanishing oscillatory function in $(x'^0-y'^0)$.
 > For spacelike separated $x$ and $y$, we can choose $x-y$ to be zero in the time direction. That is, we take a Lorentz transformation such that:$$\Large\Lambda^\mu_\nu(x-y)^\nu=(0,\underline{x}'-\underline{y}')^\mu$$The integral then becomes$$\Large\begin{aligned}
 &\int\frac{d^3k}{(2\pi)^32\omega_\underline{k}}(e^{i\underline{k}\cdot(\underline{x}'-\underline{y}')}-e^{-i\underline{k}\cdot(\underline{x}'-\underline{y}')})\\
-_{\text{changing }\underline{k}\to-\underline{k}\text{ in second term}}&\int\frac{d^3k}{(2\pi)^32\omega_\underline{k}}()
-\end{aligned}$$
+_{\text{changing }\underline{k}\to-\underline{k}\text{ in second term}}&\int\frac{d^3k}{(2\pi)^32\omega_\underline{k}}(e^{i\underline{k}\cdot(\underline{x}'-\underline{y}')}-e^{i\underline{k}\cdot(\underline{x}'-\underline{y}')})=0
+\end{aligned}$$, which we are allowed to do since $\omega_{-\underline{k}}=\omega_\underline{k}$. By Lorentz covariance, we find:$$\Large[\Phi(x),\Phi^\dagger(y)]=0,\,\,(x-y)^2>0$$
+
+The same turns out to be true for any commutator of spacelike separated local operators. Furthermore, it holds for both free and interacting theories. In QFT, information cannot propagate outside the light-cone and we call the theory causal.

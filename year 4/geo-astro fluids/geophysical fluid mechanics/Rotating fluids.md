@@ -88,3 +88,11 @@ h&=\eta-\eta_b
 # Rotationally dominated flow:
 
 In fluid flows where the Coriolis force dominates other forces and acceleration terms, the horizontal components of the rotating Boussinesq equations reduce to:$$\huge \underline{f}\times\underline{u}=-\frac{1}{\rho_0}\underline{\nabla}_Hp$$This is known as Geostrophic Balance. Recalling our $2$-dimensional velocity $\underline{v}=(u,v,0)$, it follows that:$$\Large\underline{v}\cdot(\underline{f}\times\underline{u})=0\implies\underline{v}\cdot\underline{\nabla}_Hp=0$$Therefore horizontal wind will flow along lines of constant pressure.
+
+## Taylor-Proudman theorem:
+If we assume hydrostatic balance in the vertical direction, the $z$-direction equation dictates$$\huge\frac{\partial p}{\partial z}=-\rho g$$, and if we consider $\rho=\rho(z)$ then geostrophic balance in horizontal directions give:$$\Large\begin{aligned} &-fv=-\frac{1}{\rho_0}\frac{\partial p}{\partial x}&fu=-\frac{1}{\rho_0}\frac{\partial p}{\partial y}\\
+\implies &v=\frac{\partial }{\partial x}\frac{p}{f\rho_0}&u=-\frac{\partial }{\partial y}\frac{p}{f\rho_0}\\
+\implies&0=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}
+\end{aligned}$$So we must have $\frac{\partial w}{\partial z}=0$. That is, vertical velocity is independent of height. Since we assumed $\rho$ to be a function only in $z$ our equation for $p$ gives $\frac{\partial^2p}{\partial x\partial z}=\frac{\partial^2p}{\partial y\partial z}=0$. Then by the above we deduce $\frac{\partial u}{\partial z}=\frac{\partial v}{\partial z}=0$, horizontal flow independent of height.
+
+This is known as the Taylor-Proudman theorem, which states that the fluid velocity is uniform along any line parallel to the axis of rotation for a fluid steadily rotated at high angular velocity.
