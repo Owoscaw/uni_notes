@@ -6,4 +6,6 @@ k^\mu&\to\Lambda^\mu_\nu k^\nu=k'^\nu\\
 d^4k&\to d^4k'|\det\Lambda|^{-1}=d^4k'\\
 -k^\mu k_\mu-m^2&\to-k'^\mu k'_\mu-m^2\\
 _\text{orthochronous}\implies\theta(k^0)&\to\theta(k'^0)
-\end{aligned}$$Note the equation$$\huge (k^0)^2-\underline{k}\cdot\underline{k}=m^2$$describes a hyperboloid in $k$, known as the mass-shell condition. We can solve for two solutions$$\Large k^0=\pm\sqrt{|\underline{k}|^2+m^2}=\pm\omega_\underline{k}$$, however we discard the negative solution due to the presence of the Heaviside function in our measure.
+\end{aligned}$$Note the equation$$\huge (k^0)^2-\underline{k}\cdot\underline{k}=m^2$$describes a hyperboloid in $k$, known as the mass-shell condition. We can solve for two solutions$$\Large k^0=\pm\sqrt{|\underline{k}|^2+m^2}=\pm\omega_\underline{k}$$, however we discard the negative solution due to the presence of the Heaviside function in our measure. Splitting our measure integral over components like this, we write:$$\Large\begin{aligned}
+\int d^4k\,\delta(-k^2-m^2)\theta(k^0)&=\int d^3k\int
+\end{aligned}$$
