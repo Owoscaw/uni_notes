@@ -13,4 +13,15 @@ _\text{orthochronous}\implies\theta(k^0)&\to\theta(k'^0)
 \end{aligned}$$This is a Lorentz invariant measure that we can use to integrate over the $3$-dimensional hyperboloid mentioned above. The fact that this is Lorentz invariant allows us to construct a Lorentz invariant delta function. Let us denote this function by $\tilde\delta^{(3)}(\underline{k}-\underline{k}')$, we want this to satisfy$$\Large\int\frac{d^3k}{2\omega_\underline{k}}\tilde\delta^{(3)}(\underline{k}-\underline{k}')f(\underline{k})=f(\underline{k}')$$so that we maintain Lorentz invariance on the measure and the delta function. This implies the Lorentz invariant delta function on the mass shell is:$$\Large\tilde\delta^{(3)}(\underline{k}-\underline{k}')=2\omega_\underline{k}\delta^{(3)}(\underline{k}-\underline{k}')$$We can then adapt our commutation relations$$\Large\begin{aligned}
 [a_\underline{k},a_\underline{k'}^\dagger]&=(2\pi)^3\delta^{(3)}(\underline{k}-\underline{k}')=\frac{(2\pi)^3}{2\omega_\underline{k}}\tilde\delta^{(3)}(\underline{k}-\underline{k}')\\
 [b_\underline{k},b_\underline{k'}^\dagger]&=(2\pi)^3\delta^{(3)}(\underline{k}-\underline{k}')=\frac{(2\pi)^3}{2\omega_\underline{k}}\tilde\delta^{(3)}(\underline{k}-\underline{k}')
-\end{aligned}$$
+\end{aligned}$$, which then imply the form of relativistically normalised creation/annihilation operators:$$\Large\begin{aligned}
+&\tilde a_\underline{k}=\sqrt{2\omega_\underline{k}}a_\underline{k}&\tilde a_\underline{k}^\dagger=\sqrt{2\omega_\underline{k}}a_\underline{k}^\dagger\\
+&\tilde b_\underline{k}=\sqrt{2\omega_\underline{k}}b_\underline{k}&\tilde b_\underline{k}^\dagger=\sqrt{2\omega_\underline{k}}b_\underline{k}^\dagger
+\end{aligned}$$These manifestly satisfy the above commutation relations without the prefactor of $1/(2\omega_\underline{k})$.
+
+# Commutators and the light-cone:
+
+In our process of quantisation, we made a choice in time (and therefore rest frame). Our starting point was the canonical [[QFT in canonical formalism#Equal-time commutation relations|equal-time commutation relation]]:$$\Large[\Phi(t,\underline{x}),\Pi(t,\underline{y})]=i\delta^{(3)}(\underline{x}-\underline{y})$$Therefore the resulting quantum theory may not be Lorentz covariant, our procedure may have broken this symmetry.
+
+To find out, let us test with operators that are timelike or spacelike separated. If an event happens at some point $x$ in spacetime, then an event at another spacetime point $y$ can affect the event at $x$ if they are timelike separated $(x-y)^2<0$ and cannot affect it if they are spacelike separated $(x-y)^2>0$. The surface separating these regions is a cone in $\Re^{1,3}$ known as the light-cone.
+
+Lorentz invariance demands no information propagates faster than the speed of light, so it follows that any two measurements in the quantum theory that are spacelike separated should not affect each other, i.e. they commute:$$\Large[\mathcal{O}_1(x),\mathcal{O}_2(y)]=0,\,\,(x-y)^2>0$$
