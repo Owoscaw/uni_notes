@@ -95,4 +95,10 @@ If we assume hydrostatic balance in the vertical direction, the $z$-direction eq
 \implies&0=\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}
 \end{aligned}$$So we must have $\frac{\partial w}{\partial z}=0$. That is, vertical velocity is independent of height. Since we assumed $\rho$ to be a function only in $z$ our equation for $p$ gives $\frac{\partial^2p}{\partial x\partial z}=\frac{\partial^2p}{\partial y\partial z}=0$. Then by the above we deduce $\frac{\partial u}{\partial z}=\frac{\partial v}{\partial z}=0$, horizontal flow independent of height.
 
-This is known as the Taylor-Proudman theorem, which states that the fluid velocity is uniform along any line parallel to the axis of rotation for a fluid steadily rotated at high angular velocity.
+This is known as the Taylor-Proudman theorem, which states that the fluid velocity is uniform along any line parallel to the axis of rotation for a fluid steadily rotated at high angular velocity. That is, if there is a solid horizontal boundary then $w=0$ at the boundary and so $w=0$ everywhere:![[Rotating fluids 2026-11-10 14.49.36.excalidraw]]
+
+## Thermal wind balance:
+Combining geostrophic and hydrostatic approximations, we arrive at another important balance called thermal wind balance. To see this, simply differentiate the horizontal geostrophic balance equations by $z$:$$\Large f\frac{\partial v}{\partial z}=\frac{1}{\rho_0}\frac{\partial^2p}{\partial z\partial x},\,\,f\frac{\partial u}{\partial z}=-\frac{1}{\rho_0}\frac{\partial^2p}{\partial z\partial y}$$Combining these with hydrostatic balance from the hydrostatic Boussinesq equations to get:$$\Large\begin{aligned}
+f\frac{\partial v}{\partial z}&=\frac{\partial b}{\partial x}\\
+f\frac{\partial u}{\partial z}&=-\frac{\partial b}{\partial y}
+\end{aligned}$$These represent thermal wind balance, the vertical derivative of the geostrophic velocity is known as the thermal wind. If buoyancy is constant, there is no shearing of the geostrophic wind and the second equation above reduces to the Taylor-Proudman constraint.

@@ -4,7 +4,7 @@
 The [[SR, Manifolds, and Field theory summary#Tensors on manifolds|metric tensor]] is an integral object in curved space, we write it as $g_{\mu\nu}$ and will now discuss restrictions on its components. We take this metric to be symmetric, rank $(2,0)$, and nondegenerate - allowing for the definition of its inverse:$$\huge g^{\mu\nu}g_{\nu\sigma}=g_{\lambda\sigma}g^{\lambda\mu}=\delta^\mu_\sigma$$Note this is different to the [[Metrics|topological]] notion of a metric, and we cannot use this definition to create a topology. We will put this lil guy through the ringer:
 > The metric implies a past and a future
 > The metric allows path lengths and proper time to be computed
-> The metric is [[Geodesics#Fundamental properties of geodesics|geodesic]]
+> The metric is [[year 3/differential geometry 3/term 2/Geodesics#Fundamental properties of geodesics|geodesic]]
 > The metric replaces the [[Gravitational potential|Newtonian gravitational field]] $\phi$
 > The metric provides a notion of locally inertial reference frames
 > The metric defines causality
