@@ -97,4 +97,31 @@ Our initial condition $p(0,X)=\delta(X)$ admits a Gaussian ansatz$$\Large p(T,X)
 \end{aligned}$$Where $T_0$ is an integration constant we set to $0$ from our initial condition. We see that variance increases linearly with time:![[Elements of Probability 2026-11-10 17.46.33.excalidraw]]Note we could've guessed this solution through the central limit theorem on our exact binomial solution above.
 
 ### Mathematical interlude - Integrals of large exponentials:
-Given an integral $$\Large I=\int_{-\infty}^\infty dx\,e^{N\phi(x)}$$, consider the large $N$ limit. This integral converges if $\phi(x)\to-\infty$ as $x\to\pm\infty$, however if $\phi$ is suitably continuous it will have a maximum $\phi(x_\text{max})$. Taylor expanding around this point:$$\Large \phi(x)=\phi(x_\text{max})+\frac{1}{2}\phi''(x_\text{max})(x-x_\text{max})+\dots$$Note the vanishing $\phi'$ term as we are evaluating at a maximum. Changing variables via $x=x_\text{max}+N^{-1/2}y$ we write$$\Large N\phi(x)\approx N\phi(x_\text{max})+\frac{1}{2}\phi''(x_\text{max})y^2+\mathcal{O}(N^{-})$$, so in the large $N$ limit other terms are suppressed. This makes the integral:$$\Large I=N^{-1/2}\int dy\,\exp(N\phi(x_\text{max})-\frac{1}{2}\phi''(x_\text{max})y^2+\dots)$$
+Given an integral $$\Large I=\int_{-\infty}^\infty dx\,e^{N\phi(x)}$$, consider the large $N$ limit. This integral converges if $\phi(x)\to-\infty$ as $x\to\pm\infty$, however if $\phi$ is suitably continuous it will have a maximum $\phi(x_\text{max})$. Taylor expanding around this point:$$\Large \phi(x)=\phi(x_\text{max})+\frac{1}{2}\phi''(x_\text{max})(x-x_\text{max})+\dots$$Note the vanishing $\phi'$ term as we are evaluating at a maximum. Changing variables via $x=x_\text{max}+N^{-1/2}y$ we write$$\Large N\phi(x)\approx N\phi(x_\text{max})+\frac{1}{2}\phi''(x_\text{max})y^2+\mathcal{O}(N^{-})$$, so in the large $N$ limit other terms are suppressed. This makes the integral:$$\Large I=N^{-1/2}\int dy\,\exp(N\phi(x_\text{max})-\frac{1}{2}\phi''(x_\text{max})y^2+\dots)$$This is just a standard Gaussian integral (to leading order in $1/N$), which we calculate:$$\Large I=\sqrt{\frac{2\pi}{N|\phi''(x_\text{max})|}}e^{N\phi(x_\text{max})}+\mathcal{O}(N^{-1})$$This is very useful in the large $N$ limit, as these integrals are often tricky to do. There are two possible corrections we could have made to this result:
+> Taylor series terms of form $1/N$, coming from fluctuations about $x_\text{max}$.
+> Other terms of form $e^{N\phi(x'_\text{max})}$ coming from lower local minima. Note these are exponentially suppressed compared to the terms mentioned above.
+
+Our work here nicely generalises to multidimensional and complex integrals, and is core to much of QFT.
+
+## Stirling's formula:
+We can apply this technique to derive Stirling's formula, a useful approximation to the factorial for large values of the argument:$$\Large\ln N!=N\ln N-N+\frac{1}{2}\ln(2\pi N)+\mathcal{O}(N^{-1})\,\,N\to\infty$$We do this by considering the factorial in integral form:
+> Consider the more general integral$$\Large\begin{aligned}
+I(\alpha)&=\int_0^\infty dx\,x^Ne^{-\alpha x}\\
+&=\left(-\frac{d}{d\alpha}\right)^N\int_0^\infty dx\,e^{-\alpha x}\\
+&=\left(-\frac{d}{d\alpha}\right)^N\left(\frac{1}{\alpha}\right)=\frac{N!}{\alpha^{N+!}}
+\end{aligned}$$which we evaluate at $\alpha=1$ to find:$$\huge N!=\int_0^\infty dx\,x^Ne^{-x}$$
+
+Now to extract Stirling's formula, we write the integral as:$$\Large\begin{aligned}
+N!&=\int_0^\infty dx\,\exp\left(N\left(\log x-\frac{x}{N}\right)\right)\\
+&=\int dx\,\exp(Nf(x))\\
+f(x)&=\log x-\frac{x}{N}\\
+f'(x)&=\frac{1}{x}-\frac{1}{N},\,\,f''(x)=-\frac{1}{x^2}
+\end{aligned}$$From this we see that $f(x)$ is maximised at $x=N$, so let us Taylor expand the terms in the exponential to rewrite the integrand as:$$\Large\begin{aligned}
+N!&=\int dx\exp\left(Nf(N)+\frac{1}{2}Nf''(N)(x-N)^2+\dots\right)\\
+&=\exp(N\log N-N)\int dx\,\exp\left(-\frac{1}{2N}(x-N)^2+\dots\right)
+\end{aligned}$$This now looks like a Gaussian with $\sigma^2=N$ so let us perform our usual method to find:$$\huge N!=N^Ne^{-N}\sqrt{2\pi N}+\dots$$This is exactly Stirling's formula. Note we were slightly naughty in not justifying that subleading terms were in fact subleading.
+
+## Approximating binomial with a Gaussian:
+Now let us apply our integral tricks to show that the binomial distribution to show that it appears as a Gaussian in the appropriate limit. To do this, recall the exact answer for the random walk:$$\Large p_n=\frac{1}{2^N}\frac{N!}{n!(N-n)!}$$Where $n$ is the total steps to the right. To make the symmetry more obvious, define $n=\frac{N}{2}+\frac{m}{2}$ so that $m$ measures total displacement from the origin. Then we have:$$\Large p=\frac{1}{2^N}\frac{N!}{\left(\frac{N}{2}+\frac{m}{2}\right)!\left(\frac{N}{2}-\frac{m}{2}\right)!}$$Now consider Stirling's approximation, working in the limit $N\to\infty$ with $m$ held finite. We work to first nontrivial order in $\frac{m}{N}$ to find:$$\Large\begin{aligned} p&\approx\frac{1}{2^N\sqrt{2\pi}}\frac{N^N\sqrt N}{\left(\frac{N}{2}+\frac{m}{2}\right)^{\frac{N}{2}+\frac{1}{2}}\left(\frac{N}{2}-\frac{m}{2}\right)^{\frac{N}{2}+\frac{1}{2}}}\left(\frac{\frac{N}{2}-\frac{m}{2}}{\frac{N}{2}+\frac{m}{2}}\right)^{\frac{m}{2}}\\
+&\approx\frac{1}{2^N\sqrt{2\pi}}\frac{}{}
+\end{aligned}$$
