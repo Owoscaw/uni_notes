@@ -36,3 +36,6 @@ g_{\mu\nu}&\to g_{\mu\nu}+(\partial_\sigma g_{\mu\nu})\delta x^\sigma
 > We want this to vanish for any variation $\delta x^\sigma$, so let us multiply the bracketed term by the inverse metric $g^{\rho\sigma}$ and set it to $0$:$$\Large \frac{d^2x^\rho}{d\tau^2}+\frac{1}{2}g^{\rho\sigma}(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu})\frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau}=0$$
 
 We have arrived at exactly the geodesic equation with the specific connection choice of the Christoffel connection. Therefore extremals of the length functional are curves that parallel transport their tangent vector wrt the Christoffel connection associated with the metric on the manifold.
+
+# Geodesic properties:
+
