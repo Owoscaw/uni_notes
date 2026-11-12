@@ -39,3 +39,4 @@ We have arrived at exactly the geodesic equation with the specific connection ch
 
 # Geodesic properties:
 
+The primary use of geodesics in general relativity is that they are paths followed by unaccelerated test particles. That is, particles whose body does not influence the geometry around it. This allows us to explore gravitational fields around objects, without worrying about the field of the object whose motion we are following. The geodesic equation can therefore be thought of as the generalisation of Newton's Law. We can easily introduce forces by adding terms to the RHS:$$\Large \frac{d^2x^\mu}{d\tau^2}+\Gamma^\mu_{\rho\sigma}\frac{dx^\rho}{d\tau}\frac{dx^\sigma}{d\tau}=\frac{q}{m}F^\mu_\nu\frac{dx^\nu}{d\tau}$$
