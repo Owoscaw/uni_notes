@@ -143,3 +143,10 @@ Looking at a spatial component $\nu=1$ we work term by term again:$$\Large\begin
 These tell us how a lot of laws applied to classical physical change in an expanding flat spacetime.
 
 # The Riemann curvature tensor:
+
+We are now prepared to discuss curvature in a meaningful way, quantified by the Riemann curvature tensor which is derived from the connection. The notion of curvature comes from how we differ from the "flat" metric. These "flat" metrics have a number of properties that we take as manifestations of "flatness":
+> Parallel transportation around closed loops leaves a vector unchanged.
+> Covariant derivatives of tensors commute.
+> Initially, parallel geodesics remain parallel.
+
+The Riemann tensor arises when we study these properties in more general contexts. We saw that parallel transport around a closed loop on curved space introduces some transf
