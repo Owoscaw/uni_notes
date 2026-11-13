@@ -73,3 +73,30 @@ We must verify these coordinates satisfy:$$\huge\partial_{\hat\sigma}g_{\hat\mu\
 
 # Revisiting [[The metric tensor and Causality#Expanding universes|expanding universes]]:
 
+Recall the expanding universe metric:$$\Large\begin{aligned}
+ds^2&=-dt^2+a^2(t)(dx^2+dy^2+dz^2)\\
+&=-dt^2+a^2(t)\delta_{ij}dx^idx^j
+\end{aligned}$$Describing a universe of flat spatial sections expanding as a function of time, with relative distance growing proportionally to a scale factor $a(t)$:
+> Let us proceed by computing the Christoffel symbols, using the technique we found earlier. We have:$$\Large I=\frac{1}{2}\int\left(-\left(\frac{dt}{d\tau}\right)^2+a^2(t)\delta_{ij}\frac{dx^i}{d\tau}\frac{dx^j}{d\tau}\right)d\tau$$
+> We consider variations $x^\mu\to x^\mu+\delta x^\mu$ and demand $\delta I$ vanish, giving $n$ equations on an $n$-dimensional manifold ($n=4$). In our variation, the coefficient of $(\frac{dx^\rho}{d\tau})(\frac{dx^\sigma}{d\tau})$ will be $\Gamma^\mu_{\rho\sigma}$.
+> In the metric we must consider separate variations wrt $x^0=t$ and one $x^i$ (sufficient due to equivalence).
+> Starting with $t\to t+\delta t$, the nontrivial time dependence comes from the scale factor,$$\Large a(t+\delta t)=a(t)+\frac{da}{dt}\delta t=a(t)+\dot a\delta t$$and so $\delta I$ takes form:$$\Large\begin{aligned}
+\delta I&=\frac{1}{2}\int\left(-2\frac{dt}{d\tau}\frac{d(\delta t)}{d\tau}+2a\dot a\delta_{ij}\frac{dx^i}{d\tau}\frac{dx^j}{d\tau}\right)d\tau\\
+&=\int\left(\frac{d^2t}{d\tau^2}+a\dot a\delta_{ij}\frac{dx^i}{d\tau}\frac{dx^j}{d\tau}\right)\delta t\,d\tau
+\end{aligned}$$
+> Requiring this to vanish implies$$\Large\frac{d^2t}{d\tau^2}+a\dot a\delta_{ij}\frac{dx^i}{d\tau}\frac{dx^j}{d\tau}=0$$which is equivalent to the geodesic equation with $\mu=0$:$$\Large\begin{aligned}
+	\frac{d^2x^0}{d\tau^2}+\Gamma^0_{\rho\sigma}\frac{dx^\rho}{d\tau}\frac{dx^\sigma}{d\tau}&=0\\
+\implies\Gamma^0_{00}&=0\\
+\Gamma^0_{i0}=\Gamma^0_{0i}&=0\\
+\Gamma^0_{ij}&=a\dot a\delta_{ij}
+\end{aligned}$$
+> Repeating this for a spatial coordinate $x^i\to x^i+\delta x^i$, the variation is:$$\Large\begin{aligned}
+\delta I&=\frac{1}{2}\int a^2\left(2\delta_{ij}\frac{dx^i}{d\tau}\frac{d\delta x^j}{d\tau}\right)d\tau\\
+_\text{IBP}&=-\int\left(a^2\frac{d^2x^i}{d\tau^2}+2a\frac{da}{d\tau}\frac{dx^i}{d\tau}\right)\delta_{ij}\delta x^jd\tau
+\end{aligned}$$Expressing $\frac{da}{d\tau}$ in terms of $\dot a$ using the chain rule $\frac{da}{d\tau}=\dot a\frac{dt}{d\tau}$ and setting the coefficient of $\delta x^j$ to $0$ implies the geodesic equation:$$\Large \frac{d^2x^i}{d\tau^2}+2\frac{\dot a}{a}\frac{dt}{d\tau}\frac{dx^i}{d\tau}=0$$
+> Comparing to the geodesic equation, the Christoffel symbols must satisfy$$\Large \Gamma^i_{\rho\sigma}\frac{dx^\rho}{d\tau}\frac{dx^\sigma}{d\tau}=2\frac{\dot a}{a}\frac{dt}{d\tau}\frac{dx^i}{d\tau}$$, so we can see:$$\Large\begin{aligned}
+\Gamma^i_{00}&=0\\
+\Gamma^i_{j0}=\Gamma^i_{0j}&=\frac{\dot a}{a}\delta^i_j\\
+\Gamma^i_{jk}&=0
+\end{aligned}$$
+> These together with the temporal 
