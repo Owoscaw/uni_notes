@@ -1,0 +1,16 @@
+
+# Rossby number:
+
+We want to find a scale where we can see the effects of [[Stratification|stratification]] and [[Rotating fluids#Rotating reference frames|rotation]]. The characteristic length scale that marks the relative importance of these phenomena is known as the deformation radius$$\huge \mathcal{L}_d=\frac{N\mathcal{H}}{f_0}$$, where $\mathcal{H}$ is the vertical scale and $f_0,N$ are the [[Rotating fluids#Rotating frame dynamics|coriolis]] and [[Stratification#Buoyancy frequency|bouyancy frequency]]. For the atmosphere $\mathcal{L}_d\approx1000\text{km}$ and for the ocean $\mathcal{L}_d\approx100\text{km}$.
+
+Let us scale our variables with the following characteristic values$$\Large\begin{aligned}
+(x,y)=\mathcal{L}(x^*,y^*),\,\,z&=\mathcal{H}z^*,\,\,t=\mathcal{T}t^*\\
+(u,v)=\mathcal{U}(u^*,v^*),\,\,w=\mathcal{W}w^*,\,\,p&=\mathcal{P}p^*,\,\,b=\mathcal{B}b^*,\,\,\underline{f}=f_0\underline{f}^*
+\end{aligned}$$, where ${}^*$ represents a dimensionless quantity. Our $\beta$-plane approximation becomes $f^*=1+\frac{\beta}{f_0}y$. Proceeding to non-dimensionalise the hydrostatic rotating Boussinesq equations, first by writing $w$ terms out and using our horizontal nabla:$$\Large\begin{aligned}
+\frac{\partial \underline{v}}{\partial t}+(\underline{v}\cdot\underline{\nabla}_H)\underline{v}+w\frac{\partial \underline{v}}{\partial z}+\underline{f}\times\underline{v}&=-\frac{1}{\rho_0}\underline{\nabla}_Hp\\
+\frac{\mathcal{U}}{\mathcal{T}}\frac{\partial \underline{v}^*}{\partial t^*}+\frac{\mathcal{U}^2}{\mathcal{L}}(\underline{v}^*\cdot\underline{\nabla}_H^*)\underline{v}^*+\frac{\mathcal{WU}}{\mathcal{H}}w^*\frac{\partial \underline{v}^*}{\partial z^*}+f_0\mathcal{U}\underline{f}^*\times\underline{v}^*&=-\frac{1}{\rho_0}\frac{\mathcal{P}}{\mathcal{L}}\underline{\nabla}_H^*p^*\\
+_{\text{dropping }*}\frac{1}{f_0\mathcal{T}}\frac{\partial \underline{v}}{\partial t}+\frac{\mathcal{U}}{f_0\mathcal{L}}(\underline{v}\cdot\underline{\nabla}_H)\underline{v}+\frac{\mathcal{W}}{f_0\mathcal{H}}w\frac{\partial \underline{v}}{\partial z}+\underline{f}\times\underline{v}&=-\frac{\mathcal{P}}{\rho_0f_0\mathcal{UL}}\underline{\nabla}_Hp\\
+_{\text{eqn in }z}\implies\frac{\rho_0\mathcal{BH}}{\mathcal{P}}b&=\frac{\partial p}{\partial z}\\
+_\text{mass continuity}\implies\underline{\nabla}_H\cdot\underline{v}+\frac{\mathcal{WL}}{\mathcal{UH}}\frac{\partial w}{\partial z}&=0\\
+\implies\frac{1}{f_0\text{T}}\frac{\partial b}{\partial t}+\frac{\mathcal{U}}{f_0\mathcal{L}}(\underline{v}\cdot\underline{\nabla}_H)b+\frac{\mathcal{W}}{f_0\mathcal{H}}w\frac{\partial b}{\partial z}+\frac{N^2\mathcal{W}}{f_0\mathcal{B}}w&=0
+\end{aligned}$$We see the prefactor $\frac{\mathcal{U}}{f_0\mathcal{L}}$ shows up a lot, and is an important dimensionless parameter known as the Rossby number:$$\huge\text{Ro}=\frac{\mathcal{U}}{f_0\mathcal{L}}$$This is essentially the time scale of rotational inertial effects $1/f_0$ over the time scale of Coriolis effects. Therefore for dominant Coriolis force, we expect small $\text{Ro}$.
