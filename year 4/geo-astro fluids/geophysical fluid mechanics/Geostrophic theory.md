@@ -1,5 +1,5 @@
 
-# Rossby number:
+# Rossby number and [[Rotating fluids#Taylor-Proudman theorem|geostrophic balance]]:
 
 We want to find a scale where we can see the effects of [[Stratification|stratification]] and [[Rotating fluids#Rotating reference frames|rotation]]. The characteristic length scale that marks the relative importance of these phenomena is known as the deformation radius$$\huge \mathcal{L}_d=\frac{N\mathcal{H}}{f_0}$$, where $\mathcal{H}$ is the vertical scale and $f_0,N$ are the [[Rotating fluids#Rotating frame dynamics|coriolis]] and [[Stratification#Buoyancy frequency|bouyancy frequency]]. For the atmosphere $\mathcal{L}_d\approx1000\text{km}$ and for the ocean $\mathcal{L}_d\approx100\text{km}$.
 
@@ -27,4 +27,6 @@ Using these assumptions, we write our non-dimensionalised equations in terms of 
 \end{aligned}$$In order to have the same scaling for the pressure gradient and the Coriolis force, and to have the same scaling on the vertical momentum equation, we find fixed scales for $\mathcal{P,B}$:$$\huge\begin{aligned}
 \mathcal{P}&=\rho_0f_0\mathcal{LU}\\
 \mathcal{B}&=\frac{f_0\mathcal{LU}}{\mathcal{H}}
-\end{aligned}$$Finally, for the vertical momentum equation we want to scale $w^*$ to be 
+\end{aligned}$$Finally, for the vertical momentum equation we notice the scale on $w^*$ to be$$\Large \frac{N^2\mathcal{UH}}{f_0\mathcal{LB}}=\left(\frac{\mathcal{L_d}}{\mathcal{L}}\right)^2$$, making the set of equations:$$\Large\begin{aligned}
+\epsilon\left(\frac{\partial \underline{v}}{\partial t}+(\underline{v}\cdot\underline{\nabla}_H)\underline{v}+w\frac{\partial \underline{v}}{\partial z}\right)+\underline{e}_z\times\underline{v}+\epsilon
+\end{aligned}$$
