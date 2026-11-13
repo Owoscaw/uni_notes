@@ -28,5 +28,8 @@ Using these assumptions, we write our non-dimensionalised equations in terms of 
 \mathcal{P}&=\rho_0f_0\mathcal{LU}\\
 \mathcal{B}&=\frac{f_0\mathcal{LU}}{\mathcal{H}}
 \end{aligned}$$Finally, for the vertical momentum equation we notice the scale on $w^*$ to be$$\Large \frac{N^2\mathcal{UH}}{f_0\mathcal{LB}}=\left(\frac{\mathcal{L_d}}{\mathcal{L}}\right)^2$$, making the set of equations:$$\Large\begin{aligned}
-\epsilon\left(\frac{\partial \underline{v}}{\partial t}+(\underline{v}\cdot\underline{\nabla}_H)\underline{v}+w\frac{\partial \underline{v}}{\partial z}\right)+\underline{e}_z\times\underline{v}+\epsilon
+\epsilon\left(\frac{\partial \underline{v}}{\partial t}+(\underline{v}\cdot\underline{\nabla}_H)\underline{v}+w\frac{\partial \underline{v}}{\partial z}\right)+\underline{e}_z\times\underline{v}+\epsilon\beta y\underline{e}_z\times\underline{v}&=-\underline{\nabla}_Hp\\
+b&=\frac{\partial p}{\partial z}\\
+\underline{\nabla}_H\cdot\underline{v}+\frac{\partial w}{\partial z}&=0\\
+\epsilon\left(\frac{\partial b}{\partial t}+\left(\underline{v}\cdot\underline{\nabla}_H\right)b+w\frac{\partial b}{\partial z}\right)+\left(\frac{\mathcal{L}_d}{\mathcal{L}}\right)^2&=0
 \end{aligned}$$
