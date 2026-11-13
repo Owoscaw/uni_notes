@@ -13,4 +13,18 @@ _{\text{dropping }*}\frac{1}{f_0\mathcal{T}}\frac{\partial \underline{v}}{\parti
 _{\text{eqn in }z}\implies\frac{\rho_0\mathcal{BH}}{\mathcal{P}}b&=\frac{\partial p}{\partial z}\\
 _\text{mass continuity}\implies\underline{\nabla}_H\cdot\underline{v}+\frac{\mathcal{WL}}{\mathcal{UH}}\frac{\partial w}{\partial z}&=0\\
 \implies\frac{1}{f_0\text{T}}\frac{\partial b}{\partial t}+\frac{\mathcal{U}}{f_0\mathcal{L}}(\underline{v}\cdot\underline{\nabla}_H)b+\frac{\mathcal{W}}{f_0\mathcal{H}}w\frac{\partial b}{\partial z}+\frac{N^2\mathcal{W}}{f_0\mathcal{B}}w&=0
-\end{aligned}$$We see the prefactor $\frac{\mathcal{U}}{f_0\mathcal{L}}$ shows up a lot, and is an important dimensionless parameter known as the Rossby number:$$\huge\text{Ro}=\frac{\mathcal{U}}{f_0\mathcal{L}}$$This is essentially the time scale of rotational inertial effects $1/f_0$ over the time scale of Coriolis effects. Therefore for dominant Coriolis force, we expect small $\text{Ro}$.
+\end{aligned}$$We see the prefactor $\frac{\mathcal{U}}{f_0\mathcal{L}}$ shows up a lot, and is an important dimensionless parameter known as the Rossby number:$$\huge\text{Ro}=\frac{\mathcal{U}}{f_0\mathcal{L}}$$This is essentially the time scale of rotational inertial effects $1/f_0$ over the time scale of Coriolis effects. Therefore for dominant Coriolis force, we expect small $\text{Ro}$. We also make the following assumptions:
+> Horizontal scale is not significantly larger than deformation radius$$\Large \frac{\mathcal{L_d}}{\mathcal{L}}\approx 1=\mathcal{O}(1)$$, a direct translation of considering our length/height scales.
+> Time scale is$$\Large \mathcal{T}=\frac{\mathcal{L}}{\mathcal{U}}$$, known as the eddy turnover time. A vortex with velocity $\mathcal{U}$ and diameter $\mathcal{L}$ will take time $\mathcal{T}$ to complete a full turn.
+> We assume vertical velocity to scale as$$\large\mathcal{W}=\frac{\mathcal{UH}}{\mathcal{L}}$$, in order for $\frac{\partial w}{\partial z}$ to stay relevant in the continuity equation.
+> The $\beta$ effect is an order $\epsilon$ smaller than $f_0$$$\Large \underline{f}^*=\left(\frac{f_0+\beta y^*}{f_0}\right)\underline{e}_z=\left(1+\frac{\beta\mathcal{L}}{f_0}y^*\right)\underline{e}_z=(1+\epsilon\beta^*y^*)\underline{e}_z$$, where $\beta^*$ is $\mathcal{O}(1)$ due to the assumption.
+
+Using these assumptions, we write our non-dimensionalised equations in terms of $\epsilon$:$$\Large\begin{aligned}
+\implies\epsilon\left(\frac{\partial \underline{v}^*}{\partial t^*}+(\underline{v}^*\cdot\underline{\nabla}_H^*)\underline{v}^*+w^*\frac{\partial \underline{v}^*}{\partial z^*}\right)+\underline{f}^*\times\underline{v}^*&=-\frac{\mathcal{P}}{\rho_0f_0\mathcal{LU}}\underline{\nabla}^*_Hp^*\\
+\implies\frac{\rho_0\mathcal{BH}}{\mathcal{P}}b^*&=\frac{\partial p^*}{\partial z^*}\\
+\implies\underline{\nabla}^*_H\cdot\underline{v}^*+\frac{\partial w^*}{\partial z^*}&=0\\
+\epsilon\left(\frac{\partial b^*}{\partial t^*}+(\underline{v}^*\cdot\underline{\nabla}^*_H)b^*+w^*\frac{\partial b^*}{\partial z^*}\right)+\frac{N^2\mathcal{UH}}{f_0\mathcal{LB}}w^*&=0
+\end{aligned}$$In order to have the same scaling for the pressure gradient and the Coriolis force, and to have the same scaling on the vertical momentum equation, we find fixed scales for $\mathcal{P,B}$:$$\huge\begin{aligned}
+\mathcal{P}&=\rho_0f_0\mathcal{LU}\\
+\mathcal{B}&=\frac{f_0\mathcal{LU}}{\mathcal{H}}
+\end{aligned}$$Finally, for the vertical momentum equation we want to scale $w^*$ to be 
