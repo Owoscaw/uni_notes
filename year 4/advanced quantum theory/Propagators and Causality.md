@@ -36,3 +36,44 @@ _{\text{changing }\underline{k}\to-\underline{k}\text{ in second term}}&\int\fra
 \end{aligned}$$, which we are allowed to do since $\omega_{-\underline{k}}=\omega_\underline{k}$. By Lorentz covariance, we find:$$\Large[\Phi(x),\Phi^\dagger(y)]=0,\,\,(x-y)^2>0$$
 
 The same turns out to be true for any commutator of spacelike separated local operators. Furthermore, it holds for both free and interacting theories. In QFT, information cannot propagate outside the light-cone and we call the theory causal.
+
+# Particle propagation:
+
+Consider a particle at a spacetime point $x$, we probe the causal structure of QFT by considering the amplitude for finding it at a different spacetime point $y$. One way to answer this is to consider the overlap:$$\Large\begin{aligned}
+D(y-x)&=\langle 0|\phi(y)\phi^\dagger(x)|0\rangle\\
+&=\langle \psi_f|\psi_i\rangle
+\end{aligned}$$We can write this as$$\Large D(y-x)=\int\frac{d^3k}{(2\pi)^2}\frac{1}{2\omega_\underline{k}}e^{i\underline{k}\cdot(\underline{y}-\underline{x})}$$, known as the propagator and is Lorentz covariant. We could compute this integral by considering $(y-x)^2=|\underline{y}-\underline{x}|^2$ for spacelike separations. For large $|\underline{y}-\underline{x}|\to\infty$, this behaves like:$$\Large D(y-x)\sim\exp(-m|\underline{y}-\underline{x}|)$$The fact this does not vanish shows us that there is some degree of entanglement in the vacuum of a QFT. That is, there is quantum entanglement between two points in space. This does not violate causality, as the amplitudes will cancel between these two events.
+
+## Feynman propagator:
+We define the notion of time ordering, which orders operators evaluated at earlier times to the right and operators evaluated at later times to the left$$\Large\begin{aligned}
+\underline{T}(\mathcal{O}_1(y),\mathcal{O}_2(x))&=\begin{cases}\mathcal{O}_1(y)\mathcal{O}_2(x) & y^0>x^0\\
+\mathcal{O}_2(x)\mathcal{O}_1(y) & x^0>y^0\end{cases}\\
+&=\theta(y^0-x^0)\mathcal{O}_1(y)\mathcal{O}_2(x)+\theta(x^0-y^0)\mathcal{O}_2(x)\mathcal{O}_1(y)
+\end{aligned}$$, where $\theta$ is the Heaviside function. The Feynman operator is then defined as:$$\Large\begin{aligned}
+G(y-x)&=\langle 0|\underline{T}(\phi(y),\phi^\dagger(x))|0\rangle=G(x-y)\\
+&=\theta(y^0-x^0)D(y-x)+\theta(x^0-y^0)D(x-y)\\
+&=\theta(y^0-x^0)\int\frac{d^3k}{(2\pi)^3}\frac{1}{2\omega_\underline{k}}e^{i\underline{k}\cdot(\underline{y}-\underline{x})}\\
+&+\theta(x^0-y^0)\int\frac{d^3k}{(2\pi)^3}\frac{1}{2\omega_\underline{k}}e^{i\underline{k}\cdot(\underline{x}-\underline{y})}
+\end{aligned}$$This will be the same for both particles and anti-particles:
+> We claim this is equal to:$$\Large -i\int\frac{d^4k}{(2\pi)^4}\frac{1}{k^2+m^2}e^{i\underline{k}\cdotp(\underline{y}-\underline{x})}$$
+> Let us start by separating our the time direction in the above$$\Large\begin{aligned}
+G(\underline{y}-\underline{x})?&=-i\int\frac{d^3k}{(2\pi)^3}\int\frac{dk^0}{2\pi}\frac{e^{i\underline{k}\cdot(\underline{y}-\underline{x})}}{-(k^0)^2+\underline{k}\cdot\underline{k}+m^2}\\
+&=\int\frac{d^3k}{(2\pi)^3}I(\underline{k})\\
+I(\underline{k})&=i\int_\Re\frac{dk^0}{2\pi}\frac{e^{i\underline{k}\cdot(\underline{y}-\underline{x})}}{(k^0+\omega_\underline{k})(k^0-\omega_\underline{k})}
+\end{aligned}$$
+>  This integrand is singular for $k^0=\pm\omega_\underline{k}$, with two [[Cauchy's Residue theorem#Meromorphicity|simple poles]] and therefore meromorphic. We use [[Cauchy's Residue theorem#Part 1|Cauchy's Residue theorem]] and the Feynman prescription ($i\epsilon$ prescription) to construct our complex integral. First we notice if $y^0>x^0$ our term $\exp(-ik^0(y^0-x^0))\to0$ exponentially as $k^-\to-i\infty$ (justifying making this contour closed):![[Propagators and Causality 2026-11-13 15.29.20.excalidraw]]This is a clockwise contour, and so we calculate:$$\Large\begin{aligned}
+I(\underline{k})&=\int_{\gamma_1}+\int_{\gamma_\infty}\\
+&=-2\pi i\,\text{res}_{k^0=\omega_\underline{k}}\frac{i\exp(-ik^0(y^0-x^0)+i\underline{k}\cdot(\underline{y}-\underline{x}))}{2\pi(k^0+\omega_\underline{k})(k^0-\omega_\underline{k})}\\
+&=-2\pi i\lim_{k^0\to\omega_\underline{k}}(k^0-\omega_\underline{k})\cdot(")\\
+&=\frac{\exp(-i\omega_\underline{k}(y^0-x^0)+i\underline{k}\cdot(\underline{x}-\underline{y}))}{2\omega_\underline{k}}
+\end{aligned}$$
+> If we take $x^0>y^0$ we will have to close the contour with $k^0\to+i\infty$ to exponentially suppress the integrand:$$\Large\begin{aligned}
+I(\underline{k})&=\int_{\gamma_1}+\int_{\gamma_\infty'}\\
+&=2\pi i\,\text{res}_{k^0=-\omega_\underline{k}}(\dots)\\
+&=\frac{\exp(-i\omega_\underline{k}(x^0-y^0)-i\underline{k}\cdot(\underline{x}-\underline{y}))}{2\omega_\underline{k}}
+\end{aligned}$$Where $\gamma_\infty'$ is the infinite leg of the path from above this time (note this is now a ccw contour). 
+> Therefore we have found:$$\Large\begin{aligned}
+-i\int\frac{d^4k}{(2\pi)^4}\frac{e^{-i\underline{k}\cdot(\underline{y}-\underline{x})}}{k^2+m^2}&=\int\frac{d^3k}{(2\pi)^3}I(\underline{k})\\
+&=\theta(y^0-x^0)\int\frac{d^3k}{(2\pi)^3}\frac{e^{-i\omega_\underline{k}(y^0-x^0)+i\underline{k}\cdot(\underline{y}-\underline{x})}}{2\omega_\underline{k}}\\
+&+\theta(x^0-y^0)\int\frac{d^3k}{(2\pi)^3}\frac{e^{-i\omega_\underline{k}(x^0-y^0)+i\underline{k}\cdot(\underline{x}-\underline{y})}}{2\omega_\underline{k}}
+\end{aligned}$$Note in our integral prescription, we took an infinitesimal radius $i\epsilon$ around each pole and took $\epsilon\to0$:![[Propagators and Causality 2026-11-13 15.55.00.excalidraw]]
