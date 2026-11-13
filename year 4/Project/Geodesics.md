@@ -99,4 +99,47 @@ _\text{IBP}&=-\int\left(a^2\frac{d^2x^i}{d\tau^2}+2a\frac{da}{d\tau}\frac{dx^i}{
 \Gamma^i_{j0}=\Gamma^i_{0j}&=\frac{\dot a}{a}\delta^i_j\\
 \Gamma^i_{jk}&=0
 \end{aligned}$$
-> These together with the temporal 
+> These together with the symbols associated with the temporal translation are all the connection coefficient for the metric.
+
+## Cosmological redshift:
+
+These are necessary for studying the geodesics of the spacetime and for taking covariant derivatives. Let us therefore solve for the null geodesics, which massless particles like photons will follow. In this case we use $\lambda$ as a parameter instead of $\tau$. WLOG we consider paths in the $x$-direction:$$\Large x^\mu(\lambda)=(t(\lambda),x(\lambda),0,0)$$Using $ds^2=0$, we have:$$\Large\begin{aligned}
+0&=-dt^2+a^2(t)dx^2\\
+\implies \frac{dx}{d\lambda}&=\frac{1}{a}\frac{dt}{d\lambda}
+\end{aligned}$$
+
+To show these paths are geodesics, we must solve for coordinates $t,x$ in terms of the parameter $\lambda$. We begin by solving $dt/d\lambda$, using $\mu=0$ component of the geodesic equation (replacing $\tau\to\lambda$):$$\Large \frac{d^2t}{d\lambda^2}+\frac{\dot a}{a}\left(\frac{dt}{d\lambda}\right)^2=0$$This is solved by$$\huge \frac{dt}{d\lambda}=\frac{\omega_0}{a}$$, where $\omega_0$ is a constant. For a given form of $a$, this can be integrated to find $t(\lambda)$. I
+
+It is more interesting to look at the energy $E$ of the photon, measured by a comoving observer with four-velocity $U^\mu=(1,0,0,0)$. Using $p^\mu=dx^\mu/d\lambda$, we have$$\Large\begin{aligned}
+E&=-p_\mu U^\mu\\
+&=-g_{00}\frac{dx^0}{d\lambda}U^0\\
+&=\frac{\omega_0}{a}
+\end{aligned}$$, showing that the energy is simply the frequency $\omega_0$ of the photon $(\hbar=1)$ when $a=1$. This is a cosmological redshift.
+
+Photons emitted with energy $E_1$ at a scale factor $a_1$ and observed with energy $E_2$ at a scale factor $a_2$ we have:$$\huge\frac{E_2}{E_1}=\frac{a_1}{a_2}$$This provides an easy way to measure change in scale factor between us and distance galaxies, and can serve as a proxy for the distance.
+
+## [[SR, Manifolds, and Field theory summary#Energy-Momentum tensor|Energy-momentum tensor]]:
+We model the matter filling the universe as a perfect fluid with energy-momentum tensor coming from the generalisation$$\Large T^{\mu\nu}=(\rho+p)U^\mu U^\nu+pg^{\mu\nu}$$, where $\rho$ is energy density, $p$ is pressure, and $U^\mu$ is the fluid's four-velocity. The energy-momentum conservation equation becomes:$$\huge \nabla_\mu T^{\mu\nu}=0$$
+The components of the inverse (expanding universe) metric are:$$\Large g^{\mu\nu}=\begin{pmatrix}-1 & 0 & 0 & 0 \\ 0 & a^{-2} & 0 & 0 \\ 0 & 0 & a^{-2} & 0 \\ 0 & 0 & 0 & a^{-2}\end{pmatrix}$$We take the fluid to be in its rest frame in these coordinates, so that components of four-velocity are $U^\mu=(1,0,0,0)$. Therefore the energy-momentum tensor takes form:$$\Large\begin{aligned}
+T^{\mu\nu}&=(\rho+p)\begin{pmatrix}1 & 0 & 0 & 0\end{pmatrix}^\mu\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}^\nu+pg^{\mu\nu}\\
+&=(\rho+p)\mathbb{I}^{\mu\nu}+pg^{\mu\nu}\\
+&=\begin{pmatrix}\rho & 0 & 0 & 0\\
+ 0 & a^{-2}p & 0 & 0\\
+0 & 0 & a^{-2}p & 0\\
+0 & 0 & 0 & a^{-2}p\end{pmatrix}
+\end{aligned}$$
+Let us look at what energy-momentum conservation implies for a perfect fluid in an expanding universe. Taking the covariant derivative implies:$$\Large \nabla_\mu T^{\mu\nu}=\partial_\mu T^{\mu\nu}+\Gamma^\mu_{\mu\rho}T^{\rho\nu}+\Gamma^\nu_{\mu\rho}T^{\mu\rho}=0$$This has $4$ components, however each $\mu=i\in\{1,2,3\}$ are equivalent so we look at $\nu=0$ component. We compute each term:$$\Large\begin{aligned}
+\partial_\mu T^{\mu0}&=\partial_0T^{00}=\dot\rho\\
+\Gamma^\mu_{\mu\rho}T^{\rho0}&=\Gamma^\mu_{\mu0}T^{00}=3\frac{\dot a}{a}\rho\\
+\Gamma^0_{\mu\rho}T^{\mu\rho}&=\Gamma^0_{00}T^{00}+\Gamma^0_{11}T^{11}+\Gamma^0_{22}T^{22}+\Gamma^0_{33}T^{33}\\
+&=3\frac{\dot a}{a}p
+\end{aligned}$$Where we used the diagonality of $T^{\mu\nu}$, the explicitly form of our energy-momentum tensor, and the connection coefficients we previously calculated. Therefore the equation states:$$\Large\dot\rho=-3\frac{\dot a}{a}(\rho+p)$$
+Looking at a spatial component $\nu=1$ we work term by term again:$$\Large\begin{aligned}
+\partial_\mu T^{\mu1}&=\partial_1 T^{11}=a^{-2}\partial_xp\\
+\Gamma^\mu_{\mu\rho}T^{\rho1}&=\Gamma^\mu_{\mu1}T^{11}=0\\
+\Gamma^1_{\mu\rho}T^{\mu\rho}&=\Gamma^1_{00}T^{00}+\Gamma^1_{11}T^{11}+\Gamma^1_{22}T^{22}+\Gamma^1_{33}T_{33}=0\\
+\implies\partial_ip&=0
+\end{aligned}$$
+These tell us how a lot of laws applied to classical physical change in an expanding flat spacetime.
+
+# The Riemann curvature tensor:
