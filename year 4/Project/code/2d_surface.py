@@ -57,7 +57,7 @@ class Surface:
         return self.line,
 
             
-    def run(self):
+    def run(self):  
         self.ani = FuncAnimation(self.fig, self.update, frames=200, interval=25, blit=True)
         
 
