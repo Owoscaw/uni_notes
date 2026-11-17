@@ -33,3 +33,10 @@ b&=\frac{\partial p}{\partial z}\\
 \underline{\nabla}_H\cdot\underline{v}+\frac{\partial w}{\partial z}&=0\\
 \epsilon\left(\frac{\partial b}{\partial t}+\left(\underline{v}\cdot\underline{\nabla}_H\right)b+w\frac{\partial b}{\partial z}\right)+\left(\frac{\mathcal{L}_d}{\mathcal{L}}\right)^2&=0
 \end{aligned}$$
+We proceed with the classical asymptotic approach to reduce the above equations, expanding each variable in terms of $\epsilon$$$\Large\begin{cases}v & \to v_0+\epsilon v_1+\dots \\
+w & \to w_0+\epsilon w_1+\dots \\
+p & \to p_0+\epsilon p_1+\dots \\
+b & \to b_0+\epsilon b_1+\dots\end{cases}$$, making the momentum equation $$\Large\underline{e}_z\times\underline{v}_0=-\underline{\nabla}_Hp_0$$to leading order in $\epsilon$. In dimensional form, this is simply$$\Large\underline{f}_0\times\underline{v}_0=-\frac{1}{\rho_0}\underline{\nabla}_Hp_0$$- geostrophic balance. Taking the divergence of the dimensionless geostrophic balance equation shows$$\Large\underline{\nabla}_H\cdot \underline{v}_0=0$$, horizontal velocity is divergence free at leading order. Therefore we define the stream function:$$\Large u_0=-\frac{\partial \psi}{\partial y},\,\,v_0=\frac{\partial \psi}{\partial x}$$It is immediate to see that this is satisfied if we set $\psi=p_0$.
+
+At leading order, the vertical continuity equation becomes$$\Large b_0=\frac{\partial p_0}{\partial z}$$, this is the dimensionless hydrostatic balance equation. Consider the conservation of mass at leading order:$$\Large\underline{\nabla}_H\cdot\underline{v}_0+\frac{\partial w_0}{\partial z}=0\implies\frac{\partial w_0}{\partial z}=0$$This implies that if $w_0$ is zero anywhere in it's domain, then it is zero everywhere. The buoyancy equation at leading order reduces to:$$\Large\left(\frac{\mathcal{L}_d}{\mathcal{L}}\right)^2w_0=0\implies w_0=0\,\,\forall z$$
+We can take the $z$-derivative of the momentum equation and substitute for pressure terms to find$$\Large \underline{e}_z\times\frac{\partial \underline{v}_0}{\partial z}=-\underline{\nabla}_Hb_0$$, the dimensionless thermal wind balance equation.
