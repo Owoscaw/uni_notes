@@ -149,4 +149,34 @@ We are now prepared to discuss curvature in a meaningful way, quantified by the 
 > Covariant derivatives of tensors commute.
 > Initially, parallel geodesics remain parallel.
 
-The Riemann tensor arises when we study these properties in more general contexts. We saw that parallel transport around a closed loop on curved space introduces some transf
+The Riemann tensor arises when we study these properties in more general contexts. We saw that parallel transport around a closed loop on curved space introduces some transformation on the vector, which will be dependent on the total curvature enclosed by the loop:![[Geodesics 2026-11-17 13.52.27.excalidraw]]
+
+Therefore we look for a measure of local curvature at each point, and we will find it in the form of the Riemann curvature tensor. We can make a guess at the form already, knowing that the action of the tensor will contract with $A^\mu,B^\nu$ and that parallel transport introduces a linear transformation. We therefore expect the change $\delta V^\rho$ experienced by the vector when parallel transported around the loop to look like$$\Large \delta V^\rho= R^{\rho}{}_{\sigma\mu\nu}V^\sigma A^\mu B^\nu$$, where $R^{\rho}{}_{\sigma\mu\nu}$ is a $[1,3]$ tensor known as the Riemann tensor. Note it is antisymmetric in the last two indices:$$\Large  R^{\rho}{}_{\sigma\mu\nu}=-R^{\rho}{}_{\sigma\nu\mu}$$
+Our knowledge of parallel transport allows us to perform the manipulations necessary to write the curvature tensor in terms of connection coefficients, however there is a much nicer way to do this:
+> Consider the commutator of two covariant derivatives, $[\nabla_\mu,\nabla_\nu]$. Since the covariant derivative measures how much the tensor changes relative to parallel transport, the commutator measures the difference between parallel transporting the tensor first one way, and then the other.
+> The computation is as follows:$$\begin{aligned}\Large[\nabla_\mu,\nabla_\nu]V^\rho&= \nabla_\mu\nabla_\nu V^\rho-\nabla_\nu\nabla_\mu V^\rho\\
+&=\partial_\mu(\nabla_\nu V^\rho)-\Gamma^\lambda_{\mu\nu}\nabla_\lambda V^\rho+\Gamma^\rho_{\mu\sigma}\nabla_\nu V^\sigma-(\mu\leftrightarrow\nu)\\
+&=\partial_\mu\partial_\nu V^\rho+(\partial_\mu\Gamma^\sigma_{\nu\sigma})V^\sigma+\Gamma^\rho_{\nu\sigma}\partial_\mu V^\sigma-\Gamma^\lambda_{\mu\nu}\partial_\lambda V^\rho\\
+&-\Gamma^\lambda_{\mu\nu}\Gamma^\rho_{\lambda\sigma}V^\sigma+\Gamma^\rho_{\mu\sigma}\partial_\nu V^\sigma+\Gamma^\rho_{\mu\sigma}\Gamma^\sigma_{\nu\lambda}V^\lambda -(\mu\leftrightarrow\nu)\\
+&=(\partial_\mu\Gamma^\rho_{\nu\sigma}-\partial_\nu\Gamma^\rho_{\mu\sigma}+\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma})V^\sigma-2\Gamma^\lambda_{[\mu\nu]}\nabla_\lambda V^\rho
+\end{aligned}$$Note in the last step we relabeled dummy indices and eliminated some terms that cancel when antisymmetrised. 
+> Recognising that the antisymmetrised connection coefficients in the last term are simply half the [[Covariant derivative|torsion tensor]] and that the LHS is manifestly tensorial, the bracketed terms must also be a tensor:$$\Large\begin{aligned}
+[\nabla_\mu,\nabla_\nu]V^\rho&= R^{\rho}{}_{\sigma\mu\nu}V^\sigma- T^{\lambda}{}_{\mu\nu}\nabla_\lambda V^\rho\\
+\implies  R^{\rho}{}_{\sigma\mu\nu}&=\partial_\mu\Gamma^\rho_{\nu\sigma}-\partial_\nu\Gamma^\rho_{\mu\sigma}+\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma}
+\end{aligned}$$
+> Note it remains to show this is the same tensor we derived previously.
+> It is notable that the action of a differential operator $[\nabla_\mu,\nabla_\nu]$ gave us a simple multiplicative transformation. The Riemann tensor measures the part of the commutator that is proportional to the vector field, and the torsion tensor measures the part proportional to the covariant derivative of the vector field.
+> This is true for any connection, no matter if it is metric compatible or torsion free.
+
+Both the torsion and Riemann tensors have elegant expressions in terms of the vector field commutator. Thinking of the torsion as a map from two vector fields to a third, we have$$\Large\begin{aligned}
+T(X,Y)&=\nabla_XY-\nabla_YX-[X,Y]\\
+R(X,Y)Z&=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z
+\end{aligned}$$, using similar logic for the Riemann tensor. Note $\nabla_X$ refers to the covariant derivative along the vector field $X$.
+
+Having defined the curvature tensor, we can finally formalise our notion of locally flat spaces:
+> If a coordinate system exists in which the components of the metric are constant, the Riemann tensor will vanish:
+> > If we are in some coordinate system where $\partial_\sigma g_{\mu\nu}=0$ everywhere, then $\Gamma^\rho_{\mu\nu}=0$ and $\partial_\sigma\Gamma^\rho_{\mu\nu}=0$.
+> > This forces $R^{\rho}{}_{\sigma\mu\nu}=0$, as it is constructed from these connection coefficients. 
+> > The Riemann tensor equation is tensorial, it is true in all coordinate systems. Therefore it is a necessary condition that it is possible to find coordinates in which components of $g_{\mu\nu}$ are constant everywhere.
+> If the Riemann tensor vanishes, we can always construct a coordinate system in which the metric components are constant:
+> > 
