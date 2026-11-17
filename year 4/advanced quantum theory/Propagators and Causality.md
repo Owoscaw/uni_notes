@@ -49,12 +49,12 @@ We define the notion of time ordering, which orders operators evaluated at earli
 \underline{T}(\mathcal{O}_1(y),\mathcal{O}_2(x))&=\begin{cases}\mathcal{O}_1(y)\mathcal{O}_2(x) & y^0>x^0\\
 \mathcal{O}_2(x)\mathcal{O}_1(y) & x^0>y^0\end{cases}\\
 &=\theta(y^0-x^0)\mathcal{O}_1(y)\mathcal{O}_2(x)+\theta(x^0-y^0)\mathcal{O}_2(x)\mathcal{O}_1(y)
-\end{aligned}$$, where $\theta$ is the Heaviside function. The Feynman operator is then defined as:$$\Large\begin{aligned}
+\end{aligned}$$, where $\theta$ is the Heaviside function. The Feynman operator is then defined as$$\Large\begin{aligned}
 G(y-x)&=\langle 0|\underline{T}(\phi(y),\phi^\dagger(x))|0\rangle=G(x-y)\\
 &=\theta(y^0-x^0)D(y-x)+\theta(x^0-y^0)D(x-y)\\
 &=\theta(y^0-x^0)\int\frac{d^3k}{(2\pi)^3}\frac{1}{2\omega_\underline{k}}e^{i\underline{k}\cdot(\underline{y}-\underline{x})}\\
 &+\theta(x^0-y^0)\int\frac{d^3k}{(2\pi)^3}\frac{1}{2\omega_\underline{k}}e^{i\underline{k}\cdot(\underline{x}-\underline{y})}
-\end{aligned}$$This will be the same for both particles and anti-particles:
+\end{aligned}$$, the expectation of the time ordered product of  $\Phi,\Phi^\dagger$. This will be the same for both particles and anti-particles:
 > We claim this is equal to:$$\Large -i\int\frac{d^4k}{(2\pi)^4}\frac{1}{k^2+m^2}e^{i\underline{k}\cdotp(\underline{y}-\underline{x})}$$
 > Let us start by separating our the time direction in the above$$\Large\begin{aligned}
 G(\underline{y}-\underline{x})?&=-i\int\frac{d^3k}{(2\pi)^3}\int\frac{dk^0}{2\pi}\frac{e^{i\underline{k}\cdot(\underline{y}-\underline{x})}}{-(k^0)^2+\underline{k}\cdot\underline{k}+m^2}\\
@@ -77,3 +77,14 @@ I(\underline{k})&=\int_{\gamma_1}+\int_{\gamma_\infty'}\\
 &=\theta(y^0-x^0)\int\frac{d^3k}{(2\pi)^3}\frac{e^{-i\omega_\underline{k}(y^0-x^0)+i\underline{k}\cdot(\underline{y}-\underline{x})}}{2\omega_\underline{k}}\\
 &+\theta(x^0-y^0)\int\frac{d^3k}{(2\pi)^3}\frac{e^{-i\omega_\underline{k}(x^0-y^0)+i\underline{k}\cdot(\underline{x}-\underline{y})}}{2\omega_\underline{k}}
 \end{aligned}$$Note in our integral prescription, we took an infinitesimal radius $i\epsilon$ around each pole and took $\epsilon\to0$:![[Propagators and Causality 2026-11-13 15.55.00.excalidraw]]
+
+This form of the Feynman propagator we found, together with a suitable contour, is a manifestly Lorentz covariant form of the propagator. To indicate we are using a contour we write$$\Large G(y-x)=-i\int\frac{d^4k}{(2\pi)^4}\frac{e^{i\underline{k}\cdot(\underline{y}-\underline{x})}}{k^2+m^2-i\epsilon}$$, where $\epsilon$ is a positive infinitesimal demonstrated above. We can solve for the location of these poles:$$\Large\begin{aligned}
+(k^0)^2&=\omega_\underline{k}^2-i\epsilon\\
+\implies k^0&=\pm\omega_\underline{k}\sqrt{1-\frac{i\epsilon}{\omega_\underline{k}^2}}\\
+&=\pm\omega_\underline{k}\mp\frac{i\epsilon}{2\omega_\underline{k}}+\mathcal{O}(\epsilon^2)
+\end{aligned}$$
+Choosing different integration contours leads to different propagators:
+> The retarded propagator corresponds to a contour above both poles, with form given by:$$\Large G_R(y-x)=\theta(y^0-x^0)(D(y-x)-D(x-y))$$
+> The advanced propagator corresponds to a contour below both poles, with form given by:$$\Large G_A(y-x)=\theta(x^0-y^0)(D(x-y)-D(y-x))$$
+
+Note these satisfy $G_A(y-x)=G_R(x-y)$.
