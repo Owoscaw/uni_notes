@@ -9,3 +9,19 @@ More generally, we consider theories like$$\Large S[\phi]=\int d^4x\left(-\frac{
 Since the couplings carry mass dimension, we need them to be small wrt another object with the same mass dimension. Considering a process at some energy scale $E$, the dimensionless quantity we want is:$$\huge \lambda_nE^{n-4}$$For $n<4$, this quantity is small at high energies and large at low energies. We call such couplings $\lambda_{\{1,2,3\}}$ relevant, as they dictate low energy behaviour. In relativistic theory we have $E\geq m$, so we can make the combination small by taking $\lambda_{\{1,2,3\}}<<m$. For $n=4$, the combination does not depend on energy scale, we say the coupling is marginal and take $\lambda_4<<1$. Typically, high energy interactions are unavoidable in QFT so irrelevant operators lead to non-renormalisable theories.
 
 # Interaction:
+
+We start studying interactions by splitting the Hamiltonian of $\phi^4$ theory into a free and interacting part:$$\Large\begin{aligned}
+H&=\int d^3x\left(\frac{1}{2}\pi^2+\frac{1}{2}\underline{\nabla}\phi\cdot\underline{\nabla}\phi+\frac{1}{2}m^2\phi^2+\frac{\lambda}{4!}\phi^4\right)\\
+&=\int d^3x\left(\frac{1}{2}\pi^2+\frac{1}{2}\underline{\nabla}\phi\cdot\underline{\nabla}\phi+\frac{1}{2}m^2\phi^2\right)+\frac{\lambda}{4!}\int d^3x\phi^4\\
+&=H_0+H_\text{int}
+\end{aligned}$$If we know some operator at a reference time $t_0$, the Heisenberg picture allows us to find the time evolution of the operator:$$\Large\mathcal{O}_H(t)=e^{iH(t-t_0)}\mathcal{O}_H(t_0)e^{-iH(t-t_0)}=e^{iH(t-t_0)}\mathcal{O}_S e^{-iH(t-t_0)}$$Where we take the Schrodinger picture operator to be the Heisenberg picture operator evaluated at $t_0$, denoting each by $\mathcal{O}_S,\mathcal{O}_H(t)$ respectively. Note this implies $H_H=H_S$ and so we drop the subscript. Similarly, states evolve as:$$\Large |\psi_S(t)\rangle=e^{-iH(t-t_0)}|\psi_S(t_0)\rangle=e^{-iH(t-t_0)}|\psi_H\rangle$$
+These forms of time evolution require exponentiation of the Hamiltonian, which is difficult due to the interaction terms. We do know how to exponentiate $H_0$, which we used to find the Fourier expansion form of the free theory previously. Therefore we define $\mathcal{O}_I(t)$ to be the operator time-evolved using only the Schrodinger picture free Hamiltonian $H_{0S}$:$$\Large \mathcal{O}_I(t)=e^{iH_{0S}(t-t_0)}\mathcal{O}_Se^{-iH_{0S}(t-t_0)}$$This defines our interaction picture, hence the subscript $I$. We can now relate the Heisenberg picture operator to the interaction picture operator by:$$\Large\begin{aligned}
+\mathcal{O}_I(t)&=e^{iH_{0S}(t-t_0)}e^{-iH(t-t_0)}\mathcal{O}_H(t)e^{iH(t-t_0)}e^{-iH_{0S}(t-t_0)}\\
+\implies |\psi_I(t)\rangle&=e^{iH_{0S}(t-t_0)}|\psi_S(t)\rangle\\
+&=e^{iH_{0S}(t-t_0)}e^{-iH(t-t_0)}|\psi_H\rangle
+\end{aligned}$$This picture we defined is a hybrid of the Heisenberg and Schrodinger pictures, with operators evolving by $H_0$ and states evolving by $H_\text{int}$.
+
+We can now construct our interaction picture field, an operator in the interacting QFT. Parametrising the field and it's conjugate momentum as$$\Large\begin{aligned}
+\phi_S(\underline{x})&=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}(a_\underline{k}e^{-i\omega_\underline{k}t_0+i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}})\\
+\pi_S(\underline{x})&=-i\int\frac{d^3k}{(2\pi)^3}\sqrt{\frac{\omega_\underline{k}}{2}}(a_\underline{k}e^{-i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}})
+\end{aligned}$$, we find we can write the free Schrodinger Hamiltonian as:$$\Large H_{0S}=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}a_\underline{k}^\dagger a_\underline{k}$$
