@@ -190,3 +190,23 @@ Having defined the curvature tensor, we can finally formalise our notion of loca
 
 In the last step of this proof, we never used any notion of curvature to find our basis. What if we demand this is a coordinate basis (only possible on vanishing curvature)? We know all $\hat\theta^{(a)}$ are exact forms, so there must exist a set of functions $y^a$ such that the one-form fields are their gradients ($\hat\theta^{(a)}=dy^a$). These $n$ functions are exactly the coordinates we are looking form. Over the whole manifold, the metric takes form:$$\huge ds^2=\eta_{ab}dy^ady^b$$
 ## Properties of the Riemann tensor:
+The Riemann tensor naively has $n^4$ independent components in $n$-dimensional space, however the antisymmetry restriction on the last two indices forces $n(n-1)/2$ values on said indices. Therefore we have $n^3(n-1)/2$ independent components. Considering the Christoffel connection, other symmetries reduce the independent components further:
+> To derive these additional symmetries, examine the Riemann tensor with all lower indices:$$\Large R_{\rho\sigma\mu\nu}=g_{\rho\lambda} R^{\lambda}{}_{\sigma\mu\nu}$$
+> Furthermore, consider the components of this tensor in locally inertial coordinates $x^{\hat\mu}$ established at a point $p$. In this setup, the Christoffel symbols vanish (although their derivatives will not):$$\Large\begin{aligned}
+R_{\hat\rho\hat\sigma\hat\mu\hat\nu}(p)&=g_{\hat\rho\hat\lambda}(\partial_{\hat\mu}\Gamma^{\hat\lambda}_{\hat\nu\hat\sigma}-\partial_{\hat\nu}\Gamma^{\hat\lambda}_{\hat\mu\hat\sigma})\\
+&=\frac{1}{2}g_{\hat\rho\hat\lambda}g^{\hat\lambda\hat\tau}(\partial_{\hat\mu}\partial_{\hat\nu}g_{\hat\sigma\hat\tau}+\partial_{\hat\mu}\partial_{\hat\sigma}g_{\hat\tau\hat\nu}-\partial_{\hat\mu}\partial_{\hat\tau}g_{\hat\nu\hat\sigma}\\
+&-\partial_{\hat\nu}\partial_{\hat\mu}g_{\hat\sigma\hat\tau}-\partial_{\hat\nu}\partial_{\hat\sigma}g_{\hat\tau\hat\mu}+\partial_{\hat\nu}\partial_{\hat\tau}g_{\hat\mu\hat\sigma})\\
+&=\frac{1}{2}(\partial_{\hat\mu}\partial_{\hat\sigma}g_{\hat\rho\hat\nu}-\partial_{\hat\mu}\partial_{\hat\rho}g_{\hat\nu\hat\sigma}-\partial_{\hat\nu}\partial_{\hat\sigma}g_{\hat\rho\hat\mu}+\partial_{\hat\nu}\partial_{\hat\rho}g_{\hat\mu\hat\sigma})
+\end{aligned}$$
+> This expression highlights three symmetries about our modified Riemann tensor: it is antisymmetric in the first two indices, the last two indices, and is invariant under interchange $(\rho\sigma\leftrightarrow\mu\nu)$:$$\Large\begin{aligned}
+R_{\rho\sigma\mu\nu}&=-R_{\sigma\rho\mu\nu}\\
+&=-R_{\rho\sigma\nu\mu}\\
+&=R_{\mu\nu\rho\sigma}\\
+\implies R_{\rho\sigma\mu\nu}+R_{\rho\mu\nu\sigma}+R_{\rho\nu\sigma\mu}&=0\\
+\implies R_{\rho[\sigma\mu\nu]}&=0
+\end{aligned}$$
+> We derived this in a designated coordinate system, however all of our equations are tensorial and therefore hold in any coordinate system.
+
+Given these symmetries, how many independent components are we left with? We can think of our modified tensor as a symmetric matrix $R_{[\rho\sigma][\mu\nu]}$, where we think of $\rho\sigma$ and $\mu\nu$ as individual indices. A symmetric $m\times m$ matrix has $m(m+1)/2$ independent components, while an antisymmetric $n\times n$ matrix has $n(n-1)/2$ independent components and so we have$$\Large \frac{1}{2}\left(\frac{1}{2}n(n-1)\right)\left(\frac{1}{2}n(n-1)+1\right)=\frac{1}{8}(n^4-2n^3+3n^2-2n)$$independent components. It remains to impose the last symmetry we derived above, however one can show that imposing this is equivalent to imposing total antisymmetry:$$\huge R_{[\rho\sigma\mu\nu]}=0$$A totally antisymmetric $4$-index tensor has $n(n-1)(n-2)(n-3)/4!$ independent components, so imposing the above reduces our number of independent components by this amount. Computing the remaining independent components and doing some lovely factorising, we are left with$$\huge\frac{1}{12}n^2(n^2-1)$$independent components.
+
+In addition
