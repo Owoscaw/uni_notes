@@ -25,3 +25,13 @@ We can now construct our interaction picture field, an operator in the interacti
 \phi_S(\underline{x})&=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}(a_\underline{k}e^{-i\omega_\underline{k}t_0+i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}})\\
 \pi_S(\underline{x})&=-i\int\frac{d^3k}{(2\pi)^3}\sqrt{\frac{\omega_\underline{k}}{2}}(a_\underline{k}e^{-i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}})
 \end{aligned}$$, we find we can write the free Schrodinger Hamiltonian as:$$\Large H_{0S}=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}a_\underline{k}^\dagger a_\underline{k}$$
+
+Time dependence of the field and free Hamiltonian take a complex form in the Heisenberg picture, however in our interaction picture takes a simpler form:
+> Starting from the canonical commutation relations$$\Large\begin{aligned}
+[\phi(\underline{x}),\phi(\underline{y})]=[\pi(\underline{x}),\pi(\underline{y})]&=0,\,\,[\phi(\underline{x}),\pi(\underline{y})]=i\delta^{(3)}(\underline{x}-\underline{y})\\
+\implies[a_\underline{k},a_\underline{k'}^\dagger]=(2\pi)^3\delta^{(3)}(\underline{k}-\underline{k}')&,\,\,[H_{0S},a_\underline{k}^\dagger]=\omega_\underline{k}a_\underline{k}^\dagger,\,\,[H_{0S},a_\underline{k}]=-\omega_\underline{k}a_\underline{k}
+\end{aligned}$$, with remaining commutators vanishing. 
+> Therefore, the interaction picture field in our interacting theory is given by$$\Large\phi_I(t,\underline{x})=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}(a_\underline{k}e^{-\omega_\underline{k}t+i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t-i\underline{k}\cdot\underline{x}})$$, the same form as the Heisenberg picture.
+
+## Time evolution operator:
+The relation between the Heisenberg and interaction pictures suggest that it will be useful to define the time evolution operator$$\Large U(t,t_0)=e^{iH_{0S}(t-t_0)}e^{-iH(t-t_0)}$$such that:$$\Large\mathcal{O}_I(t)=U(t,t_0)\mathcal{O}_H(t)U^\dagger(t,t_0),\,\,|\psi_I(t)\rangle=U(t,t_0)|\psi_H\rangle$$
