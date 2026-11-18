@@ -49,13 +49,38 @@ In the last step of this proof, we never used any notion of curvature to find ou
 ## Geodesic deviation:
 To gain a physical intuition for the significance of the Riemann tensor, we investigate geodesic deviation - the failure of initially parallel geodesics to remain parallel. Consider a one-parameter family of geodesics $\gamma_u(t)$ so that $x^\mu(t,u)$. Therefore, $V^\mu=\partial_t x^\mu$ is tangent to the geodesics and $U^\mu=\partial_u x^\mu$ is the geodesic deviation vector (pointing from one geodesic to another).
 
-We now propose the lemma:$$\Large V^\mu\nabla_\mu U^\mu-U^\mu\nabla_\mu V^\nu=0$$Proof:
-> 
+We now propose the lemma:$$\Large V^\mu\nabla_\mu U^\nu-U^\mu\nabla_\mu V^\nu=0$$Proof:
+> We can directly compute:$$\Large\begin{aligned}
+V^\mu\nabla_\mu U^\nu-U^\mu\nabla_\mu V^\nu&=V\partial_\mu U^\nu-U^\mu\partial_\mu V^\nu\\
+&=\frac{\partial^2x^\nu}{\partial t\partial u}-\frac{\partial^2 x^\nu}{\partial u\partial t}=0
+\end{aligned}$$
+> Relative acceleration between geodesics is therefore:$$\Large\begin{aligned}
+A^\nu&=V^\mu\nabla_\mu(V^\lambda\nabla_\lambda U^\nu)\\
+_\text{using lemma}&=V^\mu\nabla_\mu(U^\lambda\nabla_\lambda U^\nu)\\
+_\text{using geodesic eqn}&=V^\mu\nabla_\mu(U^\lambda\nabla_\lambda V^\nu)-U^\mu\nabla_\mu(V^\lambda\nabla_\lambda V^\nu)\\
+&=(V^\mu\nabla_\mu U^\lambda-U^\mu\nabla_\mu V^\lambda)(\nabla_\lambda V^\nu)+V^\mu U^\lambda[\nabla_\mu,\nabla_\lambda]V^\nu\\
+&=V^\mu U^\lambda  R^{\nu}{}_{\rho\mu\lambda}V^\rho
+\end{aligned}$$
+
+The equation$$\Large A^\nu= R^{\nu}{}_{\rho\mu\lambda}V^\rho V^\mu U^\lambda$$is known as the geodesic deviation equation and describes the failure of parallel lines to remain parallel. $A^\mu=0$ for all geodesics if and only if the Riemann tensor vanishes, the components of this tensor measure the strength of "tidal" forces induced by the manifold on a family of geodesic observers.
+
+## Riemann normal coordinates:
+Riemann normal coordinates are the closest coordinate system such that the metric looks flat over any open region on the manifold. A manifold equipped with a metric should locally behave like Minkowski space. That is, we should expect the metric is exactly the Minkowski metric at some point $p$ i.e. there should exist some coordinate system in which $g_{\mu\nu}(p)=\eta_{\mu\nu}$. One can show this using a similar counting argument presented in the next section.
+
+Coordinates such that $g_{\mu\nu}=\eta_{\mu\nu}$ and $\partial_\lambda g_{\mu\nu}=0$ at a point are called Riemann normal coordinates, very useful for studying general properties of metrics and curvature. Let us explicitly calculate the Riemann tensor in such coordinate systems:
+> $\partial_\lambda g_{\mu\nu}=0$ at $p$ implies $\Gamma^\mu_{\nu\rho}$ at $p$, so the general expression for the Riemann tensor reduces to:$$\Large  R^{\lambda}{}_{\rho\mu\nu}=\partial_\mu\Gamma^\lambda_{\nu\rho}-\partial_\nu\Gamma^\lambda_{\mu\rho}$$
+> Now using our expression for the Christoffel symbols in terms of the metric, $\Gamma^\lambda_{\nu\rho}=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu g_{\rho\sigma}+\partial_\rho g_{\nu\sigma}-\partial_\sigma g_{\nu\rho})$, we have:$$\Large\begin{aligned}
+ R^{\lambda}{}_{\rho\mu\nu}&=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\nu g_{\rho\sigma}+\partial_\mu\partial_\rho g_{\nu\sigma}-\partial_\mu\partial_\sigma g_{\nu\rho}\\
+&-\partial_\nu\partial_\mu g_{\rho\sigma}-\partial_\nu\partial_\mu g_{\mu\sigma}+\partial_\nu\partial_\sigma g_{\mu\rho})\\
+&=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\rho g_{\nu\beta}+\partial_\nu\partial_\beta g_{\mu\rho}-\partial_\mu\partial_\beta g_{\nu\rho}-\partial_\nu\partial_\rho g_{\mu\beta})
+\end{aligned}$$
 
 ## Properties of the Riemann tensor:
+
+## Algebraic symmetries:
 The Riemann tensor naively has $n^4$ independent components in $n$-dimensional space, however the antisymmetry restriction on the last two indices forces $n(n-1)/2$ values on said indices. Therefore we have $n^3(n-1)/2$ independent components. Considering the Christoffel connection, other symmetries reduce the independent components further:
 > To derive these additional symmetries, examine the Riemann tensor with all lower indices:$$\Large R_{\rho\sigma\mu\nu}=g_{\rho\lambda} R^{\lambda}{}_{\sigma\mu\nu}$$
-> Furthermore, consider the components of this tensor in locally inertial coordinates $x^{\hat\mu}$ established at a point $p$. In this setup, the Christoffel symbols vanish (although their derivatives will not):$$\Large\begin{aligned}
+> Furthermore, consider the components of this tensor in locally inertial coordinates $x^{\hat\mu}$ established at a point $p$. In this setup, the Christoffel symbols vanish, similar to the calculation above (although their derivatives will not):$$\Large\begin{aligned}
 R_{\hat\rho\hat\sigma\hat\mu\hat\nu}(p)&=g_{\hat\rho\hat\lambda}(\partial_{\hat\mu}\Gamma^{\hat\lambda}_{\hat\nu\hat\sigma}-\partial_{\hat\nu}\Gamma^{\hat\lambda}_{\hat\mu\hat\sigma})\\
 &=\frac{1}{2}g_{\hat\rho\hat\lambda}g^{\hat\lambda\hat\tau}(\partial_{\hat\mu}\partial_{\hat\nu}g_{\hat\sigma\hat\tau}+\partial_{\hat\mu}\partial_{\hat\sigma}g_{\hat\tau\hat\nu}-\partial_{\hat\mu}\partial_{\hat\tau}g_{\hat\nu\hat\sigma}\\
 &-\partial_{\hat\nu}\partial_{\hat\mu}g_{\hat\sigma\hat\tau}-\partial_{\hat\nu}\partial_{\hat\sigma}g_{\hat\tau\hat\mu}+\partial_{\hat\nu}\partial_{\hat\tau}g_{\hat\mu\hat\sigma})\\
@@ -72,4 +97,11 @@ R_{\rho\sigma\mu\nu}&=-R_{\sigma\rho\mu\nu}\\
 
 Given these symmetries, how many independent components are we left with? We can think of our modified tensor as a symmetric matrix $R_{[\rho\sigma][\mu\nu]}$, where we think of $\rho\sigma$ and $\mu\nu$ as individual indices. A symmetric $m\times m$ matrix has $m(m+1)/2$ independent components, while an antisymmetric $n\times n$ matrix has $n(n-1)/2$ independent components and so we have$$\Large \frac{1}{2}\left(\frac{1}{2}n(n-1)\right)\left(\frac{1}{2}n(n-1)+1\right)=\frac{1}{8}(n^4-2n^3+3n^2-2n)$$independent components. It remains to impose the last symmetry we derived above, however one can show that imposing this is equivalent to imposing total antisymmetry:$$\huge R_{[\rho\sigma\mu\nu]}=0$$A totally antisymmetric $4$-index tensor has $n(n-1)(n-2)(n-3)/4!$ independent components, so imposing the above reduces our number of independent components by this amount. Computing the remaining independent components and doing some lovely factorising, we are left with$$\huge\frac{1}{12}n^2(n^2-1)$$independent components.
 
-In addition
+
+## Differential symmetries (Bianchi identity):
+In addition to the algebraic symmetries we found above, the Riemann tensor also satisfies a differential symmetry known as the Bianchi identity. Consider the covariant derivative of the Riemann tensor in locally inertial coordinates (dropping the hat bc its a pain to type), using our expression above:$$\Large\begin{aligned}
+\nabla_\lambda R_{\rho\sigma\mu\nu}&=\partial_\lambda R_{\rho\sigma\mu\nu}\\
+&=\frac{1}{2}\partial_\lambda(\partial_\mu\partial_\sigma g_{\rho\nu}-\partial_\mu\partial_\rho g_{\nu\sigma}-\partial_\nu\partial_\sigma g_{\rho\mu}+\partial_\nu\partial_\rho g_{\mu\sigma})
+\end{aligned}$$Note we are taking the derivative of an expression derived at a point, however we neglect all terms proportional to $\partial_\sigma g_{\mu\nu}$ anyway so it's fine (trust bro). Now consider the sum of cyclic permutations over the first three indices:$$\Large\begin{aligned}
+
+\end{aligned}$$
