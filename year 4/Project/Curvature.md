@@ -49,7 +49,8 @@ R(X,Y)Z&=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z
 &=(\nabla_\mu\nabla_\nu V^\lambda)\omega_\lambda+\nabla_\nu V^\lambda\nabla_\mu\omega_\lambda+\nabla_\mu V^\lambda\nabla_\nu\omega_\lambda+V^\lambda\nabla_\mu\nabla_\nu\omega_\lambda-(\mu\leftrightarrow\nu)\\
 _{\text{cancelling terms 2,3}}&=([\nabla_\mu,\nabla_\nu]V^\lambda)\omega_\lambda+V^\lambda([\nabla_\mu,\nabla_\nu]\omega_\lambda)\\
 &= R^{\lambda}{}_{\rho\mu\nu}V^\rho\omega_\lambda+V^\lambda[\nabla_\mu,\nabla_\nu]\omega_\lambda\\
-
+\implies V^\lambda[\nabla_\mu,\nabla_\nu]\omega_\lambda&=- R^{\lambda}{}_{\rho\mu\nu}V^\rho\omega_\lambda=_{\rho\leftrightarrow\lambda'}- R^{\lambda}{}_{\lambda'\mu\nu}V^{\lambda'}\omega_\lambda,\,\,\forall V^\lambda\\
+\implies [\nabla_\mu,\nabla_\nu]\omega_\lambda&=- R^{\rho}{}_{\lambda\mu\nu}\omega_\rho
 \end{aligned}$$
 
 Having defined the curvature tensor, we can finally formalise our notion of locally flat spaces:
