@@ -19,16 +19,38 @@ Our knowledge of parallel transport allows us to perform the manipulations neces
 \end{aligned}$$Note in the last step we relabeled dummy indices and eliminated some terms that cancel when antisymmetrised. 
 > Recognising that the antisymmetrised connection coefficients in the last term are simply half the [[Covariant derivative|torsion tensor]] and that the LHS is manifestly tensorial, the bracketed terms must also be a tensor:$$\Large\begin{aligned}
 [\nabla_\mu,\nabla_\nu]V^\rho&= R^{\rho}{}_{\sigma\mu\nu}V^\sigma- T^{\lambda}{}_{\mu\nu}\nabla_\lambda V^\rho\\
+&=\text{tensor }+\text{ scalar}\\
 \implies  R^{\rho}{}_{\sigma\mu\nu}&=\partial_\mu\Gamma^\rho_{\nu\sigma}-\partial_\nu\Gamma^\rho_{\mu\sigma}+\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma}
 \end{aligned}$$
 > Note it remains to show this is the same tensor we derived previously.
-> It is notable that the action of a differential operator $[\nabla_\mu,\nabla_\nu]$ gave us a simple multiplicative transformation. The Riemann tensor measures the part of the commutator that is proportional to the vector field, and the torsion tensor measures the part proportional to the covariant derivative of the vector field.
+> It is notable that the action of a (seemingly) differential operator $[\nabla_\mu,\nabla_\nu]$ gave us a simple multiplicative transformation. The Riemann tensor measures the part of the commutator that is proportional to the vector field, and the torsion tensor measures the part proportional to the covariant derivative of the vector field.
 > This is true for any connection, no matter if it is metric compatible or torsion free.
+
+As an example, let us calculate the Riemann tensor on the two-sphere:
+> Recall our calculation for the Christoffel connection on $S^2$:$$\Large\Gamma^\theta_{\phi\phi}=-\sin\theta\cos\theta,\,\,\Gamma^\phi_{\theta\phi}=\cot\theta,\,\,\text{other connections }0$$
+> Therefore the only non-zero components are $R^{\lambda}{}_{\rho\theta\phi}$:$$\Large\begin{aligned}
+ R^{\theta}{}_{\theta\theta\phi}&=\partial_\theta\Gamma^\theta_{\phi\theta}-\partial_\phi\Gamma^\theta_{\theta\theta}+\Gamma^\theta_{\theta\sigma}\Gamma^\sigma_{\phi\theta}-\Gamma^\theta_{\phi\sigma}\Gamma^\sigma_{\theta\theta}=0\\
+ R^{\theta}{}_{\phi\theta\phi}&=\partial_\theta\Gamma^\theta_{\phi\phi}-\partial_\phi\Gamma^\theta_{\theta\phi}+\Gamma^\theta_{\theta\sigma}\Gamma^\sigma_{\phi\phi}-\Gamma^\theta_{\phi\sigma}\Gamma^\sigma_{\theta\phi}\\_{\sigma\leftrightarrow\phi \text{ in last term}}
+&=\partial_\theta(-\sin\theta\cos\theta)-\Gamma^\theta_{\phi\phi}\Gamma^\phi_{\theta\phi}\\
+&=-(\cos^2\theta-\sin^2\theta)-(\sin\theta\cos\theta)\cot\theta=\sin^2\theta\\
+ R^{\phi}{}_{\theta\theta\phi}&=\partial_\theta\Gamma^\phi_{\phi\theta}-\partial_\phi\Gamma^\phi_{\theta\theta}+\Gamma^\phi_{\theta\sigma}\Gamma^\sigma_{\phi\theta}-\Gamma^\phi_{\phi\sigma}\Gamma^\sigma_{\theta\theta}\\
+&=\partial_\theta(\cot\theta)+\Gamma^\phi_{\theta\phi}\Gamma^\phi_{\phi\theta}\\
+&=-\frac{1}{\sin^2\theta}+\cot^2\theta=\frac{\cos^2\theta-1}{\sin^2\theta}=-1\\
+ R^{\phi}{}_{\phi\theta\phi}&=\partial_\theta\Gamma^\phi_{\phi\phi}-\partial_\phi\Gamma^\phi_{\theta\phi}+\Gamma^\phi_{\theta\sigma}\Gamma^\sigma_{\phi\phi}-\Gamma^\phi_{\phi\sigma}\Gamma^\sigma_{\theta\phi}\\
+&=-\partial_\phi(\cot\theta)+\Gamma^\phi_{\theta\theta}\Gamma^\theta_{\phi\phi}+\Gamma^\phi_{\theta\phi}\Gamma^{\phi}_{\phi\phi}=0
+\end{aligned}$$
 
 Both the torsion and Riemann tensors have elegant expressions in terms of the vector field commutator. Thinking of the torsion as a map from two vector fields to a third, we have$$\Large\begin{aligned}
 T(X,Y)&=\nabla_XY-\nabla_YX-[X,Y]\\
 R(X,Y)Z&=\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z
-\end{aligned}$$, using similar logic for the Riemann tensor. Note $\nabla_X$ refers to the covariant derivative along the vector field $X$.
+\end{aligned}$$, using similar logic for the Riemann tensor. Note $\nabla_X$ refers to the covariant derivative along the vector field $X$. Note that we can find the commutator of covariant derivatives on other tensors using the Riemann tensor. To see this, consider this commutator acting on a scalar $V^\lambda\omega_\lambda$:$$\large\begin{aligned}
+[\nabla_\mu,\nabla_\nu](V^\lambda\omega_\lambda)&=\nabla_\mu\nabla_\nu(V^\lambda\omega_\lambda)-\nabla_\nu\nabla_\mu(V^\lambda\omega_\lambda)=0\\
+&=\nabla_\mu((\nabla_\nu V^\lambda)\omega_\lambda+V^\lambda(\nabla_\nu\omega_\lambda))-(\mu\leftrightarrow\nu)\\
+&=(\nabla_\mu\nabla_\nu V^\lambda)\omega_\lambda+\nabla_\nu V^\lambda\nabla_\mu\omega_\lambda+\nabla_\mu V^\lambda\nabla_\nu\omega_\lambda+V^\lambda\nabla_\mu\nabla_\nu\omega_\lambda-(\mu\leftrightarrow\nu)\\
+_{\text{cancelling terms 2,3}}&=([\nabla_\mu,\nabla_\nu]V^\lambda)\omega_\lambda+V^\lambda([\nabla_\mu,\nabla_\nu]\omega_\lambda)\\
+&= R^{\lambda}{}_{\rho\mu\nu}V^\rho\omega_\lambda+V^\lambda[\nabla_\mu,\nabla_\nu]\omega_\lambda\\
+
+\end{aligned}$$
 
 Having defined the curvature tensor, we can finally formalise our notion of locally flat spaces:
 > If a coordinate system exists in which the components of the metric are constant, the Riemann tensor will vanish:
