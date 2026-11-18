@@ -66,7 +66,9 @@ Recall our definition of the ensemble average, we wish to find$$\Large\begin{ali
 &=\int_\mathcal{P}d\mu\frac{\partial \rho}{\partial t}\mathcal{O}(q,p)
 \end{aligned}$$, noting that the total $\frac{d}{dt}$ has become a partial derivative. This is because we are integrating over $q,p$ and so we treat them as dummy variables, the only change in time of this quantity will come from $\frac{\partial \rho}{\partial t}$. Continuing our calculation:$$\Large\begin{aligned}
 \frac{d}{dt}\langle\mathcal{O}\rangle&=\int_\mathcal{P}d\mu(-\{\rho,H\})\mathcal{O}\\
-&=\int_\mathcal{P}d\mu\sum_i(\frac{\partial H}{\partial q_i}\frac{\partial \rho}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \rho}{\partial q_i})\mathcal{O}\\
-_\text{IBP}&=-\int_\mathcal{P}d\mu\rho\sum_i\left(\frac{\partial H}{\partial q_i}\frac{\partial \mathcal{O}}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \mathcal{O}}{\partial q_i}+\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\\
+&=\int_\mathcal{P}d\mu\sum_i\left(\frac{\partial H}{\partial q_i}\frac{\partial \rho}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \rho}{\partial q_i}\right)\mathcal{O}\\\\
+&=\sum_i\left(\left[\left(\rho\frac{\partial H}{\partial q_i}-\rho\frac{\partial H}{\partial p_i}\right)\mathcal{O}\right]_{\partial\mathcal{P}}\\
+-\int_\mathcal{P}d\mu\rho\left(\frac{\partial H}{\partial q_i}\frac{\partial \mathcal{O}}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \mathcal{O}}{\partial q_i}+\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\right) \\
+_{\text{assuming }\partial\mathcal{P}\text{ terms vanish}}&=-\int_\mathcal{P}d\mu\rho\sum_i\left(\frac{\partial H}{\partial q_i}\frac{\partial \mathcal{O}}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \mathcal{O}}{\partial q_i}+\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\\
 _{\text{assuming }\partial\text{s commute}}&=-\int_\mathcal{P}d\mu\rho\{H,\mathcal{O}\}=\langle\{\mathcal{O},H\}\rangle
 \end{aligned}$$
