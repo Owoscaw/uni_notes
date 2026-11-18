@@ -98,9 +98,11 @@ Coordinates such that $g_{\mu\nu}=\eta_{\mu\nu}$ and $\partial_\lambda g_{\mu\nu
 &=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\rho g_{\nu\beta}+\partial_\nu\partial_\beta g_{\mu\rho}-\partial_\mu\partial_\beta g_{\nu\rho}-\partial_\nu\partial_\rho g_{\mu\beta})
 \end{aligned}$$
 
+These differ from [[The metric tensor and Causality#Locally inertial coordinates|locally inertial coordinates]] 
+
 ## Properties of the Riemann tensor:
 
-## Algebraic symmetries:
+### Algebraic symmetries:
 The Riemann tensor naively has $n^4$ independent components in $n$-dimensional space, however the antisymmetry restriction on the last two indices forces $n(n-1)/2$ values on said indices. Therefore we have $n^3(n-1)/2$ independent components. Considering the Christoffel connection, other symmetries reduce the independent components further:
 > To derive these additional symmetries, examine the Riemann tensor with all lower indices:$$\Large R_{\rho\sigma\mu\nu}=g_{\rho\lambda} R^{\lambda}{}_{\sigma\mu\nu}$$
 > Furthermore, consider the components of this tensor in locally inertial coordinates $x^{\hat\mu}$ established at a point $p$. In this setup, the Christoffel symbols vanish, similar to the calculation above (although their derivatives will not):$$\Large\begin{aligned}
@@ -121,7 +123,7 @@ R_{\rho\sigma\mu\nu}&=-R_{\sigma\rho\mu\nu}\\
 Given these symmetries, how many independent components are we left with? We can think of our modified tensor as a symmetric matrix $R_{[\rho\sigma][\mu\nu]}$, where we think of $\rho\sigma$ and $\mu\nu$ as individual indices. A symmetric $m\times m$ matrix has $m(m+1)/2$ independent components, while an antisymmetric $n\times n$ matrix has $n(n-1)/2$ independent components and so we have$$\Large \frac{1}{2}\left(\frac{1}{2}n(n-1)\right)\left(\frac{1}{2}n(n-1)+1\right)=\frac{1}{8}(n^4-2n^3+3n^2-2n)$$independent components. It remains to impose the last symmetry we derived above, however one can show that imposing this is equivalent to imposing total antisymmetry:$$\huge R_{[\rho\sigma\mu\nu]}=0$$A totally antisymmetric $4$-index tensor has $n(n-1)(n-2)(n-3)/4!$ independent components, so imposing the above reduces our number of independent components by this amount. Computing the remaining independent components and doing some lovely factorising, we are left with$$\huge\frac{1}{12}n^2(n^2-1)$$independent components.
 
 
-## Differential symmetries (Bianchi identity):
+### Differential symmetries (Bianchi identity):
 In addition to the algebraic symmetries we found above, the Riemann tensor also satisfies a differential symmetry known as the Bianchi identity. Consider the covariant derivative of the Riemann tensor in locally inertial coordinates (dropping the hat bc its a pain to type), using our expression above:$$\Large\begin{aligned}
 \nabla_\lambda R_{\rho\sigma\mu\nu}&=\partial_\lambda R_{\rho\sigma\mu\nu}\\
 &=\frac{1}{2}\partial_\lambda(\partial_\mu\partial_\sigma g_{\rho\nu}-\partial_\mu\partial_\rho g_{\nu\sigma}-\partial_\nu\partial_\sigma g_{\rho\mu}+\partial_\nu\partial_\rho g_{\mu\sigma})
