@@ -32,3 +32,41 @@ d\mathcal{N}(q,p,t)\geq0&\implies\rho(q,p,t)\geq0
 \end{aligned}$$We have that $\rho$ is always positive and integrates to $1$, making $\rho$ a [[Elements of Probability#Definitions/Axioms|probability distribution]]! 
 
 Given an observable $\mathcal{O}$, we can construct the ensemble average:$$\Large\langle\mathcal{O}(t)\rangle=\int_\mathcal{P}d\mu\,\rho(q,p,t)\mathcal{O}(q,p,t)$$Note if $\mathcal{O}=\mathcal{O}(q,p)$ is not explicitly dependent on time, $\langle\mathcal{O}\rangle$ will pick up time dependence from $\rho(q,p,t)$.
+
+## Liouville's theorem:
+This theorem explores the behaviour of $\frac{\partial \rho}{\partial t}$, there is a sense that the "flow" through phase space is incompressible. Liouville's' theorem dictates that the density of phase space is conserved under Hamiltonian time evolution:$$\Large\frac{\partial \rho(q,p,t)}{\partial t}+\sum_i\left(\frac{\partial \rho}{\partial q_i}\dot q_i+\frac{\partial \rho}{\partial p_i}\dot p_i\right)=\frac{d\rho(q,p,t)}{dt}=0$$
+
+Proving this is a challenge, so let us consider a warm up. Consider a river flowing past an observer at velocity $v$, cross sectional area $A$, in a time $\Delta t$. Given the density of the water $\rho$, we calculate:$$\Large m=\rho Av\Delta t$$
+Consider our setup in phase space $(\mathcal{N}=N=1)$ from before with a volume element at $(p,q)$ with side lengths $(dp,dq)$. We ask, how many microstates ending this volume in time $dt$ from each face:![[Ensembles and Kinetic theory 2026-11-18 10.18.18.excalidraw]]We see that the flux through the vertical faces will then be given by:$$\Large(\rho(q,p)\dot q(q,p)-\rho(q+dq,p)\dot q(q+dq,p))dtdp=-\frac{\partial }{\partial q}(\rho\dot q)dq\,dt\,dp$$Similarly, the flux through the horizontal faces will be given by:$$\Large (\rho(q,p)\dot q(q,p)-\rho(q,p+dp)\dot q(q,p+dp))dtdp=-\frac{\partial }{\partial p}(\rho\dot p)dq\,dt\,dp$$Therefore the total flux through our volume element is$$\Large\begin{aligned}\left(-\frac{\partial }{\partial q}\left(\rho\dot q\right)-\frac{\partial }{\partial p}(\rho\dot p)\right)dt\,dq\,dp&=\frac{\partial \rho}{\partial t}dt\,dq\,dp\\
+\implies\frac{\partial \rho}{\partial t}&=-\frac{\partial }{\partial q}(\rho\dot q)-\frac{\partial }{\partial p}(\rho\dot p)
+\end{aligned}$$, for arbitrary $(\mathcal{N},N)$:$$\Large\begin{aligned}\frac{\partial \rho(q,p,t)}{\partial t}&=-\sum_i\left(\frac{\partial }{\partial q_i}\left(\rho\dot q_i\right)+\frac{\partial }{\partial p_i}(\rho\dot p_i)\right)\\
+&=-\sum_i\left(\frac{\partial \rho}{\partial q_i}\dot q_i+\frac{\partial \rho}{\partial p_i}\dot p_i+\rho\left(\frac{\partial \dot q_i}{\partial q_i}+\frac{\partial \dot p_i}{\partial p_i}\right)\right)\\
+_{\text{using Hamilton's eqns}}&=-\sum_i\left(\frac{\partial \rho}{\partial q_i}\dot q_i+\frac{\partial \rho}{\partial p_i}\dot p_i+\rho\left(\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\right)\\
+_{\text{assuming }\partial\text{s commute}}&=-\sum_i\left(\frac{\partial \rho}{\partial q_i}\dot q_i+\frac{\partial \rho}{\partial p_i}\dot p_i\right)
+\end{aligned}$$That is, the total time derivative $\frac{d\rho}{dt}$ vanishes for systems under Hamiltonian flow. Alternatively, we could have written$$\Large\frac{\partial \rho}{\partial t}+\{\rho,H\}=0$$, highlighting another insight: If $\{\rho,H\}=0$ then $\rho$ is time-independent. Note under time reversal $(q,p,t)\to(q,-p,-t)$, this statement of Liouville's holds. That is, if $\rho(q,p,t)$ satisfies Liouville's
+theorem, so will $\rho(q,-p,-t)$.
+
+Consider the following corollary:$$\Large\begin{aligned}
+\{H,f(H)\}&=\sum_i\left(\frac{\partial H}{\partial q_i}\frac{\partial f(H)}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial f(H)}{\partial q_i}\right)\\
+&=\sum_i\left(\frac{\partial H}{\partial q_i}\frac{d f}{d H}\frac{\partial H}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{d f}{d H}\frac{\partial H}{\partial q_i}\right)\\
+&=\frac{df}{dH}\{H,H\}=0
+\end{aligned}$$Note that this is not unique to $H$, this will hold true for $\{A,f(A)\}$ as well.
+
+Let us illustrate Liouville's theorem in action with another SHO (ffs):
+> The SHO has Hamiltonian$$\Large H=\frac{p^2}{2m}+\frac{1}{2}m\omega^2q^2$$, so the probability density that is independent of time will be given by:$$\Large\begin{aligned}
+\rho(q,p)&=\frac{1}{2\pi}\omega\exp\left(-\left(\frac{p^2}{2m}+\frac{1}{2}m\omega^2q^2\right)\right)\\
+&=\frac{1}{2\pi}\omega\exp(-H)\\
+\end{aligned}$$
+> Since $\rho=\rho(H)$ it is clear from our corollary above that $\frac{\partial \rho}{\partial t}=0$.
+
+# Time evolution of ensemble averages:
+
+Recall our definition of the ensemble average, we wish to find$$\Large\begin{aligned}
+\frac{d}{dt}\langle\mathcal{O}\rangle&=\frac{d}{dt}\int_\mathcal{P}d\mu\rho(q,p,t)\mathcal{O}(q,p)\\
+&=\int_\mathcal{P}d\mu\frac{\partial \rho}{\partial t}\mathcal{O}(q,p)
+\end{aligned}$$, noting that the total $\frac{d}{dt}$ has become a partial derivative. This is because we are integrating over $q,p$ and so we treat them as dummy variables, the only change in time of this quantity will come from $\frac{\partial \rho}{\partial t}$. Continuing our calculation:$$\Large\begin{aligned}
+\frac{d}{dt}\langle\mathcal{O}\rangle&=\int_\mathcal{P}d\mu(-\{\rho,H\})\mathcal{O}\\
+&=\int_\mathcal{P}d\mu\sum_i(\frac{\partial H}{\partial q_i}\frac{\partial \rho}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \rho}{\partial q_i})\mathcal{O}\\
+_\text{IBP}&=-\int_\mathcal{P}d\mu\rho\sum_i\left(\frac{\partial H}{\partial q_i}\frac{\partial \mathcal{O}}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \mathcal{O}}{\partial q_i}+\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\\
+_{\text{assuming }\partial\text{s commute}}&=-\int_\mathcal{P}d\mu\rho\{H,\mathcal{O}\}=\langle\{\mathcal{O},H\}\rangle
+\end{aligned}$$
