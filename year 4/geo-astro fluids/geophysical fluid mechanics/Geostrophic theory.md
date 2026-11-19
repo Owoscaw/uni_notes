@@ -45,6 +45,28 @@ We can take the $z$-derivative of the momentum equation and substitute for press
 
 The leading order asymptotics we found are useful, but diagnostic. That is, they do not tell us how velocity and pressure evolve (just how they relate to each other). To find these dynamics, we no longer neglect terms $\mathcal{O}(\epsilon)$, we go to next order. 
 
-Starting with the horizontal momentum equation in dimensionless form, with our expanded variables:$$\Large \frac{\partial \underline{v}_0^*}{\partial t}+(\underline{v}_0^*\cdot\underline{\nabla}^*_H)\underline{v}_0^*+\beta^*y^*\underline{e}_z\times\underline{v}_0^*+\underline{e}_z\times\underline{v}_1^*=-\underline{\nabla}^*p_1^*$$
+Starting with the horizontal momentum equation in dimensionless form (reintroducing $*$, as it will be important to make this distinction), with our expanded variables:$$\Large \frac{\partial \underline{v}_0^*}{\partial t}+(\underline{v}_0^*\cdot\underline{\nabla}^*_H)\underline{v}_0^*+\beta^*y^*\underline{e}_z\times\underline{v}_0^*+\underline{e}_z\times\underline{v}_1^*=-\underline{\nabla}^*p_1^*$$Taking the curl of this equation$$\Large\begin{aligned}
+\frac{\partial }{\partial x^*}\left(\frac{\partial v_0^*}{\partial t^*}+u_0^*\frac{\partial v_0^*}{\partial x^*}+v_0^*\frac{\partial v_0^*}{\partial y^*}+\beta^*y^*u_0^*+u_1\right)\\
+-\frac{\partial }{\partial y^*}\left(\frac{\partial u_0^*}{\partial t^*}+u_0^*\frac{\partial u_0^*}{\partial x^*}+v_0^*\frac{\partial u_0^*}{\partial y^*}-\beta^*y^*v_0^*-v_1\right)&=0\\
+\implies \frac{\partial \zeta_0^*}{\partial t^*}+(\underline{v}_0^*\cdot\underline{\nabla}^*_H)\zeta_0^*+\beta^*v_0^* &=-\underline{\nabla}^*_H\cdot\underline{v}_1^*
+\end{aligned}$$, where we used the divergencelessness of $\underline{v}_0^*$ and we wrote $\zeta_0^*=\partial_{x^*}v_0^*-\partial_{y^*}u_0^*$ (zeroth order vertical vorticity).
 
-5.5.
+Moving on to the mass conservation equation to the next order, we find$$\Large\underline{\nabla}^*_H\cdot\underline{v}_1^*+\frac{\partial w_1^*}{\partial z^*}=0$$which we substitute in our curled horizontal momentum equation:$$\Large \frac{\partial \zeta_0^*}{\partial t^*}+(\underline{v}_0^*\cdot\underline{\nabla}^*_H)\zeta_0^*+\beta^*v_0^*=\frac{\partial w_1^*}{\partial z^*}$$
+Now for the next order buoyancy equation:$$\Large \frac{\partial b_0^*}{\partial t^*}+(\underline{v}_0^*\cdot\underline{\nabla}^*_H)b_0^*+\left(\frac{\mathcal{L}_d}{\mathcal{L}}\right)^2w_1^*=0$$
+Now let us put all of this together:
+> Taking the $z$ derivative and substituting the expression we find for $\frac{\partial w_1^*}{\partial z^*}$ into the mass conservation equation:$$\Large\begin{aligned} \frac{\partial \zeta_0^*}{\partial t^*}+(\underline{v}_0^*\cdot\underline{\nabla}_H^*)\zeta_0^*+\beta^*v_0^*&=-\left(\frac{\mathcal{L}}{\mathcal{L}_d}\right)^2\frac{\partial }{\partial z^*}\left(\frac{\partial b_0^*}{\partial t^*}+(\underline{v}_0^*\cdot\underline{\nabla}_H^*)b_0^*\right)\\
+\frac{\partial }{\partial z^*}\left(\frac{\partial b_0^*}{\partial t^*}+\underline{v}_0^*\cdot\underline{\nabla}_H^*b_0^*\right)&=\frac{\partial }{\partial t^*}\frac{\partial b_0^*}{\partial z^*}+\underline{v}_0^*\cdot\underline{\nabla}^*_H \frac{\partial b_0^*}{\partial z^*}+\frac{\partial \underline{v}_0^*}{\partial z^*}\underline{\nabla}_H^*b_0^*
+ \end{aligned}$$
+ > The last term in the above expansion will be zero, as the dimensionless thermal wind equation tells us that $\underline{\nabla}_H^*b_0^*$ and $\frac{\partial \underline{v}_0^*}{\partial z^*}$ are normal to each other.
+ > Defining $\frac{D_0^*}{Dt}=\frac{\partial }{\partial t^*}+\underline{v}_0^*\cdot\underline{\nabla}_H^*$, we can write the above equation as:$$\Large\begin{aligned}
+\frac{D_0^*}{Dt}(\zeta_0^*+\beta^*y^*)&=-\left(\frac{\mathcal{L}}{\mathcal{L}_d}\right)^2\frac{D_0^*}{Dt}\left(\frac{\partial b_0^*}{\partial z^*}\right)\\
+_\text{defining }q^*&=\zeta_0^*+\beta^*y^*+\left(\frac{\mathcal{L}}{\mathcal{L}_d}\right)^2\frac{\partial b_0^*}{\partial z^*}\\
+\implies \frac{D_0^*q^*}{Dt}&=0
+\end{aligned}$$
+
+This is the dimensionless quasi-geostrophic (QG) balance. We can re-dimensionalise this and drop the subscript (assuming flow is approximated by its leading order terms) to arrive at the dimensional QG equation:$$\Large \frac{Dq}{Dt}=0,\,\,q=\zeta+\beta y+\frac{f_0}{N^2}\frac{\partial b}{\partial z}$$The quantity $q$ we defined here is known as Potential Vorticity, an important thing. Note that we can write every variable here in terms of a stream function:
+> The horizontal velocity components are:$$\Large u=-\frac{\partial \psi}{\partial y},\,\,v=\frac{\partial \psi}{\partial x}$$
+> Vertical vorticity is:$$\Large\zeta=\underline{\nabla}_H^2\psi$$
+> Perturbation buoyancy is:$$\Large b=f_0\frac{\partial \psi}{\partial z}$$
+
+That is, we can rewrite the QG equation as a PDE for only one variable. The full Boussinesq equations contained $5$ unknowns, which we have reduced to a single equation for a single unknown. 
