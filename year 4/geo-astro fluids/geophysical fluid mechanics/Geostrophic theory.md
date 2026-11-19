@@ -40,3 +40,6 @@ b & \to b_0+\epsilon b_1+\dots\end{cases}$$, making the momentum equation $$\Lar
 
 At leading order, the vertical continuity equation becomes$$\Large b_0=\frac{\partial p_0}{\partial z}$$, this is the dimensionless hydrostatic balance equation. Consider the conservation of mass at leading order:$$\Large\underline{\nabla}_H\cdot\underline{v}_0+\frac{\partial w_0}{\partial z}=0\implies\frac{\partial w_0}{\partial z}=0$$This implies that if $w_0$ is zero anywhere in it's domain, then it is zero everywhere. The buoyancy equation at leading order reduces to:$$\Large\left(\frac{\mathcal{L}_d}{\mathcal{L}}\right)^2w_0=0\implies w_0=0\,\,\forall z$$
 We can take the $z$-derivative of the momentum equation and substitute for pressure terms to find$$\Large \underline{e}_z\times\frac{\partial \underline{v}_0}{\partial z}=-\underline{\nabla}_Hb_0$$, the dimensionless thermal wind balance equation.
+
+# Quasigeostrophy:
+
