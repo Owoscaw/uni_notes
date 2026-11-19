@@ -44,3 +44,7 @@ We can take the $z$-derivative of the momentum equation and substitute for press
 # Quasigeostrophy:
 
 The leading order asymptotics we found are useful, but diagnostic. That is, they do not tell us how velocity and pressure evolve (just how they relate to each other). To find these dynamics, we no longer neglect terms $\mathcal{O}(\epsilon)$, we go to next order. 
+
+Starting with the horizontal momentum equation in dimensionless form, with our expanded variables:$$\Large \frac{\partial \underline{v}_0^*}{\partial t}+(\underline{v}_0^*\cdot\underline{\nabla}^*_H)\underline{v}_0^*+\beta^*y^*\underline{e}_z\times\underline{v}_0^*+\underline{e}_z\times\underline{v}_1^*=-\underline{\nabla}^*p_1^*$$
+
+5.5.
