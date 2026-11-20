@@ -128,5 +128,38 @@ In addition to the algebraic symmetries we found above, the Riemann tensor also 
 \nabla_\lambda R_{\rho\sigma\mu\nu}&=\partial_\lambda R_{\rho\sigma\mu\nu}\\
 &=\frac{1}{2}\partial_\lambda(\partial_\mu\partial_\sigma g_{\rho\nu}-\partial_\mu\partial_\rho g_{\nu\sigma}-\partial_\nu\partial_\sigma g_{\rho\mu}+\partial_\nu\partial_\rho g_{\mu\sigma})
 \end{aligned}$$Note we are taking the derivative of an expression derived at a point, however we neglect all terms proportional to $\partial_\sigma g_{\mu\nu}$ anyway so it's fine (trust bro). Now consider the sum of cyclic permutations over the first three indices:$$\Large\begin{aligned}
+\underline{\nabla}_\lambda R_{\rho\sigma\mu\nu}+\underline{\nabla}_\rho R_{\sigma\lambda\mu\nu}+\underline{\nabla}_\sigma R_{\lambda\rho\mu\nu}&=\frac{1}{2}(\partial_\lambda\partial_\mu\partial_\sigma g_{\rho\nu}-\dots\\
+&+\partial_\sigma\partial_\nu\partial_\lambda g_{\mu\rho})\\
+&=0
+\end{aligned}$$Antisymmetry in the first two indices then lets us write this identity as:$$\Huge \underline{\nabla}_{[\lambda}R_{\rho\sigma]\mu\nu}=0$$This is known as the Bianchi identity, and for a general connection will involve more terms to do with the Torsion tensor. One can think of this as a generalisation of the [[Lie Groups and Algebras#Lie algebras|Jacobi identity]] for curved spacetimes.
 
+# Ricci, Weyl, and Eienstien tensors:
+
+It is useful to decompose a tensor into a sum of different parts that are each easier to handle and have physical interpretations. The way to do this without breaking coordinate-invariance is to use contractions and noting symmetric/antisymmetric parts:
+> For example, consider a general $[0,2]$ tensor $X_{\mu\nu}$ which we can decompose into symmetric and antisymmetric parts:$$\Large X_{\mu\nu}=X_{(\mu\nu)}+X_{[\mu\nu]}$$
+> The symmetric part can further be decomposed into its trace $X=g^{\mu\nu}X_{(\mu\nu)}$ and its trace-free part $\hat X_{\mu\nu}=X_{(\mu\nu)}-\frac{1}{n}Xg_{\mu\nu}$ so that:$$\Large\begin{aligned}
+X_{\mu\nu}&=\frac{1}{n}Xg_{\mu\nu}+\hat X_{\mu\nu}+X_{[\mu\nu]}\\
+&=\text{trace }+\text{ trace-free }+\text{antisymmetric}
 \end{aligned}$$
+> Under coordinate transformations, these objects rotate onto themselves and not each other. They define invariant subspaces of the $[0,2]$ tensors. For higher-order/mixed tensors, this decomposition may not be as nice.
+
+
+## Ricci tensor:
+Doing this decomposition on the Riemann tensor, our first step is to take a contraction over the third index to define the Ricci tensor:$$\huge R_{\mu\nu}= R^{\lambda}{}_{\mu\lambda\nu}$$Note that a curvature tensor formed from a non-Christoffel connection would have a number of independent contractions to take, all contractions on the Riemann tensor either vanish or relate to the above. As a consequence of the Riemann tensor symmetries, the Ricci tensor will be symmetric automatically. The trace of the Ricci tensor is known as the Ricci scalar:$$\Large R=R^\mu_\mu=g^{\mu\nu}R_{\mu\nu}$$
+## Weyl tensor:
+The Ricci tensor and scalar contain all information about the traces of the Riemann tensor, leaving the trace-free parts. We capture these with the Weyl tensor, essentially the Riemann tensor with all contractions removed:$$\Large\begin{aligned}
+C_{\rho\sigma\mu\nu}&=R_{\rho\sigma\mu\nu}-\frac{2}{n-2}(g_{\rho[\mu}R_{\nu]\sigma}-g_{\sigma[\mu}R_{\nu]\rho})\\
+&+\frac{2}{(n-1)(n-2)}g_{\rho[\mu}g_{\nu]\sigma}R
+\end{aligned}$$The above expression is designed so that all contractions of $C_{\rho\sigma\mu\nu}$ vanish, while retaining the algebraic symmetries of the Riemann tensor. Note in $\Re^3$, this vanishes identically.
+
+The Weyl tensor is invariant under conformal transformations, that is if one computes $C^{\rho}{}_{\sigma\mu\nu}$ for some metric $g_{\mu\nu}$ and then for $\omega^2(x)g_{\mu\nu}$, one would get the same answer. For this reason, it is often known as the conformal tensor.
+
+## Einstein tensor:
+A useful form of the Bianchi identity comes from twice contracting the sum of cyclic covariant derivatives:$$\Large\begin{aligned}
+0&=g^{\nu\sigma}g^{\mu\lambda}(\underline{\nabla}_\lambda R_{\rho\sigma\mu\nu}+\underline{\nabla}_\rho R_{\sigma\lambda\mu\nu}+\underline{\nabla}_\sigma R_{\lambda\rho\mu\nu})\\
+&=\underline{\nabla}^\mu R_{\rho\mu}-\underline{\nabla}_\rho R+\underline{\nabla}^\nu R_{\rho\nu}\\
+\implies\underline{\nabla}^\mu R_{\rho\mu}&=\frac{1}{2}\underline{\nabla}_\rho R
+\end{aligned}$$Then, defining the Einstein tensor$$\huge G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}$$, we can write the double-contracted Bianchi identity as:$$\huge \underline{\nabla}^\mu G_{\mu\nu}=0$$One can think of the Einstein tensor as a trace-reversed version of the Ricci tensor.
+
+# Symmetries and killing vectors:
+
