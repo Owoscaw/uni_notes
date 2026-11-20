@@ -26,12 +26,46 @@ We can now construct our interaction picture field, an operator in the interacti
 \pi_S(\underline{x})&=-i\int\frac{d^3k}{(2\pi)^3}\sqrt{\frac{\omega_\underline{k}}{2}}(a_\underline{k}e^{-i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t_0-i\underline{k}\cdot\underline{x}})
 \end{aligned}$$, we find we can write the free Schrodinger Hamiltonian as:$$\Large H_{0S}=\int\frac{d^3k}{(2\pi)^3}\omega_\underline{k}a_\underline{k}^\dagger a_\underline{k}$$
 
-Time dependence of the field and free Hamiltonian take a complex form in the Heisenberg picture, however in our interaction picture takes a simpler form:
+Time dependence of the field and free Hamiltonian take a complex form in the Heisenberg picture, however in our interaction picture, they take a simpler form:
 > Starting from the canonical commutation relations$$\Large\begin{aligned}
 [\phi(\underline{x}),\phi(\underline{y})]=[\pi(\underline{x}),\pi(\underline{y})]&=0,\,\,[\phi(\underline{x}),\pi(\underline{y})]=i\delta^{(3)}(\underline{x}-\underline{y})\\
 \implies[a_\underline{k},a_\underline{k'}^\dagger]=(2\pi)^3\delta^{(3)}(\underline{k}-\underline{k}')&,\,\,[H_{0S},a_\underline{k}^\dagger]=\omega_\underline{k}a_\underline{k}^\dagger,\,\,[H_{0S},a_\underline{k}]=-\omega_\underline{k}a_\underline{k}
 \end{aligned}$$, with remaining commutators vanishing. 
 > Therefore, the interaction picture field in our interacting theory is given by$$\Large\phi_I(t,\underline{x})=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}(a_\underline{k}e^{-\omega_\underline{k}t+i\underline{k}\cdot\underline{x}}+a_\underline{k}^\dagger e^{i\omega_\underline{k}t-i\underline{k}\cdot\underline{x}})$$, the same form as the Heisenberg picture.
 
+Here, we have evolved the field only with the free Hamiltonian which we have studied extensively. It remains to relate the Heisenberg picture to the interaction picture, which we do as follows:$$\Large\begin{aligned}
+\mathcal{O}_H(t)&=e^{iH(t-t_0)}\mathcal{O}_H(t_0)e^{-iH(t-t_0)}\\
+&=e^{iH(t-t_0)}e^{-iH_{0S}(t-t_0)}\mathcal{O}_H(t_0)e^{iH_{0S}(t-t_0)}e^{-iH(t-t_0)}\\
+&=U^\dagger(t,t_0)\mathcal{O}_I(t)U(t,t_0)
+\end{aligned}$$Where we have used the time evolution operator, defined next.
 ## Time evolution operator:
-The relation between the Heisenberg and interaction pictures suggest that it will be useful to define the time evolution operator$$\Large U(t,t_0)=e^{iH_{0S}(t-t_0)}e^{-iH(t-t_0)}$$such that:$$\Large\mathcal{O}_I(t)=U(t,t_0)\mathcal{O}_H(t)U^\dagger(t,t_0),\,\,|\psi_I(t)\rangle=U(t,t_0)|\psi_H\rangle$$
+The relation between the Heisenberg and interaction pictures suggest that it will be useful to define the time evolution operator$$\Large U(t,t_0)=e^{iH_{0S}(t-t_0)}e^{-iH(t-t_0)}$$such that:$$\Large\mathcal{O}_I(t)=U(t,t_0)\mathcal{O}_H(t)U^\dagger(t,t_0),\,\,|\psi_I(t)\rangle=U(t,t_0)|\psi_H\rangle$$This can be thought of as the full Hamiltonian evolution minus the free theory Hamiltonian evolution. Note:$$\Large\begin{aligned}
+i\frac{\partial }{\partial t}U(t,t_0)&=e^{iH_{0S}(t-t_0)}(-H_{0S}+H)e^{-iH(t-t_0)}\\
+&=e^{iH_{0S}(t-t_0)}H_{\text{int }S}e^{-iH_{0S}(t-t_0)}U(t,t_0)\\
+&=H_{\text{int }I}(t)U(t,t_0)\\
+_\text{where }H_{\text{int }I}(t)&=e^{iH_{0S}(t-t_0)}H_{\text{int }S}e^{-iH_{0S}(t-t_0)}
+\end{aligned}$$This is a differential equation of the form:$$\Large\begin{aligned}
+i \frac{d}{dt}F(t)&=\alpha(t)F(t)\\
+F(t)&=A\exp\left(-i\int_{t_0}^t \alpha(T')dT'\right)
+\end{aligned}$$We would naively assume that we can solve this with$$\Large \tilde U(t,t_0)=\exp\left(-i\int_{t_0}^tH_I(t')dt'\right)$$subject to $\tilde U(t_0,t_0)=\mathbb{1}$, however it turns out that the correct solution is given by Dyson's formula, $$\Large U(t,t_0)= T\exp\left(-i\int_{t_0}^tH_I(t')dt'\right)$$, where $T$ is the [[Propagators and Causality#Feynman propagator|time ordering]] operator. Now we can expand the exponential of our operator to write:$$\Large\begin{aligned}
+U(t,t_0)&=T\left(\mathbb{1}-i\int_{t_0}^tH_I\left(t'\right)dt'-\frac{1}{2}\int_{t_0}^tdt_1H_I(t_1)\int_{t_0}^tdt_2H_I(t_2)\right)+\mathcal{O}(\lambda^3)\\
+&=\mathbb{1}-i\int_{t_0}^tH_I(t')dt'-\frac{1}{2}T\left(\int_{t_0}^tdt_1H_I(t_1)\int_{t_0}^tdt_2H_I(t_2)\right)+\mathcal{O}(\lambda^3)
+\end{aligned}$$Note that the first two terms were already time-ordered trivially, so we only need to look at the second-order term:$$\begin{aligned}
+T\left(\int_{t_0}^tdt_1H_I(t_1)\int_{t_0}^tdt_2H_I(t_2)\right)&=T\left(\int_{t_0}^tdt_1\int_{t_0}^{t_1}dt_2 H_I(t_1)H_I\left(t_2\right)+\int_{t_0}^tdt_1\int_{t_1}^tdt_2H_I(t_1)H_I(t_2)\right)\\
+&=\int_{t_0}^tdt_1\int_{t_0}^{t_1}dt_2H_I(t_1)H_I(t_2)+\int_{t_0}^tdt_1\int_{t_1}^tdt_2H_I(t_2)H_I(t_1)
+\end{aligned}$$!!!!We can generalise this to:$$\Large\begin{aligned}
+U(t_2,t_1)&=\begin{cases}T\exp(-i\int_{t_1}^{t_2}dt'H_I(t')) & t_2>t_1\\
+T\exp(i\int_{t_2}^{t_1}dt'H_I(t')) & t_1>t_2 \end{cases}\\
+&=e^{iH_{0S}(t_2-t_0)}e^{-iH(t_2-t_1)}e^{-iH_{0S}(t_1-t_0)}
+\end{aligned}$$This makes it clear what we are doing:
+> First, we evolve according to the free Hamiltonian from time $t_0$ to $t_1$.
+> Next, we evolve according to the full Hamiltonian from time $t_1$ to $t_2$.
+> Lastly, we "undo" the time evolution from the free Hamiltonian from time $t_0$ to $t_2$.
+
+It is intuitive to see that this will leave behind the time evolution associated with the full Hamiltonian between times $t_1,t_2$. Note in general, one would systematically compute the form of $U$according to a Feynman diagram. Our operator in this form has the following properties:
+> $U(t_1,t_1)=\mathbb{1}$
+> $U(t_1,t_2)U(t_2,t_3)=U(t_1,t_3)$, composition
+> $(U(t_1,t_2))^\dagger=U(t_2,t_1)=U(t_1,t_2)^{-1}$, unitarity
+
+## Vacuum state:
+It remains to relate the ground state $|0\rangle$ of the free Hamiltonian in the Schrodinger picture $H_{0S}$ to $|\Omega\rangle$, the vacuum associated with the full theory. Let us consider the time evolution of $|0\rangle$:
