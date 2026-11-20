@@ -70,3 +70,10 @@ This is the dimensionless quasi-geostrophic (QG) balance. We can re-dimensionali
 > Perturbation buoyancy is:$$\Large b=f_0\frac{\partial \psi}{\partial z}$$
 
 That is, we can rewrite the QG equation as a PDE for only one variable. The full Boussinesq equations contained $5$ unknowns, which we have reduced to a single equation for a single unknown. 
+
+# Shallow water QG:
+
+In our shallow water formulation, we will find:$$\Large\begin{aligned}
+\mathcal{O}(\epsilon^0)&:&\underline{f}\times\underline{v}=-g\underline{\nabla}_H\eta\\
+\mathcal{O}(\epsilon^1)&:&\frac{Dq}{Dt}=\frac{D}{Dt}\left(\zeta+\beta y-\frac{f_0}{H}\eta\right)=0
+\end{aligned}$$Note we can do the same as we did before and write potential vorticity in terms of the stream function.

@@ -1,0 +1,9 @@
+
+# Review:
+
+Let us recall some of our technology around wave solutions and how we manipulate them. First, let us consider a sinusoidal plane wave:$$\Large\psi(\underline{x},t)=\mathcal{M}\cos(\underline{k}\cdot\underline{x}-\omega t)+\mathcal{N}\sin(\underline{k}\cdot\underline{x}-\omega t)$$Here, $\underline{k}$ is a three-vector called the wave vector, $|\underline{k}|$ is the wave number, and we think of the argument of $\cos,\sin$ as an angle $\theta=\underline{k}\cdot\underline{x}-\omega t$. Writing $A^2=\mathcal{M}^2+\mathcal{N}^2$, we can write the plane wave solution as a single cosine term:$$\Large\psi(\underline{x},t)=A\cos(\underline{k}\cdot\underline{x}-\omega t+\phi_0)$$Here, we define $\phi_0$ as the initial phase shit related to $\mathcal{M},\mathcal{N},A$ by:$$\Large \cos\phi_0=\frac{\mathcal{M}}{A},\,\,\sin(\phi_0)=\frac{\mathcal{N}}{A}$$Note we also write this as the real part of a complex exponential:$$\Large\psi(\underline{x},t)=\Re(Ce^{i(\underline{k}\cdot\underline{x}-\omega t)})$$We also define the wavelength $\lambda=2\pi/|\underline{k}|$ and the wave period $T=2\pi/\omega$. Plane wave solutions tend to be the solution for [[Partial differential equations#Hyperbolic PDEs|hyperbolic]] PDEs. We often use a PDE to find a dispersion relation between $\omega$ and $\underline{k}$. In generality, these relations may involve $\underline{x},t$ as well:$$\Large\text{PDE}\implies\omega=\Omega(\underline{k};\underline{x},t)$$
+Let us explore this with an example:
+> Consider the PDE:$$\Large \frac{\partial }{\partial t}\underline{\nabla}^2\psi+\beta\frac{\partial \psi}{\partial x}=0$$
+> Substituting the plane wave in, we find:$$\Large\begin{aligned} -i\omega(-k_x^2-k_y^2-k_z^2)Ce^{i\theta}+\beta(ik_x)Ce^{i\theta}&=0\\
+\implies-\omega(-k_x^2-k_y^2-k_z^2+\beta k_x&=0\\
+\implies\omega&=\frac{-\beta k_x}{k_x^2+k_y^2+k_z^2}\end{aligned}$$
