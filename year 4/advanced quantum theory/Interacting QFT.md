@@ -53,7 +53,9 @@ U(t,t_0)&=T\left(\mathbb{1}-i\int_{t_0}^tH_I\left(t'\right)dt'-\frac{1}{2}\int_{
 \end{aligned}$$Note that the first two terms were already time-ordered trivially, so we only need to look at the second-order term:$$\begin{aligned}
 T\left(\int_{t_0}^tdt_1H_I(t_1)\int_{t_0}^tdt_2H_I(t_2)\right)&=T\left(\int_{t_0}^tdt_1\int_{t_0}^{t_1}dt_2 H_I(t_1)H_I\left(t_2\right)+\int_{t_0}^tdt_1\int_{t_1}^tdt_2H_I(t_1)H_I(t_2)\right)\\
 &=\int_{t_0}^tdt_1\int_{t_0}^{t_1}dt_2H_I(t_1)H_I(t_2)+\int_{t_0}^tdt_1\int_{t_1}^tdt_2H_I(t_2)H_I(t_1)
-\end{aligned}$$!!!!We can generalise this to:$$\Large\begin{aligned}
+\end{aligned}$$Here, we used the notion of time ordering to split the integrals so that we integrate earlier times first, and later times second:![[Interacting QFT 2026-11-20 17.26.57.excalidraw]]
+
+We can generalise this to:$$\Large\begin{aligned}
 U(t_2,t_1)&=\begin{cases}T\exp(-i\int_{t_1}^{t_2}dt'H_I(t')) & t_2>t_1\\
 T\exp(i\int_{t_2}^{t_1}dt'H_I(t')) & t_1>t_2 \end{cases}\\
 &=e^{iH_{0S}(t_2-t_0)}e^{-iH(t_2-t_1)}e^{-iH_{0S}(t_1-t_0)}
