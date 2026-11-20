@@ -119,7 +119,8 @@ E&=-p_\mu U^\mu\\
 
 Photons emitted with energy $E_1$ at a scale factor $a_1$ and observed with energy $E_2$ at a scale factor $a_2$ we have:$$\huge\frac{E_2}{E_1}=\frac{a_1}{a_2}$$This provides an easy way to measure change in scale factor between us and distance galaxies, and can serve as a proxy for the distance.
 
-## [[SR, Manifolds, and Field theory summary#Energy-Momentum tensor|Energy-momentum tensor]]:
+# [[SR, Manifolds, and Field theory summary#Energy-Momentum tensor|Energy-momentum tensor]]:
+
 We model the matter filling the universe as a perfect fluid with energy-momentum tensor coming from the generalisation$$\Large T^{\mu\nu}=(\rho+p)U^\mu U^\nu+pg^{\mu\nu}$$, where $\rho$ is energy density, $p$ is pressure, and $U^\mu$ is the fluid's four-velocity. The energy-momentum conservation equation becomes:$$\huge \nabla_\mu T^{\mu\nu}=0$$
 The components of the inverse (expanding universe) metric are:$$\Large g^{\mu\nu}=\begin{pmatrix}-1 & 0 & 0 & 0 \\ 0 & a^{-2} & 0 & 0 \\ 0 & 0 & a^{-2} & 0 \\ 0 & 0 & 0 & a^{-2}\end{pmatrix}$$We take the fluid to be in its rest frame in these coordinates, so that components of four-velocity are $U^\mu=(1,0,0,0)$. Therefore the energy-momentum tensor takes form:$$\Large\begin{aligned}
 T^{\mu\nu}&=(\rho+p)\begin{pmatrix}1 & 0 & 0 & 0\end{pmatrix}^\mu\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}^\nu+pg^{\mu\nu}\\
