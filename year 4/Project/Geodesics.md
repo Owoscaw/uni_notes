@@ -172,4 +172,3 @@ We can relate the geodesic equation to Newtonian physics by considering the limi
 
 # Symmetries and conservation laws:
 
-killing vectors first
