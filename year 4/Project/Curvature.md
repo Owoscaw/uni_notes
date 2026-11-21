@@ -163,3 +163,8 @@ A useful form of the Bianchi identity comes from twice contracting the sum of cy
 
 # Symmetries and killing vectors:
 
+A manifold $M$ has a symmetry if the geometry is invariant under certain transformations mapping $M$ onto itself, that is if the metric is the same from one point to another. Metric symmetries are called isometries, we know many for Minkowski space:
+> Translations $x^\mu\to x^\mu+a^\mu$
+> Lorentz transformations $x^\mu\to\Lambda^\mu_\nu x^\nu$
+
+Metric invariance is made apparent by noting that metric coefficients are indepdenent of individual coordinate functions $x^\mu$. Whenever $\partial_\sigma g_{\mu\nu}=0$ for some fixed $\sigma$, there will be a symmetry under translations along $x^\sigma:$$$\Large \partial_\sigma g_{\mu\nu}=0\implies x^\sigma\to x^\sigma+a^\sigma \text{ is a symmetry}$$

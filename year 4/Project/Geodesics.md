@@ -121,7 +121,18 @@ Photons emitted with energy $E_1$ at a scale factor $a_1$ and observed with ener
 
 # [[SR, Manifolds, and Field theory summary#Energy-Momentum tensor|Energy-momentum tensor]]:
 
-We model the matter filling the universe as a perfect fluid with energy-momentum tensor coming from the generalisation$$\Large T^{\mu\nu}=(\rho+p)U^\mu U^\nu+pg^{\mu\nu}$$, where $\rho$ is energy density, $p$ is pressure, and $U^\mu$ is the fluid's four-velocity. The energy-momentum conservation equation becomes:$$\huge \nabla_\mu T^{\mu\nu}=0$$
+Consider the general-spacetime version of a scalar field $\phi$ in a potential $V(\phi)$. The equation of motion is then:$$\Large \partial_\mu\partial^\mu\phi-V'(\phi)=0\rightarrow\underline{\nabla}_\mu\underline{\nabla}^\mu\phi-V'(\phi)=0$$For the [[Abelian gauge theories#Maxwell equation and actions|Maxwell field]] $A^\mu$, we have a similar process:$$\Large\begin{cases}\partial_\mu F^{\mu\nu}=0 \\
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu\end{cases}\rightarrow\begin{cases}\underline{\nabla}_\mu F^{\mu\nu}=0 \\
+F_{\mu\nu}=\underline{\nabla}_\mu A_\nu-\underline{\nabla}_\nu A_\mu\end{cases}$$Doing the same for the actions of both, we have:$$\Large\begin{aligned}
+S_\text{scalar}&=\int d^nx\sqrt{-g}\left(-\frac{1}{2}\underline{\nabla}_\mu\phi\underline{\nabla}^\mu\phi-V(\phi)\right)\\
+S_\text{Maxwell}&=\int d^nx\sqrt{-g}\left(-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}\right)
+\end{aligned}$$One can show that extremising these actions will produce the EOM above. For a fixed background metric, the action of i.e. a scalar field will also be a functional of the metric:$$\Large S_\text{matter}[g_{\mu\nu},\phi]=\int d^x\mathcal{L}(g_{\mu\nu},\phi,\underline{\nabla}_\mu\phi)\implies\frac{\delta S_\text{matter}}{\delta \phi(x^\mu)}=0\text{ reproduces EOM}$$We now wish to vary the action wrt to the background metric as well, finding:$$\Large\begin{aligned}\delta S_\text{matter}[g_{\mu\nu},\phi]&=\int d^nx\left(\frac{\delta S}{\delta g_{\mu\nu}(x^\lambda)}\delta g_{\mu\nu}\left(x^\lambda\right)+\frac{\delta S}{\delta\phi(x^\lambda)}\delta\phi(x^\lambda)\right)\\
+_\text{on shell}&=\int d^nx\frac{\delta S}{\delta g_{\mu\nu}(x^\lambda)}\delta g_{\mu\nu}(x^\lambda)\\
+&=\frac{1}{2}\int d^nx\sqrt{-g}T^{\mu\nu}_\text{matter}\delta g_{\mu\nu}\\
+_\text{where }T^{\mu\nu}_\text{matter}&=2\frac{1}{\sqrt{-g(x^\lambda)}}\frac{\delta S_\text{matter}}{\delta g_{\mu\nu}(x^\lambda)}
+\end{aligned}$$We defined the stress-energy tensor. We model the matter filling the universe as a perfect fluid with energy-momentum tensor coming from the generalisation$$\Large T^{\mu\nu}=(\rho+p)U^\mu U^\nu+pg^{\mu\nu}$$, where $\rho$ is energy density, $p$ is pressure, and $U^\mu$ is the fluid's four-velocity. The energy-momentum conservation equation becomes:$$\huge \nabla_\mu T^{\mu\nu}=0$$
+
+## Expanding universe:
 The components of the inverse (expanding universe) metric are:$$\Large g^{\mu\nu}=\begin{pmatrix}-1 & 0 & 0 & 0 \\ 0 & a^{-2} & 0 & 0 \\ 0 & 0 & a^{-2} & 0 \\ 0 & 0 & 0 & a^{-2}\end{pmatrix}$$We take the fluid to be in its rest frame in these coordinates, so that components of four-velocity are $U^\mu=(1,0,0,0)$. Therefore the energy-momentum tensor takes form:$$\Large\begin{aligned}
 T^{\mu\nu}&=(\rho+p)\begin{pmatrix}1 & 0 & 0 & 0\end{pmatrix}^\mu\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}^\nu+pg^{\mu\nu}\\
 &=(\rho+p)\mathbb{I}^{\mu\nu}+pg^{\mu\nu}\\
@@ -158,3 +169,7 @@ We can relate the geodesic equation to Newtonian physics by considering the limi
 &\approx\frac{1}{2}(2\partial_0h_{0i}-\partial_ih_{00})\approx-\frac{1}{2}\partial_i h_{00}\\
 \implies\ddot x^i&\approx-\Gamma^i_{00}=\frac{1}{2}\partial_ih_{00}
 \end{aligned}$$This looks like the Newtonian gravitational force $\underline{F}=m\underline{a}=-m\underline{\nabla}\phi$ for a Newtonian potential $\phi$, identifying $h_{00}=-2\phi$.
+
+# Symmetries and conservation laws:
+
+killing vectors first
