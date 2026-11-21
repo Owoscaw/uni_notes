@@ -167,4 +167,20 @@ A manifold $M$ has a symmetry if the geometry is invariant under certain transfo
 > Translations $x^\mu\to x^\mu+a^\mu$
 > Lorentz transformations $x^\mu\to\Lambda^\mu_\nu x^\nu$
 
-Metric invariance is made apparent by noting that metric coefficients are indepdenent of individual coordinate functions $x^\mu$. Whenever $\partial_\sigma g_{\mu\nu}=0$ for some fixed $\sigma$, there will be a symmetry under translations along $x^\sigma:$$$\Large \partial_\sigma g_{\mu\nu}=0\implies x^\sigma\to x^\sigma+a^\sigma \text{ is a symmetry}$$
+Metric invariance is made apparent by noting that metric coefficients are independent of individual coordinate functions $x^\mu$. Whenever $\partial_\sigma g_{\mu\nu}=0$ for some fixed $\sigma$, there will be a symmetry under translations along $x^\sigma:$$$\Large \partial_\sigma g_{\mu\nu}=0\implies x^\sigma\to x^\sigma+a^\sigma \text{ is a symmetry}$$Isometries of this form have immediate consequences for the motion of test particles described by the geodesic equation. Recall we can write the geodesic equation in terms of four-momentum $p^\mu=mU^\mu$, by metric compatibility we can lower an index:$$\Large\begin{aligned}
+p^\lambda\underline{\nabla}_\lambda p^\mu&=0\\
+\implies p^\lambda\underline{\nabla}_\lambda p_\mu&=0\\
+\implies p^\lambda\partial_\lambda p_\mu-\Gamma^\sigma_{\lambda\mu}p^\lambda p_\sigma&=0
+\end{aligned}$$The first term shows how momentum components change along a path$$\Large p^\lambda\partial_\lambda p_\mu=m \frac{dx^\lambda}{d\tau}\partial_\lambda p_\mu=m \frac{dp_\mu}{d\tau}$$, while the second term is$$\large\begin{aligned}
+\Gamma^\sigma_{\lambda\mu}p^\lambda p_\sigma&=\frac{1}{2}g^{\sigma\nu}(\partial_\lambda g_{\mu\nu}+\partial_\mu g_{\nu\lambda}-\partial_\nu g_{\lambda\mu})p^\lambda p_\sigma\\
+&=\frac{1}{2}(\partial_\lambda g_{\mu\nu}+\partial_\mu g_{\nu\lambda}-\partial_\nu g_{\lambda\mu})p^\lambda p^\nu\\
+&=\frac{1}{2}(\partial_\mu g_{\nu\lambda})p^\lambda p^\nu
+\end{aligned}$$, where we used the symmetry of $p^\lambda p^\nu$ to go from second to third line. Without making any assumptions about the symmetry, we have arrive at this form of the geodesic equation:$$\Large m \frac{dp_\mu}{d\tau}=\frac{1}{2}(\partial_\mu g_{\nu\lambda})p^\lambda p^\nu$$Therefore, we find this isometry implies the momentum component $p_\sigma$ is conserved under the motion:$$\Large \partial_\sigma g_{\mu\nu}=0\implies \frac{dp_\sigma}{d\tau}=0$$This will hold along any geodesic. Conserved quantities derived from isometries are very useful in studying the motion of test particles.
+
+## Killing vectors:
+We can generalise this procedure in a manifestly covariant form. If $x^\sigma$ is a coordinate of which $g_{\mu\nu}$ is independent of, let us consider the vector:$$\Large K=\partial_\sigma,\,\,K^\mu=(\partial_\sigma)^\mu=\delta^\mu_\sigma$$We say that the vector $K^\mu$ generates the isometry, meaning the geometry-invariant transformation is expressed infinitesimally as motion in the direction of $K^\mu$. In this notation, we can write the quantity $p_\sigma$ as:$$\Large p_\sigma=K^\nu p_\nu=K_\nu p^\nu$$The constancy of this quantity along the path is equivalent to vanishing directional derivative along the geodesic:$$\Large\begin{aligned}
+\frac{dp_\sigma}{d\tau}=0&\leftrightarrow p^\mu\underline{\nabla}_\mu(K_\nu p^\nu)=0\\
+p^\mu\underline{\nabla}_\mu (K_\nu p^\nu)&=p^\mu K_\nu\underline{\nabla}_\mu p^\nu +p^\mu p^\nu\underline{\nabla}_\mu K_\nu\\
+&=p^\mu p^\nu\underline{\nabla}_\mu K_\nu\\
+&=p^\mu p^\nu\underline{\nabla}_{(\mu}K_{\nu)}
+\end{aligned}$$Where we invoked the geodesic equation. We also used the automatic symmetry for $p^\mu p^\nu$, so only the symmetric part of $\underline{\nabla}_\mu K^\nu$ can contribute. Therefore we conclude that any vector $K_\mu$ satisfying $\underline{\nabla}_{(\mu}K_{\nu)}=0$ implies $K_\nu p^\nu$ is conserved along a geodesic trajectory:$$\Large \underline{\nabla}_{(\mu}K_{\nu)}=0\implies p^\mu\underline{\nabla}_\mu(K_\nu p^\nu)=0$$This is known as Killing's equation, and vector fields that satisfy it are known as Killing vectors. Every Killing vector implies the existence of conserved quantities associated with geodesic motion
