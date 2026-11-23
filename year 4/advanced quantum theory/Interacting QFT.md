@@ -70,4 +70,15 @@ It is intuitive to see that this will leave behind the time evolution associated
 > $(U(t_1,t_2))^\dagger=U(t_2,t_1)=U(t_1,t_2)^{-1}$, unitarity
 
 ## Vacuum state:
-It remains to relate the ground state $|0\rangle$ of the free Hamiltonian in the Schrodinger picture $H_{0S}$ to $|\Omega\rangle$, the vacuum associated with the full theory. Let us consider the time evolution of $|0\rangle$:
+It remains to relate the ground state $|0\rangle$ of the free Hamiltonian in the Schrodinger picture $H_{0S}$ to $|\Omega\rangle$, the vacuum associated with the full theory. Similarly to the free vacuum, we want $|\Omega\rangle$ to satisfy $H |\Omega\rangle=E_0 |\Omega\rangle$, where $H$ is the full Hamiltonian and we normalise such that $\langle \Omega|\Omega\rangle=1$. The full vacuum state will evolve non-trivially in time, so we define far past/distant future state as:$$\Large |0\rangle=\lim_{t\to-\infty}|0_I(t)\rangle,\,\, \langle 0|=\lim_{t\to+\infty}\langle 0_I(t)|$$We claim that$$\Large\begin{aligned}
+\lim_{s\to-\infty}\langle \psi_I(t)|U(t,s)|0\rangle&= \langle \psi_H|\Omega\rangle \langle \Omega|0_H\rangle\\
+\lim_{t\to+\infty}\langle 0|U(t,s)|\psi_I(t)\rangle&=\langle 0_H|\Omega\rangle \langle \Omega|\psi_H\rangle
+\end{aligned}$$for arbitrary interaction picture states $\langle \psi_I(t)|,|\psi_I(s)\rangle$:
+> To show this, we write the LHS of the first claim in the Schrodinger picture as$$\Large \lim_{s\to-\infty}\langle \psi_S(t)|e^{-iH(t-s)}|0_S(s)\rangle$$and insert a complete set of energy eigenstates$$\Large 1=|\Omega_S(s)\rangle  \langle \Omega_S(s)|+\sum_n |n_S(s)\rangle \langle n_S(s)|$$where the sum over $n$ represents the sum and integration over all states other than the vacuum.
+> We also assume a mass gap, that is the energies of all other states are strictly greater than $E_0$, the vacuum energy. Therefore we have:$$\begin{aligned}
+\lim_{s\to-\infty}\langle \psi_S(t)|e^{-iH(t-s)}&\left(|\Omega_S(s)\rangle \langle \Omega_S(s)|+\sum_n |n_S(s)\rangle \langle n_S(s)|\right)|0_S(s)\rangle\\
+&=\lim_{s\to-\infty}e^{-iE_0(t-s)}\langle \psi_S(t)|\Omega_S(s)\rangle \langle \Omega_S(s)|0_S(s)\rangle\\
+&+\sum_n \lim_{s\to-\infty}e^{-iE_n(t-s)} \langle \psi_S(t)|n_S(s)\rangle \langle n_S(s)|0_S(s)\rangle
+\end{aligned}$$
+> Now $E_n-E_0>0$, we have$$\Large\lim_{t\to\infty(1-i\epsilon)}e^{-i(E_n-E_0)}=0$$and so:$$\Large \lim_{s\to-\infty}\frac{e^{-iE_n(t-s)}}{e^{-iE_0(t-s)}}\to\lim_{s\to-\infty}\frac{e^{-iE_n(t-s)}}{e^{-iE_0(t-s)}}e^{\epsilon s(E_n-E_0)}=0$$Therefore contributions from all other states are incomparable to the contribution from the vacuum in the limit, so we drop the sum over $n$ to leave:$$\lim_{s\to-\infty}e^{-iE_0(t-s)}\langle \psi_S(s)|\Omega_S(s)\rangle \langle \Omega_S(s)|0_S(s)\rangle=\lim_{s\to-\infty}\langle \psi_S(t)|e^{-iH(t-s)}|\Omega_S(s)\rangle \langle \Omega_S(s)|0_S(s)\rangle$$As required.
+
