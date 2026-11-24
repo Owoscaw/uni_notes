@@ -83,4 +83,36 @@ It remains to relate the ground state $|0\rangle$ of the free Hamiltonian in the
 > Now $E_n-E_0>0$, we have$$\Large\lim_{t\to\infty(1-i\epsilon)}e^{-i(E_n-E_0)}=0$$and so:$$\Large \lim_{s\to-\infty}\frac{e^{-iE_n(t-s)}}{e^{-iE_0(t-s)}}\to\lim_{s\to-\infty}\frac{e^{-iE_n(t-s)}}{e^{-iE_0(t-s)}}e^{\epsilon s(E_n-E_0)}=0$$Therefore contributions from all other states are incomparable to the contribution from the vacuum in the limit, so we drop the sum over $n$ to leave:$$\lim_{s\to-\infty}e^{-iE_0(t-s)}\langle \psi_S(s)|\Omega_S(s)\rangle \langle \Omega_S(s)|0_S(s)\rangle=\lim_{s\to-\infty}\langle \psi_S(t)|e^{-iH(t-s)}|\Omega_S(s)\rangle \langle \Omega_S(s)|0_S(s)\rangle$$As required.
 
 Equivalently, we can write:$$\Large |\Omega\rangle=\lim_{t\to\infty(1-i\epsilon)}\frac{e^{-iHT}|0_H\rangle}{e^{-iE_0t}\langle \Omega|0_H\rangle}$$We now have the formalism needed to write an expression for the time-ordered correlation function $\langle \Omega|T(\phi(y)\phi(x))|\Omega\rangle$ in the interaction picture, where $\phi$ denotes the Heisenberg picture field. Recalling the relations between operators and states in the Heisenberg and interaction pictures with our recently proven identities for $|\Omega\rangle$, we find:$$\Large \langle \Omega|T(\phi(y)\phi(x))|\Omega\rangle=\frac{\langle 0|T(\phi_I(y)\phi_I(x)U(+\infty,-\infty))|0\rangle}{\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle}$$To show this:
->
+>Let $T(\phi(y)\phi(x))|\Omega\rangle=|\psi_H(y,x)\rangle$, that is a Heisenberg picture state depending on $x,y$.
+>We now use our identity to give:$$\Large\begin{aligned}
+\langle \Omega|\psi_H(y,x)\rangle&=\frac{\langle 0|U(+\infty,s)|\psi_I(s;y,x)\rangle}{\langle 0_H|\Omega\rangle}\\
+&=\frac{\langle 0|U(+\infty ,s)U(s,t_0)|\psi_H(y,x)\rangle}{\langle 0_H|\Omega\rangle}\\
+&=\frac{\langle 0|U(+\infty,t_0)|\psi_H(y,x)\rangle}{\langle 0_H|\Omega\rangle}
+\end{aligned}$$
+> Using the rewritten form of our identity for $\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle$:$$\Large\begin{aligned}
+|\Omega\rangle=\frac{U(t_0,-\infty)|0\rangle}{\langle \Omega|0_H\rangle},&\langle \Omega|=\frac{\langle 0|U(+\infty,t_0)}{\langle 0_H|\Omega\rangle}\\
+\implies\langle \Omega|T(\phi(x)\phi(y))|\Omega\rangle&=\frac{\langle 0|U(+\infty,t_0)T(\phi(y)\phi(x))U(t_0,-\infty)|0\rangle}{\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle}
+\end{aligned}$$
+> Further assuming $y^0>x^0$ (WLOG), together with the relation between Heisenberg/interaction pictures operators, we find$$\begin{aligned}
+\langle \Omega|T(\phi(x)\phi(y))|\Omega\rangle&=\frac{\langle 0|U(+\infty,t_0)U^\dagger(y^0,t_0)\phi_I(y)U(y^0,t_0)U^\dagger(x^0,t_0)\phi_I(x)U(x^0,t_0)U(t_0,-\infty)|0\rangle}{\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle}\\
+&=\frac{\langle 0|U(+\infty,y^0)\phi_I(y)U(y^0,x^0)\phi_I(x)U(x^0,-\infty)|0\rangle}{\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle}\\
+&=\frac{\langle 0|T(\phi_I(y)\phi_I(x)U(+\infty,-\infty))|0\rangle}{\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle}
+\end{aligned}$$where we used the properties of the time evolution operator to combine:$$\Large\begin{aligned}
+(+\infty,t_0),(y^0,t_0)\to(+\infty,y^0),\,\,&(x^0,t_0),(t_0,-\infty)\to(x^0,-\infty)\\
+(+\infty,y^0),(x^0,-\infty)&\to(+\infty,-\infty)
+\end{aligned}$$
+> Observing that our use of time ordering will automatically put operators in their right place, this is the same result we would have found for $x^0>y^0$.
+
+Similarly, we can show$$\Large 1=\langle \Omega|\Omega\rangle=\frac{\langle 0|U(+\infty,-\infty)|0\rangle}{\langle 0_H|\Omega\rangle \langle \Omega|0_H\rangle}$$which we use in our result proven above to write:$$\Large \langle \Omega|T(\phi(y)\phi(x))|\Omega\rangle=\frac{\langle 0|T(\phi_I(y)\phi_I(x)U(+\infty,-\infty))|0\rangle}{\langle 0|U(+\infty,-\infty)|0\rangle}$$Using our integral equation for the time evolution operator, we then find:$$\Large \langle \Omega|T(\phi(y)\phi(x))|\Omega\rangle=\frac{\langle 0|T(\phi_I(y)\phi_I(x)\exp(-i\int_{-\infty}^{+\infty}dt'H_I(t')))|0\rangle}{\langle 0|T(\exp(-i\int_{-\infty}^{+\infty}dt'H_I(t')))|0\rangle}$$
+
+Since $H_I$ is a polynomial in the field $\phi_I$, we can expand these exponentials to any order in $\lambda$. The computation of this correlation function then reduces to computing expectation values of time ordered products of the field $\phi_I$ in the free vacuum $|0\rangle$. This is our desired relation between $|\Omega\rangle$ and $|0\rangle$.
+
+## Relating time ordering and [[QFT in canonical formalism#Normal ordering|normal ordering]]:
+Let us start with the product of two fields. writing a field in the interaction picture as:$$\Large\begin{aligned}
+\phi_I(x)&=\phi_I^+(x)+\phi_I^-(x)\\
+\phi_I^+(x)&=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}a_\underline{k}e^{+i\underline{k}\cdot\underline{x}}\\
+\phi_I^-(x)&=\int\frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2\omega_\underline{k}}}a_\underline{k}^\dagger e^{-i\underline{k}\cdot\underline{x}}
+\end{aligned}$$Noting that the time dependence of the interaction picture field is the same as the free field as we evolve it using the Schrodinger picture field with the free Hamiltonian, we have:$$\Large \phi_I^+(x)|0\rangle=0,\,\,\langle 0|\phi_I^-(x)=0$$
+Now let us construct the time ordered product for $y^0>x^0$:$$\Large T(\phi_I(y)\phi_I(x))=(\phi_I^+(y)+\phi_I^-(y))(\phi_I^+(x)+\phi_I^-(x))$$To normal order the RHS we move $\phi_I^-(x)$ to the left and $\phi_I^+(y)$ to the right. These have a non-vanishing commutator and so:$$\Large T(\phi_I(y)\phi_I(x))=\begin{cases}:\phi_I(y)\phi_I(x):+[\phi_I^+(y),\phi_I^-(x)] & y^0>x^0 \\
+:\phi_I(y)\phi_I(x):+[\phi_I^+(x),\phi_I^-(y)] & x^0>y^0\end{cases}$$
+It is useful to introduce the following notation for the contraction of these fields$$\Large $$
