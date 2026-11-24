@@ -115,4 +115,20 @@ Let us start with the product of two fields. writing a field in the interaction 
 \end{aligned}$$Noting that the time dependence of the interaction picture field is the same as the free field as we evolve it using the Schrodinger picture field with the free Hamiltonian, we have:$$\Large \phi_I^+(x)|0\rangle=0,\,\,\langle 0|\phi_I^-(x)=0$$
 Now let us construct the time ordered product for $y^0>x^0$:$$\Large T(\phi_I(y)\phi_I(x))=(\phi_I^+(y)+\phi_I^-(y))(\phi_I^+(x)+\phi_I^-(x))$$To normal order the RHS we move $\phi_I^-(x)$ to the left and $\phi_I^+(y)$ to the right. These have a non-vanishing commutator and so:$$\Large T(\phi_I(y)\phi_I(x))=\begin{cases}:\phi_I(y)\phi_I(x):+[\phi_I^+(y),\phi_I^-(x)] & y^0>x^0 \\
 :\phi_I(y)\phi_I(x):+[\phi_I^+(x),\phi_I^-(y)] & x^0>y^0\end{cases}$$
-It is useful to introduce the following notation for the contraction of these fields$$\Large $$
+
+## Wick's theorem:
+It is useful to introduce the following notation for the contraction of these fields$$\Large\begin{aligned}\wick{\phi_I(y)}\phi_I(x)&=\begin{cases}[\phi_I^+(y),\phi_I^-(x)] & y^0>x^0 \\
+[\phi_I^+(x),\phi_I^-(y)] & y^0<x^0\end{cases}\\
+\implies T(\phi_I(y)\phi_I(x))&=:\phi_I(y)\phi_I(x):+\wick{\phi_I(y)}\phi_I(x)
+\end{aligned}$$, known as the Wick contraction.
+
+Taking the expectation value of this relation in the free vacuum, the contribution from the normal-ordered product will vanish and we are left with the [[Propagators and Causality#Feynman propagator|Feynman propagator]] on the LHS. This leaves us with$$\Large \langle 0|\wick{\phi_I(y)}\phi_I(x)|0\rangle=G(y-x)$$, which we often drop the $\langle 0|0\rangle$ from. We have essentially split time-ordered products into parts that vanish and parts that do not under taking the expectation value in the free vacuum. 
+
+Wick's theorem tells us how to do this process for an arbitrary number of fields. It states$$\Large T(\phi_I(x_n)\dots\phi_I(x_1))=\sum {}^\text{all possible contractions with}_\text{uncontracted fields, normal ordered}$$, that is we sum all possible ways of taking a Wick contraction for the time-ordered product and then normal order the fields that we don't contract. For three fields, this is:$$\Large\begin{aligned} T(\phi_I(x_3)\phi_I(x_2)\phi_I(x_1))&=\phi_I(x_3)\phi_I(x_2)\phi_I(x_1)+\phi_I(x_3)\wick{\phi_I(x_2)}\phi_I(x_1)\\
+&+\wick{\phi_I(x_3)\phi_I(x_2)}\phi_I(x_1)+\wick{\phi_I(x_3)}\phi_I(x_2)\phi_I(x_1)
+\end{aligned}$$One can prove Wick's theorem by replacing contractions with Feynman propagators and using induction.
+
+### Expectation corollary:
+Now we understand the relation between time and normal ordering, we can use this technology to simplify expectation values as any term with uncontracted fields will vanish due to normal ordering:$$\Large \langle 0|T(\phi_I(x_n)\dots\phi_I(x_1))|0\rangle=\sum\text{terms with ALL fields contracted}$$For two fields, this becomes:$$\Large\begin{aligned} \langle 0|T(\phi_I(y)\phi_I(x))|0\rangle&=\langle 0|(:\phi_I(y)\phi_I(x):+\wick{\phi_I(y)}\phi_I(x))|0\rangle\\
+&=G(y-x)\langle 0|0\rangle\\
+&=G(y-x)\end{aligned}$$We can represent such relations using diagrams, typically we represent the Feynman propagator by a line between two points. The expectation value of the time ordered $n$ field product is then the sum over all possible diagrams with each point connected to EXACTLY one other point by a line:![[Interacting QFT 2026-11-24 23.30.44.excalidraw]]
