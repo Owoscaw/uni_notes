@@ -71,4 +71,19 @@ Recall our definition of the ensemble average, we wish to find$$\Large\begin{ali
 -\int_\mathcal{P}d\mu\rho\left(\frac{\partial H}{\partial q_i}\frac{\partial \mathcal{O}}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \mathcal{O}}{\partial q_i}+\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\right) \\
 _{\text{assuming }\partial\mathcal{P}\text{ terms vanish}}&=-\int_\mathcal{P}d\mu\rho\sum_i\left(\frac{\partial H}{\partial q_i}\frac{\partial \mathcal{O}}{\partial p_i}-\frac{\partial H}{\partial p_i}\frac{\partial \mathcal{O}}{\partial q_i}+\frac{\partial^2H}{\partial q_i\partial p_i}-\frac{\partial^2H}{\partial p_i\partial q_i}\right)\\
 _{\text{assuming }\partial\text{s commute}}&=-\int_\mathcal{P}d\mu\rho\{H,\mathcal{O}\}=\langle\{\mathcal{O},H\}\rangle
-\end{aligned}$$
+\end{aligned}$$Note we assume $\mathcal{O}=\mathcal{O}(q,p)$, this would be different if the observable had explicit time dependence.
+
+# Equilibrium ensembles:
+
+
+## Principle of equal a priori probabilties:
+Although microstates $\mu(t)=(q(t),p(t))$ are time dependent, we often find ensemble probability densities independent of time. We call such probability densities $\rho_\text{eq}$ equilibrium ensembles:$$\Large \frac{\partial \rho_\text{eq}}{\partial t}=0\iff\{\rho_\text{eq},H\}=0$$This involves an equation for every particle in the ensemble, which would be a pain in the ass to solve. Therefore we look at conserved quantities $L_a$ of the system, that will satisfy:$$\Large \{H,L_a\}=0\iff \frac{d}{dt}\langle L_a\rangle=0$$We claim that:$$\Large\rho_\text{eq}=f(H(q,p),L_a(q,p))\implies\frac{\partial \rho_\text{eq}}{\partial t}=0$$Which we prove with the calculation:$$\Large\begin{aligned}
+\frac{\partial \rho_\text{eq}}{\partial t}&=-\{\rho_\text{eq},H\}\\
+&=\frac{\partial f}{\partial H}\{H,H\}+\sum_a\frac{\partial f}{\partial L_a}\{H,L_a\}\\
+&=0+0=0
+\end{aligned}$$Where we used the chain rule in the definition of the Poisson bracket. Note that if $\rho_\text{eq}$ had explicit dependence on $q,p$ then this would not be true, $\rho_\text{eq}$ must take its $q,p$ dependence implicitly through $H,L_a$ only. This is the Principle of equal a priori probabilities:
+> For an isolated system in equilibrium, all microstates accessible to a macrostate are equally likely.
+> By "accessible" here, we refer to microstates that can be reached without violating conservation laws, i.e. microstates with the same $H,L_a$.
+> We assume this to be true for all ensembles we study.
+
+One may wonder if this is a reasonable assumption to make, in real life it is intuitive that the time average of the ensemble will tend to $\rho_\text{eq}$. Ergodicity theorems justify this, and in practice it works well.
