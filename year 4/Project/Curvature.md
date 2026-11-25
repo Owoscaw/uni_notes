@@ -95,10 +95,11 @@ Coordinates such that $g_{\mu\nu}=\eta_{\mu\nu}$ and $\partial_\lambda g_{\mu\nu
 > Now using our expression for the Christoffel symbols in terms of the metric, $\Gamma^\lambda_{\nu\rho}=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu g_{\rho\sigma}+\partial_\rho g_{\nu\sigma}-\partial_\sigma g_{\nu\rho})$, we have:$$\Large\begin{aligned}
  R^{\lambda}{}_{\rho\mu\nu}&=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\nu g_{\rho\sigma}+\partial_\mu\partial_\rho g_{\nu\sigma}-\partial_\mu\partial_\sigma g_{\nu\rho}\\
 &-\partial_\nu\partial_\mu g_{\rho\sigma}-\partial_\nu\partial_\mu g_{\mu\sigma}+\partial_\nu\partial_\sigma g_{\mu\rho})\\
-&=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\rho g_{\nu\beta}+\partial_\nu\partial_\beta g_{\mu\rho}-\partial_\mu\partial_\beta g_{\nu\rho}-\partial_\nu\partial_\rho g_{\mu\beta})
+&=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\rho g_{\nu\sigma}+\partial_\nu\partial_\sigma g_{\mu\rho}-\partial_\mu\partial_\sigma g_{\nu\rho}-\partial_\nu\partial_\rho g_{\mu\sigma})\\
+\implies R_{\sigma\rho\mu\nu}&=\frac{1}{2}(\partial_\mu\partial_\rho g_{\nu\sigma}+\partial_\nu\partial_\sigma g_{\mu\rho}-\partial_\nu\partial_\rho g_{\mu\sigma}-\partial_\mu\partial_\sigma g_{\nu\rho})
 \end{aligned}$$
-
-Note we cannot set the second derivative of the metric to $0$, as the Riemann tensor is nonzero for a general metric.
+> Note we cannot set the second derivatives of the metric to $0$, as the Riemann tensor is nonzero for a general metric. 
+> This makes it clear that the Riemann tensor is capturing coordinate-dependent information about the second derivatives of the metric, it is a natural dynamical object.
 
 These differ from [[The metric tensor and Causality#Locally inertial coordinates|locally inertial coordinates]] in the sense that they fix higher-order coordinate freedom by requiring geodesics through $p$ to (initially) be straight lines $x^\mu(\lambda)=V^\mu\lambda$. That is, every geodesic through $p$ has zero coordinate acceleration along it's parametrisation, whereas locally inertial coordinates only guarantee this at the point $p$ itself.
 
