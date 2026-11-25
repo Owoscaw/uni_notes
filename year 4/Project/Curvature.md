@@ -157,12 +157,23 @@ C_{\rho\sigma\mu\nu}&=R_{\rho\sigma\mu\nu}-\frac{2}{n-2}(g_{\rho[\mu}R_{\nu]\sig
 
 The Weyl tensor is invariant under conformal transformations, that is if one computes $C^{\rho}{}_{\sigma\mu\nu}$ for some metric $g_{\mu\nu}$ and then for $\omega^2(x)g_{\mu\nu}$, one would get the same answer. For this reason, it is often known as the conformal tensor.
 
+Let us calculate the Ricci scalar for $S^2$ as an example:
+> We calculate:$$\Large\begin{aligned}
+R_{\theta\theta}&= R^{\lambda}{}_{\theta\lambda\theta}= R^{\phi}{}_{\theta\phi\theta}=1\\
+R_{\theta\phi}&= R^{\lambda}{}_{\theta\lambda\phi}=0\\
+R_{\phi\phi}&= R^{\lambda}{}_{\phi\lambda\phi}= R^{\theta}{}_{\phi\theta\phi}=\sin^2\theta
+\end{aligned}$$
+> Now we use these in the contraction to find:$$\Large\begin{aligned}
+R&=g^{\mu\nu}R_{\mu\nu}=g^{\theta\theta}R_{\theta\theta}+g^{\phi\phi}R_{\phi\phi}\\
+&=1\cdot 1+\frac{1}{\sin^2\theta}\sin^2\theta=2
+\end{aligned}$$
+
 ## Einstein tensor:
 A useful form of the Bianchi identity comes from twice contracting the sum of cyclic covariant derivatives:$$\Large\begin{aligned}
 0&=g^{\nu\sigma}g^{\mu\lambda}(\underline{\nabla}_\lambda R_{\rho\sigma\mu\nu}+\underline{\nabla}_\rho R_{\sigma\lambda\mu\nu}+\underline{\nabla}_\sigma R_{\lambda\rho\mu\nu})\\
 &=\underline{\nabla}^\mu R_{\rho\mu}-\underline{\nabla}_\rho R+\underline{\nabla}^\nu R_{\rho\nu}\\
 \implies\underline{\nabla}^\mu R_{\rho\mu}&=\frac{1}{2}\underline{\nabla}_\rho R
-\end{aligned}$$Then, defining the Einstein tensor$$\huge G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}$$, we can write the double-contracted Bianchi identity as:$$\huge \underline{\nabla}^\mu G_{\mu\nu}=0$$One can think of the Einstein tensor as a trace-reversed version of the Ricci tensor.
+\end{aligned}$$Then, defining the Einstein tensor$$\huge G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}$$, we can write the double-contracted Bianchi identity as:$$\huge \underline{\nabla}^\mu G_{\mu\nu}=0$$One can think of the Einstein tensor as a trace-reversed version of the Ricci tensor. 
 
 # Symmetries and killing vectors:
 
