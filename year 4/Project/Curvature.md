@@ -98,6 +98,8 @@ Coordinates such that $g_{\mu\nu}=\eta_{\mu\nu}$ and $\partial_\lambda g_{\mu\nu
 &=\frac{1}{2}g^{\lambda\sigma}(\partial_\mu\partial_\rho g_{\nu\beta}+\partial_\nu\partial_\beta g_{\mu\rho}-\partial_\mu\partial_\beta g_{\nu\rho}-\partial_\nu\partial_\rho g_{\mu\beta})
 \end{aligned}$$
 
+Note we cannot set the second derivative of the metric to $0$, as the Riemann tensor is nonzero for a general metric.
+
 These differ from [[The metric tensor and Causality#Locally inertial coordinates|locally inertial coordinates]] in the sense that they fix higher-order coordinate freedom by requiring geodesics through $p$ to (initially) be straight lines $x^\mu(\lambda)=V^\mu\lambda$. That is, every geodesic through $p$ has zero coordinate acceleration along it's parametrisation, whereas locally inertial coordinates only guarantee this at the point $p$ itself.
 
 ## Properties of the Riemann tensor:
