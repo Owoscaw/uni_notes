@@ -117,18 +117,34 @@ Now let us construct the time ordered product for $y^0>x^0$:$$\Large T(\phi_I(y)
 :\phi_I(y)\phi_I(x):+[\phi_I^+(x),\phi_I^-(y)] & x^0>y^0\end{cases}$$
 
 ## Wick's theorem:
-It is useful to introduce the following notation for the contraction of these fields$$\Large\begin{aligned}\wick{\phi_I(y)}\phi_I(x)&=\begin{cases}[\phi_I^+(y),\phi_I^-(x)] & y^0>x^0 \\
+It is useful to introduce the following notation for the contraction of these fields$$\Large\begin{aligned}\wick{\phi_I(y)\phi_I(x)}&=\begin{cases}[\phi_I^+(y),\phi_I^-(x)] & y^0>x^0 \\
 [\phi_I^+(x),\phi_I^-(y)] & y^0<x^0\end{cases}\\
-\implies T(\phi_I(y)\phi_I(x))&=:\phi_I(y)\phi_I(x):+\wick{\phi_I(y)}\phi_I(x)
+\implies T(\phi_I(y)\phi_I(x))&=:\phi_I(y)\phi_I(x):+\wick{\phi_I(y)\phi_I(x)}
 \end{aligned}$$, known as the Wick contraction.
 
-Taking the expectation value of this relation in the free vacuum, the contribution from the normal-ordered product will vanish and we are left with the [[Propagators and Causality#Feynman propagator|Feynman propagator]] on the LHS. This leaves us with$$\Large \langle 0|\wick{\phi_I(y)}\phi_I(x)|0\rangle=G(y-x)$$, which we often drop the $\langle 0|0\rangle$ from. We have essentially split time-ordered products into parts that vanish and parts that do not under taking the expectation value in the free vacuum. 
+Taking the expectation value of this relation in the free vacuum, the contribution from the normal-ordered product will vanish and we are left with the [[Propagators and Causality#Feynman propagator|Feynman propagator]] on the LHS. This leaves us with$$\Large \langle 0|\wick{\phi_I(y)\phi_I(x)}|0\rangle=G(y-x)$$, which we often drop the $\langle 0|0\rangle$ from. We have essentially split time-ordered products into parts that vanish and parts that do not under taking the expectation value in the free vacuum. 
 
-Wick's theorem tells us how to do this process for an arbitrary number of fields. It states$$\Large T(\phi_I(x_n)\dots\phi_I(x_1))=\sum {}^\text{all possible contractions with}_\text{uncontracted fields, normal ordered}$$, that is we sum all possible ways of taking a Wick contraction for the time-ordered product and then normal order the fields that we don't contract. For three fields, this is:$$\Large\begin{aligned} T(\phi_I(x_3)\phi_I(x_2)\phi_I(x_1))&=\phi_I(x_3)\phi_I(x_2)\phi_I(x_1)+\phi_I(x_3)\wick{\phi_I(x_2)}\phi_I(x_1)\\
-&+\wick{\phi_I(x_3)\phi_I(x_2)}\phi_I(x_1)+\wick{\phi_I(x_3)}\phi_I(x_2)\phi_I(x_1)
+Wick's theorem tells us how to do this process for an arbitrary number of fields. It states$$\Large T(\phi_I(x_n)\dots\phi_I(x_1))=\sum {}^\text{all possible contractions of 2 fields with}_\text{uncontracted fields normal ordered}$$, that is we sum all possible ways of taking a Wick contraction for the time-ordered product and then normal order the fields that we don't contract. For three fields, this is:$$\Large\begin{aligned} T(\phi_I(x_3)\phi_I(x_2)\phi_I(x_1))&=:\phi_I(x_3)\phi_I(x_2)\phi_I(x_1):+:\phi_I(x_3):\wick{\phi_I(x_2)\phi_I(x_1)}\\
+&+\wick{\phi_I(x_3)\phi_I(x_1)}:\phi_I(x_2):+\wick{\phi_I(x_3)\phi_I(x_2)}:\phi_I(x_1):
 \end{aligned}$$One can prove Wick's theorem by replacing contractions with Feynman propagators and using induction.
 
 ### Expectation corollary:
-Now we understand the relation between time and normal ordering, we can use this technology to simplify expectation values as any term with uncontracted fields will vanish due to normal ordering:$$\Large \langle 0|T(\phi_I(x_n)\dots\phi_I(x_1))|0\rangle=\sum\text{terms with ALL fields contracted}$$For two fields, this becomes:$$\Large\begin{aligned} \langle 0|T(\phi_I(y)\phi_I(x))|0\rangle&=\langle 0|(:\phi_I(y)\phi_I(x):+\wick{\phi_I(y)}\phi_I(x))|0\rangle\\
+Now we understand the relation between time and normal ordering, we can use this technology to simplify expectation values as any term with uncontracted fields will vanish due to normal ordering:$$\Large \langle 0|T(\phi_I(x_n)\dots\phi_I(x_1))|0\rangle=\sum\text{terms with ALL fields contracted}$$For two fields, this becomes:$$\Large\begin{aligned} \langle 0|T(\phi_I(y)\phi_I(x))|0\rangle&=\langle 0|(:\phi_I(y)\phi_I(x):+\wick{\phi_I(y)\phi_I(x)})|0\rangle\\
 &=G(y-x)\langle 0|0\rangle\\
-&=G(y-x)\end{aligned}$$We can represent such relations using diagrams, typically we represent the Feynman propagator by a line between two points. The expectation value of the time ordered $n$ field product is then the sum over all possible diagrams with each point connected to EXACTLY one other point by a line:![[Interacting QFT 2026-11-24 23.30.44.excalidraw]]
+&=G(y-x)\end{aligned}$$Note for the expectation of time ordering of an odd number of fields, we will always get $0$ (at least in $\phi^4$ theory). Therefore let us write down this sum for four fields:$$\begin{aligned} \langle 0|T(\phi_I(x_4)\dots\phi_I(x_1))|0\rangle&=\wick{\phi_I(x_4)\phi_I(x_3)}\wick{\phi_I(x_2)\phi_I(x_1)}+\wick{\phi_I(x_4)\phi_I(x_2)}\wick{\phi_I(x_3)\phi_I(x_1)}\\
+&+\wick{\phi_I(x_4)\phi_I(x_1)}\wick{\phi_I(x_3)\phi_I(x_2)}\\
+&=G(x_4-x_3)G(x_2-x_1)+G(x_4-x_2)G(x_3-x_1)\\
+&+G(x_4-x_1)G(x_3-x_2)
+\end{aligned}$$
+We can represent such relations using diagrams, typically we represent the Feynman propagator by a line between two points. The expectation value of the time ordered $n$ field product is then the sum over all possible diagrams with each point connected to EXACTLY one other point by a line:![[Interacting QFT 2026-11-24 23.30.44.excalidraw]]
+
+# Feynman diagrams:
+
+Feynman diagrams are the systematic manner we developed to systematically compute time ordering in the interaction picture. With our new machinery, let us finally compute:$$\Large \langle \Omega|T(\phi(y)\phi(x))|\Omega\rangle=\frac{\langle 0|T(\phi_I(y)\phi_I(x)\exp(-i\int_{-\infty}^{+\infty}dt'H_I(t')))|0\rangle}{\langle 0|T\exp(-i\int_{-\infty}^{+\infty}dt'H_I(t'))|0\rangle}=\frac{N}{D}$$To do this, we expand the exponential in terms of $\lambda$ to get an expression like $N=N_0+\lambda N_1+\dots,D=D_0+\lambda D_1+\dots$ in terms of the integral over the fields:$$\Large \exp(\dots)=\mathbb{1}-\frac{i\lambda}{4!}\int d^4z\phi_I(z)^4+\frac{1}{2}\left(-\frac{i\lambda}{4!}\right)^2\int d^4z_1\phi_I(z_1)^4\int d^4z_2\phi_I(z_2)^4+\mathcal{O}(\lambda^3)$$Let us do this, painfully:$$\Large\begin{aligned}
+N_0&=\langle 0|T(\phi_I(y)\phi_I(x))|0\rangle=G(y-x)\\
+N_1&=-\frac{i}{4!}\int d^4z\langle 0|T(\phi_I(y)\phi_I(x))\phi_I^4(z)|0\rangle\\
+&=-\frac{i}{4!}\int d^4z(G(y-x)G(0)^2\text{ 3 ways}+G(y-z)G(x-z)G(0)\text{ 12 ways})
+\end{aligned}$$$N_1$ in terms of Feynman diagrams looks like:![[Interacting QFT 2026-11-27 15.43.53.excalidraw]]Note $G(0)$ causes a singularity, and the art of removing these is known as renormalisation and regularisation. Let us proceed with our calculation:$$\Large\begin{aligned}
+N_1&=-\frac{i}{4!}\int d^4z(3G(y-z)G(0)^2+12G(y-z)G(x-z)G(0))\\
+&=-\frac{i}{4!}\int d^4z(N_1^\text{disc}+N_1^\text{conn})
+\end{aligned}$$For the full numerator, the $\phi_I(y)\phi_I(x)$ produce what we call "external legs" while the $k$ fields in the integrals produce $k$ vertices each with $4$ legs. The way to systematically compute the full numerator is then given by connecting all $2+4k$ legs in all possible ways. If we wanted an $n$ point contraction instead of $2$ points, we would do the same for all $n+4k$ legs.
