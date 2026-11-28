@@ -15,7 +15,11 @@ Recall in the Newtonian limit, we are close to Minkowski spacetime with a small 
 R_{00}= R^{j}{}_{0j0}&=\partial_j\Gamma^j_{00}-\partial_0\Gamma^j_{j0}
 +\mathcal{O}(h^2)\\
 &=\partial_j\Gamma^j_{00}+\mathcal{O}(\partial_{x^0})\\
-&\approx-\frac{1}{2}\partial_i\partial^ih_{00}=\partial_i\partial^i\Phi\end{aligned}$$Here, we dropped all higher-order terms in the perturbation $h_{\mu\nu}$ as well as time derivatives (as they are small in the Newtonian limit). We then used our identification for gravitational potential we found [[year 4/Project/Geodesics#Newtonian limit|previously]]. Now, we identify energy density with mass density in the non-relativistic limit $T_{00}=\rho$, giving$$\Large \partial_i\partial^i\Phi=\frac{\kappa}{2}\rho$$which dictates the identification:$$\Large \kappa=8\pi G_N$$
+&\approx-\frac{1}{2}\partial_i\partial^ih_{00}=\partial_i\partial^i\Phi=\underline{\nabla}^2\Phi\end{aligned}$$Here, we dropped all higher-order terms in the perturbation $h_{\mu\nu}$ as well as time derivatives (as they are small in the Newtonian limit). We then used our identification for gravitational potential we found [[year 4/Project/Geodesics#Newtonian limit|previously]]. Now, we identify energy density with mass density in the non-relativistic limit $T_{00}=\rho$, giving:$$\Large \underline{\nabla}^2\Phi=\frac{\kappa}{2}\rho$$which we compare to Gauss' law for gravity as a Poisson's equation:$$\Large\begin{aligned}
+\underline{\nabla}^2\Phi&=4\pi G\rho=\frac{\kappa}{2}\rho\\
+\implies\kappa&=8\pi G\rho
+\end{aligned}$$
+
 ## Einstein's equation:
 Putting everything together, we present Einstein's equation in all its glory:$$\Large R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}=8\pi GT_{\mu\nu}$$
 This dictates how the curvature of spacetime reacts to the presence of energy-momentum, we often take the trace of this to find $R=-8\pi GT$ and write:$$\Large R_{\mu\nu}=8\pi G\left(T_{\mu\nu}-\frac{1}{2}Tg_{\mu\nu}\right)$$We are often interested in vacuum solutions, for which $T_{\mu\nu}=0$ and we can write the vacuum Einstein equation as:$$\huge R_{\mu\nu}=0$$
