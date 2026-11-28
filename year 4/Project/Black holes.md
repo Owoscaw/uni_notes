@@ -59,4 +59,14 @@ V_\text{eff}'(r_\pm)&=0\implies\frac{M}{r_\pm^2}-\frac{L^3}{r_\pm^3}+\frac{3ML^2
 \implies r_\pm&=\frac{1}{2M}(L^2\pm\sqrt{L^4-12M^2L^2})
 \end{aligned}$$This is different to the non-relativistic motion of particles, however upon checking the second derivative we see only $r=r_+$ is stable.
 
-Now let us examine the spherical region at $r=2M$, where the coordinate system we chose to construct the Schwarzschild solution is singular.
+
+## Ray of light:
+Now let us examine the spherical region at $r=2M$, where the coordinate system we chose to construct the Schwarzschild solution is singular:$$\Large\begin{aligned}
+\frac{1}{2}E^2&=\frac{1}{2}\left(\frac{dr}{d\tau}\right)^2+\frac{L^2}{2(2M)^2}-\frac{ML^2}{(2M)^3}\\
+\implies \frac{dr}{d\tau}&=-E_{\text{ admits a solution past }r=2M}\\
+\implies \frac{dr}{dt}\frac{dt}{d\tau}&=-E\\
+_\text{using conservation laws }\frac{dr}{dt}\dot t&=-\left(1-\frac{2M}{r}\right)\dot t \\
+\implies \frac{dr}{dt}&=-\left(1-\frac{2M}{r}\right)
+\end{aligned}$$We will see this is precisely the point where the event horizon of our black hole is. We will find this point by considering a ray of light ($\epsilon=0$ in effective potential equation) falling radially towards the center of the black hole. For this motion, there is no angular momentum ($\dot\phi=0$).
+
+We saw by considering the affine parametrisation, we could consider a solution dictated by the above ($r=r_0-R\tau$). This equation dictates that after enough proper time $\tau$ has passed, the light ray will pass through $r=2M$ without any blow-up. However in the $t$ parametrisation, the equations dictate that the light ray slows down as it approaches the horizon infinitely and we never see it cross. Observers sitting on the outside will never be able to send information inside the event horizon.
