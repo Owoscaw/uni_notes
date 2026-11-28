@@ -44,3 +44,7 @@ _{\det M=\sqrt{-g}}\implies\delta\ln\sqrt{-g}&=-\frac{1}{2}g_{\mu\nu}\delta g^{\
 > > This is a meaningful expression, since the variation $\delta\Gamma^\lambda_{\mu\nu}$ can be thought of as a difference of connections. It is therefore reasonable to take the covariant derivative, so we write the last term as:$$\Large g^{\mu\nu}\delta R_{\mu\nu}=\underline{\nabla}_\lambda(g^{\mu\nu}\delta \Gamma_{\mu\nu}^\lambda-g^{\lambda\rho}\delta\Gamma^\beta_{\beta\rho})$$
 > > This shows that the last term in our action is a total derivative, which will evaluate to a surface term when integrated. We therefore neglect the last term.
 > We therefore find$$\Large \delta S_{EH}=\frac{1}{2\kappa}\int d^nx\sqrt{-g}\left(-\frac{1}{2}g_{\mu\nu}R+R_{\mu\nu}\right)\delta g^{\mu\nu}$$, dividing through by our variation recovers our expression for $\delta S_{EH}$ wrt $\delta g^{\mu\nu}$:$$\Large\implies\frac{\delta S_{EH}}{\delta g^{\mu\nu}}=\frac{1}{2\kappa}\sqrt{-g}\left(R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R\right)$$As required.
+
+# [[year 4/Project/Geodesics#Symmetries and conservation laws|Stress-energy tensor]] revisted:
+
+
